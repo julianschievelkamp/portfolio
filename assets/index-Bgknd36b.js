@@ -122,7 +122,7 @@ Error generating stack: `+e.message+`
         padding: 2rem;
         transform: translateX(0);
     }
-`,dr={title:vt.jsxs(vt.Fragment,{children:["Julian Schievelkamp",vt.jsx("br",{}),"CGN #1994"]}),intro:"Visual artist and fine art photographer highlighting the synergies of classic photography and CGI."},Iv=({isOpen:i,toggleTheme:r})=>vt.jsxs(Fv,{$isOpen:i,children:[vt.jsx(or,{children:dr.title}),vt.jsx(or,{margin:"1rem 0",children:dr.intro}),vt.jsx("button",{onClick:()=>r(),children:"Toggle Theme"})]}),Pv=[{title:"DADA YAGA, 2018",subTitle:vt.jsxs(vt.Fragment,{children:["Analog on Paper",vt.jsx("br",{}),"100 x 100 cm"]}),src:"./src/assets/img/example.jpg"}],tm=ne.div`
+`,dr={title:vt.jsxs(vt.Fragment,{children:["Julian Schievelkamp",vt.jsx("br",{}),"CGN #1994"]}),intro:"Visual artist and fine art photographer highlighting the synergies of classic photography and CGI."},Iv=({isOpen:i,toggleTheme:r})=>vt.jsxs(Fv,{$isOpen:i,children:[vt.jsx(or,{children:dr.title}),vt.jsx(or,{margin:"1rem 0",children:dr.intro}),vt.jsx("button",{onClick:()=>r(),children:"Toggle Theme"})]}),Pv="/portfolio/assets/example-KcWJlrPV.jpg",tm=[{title:"DADA YAGA, 2018",subTitle:vt.jsxs(vt.Fragment,{children:["Analog on Paper",vt.jsx("br",{}),"100 x 100 cm"]}),src:Pv}],lm=ne.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 0.5rem;
@@ -131,7 +131,7 @@ Error generating stack: `+e.message+`
     @media ${$a.md} {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-`,lm=ne.div`
+`,em=ne.div`
     overflow: hidden;
     position: relative;
     height: calc((100vw - 3rem) / 3);
@@ -150,10 +150,10 @@ Error generating stack: `+e.message+`
             transform: scale(1.125);
         }
     }
-`,em=ne.img`
+`,am=ne.img`
     width: ${({width:i})=>i??"100%"};
     height: ${({height:i})=>i??"100%"};
-`,am=({src:i,alt:r,width:o,height:s})=>vt.jsx(em,{src:i,alt:r,width:o,height:s}),um=({})=>vt.jsx(tm,{children:Pv.map(i=>vt.jsx(lm,{children:vt.jsx(am,{src:i.src,alt:i.title})},i.title))}),nm=(i,r,o=window)=>{const s=Kt.useRef(r);Kt.useEffect(()=>{s.current=r},[r]),Kt.useEffect(()=>{if(!(o&&o.addEventListener))return;const p=R=>s.current(R);return o.addEventListener(i,p),()=>{o.removeEventListener(i,p)}},[i,o])},im=i=>{const[r,o]=Kt.useState(!1),[s,m]=Kt.useState(null);return Kt.useEffect(()=>{const p=window.matchMedia(i);m(p),o(p.matches)},[i]),nm("change",p=>o(p.matches),s),r},cm=ne.div`
+`,um=({src:i,alt:r,width:o,height:s})=>vt.jsx(am,{src:i,alt:r,width:o,height:s}),nm=({})=>vt.jsx(lm,{children:tm.map(i=>vt.jsx(em,{children:vt.jsx(um,{src:i.src,alt:i.title})},i.title))}),im=(i,r,o=window)=>{const s=Kt.useRef(r);Kt.useEffect(()=>{s.current=r},[r]),Kt.useEffect(()=>{if(!(o&&o.addEventListener))return;const p=R=>s.current(R);return o.addEventListener(i,p),()=>{o.removeEventListener(i,p)}},[i,o])},cm=i=>{const[r,o]=Kt.useState(!1),[s,m]=Kt.useState(null);return Kt.useEffect(()=>{const p=window.matchMedia(i);m(p),o(p.matches)},[i]),im("change",p=>o(p.matches),s),r},fm=ne.div`
     background: yellow;
     width: 100vw;
     position: fixed;
@@ -166,4 +166,4 @@ Error generating stack: `+e.message+`
     transform: ${({$isVisible:i})=>`translateY(${i?0:"-100%"})`};
     transition: ${Pu.fast};
     transition-delay: 200ms;
-`,fm=()=>{const[i,r]=Kt.useState(!0),[o,s]=Kt.useState(0),m=p=>{p.target.scrollTop>120&&p.target.scrollTop>o?r(!1):r(!0),s(p.target.scrollTop)};return Kt.useEffect(()=>{const p=document.getElementById("page-container");return p==null||p.addEventListener("scroll",m),()=>p==null?void 0:p.removeEventListener("scroll",m)},[o]),{isVisible:i}},rm=({sidebarOpen:i,setSidebarOpen:r})=>{const{isVisible:o}=fm();return vt.jsxs(cm,{$isVisible:o,children:[vt.jsx(or,{children:dr.title}),vt.jsx("button",{onClick:()=>r(!i),children:"Toggle Sidebar"})]})},sm=()=>{const{theme:i,toggleTheme:r,isLoading:o}=Wv(),[s,m]=Kt.useState(!1),p=im($a.md);return o?vt.jsx(vt.Fragment,{}):vt.jsx(Xv,{theme:i==="light"?Vv:Kv,children:vt.jsxs(Jv,{children:[vt.jsx(wv,{}),!p&&vt.jsx(rm,{sidebarOpen:s,setSidebarOpen:m}),vt.jsx(Iv,{isOpen:s,toggleTheme:r}),vt.jsx($v,{id:"page-container",children:vt.jsx(um,{})})]})})};Qy.createRoot(document.getElementById("root")).render(vt.jsx(Kt.StrictMode,{children:vt.jsx(sm,{})}));
+`,rm=()=>{const[i,r]=Kt.useState(!0),[o,s]=Kt.useState(0),m=p=>{p.target.scrollTop>120&&p.target.scrollTop>o?r(!1):r(!0),s(p.target.scrollTop)};return Kt.useEffect(()=>{const p=document.getElementById("page-container");return p==null||p.addEventListener("scroll",m),()=>p==null?void 0:p.removeEventListener("scroll",m)},[o]),{isVisible:i}},sm=({sidebarOpen:i,setSidebarOpen:r})=>{const{isVisible:o}=rm();return vt.jsxs(fm,{$isVisible:o,children:[vt.jsx(or,{children:dr.title}),vt.jsx("button",{onClick:()=>r(!i),children:"Toggle Sidebar"})]})},om=()=>{const{theme:i,toggleTheme:r,isLoading:o}=Wv(),[s,m]=Kt.useState(!1),p=cm($a.md);return o?vt.jsx(vt.Fragment,{}):vt.jsx(Xv,{theme:i==="light"?Vv:Kv,children:vt.jsxs(Jv,{children:[vt.jsx(wv,{}),vt.jsx($v,{id:"page-container",children:vt.jsx(nm,{})}),!p&&vt.jsx(sm,{sidebarOpen:s,setSidebarOpen:m}),vt.jsx(Iv,{isOpen:s,toggleTheme:r})]})})};Qy.createRoot(document.getElementById("root")).render(vt.jsx(Kt.StrictMode,{children:vt.jsx(om,{})}));
