@@ -21,6 +21,10 @@ const App = () => {
             <StyledApp>
                 <GlobalStyle />
 
+                <PageContainer id="page-container">
+                    <Dashboard />
+                </PageContainer>
+
                 {!isMd && (
                     <Menu
                         sidebarOpen={sidebarOpen}
@@ -29,10 +33,6 @@ const App = () => {
                 )}
 
                 <Sidebar isOpen={sidebarOpen} toggleTheme={toggleTheme} />
-
-                <PageContainer id="page-container">
-                    <Dashboard />
-                </PageContainer>
             </StyledApp>
         </ThemeProvider>
     );
