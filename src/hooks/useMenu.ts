@@ -6,10 +6,10 @@ export const useMenu = () => {
 
     const controlMenu = (e: any) => {
         if (e.target.scrollTop > 120 && e.target.scrollTop > lastScrollY) {
-            // if scroll down hide the navbar
+            // if scroll down hide the menu
             setVisible(false);
         } else {
-            // if scroll up show the navbar
+            // if scroll up show the menu
             setVisible(true);
         }
 
@@ -22,10 +22,8 @@ export const useMenu = () => {
 
         pageContainer?.addEventListener("scroll", controlMenu);
 
-        return () => {
-            pageContainer?.removeEventListener("scroll", controlMenu);
-        };
-    }, []);
+        return () => pageContainer?.removeEventListener("scroll", controlMenu);
+    }, [lastScrollY]);
 
     return {
         isVisible,
