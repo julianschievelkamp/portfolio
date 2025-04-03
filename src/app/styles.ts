@@ -4,6 +4,7 @@ import { queries, transition } from "styles/variables";
 
 export const StyledApp = styled.div<{ theme: Theme }>`
     width: 100vw;
+    height: var(--100vh);
     overflow: hidden;
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
@@ -13,7 +14,9 @@ export const StyledApp = styled.div<{ theme: Theme }>`
 
 export const PageContainer = styled.div`
     width: 100%;
+    height: var(--100vh);
     padding-top: 7.5rem;
+    overflow-y: scroll;
 
     @media ${queries.md} {
         padding-left: 20rem;

@@ -4,8 +4,8 @@ export const useMenu = () => {
     const [isVisible, setVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
 
-    const controlMenu = () => {
-        if (window.scrollY > lastScrollY) {
+    const controlMenu = (e: any) => {
+        if (e.target.scrollTop > 120 && e.target.scrollTop > lastScrollY) {
             // if scroll down hide the navbar
             setVisible(false);
         } else {
@@ -14,16 +14,18 @@ export const useMenu = () => {
         }
 
         // remember current page location to use in the next move
-        setLastScrollY(window.scrollY);
+        setLastScrollY(e.target.scrollTop);
     };
 
     useEffect(() => {
-        window.addEventListener("scroll", controlMenu);
+        const pageContainer = document.getElementById("page-container");
+
+        pageContainer?.addEventListener("scroll", controlMenu);
 
         return () => {
-            window.removeEventListener("scroll", controlMenu);
+            pageContainer?.removeEventListener("scroll", controlMenu);
         };
-    }, [lastScrollY]);
+    }, []);
 
     return {
         isVisible,

@@ -30,7 +30,7 @@ const App = () => {
 
                 <Sidebar isOpen={sidebarOpen} toggleTheme={toggleTheme} />
 
-                <PageContainer>
+                <PageContainer id="page-container">
                     <Dashboard />
                 </PageContainer>
             </StyledApp>

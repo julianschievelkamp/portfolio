@@ -6,7 +6,7 @@ export const StyledSidebar = styled.div<{ $isOpen: boolean }>`
     width: 20rem;
     // TODO: platzhalter "5rem" für toggle sidebar button
     max-width: calc(100vw - 5rem);
-    height: 100vh;
+    height: 100%;
     position: fixed;
     padding: 1rem;
     top: 0;

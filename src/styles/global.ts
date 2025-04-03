@@ -13,7 +13,8 @@ export default createGlobalStyle`
         padding: 0;
         font-size: 100%;
         width: 100vw;
-        overflow-x: hidden;
+        height: var(--100vh);
+        overflow: hidden;
 
         @media ${queries.xl} {
             font-size: 125%;
@@ -25,6 +26,20 @@ export default createGlobalStyle`
     }
 `;
 
+/* see https://stackoverflow.com/questions/58886797/how-to-access-the-real-100vh-on-ios-in-css */
+export const set100vh = () => {
+    let value = "100vh";
+
+    // if window size is iPad or smaller
+    if (window.innerWidth && window.innerWidth <= 1024) {
+        value = `${window.innerHeight}px`;
+    }
+
+    document.documentElement.style.setProperty("--100vh", value);
+};
+
+set100vh();
+
 let resizeTimer: ReturnType<typeof setTimeout>;
 
 window.addEventListener("resize", () => {
@@ -34,5 +49,7 @@ window.addEventListener("resize", () => {
 
     resizeTimer = setTimeout(() => {
         document.body.classList.remove("no-transition");
+
+        set100vh();
     }, 400);
 });
