@@ -1,4 +1,3 @@
-import Image from "elements/components/image";
 import styled from "styled-components";
 import { queries, transition } from "styles/variables";
 
