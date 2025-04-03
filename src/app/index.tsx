@@ -1,22 +1,13 @@
-import styled from "styled-components";
+import GlobalStyle from "styles/global";
+import { StyledApp } from "./styles";
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: #bf4f74;
-`;
-
-const Wrapper = styled.section`
-  padding: 4em;
-  background: papayawhip;
-`;
-
-function App() {
+const App = () => {
   return (
-    <Wrapper>
-      <Title>Hello World!</Title>
-    </Wrapper>
+    <StyledApp>
+      <GlobalStyle />
+      Hello World!
+    </StyledApp>
   );
-}
+};
 
 export default App;
