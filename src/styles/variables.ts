@@ -1,3 +1,15 @@
+import { Theme } from "data/types";
+
+export const lightTheme: Theme = {
+  body: "#FFFFFF",
+  text: "#000000",
+};
+
+export const darkTheme: Theme = {
+  body: "#000000",
+  text: "#FFFFFF",
+};
+
 export const queries = {
   xs: "screen and (min-width: 350px)",
   sm: "screen and (min-width: 576px)",
