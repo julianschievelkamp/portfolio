@@ -1,26 +1,26 @@
 import { useEffect, useState } from "react";
 
 export const useTheme = () => {
-  const [theme, setTheme] = useState("light");
-  const [isLoading, setIsLoading] = useState(true);
+    const [theme, setTheme] = useState("light");
+    const [isLoading, setIsLoading] = useState(true);
 
-  const setMode = (mode: string) => {
-    window.localStorage.setItem("theme", mode);
+    const setMode = (mode: string) => {
+        window.localStorage.setItem("theme", mode);
 
-    setTheme(mode);
-  };
+        setTheme(mode);
+    };
 
-  const toggleTheme = () => {
-    theme === "light" ? setMode("dark") : setMode("light");
-  };
+    const toggleTheme = () => {
+        theme === "light" ? setMode("dark") : setMode("light");
+    };
 
-  useEffect(() => {
-    const localTheme = window.localStorage.getItem("theme");
+    useEffect(() => {
+        const localTheme = window.localStorage.getItem("theme");
 
-    localTheme ? setTheme(localTheme) : setMode("light");
+        localTheme ? setTheme(localTheme) : setMode("light");
 
-    setIsLoading(false);
-  }, []);
+        setIsLoading(false);
+    }, []);
 
-  return { theme, toggleTheme, isLoading };
+    return { theme, toggleTheme, isLoading };
 };

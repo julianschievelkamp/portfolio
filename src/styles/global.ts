@@ -13,7 +13,7 @@ export default createGlobalStyle`
         padding: 0;
         font-size: 100%;
         width: 100vw;
-        overflow: hidden;
+        overflow-x: hidden;
 
         @media ${queries.xl} {
             font-size: 125%;
@@ -28,11 +28,11 @@ export default createGlobalStyle`
 let resizeTimer: ReturnType<typeof setTimeout>;
 
 window.addEventListener("resize", () => {
-  document.body.classList.add("no-transition");
+    document.body.classList.add("no-transition");
 
-  clearTimeout(resizeTimer);
+    clearTimeout(resizeTimer);
 
-  resizeTimer = setTimeout(() => {
-    document.body.classList.remove("no-transition");
-  }, 400);
+    resizeTimer = setTimeout(() => {
+        document.body.classList.remove("no-transition");
+    }, 400);
 });
