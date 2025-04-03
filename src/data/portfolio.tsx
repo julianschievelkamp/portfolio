@@ -1,5 +1,7 @@
 import { Images } from "./types";
 
+import example from "assets/img/example.jpg";
+
 export const images: Images[] = [
     {
         title: "DADA YAGA, 2018",
@@ -10,6 +12,6 @@ export const images: Images[] = [
                 100 x 100 cm
             </>
         ),
-        src: "./src/assets/img/example.jpg",
+        src: example,
     },
 ];
