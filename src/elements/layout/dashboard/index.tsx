@@ -1,32 +1,19 @@
+import { images } from "data/portfolio";
 import { DashboardItem, StyledDashboard } from "./styles";
+import Image from "elements/components/image";
 
 export interface DashboardProps {}
 
 const Dashboard = ({}: DashboardProps) => {
     return (
         <StyledDashboard>
-            <DashboardItem></DashboardItem>
-            <DashboardItem></DashboardItem>
-            <DashboardItem></DashboardItem>
-            <DashboardItem></DashboardItem>
-            <DashboardItem></DashboardItem>
-            <DashboardItem></DashboardItem>
-            <DashboardItem></DashboardItem>
-            <DashboardItem></DashboardItem>
-            <DashboardItem></DashboardItem>
-            <DashboardItem></DashboardItem>
-            <DashboardItem></DashboardItem>
-            <DashboardItem></DashboardItem>
-            <DashboardItem></DashboardItem>
-            <DashboardItem></DashboardItem>
-            <DashboardItem></DashboardItem>
-            <DashboardItem></DashboardItem>
-            <DashboardItem></DashboardItem>
-            <DashboardItem></DashboardItem>
-            <DashboardItem></DashboardItem>
-            <DashboardItem></DashboardItem>
-            <DashboardItem></DashboardItem>
-            <DashboardItem></DashboardItem>
+            {images.map((image) => {
+                return (
+                    <DashboardItem key={image.title}>
+                        <Image src={image.src} alt={image.title} />
+                    </DashboardItem>
+                );
+            })}
         </StyledDashboard>
     );
 };
