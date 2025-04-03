@@ -19,7 +19,7 @@ export const DashboardItem = styled.div`
     width: 100%;
 
     @media ${queries.md} {
-        height: calc((100vw - 3.5rem - 20rem) / 4);
+        height: calc((100vw - 3.5rem - 15rem) / 4);
     }
 
     img {

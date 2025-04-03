@@ -19,7 +19,7 @@ export const PageContainer = styled.div`
     overflow-y: scroll;
 
     @media ${queries.md} {
-        padding-left: 20rem;
+        padding-left: 15rem;
         padding-top: unset;
     }
 `;

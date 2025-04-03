@@ -1,9 +1,11 @@
+import { Theme } from "data/types";
 import styled from "styled-components";
 import { queries, transition } from "styles/variables";
 
-export const StyledSidebar = styled.div<{ $isOpen: boolean }>`
-    background: blue;
-    width: 20rem;
+export const StyledSidebar = styled.div<{ $isOpen: boolean; theme: Theme }>`
+    background: ${({ theme }) => theme.body};
+    // background: blue;
+    width: 15rem;
     // TODO: platzhalter "5rem" für toggle sidebar button
     max-width: calc(100vw - 5rem);
     height: 100%;

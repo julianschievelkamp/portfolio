@@ -14,4 +14,48 @@ export const images: Images[] = [
         ),
         src: example,
     },
+    {
+        title: "DADA YAGA, 2018",
+        subTitle: (
+            <>
+                Analog on Paper
+                <br />
+                100 x 100 cm
+            </>
+        ),
+        src: example,
+    },
+    {
+        title: "DADA YAGA, 2018",
+        subTitle: (
+            <>
+                Analog on Paper
+                <br />
+                100 x 100 cm
+            </>
+        ),
+        src: example,
+    },
+    {
+        title: "DADA YAGA, 2018",
+        subTitle: (
+            <>
+                Analog on Paper
+                <br />
+                100 x 100 cm
+            </>
+        ),
+        src: example,
+    },
+    {
+        title: "DADA YAGA, 2018",
+        subTitle: (
+            <>
+                Analog on Paper
+                <br />
+                100 x 100 cm
+            </>
+        ),
+        src: example,
+    },
 ];
