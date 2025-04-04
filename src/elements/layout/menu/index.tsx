@@ -25,7 +25,7 @@ const Menu = ({ sidebarOpen, setSidebarOpen }: MenuProps) => {
                 <StyledIcon
                     size="2rem"
                     name={sidebarOpen ? "close" : "menu"}
-                    onClick={() => setSidebarOpen(!sidebarOpen)}
+                    onClick={() => !sidebarOpen && setSidebarOpen(true)}
                 />
             </Div>
         </StyledMenu>

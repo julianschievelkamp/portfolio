@@ -36,6 +36,7 @@ const App = () => {
 
                 <Sidebar
                     sidebarOpen={sidebarOpen}
+                    setSidebarOpen={setSidebarOpen}
                     theme={theme}
                     toggleTheme={toggleTheme}
                     currentPageIndex={currentPageIndex}

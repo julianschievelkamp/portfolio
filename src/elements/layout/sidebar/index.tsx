@@ -5,9 +5,12 @@ import Div from "elements/components/div";
 import { useMediaQuery } from "hooks/useMediaQuery";
 import { queries } from "styles/variables";
 import Navigation from "elements/layout/navigation";
+import { useRef } from "react";
+import { useClickOutside } from "hooks/useClickOutside";
 
 export interface SidebarProps {
     sidebarOpen: boolean;
+    setSidebarOpen: (open: boolean) => void;
     theme: string;
     toggleTheme: () => void;
     currentPageIndex: number;
@@ -16,6 +19,7 @@ export interface SidebarProps {
 
 const Sidebar = ({
     sidebarOpen,
+    setSidebarOpen,
     theme,
     toggleTheme,
     currentPageIndex,
@@ -23,8 +27,11 @@ const Sidebar = ({
 }: SidebarProps) => {
     const isMd = useMediaQuery(queries.md);
 
+    const ref = useRef(null);
+    useClickOutside(ref, () => setSidebarOpen(false));
+
     return (
-        <StyledSidebar $sidebarOpen={sidebarOpen}>
+        <StyledSidebar $sidebarOpen={sidebarOpen} ref={ref}>
             <Text type="headline" fontSize={isMd ? "1.5rem" : "1.25rem"}>
                 {lang.title}
             </Text>
