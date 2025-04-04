@@ -1,10 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 import { queries } from "./variables";
+import fonts from "./fonts";
 
 export default createGlobalStyle`
+    ${fonts};
+
     * {
         box-sizing: border-box;
-        font-family: "Segoe UI", Arial, sans-serif;
         -webkit-tap-highlight-color: transparent;
     }
 
@@ -16,9 +18,9 @@ export default createGlobalStyle`
         height: var(--100vh);
         overflow: hidden;
 
-        @media ${queries.xl} {
+        /* @media ${queries.xl} {
             font-size: 125%;
-        }
+        } */
     }
 
     .no-transition * {

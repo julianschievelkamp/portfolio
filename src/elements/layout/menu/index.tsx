@@ -2,6 +2,8 @@ import Text from "elements/components/text";
 import { StyledMenu } from "./styles";
 import { lang } from "data/lang";
 import { useMenu } from "hooks/useMenu";
+import { useMediaQuery } from "hooks/useMediaQuery";
+import { queries } from "styles/variables";
 
 export interface MenuProps {
     sidebarOpen: boolean;
@@ -10,10 +12,13 @@ export interface MenuProps {
 
 const Menu = ({ sidebarOpen, setSidebarOpen }: MenuProps) => {
     const { isVisible } = useMenu();
+    const isMd = useMediaQuery(queries.md);
 
     return (
         <StyledMenu $isVisible={isVisible}>
-            <Text>{lang.title}</Text>
+            <Text type="headline" fontSize={isMd ? "1.5rem" : "1.25rem"}>
+                {lang.title}
+            </Text>
 
             <button onClick={() => setSidebarOpen(!sidebarOpen)}>
                 Toggle Sidebar

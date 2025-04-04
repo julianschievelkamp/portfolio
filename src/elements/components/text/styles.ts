@@ -1,5 +1,5 @@
 import { Theme } from "data/types";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { transition } from "styles/variables";
 
 export const StyledText = styled.p<{
@@ -10,6 +10,7 @@ export const StyledText = styled.p<{
     $margin?: string;
     $fontSize?: string;
     $lineHeight?: string;
+    $type?: "paragraph" | "headline";
 }>`
     text-align: ${({ $textAlign }) => $textAlign};
     font-weight: ${({ $bold }) => ($bold ? "bold" : "normal")};
@@ -17,5 +18,14 @@ export const StyledText = styled.p<{
     margin: ${({ $margin }) => $margin};
     color: ${({ color, theme }) => color ?? theme.text};
     line-height: ${({ $lineHeight }) => $lineHeight};
-    transition: ${transition.fast};
+    transition: color ${transition.fast};
+    font-family: "Poppins", serif;
+
+    ${({ $type }) =>
+        $type === "headline" &&
+        css<{ theme: Theme; color?: string }>`
+            color: ${({ color, theme }) => color ?? theme.headline};
+            font-family: "PlayfairDisplay", serif;
+            font-weight: 900;
+        `}
 `;

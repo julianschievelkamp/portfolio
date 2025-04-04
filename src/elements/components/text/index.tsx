@@ -11,6 +11,7 @@ export interface TextProps {
     margin?: string;
     fontSize?: string;
     lineHeight?: string;
+    type?: "paragraph" | "headline";
 }
 
 const Text = ({
@@ -22,6 +23,7 @@ const Text = ({
     margin = "0",
     fontSize = "1rem",
     lineHeight = "1.5",
+    type = "paragraph",
     ...rest
 }: TextProps) => {
     return (
@@ -33,6 +35,7 @@ const Text = ({
             $margin={margin}
             $fontSize={fontSize}
             $lineHeight={lineHeight}
+            $type={type}
             {...rest}
         >
             {children}

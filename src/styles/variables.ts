@@ -3,12 +3,14 @@ import { css } from "styled-components";
 
 export const lightTheme: Theme = {
     body: "#FFFFFF",
-    text: "#000000",
+    text: "#444444",
+    headline: "#000000",
 };
 
 export const darkTheme: Theme = {
     body: "#000000",
     text: "#FFFFFF",
+    headline: "#FFFFFF",
 };
 
 export const queries = {

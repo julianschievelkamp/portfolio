@@ -4,15 +4,17 @@ import { ThemeProvider } from "styled-components";
 import { useTheme } from "hooks/useTheme";
 import { darkTheme, lightTheme, queries } from "styles/variables";
 import Sidebar from "elements/layout/sidebar";
-import Dashboard from "elements/layout/dashboard";
 import { useMediaQuery } from "hooks/useMediaQuery";
 import Menu from "elements/layout/menu";
 import { useState } from "react";
+import { pageData } from "data/pageData";
 
 const App = () => {
     const { theme, toggleTheme, isLoading } = useTheme();
-    const [sidebarOpen, setSidebarOpen] = useState(false);
     const isMd = useMediaQuery(queries.md);
+
+    const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [currentPageIndex, setCurrentPageIndex] = useState(0);
 
     if (isLoading) return <></>;
 
@@ -22,7 +24,7 @@ const App = () => {
                 <GlobalStyle />
 
                 <PageContainer id="page-container">
-                    <Dashboard />
+                    {pageData[currentPageIndex].content}
                 </PageContainer>
 
                 {!isMd && (
@@ -32,7 +34,12 @@ const App = () => {
                     />
                 )}
 
-                <Sidebar isOpen={sidebarOpen} toggleTheme={toggleTheme} />
+                <Sidebar
+                    isOpen={sidebarOpen}
+                    toggleTheme={toggleTheme}
+                    currentPageIndex={currentPageIndex}
+                    setCurrentPageIndex={setCurrentPageIndex}
+                />
             </StyledApp>
         </ThemeProvider>
     );

@@ -1,7 +1,9 @@
 export const lang = {
     title: (
         <>
-            Julian Schievelkamp
+            JULIAN
+            <br />
+            SCHIEVELKAMP
             <br />
             CGN #1994
         </>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { queries, transition } from "styles/variables";
 
-export const StyledDashboard = styled.div`
+export const StyledGrid = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 0.5rem;
@@ -12,14 +12,14 @@ export const StyledDashboard = styled.div`
     }
 `;
 
-export const DashboardItem = styled.div`
+export const GridItem = styled.div`
     overflow: hidden;
     position: relative;
     height: calc((100vw - 3rem) / 3);
     width: 100%;
 
     @media ${queries.md} {
-        height: calc((100vw - 3.5rem - 15rem) / 4);
+        height: calc((100vw - 3.5rem - 17rem) / 4);
     }
 
     img {
@@ -30,5 +30,16 @@ export const DashboardItem = styled.div`
         img {
             transform: scale(1.125);
         }
+    }
+
+    // disable drag drop and right click
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        cursor: pointer;
     }
 `;

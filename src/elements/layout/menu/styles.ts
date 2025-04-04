@@ -15,5 +15,4 @@ export const StyledMenu = styled.div<{ $isVisible: boolean; theme: Theme }>`
     left: 0;
     transform: ${({ $isVisible }) => `translateY(${$isVisible ? 0 : "-100%"})`};
     transition: ${transition.fast};
-    transition-delay: 200ms;
 `;

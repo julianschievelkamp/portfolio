@@ -8,7 +8,15 @@ export interface ImageProps {
 }
 
 const Image = ({ src, alt, width, height }: ImageProps) => {
-    return <StyledImage src={src} alt={alt} width={width} height={height} />;
+    return (
+        <StyledImage
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            loading="lazy"
+        />
+    );
 };
 
 export default Image;
