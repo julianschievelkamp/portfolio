@@ -1,5 +1,5 @@
 import Text from "elements/components/text";
-import { ScrollContainer, StyledSidebar } from "./styles";
+import { ScrollContainer, StyledIcon, StyledSidebar } from "./styles";
 import { lang } from "data/lang";
 import Div from "elements/components/div";
 import { useMediaQuery } from "hooks/useMediaQuery";
@@ -7,14 +7,16 @@ import { queries } from "styles/variables";
 import Navigation from "elements/layout/navigation";
 
 export interface SidebarProps {
-    isOpen: boolean;
+    sidebarOpen: boolean;
+    theme: string;
     toggleTheme: () => void;
     currentPageIndex: number;
     setCurrentPageIndex: (index: number) => void;
 }
 
 const Sidebar = ({
-    isOpen,
+    sidebarOpen,
+    theme,
     toggleTheme,
     currentPageIndex,
     setCurrentPageIndex,
@@ -22,7 +24,7 @@ const Sidebar = ({
     const isMd = useMediaQuery(queries.md);
 
     return (
-        <StyledSidebar $isOpen={isOpen}>
+        <StyledSidebar $sidebarOpen={sidebarOpen}>
             <Text type="headline" fontSize={isMd ? "1.5rem" : "1.25rem"}>
                 {lang.title}
             </Text>
@@ -38,7 +40,11 @@ const Sidebar = ({
                 />
 
                 <Div>
-                    <button onClick={() => toggleTheme()}>Toggle Theme</button>
+                    <StyledIcon
+                        size="1.5rem"
+                        name={theme === "light" ? "dark" : "light"}
+                        onClick={() => toggleTheme()}
+                    />
 
                     <Text fontSize="0.875rem" margin="1rem 0 0 0">
                         {lang.copyright}

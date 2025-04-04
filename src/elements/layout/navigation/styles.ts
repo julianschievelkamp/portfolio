@@ -1,3 +1,4 @@
+import { Theme } from "data/types";
 import Text from "elements/components/text";
 import styled from "styled-components";
 
@@ -15,8 +16,12 @@ export const NavElement = styled.div`
     }
 `;
 
-export const StyledText = styled(Text)<{ $isActive: boolean }>`
+export const StyledText = styled(Text)<{ $isActive: boolean; theme: Theme }>`
     display: inline-block;
-    background-color: ${({ $isActive }) => $isActive && "#ffca00"};
+    background-color: ${({ $isActive, theme }) => $isActive && theme.hover};
     padding: 0.25rem 0.5rem;
+
+    &:hover {
+        color: ${({ $isActive, theme }) => !$isActive && theme.hover};
+    }
 `;

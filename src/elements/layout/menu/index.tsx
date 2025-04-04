@@ -1,9 +1,10 @@
 import Text from "elements/components/text";
-import { StyledMenu } from "./styles";
+import { StyledIcon, StyledMenu } from "./styles";
 import { lang } from "data/lang";
 import { useMenu } from "hooks/useMenu";
 import { useMediaQuery } from "hooks/useMediaQuery";
 import { queries } from "styles/variables";
+import Div from "elements/components/div";
 
 export interface MenuProps {
     sidebarOpen: boolean;
@@ -20,12 +21,13 @@ const Menu = ({ sidebarOpen, setSidebarOpen }: MenuProps) => {
                 {lang.title}
             </Text>
 
-            <button
-                onClick={() => setSidebarOpen(!sidebarOpen)}
-                style={{ width: "5rem" }}
-            >
-                Toggle Sidebar
-            </button>
+            <Div height="100%" display="flex" alignItems="center">
+                <StyledIcon
+                    size="2rem"
+                    name={sidebarOpen ? "close" : "menu"}
+                    onClick={() => setSidebarOpen(!sidebarOpen)}
+                />
+            </Div>
         </StyledMenu>
     );
 };

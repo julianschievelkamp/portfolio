@@ -5,12 +5,16 @@ export const lightTheme: Theme = {
     body: "#FFFFFF",
     text: "#444444",
     headline: "#000000",
+    icon: "#444444",
+    hover: "#ffca00",
 };
 
 export const darkTheme: Theme = {
     body: "#000000",
     text: "#FFFFFF",
     headline: "#FFFFFF",
+    icon: "#FFFFFF",
+    hover: "#ffca00",
 };
 
 export const queries = {

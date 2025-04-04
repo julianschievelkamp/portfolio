@@ -1,19 +1,22 @@
 import { Theme } from "data/types";
+import Icon from "elements/components/icon";
 import styled from "styled-components";
 import { queries, scrollStyles, transition } from "styles/variables";
 
-export const StyledSidebar = styled.div<{ $isOpen: boolean; theme: Theme }>`
+export const StyledSidebar = styled.div<{
+    $sidebarOpen: boolean;
+    theme: Theme;
+}>`
     background: ${({ theme }) => theme.body};
-    // background: blue;
     width: 15rem;
-    // TODO: platzhalter "5rem" für toggle sidebar button
-    max-width: calc(100vw - 5rem);
+    max-width: calc(100vw - 4rem);
     height: 100%;
     position: fixed;
     padding: 1rem;
     top: 0;
     left: 0;
-    transform: ${({ $isOpen }) => `translateX(${$isOpen ? 0 : "-100%"})`};
+    transform: ${({ $sidebarOpen }) =>
+        `translateX(${$sidebarOpen ? 0 : "-100%"})`};
     transition: ${transition.fast};
     overflow: hidden;
     display: flex;
@@ -33,4 +36,12 @@ export const ScrollContainer = styled.div`
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+`;
+
+export const StyledIcon = styled(Icon)<{ theme: Theme }>`
+    &:hover {
+        svg {
+            fill: ${({ theme }) => theme.hover};
+        }
+    }
 `;
