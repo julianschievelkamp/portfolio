@@ -5,7 +5,7 @@ import { queries, scrollStyles, transition } from "styles/variables";
 export const StyledSidebar = styled.div<{ $isOpen: boolean; theme: Theme }>`
     background: ${({ theme }) => theme.body};
     // background: blue;
-    width: 17rem;
+    width: 15rem;
     // TODO: platzhalter "5rem" für toggle sidebar button
     max-width: calc(100vw - 5rem);
     height: 100%;
@@ -20,6 +20,7 @@ export const StyledSidebar = styled.div<{ $isOpen: boolean; theme: Theme }>`
     flex-direction: column;
 
     @media ${queries.md} {
+        width: 17rem;
         padding: 2rem;
         transform: translateX(0);
     }

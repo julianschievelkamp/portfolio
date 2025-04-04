@@ -9,9 +9,9 @@ export interface GridProps {
 const Grid = ({ items }: GridProps) => {
     return (
         <StyledGrid>
-            {items.map(({ title, src }) => {
+            {items.map(({ title, src }, index) => {
                 return (
-                    <GridItem key={title}>
+                    <GridItem key={title + index}>
                         <Image src={src} alt={title} />
                     </GridItem>
                 );

@@ -16,7 +16,10 @@ const Navigation = ({
                 const isActive = index === currentPageIndex;
 
                 return (
-                    <NavElement onClick={() => setCurrentPageIndex(index)}>
+                    <NavElement
+                        key={name}
+                        onClick={() => setCurrentPageIndex(index)}
+                    >
                         <StyledText
                             $isActive={isActive}
                             bold={isActive}

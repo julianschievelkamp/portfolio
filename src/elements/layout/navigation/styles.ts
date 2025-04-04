@@ -2,14 +2,17 @@ import Text from "elements/components/text";
 import styled from "styled-components";
 
 export const StyledNavigation = styled.div`
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    margin-left: 0.5rem;
 `;
 
-export const Label = styled.div``;
-
 export const NavElement = styled.div`
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     cursor: pointer;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 `;
 
 export const StyledText = styled(Text)<{ $isActive: boolean }>`

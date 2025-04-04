@@ -20,7 +20,10 @@ const Menu = ({ sidebarOpen, setSidebarOpen }: MenuProps) => {
                 {lang.title}
             </Text>
 
-            <button onClick={() => setSidebarOpen(!sidebarOpen)}>
+            <button
+                onClick={() => setSidebarOpen(!sidebarOpen)}
+                style={{ width: "5rem" }}
+            >
                 Toggle Sidebar
             </button>
         </StyledMenu>
