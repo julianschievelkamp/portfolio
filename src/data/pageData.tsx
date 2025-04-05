@@ -1,18 +1,14 @@
 import Grid from "elements/layout/grid";
 import { Page } from "./types";
-import { images, videos } from "./portfolioData";
+import { portfolioData } from "./portfolioData";
 
 export const pageData: Page[] = [
     {
         name: "Portfolio",
-        content: <Grid items={images} />,
+        content: <Grid items={portfolioData} />,
     },
     {
-        name: "Motion",
-        content: <Grid items={videos} />,
-    },
-    {
-        name: "Julian",
+        name: "About",
         content: <></>,
     },
 ];

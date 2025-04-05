@@ -10,7 +10,7 @@ import Mimikry from "assets/img/mimikry.jpg";
 import ACuriousThing from "assets/img/a_curious_thing.jpg";
 import Doppler from "assets/img/doppler.jpg";
 
-export const images: PortfolioItem[] = [
+export const portfolioData: PortfolioItem[] = [
     {
         title: "DADA YAGA, 2018",
         subTitle: (
@@ -103,20 +103,5 @@ export const images: PortfolioItem[] = [
             </>
         ),
         image: Doppler,
-    },
-];
-
-export const videos: PortfolioItem[] = [
-    {
-        title: "DADA YAGA, 2018",
-        subTitle: (
-            <>
-                Analog on Paper
-                <br />
-                100 x 100 cm
-            </>
-        ),
-        image: DadaYaga,
-        video: DadaYaga,
     },
 ];
