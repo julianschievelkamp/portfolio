@@ -1,12 +1,16 @@
 import { Theme } from "data/types";
 import styled from "styled-components";
+import { transition } from "styles/variables";
 
 export const StyledPopup = styled.div<{ $isOpen: boolean; theme: Theme }>`
     position: fixed;
     top: 0;
     left: 0;
     background: ${({ theme }) => theme.body};
-    display: ${({ $isOpen }) => ($isOpen ? "block" : "none")};
+    visibility: ${({ $isOpen }) => ($isOpen ? "visible" : "hidden")};
+    opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
+    pointer-events: ${({ $isOpen }) => ($isOpen ? "all" : "none")};
+    transition: ${transition.fast};
     width: 100%;
     height: 100%;
     padding: 1rem;
@@ -23,10 +27,10 @@ export const InnerWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 `;
 
-export const ImageContainer = styled.div`
+export const ItemContainer = styled.div`
     cursor: pointer;
 
     img,

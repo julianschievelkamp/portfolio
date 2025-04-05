@@ -19,6 +19,7 @@ const Video = ({ src, poster, width, height }: VideoProps) => {
                 poster={poster}
                 width={width}
                 height={height}
+                playsInline
                 loop
                 controls
                 controlsList="nodownload noremoteplayback noplaybackrate"

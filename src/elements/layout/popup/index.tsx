@@ -1,7 +1,7 @@
 import { useStore } from "hooks/useStore";
 import {
-    ImageContainer,
     InnerWrapper,
+    ItemContainer,
     OuterWrapper,
     SliderContainer,
     StyledPopup,
@@ -29,7 +29,7 @@ const Popup = ({ items }: PopupProps) => {
         <StyledPopup $isOpen={popupOpen}>
             <OuterWrapper>
                 <InnerWrapper>
-                    <ImageContainer>
+                    <ItemContainer>
                         {items[currentPortfolioIndex].video ? (
                             <Video
                                 poster={items[currentPortfolioIndex].image}
@@ -41,7 +41,7 @@ const Popup = ({ items }: PopupProps) => {
                                 alt={items[currentPortfolioIndex].title}
                             />
                         )}
-                    </ImageContainer>
+                    </ItemContainer>
 
                     <Text textAlign="center" margin="1rem 0 0 0">
                         {items[currentPortfolioIndex].title}
@@ -71,7 +71,7 @@ const Popup = ({ items }: PopupProps) => {
                 })}
             </SliderContainer>
 
-            <Div position="absolute" top="1.5rem" right="1rem">
+            <Div position="absolute" top="1rem" right="1rem">
                 <Icon
                     size="2rem"
                     name="close"
