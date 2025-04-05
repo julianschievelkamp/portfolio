@@ -9,6 +9,7 @@ export const StyledNavigation = styled.div`
 
 export const NavElement = styled.div`
     margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
     cursor: pointer;
 
     &:last-child {
