@@ -9,99 +9,60 @@ import Aura from "assets/img/aura.jpg";
 import Mimikry from "assets/img/mimikry.jpg";
 import ACuriousThing from "assets/img/a_curious_thing.jpg";
 import Doppler from "assets/img/doppler.jpg";
+import Romina from "assets/img/romina.jpg";
+import DNA1 from "assets/img/dna_1.jpg";
+import DNA2 from "assets/img/dna_2.jpg";
+
+import AndromedaVideo from "assets/videos/andromeda.mp4";
 
 export const portfolioData: PortfolioItem[] = [
     {
         title: "DADA YAGA, 2018",
-        subTitle: (
-            <>
-                Analog on Paper
-                <br />
-                100 x 100 cm
-            </>
-        ),
         image: DadaYaga,
     },
     {
         title: "ANDROMEDA, 2018",
-        subTitle: (
-            <>
-                Analog on Paper
-                <br />
-                100 x 100 cm
-            </>
-        ),
         image: Andromeda,
+        video: AndromedaVideo,
     },
     {
         title: "VERSUS I, 2018",
-        subTitle: (
-            <>
-                Analog on Paper
-                <br />
-                100 x 100 cm
-            </>
-        ),
         image: Versus1,
     },
     {
         title: "VERSUS II, 2018",
-        subTitle: (
-            <>
-                Analog on Paper
-                <br />
-                100 x 100 cm
-            </>
-        ),
         image: Versus2,
     },
     {
         title: "VISCOSITY, 2021",
-        subTitle: (
-            <>
-                Digital on Paper
-                <br />
-                100 x 100 cm
-            </>
-        ),
         image: Viscosity,
     },
     {
         title: "AURA, 2019",
-        subTitle: (
-            <>
-                Hybrid on Paper
-                <br />
-                100 x 100 cm
-            </>
-        ),
         image: Aura,
     },
     {
         title: "MIMIKRY, 2018",
-        subTitle: <>Analog Archive</>,
         image: Mimikry,
     },
     {
         title: "A CURIOUS THING, 2017",
-        subTitle: (
-            <>
-                Hybrid on Paper
-                <br />
-                100 x 100 cm
-            </>
-        ),
         image: ACuriousThing,
     },
     {
         title: "DOPPLER I, 2021",
-        subTitle: (
-            <>
-                Hybrid on Paper
-                <br />
-                100 x 100 cm
-            </>
-        ),
         image: Doppler,
+    },
+    {
+        title: "ROMINA, 2016",
+        image: Romina,
+    },
+    {
+        title: "DNA (XY) I, 2017",
+        image: DNA1,
+    },
+    {
+        title: "DNA (XY) II, 2017",
+        image: DNA2,
     },
 ];

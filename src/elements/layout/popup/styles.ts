@@ -23,11 +23,15 @@ export const InnerWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 2rem;
 `;
 
 export const ImageContainer = styled.div`
-    img {
-        max-height: calc(100vh - 17rem);
+    cursor: pointer;
+
+    img,
+    video {
+        max-height: calc(100vh - 15rem);
         border: 8px solid black;
     }
 `;
@@ -35,6 +39,6 @@ export const ImageContainer = styled.div`
 export const SliderContainer = styled.div`
     position: absolute;
     bottom: 1rem;
-    width: 100%;
     display: flex;
+    overflow: hidden;
 `;

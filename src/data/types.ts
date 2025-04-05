@@ -8,7 +8,6 @@ export type Theme = {
 
 export type PortfolioItem = {
     title: string;
-    subTitle: React.ReactNode;
     image: string;
     video?: string;
 };

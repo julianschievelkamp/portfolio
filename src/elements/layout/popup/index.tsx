@@ -11,6 +11,7 @@ import Icon from "elements/components/icon";
 import Div from "elements/components/div";
 import Text from "elements/components/text";
 import Image from "elements/components/image";
+import Video from "elements/components/video";
 
 export interface PopupProps {
     items: PortfolioItem[];
@@ -29,18 +30,21 @@ const Popup = ({ items }: PopupProps) => {
             <OuterWrapper>
                 <InnerWrapper>
                     <ImageContainer>
-                        <Image
-                            src={items[currentPortfolioIndex].image}
-                            alt={items[currentPortfolioIndex].title}
-                        />
+                        {items[currentPortfolioIndex].video ? (
+                            <Video
+                                poster={items[currentPortfolioIndex].image}
+                                src={items[currentPortfolioIndex].video}
+                            />
+                        ) : (
+                            <Image
+                                src={items[currentPortfolioIndex].image}
+                                alt={items[currentPortfolioIndex].title}
+                            />
+                        )}
                     </ImageContainer>
 
                     <Text textAlign="center" margin="1rem 0 0 0">
                         {items[currentPortfolioIndex].title}
-                    </Text>
-
-                    <Text textAlign="center" margin="1rem 0 0 0">
-                        {items[currentPortfolioIndex].subTitle}
                     </Text>
                 </InnerWrapper>
             </OuterWrapper>
@@ -49,12 +53,16 @@ const Popup = ({ items }: PopupProps) => {
                 {items.map((item, index) => {
                     return (
                         <Div
-                            display="flex"
+                            key={item.title}
                             margin="0 0.25rem 0 0"
+                            height="3rem"
+                            width="3rem"
+                            overflow="hidden"
                             onClick={() => setCurrentPortfolioIndex(index)}
+                            opacity={index === currentPortfolioIndex ? 1 : 0.5}
                         >
                             <Image
-                                height="3rem"
+                                width="100%"
                                 src={item.image}
                                 alt={item.title}
                             />

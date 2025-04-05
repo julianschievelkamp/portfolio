@@ -22,6 +22,7 @@ export interface DivProps {
     right?: string;
     bottom?: string;
     opacity?: number;
+    overflow?: string;
 }
 
 const Div = ({
@@ -44,6 +45,7 @@ const Div = ({
     right,
     bottom,
     opacity,
+    overflow,
 }: DivProps) => {
     return (
         <StyledDiv
@@ -65,6 +67,7 @@ const Div = ({
             $right={right}
             $bottom={bottom}
             $opacity={opacity}
+            $overflow={overflow}
         >
             {children}
         </StyledDiv>
