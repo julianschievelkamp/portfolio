@@ -9,8 +9,8 @@ export type Theme = {
 export type PortfolioItem = {
     title: string;
     subTitle: React.ReactNode;
-    thumbnail: string;
-    src: string;
+    image: string;
+    video?: string;
 };
 
 export type Page = {
