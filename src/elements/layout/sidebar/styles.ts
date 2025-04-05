@@ -44,6 +44,6 @@ export const StyledText = styled(Text)<{
     color: ${({ theme }) => theme.body};
 
     @media ${queries.md} {
-        color: ${({ theme }) => theme.headline};
+        color: ${({ theme }) => theme.text};
     }
 `;

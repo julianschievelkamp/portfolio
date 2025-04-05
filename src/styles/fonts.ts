@@ -1,7 +1,7 @@
 import { css } from "styled-components";
 
 import PlayfairDisplay from "assets/fonts/PlayfairDisplay-VariableFont_wght.ttf";
-import Poppins from "assets/fonts/Poppins-Regular.ttf";
+import Poppins from "assets/fonts/Poppins-Light.ttf";
 import PoppinsBold from "assets/fonts/Poppins-Bold.ttf";
 
 export default css`

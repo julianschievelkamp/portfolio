@@ -24,7 +24,6 @@ export const StyledText = styled.p<{
     ${({ $type }) =>
         $type === "headline" &&
         css<{ theme: Theme; color?: string }>`
-            color: ${({ color, theme }) => color ?? theme.headline};
             font-family: "PlayfairDisplay", serif;
             font-weight: 900;
         `}

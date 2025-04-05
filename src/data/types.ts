@@ -1,7 +1,6 @@
 export type Theme = {
     body: string;
     text: string;
-    headline: string;
     icon: string;
     hover: string;
 };
