@@ -1,5 +1,4 @@
 import { Theme } from "data/types";
-import Icon from "elements/components/icon";
 import styled from "styled-components";
 import { transition } from "styles/variables";
 
@@ -15,12 +14,4 @@ export const StyledMenu = styled.div<{ $isVisible: boolean; theme: Theme }>`
     left: 0;
     transform: ${({ $isVisible }) => `translateY(${$isVisible ? 0 : "-100%"})`};
     transition: ${transition.fast};
-`;
-
-export const StyledIcon = styled(Icon)<{ theme: Theme }>`
-    &:hover {
-        svg {
-            fill: ${({ theme }) => theme.hover};
-        }
-    }
 `;

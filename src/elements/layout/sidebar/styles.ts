@@ -1,5 +1,5 @@
 import { Theme } from "data/types";
-import Icon from "elements/components/icon";
+import Text from "elements/components/text";
 import styled from "styled-components";
 import { queries, scrollStyles, transition } from "styles/variables";
 
@@ -38,10 +38,12 @@ export const ScrollContainer = styled.div`
     height: 100%;
 `;
 
-export const StyledIcon = styled(Icon)<{ theme: Theme }>`
-    &:hover {
-        svg {
-            fill: ${({ theme }) => theme.hover};
-        }
+export const StyledText = styled(Text)<{
+    theme: Theme;
+}>`
+    color: ${({ theme }) => theme.body};
+
+    @media ${queries.md} {
+        color: ${({ theme }) => theme.headline};
     }
 `;

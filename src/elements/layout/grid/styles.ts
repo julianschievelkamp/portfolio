@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { queries, transition } from "styles/variables";
 
 export const StyledGrid = styled.div`
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 0.25rem;
@@ -19,6 +20,7 @@ export const GridItem = styled.div`
     position: relative;
     height: calc((100vw - 1.5rem) / 3);
     width: 100%;
+    cursor: pointer;
 
     @media ${queries.md} {
         height: calc((100vw - 3.5rem - 17rem) / 4);

@@ -1,11 +1,17 @@
 import { useState, useEffect } from "react";
+import { useStore } from "./useStore";
 
 export const useMenu = () => {
     const [isVisible, setVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
+    const { sidebarOpen } = useStore();
 
     const controlMenu = (e: any) => {
-        if (e.target.scrollTop > 120 && e.target.scrollTop > lastScrollY) {
+        if (
+            !sidebarOpen &&
+            e.target.scrollTop > 120 &&
+            e.target.scrollTop > lastScrollY
+        ) {
             // if scroll down hide the menu
             setVisible(false);
         } else {

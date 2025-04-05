@@ -1,15 +1,10 @@
 import { pageData } from "data/pageData";
 import { NavElement, StyledNavigation, StyledText } from "./styles";
+import { useStore } from "hooks/useStore";
 
-export interface NavigationProps {
-    currentPageIndex: number;
-    setCurrentPageIndex: (index: number) => void;
-}
+const Navigation = () => {
+    const { currentPageIndex, setCurrentPageIndex } = useStore();
 
-const Navigation = ({
-    currentPageIndex,
-    setCurrentPageIndex,
-}: NavigationProps) => {
     return (
         <StyledNavigation>
             {pageData.map(({ name }, index) => {

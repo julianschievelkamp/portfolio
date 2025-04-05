@@ -6,15 +6,16 @@ import { darkTheme, lightTheme, queries } from "styles/variables";
 import Sidebar from "elements/layout/sidebar";
 import { useMediaQuery } from "hooks/useMediaQuery";
 import Menu from "elements/layout/menu";
-import { useState } from "react";
 import { pageData } from "data/pageData";
+import Popup from "elements/layout/popup";
+import { useStore } from "hooks/useStore";
+import { portfolioData } from "data/portfolioData";
 
 const App = () => {
     const { theme, toggleTheme, isLoading } = useTheme();
     const isMd = useMediaQuery(queries.md);
 
-    const [sidebarOpen, setSidebarOpen] = useState(false);
-    const [currentPageIndex, setCurrentPageIndex] = useState(0);
+    const { currentPageIndex } = useStore();
 
     if (isLoading) return <></>;
 
@@ -27,21 +28,11 @@ const App = () => {
                     {pageData[currentPageIndex].content}
                 </PageContainer>
 
-                {!isMd && (
-                    <Menu
-                        sidebarOpen={sidebarOpen}
-                        setSidebarOpen={setSidebarOpen}
-                    />
-                )}
+                <Sidebar theme={theme} toggleTheme={toggleTheme} />
 
-                <Sidebar
-                    sidebarOpen={sidebarOpen}
-                    setSidebarOpen={setSidebarOpen}
-                    theme={theme}
-                    toggleTheme={toggleTheme}
-                    currentPageIndex={currentPageIndex}
-                    setCurrentPageIndex={setCurrentPageIndex}
-                />
+                {!isMd && <Menu />}
+
+                <Popup items={portfolioData} />
             </StyledApp>
         </ThemeProvider>
     );

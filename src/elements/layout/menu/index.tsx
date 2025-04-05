@@ -1,18 +1,17 @@
 import Text from "elements/components/text";
-import { StyledIcon, StyledMenu } from "./styles";
+import { StyledMenu } from "./styles";
 import { lang } from "data/lang";
 import { useMenu } from "hooks/useMenu";
 import { useMediaQuery } from "hooks/useMediaQuery";
 import { queries } from "styles/variables";
 import Div from "elements/components/div";
+import { useStore } from "hooks/useStore";
+import Icon from "elements/components/icon";
 
-export interface MenuProps {
-    sidebarOpen: boolean;
-    setSidebarOpen: (open: boolean) => void;
-}
-
-const Menu = ({ sidebarOpen, setSidebarOpen }: MenuProps) => {
+const Menu = () => {
+    const { sidebarOpen, setSidebarOpen } = useStore();
     const { isVisible } = useMenu();
+
     const isMd = useMediaQuery(queries.md);
 
     return (
@@ -22,7 +21,7 @@ const Menu = ({ sidebarOpen, setSidebarOpen }: MenuProps) => {
             </Text>
 
             <Div height="100%" display="flex" alignItems="center">
-                <StyledIcon
+                <Icon
                     size="2rem"
                     name={sidebarOpen ? "close" : "menu"}
                     onClick={() => !sidebarOpen && setSidebarOpen(true)}

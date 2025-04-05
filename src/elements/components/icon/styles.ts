@@ -25,6 +25,12 @@ export const StyledIcon = styled.div<{
         height: ${({ $size }) => $size};
     }
 
+    &:hover {
+        svg {
+            fill: ${({ theme }) => theme.hover};
+        }
+    }
+
     ${({ onClick }) =>
         onClick &&
         css`

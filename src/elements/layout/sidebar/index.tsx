@@ -1,5 +1,5 @@
 import Text from "elements/components/text";
-import { ScrollContainer, StyledIcon, StyledSidebar } from "./styles";
+import { ScrollContainer, StyledSidebar, StyledText } from "./styles";
 import { lang } from "data/lang";
 import Div from "elements/components/div";
 import { useMediaQuery } from "hooks/useMediaQuery";
@@ -7,24 +7,17 @@ import { queries } from "styles/variables";
 import Navigation from "elements/layout/navigation";
 import { useRef } from "react";
 import { useClickOutside } from "hooks/useClickOutside";
+import { useStore } from "hooks/useStore";
+import Icon from "elements/components/icon";
 
 export interface SidebarProps {
-    sidebarOpen: boolean;
-    setSidebarOpen: (open: boolean) => void;
     theme: string;
     toggleTheme: () => void;
-    currentPageIndex: number;
-    setCurrentPageIndex: (index: number) => void;
 }
 
-const Sidebar = ({
-    sidebarOpen,
-    setSidebarOpen,
-    theme,
-    toggleTheme,
-    currentPageIndex,
-    setCurrentPageIndex,
-}: SidebarProps) => {
+const Sidebar = ({ theme, toggleTheme }: SidebarProps) => {
+    const { sidebarOpen, setSidebarOpen } = useStore();
+
     const isMd = useMediaQuery(queries.md);
 
     const ref = useRef(null);
@@ -32,23 +25,19 @@ const Sidebar = ({
 
     return (
         <StyledSidebar $sidebarOpen={sidebarOpen} ref={ref}>
-            <Text type="headline" fontSize={isMd ? "1.5rem" : "1.25rem"}>
+            <StyledText type="headline" fontSize={isMd ? "1.5rem" : "1.25rem"}>
                 {lang.title}
-            </Text>
+            </StyledText>
 
             <Text fontSize="0.875rem" margin="1rem 0 3rem 0">
                 {lang.intro}
             </Text>
 
             <ScrollContainer>
-                <Navigation
-                    currentPageIndex={currentPageIndex}
-                    setCurrentPageIndex={setCurrentPageIndex}
-                />
+                <Navigation />
 
                 <Div>
-                    <StyledIcon
-                        size="1.5rem"
+                    <Icon
                         name={theme === "light" ? "dark" : "light"}
                         onClick={() => toggleTheme()}
                     />
