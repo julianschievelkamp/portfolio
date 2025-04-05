@@ -5,16 +5,17 @@ export interface ImageProps {
     alt: string;
     width?: string;
     height?: string;
+    className?: string;
 }
 
-const Image = ({ src, alt, width, height }: ImageProps) => {
+const Image = ({ src, alt, width, height, className }: ImageProps) => {
     return (
         <StyledImage
             src={src}
             alt={alt}
             width={width}
             height={height}
-            loading="lazy"
+            className={className}
         />
     );
 };

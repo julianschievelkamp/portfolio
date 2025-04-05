@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const StyledImage = styled.img`
-    width: ${({ width }) => width ?? "100%"};
-    height: ${({ height }) => height ?? "100%"};
+    width: ${({ width }) => width};
+    height: ${({ height }) => height};
+    max-width: 100%;
+    max-height: 100%;
 `;

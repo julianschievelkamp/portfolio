@@ -21,7 +21,12 @@ const Grid = ({ items }: GridProps) => {
                             setPopupOpen(true);
                         }}
                     >
-                        <Image src={image} alt={title} />
+                        <Image
+                            width="100%"
+                            height="100%"
+                            src={image}
+                            alt={title}
+                        />
                     </GridItem>
                 );
             })}
