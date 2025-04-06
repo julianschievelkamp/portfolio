@@ -9,6 +9,12 @@ import Aura from "assets/img/aura.jpg";
 import Mimikry from "assets/img/mimikry.jpg";
 import ACuriousThing from "assets/img/a_curious_thing.jpg";
 import Doppler from "assets/img/doppler.jpg";
+import TranscendingEgo from "assets/img/transcending_ego.jpg";
+import Kiyoshi from "assets/img/kiyoshi.jpg";
+import XVII from "assets/img/xvii.jpg";
+import Consciousness from "assets/img/consciousness.jpg";
+import Maya1 from "assets/img/maya_1.jpg";
+import Maya2 from "assets/img/maya_2.jpg";
 import Romina from "assets/img/romina.jpg";
 import DNA1 from "assets/img/dna_1.jpg";
 import DNA2 from "assets/img/dna_2.jpg";
@@ -66,6 +72,38 @@ export const portfolioData: PortfolioItem[] = [
         image: Doppler,
         palette: ["darkgreen", "blue", "red", "orange"],
     },
+    {
+        title: "TRANSCENDING EGO, 2017",
+        image: TranscendingEgo,
+        palette: ["darkgreen", "blue", "red", "orange"],
+    },
+    {
+        title: "KIYOSHI, 2022",
+        image: Kiyoshi,
+        palette: ["darkgreen", "blue", "red", "orange"],
+    },
+    {
+        title: "XVII, 2022",
+        image: XVII,
+        palette: ["darkgreen", "blue", "red", "orange"],
+    },
+
+    {
+        title: "CONSCIOUSNESS, 2017",
+        image: Consciousness,
+        palette: ["darkgreen", "blue", "red", "orange"],
+    },
+    {
+        title: "MAYA I, 2017",
+        image: Maya1,
+        palette: ["darkgreen", "blue", "red", "orange"],
+    },
+    {
+        title: "MAYA II, 2017",
+        image: Maya2,
+        palette: ["darkgreen", "blue", "red", "orange"],
+    },
+
     {
         title: "ROMINA, 2016",
         image: Romina,
