@@ -26,3 +26,7 @@ export const StyledText = styled(Text)<{ $isActive: boolean; theme: Theme }>`
         color: ${({ $isActive, theme }) => !$isActive && theme.hover};
     }
 `;
+
+export const Label = styled(Text)<{ theme: Theme }>`
+    color: ${({ theme }) => theme.icon};
+`;

@@ -1,16 +1,17 @@
 import { pageData } from "data/pageData";
-import { NavElement, StyledNavigation, StyledText } from "./styles";
+import { Label, NavElement, StyledNavigation, StyledText } from "./styles";
 import { useStore } from "hooks/useStore";
-import Text from "elements/components/text";
+import { lang } from "data/lang";
 
 const Navigation = () => {
     const { currentPageIndex, setCurrentPageIndex } = useStore();
 
     return (
         <StyledNavigation>
-            <Text margin="0 0 0.5rem 0" fontSize="0.875rem" color="#999999">
-                WORK
-            </Text>
+            <Label margin="0 0 0.5rem 0" fontSize="0.875rem">
+                {lang.work}
+            </Label>
+
             {pageData.map(({ name }, index) => {
                 const isActive = index === currentPageIndex;
 

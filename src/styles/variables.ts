@@ -4,14 +4,14 @@ import { css } from "styled-components";
 export const lightTheme: Theme = {
     body: "#FFFFFF",
     text: "#000000",
-    icon: "#000000",
+    icon: "#999999",
     hover: "#ffca00",
 };
 
 export const darkTheme: Theme = {
     body: "#000000",
     text: "#FFFFFF",
-    icon: "#FFFFFF",
+    icon: "#999999",
     hover: "#ffca00",
 };
 
