@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { StyledVideo } from "./styles";
 import Div from "../div";
 
@@ -10,19 +9,17 @@ export interface VideoProps {
 }
 
 const Video = ({ src, poster, width, height }: VideoProps) => {
-    const ref = useRef<any>(null);
-
     return (
         <Div>
             <StyledVideo
-                ref={ref}
+                key={src}
                 poster={poster}
                 width={width}
                 height={height}
                 playsInline
                 loop
                 controls
-                controlsList="nodownload noremoteplayback noplaybackrate"
+                controlsList="nodownload noplaybackrate"
                 disablePictureInPicture
             >
                 <source src={src} type="video/mp4" />

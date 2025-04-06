@@ -14,6 +14,8 @@ import DNA1 from "assets/img/dna_1.jpg";
 import DNA2 from "assets/img/dna_2.jpg";
 
 import AndromedaVideo from "assets/videos/andromeda.mp4";
+import VersusVideo from "assets/videos/versus.mp4";
+import ViscosityVideo from "assets/videos/viscosity_1080.mp4";
 
 export const portfolioData: PortfolioItem[] = [
     {
@@ -28,6 +30,7 @@ export const portfolioData: PortfolioItem[] = [
     {
         title: "VERSUS I, 2018",
         image: Versus1,
+        video: VersusVideo,
     },
     {
         title: "VERSUS II, 2018",
@@ -36,6 +39,7 @@ export const portfolioData: PortfolioItem[] = [
     {
         title: "VISCOSITY, 2021",
         image: Viscosity,
+        video: ViscosityVideo,
     },
     {
         title: "AURA, 2019",
