@@ -259,8 +259,10 @@ Error generating stack: `+e.message+`
     width: ${({$size:i})=>i};
     height: ${({$size:i})=>i};
     margin: ${({$margin:i})=>i};
+    padding: ${({$padding:i})=>i};
     max-width: 100%;
     max-height: 100%;
+    box-sizing: content-box;
 
     svg {
         transition: ${ia.fast};
@@ -278,7 +280,7 @@ Error generating stack: `+e.message+`
     ${({onClick:i})=>i&&na`
             cursor: pointer;
         `}
-`,zr=({name:i,color:f,onClick:o,className:r,size:y="1rem",margin:p})=>{const T=Km[i];return G.jsx(Jm,{color:f,$size:y,$margin:p,onClick:o,className:r,children:G.jsx(T,{})})},$m=({theme:i,toggleTheme:f})=>{const{sidebarOpen:o,setSidebarOpen:r}=je(),y=Tr(ie.md),p=st.useRef(null);return Qm(p,()=>r(!1)),G.jsxs(om,{$sidebarOpen:o,ref:p,children:[G.jsx(hm,{type:"headline",fontSize:y?"1.5rem":"1.25rem",children:_i.title}),G.jsx(ua,{fontSize:"0.875rem",margin:"1rem 0 3rem 0",children:_i.intro}),G.jsxs(dm,{children:[G.jsx(Xm,{}),G.jsxs(an,{children:[G.jsx(zr,{name:i==="light"?"dark":"light",onClick:()=>f()}),G.jsx(ua,{fontSize:"0.875rem",margin:"1rem 0 0 0",children:_i.copyright})]})]})]})},km=Rt.div`
+`,zr=({name:i,color:f,onClick:o,className:r,size:y="1rem",margin:p,padding:T})=>{const j=Km[i];return G.jsx(Jm,{color:f,$size:y,$margin:p,$padding:T,onClick:o,className:r,children:G.jsx(j,{})})},$m=({theme:i,toggleTheme:f})=>{const{sidebarOpen:o,setSidebarOpen:r}=je(),y=Tr(ie.md),p=st.useRef(null);return Qm(p,()=>r(!1)),G.jsxs(om,{$sidebarOpen:o,ref:p,children:[G.jsx(hm,{type:"headline",fontSize:y?"1.5rem":"1.25rem",children:_i.title}),G.jsx(ua,{fontSize:"0.875rem",margin:"1rem 0 3rem 0",children:_i.intro}),G.jsxs(dm,{children:[G.jsx(Xm,{}),G.jsxs(an,{children:[G.jsx(zr,{padding:"0.5rem",name:i==="light"?"dark":"light",onClick:()=>f()}),G.jsx(ua,{fontSize:"0.875rem",margin:"1rem 0 0 0",children:_i.copyright})]})]})]})},km=Rt.div`
     background: ${({theme:i})=>i.body};
     width: 100vw;
     position: fixed;
@@ -290,7 +292,7 @@ Error generating stack: `+e.message+`
     left: 0;
     transform: ${({$isVisible:i})=>`translateY(${i?0:"-100%"})`};
     transition: ${ia.fast};
-`,Wm=()=>{const[i,f]=st.useState(!0),[o,r]=st.useState(0),{sidebarOpen:y}=je(),p=T=>{!y&&T.target.scrollTop>120&&T.target.scrollTop>o?f(!1):f(!0),r(T.target.scrollTop)};return st.useEffect(()=>{const T=document.getElementById("page-container");return T==null||T.addEventListener("scroll",p),()=>{T==null||T.removeEventListener("scroll",p)}},[o]),{isVisible:i}},Fm=()=>{const{sidebarOpen:i,setSidebarOpen:f}=je(),{isVisible:o}=Wm(),r=Tr(ie.md);return G.jsxs(km,{$isVisible:o,children:[G.jsx(ua,{type:"headline",fontSize:r?"1.5rem":"1.25rem",children:_i.title}),G.jsx(an,{height:"100%",display:"flex",alignItems:"center",children:G.jsx(zr,{size:"2rem",name:i?"close":"menu",onClick:()=>!i&&f(!0)})})]})},Im=Rt.div`
+`,Wm=()=>{const[i,f]=st.useState(!0),[o,r]=st.useState(0),{sidebarOpen:y}=je(),p=T=>{!y&&T.target.scrollTop>120&&T.target.scrollTop>o?f(!1):f(!0),r(T.target.scrollTop)};return st.useEffect(()=>{const T=document.getElementById("page-container");return T==null||T.addEventListener("scroll",p),()=>{T==null||T.removeEventListener("scroll",p)}},[o]),{isVisible:i}},Fm=()=>{const{sidebarOpen:i,setSidebarOpen:f}=je(),{isVisible:o}=Wm(),r=Tr(ie.md);return G.jsxs(km,{$isVisible:o,children:[G.jsx(ua,{type:"headline",fontSize:r?"1.5rem":"1.25rem",children:_i.title}),G.jsx(an,{height:"100%",display:"flex",alignItems:"center",children:G.jsx(zr,{size:"2rem",padding:"1rem 0 1rem 1rem",name:i?"close":"menu",onClick:()=>!i&&f(!0)})})]})},Im=Rt.div`
     position: fixed;
     top: 0;
     left: 0;
