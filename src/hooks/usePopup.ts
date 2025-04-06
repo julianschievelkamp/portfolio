@@ -53,16 +53,16 @@ export const usePopup = (items: PortfolioItem[]) => {
     };
 
     useEffect(() => {
-        window.addEventListener("keydown", onKeyDown);
-        window.addEventListener("touchstart", onTouchStart);
-        window.addEventListener("touchmove", onTouchMove);
-        window.addEventListener("touchend", onTouchEnd);
+        document.addEventListener("keydown", onKeyDown);
+        document.addEventListener("touchstart", onTouchStart);
+        document.addEventListener("touchmove", onTouchMove);
+        document.addEventListener("touchend", onTouchEnd);
 
         return () => {
-            window.removeEventListener("keydown", onKeyDown);
-            window.removeEventListener("touchstart", onTouchStart);
-            window.removeEventListener("touchmove", onTouchMove);
-            window.removeEventListener("touchend", onTouchEnd);
+            document.removeEventListener("keydown", onKeyDown);
+            document.removeEventListener("touchstart", onTouchStart);
+            document.removeEventListener("touchmove", onTouchMove);
+            document.removeEventListener("touchend", onTouchEnd);
         };
     }, [popupOpen, currentPortfolioIndex, touchStart, touchEnd]);
 };

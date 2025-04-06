@@ -29,6 +29,14 @@ export const StyledSidebar = styled.div<{
     }
 `;
 
+export const MobileBackground = styled.div`
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+`;
+
 export const ScrollContainer = styled.div`
     ${scrollStyles}
 
