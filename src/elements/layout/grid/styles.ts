@@ -35,15 +35,4 @@ export const GridItem = styled.div`
             transform: scale(1.125);
         }
     }
-
-    // disable drag drop and right click
-    &::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        cursor: pointer;
-    }
 `;
