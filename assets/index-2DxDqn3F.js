@@ -224,21 +224,11 @@ Error generating stack: `+e.message+`
             transform: scale(1.125);
         }
     }
-
-    // disable drag drop and right click
-    &::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        cursor: pointer;
-    }
 `,bm=zt.img`
     width: ${({width:i})=>i};
     height: ${({height:i})=>i};
     max-width: 100%;
+    pointer-events: none;
 `,pr=({src:i,alt:f,width:o,height:r,className:v})=>q.jsx(bm,{src:i,alt:f,width:o,height:r,className:v}),Zd=i=>{let f;const o=new Set,r=(S,x)=>{const C=typeof S=="function"?S(f):S;if(!Object.is(C,f)){const B=f;f=x??(typeof C!="object"||C===null)?C:Object.assign({},f,C),o.forEach(G=>G(f,B))}},v=()=>f,N={setState:r,getState:v,getInitialState:()=>M,subscribe:S=>(o.add(S),()=>o.delete(S))},M=f=i(r,v,N);return N},Em=i=>i?Zd(i):Zd,Am=i=>i;function Tm(i,f=Am){const o=gl.useSyncExternalStore(i.subscribe,()=>f(i.getState()),()=>f(i.getInitialState()));return gl.useDebugValue(o),o}const Ld=i=>{const f=Em(i),o=r=>Tm(f,r);return Object.assign(o,f),o},zm=i=>i?Ld(i):Ld,je=zm(i=>({sidebarOpen:!1,currentPageIndex:0,currentPortfolioIndex:0,popupOpen:!1,setSidebarOpen:f=>i(()=>({sidebarOpen:f})),setCurrentPageIndex:f=>i(()=>({currentPageIndex:f})),setCurrentPortfolioIndex:f=>i(()=>({currentPortfolioIndex:f})),setPopupOpen:f=>i(()=>({popupOpen:f}))})),Om=({items:i})=>{const{setCurrentPortfolioIndex:f,setPopupOpen:o}=je();return q.jsx(pm,{children:i.map(({title:r,image:v},b)=>q.jsx(Sm,{onClick:()=>{f(b),o(!0)},children:q.jsx(pr,{width:"100%",src:v,alt:r})},r+b))})},_m="/portfolio/assets/dada_yaga-KcWJlrPV.jpg",Mm="/portfolio/assets/andromeda-_EZG6Ldo.jpg",Dm="/portfolio/assets/versus_1-atx7dXmc.jpg",Rm="/portfolio/assets/versus_2-CNtQ5brm.jpg",xm="/portfolio/assets/viscosity-C0nbjDNi.jpg",Um="/portfolio/assets/aura-adUtz6l9.jpg",Nm="/portfolio/assets/mimikry-CcZLlpXo.jpg",Hm="/portfolio/assets/a_curious_thing-DQQu0Hbu.jpg",jm="/portfolio/assets/doppler-BbRDetXu.jpg",Cm="/portfolio/assets/romina-BImkZG6j.jpg",qm="/portfolio/assets/dna_1-ryHxfwLI.jpg",Bm="/portfolio/assets/dna_2-Cu6sPKRN.jpg",Ym="/portfolio/assets/andromeda-Csgqu__9.mp4",Gm="/portfolio/assets/versus-Gjpp4xVF.mp4",Xm="/portfolio/assets/viscosity_1080-DeRv5vgQ.mp4",p1=[{title:"DADA YAGA, 2018",image:_m},{title:"ANDROMEDA, 2018",image:Mm,video:Ym},{title:"VERSUS I, 2018",image:Dm,video:Gm},{title:"VERSUS II, 2018",image:Rm},{title:"VISCOSITY, 2021",image:xm,video:Xm},{title:"AURA, 2019",image:Um},{title:"MIMIKRY, 2018",image:Nm},{title:"A CURIOUS THING, 2017",image:Hm},{title:"DOPPLER I, 2021",image:jm},{title:"ROMINA, 2016",image:Cm},{title:"DNA (XY) I, 2017",image:qm},{title:"DNA (XY) II, 2017",image:Bm}],S1=[{name:"Portfolio",content:q.jsx(Om,{items:p1})},{name:"About",content:q.jsx(q.Fragment,{})}],Qm=zt.div`
     margin-bottom: 3rem;
     margin-left: 0.5rem;
