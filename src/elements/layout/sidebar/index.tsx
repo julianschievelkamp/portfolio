@@ -1,6 +1,6 @@
 import Text from "elements/components/text";
 import {
-    MobileBackground,
+    CloseTrigger,
     ScrollContainer,
     StyledSidebar,
     StyledText,
@@ -25,7 +25,7 @@ const Sidebar = ({ theme, toggleTheme }: SidebarProps) => {
     return (
         <>
             {!isMd && sidebarOpen && (
-                <MobileBackground onClick={() => setSidebarOpen(false)} />
+                <CloseTrigger onClick={() => setSidebarOpen(false)} />
             )}
             <StyledSidebar $sidebarOpen={sidebarOpen}>
                 <StyledText

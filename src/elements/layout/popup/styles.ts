@@ -18,10 +18,17 @@ export const StyledPopup = styled.div<{ $isOpen: boolean; theme: Theme }>`
 `;
 
 export const OuterWrapper = styled.div`
+    position: relative;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+`;
+
+export const CloseTrigger = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
 `;
 
 export const InnerWrapper = styled.div`

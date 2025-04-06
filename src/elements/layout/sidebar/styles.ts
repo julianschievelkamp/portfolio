@@ -29,7 +29,7 @@ export const StyledSidebar = styled.div<{
     }
 `;
 
-export const MobileBackground = styled.div`
+export const CloseTrigger = styled.div`
     position: fixed;
     width: 100%;
     height: 100%;

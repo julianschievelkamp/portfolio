@@ -2,6 +2,7 @@ import { useStore } from "hooks/useStore";
 import {
     ArrowLeft,
     ArrowRight,
+    CloseTrigger,
     InnerWrapper,
     ItemContainer,
     OuterWrapper,
@@ -39,6 +40,7 @@ const Popup = ({ items }: PopupProps) => {
     return (
         <StyledPopup $isOpen={popupOpen}>
             <OuterWrapper>
+                <CloseTrigger onClick={() => setPopupOpen(false)} />
                 <InnerWrapper>
                     {isMd && (
                         <>
