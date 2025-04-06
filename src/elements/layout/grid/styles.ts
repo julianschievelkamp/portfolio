@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { queries, transition } from "styles/variables";
+import { queries } from "styles/variables";
 
 export const StyledGrid = styled.div`
     position: relative;
