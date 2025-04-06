@@ -37,13 +37,25 @@ const Sidebar = ({ theme, toggleTheme }: SidebarProps) => {
                 <Navigation />
 
                 <Div>
-                    <Icon
-                        padding="0.5rem"
-                        name={theme === "light" ? "dark" : "light"}
-                        onClick={() => toggleTheme()}
-                    />
+                    <Div display="flex" alignItems="center">
+                        <Icon
+                            padding="0.5rem"
+                            name="instagram"
+                            onClick={() =>
+                                window.open(
+                                    "https://www.instagram.com/julianschievelkamp",
+                                    "_blank"
+                                )
+                            }
+                        />
+                        <Icon
+                            padding="0.5rem"
+                            name={theme === "light" ? "dark" : "light"}
+                            onClick={() => toggleTheme()}
+                        />
+                    </Div>
 
-                    <Text fontSize="0.875rem" margin="1rem 0 0 0">
+                    <Text fontSize="0.875rem" margin="0.5rem 0 0 0">
                         {lang.copyright}
                     </Text>
                 </Div>

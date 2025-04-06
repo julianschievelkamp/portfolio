@@ -23,7 +23,6 @@ const Menu = () => {
             <Div height="100%" display="flex" alignItems="center">
                 <Icon
                     size="2rem"
-                    padding="1rem 0 1rem 1rem"
                     name={sidebarOpen ? "close" : "menu"}
                     onClick={() => !sidebarOpen && setSidebarOpen(true)}
                 />
