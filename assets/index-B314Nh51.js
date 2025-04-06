@@ -217,7 +217,7 @@ Error generating stack: `+e.message+`
 
     &:hover {
         img {
-            transform: scale(1.125);
+            transform: scale(1.05);
         }
     }
 `,by=St.img`
