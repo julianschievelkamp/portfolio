@@ -64,5 +64,5 @@ export const usePopup = (items: PortfolioItem[]) => {
             window.removeEventListener("touchmove", onTouchMove);
             window.removeEventListener("touchend", onTouchEnd);
         };
-    }, [currentPortfolioIndex, touchStart, touchEnd]);
+    }, [popupOpen, currentPortfolioIndex, touchStart, touchEnd]);
 };
