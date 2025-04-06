@@ -38,6 +38,7 @@ const Sidebar = ({ theme, toggleTheme }: SidebarProps) => {
 
                 <Div>
                     <Icon
+                        padding="0.5rem"
                         name={theme === "light" ? "dark" : "light"}
                         onClick={() => toggleTheme()}
                     />

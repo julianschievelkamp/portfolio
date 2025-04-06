@@ -8,6 +8,7 @@ export interface IconProps {
     color?: keyof Theme | string;
     size?: string;
     margin?: string;
+    padding?: string;
     onClick?: () => void;
     className?: string;
 }
@@ -19,6 +20,7 @@ const Icon = ({
     className,
     size = "1rem",
     margin,
+    padding,
 }: IconProps) => {
     const Icon = icons[name];
 
@@ -27,6 +29,7 @@ const Icon = ({
             color={color}
             $size={size}
             $margin={margin}
+            $padding={padding}
             onClick={onClick}
             className={className}
         >
