@@ -38,7 +38,7 @@ export const ItemContainer = styled.div`
 
     img,
     video {
-        max-height: calc(100vh - 15rem);
+        max-height: calc(100vh - 14.5rem);
         border: 8px solid black;
     }
 
@@ -49,7 +49,7 @@ export const ItemContainer = styled.div`
 
 export const ArrowLeft = styled.div`
     position: absolute;
-    height: calc(100% - 2rem - 12px);
+    height: calc(100% - 1.75rem - 8px);
     width: 50%;
     left: 0;
 
@@ -66,7 +66,7 @@ export const ArrowLeft = styled.div`
 
 export const ArrowRight = styled.div`
     position: absolute;
-    height: calc(100% - 2rem - 12px);
+    height: calc(100% - 1.75rem - 8px);
     width: 50%;
     right: 0;
 
