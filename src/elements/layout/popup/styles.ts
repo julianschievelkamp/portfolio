@@ -38,7 +38,7 @@ export const ItemContainer = styled.div`
 
     img,
     video {
-        max-height: calc(100vh - 14.5rem);
+        max-height: calc(var(--100vh) - 14.5rem);
         border: 8px solid black;
     }
 
