@@ -34,6 +34,7 @@ import VersusVideo from "assets/videos/versus.mp4";
 import ViscosityVideo from "assets/videos/viscosity_1080.mp4";
 import AuraVideo from "assets/videos/aura.mp4";
 import DopplerVideo from "assets/videos/doppler.mp4";
+import ConsciousnessVideo from "assets/videos/consciousness_1080.mp4";
 
 export const portfolioData: PortfolioItem[] = [
     {
@@ -105,6 +106,7 @@ export const portfolioData: PortfolioItem[] = [
     {
         title: "CONSCIOUSNESS, 2017",
         image: Consciousness,
+        video: ConsciousnessVideo,
         palette: ["darkgreen", "blue", "red", "orange"],
     },
     {
