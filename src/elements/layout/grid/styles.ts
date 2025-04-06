@@ -28,7 +28,7 @@ export const GridItem = styled.div`
 
     &:hover {
         img {
-            transform: scale(1.125);
+            transform: scale(1.05);
         }
     }
 `;
