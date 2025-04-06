@@ -21,52 +21,64 @@ export const portfolioData: PortfolioItem[] = [
     {
         title: "DADA YAGA, 2018",
         image: DadaYaga,
+        palette: ["darkgreen", "blue", "red", "orange"],
     },
     {
         title: "ANDROMEDA, 2018",
         image: Andromeda,
         video: AndromedaVideo,
+        palette: ["darkgreen", "blue", "red", "orange"],
     },
     {
         title: "VERSUS I, 2018",
         image: Versus1,
         video: VersusVideo,
+        palette: ["darkgreen", "blue", "red", "orange"],
     },
     {
         title: "VERSUS II, 2018",
         image: Versus2,
+        palette: ["darkgreen", "blue", "red", "orange"],
     },
     {
         title: "VISCOSITY, 2021",
         image: Viscosity,
         video: ViscosityVideo,
+        palette: ["darkgreen", "blue", "red", "orange"],
     },
     {
         title: "AURA, 2019",
         image: Aura,
+        palette: ["darkgreen", "blue", "red", "orange"],
     },
     {
         title: "MIMIKRY, 2018",
         image: Mimikry,
+        palette: ["darkgreen", "blue", "red", "orange"],
     },
     {
         title: "A CURIOUS THING, 2017",
         image: ACuriousThing,
+        palette: ["darkgreen", "blue", "red", "orange"],
     },
     {
         title: "DOPPLER I, 2021",
         image: Doppler,
+        palette: ["darkgreen", "blue", "red", "orange"],
     },
     {
         title: "ROMINA, 2016",
         image: Romina,
+        palette: ["darkgreen", "blue", "red", "orange"],
     },
     {
         title: "DNA (XY) I, 2017",
         image: DNA1,
+        palette: ["darkgreen", "blue", "red", "orange"],
     },
     {
         title: "DNA (XY) II, 2017",
         image: DNA2,
+        palette: ["darkgreen", "blue", "red", "orange"],
     },
 ];

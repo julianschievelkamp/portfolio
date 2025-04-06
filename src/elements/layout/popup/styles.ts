@@ -35,17 +35,18 @@ export const InnerWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
     width: 100%;
     position: relative;
 `;
 
 export const ItemContainer = styled.div`
     z-index: 1;
+    position: relative;
 
     img,
     video {
-        max-height: calc(var(--100vh) - 14.5rem);
+        max-height: calc(var(--100vh) - 15rem);
         border: 8px solid black;
     }
 
@@ -56,7 +57,7 @@ export const ItemContainer = styled.div`
 
 export const ArrowLeft = styled.div`
     position: absolute;
-    height: calc(100% - 1.75rem - 8px);
+    height: calc(100% - 4px);
     width: 50%;
     left: 0;
 
@@ -73,7 +74,7 @@ export const ArrowLeft = styled.div`
 
 export const ArrowRight = styled.div`
     position: absolute;
-    height: calc(100% - 1.75rem - 8px);
+    height: calc(100% - 4px);
     width: 50%;
     right: 0;
 
@@ -86,6 +87,13 @@ export const ArrowRight = styled.div`
             right: 2rem;
         }
     }
+`;
+
+export const PaletteItem = styled.div<{ $background: string }>`
+    background: ${({ $background }) => $background};
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-right: 0.25rem;
 `;
 
 export const SliderContainer = styled.div`

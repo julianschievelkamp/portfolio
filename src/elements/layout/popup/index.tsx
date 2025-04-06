@@ -6,6 +6,7 @@ import {
     InnerWrapper,
     ItemContainer,
     OuterWrapper,
+    PaletteItem,
     SliderContainer,
     StyledPopup,
 } from "./styles";
@@ -87,11 +88,26 @@ const Popup = ({ items }: PopupProps) => {
                                 alt={activeItem.title}
                             />
                         )}
+                        <Div
+                            position="absolute"
+                            width="100%"
+                            display="flex"
+                            justifyContent="flex-end"
+                            alignItems="center"
+                        >
+                            {activeItem.palette.map((color) => {
+                                return (
+                                    <PaletteItem
+                                        key={color}
+                                        $background={color}
+                                    />
+                                );
+                            })}
+                            <Text bold textAlign="right" margin="0 0 0 0.25rem">
+                                {activeItem.title}
+                            </Text>
+                        </Div>
                     </ItemContainer>
-
-                    <Text bold textAlign="center" margin="0.5rem 0 0 0">
-                        {activeItem.title}
-                    </Text>
                 </InnerWrapper>
             </OuterWrapper>
 
