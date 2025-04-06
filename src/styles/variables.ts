@@ -6,6 +6,7 @@ export const lightTheme: Theme = {
     text: "#000000",
     icon: "#999999",
     hover: "#ffca00",
+    border: "#000000",
 };
 
 export const darkTheme: Theme = {
@@ -13,6 +14,7 @@ export const darkTheme: Theme = {
     text: "#FFFFFF",
     icon: "#999999",
     hover: "#ffca00",
+    border: "#FFFFFF",
 };
 
 export const queries = {

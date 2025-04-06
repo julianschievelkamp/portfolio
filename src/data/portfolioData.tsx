@@ -40,7 +40,7 @@ export const portfolioData: PortfolioItem[] = [
     {
         title: "DADA YAGA, 2018",
         image: DadaYaga,
-        palette: ["darkgreen", "blue", "red", "orange"],
+        palette: ["#92bed3", "#fed072", "#cf1630", "#667525"],
     },
     {
         title: "ANDROMEDA, 2018",

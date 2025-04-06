@@ -40,14 +40,14 @@ export const InnerWrapper = styled.div`
     position: relative;
 `;
 
-export const ItemContainer = styled.div`
+export const ItemContainer = styled.div<{ theme: Theme }>`
     z-index: 1;
     position: relative;
 
     img,
     video {
         max-height: calc(var(--100vh) - 15rem);
-        border: 8px solid black;
+        border: ${({ theme }) => `8px solid ${theme.border}`};
     }
 
     video {

@@ -3,6 +3,7 @@ export type Theme = {
     text: string;
     icon: string;
     hover: string;
+    border: string;
 };
 
 export type PortfolioItem = {
