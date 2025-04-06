@@ -26,10 +26,6 @@ export const GridItem = styled.div`
         height: calc((100vw - 3.5rem - 17rem) / 4);
     }
 
-    img {
-        transition: ${transition.fast};
-    }
-
     &:hover {
         img {
             transform: scale(1.125);
