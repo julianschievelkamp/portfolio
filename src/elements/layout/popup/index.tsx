@@ -89,7 +89,7 @@ const Popup = ({ items }: PopupProps) => {
                         )}
                     </ItemContainer>
 
-                    <Text textAlign="center" margin="0.5rem 0 0 0">
+                    <Text bold textAlign="center" margin="0.5rem 0 0 0">
                         {activeItem.title}
                     </Text>
                 </InnerWrapper>
