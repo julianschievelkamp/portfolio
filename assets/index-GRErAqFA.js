@@ -330,7 +330,7 @@ Error generating stack: `+e.message+`
 
     img,
     video {
-        max-height: calc(100vh - 15rem);
+        max-height: calc(100vh - 14.5rem);
         border: 8px solid black;
     }
 
@@ -339,7 +339,7 @@ Error generating stack: `+e.message+`
     }
 `,cg=zt.div`
     position: absolute;
-    height: calc(100% - 2rem - 12px);
+    height: calc(100% - 1.75rem - 8px);
     width: 50%;
     left: 0;
 
@@ -354,7 +354,7 @@ Error generating stack: `+e.message+`
     }
 `,fg=zt.div`
     position: absolute;
-    height: calc(100% - 2rem - 12px);
+    height: calc(100% - 1.75rem - 8px);
     width: 50%;
     right: 0;
 
