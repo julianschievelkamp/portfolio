@@ -99,6 +99,22 @@ export const PaletteItem = styled.div<{ $background: string }>`
 export const SliderContainer = styled.div`
     position: absolute;
     bottom: 1rem;
+    left: 0;
+    width: 100%;
+`;
+
+export const InnerSliderContainer = styled.div<{
+    $currentPortfolioIndex: number;
+    $opacity: number;
+}>`
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 1.5rem);
+    transform: ${({ $currentPortfolioIndex }) =>
+        `translateX(calc(-3.25rem * ${$currentPortfolioIndex}))`};
     display: flex;
     overflow: hidden;
+    transition: ${transition.fast};
+    transition-delay: 300ms;
+    opacity: ${({ $opacity }) => $opacity};
 `;

@@ -3,6 +3,7 @@ import {
     ArrowLeft,
     ArrowRight,
     CloseTrigger,
+    InnerSliderContainer,
     InnerWrapper,
     ItemContainer,
     OuterWrapper,
@@ -112,25 +113,32 @@ const Popup = ({ items }: PopupProps) => {
             </OuterWrapper>
 
             <SliderContainer>
-                {items.map((item, index) => {
-                    return (
-                        <Div
-                            key={item.title}
-                            margin="0 0.25rem 0 0"
-                            height="3rem"
-                            width="3rem"
-                            overflow="hidden"
-                            onClick={() => setCurrentPortfolioIndex(index)}
-                            opacity={index === currentPortfolioIndex ? 1 : 0.5}
-                        >
-                            <Image
-                                width="100%"
-                                src={item.image}
-                                alt={item.title}
-                            />
-                        </Div>
-                    );
-                })}
+                <InnerSliderContainer
+                    $opacity={popupOpen ? 1 : 0}
+                    $currentPortfolioIndex={currentPortfolioIndex}
+                >
+                    {items.map((item, index) => {
+                        return (
+                            <Div
+                                key={item.title}
+                                margin="0 0.25rem 0 0"
+                                height="3rem"
+                                width="3rem"
+                                overflow="hidden"
+                                onClick={() => setCurrentPortfolioIndex(index)}
+                                opacity={
+                                    index === currentPortfolioIndex ? 1 : 0.5
+                                }
+                            >
+                                <Image
+                                    width="100%"
+                                    src={item.image}
+                                    alt={item.title}
+                                />
+                            </Div>
+                        );
+                    })}
+                </InnerSliderContainer>
             </SliderContainer>
 
             <Div position="absolute" top="1rem" right="1rem">
