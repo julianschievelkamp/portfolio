@@ -5,4 +5,8 @@ export const StyledVideo = styled.video`
     width: ${({ width }) => width};
     height: ${({ height }) => height};
     max-width: 100%;
+
+    &::-internal-media-controls-download-button {
+        display: none;
+    }
 `;

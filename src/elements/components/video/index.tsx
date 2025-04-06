@@ -1,5 +1,7 @@
+import { useEffect, useRef } from "react";
 import { StyledVideo } from "./styles";
 import Div from "../div";
+import { useStore } from "hooks/useStore";
 
 export interface VideoProps {
     src: string;
@@ -9,18 +11,29 @@ export interface VideoProps {
 }
 
 const Video = ({ src, poster, width, height }: VideoProps) => {
+    const { popupOpen } = useStore();
+    const ref = useRef<any>(null);
+
+    useEffect(() => {
+        if (!popupOpen) {
+            ref?.current?.pause();
+        }
+    }, [popupOpen]);
+
     return (
         <Div>
             <StyledVideo
                 key={src}
+                ref={ref}
                 poster={poster}
                 width={width}
                 height={height}
                 playsInline
                 loop
                 controls
-                controlsList="nodownload noplaybackrate"
+                controlsList="nodownload noremoteplayback noplaybackrate"
                 disablePictureInPicture
+                onContextMenu={(e) => e.preventDefault()}
             >
                 <source src={src} type="video/mp4" />
                 Your browser does not support the video tag.
