@@ -6,10 +6,18 @@ export interface ImageProps {
     alt: string;
     width?: string;
     height?: string;
+    fadeInOnLoad?: boolean;
     className?: string;
 }
 
-const Image = ({ src, alt, width, height, className }: ImageProps) => {
+const Image = ({
+    src,
+    alt,
+    width,
+    height,
+    fadeInOnLoad,
+    className,
+}: ImageProps) => {
     const [imageLoaded, setImageLoaded] = useState(false);
 
     return (
@@ -18,7 +26,7 @@ const Image = ({ src, alt, width, height, className }: ImageProps) => {
             alt={alt}
             width={width}
             height={height}
-            $imageLoaded={imageLoaded}
+            $imageLoaded={!fadeInOnLoad || imageLoaded}
             onLoad={() => setImageLoaded(true)}
             className={className}
             loading="lazy"
