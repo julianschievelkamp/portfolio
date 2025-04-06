@@ -1,5 +1,7 @@
 import { useStore } from "hooks/useStore";
 import {
+    ArrowLeft,
+    ArrowRight,
     InnerWrapper,
     ItemContainer,
     OuterWrapper,
@@ -13,6 +15,9 @@ import Text from "elements/components/text";
 import Image from "elements/components/image";
 import Video from "elements/components/video";
 import { usePopup } from "hooks/usePopup";
+import { mapIndex } from "utils/utils";
+import { useMediaQuery } from "hooks/useMediaQuery";
+import { queries } from "styles/variables";
 
 export interface PopupProps {
     items: PortfolioItem[];
@@ -28,12 +33,46 @@ const Popup = ({ items }: PopupProps) => {
 
     usePopup(items);
 
+    const isMd = useMediaQuery(queries.md);
     const activeItem = items[currentPortfolioIndex];
 
     return (
         <StyledPopup $isOpen={popupOpen}>
             <OuterWrapper>
                 <InnerWrapper>
+                    {isMd && (
+                        <>
+                            <ArrowLeft>
+                                <Icon
+                                    size="4rem"
+                                    name="chevronLeft"
+                                    onClick={() =>
+                                        setCurrentPortfolioIndex(
+                                            mapIndex(
+                                                currentPortfolioIndex - 1,
+                                                items.length - 1
+                                            )
+                                        )
+                                    }
+                                />
+                            </ArrowLeft>
+                            <ArrowRight>
+                                <Icon
+                                    size="4rem"
+                                    name="chevronRight"
+                                    onClick={() =>
+                                        setCurrentPortfolioIndex(
+                                            mapIndex(
+                                                currentPortfolioIndex + 1,
+                                                items.length - 1
+                                            )
+                                        )
+                                    }
+                                />
+                            </ArrowRight>
+                        </>
+                    )}
+
                     <ItemContainer>
                         {activeItem.video ? (
                             <Video
@@ -48,7 +87,7 @@ const Popup = ({ items }: PopupProps) => {
                         )}
                     </ItemContainer>
 
-                    <Text textAlign="center" margin="1rem 0 0 0">
+                    <Text textAlign="center" margin="0.5rem 0 0 0">
                         {activeItem.title}
                     </Text>
                 </InnerWrapper>

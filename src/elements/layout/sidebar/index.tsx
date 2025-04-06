@@ -10,8 +10,6 @@ import Div from "elements/components/div";
 import { useMediaQuery } from "hooks/useMediaQuery";
 import { queries } from "styles/variables";
 import Navigation from "elements/layout/navigation";
-import { useRef } from "react";
-import { useClickOutside } from "hooks/useClickOutside";
 import { useStore } from "hooks/useStore";
 import Icon from "elements/components/icon";
 
@@ -22,16 +20,14 @@ export interface SidebarProps {
 
 const Sidebar = ({ theme, toggleTheme }: SidebarProps) => {
     const { sidebarOpen, setSidebarOpen } = useStore();
-
     const isMd = useMediaQuery(queries.md);
-
-    const ref = useRef(null);
-    useClickOutside(ref, () => setSidebarOpen(false));
 
     return (
         <>
-            {!isMd && sidebarOpen && <MobileBackground />}
-            <StyledSidebar $sidebarOpen={sidebarOpen} ref={ref}>
+            {!isMd && sidebarOpen && (
+                <MobileBackground onClick={() => setSidebarOpen(false)} />
+            )}
+            <StyledSidebar $sidebarOpen={sidebarOpen}>
                 <StyledText
                     type="headline"
                     fontSize={isMd ? "1.5rem" : "1.25rem"}

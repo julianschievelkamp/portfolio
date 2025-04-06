@@ -14,6 +14,7 @@ export const StyledPopup = styled.div<{ $isOpen: boolean; theme: Theme }>`
     width: 100%;
     height: 100%;
     padding: 1rem;
+    user-select: none;
 `;
 
 export const OuterWrapper = styled.div`
@@ -28,15 +29,55 @@ export const InnerWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     margin-bottom: 4rem;
+    width: 100%;
+    position: relative;
 `;
 
 export const ItemContainer = styled.div`
-    cursor: pointer;
+    z-index: 1;
 
     img,
     video {
         max-height: calc(100vh - 15rem);
         border: 8px solid black;
+    }
+
+    video {
+        cursor: pointer;
+    }
+`;
+
+export const ArrowLeft = styled.div`
+    position: absolute;
+    height: calc(100% - 2rem - 12px);
+    width: 50%;
+    left: 0;
+
+    > div {
+        width: 100%;
+        height: 100%;
+
+        svg {
+            position: absolute;
+            left: 2rem;
+        }
+    }
+`;
+
+export const ArrowRight = styled.div`
+    position: absolute;
+    height: calc(100% - 2rem - 12px);
+    width: 50%;
+    right: 0;
+
+    > div {
+        width: 100%;
+        height: 100%;
+
+        svg {
+            position: absolute;
+            right: 2rem;
+        }
     }
 `;
 
