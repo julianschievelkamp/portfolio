@@ -28,7 +28,9 @@ export const useMenu = () => {
 
         pageContainer?.addEventListener("scroll", controlMenu);
 
-        return () => pageContainer?.removeEventListener("scroll", controlMenu);
+        return () => {
+            pageContainer?.removeEventListener("scroll", controlMenu);
+        };
     }, [lastScrollY]);
 
     return {

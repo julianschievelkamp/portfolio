@@ -12,6 +12,7 @@ import Div from "elements/components/div";
 import Text from "elements/components/text";
 import Image from "elements/components/image";
 import Video from "elements/components/video";
+import { usePopup } from "hooks/usePopup";
 
 export interface PopupProps {
     items: PortfolioItem[];
@@ -25,26 +26,30 @@ const Popup = ({ items }: PopupProps) => {
         setCurrentPortfolioIndex,
     } = useStore();
 
+    usePopup(items);
+
+    const activeItem = items[currentPortfolioIndex];
+
     return (
         <StyledPopup $isOpen={popupOpen}>
             <OuterWrapper>
                 <InnerWrapper>
                     <ItemContainer>
-                        {items[currentPortfolioIndex].video ? (
+                        {activeItem.video ? (
                             <Video
-                                poster={items[currentPortfolioIndex].image}
-                                src={items[currentPortfolioIndex].video}
+                                src={activeItem.video}
+                                poster={activeItem.image}
                             />
                         ) : (
                             <Image
-                                src={items[currentPortfolioIndex].image}
-                                alt={items[currentPortfolioIndex].title}
+                                src={activeItem.image}
+                                alt={activeItem.title}
                             />
                         )}
                     </ItemContainer>
 
                     <Text textAlign="center" margin="1rem 0 0 0">
-                        {items[currentPortfolioIndex].title}
+                        {activeItem.title}
                     </Text>
                 </InnerWrapper>
             </OuterWrapper>
