@@ -22,6 +22,8 @@ import DNA2 from "assets/img/dna_2.jpg";
 import AndromedaVideo from "assets/videos/andromeda.mp4";
 import VersusVideo from "assets/videos/versus.mp4";
 import ViscosityVideo from "assets/videos/viscosity_1080.mp4";
+import AuraVideo from "assets/videos/aura.mp4";
+import DopplerVideo from "assets/videos/doppler.mp4";
 
 export const portfolioData: PortfolioItem[] = [
     {
@@ -55,6 +57,7 @@ export const portfolioData: PortfolioItem[] = [
     {
         title: "AURA, 2019",
         image: Aura,
+        video: AuraVideo,
         palette: ["darkgreen", "blue", "red", "orange"],
     },
     {
@@ -70,6 +73,7 @@ export const portfolioData: PortfolioItem[] = [
     {
         title: "DOPPLER I, 2021",
         image: Doppler,
+        video: DopplerVideo,
         palette: ["darkgreen", "blue", "red", "orange"],
     },
     {
