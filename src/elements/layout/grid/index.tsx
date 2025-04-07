@@ -1,18 +1,14 @@
-import { PortfolioItem } from "data/types";
 import { GridItem, StyledGrid } from "./styles";
 import Image from "elements/components/image";
 import { useStore } from "hooks/useStore";
+import { portfolioData } from "data/portfolioData";
 
-export interface GridProps {
-    items: PortfolioItem[];
-}
-
-const Grid = ({ items }: GridProps) => {
+const Grid = () => {
     const { setCurrentPortfolioIndex, setPopupOpen } = useStore();
 
     return (
         <StyledGrid>
-            {items.map(({ title, image }, index) => {
+            {portfolioData.map(({ title, image }, index) => {
                 return (
                     <GridItem
                         key={title + index}

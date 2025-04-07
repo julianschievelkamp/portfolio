@@ -11,7 +11,6 @@ import {
     SliderContainer,
     StyledPopup,
 } from "./styles";
-import { PortfolioItem } from "data/types";
 import Icon from "elements/components/icon";
 import Div from "elements/components/div";
 import Text from "elements/components/text";
@@ -21,12 +20,9 @@ import { usePopup } from "hooks/usePopup";
 import { mapIndex } from "utils/utils";
 import { useMediaQuery } from "hooks/useMediaQuery";
 import { queries } from "styles/variables";
+import { portfolioData } from "data/portfolioData";
 
-export interface PopupProps {
-    items: PortfolioItem[];
-}
-
-const Popup = ({ items }: PopupProps) => {
+const Popup = () => {
     const {
         popupOpen,
         setPopupOpen,
@@ -34,10 +30,10 @@ const Popup = ({ items }: PopupProps) => {
         setCurrentPortfolioIndex,
     } = useStore();
 
-    usePopup(items);
+    usePopup(portfolioData);
 
     const isMd = useMediaQuery(queries.md);
-    const activeItem = items[currentPortfolioIndex];
+    const activeItem = portfolioData[currentPortfolioIndex];
 
     return (
         <StyledPopup $isOpen={popupOpen}>
@@ -54,7 +50,7 @@ const Popup = ({ items }: PopupProps) => {
                                         setCurrentPortfolioIndex(
                                             mapIndex(
                                                 currentPortfolioIndex - 1,
-                                                items.length - 1
+                                                portfolioData.length - 1
                                             )
                                         )
                                     }
@@ -68,7 +64,7 @@ const Popup = ({ items }: PopupProps) => {
                                         setCurrentPortfolioIndex(
                                             mapIndex(
                                                 currentPortfolioIndex + 1,
-                                                items.length - 1
+                                                portfolioData.length - 1
                                             )
                                         )
                                     }
@@ -117,7 +113,7 @@ const Popup = ({ items }: PopupProps) => {
                     $opacity={popupOpen ? 1 : 0}
                     $currentPortfolioIndex={currentPortfolioIndex}
                 >
-                    {items.map((item, index) => {
+                    {portfolioData.map((item, index) => {
                         return (
                             <Div
                                 key={item.title}

@@ -1,14 +1,14 @@
 import Grid from "elements/layout/grid";
+import About from "elements/layout/about";
 import { Page } from "./types";
-import { portfolioData } from "./portfolioData";
 
 export const pageData: Page[] = [
     {
         name: "Portfolio",
-        content: <Grid items={portfolioData} />,
+        content: <Grid />,
     },
     {
         name: "About",
-        content: <></>,
+        content: <About />,
     },
 ];
