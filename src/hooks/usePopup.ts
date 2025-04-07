@@ -14,20 +14,20 @@ export const usePopup = (items: PortfolioItem[]) => {
     };
 
     const onTouchStart = (e: any) => {
-        if (!popupOpen || e.touches.length > 1) return;
+        if (!popupOpen || e.targetTouches.length > 1) return;
 
         setTouchEnd(null);
         setTouchStart(e.targetTouches[0].clientX);
     };
 
     const onTouchMove = (e: any) => {
-        if (!popupOpen || e.touches.length > 1) return;
+        if (!popupOpen || e.targetTouches.length > 1) return;
 
         setTouchEnd(e.targetTouches[0].clientX);
     };
 
     const onTouchEnd = (e: any) => {
-        if (!popupOpen || e.touches.length > 1) return;
+        if (!popupOpen || e.targetTouches.length > 1) return;
 
         if (!touchStart || !touchEnd) return;
 
@@ -55,9 +55,15 @@ export const usePopup = (items: PortfolioItem[]) => {
 
     useEffect(() => {
         document.addEventListener("keydown", onKeyDown);
-        document.addEventListener("touchstart", onTouchStart);
-        document.addEventListener("touchmove", onTouchMove);
-        document.addEventListener("touchend", onTouchEnd);
+        document.addEventListener("touchstart", onTouchStart, {
+            passive: true,
+        });
+        document.addEventListener("touchmove", onTouchMove, {
+            passive: true,
+        });
+        document.addEventListener("touchend", onTouchEnd, {
+            passive: true,
+        });
 
         return () => {
             document.removeEventListener("keydown", onKeyDown);
