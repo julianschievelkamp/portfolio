@@ -14,20 +14,20 @@ export const usePopup = (items: PortfolioItem[]) => {
     };
 
     const onTouchStart = (e: any) => {
-        if (!popupOpen || e.targetTouches.length > 1) return;
+        if (!popupOpen || e.touches.length > 1) return;
 
         setTouchEnd(null);
-        setTouchStart(e.targetTouches[0].clientX);
+        setTouchStart(e.touches[0].clientX);
     };
 
     const onTouchMove = (e: any) => {
-        if (!popupOpen || e.targetTouches.length > 1) return;
+        if (!popupOpen || e.touches.length > 1) return;
 
-        setTouchEnd(e.targetTouches[0].clientX);
+        setTouchEnd(e.touches[0].clientX);
     };
 
     const onTouchEnd = (e: any) => {
-        if (!popupOpen || e.targetTouches.length > 1) return;
+        if (!popupOpen || e.touches.length > 1) return;
 
         if (!touchStart || !touchEnd) return;
 
