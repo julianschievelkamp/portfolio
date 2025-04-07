@@ -20,6 +20,8 @@ const Navigation = () => {
                     <NavElement
                         key={name}
                         onClick={() => {
+                            if (isActive) return;
+
                             setCurrentPageIndex(index);
                             setSidebarOpen(false);
                         }}

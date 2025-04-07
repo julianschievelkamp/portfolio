@@ -12,7 +12,11 @@ const About = ({}: AboutProps) => {
         <StyledAbout>
             <ArtistWrapper>
                 <ImageWrapper>
-                    <Image src={SelfPortrait} alt="Julian Schievelkamp" />
+                    <Image
+                        src={SelfPortrait}
+                        alt="Julian Schievelkamp"
+                        fadeInOnLoad
+                    />
                 </ImageWrapper>
                 <Text fontSize="0.875rem" textAlign="justify">
                     {lang.about}
