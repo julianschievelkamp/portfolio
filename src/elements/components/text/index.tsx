@@ -7,7 +7,7 @@ export interface TextProps {
     bold?: boolean;
     className?: string;
     color?: string;
-    textAlign?: "left" | "center" | "right";
+    textAlign?: "left" | "center" | "right" | "justify";
     margin?: string;
     fontSize?: string;
     lineHeight?: string;
