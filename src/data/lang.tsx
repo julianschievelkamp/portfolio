@@ -37,21 +37,34 @@ export const lang = {
             <br />
             <br />
             High quality fine art prints in various formats and sizes are
-            available{" "}
-            <a href="" target="_blank">
-                → here
-            </a>
-            . Small selections of artworks will be minted as NFTs on the
-            Ethereum blockchain and are available for{" "}
-            <a href="" target="_blank">
+            available upon request. Small selections of artworks will be minted
+            as NFTs on the Ethereum blockchain and are available for{" "}
+            <a
+                href="https://foundation.app/@julianschievelkamp"
+                target="_blank"
+            >
                 → auction
             </a>
             . For collaborations and business inquiries in general, feel free to
             drop a message via{" "}
-            <a href="" target="_blank">
+            <a href="mailto:mail@julianschievelkamp.com" target="_blank">
                 → mail@julianschievelkamp.com
             </a>
             .
+        </>
+    ),
+    referencesHeadline: (
+        <>
+            SELECTED
+            <br />
+            REFERENCES
+        </>
+    ),
+    badgesHeadline: (
+        <>
+            FIRST PRIZE
+            <br />
+            WINNER
         </>
     ),
 };

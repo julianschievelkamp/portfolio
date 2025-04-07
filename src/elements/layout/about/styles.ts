@@ -16,7 +16,7 @@ export const ArtistWrapper = styled.div`
     display: flex;
     flex-direction: column;
 
-    @media ${queries.md} {
+    @media ${queries.lg} {
         flex-direction: row;
     }
 `;
@@ -24,7 +24,7 @@ export const ArtistWrapper = styled.div`
 export const ImageWrapper = styled.div<{ theme: Theme }>`
     display: flex;
     justify-content: center;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     height: fit-content;
 
     img {
@@ -32,9 +32,19 @@ export const ImageWrapper = styled.div<{ theme: Theme }>`
         border: ${({ theme }) => `8px solid ${theme.border}`};
     }
 
-    @media ${queries.md} {
+    @media ${queries.lg} {
         margin-bottom: 0;
         margin-right: 2rem;
         min-width: 30%;
+    }
+`;
+
+export const BadgeWrapper = styled.div`
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr;
+
+    @media ${queries.sm} {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 `;
