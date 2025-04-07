@@ -45,7 +45,7 @@ set100vh();
 let resizeTimer: ReturnType<typeof setTimeout>;
 
 window.addEventListener("resize", () => {
-    set100vh();
+    // set100vh();
 
     document.body.classList.add("no-transition");
 
