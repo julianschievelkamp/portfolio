@@ -14,9 +14,10 @@ export const usePopup = (items: PortfolioItem[]) => {
     };
 
     const onTouchStart = (e: any) => {
+        setTouchEnd(null);
+
         if (!popupOpen || e.touches.length > 1) return;
 
-        setTouchEnd(null);
         setTouchStart(e.touches[0].clientX);
     };
 
