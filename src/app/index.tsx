@@ -9,7 +9,6 @@ import Menu from "elements/layout/menu";
 import { pageData } from "data/pageData";
 import Popup from "elements/layout/popup";
 import { useStore } from "hooks/useStore";
-import { portfolioData } from "data/portfolioData";
 
 const App = () => {
     const { theme, toggleTheme, isLoading } = useTheme();
@@ -32,7 +31,7 @@ const App = () => {
 
                 {!isMd && <Menu />}
 
-                <Popup items={portfolioData} />
+                <Popup />
             </StyledApp>
         </ThemeProvider>
     );
