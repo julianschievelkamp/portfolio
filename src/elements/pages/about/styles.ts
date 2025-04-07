@@ -39,17 +39,21 @@ export const ImageWrapper = styled.div<{ theme: Theme }>`
     }
 `;
 
-export const ReferencesWrapper = styled.div`
+export const ReferencesWrapper = styled.div<{ theme: Theme }>`
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: 1fr;
 
+    span {
+        color: ${({ theme }) => theme.secondary};
+    }
+
     @media ${queries.sm} {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 2fr;
     }
 
     @media ${queries.lg} {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 2fr 1fr 2fr;
     }
 `;
 

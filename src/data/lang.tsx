@@ -63,9 +63,9 @@ export const lang = {
                 auction
             </a>
             . For collaborations and business inquiries in general, feel free to
-            drop a message via{" "}
+            drop a{" "}
             <a href="mailto:mail@julianschievelkamp.com" target="_blank">
-                mail@julianschievelkamp.com
+                message
             </a>
             .
         </>
@@ -90,12 +90,12 @@ export const lang = {
                         Foundation
                     </a>
                     <br />
-                    NFT Auctions
+                    <span>NFT Auctions</span>
                 </>,
                 <>
                     Singulart
                     <br />
-                    Limited Edition Prints
+                    <span>Limited Edition Prints</span>
                 </>,
                 <>YellowKorner Galleries</>,
                 <>
@@ -109,7 +109,7 @@ export const lang = {
                 <>
                     Art + Commerce
                     <br />
-                    PhotoVogue Collection
+                    <span>PhotoVogue Collection</span>
                 </>,
             ],
             listEntries2: [
@@ -122,7 +122,7 @@ export const lang = {
                         Interview by Matthew Oxley
                     </a>
                     <br />
-                    World Photography Organisation
+                    <span>World Photography Organisation</span>
                 </>,
                 <>
                     <a
@@ -132,24 +132,24 @@ export const lang = {
                         Inspiracje: Julian Schievelkamp
                     </a>
                     <br />
-                    Szeroki Kadr by Nikon (polish)
+                    <span>Szeroki Kadr by Nikon (polish)</span>
                 </>,
             ],
             listEntries3: [
                 <>
                     SWPA exhibition 2016 & 2017
                     <br />
-                    Somerset House, London
+                    <span>Somerset House, London</span>
                 </>,
                 <>
                     photokina 09/2016
                     <br />
-                    Koelnmesse, Cologne
+                    <span>Koelnmesse, Cologne</span>
                 </>,
                 <>
                     UPdate 2017
                     <br />
-                    Titanic Hotel, Berlin
+                    <span>Titanic Hotel, Berlin</span>
                 </>,
             ],
         },
@@ -160,7 +160,7 @@ export const lang = {
                 <>
                     ProfiFoto Scholarship
                     <br />
-                    Fotoakademie-Koeln
+                    <span>Fotoakademie-Koeln</span>
                 </>,
                 <>Canon Sponsoring Award</>,
                 <>PIC Förderpreis Selected 2018</>,
@@ -169,40 +169,40 @@ export const lang = {
                 <>
                     Fine Art Photography Awards
                     <br />
-                    2019: Grand Prize Winner
+                    <span>2019: Grand Prize Winner</span>
                     <br />
-                    2016: Nominee "Fine Art"
+                    <span>2016: Nominee "Fine Art"</span>
                 </>,
                 <>
                     ND Awards
                     <br />
-                    2019: 1st Place (Gold) "Open Theme"
+                    <span>2019: 1st Place (Gold) "Open Theme"</span>
                 </>,
                 <>
                     Prix de la Photographie Paris
                     <br />
-                    2019: Honorable Mention "Fine Art"
+                    <span>2019: Honorable Mention "Fine Art"</span>
                     <br />
-                    2017: 1st Place (Gold) "Self-Portrait"
+                    <span>2017: 1st Place (Gold) "Self-Portrait"</span>
                 </>,
                 <>
                     Sony World Photography Awards
                     <br />
-                    2017: Shortlist "Enhanced"
+                    <span>2017: Shortlist "Enhanced"</span>
                     <br />
-                    2016: Commended "Enhanced"
+                    <span>2016: Commended "Enhanced"</span>
                 </>,
                 <>
                     GoSee Awards
                     <br />
-                    2017: Silver, Best Portfolio
+                    <span>2017: Silver, Best Portfolio</span>
                 </>,
                 <>
                     International Photo Awards
                     <br />
-                    2016: Honorable Mention "Portrait"
+                    <span>2016: Honorable Mention "Portrait"</span>
                     <br />
-                    2016: Honorable Mention "Other"
+                    <span>2016: Honorable Mention "Other"</span>
                 </>,
             ],
         },

@@ -16,6 +16,8 @@ import Badge2 from "assets/img/misc/badge2.jpg";
 import Badge3 from "assets/img/misc/badge3.png";
 import Divider from "elements/components/divider";
 import List from "elements/components/list";
+import { useMediaQuery } from "hooks/useMediaQuery";
+import { queries } from "styles/variables";
 
 const badges = [
     { image: Badge1, alt: "Fine Art Photography Awards" },
@@ -24,6 +26,8 @@ const badges = [
 ];
 
 const About = () => {
+    const isSm = useMediaQuery(queries.sm);
+
     return (
         <StyledAbout>
             <ArtistWrapper>
@@ -49,7 +53,7 @@ const About = () => {
                         {lang.references.publications.subTitle}
                     </Text>
                 </Div>
-                <Div>
+                <Div padding={!isSm ? "0 0 0 1rem" : undefined}>
                     <List
                         items={lang.references.publications.listEntries1}
                         margin="0 0 1rem 0"
@@ -68,7 +72,7 @@ const About = () => {
                         {lang.references.awards.subTitle}
                     </Text>
                 </Div>
-                <Div>
+                <Div padding={!isSm ? "0 0 0 1rem" : undefined}>
                     <List
                         items={lang.references.awards.listEntries1}
                         margin="0 0 1rem 0"

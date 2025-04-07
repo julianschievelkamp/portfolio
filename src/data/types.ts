@@ -1,7 +1,7 @@
 export type Theme = {
     body: string;
     text: string;
-    icon: string;
+    secondary: string;
     hover: string;
     border: string;
 };

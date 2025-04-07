@@ -30,5 +30,5 @@ export const StyledText = styled(Text)<{ $isActive: boolean; theme: Theme }>`
 `;
 
 export const Label = styled(Text)<{ theme: Theme }>`
-    color: ${({ theme }) => theme.icon};
+    color: ${({ theme }) => theme.secondary};
 `;
