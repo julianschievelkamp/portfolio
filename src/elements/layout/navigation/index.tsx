@@ -4,7 +4,8 @@ import { useStore } from "hooks/useStore";
 import { lang } from "data/lang";
 
 const Navigation = () => {
-    const { currentPageIndex, setCurrentPageIndex } = useStore();
+    const { currentPageIndex, setCurrentPageIndex, setSidebarOpen } =
+        useStore();
 
     return (
         <StyledNavigation>
@@ -18,7 +19,10 @@ const Navigation = () => {
                 return (
                     <NavElement
                         key={name}
-                        onClick={() => setCurrentPageIndex(index)}
+                        onClick={() => {
+                            setCurrentPageIndex(index);
+                            setSidebarOpen(false);
+                        }}
                     >
                         <StyledText
                             $isActive={isActive}

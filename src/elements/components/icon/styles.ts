@@ -31,6 +31,7 @@ export const StyledIcon = styled.div<{
     &:hover {
         svg {
             fill: ${({ theme }) => theme.hover};
+            transition: ${transition.fastest};
         }
     }
 

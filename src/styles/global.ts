@@ -1,8 +1,9 @@
 import { createGlobalStyle } from "styled-components";
-import { queries } from "./variables";
 import fonts from "./fonts";
+import { Theme } from "data/types";
+import { transition } from "./variables";
 
-export default createGlobalStyle`
+export default createGlobalStyle<{ theme?: Theme }>`
     ${fonts};
 
     * {
@@ -17,10 +18,16 @@ export default createGlobalStyle`
         width: 100vw;
         height: var(--100vh);
         overflow: hidden;
+    }
 
-        /* @media ${queries.xl} {
-            font-size: 125%;
-        } */
+    a {
+        color: ${({ theme }) => theme.text};
+        transition: ${transition.fast};
+
+        &:hover {
+            color: ${({ theme }) => theme.hover};
+            transition: ${transition.fastest};
+        }
     }
 
     .no-transition * {

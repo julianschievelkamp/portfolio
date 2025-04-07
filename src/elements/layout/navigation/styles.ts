@@ -1,6 +1,7 @@
 import { Theme } from "data/types";
 import Text from "elements/components/text";
 import styled from "styled-components";
+import { transition } from "styles/variables";
 
 export const StyledNavigation = styled.div`
     margin-bottom: 3rem;
@@ -24,6 +25,7 @@ export const StyledText = styled(Text)<{ $isActive: boolean; theme: Theme }>`
 
     &:hover {
         color: ${({ $isActive, theme }) => !$isActive && theme.hover};
+        transition: ${transition.fastest};
     }
 `;
 
