@@ -1,7 +1,8 @@
 import { pageData } from "data/pageData";
-import { Label, NavElement, StyledNavigation, StyledText } from "./styles";
+import { Label, NavElement, StyledNavigation } from "./styles";
 import { useStore } from "hooks/useStore";
 import { lang } from "data/lang";
+import Text from "elements/components/text";
 
 const Navigation = () => {
     const { currentPageIndex, setCurrentPageIndex, setSidebarOpen } =
@@ -18,6 +19,7 @@ const Navigation = () => {
 
                 return (
                     <NavElement
+                        $isActive={isActive}
                         key={name}
                         onClick={() => {
                             if (isActive) return;
@@ -26,13 +28,12 @@ const Navigation = () => {
                             setSidebarOpen(false);
                         }}
                     >
-                        <StyledText
-                            $isActive={isActive}
+                        <Text
                             bold={isActive}
                             color={isActive ? "black" : undefined}
                         >
                             {name}
-                        </StyledText>
+                        </Text>
                     </NavElement>
                 );
             })}

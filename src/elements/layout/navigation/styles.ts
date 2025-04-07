@@ -8,24 +8,26 @@ export const StyledNavigation = styled.div`
     margin-left: 0.5rem;
 `;
 
-export const NavElement = styled.div`
+export const NavElement = styled.div<{ $isActive: boolean; theme: Theme }>`
     margin-bottom: 0.5rem;
     margin-left: 0.5rem;
     cursor: pointer;
 
-    &:last-child {
-        margin-bottom: 0;
+    p {
+        display: inline-block;
+        background-color: ${({ $isActive, theme }) => $isActive && theme.hover};
+        padding: 0.25rem 0.5rem;
     }
-`;
-
-export const StyledText = styled(Text)<{ $isActive: boolean; theme: Theme }>`
-    display: inline-block;
-    background-color: ${({ $isActive, theme }) => $isActive && theme.hover};
-    padding: 0.25rem 0.5rem;
 
     &:hover {
-        color: ${({ $isActive, theme }) => !$isActive && theme.hover};
-        transition: ${transition.fastest};
+        p {
+            color: ${({ $isActive, theme }) => !$isActive && theme.hover};
+            transition: ${transition.fastest};
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 0;
     }
 `;
 
