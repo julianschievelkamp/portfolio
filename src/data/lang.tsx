@@ -53,18 +53,150 @@ export const lang = {
             .
         </>
     ),
-    referencesHeadline: (
-        <>
-            SELECTED
-            <br />
-            REFERENCES
-        </>
-    ),
-    badgesHeadline: (
-        <>
-            FIRST PRIZE
-            <br />
-            WINNER
-        </>
-    ),
+    references: {
+        headline: (
+            <>
+                SELECTED
+                <br />
+                REFERENCES
+            </>
+        ),
+        publications: {
+            title: "Publications",
+            subTitle: "2015—present",
+            listEntries1: [
+                <>
+                    <a
+                        href="https://foundation.app/@julianschievelkamp"
+                        target="_blank"
+                    >
+                        Foundation
+                    </a>
+                    <br />
+                    NFT Auctions
+                </>,
+                <>
+                    Singulart
+                    <br />
+                    Limited Edition Prints
+                </>,
+                <>YellowKorner Galleries</>,
+                <>
+                    <a
+                        href="https://www.vogue.com/photovogue/photographers/71498"
+                        target="_blank"
+                    >
+                        PhotoVogue
+                    </a>
+                </>,
+                <>
+                    Art + Commerce
+                    <br />
+                    PhotoVogue Collection
+                </>,
+            ],
+            listEntries2: [
+                <>Marie Claire Maison 11/17</>,
+                <>
+                    <a
+                        href="https://www.worldphoto.org/blogs/15-03-17/human-transformation-beauty-and-darkness-julian-schievelkamp-2017-swpa"
+                        target="_blank"
+                    >
+                        Interview by Matthew Oxley
+                    </a>
+                    <br />
+                    World Photography Organisation
+                </>,
+                <>
+                    <a
+                        href="https://www.szerokikadr.pl/inspiracje/julian-schievelkamp"
+                        target="_blank"
+                    >
+                        Inspiracje: Julian Schievelkamp
+                    </a>
+                    <br />
+                    Szeroki Kadr by Nikon (polish)
+                </>,
+            ],
+            listEntries3: [
+                <>
+                    SWPA exhibition 2016 & 2017
+                    <br />
+                    Somerset House, London
+                </>,
+                <>
+                    photokina 09/2016
+                    <br />
+                    Koelnmesse, Cologne
+                </>,
+                <>
+                    UPdate 2017
+                    <br />
+                    Titanic Hotel, Berlin
+                </>,
+            ],
+        },
+        awards: {
+            title: "Awards",
+            subTitle: "2015—present",
+            listEntries1: [
+                <>
+                    ProfiFoto Scholarship
+                    <br />
+                    Fotoakademie-Koeln
+                </>,
+                <>Canon Sponsoring Award</>,
+                <>PIC Förderpreis Selected 2018</>,
+            ],
+            listEntries2: [
+                <>
+                    Fine Art Photography Awards
+                    <br />
+                    2019: Grand Prize Winner
+                    <br />
+                    2016: Nominee "Fine Art"
+                </>,
+                <>
+                    ND Awards
+                    <br />
+                    2019: 1st Place (Gold) "Open Theme"
+                </>,
+                <>
+                    Prix de la Photographie Paris
+                    <br />
+                    2019: Honorable Mention "Fine Art"
+                    <br />
+                    2017: 1st Place (Gold) "Self-Portrait"
+                </>,
+                <>
+                    Sony World Photography Awards
+                    <br />
+                    2017: Shortlist "Enhanced"
+                    <br />
+                    2016: Commended "Enhanced"
+                </>,
+                <>
+                    GoSee Awards
+                    <br />
+                    2017: Silver, Best Portfolio
+                </>,
+                <>
+                    International Photo Awards
+                    <br />
+                    2016: Honorable Mention "Portrait"
+                    <br />
+                    2016: Honorable Mention "Other"
+                </>,
+            ],
+        },
+    },
+    badges: {
+        headline: (
+            <>
+                FIRST PRIZE
+                <br />
+                WINNER
+            </>
+        ),
+    },
 };

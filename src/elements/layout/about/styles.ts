@@ -39,6 +39,20 @@ export const ImageWrapper = styled.div<{ theme: Theme }>`
     }
 `;
 
+export const ReferencesWrapper = styled.div`
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr;
+
+    @media ${queries.sm} {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media ${queries.lg} {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+`;
+
 export const BadgeWrapper = styled.div`
     display: grid;
     grid-gap: 2rem;
