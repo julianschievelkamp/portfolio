@@ -14,20 +14,21 @@ export const usePopup = (items: PortfolioItem[]) => {
     };
 
     const onTouchStart = (e: any) => {
-        if (!popupOpen) return;
+        if (!popupOpen || e.touches.length > 1) return;
 
         setTouchEnd(null);
         setTouchStart(e.targetTouches[0].clientX);
     };
 
     const onTouchMove = (e: any) => {
-        if (!popupOpen) return;
+        if (!popupOpen || e.touches.length > 1) return;
 
         setTouchEnd(e.targetTouches[0].clientX);
     };
 
-    const onTouchEnd = () => {
-        if (!popupOpen) return;
+    const onTouchEnd = (e: any) => {
+        if (!popupOpen || e.touches.length > 1) return;
+
         if (!touchStart || !touchEnd) return;
 
         const minSwipeDistance = 50;
