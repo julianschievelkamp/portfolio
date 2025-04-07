@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { queries } from "styles/variables";
 
-export const StyledGrid = styled.div`
+export const StyledPortfolio = styled.div`
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -15,7 +15,7 @@ export const StyledGrid = styled.div`
     }
 `;
 
-export const GridItem = styled.div`
+export const PortfolioItem = styled.div`
     overflow: hidden;
     position: relative;
     height: calc((100vw - 1.5rem) / 3);

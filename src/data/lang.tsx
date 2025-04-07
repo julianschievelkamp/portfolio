@@ -17,6 +17,23 @@ export const lang = {
             All rights reserved.
         </>
     ),
+    impressum: (
+        <>
+            Angaben gemäß § 5 TMG:
+            <br />
+            <br />
+            Julian Schievelkamp
+            <br />
+            Zollstocksweg 1
+            <br />
+            50969 Köln
+            <br />
+            <br />
+            <a href="mailto:mail@julianschievelkamp.com" target="_blank">
+                mail@julianschievelkamp.com
+            </a>
+        </>
+    ),
     about: (
         <>
             Julian Schievelkamp (b. 1994) is a contemporary visual artist and
@@ -43,12 +60,12 @@ export const lang = {
                 href="https://foundation.app/@julianschievelkamp"
                 target="_blank"
             >
-                → auction
+                auction
             </a>
             . For collaborations and business inquiries in general, feel free to
             drop a message via{" "}
             <a href="mailto:mail@julianschievelkamp.com" target="_blank">
-                → mail@julianschievelkamp.com
+                mail@julianschievelkamp.com
             </a>
             .
         </>

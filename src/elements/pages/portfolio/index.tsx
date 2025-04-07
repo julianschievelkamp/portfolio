@@ -1,16 +1,16 @@
-import { GridItem, StyledGrid } from "./styles";
+import { PortfolioItem, StyledPortfolio } from "./styles";
 import Image from "elements/components/image";
 import { useStore } from "hooks/useStore";
 import { portfolioData } from "data/portfolioData";
 
-const Grid = () => {
+const Portfolio = () => {
     const { setCurrentPortfolioIndex, setPopupOpen } = useStore();
 
     return (
-        <StyledGrid>
+        <StyledPortfolio>
             {portfolioData.map(({ title, image }, index) => {
                 return (
-                    <GridItem
+                    <PortfolioItem
                         key={title + index}
                         onClick={() => {
                             setCurrentPortfolioIndex(index);
@@ -23,11 +23,11 @@ const Grid = () => {
                             alt={title}
                             fadeInOnLoad
                         />
-                    </GridItem>
+                    </PortfolioItem>
                 );
             })}
-        </StyledGrid>
+        </StyledPortfolio>
     );
 };
 
-export default Grid;
+export default Portfolio;

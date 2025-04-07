@@ -15,6 +15,7 @@ export const StyledPopup = styled.div<{ $isOpen: boolean; theme: Theme }>`
     height: 100%;
     padding: 1rem;
     user-select: none;
+    z-index: 9;
 `;
 
 export const OuterWrapper = styled.div`

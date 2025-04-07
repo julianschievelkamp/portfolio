@@ -21,6 +21,7 @@ export const StyledSidebar = styled.div<{
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    z-index: 9;
 
     @media ${queries.md} {
         width: 17rem;
