@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { queries } from "styles/variables";
+import { queries, Theme, transition } from "styles/variables";
 
 export const StyledPortfolio = styled.div`
     position: relative;
@@ -15,12 +15,14 @@ export const StyledPortfolio = styled.div`
     }
 `;
 
-export const PortfolioItem = styled.div`
+export const PortfolioItem = styled.div<{ theme: Theme }>`
     overflow: hidden;
     position: relative;
     height: calc((100vw - 1.5rem) / 3);
     width: 100%;
     cursor: pointer;
+    background-color: ${({ theme }) => theme.tertiary};
+    transition: ${transition.fast};
 
     @media ${queries.md} {
         height: calc((100vw - 3.5rem - 17rem) / 4);

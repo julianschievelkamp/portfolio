@@ -4,6 +4,7 @@ export type Theme = {
     body: string;
     text: string;
     secondary: string;
+    tertiary: string;
     hover: string;
     border: string;
 };
@@ -12,6 +13,7 @@ export const lightTheme: Theme = {
     body: "#FFFFFF",
     text: "#000000",
     secondary: "#999999",
+    tertiary: "rgb(0, 0, 0, 0.05)",
     hover: "#ffca00",
     border: "#000000",
 };
@@ -20,6 +22,7 @@ export const darkTheme: Theme = {
     body: "#000000",
     text: "#FFFFFF",
     secondary: "#999999",
+    tertiary: "rgb(255, 255, 255, 0.1)",
     hover: "#ffca00",
     border: "#FFFFFF",
 };
