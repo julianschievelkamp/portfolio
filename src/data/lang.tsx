@@ -1,3 +1,5 @@
+import Link from "elements/components/link";
+
 export const lang = {
     title: (
         <>
@@ -29,9 +31,9 @@ export const lang = {
             50969 Köln
             <br />
             <br />
-            <a href="mailto:mail@julianschievelkamp.com" target="_blank">
+            <Link href="mailto:mail@julianschievelkamp.com" target="_blank">
                 mail@julianschievelkamp.com
-            </a>
+            </Link>
         </>
     ),
     about: (
@@ -56,17 +58,17 @@ export const lang = {
             High quality fine art prints in various formats and sizes are
             available upon request. Small selections of artworks will be minted
             as NFTs on the Ethereum blockchain and are available for{" "}
-            <a
+            <Link
                 href="https://foundation.app/@julianschievelkamp"
                 target="_blank"
             >
                 auction
-            </a>
+            </Link>
             . For collaborations and business inquiries in general, feel free to
             drop a{" "}
-            <a href="mailto:mail@julianschievelkamp.com" target="_blank">
+            <Link href="mailto:mail@julianschievelkamp.com" target="_blank">
                 message
-            </a>
+            </Link>
             .
         </>
     ),
@@ -83,12 +85,12 @@ export const lang = {
             subTitle: "2015—present",
             listEntries1: [
                 <>
-                    <a
+                    <Link
                         href="https://foundation.app/@julianschievelkamp"
                         target="_blank"
                     >
                         Foundation
-                    </a>
+                    </Link>
                     <br />
                     <span>NFT Auctions</span>
                 </>,
@@ -99,12 +101,12 @@ export const lang = {
                 </>,
                 <>YellowKorner Galleries</>,
                 <>
-                    <a
+                    <Link
                         href="https://www.vogue.com/photovogue/photographers/71498"
                         target="_blank"
                     >
                         PhotoVogue
-                    </a>
+                    </Link>
                 </>,
                 <>
                     Art + Commerce
@@ -115,22 +117,22 @@ export const lang = {
             listEntries2: [
                 <>Marie Claire Maison 11/17</>,
                 <>
-                    <a
+                    <Link
                         href="https://www.worldphoto.org/blogs/15-03-17/human-transformation-beauty-and-darkness-julian-schievelkamp-2017-swpa"
                         target="_blank"
                     >
                         Interview by Matthew Oxley
-                    </a>
+                    </Link>
                     <br />
                     <span>World Photography Organisation</span>
                 </>,
                 <>
-                    <a
+                    <Link
                         href="https://www.szerokikadr.pl/inspiracje/julian-schievelkamp"
                         target="_blank"
                     >
                         Inspiracje: Julian Schievelkamp
-                    </a>
+                    </Link>
                     <br />
                     <span>Szeroki Kadr by Nikon (polish)</span>
                 </>,

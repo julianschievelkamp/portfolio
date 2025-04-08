@@ -1,20 +1,27 @@
-import { Page } from "./types";
-
 import About from "elements/pages/about";
 import Impressum from "elements/pages/impressum";
 import Portfolio from "elements/pages/portfolio";
 
+type Page = {
+    name: string;
+    path: string;
+    element: React.ReactNode;
+};
+
 export const pageData: Page[] = [
     {
         name: "Portfolio",
-        content: <Portfolio />,
+        path: "/",
+        element: <Portfolio />,
     },
     {
         name: "About",
-        content: <About />,
+        path: "/about",
+        element: <About />,
     },
     {
         name: "Impressum",
-        content: <Impressum />,
+        path: "/impressum",
+        element: <Impressum />,
     },
 ];

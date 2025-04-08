@@ -1,4 +1,4 @@
-import { Theme } from "data/types";
+import { Theme } from "styles/variables";
 import styled, { css } from "styled-components";
 
 import { transition } from "styles/variables";

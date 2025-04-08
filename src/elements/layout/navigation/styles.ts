@@ -1,17 +1,34 @@
-import { Theme } from "data/types";
+import Link from "elements/components/link";
 import Text from "elements/components/text";
 import styled from "styled-components";
-import { transition } from "styles/variables";
+import { Theme, transition } from "styles/variables";
 
-export const StyledNavigation = styled.div`
+export const StyledNavigation = styled.nav`
     margin-bottom: 3rem;
     margin-left: 0.5rem;
 `;
 
-export const NavElement = styled.div<{ $isActive: boolean; theme: Theme }>`
-    margin-bottom: 0.5rem;
+export const Label = styled(Text)<{ theme: Theme }>`
+    color: ${({ theme }) => theme.secondary};
+`;
+
+export const NavList = styled.ul`
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
     margin-left: 0.5rem;
-    cursor: pointer;
+`;
+
+export const NavElement = styled.li`
+    margin-bottom: 0.5rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+`;
+
+export const NavLink = styled(Link)<{ $isActive: boolean; theme: Theme }>`
+    display: block;
 
     p {
         display: inline-block;
@@ -25,12 +42,4 @@ export const NavElement = styled.div<{ $isActive: boolean; theme: Theme }>`
             transition: ${transition.fastest};
         }
     }
-
-    &:last-child {
-        margin-bottom: 0;
-    }
-`;
-
-export const Label = styled(Text)<{ theme: Theme }>`
-    color: ${({ theme }) => theme.secondary};
 `;

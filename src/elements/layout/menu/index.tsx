@@ -7,6 +7,7 @@ import { queries } from "styles/variables";
 import Div from "elements/components/div";
 import { useStore } from "hooks/useStore";
 import Icon from "elements/components/icon";
+import Link from "elements/components/link";
 
 const Menu = () => {
     const { sidebarOpen, setSidebarOpen } = useStore();
@@ -17,7 +18,13 @@ const Menu = () => {
     return (
         <StyledMenu $isVisible={isVisible}>
             <Text type="headline" fontSize={isMd ? "1.5rem" : "1.25rem"}>
-                {lang.title}
+                <Link
+                    href="#/"
+                    onClick={() => setSidebarOpen(false)}
+                    underline={false}
+                >
+                    {lang.title}
+                </Link>
             </Text>
 
             <Div height="100%" display="flex" alignItems="center">

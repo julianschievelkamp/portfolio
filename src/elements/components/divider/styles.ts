@@ -1,6 +1,5 @@
-import { Theme } from "data/types";
 import styled from "styled-components";
-import { transition } from "styles/variables";
+import { Theme, transition } from "styles/variables";
 
 export const StyledDivider = styled.div<{ theme: Theme }>`
     position: relative;

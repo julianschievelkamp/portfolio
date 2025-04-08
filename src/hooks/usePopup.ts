@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useStore } from "./useStore";
 import { mapIndex } from "utils/utils";
-import { PortfolioItem } from "data/types";
+import { PortfolioItem } from "data/portfolioData";
 
 export const usePopup = (items: PortfolioItem[]) => {
     const [touchStart, setTouchStart] = useState(null);

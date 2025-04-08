@@ -6,15 +6,13 @@ import { darkTheme, lightTheme, queries } from "styles/variables";
 import Sidebar from "elements/layout/sidebar";
 import { useMediaQuery } from "hooks/useMediaQuery";
 import Menu from "elements/layout/menu";
-import { pageData } from "data/pageData";
 import Popup from "elements/layout/popup";
-import { useStore } from "hooks/useStore";
+import { HashRouter, Routes, Route } from "react-router";
+import { pageData } from "data/pageData";
 
 const App = () => {
     const { theme, toggleTheme, isLoading } = useTheme();
     const isMd = useMediaQuery(queries.md);
-
-    const { currentPageIndex } = useStore();
 
     if (isLoading) return <></>;
 
@@ -23,11 +21,22 @@ const App = () => {
             <StyledApp>
                 <GlobalStyle />
 
-                <PageContainer id="page-container">
-                    {pageData[currentPageIndex].content}
-                </PageContainer>
+                <HashRouter>
+                    <PageContainer id="page-container">
+                        <Routes>
+                            {pageData.map((page) => {
+                                return (
+                                    <Route
+                                        path={page.path}
+                                        element={page.element}
+                                    />
+                                );
+                            })}
+                        </Routes>
+                    </PageContainer>
 
-                <Sidebar theme={theme} toggleTheme={toggleTheme} />
+                    <Sidebar theme={theme} toggleTheme={toggleTheme} />
+                </HashRouter>
 
                 {!isMd && <Menu />}
 

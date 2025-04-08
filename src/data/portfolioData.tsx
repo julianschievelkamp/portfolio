@@ -1,5 +1,3 @@
-import { PortfolioItem } from "./types";
-
 import DadaYaga from "assets/img/dada_yaga.jpg";
 import Andromeda from "assets/img/andromeda.jpg";
 import Versus1 from "assets/img/versus_1.jpg";
@@ -35,6 +33,13 @@ import ViscosityVideo from "assets/videos/viscosity_1080.mp4";
 import AuraVideo from "assets/videos/aura.mp4";
 import DopplerVideo from "assets/videos/doppler.mp4";
 import ConsciousnessVideo from "assets/videos/consciousness_1080.mp4";
+
+export type PortfolioItem = {
+    title: string;
+    image: string;
+    video?: string;
+    palette: string[];
+};
 
 export const portfolioData: PortfolioItem[] = [
     {

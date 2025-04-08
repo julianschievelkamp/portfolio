@@ -1,5 +1,12 @@
-import { Theme } from "data/types";
 import { css } from "styled-components";
+
+export type Theme = {
+    body: string;
+    text: string;
+    secondary: string;
+    hover: string;
+    border: string;
+};
 
 export const lightTheme: Theme = {
     body: "#FFFFFF",

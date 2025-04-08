@@ -1,4 +1,4 @@
-import { Theme } from "data/types";
+import { Theme } from "styles/variables";
 import Text from "elements/components/text";
 import styled from "styled-components";
 import { queries, scrollStyles, transition } from "styles/variables";

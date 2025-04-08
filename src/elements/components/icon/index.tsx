@@ -1,4 +1,4 @@
-import { Theme } from "data/types";
+import { Theme } from "styles/variables";
 import { icons } from "./icons";
 
 import { StyledIcon } from "./styles";

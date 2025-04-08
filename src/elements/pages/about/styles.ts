@@ -1,6 +1,5 @@
-import { Theme } from "data/types";
 import styled from "styled-components";
-import { queries } from "styles/variables";
+import { queries, Theme } from "styles/variables";
 
 export const StyledAbout = styled.div`
     max-width: 1140px;

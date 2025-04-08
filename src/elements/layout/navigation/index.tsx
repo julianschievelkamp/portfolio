@@ -1,12 +1,18 @@
 import { pageData } from "data/pageData";
-import { Label, NavElement, StyledNavigation } from "./styles";
+import {
+    Label,
+    NavElement,
+    NavLink,
+    NavList,
+    StyledNavigation,
+} from "./styles";
 import { useStore } from "hooks/useStore";
 import { lang } from "data/lang";
 import Text from "elements/components/text";
+import { useMatch } from "react-router";
 
 const Navigation = () => {
-    const { currentPageIndex, setCurrentPageIndex, setSidebarOpen } =
-        useStore();
+    const { setSidebarOpen } = useStore();
 
     return (
         <StyledNavigation>
@@ -14,29 +20,32 @@ const Navigation = () => {
                 {lang.work}
             </Label>
 
-            {pageData.map(({ name }, index) => {
-                const isActive = index === currentPageIndex;
+            <NavList>
+                {pageData.map(({ name, path }) => {
+                    const isActive = useMatch(path) !== null;
 
-                return (
-                    <NavElement
-                        $isActive={isActive}
-                        key={name}
-                        onClick={() => {
-                            if (isActive) return;
-
-                            setCurrentPageIndex(index);
-                            setSidebarOpen(false);
-                        }}
-                    >
-                        <Text
-                            bold={isActive}
-                            color={isActive ? "black" : undefined}
-                        >
-                            {name}
-                        </Text>
-                    </NavElement>
-                );
-            })}
+                    return (
+                        <NavElement key={name}>
+                            <NavLink
+                                $isActive={isActive}
+                                href={`#${path}`}
+                                onClick={() => {
+                                    if (!isActive) {
+                                        setSidebarOpen(false);
+                                    }
+                                }}
+                            >
+                                <Text
+                                    bold={isActive}
+                                    color={isActive ? "black" : undefined}
+                                >
+                                    {name}
+                                </Text>
+                            </NavLink>
+                        </NavElement>
+                    );
+                })}
+            </NavList>
         </StyledNavigation>
     );
 };
