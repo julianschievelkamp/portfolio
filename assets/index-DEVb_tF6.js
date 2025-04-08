@@ -86,7 +86,7 @@ Error generating stack: `+l.message+`
     .no-transition * {
         transition: none !important;
     }
-`,lm=()=>{let n="100vh";window.innerHeight&&(n=`${window.innerHeight}px`),document.documentElement.style.setProperty("--100vh",n)};lm();let E0;window.addEventListener("resize",()=>{lm(),document.body.classList.add("no-transition"),clearTimeout(E0),E0=setTimeout(()=>{document.body.classList.remove("no-transition")},400)});const sp={body:"#FFFFFF",text:"#000000",secondary:"#999999",tertiary:"rgb(0, 0, 0, 0.05)",hover:"#ffca00",border:"#000000"},op={body:"#000000",text:"#FFFFFF",secondary:"#999999",tertiary:"rgb(255, 255, 255, 0.1)",hover:"#ffca00",border:"#FFFFFF"},Ft={sm:"screen and (min-width: 576px)",md:"screen and (min-width: 768px)",lg:"screen and (min-width: 992px)"},ce={fastest:"100ms ease-out",fast:"300ms ease-out"},am=ga`
+`,lm=()=>{let n="100vh";window.innerWidth&&window.innerWidth===screen.width&&(n=`${window.innerHeight}px`),document.documentElement.style.setProperty("--100vh",n)};lm();let E0;window.addEventListener("resize",()=>{lm(),document.body.classList.add("no-transition"),clearTimeout(E0),E0=setTimeout(()=>{document.body.classList.remove("no-transition")},400)});const sp={body:"#FFFFFF",text:"#000000",secondary:"#999999",tertiary:"rgb(0, 0, 0, 0.05)",hover:"#ffca00",border:"#000000"},op={body:"#000000",text:"#FFFFFF",secondary:"#999999",tertiary:"rgb(255, 255, 255, 0.1)",hover:"#ffca00",border:"#FFFFFF"},Ft={sm:"screen and (min-width: 576px)",md:"screen and (min-width: 768px)",lg:"screen and (min-width: 992px)"},ce={fastest:"100ms ease-out",fast:"300ms ease-out"},am=ga`
     overflow-y: scroll;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
