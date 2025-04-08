@@ -81,6 +81,7 @@ Error generating stack: `+l.message+`
         width: 100vw;
         height: var(--100vh);
         overflow: hidden;
+        touch-action: pan-y;
     }
 
     .no-transition * {
