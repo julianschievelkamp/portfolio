@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { queries, Theme, transition } from "styles/variables";
+import { queries, Theme } from "styles/variables";
 
 export const StyledAbout = styled.div`
     max-width: 1140px;
@@ -25,8 +25,6 @@ export const ImageWrapper = styled.div<{ theme: Theme }>`
     justify-content: center;
     margin-bottom: 2rem;
     height: fit-content;
-    background-color: ${({ theme }) => theme.tertiary};
-    transition: ${transition.fast};
 
     img {
         max-height: 30rem;

@@ -28,8 +28,7 @@ export default createGlobalStyle<{ theme?: Theme }>`
 export const set100vh = () => {
     let value = "100vh";
 
-    // if window size is iPad or smaller
-    if (window.innerWidth && window.innerWidth <= 1024) {
+    if (window.innerHeight) {
         value = `${window.innerHeight}px`;
     }
 
