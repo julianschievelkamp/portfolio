@@ -6,12 +6,12 @@ export default createGlobalStyle<{ theme?: Theme }>`
     ${fonts};
 
     :root {
-        --unit-100vh: 100vh;
+        --100vh: 100vh;
     }
 
-    @supports (height: 100dvh) {
+    @supports (height: 100svh) {
         :root {
-            --unit-100vh: 100dvh;
+            --100vh: 100svh;
         }
     }  
 
@@ -25,7 +25,7 @@ export default createGlobalStyle<{ theme?: Theme }>`
         padding: 0;
         font-size: 100%;
         width: 100vw;
-        height: var(--unit-100vh);
+        height: var(--100vh);
         overflow: hidden;
     }
 
@@ -34,24 +34,9 @@ export default createGlobalStyle<{ theme?: Theme }>`
     }
 `;
 
-/* see https://stackoverflow.com/questions/58886797/how-to-access-the-real-100vh-on-ios-in-css */
-export const set100vh = () => {
-    let value = "100vh";
-
-    if (window.innerHeight) {
-        value = `${window.innerHeight}px`;
-    }
-
-    document.documentElement.style.setProperty("--unit-100vh", value);
-};
-
-set100vh();
-
 let resizeTimer: ReturnType<typeof setTimeout>;
 
 window.addEventListener("resize", () => {
-    set100vh();
-
     document.body.classList.add("no-transition");
 
     clearTimeout(resizeTimer);
