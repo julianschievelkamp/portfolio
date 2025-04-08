@@ -5,6 +5,16 @@ import { Theme } from "styles/variables";
 export default createGlobalStyle<{ theme?: Theme }>`
     ${fonts};
 
+    :root {
+        --unit-100vh: 100vh;
+    }
+
+    @supports (height: 100dvh) {
+        :root {
+            --unit-100vh: 100dvh;
+        }
+    }  
+
     * {
         box-sizing: border-box;
         -webkit-tap-highlight-color: transparent;
@@ -15,7 +25,7 @@ export default createGlobalStyle<{ theme?: Theme }>`
         padding: 0;
         font-size: 100%;
         width: 100vw;
-        height: var(--100vh);
+        height: var(--unit-100vh);
         overflow: hidden;
     }
 
@@ -32,7 +42,7 @@ export const set100vh = () => {
         value = `${window.innerHeight}px`;
     }
 
-    document.documentElement.style.setProperty("--100vh", value);
+    document.documentElement.style.setProperty("--unit-100vh", value);
 };
 
 set100vh();
