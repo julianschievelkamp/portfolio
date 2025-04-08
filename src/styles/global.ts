@@ -28,7 +28,7 @@ export default createGlobalStyle<{ theme?: Theme }>`
 export const set100vh = () => {
     let value = "100vh";
 
-    if (window.innerHeight) {
+    if (window.innerWidth && window.innerWidth === screen.width) {
         value = `${window.innerHeight}px`;
     }
 
