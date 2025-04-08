@@ -22,13 +22,17 @@ export const usePopup = (items: PortfolioItem[]) => {
     };
 
     const onTouchMove = (e: any) => {
-        if (!popupOpen || e.touches.length > 1) return;
+        if (!popupOpen) return;
 
-        setTouchEnd(e.touches[0].clientX);
+        if (e.touches.length > 1) {
+            setTouchEnd(null);
+        } else {
+            setTouchEnd(e.touches[0].clientX);
+        }
     };
 
-    const onTouchEnd = (e: any) => {
-        if (!popupOpen || e.touches.length > 1) return;
+    const onTouchEnd = () => {
+        if (!popupOpen) return;
 
         if (!touchStart || !touchEnd) return;
 
