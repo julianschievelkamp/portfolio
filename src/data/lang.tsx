@@ -49,7 +49,7 @@ export const lang = {
             <br />
             Julian Schievelkamp won several prizes and awards, including the
             2017 Prix de la Photographie Paris. In 2019 the artist was awarded
-            the title <i>Fine Art Photographer of the Year</i> by the jury of
+            the title <b>Fine Art Photographer of the Year</b> by the jury of
             the 5th Fine Art Photography Awards. Julian Schievelkamp exhibited
             his work in London, Berlin and Cologne and over 100 YellowKorner
             galleries worldwide.
