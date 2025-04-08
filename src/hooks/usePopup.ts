@@ -26,6 +26,7 @@ export const usePopup = (items: PortfolioItem[]) => {
 
         if (e.touches.length > 1) {
             setTouchEnd(null);
+            setTouchStart(null);
         } else {
             setTouchEnd(e.touches[0].clientX);
         }
