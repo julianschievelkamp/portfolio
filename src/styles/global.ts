@@ -28,10 +28,10 @@ export default createGlobalStyle<{ theme?: Theme }>`
 export const set100vh = () => {
     let value = "100vh";
 
-    // if window size is iPad or smaller
+    // if window size is smaller than iPad
     if (
         /iPad|iPhone|iPod/.test(navigator.userAgent) &&
-        window.innerWidth <= 1024
+        window.innerWidth < 1024
     ) {
         value = `${window.innerHeight}px`;
     }
