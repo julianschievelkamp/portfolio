@@ -2,8 +2,8 @@ import Text from "elements/components/text";
 import {
     CloseTrigger,
     ScrollContainer,
+    StyledHeadline,
     StyledSidebar,
-    StyledText,
 } from "./styles";
 import { lang } from "data/lang";
 import Div from "elements/components/div";
@@ -28,12 +28,9 @@ const Sidebar = ({ theme, toggleTheme }: SidebarProps) => {
                 <CloseTrigger onClick={() => setSidebarOpen(false)} />
             )}
             <StyledSidebar $sidebarOpen={sidebarOpen}>
-                <StyledText
-                    type="headline"
-                    fontSize={isMd ? "1.5rem" : "1.25rem"}
-                >
+                <StyledHeadline fontSize={isMd ? "1.5rem" : "1.25rem"}>
                     {lang.title}
-                </StyledText>
+                </StyledHeadline>
 
                 <Text fontSize="0.875rem" margin="1.5rem 0 3rem 0">
                     {lang.intro}

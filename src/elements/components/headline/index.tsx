@@ -1,34 +1,40 @@
 import React from "react";
 
-import { StyledText } from "./styles";
+import { H1, H2 } from "./styles";
 
-export interface TextProps {
+const headlines = {
+    h1: H1,
+    h2: H2,
+};
+
+export interface HeadlineProps {
     children?: React.ReactNode;
-    bold?: boolean;
     className?: string;
     color?: string;
     textAlign?: "left" | "center" | "right" | "justify";
     margin?: string;
     fontSize?: string;
     lineHeight?: string;
+    type?: "h1" | "h2";
 }
 
-const Text = ({
+const Headline = ({
     children,
-    bold,
     className,
     color,
     textAlign,
     margin = "0",
     fontSize = "1rem",
     lineHeight = "1.5",
+    type = "h1",
     ...rest
-}: TextProps) => {
+}: HeadlineProps) => {
+    const HeadlineComponent = headlines[type];
+
     return (
-        <StyledText
+        <HeadlineComponent
             className={className}
             color={color}
-            $bold={bold}
             $textAlign={textAlign}
             $margin={margin}
             $fontSize={fontSize}
@@ -36,8 +42,8 @@ const Text = ({
             {...rest}
         >
             {children}
-        </StyledText>
+        </HeadlineComponent>
     );
 };
 
-export default Text;
+export default Headline;

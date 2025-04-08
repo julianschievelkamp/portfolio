@@ -1,7 +1,7 @@
 import { Theme } from "styles/variables";
-import Text from "elements/components/text";
 import styled from "styled-components";
 import { queries, scrollStyles, transition } from "styles/variables";
+import Headline from "elements/components/headline";
 
 export const StyledSidebar = styled.div<{
     $sidebarOpen: boolean;
@@ -47,7 +47,7 @@ export const ScrollContainer = styled.div`
     height: 100%;
 `;
 
-export const StyledText = styled(Text)<{
+export const StyledHeadline = styled(Headline)<{
     theme: Theme;
 }>`
     color: ${({ theme }) => theme.body};

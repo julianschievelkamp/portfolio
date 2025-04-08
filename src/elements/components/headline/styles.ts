@@ -1,22 +1,31 @@
 import { Theme } from "styles/variables";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { transition } from "styles/variables";
 
-export const StyledText = styled.p<{
+type headlineProps = {
     theme: Theme;
     color?: string;
-    $bold?: boolean;
     $textAlign?: "left" | "center" | "right" | "justify";
     $margin?: string;
     $fontSize?: string;
     $lineHeight?: string;
-}>`
+};
+
+const headlineStyles = css<headlineProps>`
     text-align: ${({ $textAlign }) => $textAlign};
-    font-weight: ${({ $bold }) => ($bold ? "bold" : "normal")};
     font-size: ${({ $fontSize }) => $fontSize};
     margin: ${({ $margin }) => $margin};
     color: ${({ color, theme }) => color ?? theme.text};
     line-height: ${({ $lineHeight }) => $lineHeight};
     transition: color ${transition.fast};
-    font-family: "Poppins", sans-serif;
+    font-family: "PlayfairDisplay", sans-serif;
+    font-weight: 900;
+`;
+
+export const H1 = styled.h1<headlineProps>`
+    ${headlineStyles}
+`;
+
+export const H2 = styled.h2<headlineProps>`
+    ${headlineStyles}
 `;
