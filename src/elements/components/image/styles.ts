@@ -6,6 +6,12 @@ export const StyledImage = styled.img<{ $imageLoaded: boolean }>`
     height: ${({ height }) => height};
     opacity: ${({ $imageLoaded }) => ($imageLoaded ? 1 : 0)};
     max-width: 100%;
-    pointer-events: none;
     transition: ${transition.fast};
+
+    pointer-events: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 `;

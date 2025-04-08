@@ -21,7 +21,7 @@ export const lang = {
     ),
     impressum: (
         <>
-            Angaben gemäß § 5 TMG:
+            <b>Angaben gemäß § 5 TMG:</b>
             <br />
             <br />
             Julian Schievelkamp
