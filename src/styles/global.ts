@@ -28,11 +28,7 @@ export default createGlobalStyle<{ theme?: Theme }>`
 export const set100vh = () => {
     let value = "100vh";
 
-    // if window size is smaller than iPad
-    if (
-        /iPad|iPhone|iPod/.test(navigator.userAgent) &&
-        window.innerWidth < 1024
-    ) {
+    if (window.innerHeight) {
         value = `${window.innerHeight}px`;
     }
 
@@ -44,6 +40,8 @@ set100vh();
 let resizeTimer: ReturnType<typeof setTimeout>;
 
 window.addEventListener("resize", () => {
+    set100vh();
+
     document.body.classList.add("no-transition");
 
     clearTimeout(resizeTimer);
