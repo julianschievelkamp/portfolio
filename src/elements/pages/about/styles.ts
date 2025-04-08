@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { queries, Theme } from "styles/variables";
+import { queries, Theme, transition } from "styles/variables";
 
 export const StyledAbout = styled.div`
     max-width: 1140px;
@@ -45,6 +45,7 @@ export const ReferencesWrapper = styled.div<{ theme: Theme }>`
 
     span {
         color: ${({ theme }) => theme.secondary};
+        transition: ${transition.fast};
     }
 
     @media ${queries.sm} {

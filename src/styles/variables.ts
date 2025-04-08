@@ -5,26 +5,26 @@ export type Theme = {
     text: string;
     secondary: string;
     tertiary: string;
-    hover: string;
     border: string;
+    hover: string;
 };
 
 export const lightTheme: Theme = {
-    body: "#FFFFFF",
-    text: "#000000",
-    secondary: "#999999",
+    body: "rgb(255, 255, 255, 1)",
+    text: "rgb(0, 0, 0, 1)",
+    secondary: "rgb(0, 0, 0, 0.5)",
     tertiary: "rgb(0, 0, 0, 0.05)",
+    border: "rgb(0, 0, 0, 1)",
     hover: "#ffca00",
-    border: "#000000",
 };
 
 export const darkTheme: Theme = {
-    body: "#000000",
-    text: "#FFFFFF",
-    secondary: "#999999",
+    body: "rgb(0, 0, 0, 1)",
+    text: "rgb(255, 255, 255, 1)",
+    secondary: "rgb(255, 255, 255, 0.5)",
     tertiary: "rgb(255, 255, 255, 0.1)",
+    border: "rgb(255, 255, 255, 1)",
     hover: "#ffca00",
-    border: "#FFFFFF",
 };
 
 export const queries = {
