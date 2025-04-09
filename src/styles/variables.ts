@@ -5,7 +5,6 @@ export type Theme = {
     text: string;
     secondary: string;
     tertiary: string;
-    border: string;
     hover: string;
 };
 
@@ -14,7 +13,6 @@ export const lightTheme: Theme = {
     text: "rgb(0, 0, 0, 1)",
     secondary: "rgb(0, 0, 0, 0.5)",
     tertiary: "rgb(0, 0, 0, 0.05)",
-    border: "rgb(0, 0, 0, 1)",
     hover: "#ffca00",
 };
 
@@ -23,7 +21,6 @@ export const darkTheme: Theme = {
     text: "rgb(255, 255, 255, 1)",
     secondary: "rgb(255, 255, 255, 0.5)",
     tertiary: "rgb(255, 255, 255, 0.1)",
-    border: "rgb(255, 255, 255, 1)",
     hover: "#ffca00",
 };
 
