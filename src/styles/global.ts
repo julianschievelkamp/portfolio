@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import fonts from "./fonts";
-import { Theme, transition } from "styles/variables";
+import { Theme } from "styles/variables";
 
 export default createGlobalStyle<{ theme?: Theme }>`
     ${fonts};
