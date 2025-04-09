@@ -5,9 +5,9 @@ import { useMediaQuery } from "hooks/useMediaQuery";
 import { queries } from "styles/variables";
 import Div from "elements/components/div";
 import { useStore } from "hooks/useStore";
-import Icon from "elements/components/icon";
 import Link from "elements/components/link";
 import Headline from "elements/components/headline";
+import Button from "elements/components/button";
 
 const Menu = () => {
     const { sidebarOpen, setSidebarOpen } = useStore();
@@ -28,9 +28,9 @@ const Menu = () => {
             </Headline>
 
             <Div height="100%" display="flex" alignItems="center">
-                <Icon
-                    size="2rem"
-                    name={sidebarOpen ? "close" : "menu"}
+                <Button
+                    iconSize="2rem"
+                    iconName={sidebarOpen ? "close" : "menu"}
                     onClick={() => setSidebarOpen(!sidebarOpen)}
                 />
             </Div>

@@ -1,5 +1,5 @@
 import { Theme } from "styles/variables";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import { transition } from "styles/variables";
 
@@ -8,7 +8,6 @@ export const StyledIcon = styled.div<{
     $margin?: string;
     $padding?: string;
     theme?: Theme;
-    onClick?: () => void | undefined;
 }>`
     display: flex;
     align-items: center;
@@ -27,17 +26,4 @@ export const StyledIcon = styled.div<{
         width: ${({ $size }) => $size};
         height: ${({ $size }) => $size};
     }
-
-    &:hover {
-        svg {
-            fill: ${({ theme }) => theme.hover};
-            transition: ${transition.fastest};
-        }
-    }
-
-    ${({ onClick }) =>
-        onClick &&
-        css`
-            cursor: pointer;
-        `}
 `;

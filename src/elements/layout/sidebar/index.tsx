@@ -11,7 +11,7 @@ import { useMediaQuery } from "hooks/useMediaQuery";
 import { queries } from "styles/variables";
 import Navigation from "elements/layout/navigation";
 import { useStore } from "hooks/useStore";
-import Icon from "elements/components/icon";
+import Button from "elements/components/button";
 
 export interface SidebarProps {
     theme: string;
@@ -41,9 +41,9 @@ const Sidebar = ({ theme, toggleTheme }: SidebarProps) => {
 
                     <Div>
                         <Div display="flex" alignItems="center">
-                            <Icon
+                            <Button
                                 padding="0.5rem"
-                                name="instagram"
+                                iconName="instagram"
                                 onClick={() =>
                                     window.open(
                                         "https://www.instagram.com/julianschievelkamp",
@@ -51,9 +51,9 @@ const Sidebar = ({ theme, toggleTheme }: SidebarProps) => {
                                     )
                                 }
                             />
-                            <Icon
+                            <Button
                                 padding="0.5rem"
-                                name={theme === "light" ? "dark" : "light"}
+                                iconName={theme === "light" ? "dark" : "light"}
                                 onClick={() => toggleTheme()}
                             />
                         </Div>

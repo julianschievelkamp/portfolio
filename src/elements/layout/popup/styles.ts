@@ -62,13 +62,16 @@ export const ArrowLeft = styled.div`
     width: 50%;
     left: 0;
 
-    > div {
+    > button {
+        position: relative;
         width: 100%;
         height: 100%;
 
-        svg {
+        > div {
             position: absolute;
             left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
         }
     }
 `;
@@ -79,13 +82,16 @@ export const ArrowRight = styled.div`
     width: 50%;
     right: 0;
 
-    > div {
+    > button {
+        position: relative;
         width: 100%;
         height: 100%;
 
-        svg {
+        > div {
             position: absolute;
             right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
         }
     }
 `;

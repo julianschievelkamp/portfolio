@@ -12,11 +12,11 @@ import Image from "elements/components/image";
 import { useStore } from "hooks/useStore";
 import { useMediaQuery } from "hooks/useMediaQuery";
 import { queries } from "styles/variables";
-import Icon from "elements/components/icon";
 import { mapIndex } from "utils/utils";
 import { portfolioData } from "data/portfolioData";
 import Video from "elements/components/video";
 import Div from "elements/components/div";
+import Button from "elements/components/button";
 
 const SelectedItem = () => {
     const { setPopupOpen, currentPortfolioIndex, setCurrentPortfolioIndex } =
@@ -32,9 +32,9 @@ const SelectedItem = () => {
                 {isMd && (
                     <>
                         <ArrowLeft>
-                            <Icon
-                                size="4rem"
-                                name="chevronLeft"
+                            <Button
+                                iconSize="4rem"
+                                iconName="chevronLeft"
                                 onClick={() =>
                                     setCurrentPortfolioIndex(
                                         mapIndex(
@@ -46,9 +46,9 @@ const SelectedItem = () => {
                             />
                         </ArrowLeft>
                         <ArrowRight>
-                            <Icon
-                                size="4rem"
-                                name="chevronRight"
+                            <Button
+                                iconSize="4rem"
+                                iconName="chevronRight"
                                 onClick={() =>
                                     setCurrentPortfolioIndex(
                                         mapIndex(

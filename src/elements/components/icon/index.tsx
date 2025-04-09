@@ -9,14 +9,12 @@ export interface IconProps {
     size?: string;
     margin?: string;
     padding?: string;
-    onClick?: () => void;
     className?: string;
 }
 
 const Icon = ({
     name,
     color,
-    onClick,
     className,
     size = "1rem",
     margin,
@@ -30,7 +28,6 @@ const Icon = ({
             $size={size}
             $margin={margin}
             $padding={padding}
-            onClick={onClick}
             className={className}
         >
             <Icon />
