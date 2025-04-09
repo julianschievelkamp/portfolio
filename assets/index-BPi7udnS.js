@@ -97,7 +97,7 @@ Error generating stack: `+l.message+`
     .no-transition * {
         transition: none !important;
     }
-`;let x0;window.addEventListener("resize",()=>{document.body.classList.add("no-transition"),clearTimeout(x0),x0=setTimeout(()=>{document.body.classList.remove("no-transition")},400)});const op={body:"rgb(255, 255, 255, 1)",text:"rgb(0, 0, 0, 1)",secondary:"rgb(0, 0, 0, 0.5)",tertiary:"rgb(0, 0, 0, 0.05)",border:"rgb(0, 0, 0, 1)",hover:"#ffca00"},dp={body:"rgb(0, 0, 0, 1)",text:"rgb(255, 255, 255, 1)",secondary:"rgb(255, 255, 255, 0.5)",tertiary:"rgb(255, 255, 255, 0.1)",border:"rgb(255, 255, 255, 1)",hover:"#ffca00"},Ft={sm:"screen and (min-width: 576px)",md:"screen and (min-width: 768px)",lg:"screen and (min-width: 992px)"},ee={fastest:"100ms ease-out",fast:"300ms ease-out"},lm=dn`
+`;let x0;window.addEventListener("resize",()=>{document.body.classList.add("no-transition"),clearTimeout(x0),x0=setTimeout(()=>{document.body.classList.remove("no-transition")},400)});const op={body:"rgb(255, 255, 255, 1)",text:"rgb(0, 0, 0, 1)",secondary:"rgb(0, 0, 0, 0.5)",tertiary:"rgb(0, 0, 0, 0.05)",hover:"#ffca00"},dp={body:"rgb(0, 0, 0, 1)",text:"rgb(255, 255, 255, 1)",secondary:"rgb(255, 255, 255, 0.5)",tertiary:"rgb(255, 255, 255, 0.1)",hover:"#ffca00"},Ft={sm:"screen and (min-width: 576px)",md:"screen and (min-width: 768px)",lg:"screen and (min-width: 992px)"},ee={fastest:"100ms ease-out",fast:"300ms ease-out"},lm=dn`
     overflow-y: scroll;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
@@ -240,7 +240,7 @@ Error generating stack: `+l.message+`
 
     img {
         max-height: 30rem;
-        border: ${({theme:n})=>`8px solid ${n.border}`};
+        border: ${({theme:n})=>`8px solid ${n.text}`};
     }
 
     @media ${Ft.lg} {
@@ -487,7 +487,7 @@ Please change the parent <Route path="${Y}"> to <Route path="${Y==="/"?"*":`${Y}
     img,
     video {
         max-height: calc(var(--100vh) - 15rem);
-        border: ${({theme:n})=>`8px solid ${n.border}`};
+        border: ${({theme:n})=>`8px solid ${n.text}`};
     }
 
     video {
