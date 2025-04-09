@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { transition } from "styles/variables";
 
 export const StyledMenu = styled.div<{ $isVisible: boolean; theme: Theme }>`
-    background: ${({ theme }) => theme.body};
+    background-color: ${({ theme }) => theme.body};
     width: 100vw;
     position: fixed;
     height: 7.5rem;

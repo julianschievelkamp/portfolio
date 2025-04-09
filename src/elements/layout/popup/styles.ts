@@ -6,7 +6,7 @@ export const StyledPopup = styled.div<{ $isOpen: boolean; theme: Theme }>`
     position: fixed;
     top: 0;
     left: 0;
-    background: ${({ theme }) => theme.body};
+    background-color: ${({ theme }) => theme.body};
     visibility: ${({ $isOpen }) => ($isOpen ? "visible" : "hidden")};
     opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
     pointer-events: ${({ $isOpen }) => ($isOpen ? "all" : "none")};

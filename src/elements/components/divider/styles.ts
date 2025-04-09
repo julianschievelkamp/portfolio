@@ -32,7 +32,7 @@ export const TextWrapper = styled.div<{ theme: Theme }>`
         width: 100%;
         top: 0;
         left: 0;
-        background: ${({ theme }) => theme.body};
+        background-color: ${({ theme }) => theme.body};
         transition: ${transition.fast};
         z-index: -1;
     }

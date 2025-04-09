@@ -7,7 +7,7 @@ export const StyledSidebar = styled.div<{
     $sidebarOpen: boolean;
     theme: Theme;
 }>`
-    background: ${({ theme }) => theme.body};
+    background-color: ${({ theme }) => theme.body};
     width: 15rem;
     max-width: calc(100vw - 4rem);
     height: 100%;

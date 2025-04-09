@@ -57,7 +57,7 @@ export const ReferencesWrapper = styled.div<{ theme: Theme }>`
     }
 `;
 
-export const BadgeWrapper = styled.div`
+export const BadgesWrapper = styled.div`
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: 1fr;
