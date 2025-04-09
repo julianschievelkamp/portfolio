@@ -28,7 +28,6 @@ export default createGlobalStyle<{ theme?: Theme }>`
         height: var(--100vh);
         overflow: hidden;
         background-color: ${({ theme }) => theme.body};
-        transition: background-color ${transition.fast};
     }
 
     .no-transition * {
