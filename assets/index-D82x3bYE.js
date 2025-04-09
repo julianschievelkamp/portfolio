@@ -286,7 +286,7 @@ Error generating stack: `+l.message+`
     -webkit-user-drag: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-`,Ru=({src:n,alt:c,width:f,height:r,fadeInOnLoad:o,className:h})=>{const[g,E]=z.useState(!1);return v.jsx(jp,{src:n,alt:c,width:f,height:r,$imageLoaded:!o||g,onLoad:()=>E(!0),className:h,loading:"lazy"})},wp="/assets/self_portrait-DhY_F_X4.jpg",Np=()=>v.jsxs(zp,{children:[v.jsx(_p,{children:v.jsx(Ru,{src:wp,alt:"Julian Schievelkamp",fadeInOnLoad:!0})}),v.jsx(Ne,{fontSize:"0.875rem",textAlign:"justify",children:Kt.about})]}),Up=nt.div`
+`,Ru=({src:n,alt:c,width:f,height:r,fadeInOnLoad:o,className:h})=>{const[g,E]=z.useState(!1);return v.jsx(jp,{src:n,alt:c,width:f,height:r,$imageLoaded:!o||g,onLoad:()=>E(!0),className:h,loading:"lazy"})},wp="/assets/self_portrait-CGp_rvnj.jpg",Np=()=>v.jsxs(zp,{children:[v.jsx(_p,{children:v.jsx(Ru,{src:wp,alt:"Julian Schievelkamp",fadeInOnLoad:!0})}),v.jsx(Ne,{fontSize:"0.875rem",textAlign:"justify",children:Kt.about})]}),Up=nt.div`
     position: relative;
     width: 100%;
     overflow: hidden;
