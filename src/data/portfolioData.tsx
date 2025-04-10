@@ -18,14 +18,7 @@ import Daniela from "assets/img/daniela.jpg";
 import Epilogue from "assets/img/epilogue.jpg";
 import DNA1 from "assets/img/dna_1.jpg";
 import DNA2 from "assets/img/dna_2.jpg";
-/* import Horizon from "assets/img/horizon.jpg";
-import Coriolis from "assets/img/coriolis.jpg";
-import FPTP from "assets/img/fptp.jpg";
-import Madhouse1 from "assets/img/madhouse_1.jpg";
-import Madhouse2 from "assets/img/madhouse_2.jpg";
-import Kirsten from "assets/img/kirsten.jpg";
-import Birth from "assets/img/birth.jpg";
-import Bianca from "assets/img/bianca.jpg"; */
+// import Bianca from "assets/img/bianca.jpg";
 
 import AndromedaVideo from "assets/videos/andromeda.mp4";
 import VersusVideo from "assets/videos/versus.mp4";
@@ -148,44 +141,9 @@ export const portfolioData: PortfolioItem[] = [
         image: DNA2,
         palette: ["#D9D9D9", "#A68C8A", "#735856", "#402E2C"],
     },
-    /* {
-        title: "HORIZON, 2019",
-        image: Horizon,
-        palette: ["darkgreen", "blue", "red", "orange"],
-    },
-    {
-        title: "CORIOLIS, 2017",
-        image: Coriolis,
-        palette: ["darkgreen", "blue", "red", "orange"],
-    },
-    {
-        title: "FROM PAST TO PRESENT, 2017",
-        image: FPTP,
-        palette: ["darkgreen", "blue", "red", "orange"],
-    },
-    {
-        title: "MADHOUSE I, 2017",
-        image: Madhouse1,
-        palette: ["darkgreen", "blue", "red", "orange"],
-    },
-    {
-        title: "MADHOUSE II, 2017",
-        image: Madhouse2,
-        palette: ["darkgreen", "blue", "red", "orange"],
-    },
-    {
-        title: "KIRSTEN, 2015",
-        image: Kirsten,
-        palette: ["darkgreen", "blue", "red", "orange"],
-    },
-    {
-        title: "BIRTH, 2015",
-        image: Birth,
-        palette: ["darkgreen", "blue", "red", "orange"],
-    },
-    {
+    /*{
         title: "BIANCA, 2016",
         image: Bianca,
-        palette: ["darkgreen", "blue", "red", "orange"],
-    }, */
+        palette: ["#000000", "#000000", "#000000", "#000000"],
+    },*/
 ];
