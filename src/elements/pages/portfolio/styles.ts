@@ -8,7 +8,7 @@ export const StyledPortfolio = styled.div`
     grid-gap: 0.25rem;
     padding: 0.5rem;
 
-    @media ${queries.md} {
+    @media ${queries.lg} {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-gap: 0.5rem;
         padding: 1rem;
