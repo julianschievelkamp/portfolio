@@ -27,6 +27,8 @@ const SelectedItem = () => {
     } = useStore();
 
     const isMd = useMediaQuery(queries.md);
+    const isLandscape = useMediaQuery(queries.landscape);
+
     const activeItem = portfolioData[currentPortfolioIndex];
     const palette =
         theme === "light"
@@ -37,7 +39,7 @@ const SelectedItem = () => {
         <OuterWrapper>
             <CloseTrigger onClick={() => setPopupOpen(false)} />
             <InnerWrapper>
-                {isMd && (
+                {isMd && isLandscape && (
                     <>
                         <ArrowLeft>
                             <Button

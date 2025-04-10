@@ -30,6 +30,7 @@ export const queries = {
     lg: "screen and (min-width: 992px)",
     xl: "screen and (min-width: 1200px)",
     hover: "(hover: hover)",
+    landscape: "(orientation: landscape)",
 };
 
 export const transition = {
