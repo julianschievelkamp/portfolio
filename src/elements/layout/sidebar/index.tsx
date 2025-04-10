@@ -15,12 +15,14 @@ import Button from "elements/components/button";
 
 export interface SidebarProps {
     theme: string;
-    toggleTheme: () => void;
+    setTheme: (theme: "light" | "dark") => void;
 }
 
-const Sidebar = ({ theme, toggleTheme }: SidebarProps) => {
+const Sidebar = ({ theme, setTheme }: SidebarProps) => {
     const { sidebarOpen, setSidebarOpen } = useStore();
     const isMd = useMediaQuery(queries.md);
+
+    const targetTheme = theme === "light" ? "dark" : "light";
 
     return (
         <>
@@ -53,8 +55,8 @@ const Sidebar = ({ theme, toggleTheme }: SidebarProps) => {
                             />
                             <Button
                                 padding="0.5rem"
-                                iconName={theme === "light" ? "dark" : "light"}
-                                onClick={() => toggleTheme()}
+                                iconName={targetTheme}
+                                onClick={() => setTheme(targetTheme)}
                             />
                         </Div>
 

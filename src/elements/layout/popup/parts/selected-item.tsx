@@ -19,11 +19,19 @@ import Div from "elements/components/div";
 import Button from "elements/components/button";
 
 const SelectedItem = () => {
-    const { setPopupOpen, currentPortfolioIndex, setCurrentPortfolioIndex } =
-        useStore();
+    const {
+        setPopupOpen,
+        currentPortfolioIndex,
+        setCurrentPortfolioIndex,
+        theme,
+    } = useStore();
 
     const isMd = useMediaQuery(queries.md);
     const activeItem = portfolioData[currentPortfolioIndex];
+    const palette =
+        theme === "light"
+            ? activeItem.palette
+            : [...activeItem.palette].reverse();
 
     return (
         <OuterWrapper>
@@ -78,7 +86,7 @@ const SelectedItem = () => {
                         justifyContent="flex-end"
                         alignItems="center"
                     >
-                        {activeItem.palette.map((color) => {
+                        {palette.map((color) => {
                             return (
                                 <PaletteItem key={color} $background={color} />
                             );
