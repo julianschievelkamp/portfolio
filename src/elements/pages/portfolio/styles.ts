@@ -25,6 +25,10 @@ export const PortfolioItem = styled.div<{ theme: Theme }>`
     transition: ${transition.fast};
 
     @media ${queries.md} {
+        height: calc((100vw - 1.5rem - 17rem) / 3);
+    }
+
+    @media ${queries.lg} {
         height: calc((100vw - 3.5rem - 17rem) / 4);
     }
 
