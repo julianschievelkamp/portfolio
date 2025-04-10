@@ -28,7 +28,7 @@ export const ImageWrapper = styled.div<{ theme: Theme }>`
 
     img {
         max-height: 30rem;
-        border: ${({ theme }) => `8px solid ${theme.text}`};
+        border: ${({ theme }) => `8px solid ${theme.primary}`};
     }
 
     @media ${queries.lg} {

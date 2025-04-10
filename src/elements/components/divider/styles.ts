@@ -13,7 +13,7 @@ export const StyledDivider = styled.div<{ theme: Theme }>`
         left: 0;
         height: 1px;
         width: 100%;
-        background: ${({ theme }) => theme.text};
+        background: ${({ theme }) => theme.primary};
         transition: ${transition.fast};
     }
 `;

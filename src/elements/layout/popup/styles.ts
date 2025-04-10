@@ -48,7 +48,7 @@ export const ItemContainer = styled.div<{ theme: Theme }>`
     img,
     video {
         max-height: calc(var(--100vh) - 15rem);
-        border: ${({ theme }) => `8px solid ${theme.text}`};
+        border: ${({ theme }) => `8px solid ${theme.primary}`};
     }
 
     video {

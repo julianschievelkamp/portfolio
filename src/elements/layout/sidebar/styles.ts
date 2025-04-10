@@ -53,6 +53,6 @@ export const StyledHeadline = styled(Headline)<{
     color: ${({ theme }) => theme.body};
 
     @media ${queries.md} {
-        color: ${({ theme }) => theme.text};
+        color: ${({ theme }) => theme.primary};
     }
 `;

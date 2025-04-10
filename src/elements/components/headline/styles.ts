@@ -15,7 +15,7 @@ const headlineStyles = css<headlineProps>`
     text-align: ${({ $textAlign }) => $textAlign};
     font-size: ${({ $fontSize }) => $fontSize};
     margin: ${({ $margin }) => $margin};
-    color: ${({ color, theme }) => color ?? theme.text};
+    color: ${({ color, theme }) => color ?? theme.primary};
     line-height: ${({ $lineHeight }) => $lineHeight};
     transition: color ${transition.fast};
     font-family: "PlayfairDisplay", sans-serif;

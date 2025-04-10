@@ -15,7 +15,7 @@ export const StyledText = styled.p<{
     font-weight: ${({ $bold }) => ($bold ? "bold" : "normal")};
     font-size: ${({ $fontSize }) => $fontSize};
     margin: ${({ $margin }) => $margin};
-    color: ${({ color, theme }) => color ?? theme.text};
+    color: ${({ color, theme }) => color ?? theme.primary};
     line-height: ${({ $lineHeight }) => $lineHeight};
     transition: color ${transition.fast};
     font-family: "Poppins", sans-serif;

@@ -2,7 +2,7 @@ import { css } from "styled-components";
 
 export type Theme = {
     body: string;
-    text: string;
+    primary: string;
     secondary: string;
     tertiary: string;
     hover: string;
@@ -10,7 +10,7 @@ export type Theme = {
 
 export const lightTheme: Theme = {
     body: "rgb(255, 255, 255, 1)",
-    text: "rgb(0, 0, 0, 1)",
+    primary: "rgb(0, 0, 0, 1)",
     secondary: "rgb(0, 0, 0, 0.5)",
     tertiary: "rgb(0, 0, 0, 0.05)",
     hover: "#ffca00",
@@ -18,7 +18,7 @@ export const lightTheme: Theme = {
 
 export const darkTheme: Theme = {
     body: "rgb(0, 0, 0, 1)",
-    text: "rgb(255, 255, 255, 1)",
+    primary: "rgb(255, 255, 255, 1)",
     secondary: "rgb(255, 255, 255, 0.5)",
     tertiary: "rgb(255, 255, 255, 0.1)",
     hover: "#ffca00",

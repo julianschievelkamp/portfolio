@@ -7,7 +7,7 @@ export const StyledApp = styled.div<{ theme: Theme }>`
     height: var(--100vh);
     overflow: hidden;
     background-color: ${({ theme }) => theme.body};
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.primary};
     transition: ${transition.fast};
     position: relative;
 `;
