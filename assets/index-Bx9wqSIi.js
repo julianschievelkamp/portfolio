@@ -452,6 +452,7 @@ Error generating stack: `+l.message+`
     width: 0.75rem;
     height: 0.75rem;
     margin-right: 0.25rem;
+    margin-bottom: 1px;
 `,Nv=nt.div`
     position: absolute;
     bottom: 1rem;
