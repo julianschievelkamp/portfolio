@@ -32,6 +32,10 @@ const Navigation = () => {
                                 onClick={() => {
                                     if (!isActive) {
                                         setSidebarOpen(false);
+
+                                        document
+                                            .getElementById("page-container")
+                                            ?.scrollTo(0, 0);
                                     }
                                 }}
                             >
