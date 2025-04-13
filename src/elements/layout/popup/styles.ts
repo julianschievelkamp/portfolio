@@ -101,6 +101,7 @@ export const PaletteItem = styled.div<{ $background: string }>`
     width: 0.75rem;
     height: 0.75rem;
     margin-right: 0.25rem;
+    margin-bottom: 1px;
 `;
 
 export const SliderContainer = styled.div`
