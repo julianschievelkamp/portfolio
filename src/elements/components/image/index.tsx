@@ -33,11 +33,7 @@ const Image = ({
             width={width}
             height={height}
             $imageLoaded={!fadeInOnLoad || imageLoaded}
-            onLoad={(e: any) => {
-                setImageLoaded(true);
-
-                srcSet && console.log(e.target.currentSrc);
-            }}
+            onLoad={() => setImageLoaded(true)}
             className={className}
             loading="lazy"
         />
