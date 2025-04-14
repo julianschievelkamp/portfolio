@@ -286,7 +286,7 @@ Error generating stack: `+l.message+`
     -webkit-user-drag: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-`,Ru=({src:n,srcSet:c,sizes:f,alt:r,width:o,height:h,fadeInOnLoad:g,className:E})=>{const[p,m]=z.useState(!1);return y.jsx(av,{src:n,srcSet:c,sizes:f,alt:r,width:o,height:h,$imageLoaded:!g||p,onLoad:A=>{m(!0),c&&console.log(A.target.currentSrc)},className:E,loading:"lazy"})},nv="/assets/self_portrait-CGp_rvnj.jpg",uv=()=>y.jsxs(Iy,{children:[y.jsx(tv,{children:y.jsx(Ru,{src:nv,alt:"Julian Schievelkamp",fadeInOnLoad:!0})}),y.jsx(Ne,{fontSize:"0.875rem",textAlign:"justify",children:Jt.about})]}),iv=nt.div`
+`,Ru=({src:n,srcSet:c,sizes:f,alt:r,width:o,height:h,fadeInOnLoad:g,className:E})=>{const[p,m]=z.useState(!1);return y.jsx(av,{src:n,srcSet:c,sizes:f,alt:r,width:o,height:h,$imageLoaded:!g||p,onLoad:()=>m(!0),className:E,loading:"lazy"})},nv="/assets/self_portrait-CGp_rvnj.jpg",uv=()=>y.jsxs(Iy,{children:[y.jsx(tv,{children:y.jsx(Ru,{src:nv,alt:"Julian Schievelkamp",fadeInOnLoad:!0})}),y.jsx(Ne,{fontSize:"0.875rem",textAlign:"justify",children:Jt.about})]}),iv=nt.div`
     position: relative;
     width: 100%;
     overflow: hidden;
