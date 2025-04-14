@@ -19,7 +19,7 @@ export const StyledPopup = styled.div<{ $isOpen: boolean; theme: Theme }>`
 
     @media ${queries.md} {
         @media ${queries.portrait} {
-            padding: 1rem 4rem;
+            padding: 1rem 8rem;
         }
     }
 `;

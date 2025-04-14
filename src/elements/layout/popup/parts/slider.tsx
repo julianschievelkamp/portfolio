@@ -3,6 +3,7 @@ import Image from "elements/components/image";
 import { useStore } from "hooks/useStore";
 import { portfolioData } from "data/portfolioData";
 import Div from "elements/components/div";
+import { thumbnailSize } from "styles/variables";
 
 const Slider = () => {
     const { popupOpen, currentPortfolioIndex, setCurrentPortfolioIndex } =
@@ -28,6 +29,8 @@ const Slider = () => {
                             <Image
                                 width="100%"
                                 src={item.image}
+                                srcSet={item.imageSet}
+                                sizes={item.imageSet && thumbnailSize}
                                 alt={item.title}
                             />
                         </Div>

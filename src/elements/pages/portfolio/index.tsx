@@ -3,6 +3,7 @@ import Image from "elements/components/image";
 import { useStore } from "hooks/useStore";
 import { portfolioData } from "data/portfolioData";
 import Popup from "elements/layout/popup";
+import { thumbnailSize } from "styles/variables";
 
 const Portfolio = () => {
     const { setCurrentPortfolioIndex, setPopupOpen } = useStore();
@@ -23,10 +24,7 @@ const Portfolio = () => {
                                 width="100%"
                                 src={image}
                                 srcSet={imageSet}
-                                sizes={
-                                    imageSet &&
-                                    "(max-width: 1200px) 300px, 600px"
-                                }
+                                sizes={imageSet && thumbnailSize}
                                 alt={title}
                                 fadeInOnLoad
                             />

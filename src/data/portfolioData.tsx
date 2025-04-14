@@ -21,6 +21,15 @@ import DNA2 from "assets/img/dna_2.jpg";
 // import Bianca from "assets/img/bianca.jpg";
 
 import DadaYaga600w from "assets/img/thumbnails/dada_yaga-600w.jpg";
+import Andromeda600w from "assets/img/thumbnails/andromeda-600w.jpg";
+import Versus1600w from "assets/img/thumbnails/versus_1-600w.jpg";
+import Versus2600w from "assets/img/thumbnails/versus_2-600w.jpg";
+import Viscosity600w from "assets/img/thumbnails/viscosity-600w.jpg";
+import Aura600w from "assets/img/thumbnails/aura-600w.jpg";
+import Mimikry600w from "assets/img/thumbnails/mimikry-600w.jpg";
+import ACuriousThing600w from "assets/img/thumbnails/a_curious_thing-600w.jpg";
+import Doppler600w from "assets/img/thumbnails/doppler-600w.jpg";
+import TranscendingEgo420w from "assets/img/thumbnails/transcending_ego-420w.jpg";
 
 import AndromedaVideo from "assets/videos/andromeda.mp4";
 import VersusVideo from "assets/videos/versus.mp4";
@@ -48,51 +57,60 @@ export const portfolioData: PortfolioItem[] = [
     {
         title: "ANDROMEDA, 2018",
         image: Andromeda,
+        imageSet: `${Andromeda600w} 600w, ${Andromeda} 1200w`,
         video: AndromedaVideo,
         palette: ["#66C4D9", "#B9BF04", "#03A62C", "#02732A"],
     },
     {
         title: "VERSUS I, 2018",
         image: Versus1,
+        imageSet: `${Versus1600w} 600w, ${Versus1} 1200w`,
         video: VersusVideo,
         palette: ["#0BADBF", "#F2E1C2", "#D9923B", "#BF612A"],
     },
     {
         title: "VERSUS II, 2018",
         image: Versus2,
+        imageSet: `${Versus2600w} 600w, ${Versus2} 1200w`,
         palette: ["#89D9D9", "#0FBFBF", "#0A96A6", "#07748C"],
     },
     {
         title: "VISCOSITY, 2021",
         image: Viscosity,
+        imageSet: `${Viscosity600w} 600w, ${Viscosity} 1200w`,
         video: ViscosityVideo,
         palette: ["#05F2C7", "#05F2F2", "#04ADBF", "#0378A6"],
     },
     {
         title: "AURA, 2019",
         image: Aura,
+        imageSet: `${Aura600w} 600w, ${Aura} 1200w`,
         video: AuraVideo,
         palette: ["#CCD9D7", "#03A696", "#027368", "#366273"],
     },
     {
         title: "MIMIKRY, 2018",
         image: Mimikry,
+        imageSet: `${Mimikry600w} 600w, ${Mimikry} 1200w`,
         palette: ["#468C4B", "#F2E5D5", "#F2A341", "#8C694A"],
     },
     {
         title: "A CURIOUS THING, 2017",
         image: ACuriousThing,
+        imageSet: `${ACuriousThing600w} 600w, ${ACuriousThing} 1200w`,
         palette: ["#F0F2F0", "#D0D9D4", "#585F73", "#1D1926"],
     },
     {
         title: "DOPPLER I, 2021",
         image: Doppler,
+        imageSet: `${Doppler600w} 600w, ${Doppler} 1200w`,
         video: DopplerVideo,
         palette: ["#533D73", "#4843D9", "#23288C", "#192773"],
     },
     {
         title: "TRANSCENDING EGO, 2017",
         image: TranscendingEgo,
+        imageSet: `${TranscendingEgo420w} 600w, ${TranscendingEgo} 1200w`,
         palette: ["#D9D3B8", "#BFB963", "#A69258", "#403C26"],
     },
     {

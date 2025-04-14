@@ -34,6 +34,8 @@ export const queries = {
     portrait: "(orientation: portrait)",
 };
 
+export const thumbnailSize = "(max-width: 1200px) 300px, 600px";
+
 export const transition = {
     fastest: "100ms ease-out",
     fast: "300ms ease-out",
