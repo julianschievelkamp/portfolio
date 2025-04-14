@@ -18,7 +18,6 @@ import Daniela from "assets/img/daniela.jpg";
 import Epilogue from "assets/img/epilogue.jpg";
 import DNA1 from "assets/img/dna_1.jpg";
 import DNA2 from "assets/img/dna_2.jpg";
-// import Bianca from "assets/img/bianca.jpg";
 
 import DadaYaga600w from "assets/img/thumbnails/dada_yaga-600w.jpg";
 import Andromeda600w from "assets/img/thumbnails/andromeda-600w.jpg";
@@ -30,6 +29,16 @@ import Mimikry600w from "assets/img/thumbnails/mimikry-600w.jpg";
 import ACuriousThing600w from "assets/img/thumbnails/a_curious_thing-600w.jpg";
 import Doppler600w from "assets/img/thumbnails/doppler-600w.jpg";
 import TranscendingEgo420w from "assets/img/thumbnails/transcending_ego-420w.jpg";
+import Kiyoshi450w from "assets/img/thumbnails/kiyoshi-450w.jpg";
+import XVII450w from "assets/img/thumbnails/xvii-450w.jpg";
+import Consciousness392w from "assets/img/thumbnails/consciousness-392w.jpg";
+import Maya1420w from "assets/img/thumbnails/maya_1-420w.jpg";
+import Maya2400w from "assets/img/thumbnails/maya_2-400w.jpg";
+import Romina415w from "assets/img/thumbnails/romina-415w.jpg";
+import Daniela400w from "assets/img/thumbnails/daniela-400w.jpg";
+import Epilogue600w from "assets/img/thumbnails/epilogue-600w.jpg";
+import DNA1400w from "assets/img/thumbnails/dna_1-400w.jpg";
+import DNA2400w from "assets/img/thumbnails/dna_2-400w.jpg";
 
 import AndromedaVideo from "assets/videos/andromeda.mp4";
 import VersusVideo from "assets/videos/versus.mp4";
@@ -116,57 +125,62 @@ export const portfolioData: PortfolioItem[] = [
     {
         title: "KIYOSHI, 2022",
         image: Kiyoshi,
+        imageSet: `${Kiyoshi450w} 600w, ${Kiyoshi} 1200w`,
         palette: ["#F2BE22", "#F29441", "#D93611", "#8C2016"],
     },
     {
         title: "XVII, 2022",
         image: XVII,
+        imageSet: `${XVII450w} 600w, ${XVII} 1200w`,
         palette: ["#F2C641", "#F2BB77", "#D96B2B", "#8C3616"],
     },
     {
         title: "CONSCIOUSNESS, 2017",
         image: Consciousness,
+        imageSet: `${Consciousness392w} 600w, ${Consciousness} 1200w`,
         video: ConsciousnessVideo,
         palette: ["#A60522", "#D9C5C1", "#260101", "#010326"],
     },
     {
         title: "MAYA I, 2017",
         image: Maya1,
+        imageSet: `${Maya1420w} 600w, ${Maya1} 1200w`,
         palette: ["#D93232", "#D9B97E", "#BF7960", "#8C0303"],
     },
     {
         title: "MAYA II, 2017",
         image: Maya2,
+        imageSet: `${Maya2400w} 600w, ${Maya2} 1200w`,
         palette: ["#6C6C73", "#D9AE89", "#BF6550", "#591818"],
     },
     {
         title: "ROMINA, 2016",
         image: Romina,
+        imageSet: `${Romina415w} 600w, ${Romina} 1200w`,
         palette: ["#D9BA82", "#D99E6A", "#BF6341", "#8C1F1F"],
     },
     {
         title: "DANIELA, 2016",
         image: Daniela,
+        imageSet: `${Daniela400w} 600w, ${Daniela} 1200w`,
         palette: ["#D9D9D9", "#A6A6A6", "#595959", "#262626"],
     },
     {
         title: "EPILOGUE, 2018",
         image: Epilogue,
+        imageSet: `${Epilogue600w} 600w, ${Epilogue} 1200w`,
         palette: ["#E4EBF2", "#AEBCBF", "#BF7C63", "#8C423B"],
     },
     {
         title: "DNA (XY) I, 2017",
         image: DNA1,
+        imageSet: `${DNA1400w} 600w, ${DNA1} 1200w`,
         palette: ["#D9D9D9", "#A6A5A4", "#593831", "#261717"],
     },
     {
         title: "DNA (XY) II, 2017",
         image: DNA2,
+        imageSet: `${DNA2400w} 600w, ${DNA2} 1200w`,
         palette: ["#D9D9D9", "#A68C8A", "#735856", "#402E2C"],
     },
-    /*{
-        title: "BIANCA, 2016",
-        image: Bianca,
-        palette: ["#000000", "#000000", "#000000", "#000000"],
-    },*/
 ];
