@@ -20,6 +20,8 @@ import DNA1 from "assets/img/dna_1.jpg";
 import DNA2 from "assets/img/dna_2.jpg";
 // import Bianca from "assets/img/bianca.jpg";
 
+import DadaYaga600w from "assets/img/thumbnails/dada_yaga-600w.jpg";
+
 import AndromedaVideo from "assets/videos/andromeda.mp4";
 import VersusVideo from "assets/videos/versus.mp4";
 import ViscosityVideo from "assets/videos/viscosity_1080.mp4";
@@ -30,6 +32,8 @@ import ConsciousnessVideo from "assets/videos/consciousness_1080.mp4";
 export type PortfolioItem = {
     title: string;
     image: string;
+    imageSet?: string;
+    sizes?: string;
     video?: string;
     palette: string[];
 };
@@ -38,6 +42,7 @@ export const portfolioData: PortfolioItem[] = [
     {
         title: "DADA YAGA, 2018",
         image: DadaYaga,
+        imageSet: `${DadaYaga600w} 600w, ${DadaYaga} 1200w`,
         palette: ["#84C1D9", "#D97904", "#8C0303", "#012611"],
     },
     {

@@ -10,7 +10,7 @@ const Portfolio = () => {
     return (
         <>
             <StyledPortfolio>
-                {portfolioData.map(({ title, image }, index) => {
+                {portfolioData.map(({ title, image, imageSet }, index) => {
                     return (
                         <PortfolioItem
                             key={title + index}
@@ -22,6 +22,11 @@ const Portfolio = () => {
                             <Image
                                 width="100%"
                                 src={image}
+                                srcSet={imageSet}
+                                sizes={
+                                    imageSet &&
+                                    "(max-width: 1200px) 300px, 600px"
+                                }
                                 alt={title}
                                 fadeInOnLoad
                             />
