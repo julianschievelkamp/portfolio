@@ -1,4 +1,4 @@
-import { Theme } from "styles/variables";
+import { queries, Theme } from "styles/variables";
 import styled from "styled-components";
 import { transition } from "styles/variables";
 
@@ -16,6 +16,12 @@ export const StyledPopup = styled.div<{ $isOpen: boolean; theme: Theme }>`
     padding: 1rem;
     user-select: none;
     z-index: 99;
+
+    @media ${queries.md} {
+        @media ${queries.portrait} {
+            padding: 1rem 4rem;
+        }
+    }
 `;
 
 export const OuterWrapper = styled.div`

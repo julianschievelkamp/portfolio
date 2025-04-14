@@ -31,6 +31,7 @@ export const queries = {
     xl: "screen and (min-width: 1200px)",
     hover: "(hover: hover)",
     landscape: "(orientation: landscape)",
+    portrait: "(orientation: portrait)",
 };
 
 export const transition = {
