@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { StyledImage } from "./styles";
 
 export interface ImageProps {
@@ -22,8 +22,14 @@ const Image = ({
     fadeInOnLoad,
     className,
 }: ImageProps) => {
-    // DEBUG: onLoad event not possible
-    const [imageLoaded, setImageLoaded] = useState(true);
+    const [imageLoaded, setImageLoaded] = useState(false);
+    const imageRef = useRef<HTMLImageElement>(null);
+
+    useEffect(() => {
+        if (!imageLoaded && imageRef?.current?.complete) {
+            setImageLoaded(true);
+        }
+    }, []);
 
     return (
         <StyledImage
@@ -36,6 +42,7 @@ const Image = ({
             $imageLoaded={!fadeInOnLoad || imageLoaded}
             onLoad={() => setImageLoaded(true)}
             className={className}
+            ref={imageRef}
             loading="lazy"
         />
     );
