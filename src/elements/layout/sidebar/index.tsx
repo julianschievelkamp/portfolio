@@ -32,9 +32,7 @@ const Sidebar = ({ theme, setTheme, page }: SidebarProps) => {
                 <CloseTrigger onClick={() => setSidebarOpen(false)} />
             )}
             <StyledSidebar $sidebarOpen={sidebarOpen}>
-                <StyledHeadline fontSize={isMd ? "1.5rem" : "1.25rem"}>
-                    {lang.title}
-                </StyledHeadline>
+                <StyledHeadline>{lang.title}</StyledHeadline>
 
                 <Text fontSize="0.875rem" margin="1.5rem 0 3rem 0">
                     {lang.intro}

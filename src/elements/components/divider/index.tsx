@@ -1,27 +1,18 @@
 import React from "react";
 
-import { StyledDivider, TextWrapper } from "./styles";
-import { useMediaQuery } from "hooks/useMediaQuery";
-import { queries } from "styles/variables";
-import Headline from "../headline";
+import { StyledDivider, StyledHeadline, TextWrapper } from "./styles";
 
 export interface DividerProps {
     children: React.ReactNode;
 }
 
 const Divider = ({ children }: DividerProps) => {
-    const isMd = useMediaQuery(queries.md);
-
     return (
         <StyledDivider>
             <TextWrapper>
-                <Headline
-                    type="h2"
-                    textAlign="center"
-                    fontSize={isMd ? "1.5rem" : "1.25rem"}
-                >
+                <StyledHeadline type="h2" textAlign="center">
                     {children}
-                </Headline>
+                </StyledHeadline>
             </TextWrapper>
         </StyledDivider>
     );

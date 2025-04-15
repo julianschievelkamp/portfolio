@@ -50,9 +50,11 @@ export const ScrollContainer = styled.div`
 export const StyledHeadline = styled(Headline)<{
     theme: Theme;
 }>`
+    font-size: 1.25rem;
     color: ${({ theme }) => theme.body};
 
     @media ${queries.md} {
+        font-size: 1.5rem;
         color: ${({ theme }) => theme.primary};
     }
 `;

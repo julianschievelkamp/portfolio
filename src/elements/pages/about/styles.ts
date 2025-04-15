@@ -57,6 +57,14 @@ export const ReferencesWrapper = styled.div<{ theme: Theme }>`
     }
 `;
 
+export const ListWrapper = styled.div`
+    padding: 0 0 0 1rem;
+
+    @media ${queries.sm} {
+        padding: 0;
+    }
+`;
+
 export const BadgesWrapper = styled.div`
     display: grid;
     grid-gap: 2rem;

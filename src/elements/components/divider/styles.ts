@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
-import { Theme, transition } from "styles/variables";
+import { queries, Theme, transition } from "styles/variables";
+import Headline from "../headline";
 
 export const StyledDivider = styled.div<{ theme: Theme }>`
     position: relative;
@@ -35,5 +36,13 @@ export const TextWrapper = styled.div<{ theme: Theme }>`
         background-color: ${({ theme }) => theme.body};
         transition: ${transition.fast};
         z-index: -1;
+    }
+`;
+
+export const StyledHeadline = styled(Headline)`
+    font-size: 1.25rem;
+
+    @media ${queries.md} {
+        font-size: 1.5rem;
     }
 `;
