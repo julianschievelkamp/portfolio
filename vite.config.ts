@@ -6,13 +6,13 @@ import svgr from "vite-plugin-svgr";
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [
-        react(),
-        tsconfigPaths(),
-        svgr({
-            svgrOptions: {
-                // svgr options
+        react({
+            babel: {
+                plugins: [["babel-plugin-styled-components"]],
             },
         }),
+        tsconfigPaths(),
+        svgr(),
     ],
     base: "/",
 });

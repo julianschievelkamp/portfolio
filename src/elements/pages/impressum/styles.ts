@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { queries } from "styles/variables";
 
 export const StyledImpressum = styled.div`

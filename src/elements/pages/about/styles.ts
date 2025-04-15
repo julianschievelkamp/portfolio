@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { queries, Theme, transition } from "styles/variables";
 
 export const StyledAbout = styled.div`

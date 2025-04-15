@@ -1,5 +1,5 @@
 import { Theme } from "styles/variables";
-import styled, { css } from "styled-components";
+import { styled, css } from "styled-components";
 import { transition } from "styles/variables";
 
 type headlineProps = {

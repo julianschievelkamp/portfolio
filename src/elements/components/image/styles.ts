@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { transition } from "styles/variables";
 
 export const StyledImage = styled.img<{ $imageLoaded: boolean }>`

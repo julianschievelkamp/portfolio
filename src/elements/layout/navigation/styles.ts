@@ -1,6 +1,6 @@
 import Link from "elements/components/link";
 import Text from "elements/components/text";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { Theme, transition } from "styles/variables";
 
 export const StyledNavigation = styled.nav`

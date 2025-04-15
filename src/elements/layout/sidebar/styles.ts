@@ -1,5 +1,5 @@
 import { Theme } from "styles/variables";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { queries, scrollStyles, transition } from "styles/variables";
 import Headline from "elements/components/headline";
 

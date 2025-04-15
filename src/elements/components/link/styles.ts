@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { Theme, transition } from "styles/variables";
 
 export const StyledLink = styled.a<{ theme: Theme; $underline: boolean }>`

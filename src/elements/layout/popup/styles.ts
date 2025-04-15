@@ -1,5 +1,5 @@
 import { queries, Theme } from "styles/variables";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { transition } from "styles/variables";
 
 export const StyledPopup = styled.div<{ $isOpen: boolean; theme: Theme }>`
