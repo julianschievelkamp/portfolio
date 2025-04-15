@@ -8,12 +8,15 @@ import {
 } from "./styles";
 import { lang } from "data/lang";
 import Text from "elements/components/text";
+import { useStore } from "hooks/useStore";
 
 export interface NavigationProps {
     page: Page;
 }
 
 const Navigation = ({ page }: NavigationProps) => {
+    const { setSidebarOpen } = useStore();
+
     return (
         <StyledNavigation>
             <Label margin="0 0 0.5rem 0" fontSize="0.875rem">
@@ -26,7 +29,15 @@ const Navigation = ({ page }: NavigationProps) => {
 
                     return (
                         <NavElement key={name}>
-                            <NavLink $isActive={isActive} href={path}>
+                            <NavLink
+                                $isActive={isActive}
+                                href={path}
+                                onClick={() => {
+                                    if (!isActive) {
+                                        setSidebarOpen(false);
+                                    }
+                                }}
+                            >
                                 <Text
                                     bold={isActive}
                                     color={isActive ? "black" : undefined}
