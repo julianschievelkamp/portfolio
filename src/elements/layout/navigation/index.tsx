@@ -24,7 +24,8 @@ const Navigation = ({ page }: NavigationProps) => {
             </Label>
 
             <NavList>
-                {pageData.map(({ name, path }) => {
+                {Object.keys(pageData).map((key) => {
+                    const { path, name } = pageData[key];
                     const isActive = path === page.path;
 
                     return (

@@ -26,5 +26,5 @@ export const Page = () => {
         ),
     });
 
-    return <App page={pageData[0]} />;
+    return <App page={pageData.portfolio} />;
 };

@@ -8,20 +8,20 @@ export type Page = {
     element: React.ReactNode;
 };
 
-export const pageData: Page[] = [
-    {
+export const pageData: { [key: string]: Page } = {
+    portfolio: {
         name: "Portfolio",
         path: "/",
         element: <Portfolio />,
     },
-    {
+    about: {
         name: "About",
         path: "/about",
         element: <About />,
     },
-    {
+    impressum: {
         name: "Impressum",
         path: "/impressum",
         element: <Impressum />,
     },
-];
+};

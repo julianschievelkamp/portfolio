@@ -26,5 +26,5 @@ export const Page = () => {
         ),
     });
 
-    return <App page={pageData[1]} />;
+    return <App page={pageData.about} />;
 };
