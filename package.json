@@ -7,7 +7,7 @@
     "scripts": {
         "dev": "vike dev",
         "build": "tsc -b && vike build",
-        "deploy": "tsc -b && vike build && gh-pages -d dist",
+        "deploy": "tsc -b && vike build && gh-pages -d dist/client",
         "lint": "eslint .",
         "preview": "vike preview"
     },

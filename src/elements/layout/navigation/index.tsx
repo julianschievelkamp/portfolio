@@ -1,4 +1,4 @@
-import { pageData } from "data/pageData";
+import { Page, pageData } from "data/pageData";
 import {
     Label,
     NavElement,
@@ -10,7 +10,11 @@ import { useStore } from "hooks/useStore";
 import { lang } from "data/lang";
 import Text from "elements/components/text";
 
-const Navigation = () => {
+export interface NavigationProps {
+    page: Page;
+}
+
+const Navigation = ({ page }: NavigationProps) => {
     const { setSidebarOpen } = useStore();
 
     return (
@@ -21,13 +25,13 @@ const Navigation = () => {
 
             <NavList>
                 {pageData.map(({ name, path }) => {
-                    const isActive = true;
+                    const isActive = path === page.path;
 
                     return (
                         <NavElement key={name}>
                             <NavLink
                                 $isActive={isActive}
-                                href={`#${path}`}
+                                href={path}
                                 onClick={() => {
                                     if (!isActive) {
                                         setSidebarOpen(false);

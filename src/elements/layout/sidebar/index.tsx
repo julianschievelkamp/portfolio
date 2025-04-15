@@ -12,13 +12,15 @@ import { queries } from "styles/variables";
 import Navigation from "elements/layout/navigation";
 import { useStore } from "hooks/useStore";
 import Button from "elements/components/button";
+import { Page } from "data/pageData";
 
 export interface SidebarProps {
     theme: string;
     setTheme: (theme: "light" | "dark") => void;
+    page: Page;
 }
 
-const Sidebar = ({ theme, setTheme }: SidebarProps) => {
+const Sidebar = ({ theme, setTheme, page }: SidebarProps) => {
     const { sidebarOpen, setSidebarOpen } = useStore();
     const isMd = useMediaQuery(queries.md);
 
@@ -39,7 +41,7 @@ const Sidebar = ({ theme, setTheme }: SidebarProps) => {
                 </Text>
 
                 <ScrollContainer>
-                    <Navigation />
+                    <Navigation page={page} />
 
                     <Div>
                         <Div display="flex" alignItems="center">

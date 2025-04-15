@@ -2,7 +2,7 @@ import About from "elements/pages/about";
 import Impressum from "elements/pages/impressum";
 import Portfolio from "elements/pages/portfolio";
 
-type Page = {
+export type Page = {
     name: string;
     path: string;
     element: React.ReactNode;

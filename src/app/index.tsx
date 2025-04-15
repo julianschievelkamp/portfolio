@@ -6,8 +6,13 @@ import { darkTheme, lightTheme, queries } from "styles/variables";
 import Sidebar from "elements/layout/sidebar";
 import { useMediaQuery } from "hooks/useMediaQuery";
 import Menu from "elements/layout/menu";
+import { Page } from "data/pageData";
 
-const App = ({ children }: any) => {
+export interface AppProps {
+    page: Page;
+}
+
+const App = ({ page }: AppProps) => {
     const { theme, set: setTheme } = useTheme();
     const isMd = useMediaQuery(queries.md);
 
@@ -18,9 +23,11 @@ const App = ({ children }: any) => {
             <StyledApp>
                 <GlobalStyle />
 
-                <PageContainer id="page-container">{children}</PageContainer>
+                <PageContainer id="page-container">
+                    {page.element}
+                </PageContainer>
 
-                <Sidebar theme={theme} setTheme={setTheme} />
+                <Sidebar theme={theme} setTheme={setTheme} page={page} />
 
                 {!isMd && <Menu />}
             </StyledApp>
