@@ -1,0 +1,343 @@
+{
+  "_chunk-Bs9liB0q.js": {
+    "file": "assets/chunks/chunk-Bs9liB0q.js",
+    "name": "executeHook"
+  },
+  "_chunk-Bu0vrCtf.js": {
+    "file": "assets/chunks/chunk-Bu0vrCtf.js",
+    "name": "Loading",
+    "imports": [
+      "_chunk-Bs9liB0q.js"
+    ],
+    "css": [
+      "assets/static/vike-react-b64a028b.BcWtY8Ol.css"
+    ],
+    "assets": [
+      "assets/static/PlayfairDisplay-VariableFont_wght.7tRKCQvy.ttf",
+      "assets/static/Poppins-Light.DT6-CsId.ttf",
+      "assets/static/Poppins-Bold.qTAUjFF7.ttf",
+      "assets/static/self_portrait.CGp_rvnj.jpg",
+      "assets/static/badge1.DcKEMpgM.png",
+      "assets/static/badge2.CgV35bug.jpg",
+      "assets/static/badge3.DVHDMXXq.png",
+      "assets/static/dada_yaga.Cf2S6u29.jpg",
+      "assets/static/andromeda.eGbXlN6X.jpg",
+      "assets/static/versus_1.BSYK-85i.jpg",
+      "assets/static/versus_2.DKoIvAAz.jpg",
+      "assets/static/viscosity.Dy7rf7lk.jpg",
+      "assets/static/aura.CuUEWZeH.jpg",
+      "assets/static/mimikry.olut099z.jpg",
+      "assets/static/a_curious_thing.DWmNDOUK.jpg",
+      "assets/static/doppler.B72IiwQh.jpg",
+      "assets/static/transcending_ego.BoQ9PT15.jpg",
+      "assets/static/kiyoshi.CIpefqbb.jpg",
+      "assets/static/xvii.CCVUbjpR.jpg",
+      "assets/static/consciousness.sF_avMNK.jpg",
+      "assets/static/maya_1.Cx59jeNo.jpg",
+      "assets/static/maya_2.DNF6mTVW.jpg",
+      "assets/static/romina.CyttgyCN.jpg",
+      "assets/static/daniela.DwmSQY4I.jpg",
+      "assets/static/epilogue.C-LnphfQ.jpg",
+      "assets/static/dna_1.B0RdpmQe.jpg",
+      "assets/static/dna_2.DH01SiUc.jpg",
+      "assets/static/dada_yaga-600w.D77D8lsH.jpg",
+      "assets/static/andromeda-600w.DjfvW0nd.jpg",
+      "assets/static/versus_1-600w.C592v1hx.jpg",
+      "assets/static/versus_2-600w.pAw9BoPD.jpg",
+      "assets/static/viscosity-600w.BxT7XmSX.jpg",
+      "assets/static/aura-600w.DMelu8nD.jpg",
+      "assets/static/mimikry-600w.CttDT9Vy.jpg",
+      "assets/static/a_curious_thing-600w.DHbAWZid.jpg",
+      "assets/static/doppler-600w.DOvsfBGT.jpg",
+      "assets/static/transcending_ego-420w.BadCCRwp.jpg",
+      "assets/static/kiyoshi-450w.BODpTA9Y.jpg",
+      "assets/static/xvii-450w.8HdDcEQA.jpg",
+      "assets/static/consciousness-392w.BTobl9AM.jpg",
+      "assets/static/maya_1-420w.DYcx9ds-.jpg",
+      "assets/static/maya_2-400w.Bu6bjntP.jpg",
+      "assets/static/romina-415w.DGcXwZZr.jpg",
+      "assets/static/daniela-400w.CmqjVhdF.jpg",
+      "assets/static/epilogue-600w.ARJBtFHi.jpg",
+      "assets/static/dna_1-400w.BHVK2JeX.jpg",
+      "assets/static/dna_2-400w.CQbidTyR.jpg",
+      "assets/static/andromeda.Csgqu__9.mp4",
+      "assets/static/versus.Gjpp4xVF.mp4",
+      "assets/static/viscosity_1080.DeRv5vgQ.mp4",
+      "assets/static/aura.6ZDm4Tll.mp4",
+      "assets/static/doppler.ymVu7596.mp4",
+      "assets/static/consciousness_1080.BwubZdmE.mp4"
+    ]
+  },
+  "_vike-react-b64a028b.BcWtY8Ol.css": {
+    "file": "assets/static/vike-react-b64a028b.BcWtY8Ol.css",
+    "src": "_vike-react-b64a028b.BcWtY8Ol.css"
+  },
+  "node_modules/vike/dist/esm/client/client-routing-runtime/entry.js": {
+    "file": "assets/entries/entry-client-routing.Dwu3guSj.js",
+    "name": "entries/entry-client-routing",
+    "src": "node_modules/vike/dist/esm/client/client-routing-runtime/entry.js",
+    "isEntry": true,
+    "imports": [
+      "_chunk-Bs9liB0q.js"
+    ],
+    "dynamicImports": [
+      "virtual:vike:pageConfigValuesAll:client:/src/pages/about",
+      "virtual:vike:pageConfigValuesAll:client:/src/pages/impressum",
+      "virtual:vike:pageConfigValuesAll:client:/src/pages/index"
+    ]
+  },
+  "src/assets/fonts/PlayfairDisplay-VariableFont_wght.ttf": {
+    "file": "assets/static/PlayfairDisplay-VariableFont_wght.7tRKCQvy.ttf",
+    "src": "src/assets/fonts/PlayfairDisplay-VariableFont_wght.ttf"
+  },
+  "src/assets/fonts/Poppins-Bold.ttf": {
+    "file": "assets/static/Poppins-Bold.qTAUjFF7.ttf",
+    "src": "src/assets/fonts/Poppins-Bold.ttf"
+  },
+  "src/assets/fonts/Poppins-Light.ttf": {
+    "file": "assets/static/Poppins-Light.DT6-CsId.ttf",
+    "src": "src/assets/fonts/Poppins-Light.ttf"
+  },
+  "src/assets/img/a_curious_thing.jpg": {
+    "file": "assets/static/a_curious_thing.DWmNDOUK.jpg",
+    "src": "src/assets/img/a_curious_thing.jpg"
+  },
+  "src/assets/img/andromeda.jpg": {
+    "file": "assets/static/andromeda.eGbXlN6X.jpg",
+    "src": "src/assets/img/andromeda.jpg"
+  },
+  "src/assets/img/aura.jpg": {
+    "file": "assets/static/aura.CuUEWZeH.jpg",
+    "src": "src/assets/img/aura.jpg"
+  },
+  "src/assets/img/consciousness.jpg": {
+    "file": "assets/static/consciousness.sF_avMNK.jpg",
+    "src": "src/assets/img/consciousness.jpg"
+  },
+  "src/assets/img/dada_yaga.jpg": {
+    "file": "assets/static/dada_yaga.Cf2S6u29.jpg",
+    "src": "src/assets/img/dada_yaga.jpg"
+  },
+  "src/assets/img/daniela.jpg": {
+    "file": "assets/static/daniela.DwmSQY4I.jpg",
+    "src": "src/assets/img/daniela.jpg"
+  },
+  "src/assets/img/dna_1.jpg": {
+    "file": "assets/static/dna_1.B0RdpmQe.jpg",
+    "src": "src/assets/img/dna_1.jpg"
+  },
+  "src/assets/img/dna_2.jpg": {
+    "file": "assets/static/dna_2.DH01SiUc.jpg",
+    "src": "src/assets/img/dna_2.jpg"
+  },
+  "src/assets/img/doppler.jpg": {
+    "file": "assets/static/doppler.B72IiwQh.jpg",
+    "src": "src/assets/img/doppler.jpg"
+  },
+  "src/assets/img/epilogue.jpg": {
+    "file": "assets/static/epilogue.C-LnphfQ.jpg",
+    "src": "src/assets/img/epilogue.jpg"
+  },
+  "src/assets/img/kiyoshi.jpg": {
+    "file": "assets/static/kiyoshi.CIpefqbb.jpg",
+    "src": "src/assets/img/kiyoshi.jpg"
+  },
+  "src/assets/img/maya_1.jpg": {
+    "file": "assets/static/maya_1.Cx59jeNo.jpg",
+    "src": "src/assets/img/maya_1.jpg"
+  },
+  "src/assets/img/maya_2.jpg": {
+    "file": "assets/static/maya_2.DNF6mTVW.jpg",
+    "src": "src/assets/img/maya_2.jpg"
+  },
+  "src/assets/img/mimikry.jpg": {
+    "file": "assets/static/mimikry.olut099z.jpg",
+    "src": "src/assets/img/mimikry.jpg"
+  },
+  "src/assets/img/misc/badge1.png": {
+    "file": "assets/static/badge1.DcKEMpgM.png",
+    "src": "src/assets/img/misc/badge1.png"
+  },
+  "src/assets/img/misc/badge2.jpg": {
+    "file": "assets/static/badge2.CgV35bug.jpg",
+    "src": "src/assets/img/misc/badge2.jpg"
+  },
+  "src/assets/img/misc/badge3.png": {
+    "file": "assets/static/badge3.DVHDMXXq.png",
+    "src": "src/assets/img/misc/badge3.png"
+  },
+  "src/assets/img/misc/self_portrait.jpg": {
+    "file": "assets/static/self_portrait.CGp_rvnj.jpg",
+    "src": "src/assets/img/misc/self_portrait.jpg"
+  },
+  "src/assets/img/romina.jpg": {
+    "file": "assets/static/romina.CyttgyCN.jpg",
+    "src": "src/assets/img/romina.jpg"
+  },
+  "src/assets/img/thumbnails/a_curious_thing-600w.jpg": {
+    "file": "assets/static/a_curious_thing-600w.DHbAWZid.jpg",
+    "src": "src/assets/img/thumbnails/a_curious_thing-600w.jpg"
+  },
+  "src/assets/img/thumbnails/andromeda-600w.jpg": {
+    "file": "assets/static/andromeda-600w.DjfvW0nd.jpg",
+    "src": "src/assets/img/thumbnails/andromeda-600w.jpg"
+  },
+  "src/assets/img/thumbnails/aura-600w.jpg": {
+    "file": "assets/static/aura-600w.DMelu8nD.jpg",
+    "src": "src/assets/img/thumbnails/aura-600w.jpg"
+  },
+  "src/assets/img/thumbnails/consciousness-392w.jpg": {
+    "file": "assets/static/consciousness-392w.BTobl9AM.jpg",
+    "src": "src/assets/img/thumbnails/consciousness-392w.jpg"
+  },
+  "src/assets/img/thumbnails/dada_yaga-600w.jpg": {
+    "file": "assets/static/dada_yaga-600w.D77D8lsH.jpg",
+    "src": "src/assets/img/thumbnails/dada_yaga-600w.jpg"
+  },
+  "src/assets/img/thumbnails/daniela-400w.jpg": {
+    "file": "assets/static/daniela-400w.CmqjVhdF.jpg",
+    "src": "src/assets/img/thumbnails/daniela-400w.jpg"
+  },
+  "src/assets/img/thumbnails/dna_1-400w.jpg": {
+    "file": "assets/static/dna_1-400w.BHVK2JeX.jpg",
+    "src": "src/assets/img/thumbnails/dna_1-400w.jpg"
+  },
+  "src/assets/img/thumbnails/dna_2-400w.jpg": {
+    "file": "assets/static/dna_2-400w.CQbidTyR.jpg",
+    "src": "src/assets/img/thumbnails/dna_2-400w.jpg"
+  },
+  "src/assets/img/thumbnails/doppler-600w.jpg": {
+    "file": "assets/static/doppler-600w.DOvsfBGT.jpg",
+    "src": "src/assets/img/thumbnails/doppler-600w.jpg"
+  },
+  "src/assets/img/thumbnails/epilogue-600w.jpg": {
+    "file": "assets/static/epilogue-600w.ARJBtFHi.jpg",
+    "src": "src/assets/img/thumbnails/epilogue-600w.jpg"
+  },
+  "src/assets/img/thumbnails/kiyoshi-450w.jpg": {
+    "file": "assets/static/kiyoshi-450w.BODpTA9Y.jpg",
+    "src": "src/assets/img/thumbnails/kiyoshi-450w.jpg"
+  },
+  "src/assets/img/thumbnails/maya_1-420w.jpg": {
+    "file": "assets/static/maya_1-420w.DYcx9ds-.jpg",
+    "src": "src/assets/img/thumbnails/maya_1-420w.jpg"
+  },
+  "src/assets/img/thumbnails/maya_2-400w.jpg": {
+    "file": "assets/static/maya_2-400w.Bu6bjntP.jpg",
+    "src": "src/assets/img/thumbnails/maya_2-400w.jpg"
+  },
+  "src/assets/img/thumbnails/mimikry-600w.jpg": {
+    "file": "assets/static/mimikry-600w.CttDT9Vy.jpg",
+    "src": "src/assets/img/thumbnails/mimikry-600w.jpg"
+  },
+  "src/assets/img/thumbnails/romina-415w.jpg": {
+    "file": "assets/static/romina-415w.DGcXwZZr.jpg",
+    "src": "src/assets/img/thumbnails/romina-415w.jpg"
+  },
+  "src/assets/img/thumbnails/transcending_ego-420w.jpg": {
+    "file": "assets/static/transcending_ego-420w.BadCCRwp.jpg",
+    "src": "src/assets/img/thumbnails/transcending_ego-420w.jpg"
+  },
+  "src/assets/img/thumbnails/versus_1-600w.jpg": {
+    "file": "assets/static/versus_1-600w.C592v1hx.jpg",
+    "src": "src/assets/img/thumbnails/versus_1-600w.jpg"
+  },
+  "src/assets/img/thumbnails/versus_2-600w.jpg": {
+    "file": "assets/static/versus_2-600w.pAw9BoPD.jpg",
+    "src": "src/assets/img/thumbnails/versus_2-600w.jpg"
+  },
+  "src/assets/img/thumbnails/viscosity-600w.jpg": {
+    "file": "assets/static/viscosity-600w.BxT7XmSX.jpg",
+    "src": "src/assets/img/thumbnails/viscosity-600w.jpg"
+  },
+  "src/assets/img/thumbnails/xvii-450w.jpg": {
+    "file": "assets/static/xvii-450w.8HdDcEQA.jpg",
+    "src": "src/assets/img/thumbnails/xvii-450w.jpg"
+  },
+  "src/assets/img/transcending_ego.jpg": {
+    "file": "assets/static/transcending_ego.BoQ9PT15.jpg",
+    "src": "src/assets/img/transcending_ego.jpg"
+  },
+  "src/assets/img/versus_1.jpg": {
+    "file": "assets/static/versus_1.BSYK-85i.jpg",
+    "src": "src/assets/img/versus_1.jpg"
+  },
+  "src/assets/img/versus_2.jpg": {
+    "file": "assets/static/versus_2.DKoIvAAz.jpg",
+    "src": "src/assets/img/versus_2.jpg"
+  },
+  "src/assets/img/viscosity.jpg": {
+    "file": "assets/static/viscosity.Dy7rf7lk.jpg",
+    "src": "src/assets/img/viscosity.jpg"
+  },
+  "src/assets/img/xvii.jpg": {
+    "file": "assets/static/xvii.CCVUbjpR.jpg",
+    "src": "src/assets/img/xvii.jpg"
+  },
+  "src/assets/videos/andromeda.mp4": {
+    "file": "assets/static/andromeda.Csgqu__9.mp4",
+    "src": "src/assets/videos/andromeda.mp4"
+  },
+  "src/assets/videos/aura.mp4": {
+    "file": "assets/static/aura.6ZDm4Tll.mp4",
+    "src": "src/assets/videos/aura.mp4"
+  },
+  "src/assets/videos/consciousness_1080.mp4": {
+    "file": "assets/static/consciousness_1080.BwubZdmE.mp4",
+    "src": "src/assets/videos/consciousness_1080.mp4"
+  },
+  "src/assets/videos/doppler.mp4": {
+    "file": "assets/static/doppler.ymVu7596.mp4",
+    "src": "src/assets/videos/doppler.mp4"
+  },
+  "src/assets/videos/versus.mp4": {
+    "file": "assets/static/versus.Gjpp4xVF.mp4",
+    "src": "src/assets/videos/versus.mp4"
+  },
+  "src/assets/videos/viscosity_1080.mp4": {
+    "file": "assets/static/viscosity_1080.DeRv5vgQ.mp4",
+    "src": "src/assets/videos/viscosity_1080.mp4"
+  },
+  "virtual:vike:pageConfigValuesAll:client:/src/pages/about": {
+    "file": "assets/entries/src_pages_about.DlSfXYOl.js",
+    "name": "entries/src/pages/about",
+    "src": "virtual:vike:pageConfigValuesAll:client:/src/pages/about",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_chunk-Bu0vrCtf.js",
+      "_chunk-Bs9liB0q.js"
+    ],
+    "css": [
+      "assets/static/vike-react-b64a028b.BcWtY8Ol.css"
+    ]
+  },
+  "virtual:vike:pageConfigValuesAll:client:/src/pages/impressum": {
+    "file": "assets/entries/src_pages_impressum.CHPoEgW0.js",
+    "name": "entries/src/pages/impressum",
+    "src": "virtual:vike:pageConfigValuesAll:client:/src/pages/impressum",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_chunk-Bu0vrCtf.js",
+      "_chunk-Bs9liB0q.js"
+    ],
+    "css": [
+      "assets/static/vike-react-b64a028b.BcWtY8Ol.css"
+    ]
+  },
+  "virtual:vike:pageConfigValuesAll:client:/src/pages/index": {
+    "file": "assets/entries/src_pages_index.Bb38etso.js",
+    "name": "entries/src/pages/index",
+    "src": "virtual:vike:pageConfigValuesAll:client:/src/pages/index",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_chunk-Bu0vrCtf.js",
+      "_chunk-Bs9liB0q.js"
+    ],
+    "css": [
+      "assets/static/vike-react-b64a028b.BcWtY8Ol.css"
+    ]
+  }
+}
