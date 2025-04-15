@@ -22,7 +22,8 @@ const Image = ({
     fadeInOnLoad,
     className,
 }: ImageProps) => {
-    const [imageLoaded, setImageLoaded] = useState(false);
+    // DEBUG
+    const [imageLoaded, setImageLoaded] = useState(true);
 
     return (
         <StyledImage
