@@ -23,6 +23,7 @@ const Popup = () => {
                     iconSize="2rem"
                     iconName="close"
                     onClick={() => setPopupOpen(false)}
+                    ariaLabel="Close"
                 />
             </Div>
         </StyledPopup>

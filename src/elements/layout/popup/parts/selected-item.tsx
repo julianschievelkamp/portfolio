@@ -53,6 +53,7 @@ const SelectedItem = () => {
                                         )
                                     )
                                 }
+                                ariaLabel="Previous"
                             />
                         </ArrowLeft>
                         <ArrowRight>
@@ -67,6 +68,7 @@ const SelectedItem = () => {
                                         )
                                     )
                                 }
+                                ariaLabel="Next"
                             />
                         </ArrowRight>
                     </>
@@ -77,6 +79,7 @@ const SelectedItem = () => {
                         <Video
                             src={activeItem.video}
                             poster={activeItem.image}
+                            ariaLabel={activeItem.title}
                         />
                     ) : (
                         <Image

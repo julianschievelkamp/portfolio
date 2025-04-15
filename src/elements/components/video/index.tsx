@@ -8,9 +8,10 @@ export interface VideoProps {
     poster: string;
     width?: string;
     height?: string;
+    ariaLabel?: string;
 }
 
-const Video = ({ src, poster, width, height }: VideoProps) => {
+const Video = ({ src, poster, width, height, ariaLabel }: VideoProps) => {
     const { popupOpen } = useStore();
     const ref = useRef<any>(null);
 
@@ -34,6 +35,7 @@ const Video = ({ src, poster, width, height }: VideoProps) => {
                 controlsList="nodownload noremoteplayback noplaybackrate"
                 disablePictureInPicture
                 onContextMenu={(e) => e.preventDefault()}
+                aria-label={ariaLabel}
             >
                 <source src={src} type="video/mp4" />
                 Your browser does not support the video tag.

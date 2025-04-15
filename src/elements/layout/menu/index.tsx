@@ -27,6 +27,7 @@ const Menu = () => {
                     iconSize="2rem"
                     iconName={sidebarOpen ? "close" : "menu"}
                     onClick={() => setSidebarOpen(!sidebarOpen)}
+                    ariaLabel="Toggle Sidebar"
                 />
             </Div>
         </StyledMenu>

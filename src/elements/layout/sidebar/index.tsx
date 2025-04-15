@@ -55,11 +55,13 @@ const Sidebar = ({ theme, setTheme, page }: SidebarProps) => {
                                         "_blank"
                                     )
                                 }
+                                ariaLabel="Instagram"
                             />
                             <Button
                                 padding="0.5rem"
                                 iconName={targetTheme}
                                 onClick={() => setTheme(targetTheme)}
+                                ariaLabel="Toggle Theme"
                             />
                         </Div>
 

@@ -9,6 +9,7 @@ export interface ButtonProps {
     iconName: keyof typeof icons;
     iconSize?: string;
     padding?: string;
+    ariaLabel?: string;
     className?: string;
 }
 
@@ -17,10 +18,15 @@ const Button = ({
     iconName,
     iconSize,
     padding,
+    ariaLabel,
     className,
 }: ButtonProps) => {
     return (
-        <StyledButton onClick={onClick} className={className}>
+        <StyledButton
+            onClick={onClick}
+            aria-label={ariaLabel}
+            className={className}
+        >
             <Icon name={iconName} size={iconSize} padding={padding} />
         </StyledButton>
     );
