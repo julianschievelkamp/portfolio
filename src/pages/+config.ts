@@ -6,7 +6,7 @@ export default {
     extends: [vikeReact, vikeReactStyledComponents],
     title: "Portfolio - Julian Schievelkamp",
     description:
-        "Julian Schievelkamp (b. 1994) is a contemporary visual artist and fine art photographer based in Cologne, Germany. Using both analog film and digital techniques, his work emphasizes on the synergies of photography and CGI.",
+        "JULIAN SCHIEVELKAMP CGN #1994. Visual artist and fine art photographer highlighting the synergies of classic photography and CGI.",
     image: "https://www.julianschievelkamp.com/og-image.jpg",
     viewport: null,
 };
