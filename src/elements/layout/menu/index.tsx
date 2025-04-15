@@ -14,7 +14,7 @@ const Menu = () => {
         <StyledMenu $isVisible={isVisible}>
             <StyledHeadline>
                 <Link
-                    href="#/"
+                    href="/"
                     onClick={() => setSidebarOpen(false)}
                     underline={false}
                 >
