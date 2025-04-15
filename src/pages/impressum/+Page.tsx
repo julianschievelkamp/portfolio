@@ -11,7 +11,7 @@ export const Page = () => {
             <>
                 <meta
                     name="description"
-                    content="Visual artist based in Cologne. Using both photographical and digital techniques, his work emphasizes on the synergies of photography and CGI."
+                    content="Julian Schievelkamp (b. 1994) is a contemporary visual artist and fine art photographer based in Cologne, Germany. Using both analog film and digital techniques, his work emphasizes on the synergies of photography and CGI."
                 />
                 <meta
                     name="image"
