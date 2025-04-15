@@ -7,7 +7,7 @@ export const StyledIcon = styled.div<{
     $size?: string;
     $margin?: string;
     $padding?: string;
-    theme?: Theme;
+    theme: Theme;
 }>`
     display: flex;
     align-items: center;
