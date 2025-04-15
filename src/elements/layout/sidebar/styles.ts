@@ -30,12 +30,17 @@ export const StyledSidebar = styled.div<{
     }
 `;
 
-export const CloseTrigger = styled.div`
+export const CloseTrigger = styled.div<{ $isActive: boolean }>`
     position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
+    backdrop-filter: blur(2px);
+    transition: ${transition.fast};
+    pointer-events: ${({ $isActive }) => ($isActive ? "all" : "none")};
+    opacity: ${({ $isActive }) => ($isActive ? 1 : 0)};
+    visibility: ${({ $isActive }) => ($isActive ? "visible" : "hidden")};
 `;
 
 export const ScrollContainer = styled.div`

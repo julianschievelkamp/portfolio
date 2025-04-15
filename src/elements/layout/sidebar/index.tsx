@@ -28,8 +28,11 @@ const Sidebar = ({ theme, setTheme, page }: SidebarProps) => {
 
     return (
         <>
-            {!isMd && sidebarOpen && (
-                <CloseTrigger onClick={() => setSidebarOpen(false)} />
+            {!isMd && (
+                <CloseTrigger
+                    onClick={() => setSidebarOpen(false)}
+                    $isActive={sidebarOpen}
+                />
             )}
             <StyledSidebar $sidebarOpen={sidebarOpen}>
                 <StyledHeadline>{lang.title}</StyledHeadline>
