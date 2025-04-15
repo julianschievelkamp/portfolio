@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import fonts from "./fonts";
-import { Theme } from "styles/variables";
+import { Theme, transition } from "styles/variables";
 
 export default createGlobalStyle<{ theme?: Theme }>`
     ${fonts};
@@ -28,6 +28,7 @@ export default createGlobalStyle<{ theme?: Theme }>`
         height: var(--100vh);
         overflow: hidden;
         background-color: ${({ theme }) => theme.body};
+        transition: background-color ${transition.fast};
     }
 
     .no-transition * {

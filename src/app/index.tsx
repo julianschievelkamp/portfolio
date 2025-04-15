@@ -14,7 +14,8 @@ export interface AppProps {
 const App = ({ page }: AppProps) => {
     const { theme, set: setTheme } = useTheme();
 
-    //if (isLoading) return <></>;
+    // DEBUG: prerendering not possible
+    // if (isLoading) return <></>;
 
     return (
         <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>

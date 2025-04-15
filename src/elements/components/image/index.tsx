@@ -22,7 +22,7 @@ const Image = ({
     fadeInOnLoad,
     className,
 }: ImageProps) => {
-    // DEBUG
+    // DEBUG: onLoad event not possible
     const [imageLoaded, setImageLoaded] = useState(true);
 
     return (
