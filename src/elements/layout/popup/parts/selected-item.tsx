@@ -79,7 +79,11 @@ const SelectedItem = () => {
                             poster={activeItem.image}
                         />
                     ) : (
-                        <Image src={activeItem.image} alt={activeItem.title} />
+                        <Image
+                            src={activeItem.image}
+                            alt={activeItem.title}
+                            fadeInOnLoad
+                        />
                     )}
                     <Div
                         position="absolute"
