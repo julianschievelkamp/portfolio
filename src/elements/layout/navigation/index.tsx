@@ -9,7 +9,6 @@ import {
 import { useStore } from "hooks/useStore";
 import { lang } from "data/lang";
 import Text from "elements/components/text";
-import { useMatch } from "react-router";
 
 const Navigation = () => {
     const { setSidebarOpen } = useStore();
@@ -22,7 +21,7 @@ const Navigation = () => {
 
             <NavList>
                 {pageData.map(({ name, path }) => {
-                    const isActive = useMatch(path) !== null;
+                    const isActive = true;
 
                     return (
                         <NavElement key={name}>
