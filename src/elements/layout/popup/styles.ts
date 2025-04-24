@@ -132,3 +132,16 @@ export const InnerSliderContainer = styled.div<{
     transition-delay: 300ms;
     opacity: ${({ $opacity }) => $opacity};
 `;
+
+export const SliderItem = styled.button<{ $opacity: number }>`
+    margin: 0 0.25rem 0 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    background: transparent;
+    width: 3rem;
+    height: 3rem;
+    overflow: hidden;
+    opacity: ${({ $opacity }) => $opacity};
+    cursor: pointer;
+`;
