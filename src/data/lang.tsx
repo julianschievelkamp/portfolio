@@ -31,6 +31,8 @@ export const lang = {
             50969 Köln
             <br />
             <br />
+            <Link href="tel:+4915679602835">+49 156 796 028 35</Link>
+            <br />
             <Link href="mailto:mail@julianschievelkamp.com" target="_blank">
                 mail@julianschievelkamp.com
             </Link>
