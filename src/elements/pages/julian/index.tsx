@@ -1,17 +1,17 @@
-import { StyledAbout } from "./styles";
+import { StyledJulian } from "./styles";
 
 import Artist from "./parts/artist";
 import References from "./parts/references";
 import Badges from "./parts/badges";
 
-const About = () => {
+const Julian = () => {
     return (
-        <StyledAbout>
+        <StyledJulian>
             <Artist />
             <References />
             <Badges />
-        </StyledAbout>
+        </StyledJulian>
     );
 };
 
-export default About;
+export default Julian;

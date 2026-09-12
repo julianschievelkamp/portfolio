@@ -38,7 +38,7 @@ export const lang = {
             </Link>
         </>
     ),
-    about: (
+    julian: (
         <>
             Julian Schievelkamp (b. 1994) is a contemporary visual artist and
             fine art photographer based in Cologne, Germany. Using both analog
@@ -87,12 +87,7 @@ export const lang = {
             subTitle: "2015—present",
             listEntries1: [
                 <>
-                    <Link
-                        href="https://foundation.app/@julianschievelkamp"
-                        target="_blank"
-                    >
-                        Foundation
-                    </Link>
+                    Foundation
                     <br />
                     <span>NFT Auctions</span>
                 </>,

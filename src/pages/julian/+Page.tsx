@@ -2,5 +2,5 @@ import App from "app";
 import { pageData } from "data/pageData";
 
 export const Page = () => {
-    return <App page={pageData.about} />;
+    return <App page={pageData.julian} />;
 };

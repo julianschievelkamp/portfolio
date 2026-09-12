@@ -16,7 +16,7 @@ const Artist = () => {
                 />
             </ImageWrapper>
             <Text fontSize="0.875rem" textAlign="justify">
-                {lang.about}
+                {lang.julian}
             </Text>
         </ArtistWrapper>
     );

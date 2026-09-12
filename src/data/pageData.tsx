@@ -1,4 +1,4 @@
-import About from "elements/pages/about";
+import Julian from "elements/pages/julian";
 import Impressum from "elements/pages/impressum";
 import Portfolio from "elements/pages/portfolio";
 
@@ -14,10 +14,10 @@ export const pageData: { [key: string]: Page } = {
         path: "/",
         element: <Portfolio />,
     },
-    about: {
-        name: "About",
-        path: "/about",
-        element: <About />,
+    julian: {
+        name: "Julian",
+        path: "/julian",
+        element: <Julian />,
     },
     impressum: {
         name: "Impressum",
