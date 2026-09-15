@@ -190,20 +190,7 @@ Error generating stack: `+e.message+`
     ${({onClick:e})=>e&&rr`
             cursor: pointer;
         `}
-`,zr=({children:e,width:t,maxWidth:n,height:r,onClick:i,className:a,position:o,display:s,flexDirection:c,justifyContent:l,flexWrap:u,alignItems:d,margin:f,padding:p,top:m,left:h,right:g,bottom:_,opacity:v,overflow:y})=>(0,F.jsx)(Rr,{width:t,height:r,onClick:i,className:a,$maxWidth:n,$position:o,$display:s,$flexDirection:c,$justifyContent:l,$flexWrap:u,$alignItems:d,$margin:f,$padding:p,$top:m,$left:h,$right:g,$bottom:_,$opacity:v,$overflow:y,children:e}),Br=(e,t,n=window)=>{let r=(0,h.useRef)(t);(0,h.useEffect)(()=>{r.current=t},[t]),(0,h.useEffect)(()=>{if(!(n&&n.addEventListener))return;let t=e=>r.current(e);return n.addEventListener(e,t),()=>{n.removeEventListener(e,t)}},[e,n])},Vr=e=>{let[t,n]=(0,h.useState)(!1),[r,i]=(0,h.useState)(null);return(0,h.useEffect)(()=>{let t=window.matchMedia(e);i(t),n(t.matches)},[e]),Br(`change`,e=>n(e.matches),r),t},Hr=N.img`
-    width: ${({width:e})=>e};
-    height: ${({height:e})=>e};
-    opacity: ${({$imageLoaded:e})=>+!!e};
-    max-width: 100%;
-    transition: ${dr.fast};
-
-    pointer-events: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-`,Ur=({src:e,srcSet:t,sizes:n,alt:r,width:i,height:a,fadeInOnLoad:o,className:s})=>{let[c,l]=(0,h.useState)(!1),u=(0,h.useRef)(null);return(0,h.useEffect)(()=>{!c&&u?.current?.complete&&l(!0)},[]),(0,F.jsx)(Hr,{src:e,srcSet:t,sizes:n,alt:r,width:i,height:a,$imageLoaded:!o||c,onLoad:()=>l(!0),className:s,ref:u,loading:`lazy`})},Wr=N.div`
+`,zr=({children:e,width:t,maxWidth:n,height:r,onClick:i,className:a,position:o,display:s,flexDirection:c,justifyContent:l,flexWrap:u,alignItems:d,margin:f,padding:p,top:m,left:h,right:g,bottom:_,opacity:v,overflow:y})=>(0,F.jsx)(Rr,{width:t,height:r,onClick:i,className:a,$maxWidth:n,$position:o,$display:s,$flexDirection:c,$justifyContent:l,$flexWrap:u,$alignItems:d,$margin:f,$padding:p,$top:m,$left:h,$right:g,$bottom:_,$opacity:v,$overflow:y,children:e}),Br=(e,t,n=window)=>{let r=(0,h.useRef)(t);(0,h.useEffect)(()=>{r.current=t},[t]),(0,h.useEffect)(()=>{if(!(n&&n.addEventListener))return;let t=e=>r.current(e);return n.addEventListener(e,t),()=>{n.removeEventListener(e,t)}},[e,n])},Vr=e=>{let[t,n]=(0,h.useState)(!1),[r,i]=(0,h.useState)(null);return(0,h.useEffect)(()=>{let t=window.matchMedia(e);i(t),n(t.matches)},[e]),Br(`change`,e=>n(e.matches),r),t},Hr=N.div`
     max-width: 1140px;
     margin: 0 auto;
     padding: 1rem;
@@ -211,36 +198,42 @@ Error generating stack: `+e.message+`
     @media ${P.md} {
         padding: 4rem;
     }
-`,Gr=N.div`
+`,Ur=N.div`
     display: flex;
     flex-direction: column;
 
     @media ${P.lg} {
         flex-direction: row;
     }
-`,Kr=N(zr)`
+`,Wr=N(zr)`
     &:hover {
+        img {
+            transform: scale(1.1);
+        }
+
         a {
             color: ${({theme:e})=>e.hover};
             transition: ${dr.fastest};
         }
     }
-`,qr=N.div`
-    width: 3.5rem;
-    min-width: 3.5rem;
-    height: 3.5rem;
-    min-height: 3.5rem;
+`,Gr=N.div`
+    width: 4rem;
+    min-width: 4rem;
+    height: 4rem;
+    min-height: 4rem;
     border-radius: 100px;
-    border: 2px solid transparent;
+    border: 3px solid transparent;
     padding: 2px;
     background:
         linear-gradient(white 0 0) padding-box,
         linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5)
             border-box;
-`,Jr=N(Ur)`
+`,Kr=N.div`
     overflow: hidden;
     border-radius: 100px;
-`,Yr=N.div`
+    width: 100%;
+    height: 100%;
+`,qr=N.div`
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
@@ -256,7 +249,7 @@ Error generating stack: `+e.message+`
         margin-right: 2rem;
         min-width: 30%;
     }
-`,Xr=N.div`
+`,Jr=N.div`
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: 1fr;
@@ -273,13 +266,13 @@ Error generating stack: `+e.message+`
     @media ${P.lg} {
         grid-template-columns: 1fr 2fr 1fr 2fr;
     }
-`,Zr=N.div`
+`,Yr=N.div`
     padding: 0 0 0 1rem;
 
     @media ${P.sm} {
         padding: 0;
     }
-`,Qr=N.div`
+`,Xr=N.div`
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: 1fr;
@@ -287,7 +280,20 @@ Error generating stack: `+e.message+`
     @media ${P.sm} {
         grid-template-columns: 1fr 1fr 1fr;
     }
-`,$r=`/assets/static/self_portrait.CGp_rvnj.jpg`,ei=`/assets/static/profile.BO7IoKNN.jpg`,ti=()=>(0,F.jsxs)(Gr,{children:[(0,F.jsx)(Yr,{children:(0,F.jsx)(Ur,{src:$r,alt:`Julian Schievelkamp`,fadeInOnLoad:!0})}),(0,F.jsxs)(zr,{children:[(0,F.jsx)(Dr,{fontSize:`0.875rem`,textAlign:`justify`,children:Lr.julian}),(0,F.jsxs)(Kr,{display:`flex`,margin:`2rem 0 0 0`,alignItems:`center`,width:`fit-content`,onClick:()=>window.open(`https://www.instagram.com/julianschievelkamp/`),children:[(0,F.jsx)(qr,{children:(0,F.jsx)(Jr,{src:ei,alt:`Instagram Profile`})}),(0,F.jsxs)(zr,{margin:`0 1rem 0 0.5rem`,children:[(0,F.jsx)(Dr,{fontSize:`0.875rem`,bold:!0,children:(0,F.jsx)(Ir,{href:`https://www.instagram.com/julianschievelkamp/`,target:`_blank`,children:`@julianschievelkamp`})}),(0,F.jsx)(Dr,{fontSize:`0.875rem`,children:`Julian Schievelkamp`})]})]})]})]}),ni=N.div`
+`,Zr=N.img`
+    width: ${({width:e})=>e};
+    height: ${({height:e})=>e};
+    opacity: ${({$imageLoaded:e})=>+!!e};
+    max-width: 100%;
+    transition: ${dr.fast};
+
+    pointer-events: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+`,Qr=({src:e,srcSet:t,sizes:n,alt:r,width:i,height:a,fadeInOnLoad:o,className:s})=>{let[c,l]=(0,h.useState)(!1),u=(0,h.useRef)(null);return(0,h.useEffect)(()=>{!c&&u?.current?.complete&&l(!0)},[]),(0,F.jsx)(Zr,{src:e,srcSet:t,sizes:n,alt:r,width:i,height:a,$imageLoaded:!o||c,onLoad:()=>l(!0),className:s,ref:u,loading:`lazy`})},$r=`/assets/static/self_portrait.CGp_rvnj.jpg`,ei=`/assets/static/profile.BO7IoKNN.jpg`,ti=()=>(0,F.jsxs)(Ur,{children:[(0,F.jsx)(qr,{children:(0,F.jsx)(Qr,{src:$r,alt:`Julian Schievelkamp`,fadeInOnLoad:!0})}),(0,F.jsxs)(zr,{children:[(0,F.jsx)(Dr,{fontSize:`0.875rem`,textAlign:`justify`,children:Lr.julian}),(0,F.jsxs)(Wr,{display:`flex`,margin:`2rem 0 0 0`,alignItems:`center`,width:`fit-content`,onClick:()=>window.open(`https://www.instagram.com/julianschievelkamp/`),children:[(0,F.jsx)(Gr,{children:(0,F.jsx)(Kr,{children:(0,F.jsx)(Qr,{src:ei,alt:`Instagram Profile`})})}),(0,F.jsxs)(zr,{margin:`0 1rem 0 0.5rem`,children:[(0,F.jsx)(Dr,{fontSize:`0.875rem`,bold:!0,children:(0,F.jsx)(Ir,{href:`https://www.instagram.com/julianschievelkamp/`,target:`_blank`,children:`@julianschievelkamp`})}),(0,F.jsx)(Dr,{fontSize:`0.875rem`,children:`Julian Schievelkamp`})]})]})]})]}),ni=N.div`
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -332,7 +338,7 @@ Error generating stack: `+e.message+`
     margin: ${({$margin:e})=>e};
 `,si=N.li`
     line-height: 1.5;
-`,ci=({items:e,margin:t=`0`})=>(0,F.jsx)(oi,{$margin:t,children:e.map((e,t)=>(0,F.jsx)(si,{children:(0,F.jsx)(Dr,{fontSize:`0.875rem`,children:e})},t))}),li=()=>(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(ai,{children:Lr.references.headline}),(0,F.jsxs)(Xr,{children:[(0,F.jsxs)(zr,{children:[(0,F.jsx)(Dr,{fontSize:`0.875rem`,bold:!0,children:Lr.references.publications.title}),(0,F.jsx)(Dr,{fontSize:`0.875rem`,children:Lr.references.publications.subTitle})]}),(0,F.jsxs)(Zr,{children:[(0,F.jsx)(ci,{items:Lr.references.publications.listEntries1,margin:`0 0 1rem 0`}),(0,F.jsx)(ci,{items:Lr.references.publications.listEntries2,margin:`0 0 1rem 0`}),(0,F.jsx)(ci,{items:Lr.references.publications.listEntries3})]}),(0,F.jsxs)(zr,{children:[(0,F.jsx)(Dr,{fontSize:`0.875rem`,bold:!0,children:Lr.references.awards.title}),(0,F.jsx)(Dr,{fontSize:`0.875rem`,children:Lr.references.awards.subTitle})]}),(0,F.jsxs)(Zr,{children:[(0,F.jsx)(ci,{items:Lr.references.awards.listEntries1,margin:`0 0 1rem 0`}),(0,F.jsx)(ci,{items:Lr.references.awards.listEntries2})]})]})]}),ui=[{image:`/assets/static/badge1.DcKEMpgM.png`,alt:`Fine Art Photography Awards`},{image:`/assets/static/badge2.CgV35bug.jpg`,alt:`Prix de la Photographie Paris`},{image:`/assets/static/badge3.DVHDMXXq.png`,alt:`ND Awards`}],di=()=>(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(ai,{children:Lr.badges.headline}),(0,F.jsx)(Qr,{children:ui.map(e=>(0,F.jsx)(zr,{display:`flex`,justifyContent:`center`,children:(0,F.jsx)(Ur,{src:e.image,alt:e.alt,fadeInOnLoad:!0})},e.alt))})]}),fi=()=>(0,F.jsxs)(Wr,{children:[(0,F.jsx)(ti,{}),(0,F.jsx)(li,{}),(0,F.jsx)(di,{})]}),pi=N.div`
+`,ci=({items:e,margin:t=`0`})=>(0,F.jsx)(oi,{$margin:t,children:e.map((e,t)=>(0,F.jsx)(si,{children:(0,F.jsx)(Dr,{fontSize:`0.875rem`,children:e})},t))}),li=()=>(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(ai,{children:Lr.references.headline}),(0,F.jsxs)(Jr,{children:[(0,F.jsxs)(zr,{children:[(0,F.jsx)(Dr,{fontSize:`0.875rem`,bold:!0,children:Lr.references.publications.title}),(0,F.jsx)(Dr,{fontSize:`0.875rem`,children:Lr.references.publications.subTitle})]}),(0,F.jsxs)(Yr,{children:[(0,F.jsx)(ci,{items:Lr.references.publications.listEntries1,margin:`0 0 1rem 0`}),(0,F.jsx)(ci,{items:Lr.references.publications.listEntries2,margin:`0 0 1rem 0`}),(0,F.jsx)(ci,{items:Lr.references.publications.listEntries3})]}),(0,F.jsxs)(zr,{children:[(0,F.jsx)(Dr,{fontSize:`0.875rem`,bold:!0,children:Lr.references.awards.title}),(0,F.jsx)(Dr,{fontSize:`0.875rem`,children:Lr.references.awards.subTitle})]}),(0,F.jsxs)(Yr,{children:[(0,F.jsx)(ci,{items:Lr.references.awards.listEntries1,margin:`0 0 1rem 0`}),(0,F.jsx)(ci,{items:Lr.references.awards.listEntries2})]})]})]}),ui=[{image:`/assets/static/badge1.DcKEMpgM.png`,alt:`Fine Art Photography Awards`},{image:`/assets/static/badge2.CgV35bug.jpg`,alt:`Prix de la Photographie Paris`},{image:`/assets/static/badge3.DVHDMXXq.png`,alt:`ND Awards`}],di=()=>(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(ai,{children:Lr.badges.headline}),(0,F.jsx)(Xr,{children:ui.map(e=>(0,F.jsx)(zr,{display:`flex`,justifyContent:`center`,children:(0,F.jsx)(Qr,{src:e.image,alt:e.alt,fadeInOnLoad:!0})},e.alt))})]}),fi=()=>(0,F.jsxs)(Hr,{children:[(0,F.jsx)(ti,{}),(0,F.jsx)(li,{}),(0,F.jsx)(di,{})]}),pi=N.div`
     max-width: 1140px;
     margin: 0 auto;
     padding: 1rem;
@@ -532,7 +538,7 @@ Error generating stack: `+e.message+`
         width: ${({$size:e})=>e};
         height: ${({$size:e})=>e};
     }
-`,na=({name:e,color:t,className:n,size:r=`1rem`,margin:i,padding:a})=>{let o=ea[e];return(0,F.jsx)(ta,{color:t,$size:r,$margin:i,$padding:a,className:n,children:(0,F.jsx)(o,{})})},ra=({onClick:e,iconName:t,iconSize:n,padding:r,ariaLabel:i,className:a})=>(0,F.jsx)($i,{onClick:e,"aria-label":i,className:a,children:(0,F.jsx)(na,{name:t,size:n,padding:r})}),ia=()=>{let{setPopupOpen:e,currentPortfolioIndex:t,setCurrentPortfolioIndex:n,theme:r}=Sr(),i=Vr(P.md),a=Vr(P.landscape),o=Li[t],s=r===`light`?o.palette:[...o.palette].reverse();return(0,F.jsxs)(zi,{children:[(0,F.jsx)(Bi,{onClick:()=>e(!1)}),(0,F.jsxs)(Vi,{children:[i&&a&&(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(Ui,{children:(0,F.jsx)(ra,{iconSize:`4rem`,iconName:`chevronLeft`,onClick:()=>n(Yi(t-1,Li.length-1)),ariaLabel:`Previous`})}),(0,F.jsx)(Wi,{children:(0,F.jsx)(ra,{iconSize:`4rem`,iconName:`chevronRight`,onClick:()=>n(Yi(t+1,Li.length-1)),ariaLabel:`Next`})})]}),(0,F.jsxs)(Hi,{children:[o.video?(0,F.jsx)(Qi,{src:o.video,poster:o.image,ariaLabel:o.title}):(0,F.jsx)(Ur,{src:o.image,alt:o.title,fadeInOnLoad:!0}),(0,F.jsxs)(zr,{position:`absolute`,width:`100%`,display:`flex`,justifyContent:`flex-end`,alignItems:`center`,children:[s.map(e=>(0,F.jsx)(Gi,{$background:e},e)),(0,F.jsx)(Dr,{bold:!0,textAlign:`right`,margin:`0 0 0 0.25rem`,children:o.title})]})]})]})]})},aa=()=>{let{popupOpen:e,currentPortfolioIndex:t,setCurrentPortfolioIndex:n}=Sr();return(0,F.jsx)(Ki,{children:(0,F.jsx)(qi,{$opacity:+!!e,$currentPortfolioIndex:t,children:Li.map((e,r)=>(0,F.jsx)(Ji,{"aria-label":e.title,onClick:()=>n(r),$opacity:r===t?1:.5,children:(0,F.jsx)(Ur,{width:`100%`,src:e.image,srcSet:e.imageSet,sizes:e.imageSet&&`(max-width: 1200px) 300px, 600px`,alt:e.title})},e.title))})})},oa=()=>{let{popupOpen:e,setPopupOpen:t}=Sr();return Xi(Li),(0,F.jsxs)(Ri,{$isOpen:e,children:[(0,F.jsx)(ia,{}),(0,F.jsx)(aa,{}),(0,F.jsx)(zr,{position:`absolute`,top:`1rem`,right:`1rem`,children:(0,F.jsx)(ra,{iconSize:`2rem`,iconName:`close`,onClick:()=>t(!1),ariaLabel:`Close`})})]})},sa={portfolio:{name:`Portfolio`,path:`/`,element:(0,F.jsx)(()=>{let{setCurrentPortfolioIndex:e,setPopupOpen:t}=Sr();return(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(hi,{children:Li.map(({title:n,image:r,imageSet:i},a)=>(0,F.jsx)(gi,{onClick:()=>{e(a),t(!0)},children:(0,F.jsx)(Ur,{width:`100%`,src:r,srcSet:i,sizes:i&&`(max-width: 1200px) 300px, 600px`,alt:n,fadeInOnLoad:!0})},n+a))}),(0,F.jsx)(oa,{})]})},{})},julian:{name:`Julian`,path:`/julian`,element:(0,F.jsx)(fi,{})},impressum:{name:`Impressum`,path:`/impressum`,element:(0,F.jsx)(mi,{})}},I=N.nav`
+`,na=({name:e,color:t,className:n,size:r=`1rem`,margin:i,padding:a})=>{let o=ea[e];return(0,F.jsx)(ta,{color:t,$size:r,$margin:i,$padding:a,className:n,children:(0,F.jsx)(o,{})})},ra=({onClick:e,iconName:t,iconSize:n,padding:r,ariaLabel:i,className:a})=>(0,F.jsx)($i,{onClick:e,"aria-label":i,className:a,children:(0,F.jsx)(na,{name:t,size:n,padding:r})}),ia=()=>{let{setPopupOpen:e,currentPortfolioIndex:t,setCurrentPortfolioIndex:n,theme:r}=Sr(),i=Vr(P.md),a=Vr(P.landscape),o=Li[t],s=r===`light`?o.palette:[...o.palette].reverse();return(0,F.jsxs)(zi,{children:[(0,F.jsx)(Bi,{onClick:()=>e(!1)}),(0,F.jsxs)(Vi,{children:[i&&a&&(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(Ui,{children:(0,F.jsx)(ra,{iconSize:`4rem`,iconName:`chevronLeft`,onClick:()=>n(Yi(t-1,Li.length-1)),ariaLabel:`Previous`})}),(0,F.jsx)(Wi,{children:(0,F.jsx)(ra,{iconSize:`4rem`,iconName:`chevronRight`,onClick:()=>n(Yi(t+1,Li.length-1)),ariaLabel:`Next`})})]}),(0,F.jsxs)(Hi,{children:[o.video?(0,F.jsx)(Qi,{src:o.video,poster:o.image,ariaLabel:o.title}):(0,F.jsx)(Qr,{src:o.image,alt:o.title,fadeInOnLoad:!0}),(0,F.jsxs)(zr,{position:`absolute`,width:`100%`,display:`flex`,justifyContent:`flex-end`,alignItems:`center`,children:[s.map(e=>(0,F.jsx)(Gi,{$background:e},e)),(0,F.jsx)(Dr,{bold:!0,textAlign:`right`,margin:`0 0 0 0.25rem`,children:o.title})]})]})]})]})},aa=()=>{let{popupOpen:e,currentPortfolioIndex:t,setCurrentPortfolioIndex:n}=Sr();return(0,F.jsx)(Ki,{children:(0,F.jsx)(qi,{$opacity:+!!e,$currentPortfolioIndex:t,children:Li.map((e,r)=>(0,F.jsx)(Ji,{"aria-label":e.title,onClick:()=>n(r),$opacity:r===t?1:.5,children:(0,F.jsx)(Qr,{width:`100%`,src:e.image,srcSet:e.imageSet,sizes:e.imageSet&&`(max-width: 1200px) 300px, 600px`,alt:e.title})},e.title))})})},oa=()=>{let{popupOpen:e,setPopupOpen:t}=Sr();return Xi(Li),(0,F.jsxs)(Ri,{$isOpen:e,children:[(0,F.jsx)(ia,{}),(0,F.jsx)(aa,{}),(0,F.jsx)(zr,{position:`absolute`,top:`1rem`,right:`1rem`,children:(0,F.jsx)(ra,{iconSize:`2rem`,iconName:`close`,onClick:()=>t(!1),ariaLabel:`Close`})})]})},sa={portfolio:{name:`Portfolio`,path:`/`,element:(0,F.jsx)(()=>{let{setCurrentPortfolioIndex:e,setPopupOpen:t}=Sr();return(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(hi,{children:Li.map(({title:n,image:r,imageSet:i},a)=>(0,F.jsx)(gi,{onClick:()=>{e(a),t(!0)},children:(0,F.jsx)(Qr,{width:`100%`,src:r,srcSet:i,sizes:i&&`(max-width: 1200px) 300px, 600px`,alt:n,fadeInOnLoad:!0})},n+a))}),(0,F.jsx)(oa,{})]})},{})},julian:{name:`Julian`,path:`/julian`,element:(0,F.jsx)(fi,{})},impressum:{name:`Impressum`,path:`/impressum`,element:(0,F.jsx)(mi,{})}},I=N.nav`
     margin-bottom: 3rem;
     margin-left: 0.5rem;
 `,L=N(Dr)`
