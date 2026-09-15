@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
-import { Theme, transition } from "styles/variables";
+import { colors, transition } from "styles/variables";
 
-export const StyledButton = styled.button<{ theme: Theme }>`
+export const StyledButton = styled.button`
     padding: 0;
     background: transparent;
     outline: none;
@@ -10,7 +10,7 @@ export const StyledButton = styled.button<{ theme: Theme }>`
 
     &:hover {
         svg {
-            fill: ${({ theme }) => theme.hover};
+            fill: ${colors.yellow};
             transition: ${transition.fastest};
         }
     }

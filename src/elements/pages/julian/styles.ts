@@ -1,6 +1,6 @@
 import Div from "elements/components/div";
 import { styled } from "styled-components";
-import { queries, Theme, transition } from "styles/variables";
+import { colors, queries, transition } from "styles/variables";
 
 export const StyledJulian = styled.div`
     max-width: 1140px;
@@ -21,20 +21,20 @@ export const ArtistWrapper = styled.div`
     }
 `;
 
-export const SocialMedia = styled(Div)<{ theme: Theme }>`
+export const SocialMedia = styled(Div)`
     &:hover {
         img {
             transform: scale(1.1);
         }
 
         a {
-            color: ${({ theme }) => theme.hover};
+            color: ${colors.yellow};
             transition: ${transition.fastest};
         }
     }
 `;
 
-export const StyledProfile = styled.div<{ theme: Theme }>`
+export const StyledProfile = styled.div`
     width: 4rem;
     min-width: 4rem;
     height: 4rem;
@@ -55,7 +55,7 @@ export const ProfileImage = styled.div`
     height: 100%;
 `;
 
-export const ImageWrapper = styled.div<{ theme: Theme }>`
+export const ImageWrapper = styled.div`
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
@@ -63,7 +63,7 @@ export const ImageWrapper = styled.div<{ theme: Theme }>`
 
     img {
         max-height: 30rem;
-        border: ${({ theme }) => `8px solid ${theme.primary}`};
+        border: 8px solid black;
     }
 
     @media ${queries.lg} {
@@ -73,14 +73,13 @@ export const ImageWrapper = styled.div<{ theme: Theme }>`
     }
 `;
 
-export const ReferencesWrapper = styled.div<{ theme: Theme }>`
+export const ReferencesWrapper = styled.div`
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: 1fr;
 
     span {
-        color: ${({ theme }) => theme.secondary};
-        transition: ${transition.fast};
+        color: ${colors.secondary};
     }
 
     @media ${queries.sm} {

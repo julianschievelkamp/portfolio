@@ -1,14 +1,12 @@
-import { Theme } from "styles/variables";
 import { styled } from "styled-components";
-import { queries, scrollStyles, transition } from "styles/variables";
+import { queries, scrollStyles } from "styles/variables";
 
-export const StyledApp = styled.div<{ theme: Theme }>`
+export const StyledApp = styled.div`
     width: 100vw;
     height: var(--100vh);
     overflow: hidden;
-    background-color: ${({ theme }) => theme.body};
-    color: ${({ theme }) => theme.primary};
-    transition: ${transition.fast};
+    background-color: white;
+    color: black;
     position: relative;
 `;
 

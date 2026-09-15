@@ -1,27 +1,8 @@
 import { css } from "styled-components";
 
-export type Theme = {
-    body: string;
-    primary: string;
-    secondary: string;
-    tertiary: string;
-    hover: string;
-};
-
-export const lightTheme: Theme = {
-    body: "rgb(255, 255, 255, 1)",
-    primary: "rgb(0, 0, 0, 1)",
+export const colors = {
     secondary: "rgb(0, 0, 0, 0.5)",
-    tertiary: "rgb(0, 0, 0, 0.05)",
-    hover: "#ffca00",
-};
-
-export const darkTheme: Theme = {
-    body: "rgb(0, 0, 0, 1)",
-    primary: "rgb(255, 255, 255, 1)",
-    secondary: "rgb(255, 255, 255, 0.5)",
-    tertiary: "rgb(255, 255, 255, 0.1)",
-    hover: "#ffca00",
+    yellow: "#ffca00",
 };
 
 export const queries = {

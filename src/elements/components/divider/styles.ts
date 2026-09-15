@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
-import { queries, Theme, transition } from "styles/variables";
+import { queries } from "styles/variables";
 import Headline from "../headline";
 
-export const StyledDivider = styled.div<{ theme: Theme }>`
+export const StyledDivider = styled.div`
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -14,12 +14,11 @@ export const StyledDivider = styled.div<{ theme: Theme }>`
         left: 0;
         height: 1px;
         width: 100%;
-        background: ${({ theme }) => theme.primary};
-        transition: ${transition.fast};
+        background: black;
     }
 `;
 
-export const TextWrapper = styled.div<{ theme: Theme }>`
+export const TextWrapper = styled.div`
     margin: 0 auto;
     width: fit-content;
     position: relative;
@@ -33,8 +32,7 @@ export const TextWrapper = styled.div<{ theme: Theme }>`
         width: 100%;
         top: 0;
         left: 0;
-        background-color: ${({ theme }) => theme.body};
-        transition: ${transition.fast};
+        background-color: white;
         z-index: -1;
     }
 `;

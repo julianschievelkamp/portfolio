@@ -1,12 +1,12 @@
-import { queries, Theme } from "styles/variables";
+import { queries } from "styles/variables";
 import { styled } from "styled-components";
 import { transition } from "styles/variables";
 
-export const StyledPopup = styled.div<{ $isOpen: boolean; theme: Theme }>`
+export const StyledPopup = styled.div<{ $isOpen: boolean }>`
     position: fixed;
     top: 0;
     left: 0;
-    background-color: ${({ theme }) => theme.body};
+    background-color: white;
     visibility: ${({ $isOpen }) => ($isOpen ? "visible" : "hidden")};
     opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
     pointer-events: ${({ $isOpen }) => ($isOpen ? "all" : "none")};
@@ -47,14 +47,14 @@ export const InnerWrapper = styled.div`
     position: relative;
 `;
 
-export const ItemContainer = styled.div<{ theme: Theme }>`
+export const ItemContainer = styled.div`
     z-index: 1;
     position: relative;
 
     img,
     video {
         max-height: calc(var(--100vh) - 15rem);
-        border: ${({ theme }) => `8px solid ${theme.primary}`};
+        border: 8px solid black;
     }
 
     video {

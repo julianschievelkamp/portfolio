@@ -6,25 +6,19 @@ import {
     StyledSidebar,
 } from "./styles";
 import { lang } from "data/lang";
-import Div from "elements/components/div";
 import { useMediaQuery } from "hooks/useMediaQuery";
 import { queries } from "styles/variables";
 import Navigation from "elements/layout/navigation";
 import { useStore } from "hooks/useStore";
-import Button from "elements/components/button";
 import { Page } from "data/pageData";
 
 export interface SidebarProps {
-    theme: string;
-    setTheme: (theme: "light" | "dark") => void;
     page: Page;
 }
 
-const Sidebar = ({ theme, setTheme, page }: SidebarProps) => {
+const Sidebar = ({ page }: SidebarProps) => {
     const { sidebarOpen, setSidebarOpen } = useStore();
     const isMd = useMediaQuery(queries.md);
-
-    const targetTheme = theme === "light" ? "dark" : "light";
 
     return (
         <>
@@ -44,31 +38,9 @@ const Sidebar = ({ theme, setTheme, page }: SidebarProps) => {
                 <ScrollContainer>
                     <Navigation page={page} />
 
-                    <Div>
-                        <Div display="flex" alignItems="center">
-                            <Button
-                                padding="0.5rem"
-                                iconName="instagram"
-                                onClick={() =>
-                                    window.open(
-                                        "https://www.instagram.com/julianschievelkamp",
-                                        "_blank"
-                                    )
-                                }
-                                ariaLabel="Instagram"
-                            />
-                            <Button
-                                padding="0.5rem"
-                                iconName={targetTheme}
-                                onClick={() => setTheme(targetTheme)}
-                                ariaLabel="Toggle Theme"
-                            />
-                        </Div>
-
-                        <Text fontSize="0.875rem" margin="0.5rem 0 0 0">
-                            {lang.copyright}
-                        </Text>
-                    </Div>
+                    <Text fontSize="0.875rem" margin="0.5rem 0 0 0">
+                        {lang.copyright}
+                    </Text>
                 </ScrollContainer>
             </StyledSidebar>
         </>

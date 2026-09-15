@@ -1,13 +1,13 @@
 import { styled } from "styled-components";
-import { Theme, transition } from "styles/variables";
+import { colors, transition } from "styles/variables";
 
-export const StyledLink = styled.a<{ theme: Theme; $underline: boolean }>`
-    color: ${({ theme }) => theme.primary};
+export const StyledLink = styled.a<{ $underline: boolean }>`
+    color: black;
     text-decoration: ${({ $underline }) => ($underline ? "underline" : "none")};
     transition: ${transition.fast};
 
     &:hover {
-        color: ${({ theme }) => theme.hover};
+        color: ${colors.yellow};
         transition: ${transition.fastest};
     }
 `;

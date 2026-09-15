@@ -1,13 +1,11 @@
-import { Theme } from "styles/variables";
 import { styled } from "styled-components";
 import { queries, scrollStyles, transition } from "styles/variables";
 import Headline from "elements/components/headline";
 
 export const StyledSidebar = styled.div<{
     $sidebarOpen: boolean;
-    theme: Theme;
 }>`
-    background-color: ${({ theme }) => theme.body};
+    background-color: white;
     width: 15rem;
     max-width: calc(100vw - 4rem);
     height: 100%;
@@ -53,14 +51,12 @@ export const ScrollContainer = styled.div`
     height: 100%;
 `;
 
-export const StyledHeadline = styled(Headline)<{
-    theme: Theme;
-}>`
+export const StyledHeadline = styled(Headline)`
     font-size: 1.25rem;
-    color: ${({ theme }) => theme.body};
+    color: white;
 
     @media ${queries.md} {
         font-size: 1.5rem;
-        color: ${({ theme }) => theme.primary};
+        color: black;
     }
 `;

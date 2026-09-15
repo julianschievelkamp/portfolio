@@ -1,10 +1,9 @@
-import { queries, Theme } from "styles/variables";
 import { styled } from "styled-components";
-import { transition } from "styles/variables";
+import { transition, queries } from "styles/variables";
 import Headline from "elements/components/headline";
 
-export const StyledMenu = styled.div<{ $isVisible: boolean; theme: Theme }>`
-    background-color: ${({ theme }) => theme.body};
+export const StyledMenu = styled.div<{ $isVisible: boolean }>`
+    background-color: white;
     width: 100vw;
     position: fixed;
     height: 7.5rem;
