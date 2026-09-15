@@ -63,7 +63,7 @@ export const lang = {
             <Link href="mailto:mail@julianschievelkamp.com" target="_blank">
                 mail
             </Link>{" "}
-            or connect with me on social media.
+            or social media.
         </>
     ),
     references: {

@@ -1,5 +1,4 @@
 import Div from "elements/components/div";
-import Image from "elements/components/image";
 import { styled } from "styled-components";
 import { queries, Theme, transition } from "styles/variables";
 
@@ -24,6 +23,10 @@ export const ArtistWrapper = styled.div`
 
 export const SocialMedia = styled(Div)<{ theme: Theme }>`
     &:hover {
+        img {
+            transform: scale(1.1);
+        }
+
         a {
             color: ${({ theme }) => theme.hover};
             transition: ${transition.fastest};
@@ -32,12 +35,12 @@ export const SocialMedia = styled(Div)<{ theme: Theme }>`
 `;
 
 export const StyledProfile = styled.div<{ theme: Theme }>`
-    width: 3.5rem;
-    min-width: 3.5rem;
-    height: 3.5rem;
-    min-height: 3.5rem;
+    width: 4rem;
+    min-width: 4rem;
+    height: 4rem;
+    min-height: 4rem;
     border-radius: 100px;
-    border: 2px solid transparent;
+    border: 3px solid transparent;
     padding: 2px;
     background:
         linear-gradient(white 0 0) padding-box,
@@ -45,9 +48,11 @@ export const StyledProfile = styled.div<{ theme: Theme }>`
             border-box;
 `;
 
-export const StyledImage = styled(Image)`
+export const ProfileImage = styled.div`
     overflow: hidden;
     border-radius: 100px;
+    width: 100%;
+    height: 100%;
 `;
 
 export const ImageWrapper = styled.div<{ theme: Theme }>`

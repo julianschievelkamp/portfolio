@@ -3,7 +3,7 @@ import {
     ArtistWrapper,
     ImageWrapper,
     SocialMedia,
-    StyledImage,
+    ProfileImage,
     StyledProfile,
 } from "../styles";
 import { lang } from "data/lang";
@@ -41,7 +41,9 @@ const Artist = () => {
                     }
                 >
                     <StyledProfile>
-                        <StyledImage src={Profile} alt="Instagram Profile" />
+                        <ProfileImage>
+                            <Image src={Profile} alt="Instagram Profile" />
+                        </ProfileImage>
                     </StyledProfile>
 
                     <Div margin="0 1rem 0 0.5rem">
