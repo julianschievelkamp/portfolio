@@ -41,6 +41,7 @@ export const CloseTrigger = styled.div<{ $isActive: boolean }>`
     pointer-events: ${({ $isActive }) => ($isActive ? "all" : "none")};
     opacity: ${({ $isActive }) => ($isActive ? 1 : 0)};
     visibility: ${({ $isActive }) => ($isActive ? "visible" : "hidden")};
+    z-index: 1;
 `;
 
 export const ScrollContainer = styled.div`
