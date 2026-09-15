@@ -167,7 +167,7 @@ Error generating stack: `+e.message+`
         color: ${({theme:e})=>e.hover};
         transition: ${dr.fastest};
     }
-`,Ir=({children:e,href:t,target:n,onClick:r,underline:i=!0,className:a})=>(0,F.jsx)(Fr,{href:t,target:n,onClick:r,$underline:i,className:a,children:e}),Lr={title:(0,F.jsxs)(F.Fragment,{children:[`JULIAN`,(0,F.jsx)(`br`,{}),`SCHIEVELKAMP`,(0,F.jsx)(`br`,{}),`CGN #1994`]}),intro:`Visual artist and fine art photographer highlighting the synergies of classic photography and CGI.`,work:`WORK`,copyright:(0,F.jsxs)(F.Fragment,{children:[`© Julian Schievelkamp`,(0,F.jsx)(`br`,{}),`All rights reserved.`]}),impressum:(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(`b`,{children:`Angaben gemäß § 5 TMG:`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(`br`,{}),`Julian Schievelkamp`,(0,F.jsx)(`br`,{}),`Zollstocksweg 1`,(0,F.jsx)(`br`,{}),`50969 Köln`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`br`,{}),(0,F.jsx)(Ir,{href:`tel:+4915679602835`,children:`+49 156 796 028 35`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(Ir,{href:`mailto:mail@julianschievelkamp.com`,target:`_blank`,children:`mail@julianschievelkamp.com`})]}),julian:(0,F.jsxs)(F.Fragment,{children:[`Julian Schievelkamp (b. 1994) is a contemporary visual artist and fine art photographer based in Cologne, Germany. Using both analog film and digital techniques, his recent work emphasizes on the synergies of classic photography and virtual realities of computer generated imagery (CGI). Synaesthetic experiences, whose sensory impressions merge into one picture, have had a great influence on his way of working.`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`br`,{}),`Julian Schievelkamp won several prizes and awards, including the 2017 Prix de la Photographie Paris. In 2019 the artist was awarded the title `,(0,F.jsx)(`b`,{children:`Fine Art Photographer of the Year`}),` by the jury of the 5th Fine Art Photography Awards. Julian Schievelkamp exhibited his work in London, Berlin and Cologne and over 100 YellowKorner galleries worldwide.`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`br`,{}),`High quality fine art prints in various formats and sizes are available upon request. For collaborations and business inquiries in general, feel free to drop a`,` `,(0,F.jsx)(Ir,{href:`mailto:mail@julianschievelkamp.com`,target:`_blank`,children:`message`}),`.`]}),references:{headline:(0,F.jsxs)(F.Fragment,{children:[`SELECTED`,(0,F.jsx)(`br`,{}),`REFERENCES`]}),publications:{title:`Publications`,subTitle:`2015—present`,listEntries1:[(0,F.jsxs)(F.Fragment,{children:[`Foundation`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`NFT Auctions`})]}),(0,F.jsxs)(F.Fragment,{children:[`Singulart`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`Limited Edition Prints`})]}),(0,F.jsx)(F.Fragment,{children:`YellowKorner Galleries`}),(0,F.jsx)(F.Fragment,{children:(0,F.jsx)(Ir,{href:`https://www.vogue.com/photovogue/photographers/71498`,target:`_blank`,children:`PhotoVogue`})}),(0,F.jsxs)(F.Fragment,{children:[`Art + Commerce`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`PhotoVogue Collection`})]})],listEntries2:[(0,F.jsx)(F.Fragment,{children:`Marie Claire Maison 11/17`}),(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(Ir,{href:`https://www.worldphoto.org/blogs/15-03-17/human-transformation-beauty-and-darkness-julian-schievelkamp-2017-swpa`,target:`_blank`,children:`Interview by Matthew Oxley`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`World Photography Organisation`})]}),(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(Ir,{href:`https://www.szerokikadr.pl/inspiracje/julian-schievelkamp`,target:`_blank`,children:`Inspiracje: Julian Schievelkamp`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`Szeroki Kadr by Nikon (polish)`})]})],listEntries3:[(0,F.jsxs)(F.Fragment,{children:[`SWPA exhibition 2016 & 2017`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`Somerset House, London`})]}),(0,F.jsxs)(F.Fragment,{children:[`photokina 09/2016`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`Koelnmesse, Cologne`})]}),(0,F.jsxs)(F.Fragment,{children:[`UPdate 2017`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`Titanic Hotel, Berlin`})]})]},awards:{title:`Awards`,subTitle:`2015—present`,listEntries1:[(0,F.jsxs)(F.Fragment,{children:[`ProfiFoto Scholarship`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`Fotoakademie-Koeln`})]}),(0,F.jsx)(F.Fragment,{children:`Canon Sponsoring Award`}),(0,F.jsx)(F.Fragment,{children:`PIC Förderpreis Selected 2018`})],listEntries2:[(0,F.jsxs)(F.Fragment,{children:[`Fine Art Photography Awards`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2019: Grand Prize Winner`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2016: Nominee "Fine Art"`})]}),(0,F.jsxs)(F.Fragment,{children:[`ND Awards`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2019: 1st Place (Gold) "Open Theme"`})]}),(0,F.jsxs)(F.Fragment,{children:[`Prix de la Photographie Paris`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2019: Honorable Mention "Fine Art"`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2017: 1st Place (Gold) "Self-Portrait"`})]}),(0,F.jsxs)(F.Fragment,{children:[`Sony World Photography Awards`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2017: Shortlist "Enhanced"`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2016: Commended "Enhanced"`})]}),(0,F.jsxs)(F.Fragment,{children:[`GoSee Awards`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2017: Silver, Best Portfolio`})]}),(0,F.jsxs)(F.Fragment,{children:[`International Photo Awards`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2016: Honorable Mention "Portrait"`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2016: Honorable Mention "Other"`})]})]}},badges:{headline:(0,F.jsxs)(F.Fragment,{children:[`FIRST PRIZE`,(0,F.jsx)(`br`,{}),`WINNER`]})}},Rr=N.div`
+`,Ir=({children:e,href:t,target:n,onClick:r,underline:i=!0,className:a})=>(0,F.jsx)(Fr,{href:t,target:n,onClick:r,$underline:i,className:a,children:e}),Lr={title:(0,F.jsxs)(F.Fragment,{children:[`JULIAN`,(0,F.jsx)(`br`,{}),`SCHIEVELKAMP`,(0,F.jsx)(`br`,{}),`CGN #1994`]}),intro:`Visual artist and fine art photographer highlighting the synergies of classic photography and CGI.`,work:`WORK`,copyright:(0,F.jsxs)(F.Fragment,{children:[`© Julian Schievelkamp`,(0,F.jsx)(`br`,{}),`All rights reserved.`]}),impressum:(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(`b`,{children:`Angaben gemäß § 5 TMG:`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(`br`,{}),`Julian Schievelkamp`,(0,F.jsx)(`br`,{}),`Zollstocksweg 1`,(0,F.jsx)(`br`,{}),`50969 Köln`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`br`,{}),(0,F.jsx)(Ir,{href:`tel:+4915679602835`,children:`+49 156 796 028 35`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(Ir,{href:`mailto:mail@julianschievelkamp.com`,target:`_blank`,children:`mail@julianschievelkamp.com`})]}),julian:(0,F.jsxs)(F.Fragment,{children:[`Julian Schievelkamp (b. 1994) is a contemporary visual artist and fine art photographer based in Cologne, Germany. Using both analog film and digital techniques, his recent work emphasizes on the synergies of classic photography and virtual realities of computer generated imagery (CGI). Synaesthetic experiences, whose sensory impressions merge into one picture, have had a great influence on his way of working.`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`br`,{}),`Julian Schievelkamp won several prizes and awards, including the 2017 Prix de la Photographie Paris. In 2019 the artist was awarded the title `,(0,F.jsx)(`i`,{children:`Fine Art Photographer of the Year`}),` by the jury of the 5th Fine Art Photography Awards. Julian Schievelkamp exhibited his work in London, Berlin and Cologne and over 100 YellowKorner galleries worldwide.`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`br`,{}),`High quality fine art prints in various formats and sizes are available upon request. For collaborations and business inquiries in general, feel free to drop a message via`,` `,(0,F.jsx)(Ir,{href:`mailto:mail@julianschievelkamp.com`,target:`_blank`,children:`mail`}),` `,`or connect with me on social media.`]}),references:{headline:(0,F.jsxs)(F.Fragment,{children:[`SELECTED`,(0,F.jsx)(`br`,{}),`REFERENCES`]}),publications:{title:`Publications`,subTitle:`2015—present`,listEntries1:[(0,F.jsxs)(F.Fragment,{children:[`Foundation`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`NFT Auctions`})]}),(0,F.jsxs)(F.Fragment,{children:[`Singulart`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`Limited Edition Prints`})]}),(0,F.jsx)(F.Fragment,{children:`YellowKorner Galleries`}),(0,F.jsx)(F.Fragment,{children:(0,F.jsx)(Ir,{href:`https://www.vogue.com/photovogue/photographers/71498`,target:`_blank`,children:`PhotoVogue`})}),(0,F.jsxs)(F.Fragment,{children:[`Art + Commerce`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`PhotoVogue Collection`})]})],listEntries2:[(0,F.jsx)(F.Fragment,{children:`Marie Claire Maison 11/17`}),(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(Ir,{href:`https://www.worldphoto.org/blogs/15-03-17/human-transformation-beauty-and-darkness-julian-schievelkamp-2017-swpa`,target:`_blank`,children:`Interview by Matthew Oxley`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`World Photography Organisation`})]}),(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(Ir,{href:`https://www.szerokikadr.pl/inspiracje/julian-schievelkamp`,target:`_blank`,children:`Inspiracje: Julian Schievelkamp`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`Szeroki Kadr by Nikon (polish)`})]})],listEntries3:[(0,F.jsxs)(F.Fragment,{children:[`SWPA exhibition 2016 & 2017`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`Somerset House, London`})]}),(0,F.jsxs)(F.Fragment,{children:[`photokina 09/2016`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`Koelnmesse, Cologne`})]}),(0,F.jsxs)(F.Fragment,{children:[`UPdate 2017`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`Titanic Hotel, Berlin`})]})]},awards:{title:`Awards`,subTitle:`2015—present`,listEntries1:[(0,F.jsxs)(F.Fragment,{children:[`ProfiFoto Scholarship`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`Fotoakademie-Koeln`})]}),(0,F.jsx)(F.Fragment,{children:`Canon Sponsoring Award`}),(0,F.jsx)(F.Fragment,{children:`PIC Förderpreis Selected 2018`})],listEntries2:[(0,F.jsxs)(F.Fragment,{children:[`Fine Art Photography Awards`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2019: Grand Prize Winner`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2016: Nominee "Fine Art"`})]}),(0,F.jsxs)(F.Fragment,{children:[`ND Awards`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2019: 1st Place (Gold) "Open Theme"`})]}),(0,F.jsxs)(F.Fragment,{children:[`Prix de la Photographie Paris`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2019: Honorable Mention "Fine Art"`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2017: 1st Place (Gold) "Self-Portrait"`})]}),(0,F.jsxs)(F.Fragment,{children:[`Sony World Photography Awards`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2017: Shortlist "Enhanced"`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2016: Commended "Enhanced"`})]}),(0,F.jsxs)(F.Fragment,{children:[`GoSee Awards`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2017: Silver, Best Portfolio`})]}),(0,F.jsxs)(F.Fragment,{children:[`International Photo Awards`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2016: Honorable Mention "Portrait"`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2016: Honorable Mention "Other"`})]})]}},badges:{headline:(0,F.jsxs)(F.Fragment,{children:[`FIRST PRIZE`,(0,F.jsx)(`br`,{}),`WINNER`]})}},Rr=N.div`
     position: ${({$position:e})=>e??`relative`};
     display: ${({$display:e})=>e};
     flex-direction: ${({$flexDirection:e})=>e};
@@ -189,7 +189,20 @@ Error generating stack: `+e.message+`
     ${({onClick:e})=>e&&rr`
             cursor: pointer;
         `}
-`,zr=({children:e,width:t,maxWidth:n,height:r,onClick:i,className:a,position:o,display:s,flexDirection:c,justifyContent:l,flexWrap:u,alignItems:d,margin:f,padding:p,top:m,left:h,right:g,bottom:_,opacity:v,overflow:y})=>(0,F.jsx)(Rr,{width:t,height:r,onClick:i,className:a,$maxWidth:n,$position:o,$display:s,$flexDirection:c,$justifyContent:l,$flexWrap:u,$alignItems:d,$margin:f,$padding:p,$top:m,$left:h,$right:g,$bottom:_,$opacity:v,$overflow:y,children:e}),Br=(e,t,n=window)=>{let r=(0,h.useRef)(t);(0,h.useEffect)(()=>{r.current=t},[t]),(0,h.useEffect)(()=>{if(!(n&&n.addEventListener))return;let t=e=>r.current(e);return n.addEventListener(e,t),()=>{n.removeEventListener(e,t)}},[e,n])},Vr=e=>{let[t,n]=(0,h.useState)(!1),[r,i]=(0,h.useState)(null);return(0,h.useEffect)(()=>{let t=window.matchMedia(e);i(t),n(t.matches)},[e]),Br(`change`,e=>n(e.matches),r),t},Hr=N.div`
+`,zr=({children:e,width:t,maxWidth:n,height:r,onClick:i,className:a,position:o,display:s,flexDirection:c,justifyContent:l,flexWrap:u,alignItems:d,margin:f,padding:p,top:m,left:h,right:g,bottom:_,opacity:v,overflow:y})=>(0,F.jsx)(Rr,{width:t,height:r,onClick:i,className:a,$maxWidth:n,$position:o,$display:s,$flexDirection:c,$justifyContent:l,$flexWrap:u,$alignItems:d,$margin:f,$padding:p,$top:m,$left:h,$right:g,$bottom:_,$opacity:v,$overflow:y,children:e}),Br=(e,t,n=window)=>{let r=(0,h.useRef)(t);(0,h.useEffect)(()=>{r.current=t},[t]),(0,h.useEffect)(()=>{if(!(n&&n.addEventListener))return;let t=e=>r.current(e);return n.addEventListener(e,t),()=>{n.removeEventListener(e,t)}},[e,n])},Vr=e=>{let[t,n]=(0,h.useState)(!1),[r,i]=(0,h.useState)(null);return(0,h.useEffect)(()=>{let t=window.matchMedia(e);i(t),n(t.matches)},[e]),Br(`change`,e=>n(e.matches),r),t},Hr=N.img`
+    width: ${({width:e})=>e};
+    height: ${({height:e})=>e};
+    opacity: ${({$imageLoaded:e})=>+!!e};
+    max-width: 100%;
+    transition: ${dr.fast};
+
+    pointer-events: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+`,Ur=({src:e,srcSet:t,sizes:n,alt:r,width:i,height:a,fadeInOnLoad:o,className:s})=>{let[c,l]=(0,h.useState)(!1),u=(0,h.useRef)(null);return(0,h.useEffect)(()=>{!c&&u?.current?.complete&&l(!0)},[]),(0,F.jsx)(Hr,{src:e,srcSet:t,sizes:n,alt:r,width:i,height:a,$imageLoaded:!o||c,onLoad:()=>l(!0),className:s,ref:u,loading:`lazy`})},Wr=N.div`
     max-width: 1140px;
     margin: 0 auto;
     padding: 1rem;
@@ -197,14 +210,36 @@ Error generating stack: `+e.message+`
     @media ${P.md} {
         padding: 4rem;
     }
-`,Ur=N.div`
+`,Gr=N.div`
     display: flex;
     flex-direction: column;
 
     @media ${P.lg} {
         flex-direction: row;
     }
-`,Wr=N.div`
+`,Kr=N(zr)`
+    &:hover {
+        a {
+            color: ${({theme:e})=>e.hover};
+            transition: ${dr.fastest};
+        }
+    }
+`,qr=N.div`
+    width: 3.5rem;
+    min-width: 3.5rem;
+    height: 3.5rem;
+    min-height: 3.5rem;
+    border-radius: 100px;
+    border: 2px solid transparent;
+    padding: 2px;
+    background:
+        linear-gradient(white 0 0) padding-box,
+        linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5)
+            border-box;
+`,Jr=N(Ur)`
+    overflow: hidden;
+    border-radius: 100px;
+`,Yr=N.div`
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
@@ -220,7 +255,7 @@ Error generating stack: `+e.message+`
         margin-right: 2rem;
         min-width: 30%;
     }
-`,Gr=N.div`
+`,Xr=N.div`
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: 1fr;
@@ -237,13 +272,13 @@ Error generating stack: `+e.message+`
     @media ${P.lg} {
         grid-template-columns: 1fr 2fr 1fr 2fr;
     }
-`,Kr=N.div`
+`,Zr=N.div`
     padding: 0 0 0 1rem;
 
     @media ${P.sm} {
         padding: 0;
     }
-`,qr=N.div`
+`,Qr=N.div`
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: 1fr;
@@ -251,20 +286,7 @@ Error generating stack: `+e.message+`
     @media ${P.sm} {
         grid-template-columns: 1fr 1fr 1fr;
     }
-`,Jr=N.img`
-    width: ${({width:e})=>e};
-    height: ${({height:e})=>e};
-    opacity: ${({$imageLoaded:e})=>+!!e};
-    max-width: 100%;
-    transition: ${dr.fast};
-
-    pointer-events: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-`,Yr=({src:e,srcSet:t,sizes:n,alt:r,width:i,height:a,fadeInOnLoad:o,className:s})=>{let[c,l]=(0,h.useState)(!1),u=(0,h.useRef)(null);return(0,h.useEffect)(()=>{!c&&u?.current?.complete&&l(!0)},[]),(0,F.jsx)(Jr,{src:e,srcSet:t,sizes:n,alt:r,width:i,height:a,$imageLoaded:!o||c,onLoad:()=>l(!0),className:s,ref:u,loading:`lazy`})},Xr=`/assets/static/self_portrait.CGp_rvnj.jpg`,Zr=()=>(0,F.jsxs)(Ur,{children:[(0,F.jsx)(Wr,{children:(0,F.jsx)(Yr,{src:Xr,alt:`Julian Schievelkamp`,fadeInOnLoad:!0})}),(0,F.jsx)(Dr,{fontSize:`0.875rem`,textAlign:`justify`,children:Lr.julian})]}),Qr=N.div`
+`,$r=`/assets/static/self_portrait.CGp_rvnj.jpg`,ei=`/assets/static/profile.BO7IoKNN.jpg`,ti=()=>(0,F.jsxs)(Gr,{children:[(0,F.jsx)(Yr,{children:(0,F.jsx)(Ur,{src:$r,alt:`Julian Schievelkamp`,fadeInOnLoad:!0})}),(0,F.jsxs)(zr,{children:[(0,F.jsx)(Dr,{fontSize:`0.875rem`,textAlign:`justify`,children:Lr.julian}),(0,F.jsxs)(Kr,{display:`flex`,margin:`2rem 0 0 0`,alignItems:`center`,width:`fit-content`,onClick:()=>window.open(`https://www.instagram.com/julianschievelkamp/`),children:[(0,F.jsx)(qr,{children:(0,F.jsx)(Jr,{src:ei,alt:`Instagram Profile`})}),(0,F.jsxs)(zr,{margin:`0 1rem 0 0.5rem`,children:[(0,F.jsx)(Dr,{fontSize:`0.875rem`,bold:!0,children:(0,F.jsx)(Ir,{href:`https://www.instagram.com/julianschievelkamp/`,target:`_blank`,children:`@julianschievelkamp`})}),(0,F.jsx)(Dr,{fontSize:`0.875rem`,children:`Julian Schievelkamp`})]})]})]})]}),ni=N.div`
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -279,7 +301,7 @@ Error generating stack: `+e.message+`
         background: ${({theme:e})=>e.primary};
         transition: ${dr.fast};
     }
-`,$r=N.div`
+`,ri=N.div`
     margin: 0 auto;
     width: fit-content;
     position: relative;
@@ -297,19 +319,19 @@ Error generating stack: `+e.message+`
         transition: ${dr.fast};
         z-index: -1;
     }
-`,ei=N(Ar)`
+`,ii=N(Ar)`
     font-size: 1.25rem;
 
     @media ${P.md} {
         font-size: 1.5rem;
     }
-`,ti=({children:e})=>(0,F.jsx)(Qr,{children:(0,F.jsx)($r,{children:(0,F.jsx)(ei,{type:`h2`,textAlign:`center`,children:e})})}),ni=N.ul`
+`,ai=({children:e})=>(0,F.jsx)(ni,{children:(0,F.jsx)(ri,{children:(0,F.jsx)(ii,{type:`h2`,textAlign:`center`,children:e})})}),oi=N.ul`
     margin: 0;
     padding-left: 1rem;
     margin: ${({$margin:e})=>e};
-`,ri=N.li`
+`,si=N.li`
     line-height: 1.5;
-`,ii=({items:e,margin:t=`0`})=>(0,F.jsx)(ni,{$margin:t,children:e.map((e,t)=>(0,F.jsx)(ri,{children:(0,F.jsx)(Dr,{fontSize:`0.875rem`,children:e})},t))}),ai=()=>(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(ti,{children:Lr.references.headline}),(0,F.jsxs)(Gr,{children:[(0,F.jsxs)(zr,{children:[(0,F.jsx)(Dr,{fontSize:`0.875rem`,bold:!0,children:Lr.references.publications.title}),(0,F.jsx)(Dr,{fontSize:`0.875rem`,children:Lr.references.publications.subTitle})]}),(0,F.jsxs)(Kr,{children:[(0,F.jsx)(ii,{items:Lr.references.publications.listEntries1,margin:`0 0 1rem 0`}),(0,F.jsx)(ii,{items:Lr.references.publications.listEntries2,margin:`0 0 1rem 0`}),(0,F.jsx)(ii,{items:Lr.references.publications.listEntries3})]}),(0,F.jsxs)(zr,{children:[(0,F.jsx)(Dr,{fontSize:`0.875rem`,bold:!0,children:Lr.references.awards.title}),(0,F.jsx)(Dr,{fontSize:`0.875rem`,children:Lr.references.awards.subTitle})]}),(0,F.jsxs)(Kr,{children:[(0,F.jsx)(ii,{items:Lr.references.awards.listEntries1,margin:`0 0 1rem 0`}),(0,F.jsx)(ii,{items:Lr.references.awards.listEntries2})]})]})]}),oi=[{image:`/assets/static/badge1.DcKEMpgM.png`,alt:`Fine Art Photography Awards`},{image:`/assets/static/badge2.CgV35bug.jpg`,alt:`Prix de la Photographie Paris`},{image:`/assets/static/badge3.DVHDMXXq.png`,alt:`ND Awards`}],si=()=>(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(ti,{children:Lr.badges.headline}),(0,F.jsx)(qr,{children:oi.map(e=>(0,F.jsx)(zr,{display:`flex`,justifyContent:`center`,children:(0,F.jsx)(Yr,{src:e.image,alt:e.alt,fadeInOnLoad:!0})},e.alt))})]}),ci=()=>(0,F.jsxs)(Hr,{children:[(0,F.jsx)(Zr,{}),(0,F.jsx)(ai,{}),(0,F.jsx)(si,{})]}),li=N.div`
+`,ci=({items:e,margin:t=`0`})=>(0,F.jsx)(oi,{$margin:t,children:e.map((e,t)=>(0,F.jsx)(si,{children:(0,F.jsx)(Dr,{fontSize:`0.875rem`,children:e})},t))}),li=()=>(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(ai,{children:Lr.references.headline}),(0,F.jsxs)(Xr,{children:[(0,F.jsxs)(zr,{children:[(0,F.jsx)(Dr,{fontSize:`0.875rem`,bold:!0,children:Lr.references.publications.title}),(0,F.jsx)(Dr,{fontSize:`0.875rem`,children:Lr.references.publications.subTitle})]}),(0,F.jsxs)(Zr,{children:[(0,F.jsx)(ci,{items:Lr.references.publications.listEntries1,margin:`0 0 1rem 0`}),(0,F.jsx)(ci,{items:Lr.references.publications.listEntries2,margin:`0 0 1rem 0`}),(0,F.jsx)(ci,{items:Lr.references.publications.listEntries3})]}),(0,F.jsxs)(zr,{children:[(0,F.jsx)(Dr,{fontSize:`0.875rem`,bold:!0,children:Lr.references.awards.title}),(0,F.jsx)(Dr,{fontSize:`0.875rem`,children:Lr.references.awards.subTitle})]}),(0,F.jsxs)(Zr,{children:[(0,F.jsx)(ci,{items:Lr.references.awards.listEntries1,margin:`0 0 1rem 0`}),(0,F.jsx)(ci,{items:Lr.references.awards.listEntries2})]})]})]}),ui=[{image:`/assets/static/badge1.DcKEMpgM.png`,alt:`Fine Art Photography Awards`},{image:`/assets/static/badge2.CgV35bug.jpg`,alt:`Prix de la Photographie Paris`},{image:`/assets/static/badge3.DVHDMXXq.png`,alt:`ND Awards`}],di=()=>(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(ai,{children:Lr.badges.headline}),(0,F.jsx)(Qr,{children:ui.map(e=>(0,F.jsx)(zr,{display:`flex`,justifyContent:`center`,children:(0,F.jsx)(Ur,{src:e.image,alt:e.alt,fadeInOnLoad:!0})},e.alt))})]}),fi=()=>(0,F.jsxs)(Wr,{children:[(0,F.jsx)(ti,{}),(0,F.jsx)(li,{}),(0,F.jsx)(di,{})]}),pi=N.div`
     max-width: 1140px;
     margin: 0 auto;
     padding: 1rem;
@@ -317,7 +339,7 @@ Error generating stack: `+e.message+`
     @media ${P.md} {
         padding: 4rem;
     }
-`,ui=()=>(0,F.jsx)(li,{children:(0,F.jsx)(Dr,{fontSize:`0.875rem`,children:Lr.impressum})}),di=N.div`
+`,mi=()=>(0,F.jsx)(pi,{children:(0,F.jsx)(Dr,{fontSize:`0.875rem`,children:Lr.impressum})}),hi=N.div`
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -329,7 +351,7 @@ Error generating stack: `+e.message+`
         grid-gap: 0.5rem;
         padding: 1rem;
     }
-`,fi=N.div`
+`,gi=N.div`
     overflow: hidden;
     position: relative;
     height: calc((100vw - 1.5rem) / 3);
@@ -351,7 +373,7 @@ Error generating stack: `+e.message+`
             transform: scale(1.05);
         }
     }
-`,pi=`/assets/static/dada_yaga.Cf2S6u29.jpg`,mi=`/assets/static/andromeda.eGbXlN6X.jpg`,hi=`/assets/static/versus_1.BSYK-85i.jpg`,gi=`/assets/static/versus_2.DKoIvAAz.jpg`,_i=`/assets/static/viscosity.Dy7rf7lk.jpg`,vi=`/assets/static/aura.CuUEWZeH.jpg`,yi=`/assets/static/mimikry.olut099z.jpg`,bi=`/assets/static/a_curious_thing.DWmNDOUK.jpg`,xi=`/assets/static/doppler.B72IiwQh.jpg`,Si=`/assets/static/transcending_ego.BoQ9PT15.jpg`,Ci=`/assets/static/kiyoshi.CIpefqbb.jpg`,wi=`/assets/static/xvii.CCVUbjpR.jpg`,Ti=`/assets/static/consciousness.sF_avMNK.jpg`,Ei=`/assets/static/maya_1.Cx59jeNo.jpg`,Di=`/assets/static/maya_2.DNF6mTVW.jpg`,Oi=`/assets/static/romina.CyttgyCN.jpg`,ki=`/assets/static/daniela.DwmSQY4I.jpg`,Ai=`/assets/static/epilogue.C-LnphfQ.jpg`,ji=`/assets/static/dna_1.B0RdpmQe.jpg`,Mi=`/assets/static/dna_2.DH01SiUc.jpg`,Ni=[{title:`DADA YAGA, 2018`,image:pi,imageSet:`/assets/static/dada_yaga-600w.D77D8lsH.jpg 600w, ${pi} 1200w`,palette:[`#84C1D9`,`#D97904`,`#8C0303`,`#012611`]},{title:`ANDROMEDA, 2018`,image:mi,imageSet:`/assets/static/andromeda-600w.DjfvW0nd.jpg 600w, ${mi} 1200w`,video:`/assets/static/andromeda.Csgqu__9.mp4`,palette:[`#66C4D9`,`#B9BF04`,`#03A62C`,`#02732A`]},{title:`VERSUS I, 2018`,image:hi,imageSet:`/assets/static/versus_1-600w.C592v1hx.jpg 600w, ${hi} 1200w`,video:`/assets/static/versus.Gjpp4xVF.mp4`,palette:[`#0BADBF`,`#F2E1C2`,`#D9923B`,`#BF612A`]},{title:`VERSUS II, 2018`,image:gi,imageSet:`/assets/static/versus_2-600w.pAw9BoPD.jpg 600w, ${gi} 1200w`,palette:[`#89D9D9`,`#0FBFBF`,`#0A96A6`,`#07748C`]},{title:`VISCOSITY, 2021`,image:_i,imageSet:`/assets/static/viscosity-600w.BxT7XmSX.jpg 600w, ${_i} 1200w`,video:`/assets/static/viscosity_1080.DeRv5vgQ.mp4`,palette:[`#05F2C7`,`#05F2F2`,`#04ADBF`,`#0378A6`]},{title:`AURA, 2019`,image:vi,imageSet:`/assets/static/aura-600w.DMelu8nD.jpg 600w, ${vi} 1200w`,video:`/assets/static/aura.6ZDm4Tll.mp4`,palette:[`#CCD9D7`,`#03A696`,`#027368`,`#366273`]},{title:`MIMIKRY, 2018`,image:yi,imageSet:`/assets/static/mimikry-600w.CttDT9Vy.jpg 600w, ${yi} 1200w`,palette:[`#468C4B`,`#F2E5D5`,`#F2A341`,`#8C694A`]},{title:`A CURIOUS THING, 2017`,image:bi,imageSet:`/assets/static/a_curious_thing-600w.DHbAWZid.jpg 600w, ${bi} 1200w`,palette:[`#F0F2F0`,`#D0D9D4`,`#585F73`,`#1D1926`]},{title:`DOPPLER I, 2021`,image:xi,imageSet:`/assets/static/doppler-600w.DOvsfBGT.jpg 600w, ${xi} 1200w`,video:`/assets/static/doppler.ymVu7596.mp4`,palette:[`#533D73`,`#4843D9`,`#23288C`,`#192773`]},{title:`TRANSCENDING EGO, 2017`,image:Si,imageSet:`/assets/static/transcending_ego-420w.BadCCRwp.jpg 600w, ${Si} 1200w`,palette:[`#D9D3B8`,`#BFB963`,`#A69258`,`#403C26`]},{title:`KIYOSHI, 2022`,image:Ci,imageSet:`/assets/static/kiyoshi-450w.BODpTA9Y.jpg 600w, ${Ci} 1200w`,palette:[`#F2BE22`,`#F29441`,`#D93611`,`#8C2016`]},{title:`XVII, 2022`,image:wi,imageSet:`/assets/static/xvii-450w.8HdDcEQA.jpg 600w, ${wi} 1200w`,palette:[`#F2C641`,`#F2BB77`,`#D96B2B`,`#8C3616`]},{title:`CONSCIOUSNESS, 2017`,image:Ti,imageSet:`/assets/static/consciousness-392w.BTobl9AM.jpg 600w, ${Ti} 1200w`,video:`/assets/static/consciousness_1080.BwubZdmE.mp4`,palette:[`#A60522`,`#D9C5C1`,`#260101`,`#010326`]},{title:`MAYA I, 2017`,image:Ei,imageSet:`/assets/static/maya_1-420w.DYcx9ds-.jpg 600w, ${Ei} 1200w`,palette:[`#D93232`,`#D9B97E`,`#BF7960`,`#8C0303`]},{title:`MAYA II, 2017`,image:Di,imageSet:`/assets/static/maya_2-400w.Bu6bjntP.jpg 600w, ${Di} 1200w`,palette:[`#6C6C73`,`#D9AE89`,`#BF6550`,`#591818`]},{title:`ROMINA, 2016`,image:Oi,imageSet:`/assets/static/romina-415w.DGcXwZZr.jpg 600w, ${Oi} 1200w`,palette:[`#D9BA82`,`#D99E6A`,`#BF6341`,`#8C1F1F`]},{title:`DANIELA, 2016`,image:ki,imageSet:`/assets/static/daniela-400w.CmqjVhdF.jpg 600w, ${ki} 1200w`,palette:[`#D9D9D9`,`#A6A6A6`,`#595959`,`#262626`]},{title:`EPILOGUE, 2018`,image:Ai,imageSet:`/assets/static/epilogue-600w.ARJBtFHi.jpg 600w, ${Ai} 1200w`,palette:[`#E4EBF2`,`#AEBCBF`,`#BF7C63`,`#8C423B`]},{title:`DNA (XY) I, 2017`,image:ji,imageSet:`/assets/static/dna_1-400w.BHVK2JeX.jpg 600w, ${ji} 1200w`,palette:[`#D9D9D9`,`#A6A5A4`,`#593831`,`#261717`]},{title:`DNA (XY) II, 2017`,image:Mi,imageSet:`/assets/static/dna_2-400w.CQbidTyR.jpg 600w, ${Mi} 1200w`,palette:[`#D9D9D9`,`#A68C8A`,`#735856`,`#402E2C`]}],Pi=N.div`
+`,_i=`/assets/static/dada_yaga.Cf2S6u29.jpg`,vi=`/assets/static/andromeda.eGbXlN6X.jpg`,yi=`/assets/static/versus_1.BSYK-85i.jpg`,bi=`/assets/static/versus_2.DKoIvAAz.jpg`,xi=`/assets/static/viscosity.Dy7rf7lk.jpg`,Si=`/assets/static/aura.CuUEWZeH.jpg`,Ci=`/assets/static/mimikry.olut099z.jpg`,wi=`/assets/static/a_curious_thing.DWmNDOUK.jpg`,Ti=`/assets/static/doppler.B72IiwQh.jpg`,Ei=`/assets/static/transcending_ego.BoQ9PT15.jpg`,Di=`/assets/static/kiyoshi.CIpefqbb.jpg`,Oi=`/assets/static/xvii.CCVUbjpR.jpg`,ki=`/assets/static/consciousness.sF_avMNK.jpg`,Ai=`/assets/static/maya_1.Cx59jeNo.jpg`,ji=`/assets/static/maya_2.DNF6mTVW.jpg`,Mi=`/assets/static/romina.CyttgyCN.jpg`,Ni=`/assets/static/daniela.DwmSQY4I.jpg`,Pi=`/assets/static/epilogue.C-LnphfQ.jpg`,Fi=`/assets/static/dna_1.B0RdpmQe.jpg`,Ii=`/assets/static/dna_2.DH01SiUc.jpg`,Li=[{title:`DADA YAGA, 2018`,image:_i,imageSet:`/assets/static/dada_yaga-600w.D77D8lsH.jpg 600w, ${_i} 1200w`,palette:[`#84C1D9`,`#D97904`,`#8C0303`,`#012611`]},{title:`ANDROMEDA, 2018`,image:vi,imageSet:`/assets/static/andromeda-600w.DjfvW0nd.jpg 600w, ${vi} 1200w`,video:`/assets/static/andromeda.Csgqu__9.mp4`,palette:[`#66C4D9`,`#B9BF04`,`#03A62C`,`#02732A`]},{title:`VERSUS I, 2018`,image:yi,imageSet:`/assets/static/versus_1-600w.C592v1hx.jpg 600w, ${yi} 1200w`,video:`/assets/static/versus.Gjpp4xVF.mp4`,palette:[`#0BADBF`,`#F2E1C2`,`#D9923B`,`#BF612A`]},{title:`VERSUS II, 2018`,image:bi,imageSet:`/assets/static/versus_2-600w.pAw9BoPD.jpg 600w, ${bi} 1200w`,palette:[`#89D9D9`,`#0FBFBF`,`#0A96A6`,`#07748C`]},{title:`VISCOSITY, 2021`,image:xi,imageSet:`/assets/static/viscosity-600w.BxT7XmSX.jpg 600w, ${xi} 1200w`,video:`/assets/static/viscosity_1080.DeRv5vgQ.mp4`,palette:[`#05F2C7`,`#05F2F2`,`#04ADBF`,`#0378A6`]},{title:`AURA, 2019`,image:Si,imageSet:`/assets/static/aura-600w.DMelu8nD.jpg 600w, ${Si} 1200w`,video:`/assets/static/aura.6ZDm4Tll.mp4`,palette:[`#CCD9D7`,`#03A696`,`#027368`,`#366273`]},{title:`MIMIKRY, 2018`,image:Ci,imageSet:`/assets/static/mimikry-600w.CttDT9Vy.jpg 600w, ${Ci} 1200w`,palette:[`#468C4B`,`#F2E5D5`,`#F2A341`,`#8C694A`]},{title:`A CURIOUS THING, 2017`,image:wi,imageSet:`/assets/static/a_curious_thing-600w.DHbAWZid.jpg 600w, ${wi} 1200w`,palette:[`#F0F2F0`,`#D0D9D4`,`#585F73`,`#1D1926`]},{title:`DOPPLER I, 2021`,image:Ti,imageSet:`/assets/static/doppler-600w.DOvsfBGT.jpg 600w, ${Ti} 1200w`,video:`/assets/static/doppler.ymVu7596.mp4`,palette:[`#533D73`,`#4843D9`,`#23288C`,`#192773`]},{title:`TRANSCENDING EGO, 2017`,image:Ei,imageSet:`/assets/static/transcending_ego-420w.BadCCRwp.jpg 600w, ${Ei} 1200w`,palette:[`#D9D3B8`,`#BFB963`,`#A69258`,`#403C26`]},{title:`KIYOSHI, 2022`,image:Di,imageSet:`/assets/static/kiyoshi-450w.BODpTA9Y.jpg 600w, ${Di} 1200w`,palette:[`#F2BE22`,`#F29441`,`#D93611`,`#8C2016`]},{title:`XVII, 2022`,image:Oi,imageSet:`/assets/static/xvii-450w.8HdDcEQA.jpg 600w, ${Oi} 1200w`,palette:[`#F2C641`,`#F2BB77`,`#D96B2B`,`#8C3616`]},{title:`CONSCIOUSNESS, 2017`,image:ki,imageSet:`/assets/static/consciousness-392w.BTobl9AM.jpg 600w, ${ki} 1200w`,video:`/assets/static/consciousness_1080.BwubZdmE.mp4`,palette:[`#A60522`,`#D9C5C1`,`#260101`,`#010326`]},{title:`MAYA I, 2017`,image:Ai,imageSet:`/assets/static/maya_1-420w.DYcx9ds-.jpg 600w, ${Ai} 1200w`,palette:[`#D93232`,`#D9B97E`,`#BF7960`,`#8C0303`]},{title:`MAYA II, 2017`,image:ji,imageSet:`/assets/static/maya_2-400w.Bu6bjntP.jpg 600w, ${ji} 1200w`,palette:[`#6C6C73`,`#D9AE89`,`#BF6550`,`#591818`]},{title:`ROMINA, 2016`,image:Mi,imageSet:`/assets/static/romina-415w.DGcXwZZr.jpg 600w, ${Mi} 1200w`,palette:[`#D9BA82`,`#D99E6A`,`#BF6341`,`#8C1F1F`]},{title:`DANIELA, 2016`,image:Ni,imageSet:`/assets/static/daniela-400w.CmqjVhdF.jpg 600w, ${Ni} 1200w`,palette:[`#D9D9D9`,`#A6A6A6`,`#595959`,`#262626`]},{title:`EPILOGUE, 2018`,image:Pi,imageSet:`/assets/static/epilogue-600w.ARJBtFHi.jpg 600w, ${Pi} 1200w`,palette:[`#E4EBF2`,`#AEBCBF`,`#BF7C63`,`#8C423B`]},{title:`DNA (XY) I, 2017`,image:Fi,imageSet:`/assets/static/dna_1-400w.BHVK2JeX.jpg 600w, ${Fi} 1200w`,palette:[`#D9D9D9`,`#A6A5A4`,`#593831`,`#261717`]},{title:`DNA (XY) II, 2017`,image:Ii,imageSet:`/assets/static/dna_2-400w.CQbidTyR.jpg 600w, ${Ii} 1200w`,palette:[`#D9D9D9`,`#A68C8A`,`#735856`,`#402E2C`]}],Ri=N.div`
     position: fixed;
     top: 0;
     left: 0;
@@ -371,24 +393,24 @@ Error generating stack: `+e.message+`
             padding: 1rem 8rem;
         }
     }
-`,Fi=N.div`
+`,zi=N.div`
     position: relative;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-`,Ii=N.div`
+`,Bi=N.div`
     position: absolute;
     width: 100%;
     height: 100%;
-`,Li=N.div`
+`,Vi=N.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 6rem;
     width: 100%;
     position: relative;
-`,Ri=N.div`
+`,Hi=N.div`
     z-index: 1;
     position: relative;
 
@@ -401,7 +423,7 @@ Error generating stack: `+e.message+`
     video {
         cursor: pointer;
     }
-`,zi=N.div`
+`,Ui=N.div`
     position: absolute;
     height: calc(100% - 4px);
     width: 50%;
@@ -419,7 +441,7 @@ Error generating stack: `+e.message+`
             transform: translateY(-50%);
         }
     }
-`,Bi=N.div`
+`,Wi=N.div`
     position: absolute;
     height: calc(100% - 4px);
     width: 50%;
@@ -437,18 +459,18 @@ Error generating stack: `+e.message+`
             transform: translateY(-50%);
         }
     }
-`,Vi=N.div`
+`,Gi=N.div`
     background: ${({$background:e})=>e};
     width: 0.75rem;
     height: 0.75rem;
     margin-right: 0.25rem;
     margin-bottom: 1px;
-`,Hi=N.div`
+`,Ki=N.div`
     position: absolute;
     bottom: 1rem;
     left: 0;
     width: 100%;
-`,Ui=N.div`
+`,qi=N.div`
     position: absolute;
     bottom: 0;
     left: calc(50% - 1.5rem);
@@ -458,7 +480,7 @@ Error generating stack: `+e.message+`
     transition: ${dr.fast};
     transition-delay: 300ms;
     opacity: ${({$opacity:e})=>e};
-`,Wi=N.button`
+`,Ji=N.button`
     margin: 0 0.25rem 0 0;
     padding: 0;
     outline: none;
@@ -469,7 +491,7 @@ Error generating stack: `+e.message+`
     overflow: hidden;
     opacity: ${({$opacity:e})=>e};
     cursor: pointer;
-`,Gi=(e,t)=>e>t?0:e<0?t:e,Ki=e=>{let[t,n]=(0,h.useState)(null),[r,i]=(0,h.useState)(null),{popupOpen:a,currentPortfolioIndex:o,setCurrentPortfolioIndex:s}=Sr(),c=t=>{s(Gi(t,e.length-1))},l=e=>{i(null),!(!a||e.touches.length>1)&&n(e.touches[0].clientX)},u=e=>{a&&(e.touches.length>1?(i(null),n(null)):i(e.touches[0].clientX))},d=()=>{if(!a||!t||!r)return;let e=t-r;e>50?c(o+1):e<-50&&c(o-1)},f=e=>{a&&(e.keyCode===37?c(o-1):e.keyCode===39&&c(o+1))};(0,h.useEffect)(()=>(document.addEventListener(`keydown`,f),document.addEventListener(`touchstart`,l,{passive:!0}),document.addEventListener(`touchmove`,u,{passive:!0}),document.addEventListener(`touchend`,d,{passive:!0}),()=>{document.removeEventListener(`keydown`,f),document.removeEventListener(`touchstart`,l),document.removeEventListener(`touchmove`,u),document.removeEventListener(`touchend`,d)}),[a,o,t,r])},qi=N.video`
+`,Yi=(e,t)=>e>t?0:e<0?t:e,Xi=e=>{let[t,n]=(0,h.useState)(null),[r,i]=(0,h.useState)(null),{popupOpen:a,currentPortfolioIndex:o,setCurrentPortfolioIndex:s}=Sr(),c=t=>{s(Yi(t,e.length-1))},l=e=>{i(null),!(!a||e.touches.length>1)&&n(e.touches[0].clientX)},u=e=>{a&&(e.touches.length>1?(i(null),n(null)):i(e.touches[0].clientX))},d=()=>{if(!a||!t||!r)return;let e=t-r;e>50?c(o+1):e<-50&&c(o-1)},f=e=>{a&&(e.keyCode===37?c(o-1):e.keyCode===39&&c(o+1))};(0,h.useEffect)(()=>(document.addEventListener(`keydown`,f),document.addEventListener(`touchstart`,l,{passive:!0}),document.addEventListener(`touchmove`,u,{passive:!0}),document.addEventListener(`touchend`,d,{passive:!0}),()=>{document.removeEventListener(`keydown`,f),document.removeEventListener(`touchstart`,l),document.removeEventListener(`touchmove`,u),document.removeEventListener(`touchend`,d)}),[a,o,t,r])},Zi=N.video`
     object-fit: cover;
     width: ${({width:e})=>e};
     height: ${({height:e})=>e};
@@ -478,7 +500,7 @@ Error generating stack: `+e.message+`
     &::-internal-media-controls-download-button {
         display: none;
     }
-`,Ji=({src:e,poster:t,width:n,height:r,ariaLabel:i})=>{let{popupOpen:a}=Sr(),o=(0,h.useRef)(null);return(0,h.useEffect)(()=>{a||o?.current?.pause()},[a]),(0,F.jsx)(zr,{children:(0,F.jsxs)(qi,{ref:o,poster:t,width:n,height:r,playsInline:!0,loop:!0,controls:!0,controlsList:`nodownload noremoteplayback noplaybackrate`,disablePictureInPicture:!0,onContextMenu:e=>e.preventDefault(),"aria-label":i,children:[(0,F.jsx)(`source`,{src:e,type:`video/mp4`}),`Your browser does not support the video tag.`]},e)})},Yi=N.button`
+`,Qi=({src:e,poster:t,width:n,height:r,ariaLabel:i})=>{let{popupOpen:a}=Sr(),o=(0,h.useRef)(null);return(0,h.useEffect)(()=>{a||o?.current?.pause()},[a]),(0,F.jsx)(zr,{children:(0,F.jsxs)(Zi,{ref:o,poster:t,width:n,height:r,playsInline:!0,loop:!0,controls:!0,controlsList:`nodownload noremoteplayback noplaybackrate`,disablePictureInPicture:!0,onContextMenu:e=>e.preventDefault(),"aria-label":i,children:[(0,F.jsx)(`source`,{src:e,type:`video/mp4`}),`Your browser does not support the video tag.`]},e)})},$i=N.button`
     padding: 0;
     background: transparent;
     outline: none;
@@ -491,7 +513,7 @@ Error generating stack: `+e.message+`
             transition: ${dr.fastest};
         }
     }
-`,Xi={dark:e=>(0,F.jsxs)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,enableBackground:`new 0 0 24 24`,height:`24px`,viewBox:`0 0 24 24`,width:`24px`,fill:`#000000`,...e,children:[(0,F.jsx)(`rect`,{fill:`none`,height:24,width:24}),(0,F.jsx)(`path`,{d:`M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z`})]}),light:e=>(0,F.jsxs)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,enableBackground:`new 0 0 24 24`,height:`24px`,viewBox:`0 0 24 24`,width:`24px`,fill:`#000000`,...e,children:[(0,F.jsx)(`rect`,{fill:`none`,height:24,width:24}),(0,F.jsx)(`path`,{d:`M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z`})]}),close:e=>(0,F.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:48,viewBox:`0 96 960 960`,width:48,...e,children:(0,F.jsx)(`path`,{d:`m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z`})}),menu:e=>(0,F.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:`24px`,viewBox:`0 -960 960 960`,width:`24px`,fill:`#e3e3e3`,...e,children:(0,F.jsx)(`path`,{d:`M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z`})}),instagram:e=>(0,F.jsx)(`svg`,{id:`Layer_1`,"data-name":`Layer 1`,xmlns:`http://www.w3.org/2000/svg`,viewBox:`0 0 1000 1000`,...e,children:(0,F.jsx)(`path`,{d:`M295.42,6c-53.2,2.51-89.53,11-121.29,23.48-32.87,12.81-60.73,30-88.45,57.82S40.89,143,28.17,175.92c-12.31,31.83-20.65,68.19-23,121.42S2.3,367.68,2.56,503.46,3.42,656.26,6,709.6c2.54,53.19,11,89.51,23.48,121.28,12.83,32.87,30,60.72,57.83,88.45S143,964.09,176,976.83c31.8,12.29,68.17,20.67,121.39,23s70.35,2.87,206.09,2.61,152.83-.86,206.16-3.39S799.1,988,830.88,975.58c32.87-12.86,60.74-30,88.45-57.84S964.1,862,976.81,829.06c12.32-31.8,20.69-68.17,23-121.35,2.33-53.37,2.88-70.41,2.62-206.17s-.87-152.78-3.4-206.1-11-89.53-23.47-121.32c-12.85-32.87-30-60.7-57.82-88.45S862,40.87,829.07,28.19c-31.82-12.31-68.17-20.7-121.39-23S637.33,2.3,501.54,2.56,348.75,3.4,295.42,6m5.84,903.88c-48.75-2.12-75.22-10.22-92.86-17-23.36-9-40-19.88-57.58-37.29s-28.38-34.11-37.5-57.42c-6.85-17.64-15.1-44.08-17.38-92.83-2.48-52.69-3-68.51-3.29-202s.22-149.29,2.53-202c2.08-48.71,10.23-75.21,17-92.84,9-23.39,19.84-40,37.29-57.57s34.1-28.39,57.43-37.51c17.62-6.88,44.06-15.06,92.79-17.38,52.73-2.5,68.53-3,202-3.29s149.31.21,202.06,2.53c48.71,2.12,75.22,10.19,92.83,17,23.37,9,40,19.81,57.57,37.29s28.4,34.07,37.52,57.45c6.89,17.57,15.07,44,17.37,92.76,2.51,52.73,3.08,68.54,3.32,202s-.23,149.31-2.54,202c-2.13,48.75-10.21,75.23-17,92.89-9,23.35-19.85,40-37.31,57.56s-34.09,28.38-57.43,37.5c-17.6,6.87-44.07,15.07-92.76,17.39-52.73,2.48-68.53,3-202.05,3.29s-149.27-.25-202-2.53m407.6-674.61a60,60,0,1,0,59.88-60.1,60,60,0,0,0-59.88,60.1M245.77,503c.28,141.8,115.44,256.49,257.21,256.22S759.52,643.8,759.25,502,643.79,245.48,502,245.76,245.5,361.22,245.77,503m90.06-.18a166.67,166.67,0,1,1,167,166.34,166.65,166.65,0,0,1-167-166.34`,transform:`translate(-2.5 -2.5)`})}),chevronLeft:e=>(0,F.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:`24px`,viewBox:`0 -960 960 960`,width:`24px`,fill:`#e3e3e3`,...e,children:(0,F.jsx)(`path`,{d:`M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z`})}),chevronRight:e=>(0,F.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:`24px`,viewBox:`0 -960 960 960`,width:`24px`,fill:`#e3e3e3`,...e,children:(0,F.jsx)(`path`,{d:`M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z`})})},Zi=N.div`
+`,ea={dark:e=>(0,F.jsxs)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,enableBackground:`new 0 0 24 24`,height:`24px`,viewBox:`0 0 24 24`,width:`24px`,fill:`#000000`,...e,children:[(0,F.jsx)(`rect`,{fill:`none`,height:24,width:24}),(0,F.jsx)(`path`,{d:`M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z`})]}),light:e=>(0,F.jsxs)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,enableBackground:`new 0 0 24 24`,height:`24px`,viewBox:`0 0 24 24`,width:`24px`,fill:`#000000`,...e,children:[(0,F.jsx)(`rect`,{fill:`none`,height:24,width:24}),(0,F.jsx)(`path`,{d:`M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z`})]}),close:e=>(0,F.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:48,viewBox:`0 96 960 960`,width:48,...e,children:(0,F.jsx)(`path`,{d:`m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z`})}),menu:e=>(0,F.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:`24px`,viewBox:`0 -960 960 960`,width:`24px`,fill:`#e3e3e3`,...e,children:(0,F.jsx)(`path`,{d:`M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z`})}),instagram:e=>(0,F.jsx)(`svg`,{id:`Layer_1`,"data-name":`Layer 1`,xmlns:`http://www.w3.org/2000/svg`,viewBox:`0 0 1000 1000`,...e,children:(0,F.jsx)(`path`,{d:`M295.42,6c-53.2,2.51-89.53,11-121.29,23.48-32.87,12.81-60.73,30-88.45,57.82S40.89,143,28.17,175.92c-12.31,31.83-20.65,68.19-23,121.42S2.3,367.68,2.56,503.46,3.42,656.26,6,709.6c2.54,53.19,11,89.51,23.48,121.28,12.83,32.87,30,60.72,57.83,88.45S143,964.09,176,976.83c31.8,12.29,68.17,20.67,121.39,23s70.35,2.87,206.09,2.61,152.83-.86,206.16-3.39S799.1,988,830.88,975.58c32.87-12.86,60.74-30,88.45-57.84S964.1,862,976.81,829.06c12.32-31.8,20.69-68.17,23-121.35,2.33-53.37,2.88-70.41,2.62-206.17s-.87-152.78-3.4-206.1-11-89.53-23.47-121.32c-12.85-32.87-30-60.7-57.82-88.45S862,40.87,829.07,28.19c-31.82-12.31-68.17-20.7-121.39-23S637.33,2.3,501.54,2.56,348.75,3.4,295.42,6m5.84,903.88c-48.75-2.12-75.22-10.22-92.86-17-23.36-9-40-19.88-57.58-37.29s-28.38-34.11-37.5-57.42c-6.85-17.64-15.1-44.08-17.38-92.83-2.48-52.69-3-68.51-3.29-202s.22-149.29,2.53-202c2.08-48.71,10.23-75.21,17-92.84,9-23.39,19.84-40,37.29-57.57s34.1-28.39,57.43-37.51c17.62-6.88,44.06-15.06,92.79-17.38,52.73-2.5,68.53-3,202-3.29s149.31.21,202.06,2.53c48.71,2.12,75.22,10.19,92.83,17,23.37,9,40,19.81,57.57,37.29s28.4,34.07,37.52,57.45c6.89,17.57,15.07,44,17.37,92.76,2.51,52.73,3.08,68.54,3.32,202s-.23,149.31-2.54,202c-2.13,48.75-10.21,75.23-17,92.89-9,23.35-19.85,40-37.31,57.56s-34.09,28.38-57.43,37.5c-17.6,6.87-44.07,15.07-92.76,17.39-52.73,2.48-68.53,3-202.05,3.29s-149.27-.25-202-2.53m407.6-674.61a60,60,0,1,0,59.88-60.1,60,60,0,0,0-59.88,60.1M245.77,503c.28,141.8,115.44,256.49,257.21,256.22S759.52,643.8,759.25,502,643.79,245.48,502,245.76,245.5,361.22,245.77,503m90.06-.18a166.67,166.67,0,1,1,167,166.34,166.65,166.65,0,0,1-167-166.34`,transform:`translate(-2.5 -2.5)`})}),chevronLeft:e=>(0,F.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:`24px`,viewBox:`0 -960 960 960`,width:`24px`,fill:`#e3e3e3`,...e,children:(0,F.jsx)(`path`,{d:`M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z`})}),chevronRight:e=>(0,F.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:`24px`,viewBox:`0 -960 960 960`,width:`24px`,fill:`#e3e3e3`,...e,children:(0,F.jsx)(`path`,{d:`M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z`})})},ta=N.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -509,23 +531,23 @@ Error generating stack: `+e.message+`
         width: ${({$size:e})=>e};
         height: ${({$size:e})=>e};
     }
-`,Qi=({name:e,color:t,className:n,size:r=`1rem`,margin:i,padding:a})=>{let o=Xi[e];return(0,F.jsx)(Zi,{color:t,$size:r,$margin:i,$padding:a,className:n,children:(0,F.jsx)(o,{})})},$i=({onClick:e,iconName:t,iconSize:n,padding:r,ariaLabel:i,className:a})=>(0,F.jsx)(Yi,{onClick:e,"aria-label":i,className:a,children:(0,F.jsx)(Qi,{name:t,size:n,padding:r})}),ea=()=>{let{setPopupOpen:e,currentPortfolioIndex:t,setCurrentPortfolioIndex:n,theme:r}=Sr(),i=Vr(P.md),a=Vr(P.landscape),o=Ni[t],s=r===`light`?o.palette:[...o.palette].reverse();return(0,F.jsxs)(Fi,{children:[(0,F.jsx)(Ii,{onClick:()=>e(!1)}),(0,F.jsxs)(Li,{children:[i&&a&&(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(zi,{children:(0,F.jsx)($i,{iconSize:`4rem`,iconName:`chevronLeft`,onClick:()=>n(Gi(t-1,Ni.length-1)),ariaLabel:`Previous`})}),(0,F.jsx)(Bi,{children:(0,F.jsx)($i,{iconSize:`4rem`,iconName:`chevronRight`,onClick:()=>n(Gi(t+1,Ni.length-1)),ariaLabel:`Next`})})]}),(0,F.jsxs)(Ri,{children:[o.video?(0,F.jsx)(Ji,{src:o.video,poster:o.image,ariaLabel:o.title}):(0,F.jsx)(Yr,{src:o.image,alt:o.title,fadeInOnLoad:!0}),(0,F.jsxs)(zr,{position:`absolute`,width:`100%`,display:`flex`,justifyContent:`flex-end`,alignItems:`center`,children:[s.map(e=>(0,F.jsx)(Vi,{$background:e},e)),(0,F.jsx)(Dr,{bold:!0,textAlign:`right`,margin:`0 0 0 0.25rem`,children:o.title})]})]})]})]})},ta=()=>{let{popupOpen:e,currentPortfolioIndex:t,setCurrentPortfolioIndex:n}=Sr();return(0,F.jsx)(Hi,{children:(0,F.jsx)(Ui,{$opacity:+!!e,$currentPortfolioIndex:t,children:Ni.map((e,r)=>(0,F.jsx)(Wi,{"aria-label":e.title,onClick:()=>n(r),$opacity:r===t?1:.5,children:(0,F.jsx)(Yr,{width:`100%`,src:e.image,srcSet:e.imageSet,sizes:e.imageSet&&`(max-width: 1200px) 300px, 600px`,alt:e.title})},e.title))})})},na=()=>{let{popupOpen:e,setPopupOpen:t}=Sr();return Ki(Ni),(0,F.jsxs)(Pi,{$isOpen:e,children:[(0,F.jsx)(ea,{}),(0,F.jsx)(ta,{}),(0,F.jsx)(zr,{position:`absolute`,top:`1rem`,right:`1rem`,children:(0,F.jsx)($i,{iconSize:`2rem`,iconName:`close`,onClick:()=>t(!1),ariaLabel:`Close`})})]})},ra={portfolio:{name:`Portfolio`,path:`/`,element:(0,F.jsx)(()=>{let{setCurrentPortfolioIndex:e,setPopupOpen:t}=Sr();return(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(di,{children:Ni.map(({title:n,image:r,imageSet:i},a)=>(0,F.jsx)(fi,{onClick:()=>{e(a),t(!0)},children:(0,F.jsx)(Yr,{width:`100%`,src:r,srcSet:i,sizes:i&&`(max-width: 1200px) 300px, 600px`,alt:n,fadeInOnLoad:!0})},n+a))}),(0,F.jsx)(na,{})]})},{})},julian:{name:`Julian`,path:`/julian`,element:(0,F.jsx)(ci,{})},impressum:{name:`Impressum`,path:`/impressum`,element:(0,F.jsx)(ui,{})}},ia=N.nav`
+`,na=({name:e,color:t,className:n,size:r=`1rem`,margin:i,padding:a})=>{let o=ea[e];return(0,F.jsx)(ta,{color:t,$size:r,$margin:i,$padding:a,className:n,children:(0,F.jsx)(o,{})})},ra=({onClick:e,iconName:t,iconSize:n,padding:r,ariaLabel:i,className:a})=>(0,F.jsx)($i,{onClick:e,"aria-label":i,className:a,children:(0,F.jsx)(na,{name:t,size:n,padding:r})}),ia=()=>{let{setPopupOpen:e,currentPortfolioIndex:t,setCurrentPortfolioIndex:n,theme:r}=Sr(),i=Vr(P.md),a=Vr(P.landscape),o=Li[t],s=r===`light`?o.palette:[...o.palette].reverse();return(0,F.jsxs)(zi,{children:[(0,F.jsx)(Bi,{onClick:()=>e(!1)}),(0,F.jsxs)(Vi,{children:[i&&a&&(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(Ui,{children:(0,F.jsx)(ra,{iconSize:`4rem`,iconName:`chevronLeft`,onClick:()=>n(Yi(t-1,Li.length-1)),ariaLabel:`Previous`})}),(0,F.jsx)(Wi,{children:(0,F.jsx)(ra,{iconSize:`4rem`,iconName:`chevronRight`,onClick:()=>n(Yi(t+1,Li.length-1)),ariaLabel:`Next`})})]}),(0,F.jsxs)(Hi,{children:[o.video?(0,F.jsx)(Qi,{src:o.video,poster:o.image,ariaLabel:o.title}):(0,F.jsx)(Ur,{src:o.image,alt:o.title,fadeInOnLoad:!0}),(0,F.jsxs)(zr,{position:`absolute`,width:`100%`,display:`flex`,justifyContent:`flex-end`,alignItems:`center`,children:[s.map(e=>(0,F.jsx)(Gi,{$background:e},e)),(0,F.jsx)(Dr,{bold:!0,textAlign:`right`,margin:`0 0 0 0.25rem`,children:o.title})]})]})]})]})},aa=()=>{let{popupOpen:e,currentPortfolioIndex:t,setCurrentPortfolioIndex:n}=Sr();return(0,F.jsx)(Ki,{children:(0,F.jsx)(qi,{$opacity:+!!e,$currentPortfolioIndex:t,children:Li.map((e,r)=>(0,F.jsx)(Ji,{"aria-label":e.title,onClick:()=>n(r),$opacity:r===t?1:.5,children:(0,F.jsx)(Ur,{width:`100%`,src:e.image,srcSet:e.imageSet,sizes:e.imageSet&&`(max-width: 1200px) 300px, 600px`,alt:e.title})},e.title))})})},oa=()=>{let{popupOpen:e,setPopupOpen:t}=Sr();return Xi(Li),(0,F.jsxs)(Ri,{$isOpen:e,children:[(0,F.jsx)(ia,{}),(0,F.jsx)(aa,{}),(0,F.jsx)(zr,{position:`absolute`,top:`1rem`,right:`1rem`,children:(0,F.jsx)(ra,{iconSize:`2rem`,iconName:`close`,onClick:()=>t(!1),ariaLabel:`Close`})})]})},sa={portfolio:{name:`Portfolio`,path:`/`,element:(0,F.jsx)(()=>{let{setCurrentPortfolioIndex:e,setPopupOpen:t}=Sr();return(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(hi,{children:Li.map(({title:n,image:r,imageSet:i},a)=>(0,F.jsx)(gi,{onClick:()=>{e(a),t(!0)},children:(0,F.jsx)(Ur,{width:`100%`,src:r,srcSet:i,sizes:i&&`(max-width: 1200px) 300px, 600px`,alt:n,fadeInOnLoad:!0})},n+a))}),(0,F.jsx)(oa,{})]})},{})},julian:{name:`Julian`,path:`/julian`,element:(0,F.jsx)(fi,{})},impressum:{name:`Impressum`,path:`/impressum`,element:(0,F.jsx)(mi,{})}},I=N.nav`
     margin-bottom: 3rem;
     margin-left: 0.5rem;
-`,aa=N(Dr)`
+`,L=N(Dr)`
     color: ${({theme:e})=>e.secondary};
-`,oa=N.ul`
+`,ca=N.ul`
     list-style-type: none;
     padding: 0;
     margin: 0;
     margin-left: 0.5rem;
-`,sa=N.li`
+`,la=N.li`
     margin-bottom: 0.5rem;
 
     &:last-child {
         margin-bottom: 0;
     }
-`,I=N(Ir)`
+`,ua=N(Ir)`
     display: block;
 
     p {
@@ -540,7 +562,7 @@ Error generating stack: `+e.message+`
             transition: ${dr.fastest};
         }
     }
-`,L=({page:e})=>{let{setSidebarOpen:t}=Sr();return(0,F.jsxs)(ia,{children:[(0,F.jsx)(aa,{margin:`0 0 0.5rem 0`,fontSize:`0.875rem`,children:Lr.work}),(0,F.jsx)(oa,{children:Object.keys(ra).map(n=>{let{path:r,name:i}=ra[n],a=r===e.path;return(0,F.jsx)(sa,{children:(0,F.jsx)(I,{$isActive:a,href:r,onClick:()=>{a||t(!1)},children:(0,F.jsx)(Dr,{bold:a,color:a?`black`:void 0,children:i})})},i)})})]})},ca=({theme:e,setTheme:t,page:n})=>{let{sidebarOpen:r,setSidebarOpen:i}=Sr(),a=Vr(P.md),o=e===`light`?`dark`:`light`;return(0,F.jsxs)(F.Fragment,{children:[!a&&(0,F.jsx)(Mr,{onClick:()=>i(!1),$isActive:r}),(0,F.jsxs)(jr,{$sidebarOpen:r,children:[(0,F.jsx)(Pr,{children:Lr.title}),(0,F.jsx)(Dr,{fontSize:`0.875rem`,margin:`1.5rem 0 3rem 0`,children:Lr.intro}),(0,F.jsxs)(Nr,{children:[(0,F.jsx)(L,{page:n}),(0,F.jsxs)(zr,{children:[(0,F.jsxs)(zr,{display:`flex`,alignItems:`center`,children:[(0,F.jsx)($i,{padding:`0.5rem`,iconName:`instagram`,onClick:()=>window.open(`https://www.instagram.com/julianschievelkamp`,`_blank`),ariaLabel:`Instagram`}),(0,F.jsx)($i,{padding:`0.5rem`,iconName:o,onClick:()=>t(o),ariaLabel:`Toggle Theme`})]}),(0,F.jsx)(Dr,{fontSize:`0.875rem`,margin:`0.5rem 0 0 0`,children:Lr.copyright})]})]})]})]})},la=N.div`
+`,da=({page:e})=>{let{setSidebarOpen:t}=Sr();return(0,F.jsxs)(I,{children:[(0,F.jsx)(L,{margin:`0 0 0.5rem 0`,fontSize:`0.875rem`,children:Lr.work}),(0,F.jsx)(ca,{children:Object.keys(sa).map(n=>{let{path:r,name:i}=sa[n],a=r===e.path;return(0,F.jsx)(la,{children:(0,F.jsx)(ua,{$isActive:a,href:r,onClick:()=>{a||t(!1)},children:(0,F.jsx)(Dr,{bold:a,color:a?`black`:void 0,children:i})})},i)})})]})},fa=({theme:e,setTheme:t,page:n})=>{let{sidebarOpen:r,setSidebarOpen:i}=Sr(),a=Vr(P.md),o=e===`light`?`dark`:`light`;return(0,F.jsxs)(F.Fragment,{children:[!a&&(0,F.jsx)(Mr,{onClick:()=>i(!1),$isActive:r}),(0,F.jsxs)(jr,{$sidebarOpen:r,children:[(0,F.jsx)(Pr,{children:Lr.title}),(0,F.jsx)(Dr,{fontSize:`0.875rem`,margin:`1.5rem 0 3rem 0`,children:Lr.intro}),(0,F.jsxs)(Nr,{children:[(0,F.jsx)(da,{page:n}),(0,F.jsxs)(zr,{children:[(0,F.jsxs)(zr,{display:`flex`,alignItems:`center`,children:[(0,F.jsx)(ra,{padding:`0.5rem`,iconName:`instagram`,onClick:()=>window.open(`https://www.instagram.com/julianschievelkamp`,`_blank`),ariaLabel:`Instagram`}),(0,F.jsx)(ra,{padding:`0.5rem`,iconName:o,onClick:()=>t(o),ariaLabel:`Toggle Theme`})]}),(0,F.jsx)(Dr,{fontSize:`0.875rem`,margin:`0.5rem 0 0 0`,children:Lr.copyright})]})]})]})]})},pa=N.div`
     background-color: ${({theme:e})=>e.body};
     width: 100vw;
     position: fixed;
@@ -557,16 +579,16 @@ Error generating stack: `+e.message+`
     @media ${P.md} {
         display: none;
     }
-`,ua=N(Ar)`
+`,ma=N(Ar)`
     font-size: 1.25rem;
 
     @media ${P.md} {
         font-size: 1.5rem;
     }
-`,da=()=>{let[e,t]=(0,h.useState)(!0),[n,r]=(0,h.useState)(0),{sidebarOpen:i}=Sr(),a=e=>{!i&&e.target.scrollTop>120&&e.target.scrollTop>n?t(!1):t(!0),r(e.target.scrollTop)};return(0,h.useEffect)(()=>{let e=document.getElementById(`page-container`);return e?.addEventListener(`scroll`,a),()=>{e?.removeEventListener(`scroll`,a)}},[n]),{isVisible:e}},fa=()=>{let{sidebarOpen:e,setSidebarOpen:t}=Sr(),{isVisible:n}=da();return(0,F.jsxs)(la,{$isVisible:n,children:[(0,F.jsx)(ua,{children:(0,F.jsx)(Ir,{href:`/`,onClick:()=>t(!1),underline:!1,children:Lr.title})}),(0,F.jsx)(zr,{height:`100%`,display:`flex`,alignItems:`center`,children:(0,F.jsx)($i,{iconSize:`2rem`,iconName:e?`close`:`menu`,onClick:()=>t(!e),ariaLabel:`Toggle Sidebar`})})]})},pa=({page:e})=>{let{theme:t,set:n}=Cr();return(0,F.jsx)(Yn,{theme:t===`light`?lr:ur,children:(0,F.jsxs)(hr,{children:[(0,F.jsx)(pr,{}),(0,F.jsx)(gr,{id:`page-container`,children:e.element}),(0,F.jsx)(ca,{theme:t,setTheme:n,page:e}),(0,F.jsx)(fa,{})]})})},ma={component:ha};function ha(){return h.createElement(h.Fragment,null,h.createElement(`div`,{style:{width:`100%`,height:`100%`,maxHeight:`100%`,background:`linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%)`,borderRadius:`5px`,backgroundSize:`200% 100%`,animation:`1.3s vike-react-loading linear infinite`,aspectRatio:`2.5/1`}}),h.createElement(`style`,{href:`vike-react-loading`,precedence:`default`},`
+`,ha=()=>{let[e,t]=(0,h.useState)(!0),[n,r]=(0,h.useState)(0),{sidebarOpen:i}=Sr(),a=e=>{!i&&e.target.scrollTop>120&&e.target.scrollTop>n?t(!1):t(!0),r(e.target.scrollTop)};return(0,h.useEffect)(()=>{let e=document.getElementById(`page-container`);return e?.addEventListener(`scroll`,a),()=>{e?.removeEventListener(`scroll`,a)}},[n]),{isVisible:e}},ga=()=>{let{sidebarOpen:e,setSidebarOpen:t}=Sr(),{isVisible:n}=ha();return(0,F.jsxs)(pa,{$isVisible:n,children:[(0,F.jsx)(ma,{children:(0,F.jsx)(Ir,{href:`/`,onClick:()=>t(!1),underline:!1,children:Lr.title})}),(0,F.jsx)(zr,{height:`100%`,display:`flex`,alignItems:`center`,children:(0,F.jsx)(ra,{iconSize:`2rem`,iconName:e?`close`:`menu`,onClick:()=>t(!e),ariaLabel:`Toggle Sidebar`})})]})},_a=({page:e})=>{let{theme:t,set:n,isLoading:r}=Cr();return r?(0,F.jsx)(F.Fragment,{}):(0,F.jsx)(Yn,{theme:t===`light`?lr:ur,children:(0,F.jsxs)(hr,{children:[(0,F.jsx)(pr,{}),(0,F.jsx)(gr,{id:`page-container`,children:e.element}),(0,F.jsx)(fa,{theme:t,setTheme:n,page:e}),(0,F.jsx)(ga,{})]})})},va={component:ya};function ya(){return h.createElement(h.Fragment,null,h.createElement(`div`,{style:{width:`100%`,height:`100%`,maxHeight:`100%`,background:`linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%)`,borderRadius:`5px`,backgroundSize:`200% 100%`,animation:`1.3s vike-react-loading linear infinite`,aspectRatio:`2.5/1`}}),h.createElement(`style`,{href:`vike-react-loading`,precedence:`default`},`
           @keyframes vike-react-loading {
             to {
               background-position-x: -200%;
             }
           }
-        `))}export{ie as a,Er as i,pa as n,ra as r,ma as t};
+        `))}export{ie as a,Er as i,_a as n,sa as r,va as t};
