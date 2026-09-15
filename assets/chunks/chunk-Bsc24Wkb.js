@@ -143,6 +143,7 @@ Error generating stack: `+e.message+`
     pointer-events: ${({$isActive:e})=>e?`all`:`none`};
     opacity: ${({$isActive:e})=>+!!e};
     visibility: ${({$isActive:e})=>e?`visible`:`hidden`};
+    z-index: 1;
 `,Nr=N.div`
     ${fr}
 
