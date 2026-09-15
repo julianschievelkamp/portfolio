@@ -58,8 +58,8 @@ export const lang = {
             <br />
             <br />
             High quality fine art prints in various formats and sizes are
-            available upon request. For collaborations and business inquiries in
-            general, feel free to drop a message via{" "}
+            available upon request. For collaborations and business inquiries,
+            feel free to drop a message via{" "}
             <Link href="mailto:mail@julianschievelkamp.com" target="_blank">
                 mail
             </Link>{" "}
