@@ -45,6 +45,11 @@ Error generating stack: `+e.message+`
         --100vh: 100vh;
     }
 
+    @supports (height: 100svh) {
+        :root {
+            --100vh: 100svh;
+        }
+    }  
 
     * {
         box-sizing: border-box;
@@ -580,10 +585,10 @@ Error generating stack: `+e.message+`
     @media ${P.md} {
         font-size: 1.5rem;
     }
-`,ha=()=>{let[e,t]=(0,h.useState)(!0),[n,r]=(0,h.useState)(0),{sidebarOpen:i}=Sr(),a=e=>{!i&&e.target.scrollTop>120&&e.target.scrollTop>n?t(!1):t(!0),r(e.target.scrollTop)};return(0,h.useEffect)(()=>{let e=document.getElementById(`page-container`);return e?.addEventListener(`scroll`,a),()=>{e?.removeEventListener(`scroll`,a)}},[n]),{isVisible:e}},ga=()=>{let{sidebarOpen:e,setSidebarOpen:t}=Sr(),{isVisible:n}=ha();return(0,F.jsxs)(pa,{$isVisible:n,children:[(0,F.jsx)(ma,{children:(0,F.jsx)(Ir,{href:`/`,onClick:()=>t(!1),underline:!1,children:Lr.title})}),(0,F.jsx)(zr,{height:`100%`,display:`flex`,alignItems:`center`,children:(0,F.jsx)(ra,{iconSize:`2rem`,iconName:e?`close`:`menu`,onClick:()=>t(!e),ariaLabel:`Toggle Sidebar`})})]})},_a=({page:e})=>{let{theme:t,set:n}=Cr();return(0,F.jsx)(Yn,{theme:t===`light`?lr:ur,children:(0,F.jsxs)(hr,{children:[(0,F.jsx)(pr,{}),(0,F.jsx)(gr,{id:`page-container`,children:e.element}),(0,F.jsx)(fa,{theme:t,setTheme:n,page:e}),(0,F.jsx)(ga,{})]})})},va={component:ya};function ya(){return h.createElement(h.Fragment,null,h.createElement(`div`,{style:{width:`100%`,height:`100%`,maxHeight:`100%`,background:`linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%)`,borderRadius:`5px`,backgroundSize:`200% 100%`,animation:`1.3s vike-react-loading linear infinite`,aspectRatio:`2.5/1`}}),h.createElement(`style`,{href:`vike-react-loading`,precedence:`default`},`
+`,ha=()=>{let{sidebarOpen:e,setSidebarOpen:t}=Sr();return(0,F.jsxs)(pa,{$isVisible:!0,children:[(0,F.jsx)(ma,{children:(0,F.jsx)(Ir,{href:`/`,onClick:()=>t(!1),underline:!1,children:Lr.title})}),(0,F.jsx)(zr,{height:`100%`,display:`flex`,alignItems:`center`,children:(0,F.jsx)(ra,{iconSize:`2rem`,iconName:e?`close`:`menu`,onClick:()=>t(!e),ariaLabel:`Toggle Sidebar`})})]})},ga=({page:e})=>{let{theme:t,set:n}=Cr();return(0,F.jsx)(Yn,{theme:t===`light`?lr:ur,children:(0,F.jsxs)(hr,{children:[(0,F.jsx)(pr,{}),(0,F.jsx)(gr,{id:`page-container`,children:e.element}),(0,F.jsx)(fa,{theme:t,setTheme:n,page:e}),(0,F.jsx)(ha,{})]})})},_a={component:va};function va(){return h.createElement(h.Fragment,null,h.createElement(`div`,{style:{width:`100%`,height:`100%`,maxHeight:`100%`,background:`linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%)`,borderRadius:`5px`,backgroundSize:`200% 100%`,animation:`1.3s vike-react-loading linear infinite`,aspectRatio:`2.5/1`}}),h.createElement(`style`,{href:`vike-react-loading`,precedence:`default`},`
           @keyframes vike-react-loading {
             to {
               background-position-x: -200%;
             }
           }
-        `))}export{ie as a,Er as i,_a as n,sa as r,va as t};
+        `))}export{ie as a,Er as i,ga as n,sa as r,_a as t};
