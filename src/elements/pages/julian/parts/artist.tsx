@@ -13,6 +13,7 @@ import Div from "elements/components/div";
 import SelfPortrait from "assets/img/misc/self_portrait.jpg";
 import Profile from "assets/img/misc/profile.jpg";
 import Link from "elements/components/link";
+import { colors } from "styles/variables";
 
 const Artist = () => {
     return (
@@ -55,7 +56,9 @@ const Artist = () => {
                                 @julianschievelkamp
                             </Link>
                         </Text>
-                        <Text fontSize="0.875rem">Julian Schievelkamp</Text>
+                        <Text fontSize="0.875rem" color={colors.secondary}>
+                            Julian Schievelkamp
+                        </Text>
                     </Div>
                 </SocialMedia>
             </Div>

@@ -35,12 +35,12 @@ export const SocialMedia = styled(Div)`
 `;
 
 export const StyledProfile = styled.div`
-    width: 4rem;
-    min-width: 4rem;
-    height: 4rem;
-    min-height: 4rem;
+    width: 3.5rem;
+    min-width: 3.5rem;
+    height: 3.5rem;
+    min-height: 3.5rem;
     border-radius: 100px;
-    border: 3px solid transparent;
+    border: 2px solid transparent;
     padding: 2px;
     background:
         linear-gradient(white 0 0) padding-box,

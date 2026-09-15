@@ -17,7 +17,7 @@ export const useMenu = () => {
         } else if (
             sidebarOpen ||
             e.target.scrollTop <= 120 ||
-            e.target.scrollTop + 10 <= lastScrollY
+            e.target.scrollTop + 20 <= lastScrollY
         ) {
             // if scroll up show the menu
             setVisible(true);
