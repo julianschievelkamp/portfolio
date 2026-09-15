@@ -27,7 +27,7 @@ export const NavElement = styled.li`
     }
 `;
 
-export const NavLink = styled(Link)<{ $isActive: boolean }>`
+export const NavLink = styled(Link)<{ $isActive?: boolean }>`
     display: block;
 
     p {

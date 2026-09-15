@@ -10,7 +10,7 @@ import { useMediaQuery } from "hooks/useMediaQuery";
 import { queries } from "styles/variables";
 import Navigation from "elements/layout/navigation";
 import { useStore } from "hooks/useStore";
-import { Page } from "data/pageData";
+import { Page } from "data/navigation";
 
 export interface SidebarProps {
     page: Page;

@@ -8,7 +8,12 @@ export type Page = {
     element: React.ReactNode;
 };
 
-export const pageData: { [key: string]: Page } = {
+export type Link = {
+    name: string;
+    path: string;
+};
+
+export const pages: { [key: string]: Page } = {
     portfolio: {
         name: "Portfolio",
         path: "/",
@@ -23,5 +28,12 @@ export const pageData: { [key: string]: Page } = {
         name: "Impressum",
         path: "/impressum",
         element: <Impressum />,
+    },
+};
+
+export const links: { [key: string]: Link } = {
+    instagram: {
+        name: "Instagram",
+        path: "https://www.instagram.com/julianschievelkamp/",
     },
 };

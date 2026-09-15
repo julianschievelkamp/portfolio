@@ -1,4 +1,4 @@
-import { Page, pageData } from "data/pageData";
+import { Page, pages, links } from "data/navigation";
 import {
     Label,
     NavElement,
@@ -24,8 +24,8 @@ const Navigation = ({ page }: NavigationProps) => {
             </Label>
 
             <NavList>
-                {Object.keys(pageData).map((key) => {
-                    const { path, name } = pageData[key];
+                {Object.keys(pages).map((key) => {
+                    const { path, name } = pages[key];
                     const isActive = path === page.path;
 
                     return (
@@ -45,6 +45,23 @@ const Navigation = ({ page }: NavigationProps) => {
                                 >
                                     {name}
                                 </Text>
+                            </NavLink>
+                        </NavElement>
+                    );
+                })}
+            </NavList>
+
+            <Label margin="0.5rem 0" fontSize="0.875rem">
+                {lang.links}
+            </Label>
+            <NavList>
+                {Object.keys(links).map((key) => {
+                    const { path, name } = links[key];
+
+                    return (
+                        <NavElement key={name}>
+                            <NavLink href={path} target="_blank">
+                                <Text>{name}</Text>
                             </NavLink>
                         </NavElement>
                     );
