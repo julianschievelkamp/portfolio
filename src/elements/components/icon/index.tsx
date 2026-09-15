@@ -1,11 +1,9 @@
-import { Theme } from "styles/variables";
 import { icons } from "./icons";
-
 import { StyledIcon } from "./styles";
 
 export interface IconProps {
     name: keyof typeof icons;
-    color?: keyof Theme | string;
+    color?: string;
     size?: string;
     margin?: string;
     padding?: string;
