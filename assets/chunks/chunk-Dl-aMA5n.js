@@ -45,11 +45,6 @@ Error generating stack: `+e.message+`
         --100vh: 100vh;
     }
 
-    @supports (height: 100svh) {
-        :root {
-            --100vh: 100svh;
-        }
-    }  
 
     * {
         box-sizing: border-box;
