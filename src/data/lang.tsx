@@ -46,7 +46,7 @@ export const lang = {
             film and digital techniques, his recent work emphasizes the
             synergies of classic photography and computer-generated imagery.
             Synaesthetic experiences, where sensory impressions merge into a
-            single picture, have had a great influence on his way of working.
+            single picture, have a great influence on his way of working.
             <br />
             <br />
             Schievelkamp has won several prizes and awards, including the 2017
