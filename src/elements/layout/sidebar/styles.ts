@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import { queries, scrollStyles, transition } from "styles/variables";
 import Headline from "elements/components/headline";
+import Div from "elements/components/div";
 
 export const StyledSidebar = styled.div<{
     $sidebarOpen: boolean;
@@ -42,7 +43,7 @@ export const CloseTrigger = styled.div<{ $isActive: boolean }>`
     z-index: 1;
 `;
 
-export const ScrollContainer = styled.div`
+export const ScrollContainer = styled(Div)`
     ${scrollStyles}
 
     display: flex;
