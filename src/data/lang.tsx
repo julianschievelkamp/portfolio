@@ -43,26 +43,25 @@ export const lang = {
         <>
             Julian Schievelkamp (b. 1994) is a contemporary visual artist and
             fine art photographer based in Cologne, Germany. Using both analog
-            film and digital techniques, his recent work emphasizes on the
-            synergies of classic photography and virtual realities of computer
-            generated imagery (CGI). Synaesthetic experiences, whose sensory
-            impressions merge into one picture, have had a great influence on
-            his way of working.
+            film and digital techniques, his recent work emphasizes the
+            synergies of classic photography and computer-generated imagery.
+            Synaesthetic experiences, where sensory impressions merge into a
+            single picture, have had a great influence on his way of working.
             <br />
             <br />
-            Julian Schievelkamp won several prizes and awards, including the
-            2017 Prix de la Photographie Paris. In 2019 the artist was awarded
-            the title <i>Fine Art Photographer of the Year</i> by the jury of
-            the 5th Fine Art Photography Awards. Julian Schievelkamp exhibited
-            his work in London, Berlin and Cologne and over 100 YellowKorner
-            galleries worldwide.
+            Schievelkamp has won several prizes and awards, including the 2017
+            Prix de la Photographie Paris. In 2019 the artist was awarded the
+            title <i>Fine Art Photographer of the Year</i> by the jury of the
+            5th Fine Art Photography Awards. He has exhibited his work in
+            London, Berlin and Cologne and over 100 YellowKorner galleries
+            worldwide.
             <br />
             <br />
-            High quality fine art prints in various formats and sizes are
-            available upon request. For collaborations and business inquiries,
-            feel free to drop a message via{" "}
+            High-quality fine art prints in various formats and sizes are
+            available upon request. For collaborations, commissions, or
+            inquiries, feel free to reach out via{" "}
             <Link href="mailto:mail@julianschievelkamp.com" target="_blank">
-                mail
+                email
             </Link>{" "}
             or social media.
         </>
