@@ -555,6 +555,7 @@ Error generating stack: `+e.message+`
     height: ${({height:e})=>e};
     max-width: 100%;
     position: absolute;
+    z-index: 1;
 
     &::-internal-media-controls-download-button {
         display: none;
