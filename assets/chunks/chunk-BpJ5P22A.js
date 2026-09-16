@@ -357,6 +357,8 @@ Error generating stack: `+e.message+`
 `,ai=N.div`
     overflow: hidden;
     position: relative;
+    min-width: 5rem;
+    min-height: 5rem;
     height: calc((100vw - 1.5rem) / 3);
     width: 100%;
     cursor: pointer;
@@ -624,7 +626,7 @@ Error generating stack: `+e.message+`
     @media ${P.md} {
         font-size: 1.5rem;
     }
-`,da=()=>{let[e,t]=(0,h.useState)(!0),[n,r]=(0,h.useState)(0),{sidebarOpen:i}=di(),a=e=>{!i&&e.target.scrollTop>120&&e.target.scrollTop>n?t(!1):(i||e.target.scrollTop<=120||e.target.scrollTop+20<=n)&&t(!0),r(e.target.scrollTop)};return(0,h.useEffect)(()=>{let e=document.getElementById(`page-container`);return e?.addEventListener(`scroll`,a),()=>{e?.removeEventListener(`scroll`,a)}},[n]),{isVisible:e}},fa=()=>{let{sidebarOpen:e,setSidebarOpen:t}=di(),{isVisible:n}=da();return(0,F.jsxs)(la,{$isVisible:n,children:[(0,F.jsx)(ua,{children:(0,F.jsx)(Or,{href:`/`,onClick:()=>t(!1),underline:!1,children:I.title})}),(0,F.jsx)(Sr,{height:`100%`,display:`flex`,alignItems:`center`,children:(0,F.jsx)(Qi,{iconSize:`2rem`,iconName:e?`close`:`menu`,onClick:()=>t(!e),ariaLabel:`Toggle Sidebar`})})]})},pa=({page:e})=>(0,F.jsxs)(fr,{children:[(0,F.jsx)(sr,{}),(0,F.jsx)(pr,{id:`page-container`,children:e.element}),(0,F.jsx)(ca,{page:e}),(0,F.jsx)(fa,{})]}),ma={component:ha};function ha(){return h.createElement(h.Fragment,null,h.createElement(`div`,{style:{width:`100%`,height:`100%`,maxHeight:`100%`,background:`linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%)`,borderRadius:`5px`,backgroundSize:`200% 100%`,animation:`1.3s vike-react-loading linear infinite`,aspectRatio:`2.5/1`}}),h.createElement(`style`,{href:`vike-react-loading`,precedence:`default`},`
+`,da=()=>{let[e,t]=(0,h.useState)(!0),[n,r]=(0,h.useState)(0),{sidebarOpen:i}=di(),a=e=>{!i&&e.target.scrollTop>120&&e.target.scrollTop>n?t(!1):(i||e.target.scrollTop<=120||e.target.scrollTop+20<=n)&&t(!0),r(e.target.scrollTop)};return(0,h.useEffect)(()=>{let e=document.getElementById(`page-container`);return e?.addEventListener(`scroll`,a),()=>{e?.removeEventListener(`scroll`,a)}},[n]),{isVisible:e}},fa=()=>{let{sidebarOpen:e,setSidebarOpen:t}=di(),{isVisible:n}=da();return(0,F.jsxs)(la,{$isVisible:n,children:[(0,F.jsx)(ua,{children:(0,F.jsx)(Or,{href:`/`,onClick:()=>t(!1),underline:!1,children:I.title})}),(0,F.jsx)(Sr,{height:`100%`,display:`flex`,alignItems:`center`,margin:`0 0 0 2rem`,children:(0,F.jsx)(Qi,{iconSize:`2rem`,iconName:e?`close`:`menu`,onClick:()=>t(!e),ariaLabel:`Toggle Sidebar`})})]})},pa=({page:e})=>(0,F.jsxs)(fr,{children:[(0,F.jsx)(sr,{}),(0,F.jsx)(pr,{id:`page-container`,children:e.element}),(0,F.jsx)(ca,{page:e}),(0,F.jsx)(fa,{})]}),ma={component:ha};function ha(){return h.createElement(h.Fragment,null,h.createElement(`div`,{style:{width:`100%`,height:`100%`,maxHeight:`100%`,background:`linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%)`,borderRadius:`5px`,backgroundSize:`200% 100%`,animation:`1.3s vike-react-loading linear infinite`,aspectRatio:`2.5/1`}}),h.createElement(`style`,{href:`vike-react-loading`,precedence:`default`},`
           @keyframes vike-react-loading {
             to {
               background-position-x: -200%;
