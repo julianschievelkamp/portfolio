@@ -17,6 +17,7 @@ import { portfolioData } from "data/portfolioData";
 import Video from "elements/components/video";
 import Div from "elements/components/div";
 import Button from "elements/components/button";
+import { useState } from "react";
 
 const SelectedItem = () => {
     const { setPopupOpen, currentPortfolioIndex, setCurrentPortfolioIndex } =
@@ -26,6 +27,7 @@ const SelectedItem = () => {
     const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
 
     const activeItem = portfolioData[currentPortfolioIndex];
+    const [currentItemLoaded, setCurrentItemLoaded] = useState(activeItem);
 
     return (
         <OuterWrapper>
@@ -67,19 +69,20 @@ const SelectedItem = () => {
                 )}
 
                 <ItemContainer>
-                    {activeItem.video ? (
+                    {activeItem.video && activeItem === currentItemLoaded && (
                         <Video
                             src={activeItem.video}
                             poster={activeItem.image}
                             ariaLabel={activeItem.title}
                         />
-                    ) : (
-                        <Image
-                            src={activeItem.image}
-                            alt={activeItem.title}
-                            fadeInOnLoad
-                        />
                     )}
+
+                    <Image
+                        src={activeItem.image}
+                        alt={activeItem.title}
+                        onLoad={() => setCurrentItemLoaded(activeItem)}
+                        fadeInOnLoad
+                    />
 
                     {!isLandscapeLgMax && (
                         <Div
