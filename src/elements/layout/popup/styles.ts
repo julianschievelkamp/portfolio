@@ -152,6 +152,7 @@ export const SliderContainer = styled.div`
         bottom: unset;
         width: unset;
         height: 100%;
+        z-index: 1;
     }
 `;
 
@@ -169,6 +170,7 @@ export const InnerSliderContainer = styled.div<{
     transition: ${transition.fast};
     transition-delay: 300ms;
     opacity: ${({ $opacity }) => $opacity};
+    background: white;
 
     @media ${queries.landscapeLgMax} {
         flex-direction: column;
