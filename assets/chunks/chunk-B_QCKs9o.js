@@ -426,6 +426,7 @@ Error generating stack: `+e.message+`
 
         @media ${P.landscapeLgMax} {
             max-height: calc(var(--100vh) - 2rem);
+            border: 6px solid black;
             display: flex;
         }
     }
