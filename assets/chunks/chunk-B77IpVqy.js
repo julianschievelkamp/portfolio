@@ -61,7 +61,7 @@ Error generating stack: `+e.message+`
     .no-transition * {
         transition: none !important;
     }
-`,cr;typeof window<`u`&&window.addEventListener(`resize`,()=>{document.body.classList.add(`no-transition`),clearTimeout(cr),cr=setTimeout(()=>{document.body.classList.remove(`no-transition`)},400)});var lr={secondary:`rgb(0, 0, 0, 0.5)`,yellow:`#ffca00`},P={sm:`screen and (min-width: 576px)`,md:`screen and (min-width: 768px)`,lg:`screen and (min-width: 992px)`,xl:`screen and (min-width: 1200px)`,hover:`(hover: hover)`,landscape:`(orientation: landscape)`,portrait:`(orientation: portrait)`},ur={fastest:`100ms ease-out`,fast:`300ms ease-out`},dr=nr`
+`,cr;typeof window<`u`&&window.addEventListener(`resize`,()=>{document.body.classList.add(`no-transition`),clearTimeout(cr),cr=setTimeout(()=>{document.body.classList.remove(`no-transition`)},400)});var lr={secondary:`rgb(0, 0, 0, 0.5)`,yellow:`#ffca00`},P={sm:`screen and (min-width: 576px)`,md:`screen and (min-width: 768px)`,lg:`screen and (min-width: 992px)`,xl:`screen and (min-width: 1200px)`,hover:`(hover: hover)`,portrait:`(orientation: portrait)`,landscape:`(orientation: landscape)`,landscapeLgMax:`screen and (max-width: 991px) and (orientation: landscape)`},ur={fastest:`100ms ease-out`,fast:`300ms ease-out`},dr=nr`
     overflow-y: scroll;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
@@ -411,6 +411,10 @@ Error generating stack: `+e.message+`
     margin-bottom: 6rem;
     width: 100%;
     position: relative;
+
+    @media ${P.landscapeLgMax} {
+        margin-bottom: 1rem;
+    }
 `,Li=N.div`
     z-index: 1;
     position: relative;
@@ -419,6 +423,10 @@ Error generating stack: `+e.message+`
     video {
         max-height: calc(var(--100vh) - 15rem);
         border: 8px solid black;
+
+        @media ${P.landscapeLgMax} {
+            max-height: calc(var(--100vh) - 3rem);
+        }
     }
 
     video {
@@ -471,6 +479,14 @@ Error generating stack: `+e.message+`
     bottom: 1rem;
     left: 0;
     width: 100%;
+
+    @media ${P.landscapeLgMax} {
+        top: 0;
+        left: 1rem;
+        bottom: unset;
+        width: unset;
+        height: 100%;
+    }
 `,Hi=N.div`
     position: absolute;
     bottom: 0;
@@ -481,6 +497,14 @@ Error generating stack: `+e.message+`
     transition: ${ur.fast};
     transition-delay: 300ms;
     opacity: ${({$opacity:e})=>e};
+
+    @media ${P.landscapeLgMax} {
+        flex-direction: column;
+        bottom: unset;
+        top: calc(50% - 1.5rem);
+        left: 0;
+        transform: ${({$currentPortfolioIndex:e})=>`translateY(calc(-3.25rem * ${e}))`};
+    }
 `,Ui=N.button`
     margin: 0 0.25rem 0 0;
     padding: 0;
@@ -492,6 +516,10 @@ Error generating stack: `+e.message+`
     overflow: hidden;
     opacity: ${({$opacity:e})=>e};
     cursor: pointer;
+
+    @media ${P.landscapeLgMax} {
+        margin: 0 0 0.25rem 0;
+    }
 `,Wi=(e,t)=>e>t?0:e<0?t:e,Gi=e=>{let[t,n]=(0,h.useState)(null),[r,i]=(0,h.useState)(null),{popupOpen:a,currentPortfolioIndex:o,setCurrentPortfolioIndex:s}=di(),c=t=>{s(Wi(t,e.length-1))},l=e=>{i(null),!(!a||e.touches.length>1)&&n(e.touches[0].clientX)},u=e=>{a&&(e.touches.length>1?(i(null),n(null)):i(e.touches[0].clientX))},d=()=>{if(!a||!t||!r||typeof window<`u`&&window.visualViewport&&Math.abs(window.visualViewport.scale-1)>.05)return;let e=t-r;e>50?c(o+1):e<-50&&c(o-1)},f=e=>{a&&(e.keyCode===37?c(o-1):e.keyCode===39&&c(o+1))};(0,h.useEffect)(()=>(document.addEventListener(`keydown`,f),document.addEventListener(`touchstart`,l,{passive:!0}),document.addEventListener(`touchmove`,u,{passive:!0}),document.addEventListener(`touchend`,d,{passive:!0}),()=>{document.removeEventListener(`keydown`,f),document.removeEventListener(`touchstart`,l),document.removeEventListener(`touchmove`,u),document.removeEventListener(`touchend`,d)}),[a,o,t,r])},Ki=N.video`
     object-fit: cover;
     width: ${({width:e})=>e};
