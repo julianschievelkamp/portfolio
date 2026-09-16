@@ -45,9 +45,22 @@ export const InnerWrapper = styled.div`
     margin-bottom: 6rem;
     width: 100%;
     position: relative;
+    z-index: 1;
+
+    &&::before {
+        content: "";
+        position: absolute;
+        background: white;
+        width: calc(100% + 4rem);
+        height: calc(100% + 2rem);
+    }
 
     @media ${queries.landscapeLgMax} {
         margin-bottom: 0rem;
+
+        &::before {
+            display: none;
+        }
     }
 `;
 

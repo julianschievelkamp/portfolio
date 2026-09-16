@@ -18,7 +18,15 @@ const Popup = () => {
 
             <Slider />
 
-            <Div position="absolute" top="1rem" right="1rem">
+            <Div
+                position="absolute"
+                top="1rem"
+                right="1rem"
+                zIndex={1}
+                background="white"
+                width="2rem"
+                height="2rem"
+            >
                 <Button
                     iconSize="2rem"
                     iconName="close"

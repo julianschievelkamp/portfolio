@@ -23,6 +23,8 @@ export interface DivProps {
     bottom?: string;
     opacity?: number;
     overflow?: string;
+    zIndex?: number;
+    background?: string;
 }
 
 const Div = ({
@@ -46,6 +48,8 @@ const Div = ({
     bottom,
     opacity,
     overflow,
+    zIndex,
+    background,
 }: DivProps) => {
     return (
         <StyledDiv
@@ -68,6 +72,8 @@ const Div = ({
             $bottom={bottom}
             $opacity={opacity}
             $overflow={overflow}
+            $zIndex={zIndex}
+            $background={background}
         >
             {children}
         </StyledDiv>
