@@ -513,6 +513,7 @@ Error generating stack: `+e.message+`
         bottom: unset;
         width: unset;
         height: 100%;
+        z-index: 1;
     }
 `,Vi=P.div`
     position: absolute;
@@ -524,6 +525,7 @@ Error generating stack: `+e.message+`
     transition: ${lr.fast};
     transition-delay: 300ms;
     opacity: ${({$opacity:e})=>e};
+    background: white;
 
     @media ${F.landscapeLgMax} {
         flex-direction: column;
