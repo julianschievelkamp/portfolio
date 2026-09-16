@@ -22,8 +22,8 @@ const SelectedItem = () => {
     const { setPopupOpen, currentPortfolioIndex, setCurrentPortfolioIndex } =
         useStore();
 
-    const isMd = useMediaQuery(queries.md);
     const isLandscape = useMediaQuery(queries.landscape);
+    const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
 
     const activeItem = portfolioData[currentPortfolioIndex];
 
@@ -31,7 +31,7 @@ const SelectedItem = () => {
         <OuterWrapper>
             <CloseTrigger onClick={() => setPopupOpen(false)} />
             <InnerWrapper>
-                {isMd && isLandscape && (
+                {isLandscape && !isLandscapeLgMax && (
                     <>
                         <ArrowLeft>
                             <Button
@@ -80,22 +80,34 @@ const SelectedItem = () => {
                             fadeInOnLoad
                         />
                     )}
-                    <Div
-                        position="absolute"
-                        width="100%"
-                        display="flex"
-                        justifyContent="flex-end"
-                        alignItems="center"
-                    >
-                        {activeItem.palette.map((color) => {
-                            return (
-                                <PaletteItem key={color} $background={color} />
-                            );
-                        })}
-                        <Text bold textAlign="right" margin="0 0 0 0.25rem">
-                            {activeItem.title}
-                        </Text>
-                    </Div>
+
+                    {!isLandscapeLgMax && (
+                        <Div
+                            position="absolute"
+                            width="100%"
+                            display="flex"
+                            justifyContent="flex-end"
+                            alignItems="center"
+                            overflow="hidden"
+                        >
+                            {activeItem.palette.map((color) => {
+                                return (
+                                    <PaletteItem
+                                        key={color}
+                                        $background={color}
+                                    />
+                                );
+                            })}
+                            <Text
+                                bold
+                                textAlign="right"
+                                margin="0 0 0 0.25rem"
+                                whiteSpace="nowrap"
+                            >
+                                {activeItem.title}
+                            </Text>
+                        </Div>
+                    )}
                 </ItemContainer>
             </InnerWrapper>
         </OuterWrapper>

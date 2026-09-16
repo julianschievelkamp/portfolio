@@ -45,6 +45,10 @@ export const InnerWrapper = styled.div`
     margin-bottom: 6rem;
     width: 100%;
     position: relative;
+
+    @media ${queries.landscapeLgMax} {
+        margin-bottom: 0rem;
+    }
 `;
 
 export const ItemContainer = styled.div`
@@ -53,8 +57,19 @@ export const ItemContainer = styled.div`
 
     img,
     video {
+        -o-object-fit: cover;
+        object-fit: cover;
+        overflow: hidden;
+        min-height: 10rem;
+
         max-height: calc(var(--100vh) - 15rem);
         border: 8px solid black;
+
+        @media ${queries.landscapeLgMax} {
+            max-height: calc(var(--100vh) - 2rem);
+            max-width: calc(100vw - 10rem);
+            display: flex;
+        }
     }
 
     video {
@@ -106,6 +121,8 @@ export const PaletteItem = styled.div<{ $background: string }>`
     background: ${({ $background }) => $background};
     width: 0.75rem;
     height: 0.75rem;
+    min-width: 0.75rem;
+    min-height: 0.75rem;
     margin-right: 0.25rem;
     margin-bottom: 1px;
 `;
@@ -115,6 +132,14 @@ export const SliderContainer = styled.div`
     bottom: 1rem;
     left: 0;
     width: 100%;
+
+    @media ${queries.landscapeLgMax} {
+        top: 0;
+        left: 1rem;
+        bottom: unset;
+        width: unset;
+        height: 100%;
+    }
 `;
 
 export const InnerSliderContainer = styled.div<{
@@ -131,6 +156,15 @@ export const InnerSliderContainer = styled.div<{
     transition: ${transition.fast};
     transition-delay: 300ms;
     opacity: ${({ $opacity }) => $opacity};
+
+    @media ${queries.landscapeLgMax} {
+        flex-direction: column;
+        bottom: unset;
+        top: calc(50% - 1.5rem);
+        left: 0;
+        transform: ${({ $currentPortfolioIndex }) =>
+            `translateY(calc(-3.25rem * ${$currentPortfolioIndex}))`};
+    }
 `;
 
 export const SliderItem = styled.button<{ $opacity: number }>`
@@ -144,4 +178,8 @@ export const SliderItem = styled.button<{ $opacity: number }>`
     overflow: hidden;
     opacity: ${({ $opacity }) => $opacity};
     cursor: pointer;
+
+    @media ${queries.landscapeLgMax} {
+        margin: 0 0 0.25rem 0;
+    }
 `;

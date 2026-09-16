@@ -22,7 +22,12 @@ const Menu = () => {
                 </Link>
             </StyledHeadline>
 
-            <Div height="100%" display="flex" alignItems="center">
+            <Div
+                height="100%"
+                display="flex"
+                alignItems="center"
+                margin="0 0 0 2rem"
+            >
                 <Button
                     iconSize="2rem"
                     iconName={sidebarOpen ? "close" : "menu"}

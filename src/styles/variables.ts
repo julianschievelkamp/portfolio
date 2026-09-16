@@ -11,8 +11,10 @@ export const queries = {
     lg: "screen and (min-width: 992px)",
     xl: "screen and (min-width: 1200px)",
     hover: "(hover: hover)",
-    landscape: "(orientation: landscape)",
     portrait: "(orientation: portrait)",
+    landscape: "(orientation: landscape)",
+    landscapeLgMax:
+        "screen and (max-width: 991px) and (orientation: landscape)",
 };
 
 export const thumbnailSize = "(max-width: 1200px) 300px, 600px";

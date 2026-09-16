@@ -18,6 +18,8 @@ export const StyledPortfolio = styled.div`
 export const PortfolioItem = styled.div`
     overflow: hidden;
     position: relative;
+    min-width: 5rem;
+    min-height: 5rem;
     height: calc((100vw - 1.5rem) / 3);
     width: 100%;
     cursor: pointer;

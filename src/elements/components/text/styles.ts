@@ -8,6 +8,7 @@ export const StyledText = styled.p<{
     $margin?: string;
     $fontSize?: string;
     $lineHeight?: string;
+    $whiteSpace?: "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
 }>`
     text-align: ${({ $textAlign }) => $textAlign};
     font-weight: ${({ $bold }) => ($bold ? "bold" : "normal")};
@@ -15,6 +16,7 @@ export const StyledText = styled.p<{
     margin: ${({ $margin }) => $margin};
     color: ${({ color }) => color ?? "black"};
     line-height: ${({ $lineHeight }) => $lineHeight};
+    white-space: ${({ $whiteSpace }) => $whiteSpace};
     transition: color ${transition.fast};
     font-family: "Poppins", sans-serif;
 `;
