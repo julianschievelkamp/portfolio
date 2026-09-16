@@ -43,7 +43,11 @@ const Artist = () => {
                 >
                     <StyledProfile>
                         <ProfileImage>
-                            <Image src={Profile} alt="Instagram Profile" />
+                            <Image
+                                src={Profile}
+                                alt="Instagram Profile"
+                                fadeInOnLoad
+                            />
                         </ProfileImage>
                     </StyledProfile>
 
