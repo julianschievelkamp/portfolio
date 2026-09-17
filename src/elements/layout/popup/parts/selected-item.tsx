@@ -18,6 +18,7 @@ import Video from "elements/components/video";
 import Div from "elements/components/div";
 import Button from "elements/components/button";
 import { useEffect, useRef, useState } from "react";
+import Icon from "elements/components/icon";
 
 const SelectedItem = () => {
     const {
@@ -35,14 +36,6 @@ const SelectedItem = () => {
 
     const videoRef = useRef<HTMLVideoElement | null>(null);
 
-    const toggleVideo = () => {
-        if (videoRef.current?.paused) {
-            videoRef.current?.play();
-        } else {
-            videoRef.current?.pause();
-        }
-    };
-
     useEffect(() => {
         if (!popupOpen) {
             videoRef?.current?.pause();
@@ -57,8 +50,7 @@ const SelectedItem = () => {
                     <>
                         <ArrowLeft>
                             <Button
-                                iconSize="4rem"
-                                iconName="chevronLeft"
+                                ariaLabel="Previous"
                                 onClick={() =>
                                     setCurrentPortfolioIndex(
                                         mapIndex(
@@ -67,13 +59,13 @@ const SelectedItem = () => {
                                         ),
                                     )
                                 }
-                                ariaLabel="Previous"
-                            />
+                            >
+                                <Icon name="chevronLeft" size="4rem" />
+                            </Button>
                         </ArrowLeft>
                         <ArrowRight>
                             <Button
-                                iconSize="4rem"
-                                iconName="chevronRight"
+                                ariaLabel="Next"
                                 onClick={() =>
                                     setCurrentPortfolioIndex(
                                         mapIndex(
@@ -82,13 +74,21 @@ const SelectedItem = () => {
                                         ),
                                     )
                                 }
-                                ariaLabel="Next"
-                            />
+                            >
+                                <Icon name="chevronRight" size="4rem" />
+                            </Button>
                         </ArrowRight>
                     </>
                 )}
 
-                <ItemContainer onClick={() => toggleVideo()}>
+                <ItemContainer>
+                    <Image
+                        src={activeItem.image}
+                        alt={activeItem.title}
+                        onLoad={() => setCurrentItemLoaded(activeItem)}
+                        fadeInOnLoad
+                    />
+
                     {activeItem.video && activeItem === currentItemLoaded && (
                         <Video
                             src={activeItem.video}
@@ -98,13 +98,6 @@ const SelectedItem = () => {
                         />
                     )}
 
-                    <Image
-                        src={activeItem.image}
-                        alt={activeItem.title}
-                        onLoad={() => setCurrentItemLoaded(activeItem)}
-                        fadeInOnLoad
-                    />
-
                     {!isLandscapeLgMax && (
                         <Div
                             position="absolute"
@@ -113,6 +106,7 @@ const SelectedItem = () => {
                             justifyContent="flex-end"
                             alignItems="center"
                             overflow="hidden"
+                            margin="0.25rem 0 0 0"
                         >
                             {activeItem.palette.map((color) => {
                                 return (

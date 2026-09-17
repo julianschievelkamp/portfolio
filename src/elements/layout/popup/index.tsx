@@ -6,6 +6,7 @@ import { portfolioData } from "data/portfolioData";
 import SelectedItem from "./parts/selected-item";
 import Slider from "./parts/slider";
 import Button from "elements/components/button";
+import Icon from "elements/components/icon";
 
 const Popup = () => {
     const { popupOpen, setPopupOpen } = useStore();
@@ -27,12 +28,9 @@ const Popup = () => {
                 width="2rem"
                 height="2rem"
             >
-                <Button
-                    iconSize="2rem"
-                    iconName="close"
-                    onClick={() => setPopupOpen(false)}
-                    ariaLabel="Close"
-                />
+                <Button onClick={() => setPopupOpen(false)} ariaLabel="Close">
+                    <Icon name="close" size="2rem" />
+                </Button>
             </Div>
         </StyledPopup>
     );

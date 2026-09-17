@@ -70,6 +70,7 @@ export const ItemContainer = styled.div`
 
     img,
     video {
+        display: flex;
         border: 8px solid black;
 
         -o-object-fit: cover;
@@ -81,8 +82,13 @@ export const ItemContainer = styled.div`
         @media ${queries.landscapeLgMax} {
             max-height: calc(var(--100vh) - 2rem);
             max-width: calc(100vw - 10rem);
-            display: flex;
         }
+    }
+
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 `;
 
