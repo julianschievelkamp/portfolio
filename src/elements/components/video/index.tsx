@@ -63,8 +63,8 @@ const Video = ({
                 {isPaused && (
                     <PlayIcon
                         name="play"
-                        size="3rem"
-                        padding="1rem"
+                        size="4rem"
+                        padding="0.5rem"
                         color="white"
                     />
                 )}
