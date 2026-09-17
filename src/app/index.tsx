@@ -14,7 +14,9 @@ const App = ({ page }: AppProps) => {
         let resizeTimer: ReturnType<typeof setTimeout>;
 
         const handleResize = () => {
-            document.body.classList.add("no-transition");
+            if (!document.body.classList.contains("no-transition")) {
+                document.body.classList.add("no-transition");
+            }
 
             clearTimeout(resizeTimer);
 
