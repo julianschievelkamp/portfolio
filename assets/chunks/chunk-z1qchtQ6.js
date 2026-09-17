@@ -439,6 +439,7 @@ Error generating stack: `+e.message+`
 
     img,
     video {
+        display: flex;
         border: 8px solid black;
 
         -o-object-fit: cover;
@@ -450,8 +451,13 @@ Error generating stack: `+e.message+`
         @media ${F.landscapeLgMax} {
             max-height: calc(var(--100vh) - 2rem);
             max-width: calc(100vw - 10rem);
-            display: flex;
         }
+    }
+
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 `,Li=P.div`
     position: absolute;
@@ -545,14 +551,7 @@ Error generating stack: `+e.message+`
     @media ${F.landscapeLgMax} {
         margin: 0 0 0.25rem 0;
     }
-`,Ui=(e,t)=>e>t?0:e<0?t:e,Wi=e=>{let[t,n]=(0,h.useState)(null),[r,i]=(0,h.useState)(null),{popupOpen:a,currentPortfolioIndex:o,setCurrentPortfolioIndex:s}=ui(),c=t=>{s(Ui(t,e.length-1))},l=e=>{i(null),!(!a||e.touches.length>1)&&n(e.touches[0].clientX)},u=e=>{a&&(e.touches.length>1?(i(null),n(null)):i(e.touches[0].clientX))},d=()=>{if(!a||!t||!r||typeof window<`u`&&window.visualViewport&&Math.abs(window.visualViewport.scale-1)>.05)return;let e=t-r;e>50?c(o+1):e<-50&&c(o-1)},f=e=>{a&&(e.keyCode===37?c(o-1):e.keyCode===39&&c(o+1))};(0,h.useEffect)(()=>(document.addEventListener(`keydown`,f),document.addEventListener(`touchstart`,l,{passive:!0}),document.addEventListener(`touchmove`,u,{passive:!0}),document.addEventListener(`touchend`,d,{passive:!0}),()=>{document.removeEventListener(`keydown`,f),document.removeEventListener(`touchstart`,l),document.removeEventListener(`touchmove`,u),document.removeEventListener(`touchend`,d)}),[a,o,t,r])},Gi=P.video`
-    object-fit: cover;
-    width: ${({width:e})=>e};
-    height: ${({height:e})=>e};
-    max-width: 100%;
-    position: absolute;
-    cursor: pointer;
-`,Ki=({src:e,poster:t,width:n,height:r,ariaLabel:i,videoRef:a})=>(0,I.jsxs)(Gi,{ref:a,poster:t,width:n,height:r,playsInline:!0,loop:!0,disablePictureInPicture:!0,onContextMenu:e=>e.preventDefault(),"aria-label":i,children:[(0,I.jsx)(`source`,{src:e,type:`video/mp4`}),`Your browser does not support the video tag.`]},e),qi=P.button`
+`,Ui=(e,t)=>e>t?0:e<0?t:e,Wi=e=>{let[t,n]=(0,h.useState)(null),[r,i]=(0,h.useState)(null),{popupOpen:a,currentPortfolioIndex:o,setCurrentPortfolioIndex:s}=ui(),c=t=>{s(Ui(t,e.length-1))},l=e=>{i(null),!(!a||e.touches.length>1)&&n(e.touches[0].clientX)},u=e=>{a&&(e.touches.length>1?(i(null),n(null)):i(e.touches[0].clientX))},d=()=>{if(!a||!t||!r||typeof window<`u`&&window.visualViewport&&Math.abs(window.visualViewport.scale-1)>.05)return;let e=t-r;e>50?c(o+1):e<-50&&c(o-1)},f=e=>{a&&(e.keyCode===37?c(o-1):e.keyCode===39&&c(o+1))};(0,h.useEffect)(()=>(document.addEventListener(`keydown`,f),document.addEventListener(`touchstart`,l,{passive:!0}),document.addEventListener(`touchmove`,u,{passive:!0}),document.addEventListener(`touchend`,d,{passive:!0}),()=>{document.removeEventListener(`keydown`,f),document.removeEventListener(`touchstart`,l),document.removeEventListener(`touchmove`,u),document.removeEventListener(`touchend`,d)}),[a,o,t,r])},Gi=P.button`
     padding: 0;
     background: transparent;
     outline: none;
@@ -565,7 +564,7 @@ Error generating stack: `+e.message+`
             transition: ${lr.fastest};
         }
     }
-`,Ji={close:e=>(0,I.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:48,viewBox:`0 96 960 960`,width:48,...e,children:(0,I.jsx)(`path`,{d:`m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z`})}),menu:e=>(0,I.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:`24px`,viewBox:`0 -960 960 960`,width:`24px`,fill:`#e3e3e3`,...e,children:(0,I.jsx)(`path`,{d:`M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z`})}),chevronLeft:e=>(0,I.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:`24px`,viewBox:`0 -960 960 960`,width:`24px`,fill:`#e3e3e3`,...e,children:(0,I.jsx)(`path`,{d:`M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z`})}),chevronRight:e=>(0,I.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:`24px`,viewBox:`0 -960 960 960`,width:`24px`,fill:`#e3e3e3`,...e,children:(0,I.jsx)(`path`,{d:`M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z`})})},Yi=P.div`
+`,Ki=({onClick:e,children:t,ariaLabel:n,className:r})=>(0,I.jsx)(Gi,{onClick:e,"aria-label":n,className:r,children:t}),qi={close:e=>(0,I.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:48,viewBox:`0 96 960 960`,width:48,...e,children:(0,I.jsx)(`path`,{d:`m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z`})}),menu:e=>(0,I.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:`24px`,viewBox:`0 -960 960 960`,width:`24px`,fill:`#e3e3e3`,...e,children:(0,I.jsx)(`path`,{d:`M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z`})}),chevronLeft:e=>(0,I.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:`24px`,viewBox:`0 -960 960 960`,width:`24px`,fill:`#e3e3e3`,...e,children:(0,I.jsx)(`path`,{d:`M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z`})}),chevronRight:e=>(0,I.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:`24px`,viewBox:`0 -960 960 960`,width:`24px`,fill:`#e3e3e3`,...e,children:(0,I.jsx)(`path`,{d:`M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z`})})},Ji=P.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -583,23 +582,44 @@ Error generating stack: `+e.message+`
         width: ${({$size:e})=>e};
         height: ${({$size:e})=>e};
     }
-`,Xi=({name:e,color:t,className:n,size:r=`1rem`,margin:i,padding:a})=>{let o=Ji[e];return(0,I.jsx)(Yi,{color:t,$size:r,$margin:i,$padding:a,className:n,children:(0,I.jsx)(o,{})})},Zi=({onClick:e,iconName:t,iconSize:n,padding:r,ariaLabel:i,className:a})=>(0,I.jsx)(qi,{onClick:e,"aria-label":i,className:a,children:(0,I.jsx)(Xi,{name:t,size:n,padding:r})}),Qi=()=>{let{setPopupOpen:e,currentPortfolioIndex:t,setCurrentPortfolioIndex:n,popupOpen:r}=ui(),i=kr(F.landscape),a=kr(F.landscapeLgMax),o=ji[t],[s,c]=(0,h.useState)(o),l=(0,h.useRef)(null),u=()=>{l.current?.paused?l.current?.play():l.current?.pause()};return(0,h.useEffect)(()=>{r||l?.current?.pause()},[r]),(0,I.jsxs)(Ni,{children:[(0,I.jsx)(Pi,{onClick:()=>e(!1)}),(0,I.jsxs)(Fi,{children:[i&&!a&&(0,I.jsxs)(I.Fragment,{children:[(0,I.jsx)(Li,{children:(0,I.jsx)(Zi,{iconSize:`4rem`,iconName:`chevronLeft`,onClick:()=>n(Ui(t-1,ji.length-1)),ariaLabel:`Previous`})}),(0,I.jsx)(Ri,{children:(0,I.jsx)(Zi,{iconSize:`4rem`,iconName:`chevronRight`,onClick:()=>n(Ui(t+1,ji.length-1)),ariaLabel:`Next`})})]}),(0,I.jsxs)(Ii,{onClick:()=>u(),children:[o.video&&o===s&&(0,I.jsx)(Ki,{src:o.video,poster:o.image,ariaLabel:o.title,videoRef:l}),(0,I.jsx)(Br,{src:o.image,alt:o.title,onLoad:()=>c(o),fadeInOnLoad:!0}),!a&&(0,I.jsxs)(xr,{position:`absolute`,width:`100%`,display:`flex`,justifyContent:`flex-end`,alignItems:`center`,overflow:`hidden`,children:[o.palette.map(e=>(0,I.jsx)(zi,{$background:e},e)),(0,I.jsx)(gr,{bold:!0,textAlign:`right`,margin:`0 0 0 0.25rem`,whiteSpace:`nowrap`,children:o.title})]})]})]})]})},$i=()=>{let{popupOpen:e,currentPortfolioIndex:t,setCurrentPortfolioIndex:n}=ui();return(0,I.jsx)(Bi,{children:(0,I.jsx)(Vi,{$opacity:+!!e,$currentPortfolioIndex:t,children:ji.map((e,r)=>(0,I.jsx)(Hi,{"aria-label":e.title,onClick:()=>n(r),$opacity:r===t?1:.5,children:(0,I.jsx)(Br,{width:`100%`,src:e.image,srcSet:e.imageSet,sizes:e.imageSet&&`(max-width: 1200px) 300px, 600px`,alt:e.title})},e.title))})})},ea=()=>{let{popupOpen:e,setPopupOpen:t}=ui();return Wi(ji),(0,I.jsxs)(Mi,{$isOpen:e,children:[(0,I.jsx)(Qi,{}),(0,I.jsx)($i,{}),(0,I.jsx)(xr,{position:`absolute`,top:`1rem`,right:`1rem`,zIndex:1,background:`white`,width:`2rem`,height:`2rem`,children:(0,I.jsx)(Zi,{iconSize:`2rem`,iconName:`close`,onClick:()=>t(!1),ariaLabel:`Close`})})]})},ta={portfolio:{name:`Portfolio`,path:`/`,element:(0,I.jsx)(()=>{let{setCurrentPortfolioIndex:e,setPopupOpen:t}=ui();return(0,I.jsxs)(I.Fragment,{children:[(0,I.jsx)(ri,{children:ji.map(({title:n,image:r,imageSet:i},a)=>(0,I.jsx)(ii,{onClick:()=>{e(a),t(!0)},children:(0,I.jsx)(Br,{width:`100%`,src:r,srcSet:i,sizes:i&&`(max-width: 1200px) 300px, 600px`,alt:n,fadeInOnLoad:!0})},n+a))}),(0,I.jsx)(ea,{})]})},{})},julian:{name:`Julian`,path:`/julian`,element:(0,I.jsx)(ei,{})},impressum:{name:`Impressum`,path:`/impressum`,element:(0,I.jsx)(ni,{})}},na={instagram:{name:`Instagram`,path:`https://www.instagram.com/julianschievelkamp/`}},ra=P.nav`
+`,Yi=({name:e,color:t,className:n,size:r=`1rem`,margin:i,padding:a})=>{let o=qi[e];return(0,I.jsx)(Ji,{color:t,$size:r,$margin:i,$padding:a,className:n,children:(0,I.jsx)(o,{})})},Xi=P.video`
+    object-fit: cover;
+    width: ${({width:e})=>e};
+    height: ${({height:e})=>e};
+    max-width: 100%;
+    cursor: pointer;
+`,Zi=P(Ki)`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: 8px solid black !important;
+    overflow: hidden;
+`,Qi=P(Yi)`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(8px);
+    border-radius: 100px;
+`,$i=({videoRef:e,src:t,poster:n,width:r,height:i,ariaLabel:a})=>{let[o,s]=(0,h.useState)(!0);(0,h.useEffect)(()=>{let t=()=>s(!1),n=()=>s(!0);return e?.current?.addEventListener(`play`,t),e?.current?.addEventListener(`pause`,n),()=>{e?.current?.removeEventListener(`play`,t),e?.current?.removeEventListener(`pause`,n)}},[]);let c=()=>{e?.current?.paused?e?.current?.play():e?.current?.pause()};return(0,I.jsxs)(I.Fragment,{children:[(0,I.jsxs)(Xi,{ref:e,poster:n,width:r,height:i,playsInline:!0,controls:!0,loop:!0,disablePictureInPicture:!0,onContextMenu:e=>e.preventDefault(),"aria-label":a,children:[(0,I.jsx)(`source`,{src:t,type:`video/mp4`}),`Your browser does not support the video tag.`]},t),(0,I.jsx)(Zi,{onClick:()=>c(),children:o&&(0,I.jsx)(Qi,{name:`close`,size:`2rem`,padding:`1rem`})})]})},ea=()=>{let{setPopupOpen:e,currentPortfolioIndex:t,setCurrentPortfolioIndex:n,popupOpen:r}=ui(),i=kr(F.landscape),a=kr(F.landscapeLgMax),o=ji[t],[s,c]=(0,h.useState)(o),l=(0,h.useRef)(null);return(0,h.useEffect)(()=>{r||l?.current?.pause()},[r]),(0,I.jsxs)(Ni,{children:[(0,I.jsx)(Pi,{onClick:()=>e(!1)}),(0,I.jsxs)(Fi,{children:[i&&!a&&(0,I.jsxs)(I.Fragment,{children:[(0,I.jsx)(Li,{children:(0,I.jsx)(Ki,{ariaLabel:`Previous`,onClick:()=>n(Ui(t-1,ji.length-1)),children:(0,I.jsx)(Yi,{name:`chevronLeft`,size:`4rem`})})}),(0,I.jsx)(Ri,{children:(0,I.jsx)(Ki,{ariaLabel:`Next`,onClick:()=>n(Ui(t+1,ji.length-1)),children:(0,I.jsx)(Yi,{name:`chevronRight`,size:`4rem`})})})]}),(0,I.jsxs)(Ii,{children:[(0,I.jsx)(Br,{src:o.image,alt:o.title,onLoad:()=>c(o),fadeInOnLoad:!0}),o.video&&o===s&&(0,I.jsx)($i,{src:o.video,poster:o.image,ariaLabel:o.title,videoRef:l}),!a&&(0,I.jsxs)(xr,{position:`absolute`,width:`100%`,display:`flex`,justifyContent:`flex-end`,alignItems:`center`,overflow:`hidden`,margin:`0.25rem 0 0 0`,children:[o.palette.map(e=>(0,I.jsx)(zi,{$background:e},e)),(0,I.jsx)(gr,{bold:!0,textAlign:`right`,margin:`0 0 0 0.25rem`,whiteSpace:`nowrap`,children:o.title})]})]})]})]})},ta=()=>{let{popupOpen:e,currentPortfolioIndex:t,setCurrentPortfolioIndex:n}=ui();return(0,I.jsx)(Bi,{children:(0,I.jsx)(Vi,{$opacity:+!!e,$currentPortfolioIndex:t,children:ji.map((e,r)=>(0,I.jsx)(Hi,{"aria-label":e.title,onClick:()=>n(r),$opacity:r===t?1:.5,children:(0,I.jsx)(Br,{width:`100%`,src:e.image,srcSet:e.imageSet,sizes:e.imageSet&&`(max-width: 1200px) 300px, 600px`,alt:e.title})},e.title))})})},na=()=>{let{popupOpen:e,setPopupOpen:t}=ui();return Wi(ji),(0,I.jsxs)(Mi,{$isOpen:e,children:[(0,I.jsx)(ea,{}),(0,I.jsx)(ta,{}),(0,I.jsx)(xr,{position:`absolute`,top:`1rem`,right:`1rem`,zIndex:1,background:`white`,width:`2rem`,height:`2rem`,children:(0,I.jsx)(Ki,{onClick:()=>t(!1),ariaLabel:`Close`,children:(0,I.jsx)(Yi,{name:`close`,size:`2rem`})})})]})},ra={portfolio:{name:`Portfolio`,path:`/`,element:(0,I.jsx)(()=>{let{setCurrentPortfolioIndex:e,setPopupOpen:t}=ui();return(0,I.jsxs)(I.Fragment,{children:[(0,I.jsx)(ri,{children:ji.map(({title:n,image:r,imageSet:i},a)=>(0,I.jsx)(ii,{onClick:()=>{e(a),t(!0)},children:(0,I.jsx)(Br,{width:`100%`,src:r,srcSet:i,sizes:i&&`(max-width: 1200px) 300px, 600px`,alt:n,fadeInOnLoad:!0})},n+a))}),(0,I.jsx)(na,{})]})},{})},julian:{name:`Julian`,path:`/julian`,element:(0,I.jsx)(ei,{})},impressum:{name:`Impressum`,path:`/impressum`,element:(0,I.jsx)(ni,{})}},ia={instagram:{name:`Instagram`,path:`https://www.instagram.com/julianschievelkamp/`}},aa=P.nav`
     margin-bottom: 3rem;
     margin-left: 0.5rem;
-`,ia=P(gr)`
+`,R=P(gr)`
     color: ${cr.secondary};
-`,aa=P.ul`
+`,z=P.ul`
     list-style-type: none;
     padding: 0;
     margin: 0;
     margin-left: 0.5rem;
-`,R=P.li`
+`,oa=P.li`
     margin-bottom: 0.5rem;
 
     &:last-child {
         margin-bottom: 0;
     }
-`,z=P(Dr)`
+`,sa=P(Dr)`
     display: block;
 
     p {
@@ -614,7 +634,7 @@ Error generating stack: `+e.message+`
             transition: ${lr.fastest};
         }
     }
-`,oa=({page:e})=>{let{setSidebarOpen:t}=ui();return(0,I.jsxs)(ra,{children:[(0,I.jsx)(ia,{margin:`0 0 0.5rem 0`,fontSize:`0.875rem`,children:L.work}),(0,I.jsx)(aa,{children:Object.keys(ta).map(n=>{let{path:r,name:i}=ta[n],a=r===e.path;return(0,I.jsx)(R,{children:(0,I.jsx)(z,{$isActive:a,href:r,onClick:()=>{a||t(!1)},children:(0,I.jsx)(gr,{bold:a,color:a?`black`:void 0,children:i})})},i)})}),(0,I.jsx)(ia,{margin:`0.5rem 0`,fontSize:`0.875rem`,children:L.links}),(0,I.jsx)(aa,{children:Object.keys(na).map(e=>{let{path:t,name:n}=na[e];return(0,I.jsx)(R,{children:(0,I.jsx)(z,{href:t,target:`_blank`,children:(0,I.jsx)(gr,{children:n})})},n)})})]})},sa=({page:e})=>{let{sidebarOpen:t,setSidebarOpen:n}=ui(),r=kr(F.md);return(0,I.jsxs)(I.Fragment,{children:[!r&&(0,I.jsx)(Cr,{onClick:()=>n(!1),$isActive:t}),(0,I.jsxs)(Sr,{$sidebarOpen:t,children:[(0,I.jsx)(Tr,{children:L.title}),(0,I.jsxs)(wr,{margin:`1.5rem 0 0 0`,children:[(0,I.jsxs)(xr,{children:[(0,I.jsx)(gr,{fontSize:`0.875rem`,margin:`0 0 3rem 0`,children:L.intro}),(0,I.jsx)(oa,{page:e})]}),(0,I.jsx)(gr,{fontSize:`0.875rem`,margin:`0.5rem 0 0 0`,children:L.copyright})]})]})]})},ca=P.div`
+`,ca=({page:e})=>{let{setSidebarOpen:t}=ui();return(0,I.jsxs)(aa,{children:[(0,I.jsx)(R,{margin:`0 0 0.5rem 0`,fontSize:`0.875rem`,children:L.work}),(0,I.jsx)(z,{children:Object.keys(ra).map(n=>{let{path:r,name:i}=ra[n],a=r===e.path;return(0,I.jsx)(oa,{children:(0,I.jsx)(sa,{$isActive:a,href:r,onClick:()=>{a||t(!1)},children:(0,I.jsx)(gr,{bold:a,color:a?`black`:void 0,children:i})})},i)})}),(0,I.jsx)(R,{margin:`0.5rem 0`,fontSize:`0.875rem`,children:L.links}),(0,I.jsx)(z,{children:Object.keys(ia).map(e=>{let{path:t,name:n}=ia[e];return(0,I.jsx)(oa,{children:(0,I.jsx)(sa,{href:t,target:`_blank`,children:(0,I.jsx)(gr,{children:n})})},n)})})]})},la=({page:e})=>{let{sidebarOpen:t,setSidebarOpen:n}=ui(),r=kr(F.md);return(0,I.jsxs)(I.Fragment,{children:[!r&&(0,I.jsx)(Cr,{onClick:()=>n(!1),$isActive:t}),(0,I.jsxs)(Sr,{$sidebarOpen:t,children:[(0,I.jsx)(Tr,{children:L.title}),(0,I.jsxs)(wr,{margin:`1.5rem 0 0 0`,children:[(0,I.jsxs)(xr,{children:[(0,I.jsx)(gr,{fontSize:`0.875rem`,margin:`0 0 3rem 0`,children:L.intro}),(0,I.jsx)(ca,{page:e})]}),(0,I.jsx)(gr,{fontSize:`0.875rem`,margin:`0.5rem 0 0 0`,children:L.copyright})]})]})]})},ua=P.div`
     background-color: white;
     width: 100vw;
     position: fixed;
@@ -631,16 +651,16 @@ Error generating stack: `+e.message+`
     @media ${F.md} {
         display: none;
     }
-`,la=P(yr)`
+`,da=P(yr)`
     font-size: 1.25rem;
 
     @media ${F.md} {
         font-size: 1.5rem;
     }
-`,ua=()=>{let[e,t]=(0,h.useState)(!0),[n,r]=(0,h.useState)(0),{sidebarOpen:i}=ui(),a=e=>{!i&&e.target.scrollTop>120&&e.target.scrollTop>n?t(!1):(i||e.target.scrollTop<=120||e.target.scrollTop+20<=n)&&t(!0),r(e.target.scrollTop)};return(0,h.useEffect)(()=>{let e=document.getElementById(`page-container`);return e?.addEventListener(`scroll`,a),()=>{e?.removeEventListener(`scroll`,a)}},[n]),{isVisible:e}},da=()=>{let{sidebarOpen:e,setSidebarOpen:t}=ui(),{isVisible:n}=ua();return(0,I.jsxs)(ca,{$isVisible:n,children:[(0,I.jsx)(la,{children:(0,I.jsx)(Dr,{href:`/`,onClick:()=>t(!1),underline:!1,children:L.title})}),(0,I.jsx)(xr,{height:`100%`,display:`flex`,alignItems:`center`,margin:`0 0 0 2rem`,children:(0,I.jsx)(Zi,{iconSize:`2rem`,iconName:e?`close`:`menu`,onClick:()=>t(!e),ariaLabel:`Toggle Sidebar`})})]})},fa=({page:e})=>(0,I.jsxs)(dr,{children:[(0,I.jsx)(or,{}),(0,I.jsx)(fr,{id:`page-container`,children:e.element}),(0,I.jsx)(sa,{page:e}),(0,I.jsx)(da,{})]}),pa={component:ma};function ma(){return h.createElement(h.Fragment,null,h.createElement(`div`,{style:{width:`100%`,height:`100%`,maxHeight:`100%`,background:`linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%)`,borderRadius:`5px`,backgroundSize:`200% 100%`,animation:`1.3s vike-react-loading linear infinite`,aspectRatio:`2.5/1`}}),h.createElement(`style`,{href:`vike-react-loading`,precedence:`default`},`
+`,fa=()=>{let[e,t]=(0,h.useState)(!0),[n,r]=(0,h.useState)(0),{sidebarOpen:i}=ui(),a=e=>{!i&&e.target.scrollTop>120&&e.target.scrollTop>n?t(!1):(i||e.target.scrollTop<=120||e.target.scrollTop+20<=n)&&t(!0),r(e.target.scrollTop)};return(0,h.useEffect)(()=>{let e=document.getElementById(`page-container`);return e?.addEventListener(`scroll`,a),()=>{e?.removeEventListener(`scroll`,a)}},[n]),{isVisible:e}},pa=()=>{let{sidebarOpen:e,setSidebarOpen:t}=ui(),{isVisible:n}=fa();return(0,I.jsxs)(ua,{$isVisible:n,children:[(0,I.jsx)(da,{children:(0,I.jsx)(Dr,{href:`/`,onClick:()=>t(!1),underline:!1,children:L.title})}),(0,I.jsx)(xr,{height:`100%`,display:`flex`,alignItems:`center`,margin:`0 0 0 2rem`,children:(0,I.jsx)(Ki,{onClick:()=>t(!e),ariaLabel:`Toggle Sidebar`,children:(0,I.jsx)(Yi,{name:e?`close`:`menu`,size:`2rem`})})})]})},ma=({page:e})=>(0,I.jsxs)(dr,{children:[(0,I.jsx)(or,{}),(0,I.jsx)(fr,{id:`page-container`,children:e.element}),(0,I.jsx)(la,{page:e}),(0,I.jsx)(pa,{})]}),ha={component:ga};function ga(){return h.createElement(h.Fragment,null,h.createElement(`div`,{style:{width:`100%`,height:`100%`,maxHeight:`100%`,background:`linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%)`,borderRadius:`5px`,backgroundSize:`200% 100%`,animation:`1.3s vike-react-loading linear infinite`,aspectRatio:`2.5/1`}}),h.createElement(`style`,{href:`vike-react-loading`,precedence:`default`},`
           @keyframes vike-react-loading {
             to {
               background-position-x: -200%;
             }
           }
-        `))}export{re as a,hr as i,fa as n,ta as r,pa as t};
+        `))}export{re as a,hr as i,ma as n,ra as r,ha as t};
