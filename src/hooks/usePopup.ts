@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 import { useStore } from "./useStore";
 import { mapIndex } from "utils/utils";
 import { PortfolioItem } from "data/portfolioData";
+import { useMediaQuery } from "./useMediaQuery";
+import { queries } from "styles/variables";
 
 export const usePopup = (items: PortfolioItem[]) => {
     const [touchStart, setTouchStart] = useState(null);
     const [touchEnd, setTouchEnd] = useState(null);
     const { popupOpen, currentPortfolioIndex, setCurrentPortfolioIndex } =
         useStore();
+    const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
 
     const showItem = (newIndex: number) => {
         setCurrentPortfolioIndex(mapIndex(newIndex, items.length - 1));
@@ -18,7 +21,9 @@ export const usePopup = (items: PortfolioItem[]) => {
 
         if (!popupOpen || e.touches.length > 1) return;
 
-        setTouchStart(e.touches[0].clientX);
+        setTouchStart(
+            isLandscapeLgMax ? e.touches[0].clientY : e.touches[0].clientX,
+        );
     };
 
     const onTouchMove = (e: any) => {
@@ -28,7 +33,9 @@ export const usePopup = (items: PortfolioItem[]) => {
             setTouchEnd(null);
             setTouchStart(null);
         } else {
-            setTouchEnd(e.touches[0].clientX);
+            setTouchEnd(
+                isLandscapeLgMax ? e.touches[0].clientY : e.touches[0].clientX,
+            );
         }
     };
 
@@ -45,12 +52,12 @@ export const usePopup = (items: PortfolioItem[]) => {
 
         const minSwipeDistance = 50;
         const distance = touchStart - touchEnd;
-        const isLeftSwipe = distance > minSwipeDistance;
-        const isRightSwipe = distance < -minSwipeDistance;
+        const isPreviousSwipe = distance > minSwipeDistance;
+        const isNextSwipe = distance < -minSwipeDistance;
 
-        if (isLeftSwipe) {
+        if (isPreviousSwipe) {
             showItem(currentPortfolioIndex + 1);
-        } else if (isRightSwipe) {
+        } else if (isNextSwipe) {
             showItem(currentPortfolioIndex - 1);
         }
     };
