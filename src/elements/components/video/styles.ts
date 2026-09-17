@@ -16,7 +16,6 @@ export const PlayButton = styled(Button)`
     height: 100%;
     top: 0;
     left: 0;
-    border: 8px solid black !important;
     overflow: hidden;
 `;
 
@@ -27,5 +26,4 @@ export const PlayIcon = styled(Icon)`
     transform: translate(-50%, -50%);
     backdrop-filter: blur(8px);
     background: rgb(0, 0, 0, 0.1);
-    border-radius: 100px;
 `;
