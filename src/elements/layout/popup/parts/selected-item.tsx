@@ -3,10 +3,9 @@ import {
     OuterWrapper,
     CloseTrigger,
     InnerWrapper,
-    ArrowLeft,
-    ArrowRight,
     ItemContainer,
     PaletteItem,
+    Arrow,
 } from "../styles";
 import Image from "elements/components/image";
 import { useStore } from "hooks/useStore";
@@ -48,7 +47,7 @@ const SelectedItem = () => {
             <InnerWrapper>
                 {isLandscape && !isLandscapeLgMax && (
                     <>
-                        <ArrowLeft>
+                        <Arrow>
                             <Button
                                 ariaLabel="Previous"
                                 onClick={() =>
@@ -62,8 +61,8 @@ const SelectedItem = () => {
                             >
                                 <Icon name="chevronLeft" size="4rem" />
                             </Button>
-                        </ArrowLeft>
-                        <ArrowRight>
+                        </Arrow>
+                        <Arrow $isRight>
                             <Button
                                 ariaLabel="Next"
                                 onClick={() =>
@@ -77,7 +76,7 @@ const SelectedItem = () => {
                             >
                                 <Icon name="chevronRight" size="4rem" />
                             </Button>
-                        </ArrowRight>
+                        </Arrow>
                     </>
                 )}
 

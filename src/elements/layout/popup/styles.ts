@@ -92,11 +92,12 @@ export const ItemContainer = styled.div`
     }
 `;
 
-export const ArrowLeft = styled.div`
+export const Arrow = styled.div<{ $isRight?: boolean }>`
     position: absolute;
-    height: calc(100% - 4px);
+    height: 100%;
     width: 50%;
-    left: 0;
+    left: ${({ $isRight }) => ($isRight ? "unset" : "0")};
+    right: ${({ $isRight }) => ($isRight ? "0" : "unset")};
 
     > button {
         position: relative;
@@ -105,27 +106,8 @@ export const ArrowLeft = styled.div`
 
         > div {
             position: absolute;
-            left: 2rem;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-    }
-`;
-
-export const ArrowRight = styled.div`
-    position: absolute;
-    height: calc(100% - 4px);
-    width: 50%;
-    right: 0;
-
-    > button {
-        position: relative;
-        width: 100%;
-        height: 100%;
-
-        > div {
-            position: absolute;
-            right: 2rem;
+            left: ${({ $isRight }) => ($isRight ? "unset" : "2rem")};
+            right: ${({ $isRight }) => ($isRight ? "2rem" : "unset")};
             top: 50%;
             transform: translateY(-50%);
         }
