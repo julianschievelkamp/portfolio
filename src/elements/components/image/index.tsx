@@ -25,7 +25,7 @@ const Image = ({
     className,
 }: ImageProps) => {
     const [imageLoaded, setImageLoaded] = useState(false);
-    const imageRef = useRef<HTMLImageElement>(null);
+    const imageRef = useRef<HTMLImageElement | null>(null);
 
     useEffect(() => {
         if (!imageLoaded && imageRef?.current?.complete) {

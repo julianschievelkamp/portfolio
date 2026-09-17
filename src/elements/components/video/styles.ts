@@ -6,9 +6,5 @@ export const StyledVideo = styled.video`
     height: ${({ height }) => height};
     max-width: 100%;
     position: absolute;
-    z-index: 1;
-
-    &::-internal-media-controls-download-button {
-        display: none;
-    }
+    cursor: pointer;
 `;

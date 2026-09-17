@@ -17,17 +17,37 @@ import { portfolioData } from "data/portfolioData";
 import Video from "elements/components/video";
 import Div from "elements/components/div";
 import Button from "elements/components/button";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const SelectedItem = () => {
-    const { setPopupOpen, currentPortfolioIndex, setCurrentPortfolioIndex } =
-        useStore();
+    const {
+        setPopupOpen,
+        currentPortfolioIndex,
+        setCurrentPortfolioIndex,
+        popupOpen,
+    } = useStore();
 
     const isLandscape = useMediaQuery(queries.landscape);
     const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
 
     const activeItem = portfolioData[currentPortfolioIndex];
     const [currentItemLoaded, setCurrentItemLoaded] = useState(activeItem);
+
+    const videoRef = useRef<HTMLVideoElement | null>(null);
+
+    const toggleVideo = () => {
+        if (videoRef.current?.paused) {
+            videoRef.current?.play();
+        } else {
+            videoRef.current?.pause();
+        }
+    };
+
+    useEffect(() => {
+        if (!popupOpen) {
+            videoRef?.current?.pause();
+        }
+    }, [popupOpen]);
 
     return (
         <OuterWrapper>
@@ -68,12 +88,13 @@ const SelectedItem = () => {
                     </>
                 )}
 
-                <ItemContainer>
+                <ItemContainer onClick={() => toggleVideo()}>
                     {activeItem.video && activeItem === currentItemLoaded && (
                         <Video
                             src={activeItem.video}
                             poster={activeItem.image}
                             ariaLabel={activeItem.title}
+                            videoRef={videoRef}
                         />
                     )}
 

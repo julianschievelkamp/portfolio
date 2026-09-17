@@ -70,23 +70,19 @@ export const ItemContainer = styled.div`
 
     img,
     video {
+        border: 8px solid black;
+
         -o-object-fit: cover;
         object-fit: cover;
         overflow: hidden;
         min-height: 10rem;
-
         max-height: calc(var(--100vh) - 15rem);
-        border: 8px solid black;
 
         @media ${queries.landscapeLgMax} {
             max-height: calc(var(--100vh) - 2rem);
             max-width: calc(100vw - 10rem);
             display: flex;
         }
-    }
-
-    video {
-        cursor: pointer;
     }
 `;
 
