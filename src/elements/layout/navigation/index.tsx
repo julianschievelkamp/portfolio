@@ -22,7 +22,6 @@ const Navigation = ({ page }: NavigationProps) => {
             <Label margin="0 0 0.5rem 0" fontSize="0.875rem">
                 {lang.work}
             </Label>
-
             <NavList>
                 {Object.keys(pages).map((key) => {
                     const { path, name } = pages[key];

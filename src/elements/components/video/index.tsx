@@ -18,19 +18,14 @@ const Video = ({
     height,
     ariaLabel,
 }: VideoProps) => {
-    const [isPaused, setIsPaused] = useState(true);
+    const [hasStarted, setHasStarted] = useState(false);
 
     useEffect(() => {
-        const handlePlay = () => setIsPaused(false);
-        const handlePause = () => setIsPaused(true);
+        const handlePlay = () => setHasStarted(true);
 
         videoRef?.current?.addEventListener("play", handlePlay);
-        videoRef?.current?.addEventListener("pause", handlePause);
 
-        return () => {
-            videoRef?.current?.removeEventListener("play", handlePlay);
-            videoRef?.current?.removeEventListener("pause", handlePause);
-        };
+        return () => videoRef?.current?.removeEventListener("play", handlePlay);
     }, []);
 
     const toggleVideo = () => {
@@ -60,7 +55,7 @@ const Video = ({
             </StyledVideo>
 
             <PlayButton onClick={() => toggleVideo()}>
-                {isPaused && (
+                {!hasStarted && (
                     <PlayIcon
                         name="play"
                         size="4rem"

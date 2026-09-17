@@ -1,19 +1,11 @@
 import Text from "elements/components/text";
-import {
-    ArtistWrapper,
-    ImageWrapper,
-    SocialMedia,
-    ProfileImage,
-    StyledProfile,
-} from "../styles";
+import { ArtistWrapper, ImageWrapper } from "../styles";
 import { lang } from "data/lang";
 import Image from "elements/components/image";
 import Div from "elements/components/div";
 
 import SelfPortrait from "assets/img/misc/self_portrait.jpg";
-import Profile from "assets/img/misc/profile.jpg";
-import Link from "elements/components/link";
-import { colors } from "styles/variables";
+import Social from "./social";
 
 const Artist = () => {
     return (
@@ -30,41 +22,7 @@ const Artist = () => {
                     {lang.julian}
                 </Text>
 
-                <SocialMedia
-                    display="flex"
-                    margin="2rem 0 0 0"
-                    alignItems="center"
-                    width="fit-content"
-                    onClick={() =>
-                        window.open(
-                            "https://www.instagram.com/julianschievelkamp/",
-                        )
-                    }
-                >
-                    <StyledProfile>
-                        <ProfileImage>
-                            <Image
-                                src={Profile}
-                                alt="Instagram Profile"
-                                fadeInOnLoad
-                            />
-                        </ProfileImage>
-                    </StyledProfile>
-
-                    <Div margin="0 1rem 0 0.5rem">
-                        <Text fontSize="0.875rem" bold>
-                            <Link
-                                href="https://www.instagram.com/julianschievelkamp/"
-                                target="_blank"
-                            >
-                                @julianschievelkamp
-                            </Link>
-                        </Text>
-                        <Text fontSize="0.875rem" color={colors.secondary}>
-                            Julian Schievelkamp
-                        </Text>
-                    </Div>
-                </SocialMedia>
+                <Social />
             </Div>
         </ArtistWrapper>
     );

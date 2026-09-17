@@ -21,7 +21,7 @@ export const ArtistWrapper = styled.div`
     }
 `;
 
-export const SocialMedia = styled(Div)`
+export const StyledSocial = styled(Div)`
     &:hover {
         img {
             transform: scale(1.1);
