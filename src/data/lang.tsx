@@ -69,6 +69,11 @@ export const lang = {
             or social media.
         </>
     ),
+    social: {
+        link: "https://www.instagram.com/julianschievelkamp/",
+        name: "Julian Schievelkamp",
+        profile: "@julianschievelkamp",
+    },
     references: {
         headline: (
             <>

@@ -6,6 +6,7 @@ import Div from "elements/components/div";
 import Profile from "assets/img/misc/profile.jpg";
 import Link from "elements/components/link";
 import { colors } from "styles/variables";
+import { lang } from "data/lang";
 
 const Social = () => {
     return (
@@ -14,9 +15,7 @@ const Social = () => {
             margin="2rem 0 0 0"
             alignItems="center"
             width="fit-content"
-            onClick={() =>
-                window.open("https://www.instagram.com/julianschievelkamp/")
-            }
+            onClick={() => window.open(lang.social.link)}
         >
             <StyledProfile>
                 <ProfileImage>
@@ -26,15 +25,12 @@ const Social = () => {
 
             <Div margin="0 1rem 0 0.5rem">
                 <Text fontSize="0.875rem" bold>
-                    <Link
-                        href="https://www.instagram.com/julianschievelkamp/"
-                        target="_blank"
-                    >
-                        @julianschievelkamp
+                    <Link href={lang.social.link} target="_blank">
+                        {lang.social.profile}
                     </Link>
                 </Text>
                 <Text fontSize="0.875rem" color={colors.secondary}>
-                    Julian Schievelkamp
+                    {lang.social.name}
                 </Text>
             </Div>
         </StyledSocial>
