@@ -3,12 +3,31 @@ import { PageContainer, StyledApp } from "./styles";
 import Sidebar from "elements/layout/sidebar";
 import Menu from "elements/layout/menu";
 import { Page } from "data/navigation";
+import { useEffect } from "react";
 
 export interface AppProps {
     page: Page;
 }
 
 const App = ({ page }: AppProps) => {
+    useEffect(() => {
+        let resizeTimer: ReturnType<typeof setTimeout>;
+
+        const handleResize = () => {
+            document.body.classList.add("no-transition");
+
+            clearTimeout(resizeTimer);
+
+            resizeTimer = setTimeout(() => {
+                document.body.classList.remove("no-transition");
+            }, 400);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     return (
         <StyledApp>
             <GlobalStyle />
