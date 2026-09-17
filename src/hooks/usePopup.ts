@@ -44,7 +44,7 @@ export const usePopup = (items: PortfolioItem[]) => {
 
         if (!touchStart || !touchEnd) return;
 
-        if (typeof window !== "undefined" && window.visualViewport) {
+        if (window.visualViewport) {
             if (Math.abs(window.visualViewport.scale - 1) > 0.05) {
                 return;
             }
