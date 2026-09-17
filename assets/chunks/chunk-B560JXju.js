@@ -560,7 +560,7 @@ Error generating stack: `+e.message+`
     &::-internal-media-controls-download-button {
         display: none;
     }
-`,Ki=({src:e,poster:t,width:n,height:r,ariaLabel:i})=>{let{popupOpen:a}=ui(),o=(0,h.useRef)(null);return(0,h.useEffect)(()=>{a||o?.current?.pause()},[a]),(0,I.jsx)(xr,{children:(0,I.jsxs)(Gi,{ref:o,poster:t,width:n,height:r,playsInline:!0,loop:!0,controls:!0,controlsList:`nodownload noremoteplayback noplaybackrate`,disablePictureInPicture:!0,onContextMenu:e=>e.preventDefault(),"aria-label":i,children:[(0,I.jsx)(`source`,{src:e,type:`video/mp4`}),`Your browser does not support the video tag.`]},e)})},qi=P.button`
+`,Ki=({src:e,poster:t,width:n,height:r,ariaLabel:i})=>{let{popupOpen:a}=ui(),o=(0,h.useRef)(null);return(0,h.useEffect)(()=>{a||o?.current?.pause()},[a]),(0,I.jsx)(xr,{children:(0,I.jsxs)(Gi,{ref:o,poster:t,width:n,height:r,playsInline:!0,loop:!0,disablePictureInPicture:!0,onContextMenu:e=>e.preventDefault(),"aria-label":i,children:[(0,I.jsx)(`source`,{src:e,type:`video/mp4`}),`Your browser does not support the video tag.`]},e)})},qi=P.button`
     padding: 0;
     background: transparent;
     outline: none;
