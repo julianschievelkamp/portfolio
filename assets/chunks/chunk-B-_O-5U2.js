@@ -478,7 +478,7 @@ Error generating stack: `+e.message+`
     display: flex;
     align-items: center;
     background: black;
-    padding: 0 0.5rem 0.375rem 0.25rem;
+    padding: 0 0.5rem 0.375rem 0.125rem;
 
     &::before {
         content: "";
