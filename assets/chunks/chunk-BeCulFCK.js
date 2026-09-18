@@ -414,20 +414,8 @@ Error generating stack: `+e.message+`
     position: relative;
     z-index: 1;
 
-    &&::before {
-        content: "";
-        position: absolute;
-        background: white;
-        width: calc(100% + 4rem);
-        height: calc(100% + 2rem);
-    }
-
     @media ${F.landscapeLgMax} {
         margin-bottom: 0rem;
-
-        &::before {
-            display: none;
-        }
     }
 `,Pi=P.div`
     z-index: 1;
@@ -534,7 +522,6 @@ Error generating stack: `+e.message+`
     transition: ${cr.fast};
     transition-delay: 300ms;
     opacity: ${({$opacity:e})=>e};
-    background: white;
 
     @media ${F.landscapeLgMax} {
         flex-direction: column;
