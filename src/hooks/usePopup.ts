@@ -6,8 +6,8 @@ import { useMediaQuery } from "./useMediaQuery";
 import { queries } from "styles/variables";
 
 export const usePopup = (items: PortfolioItem[]) => {
-    const [touchStart, setTouchStart] = useState(null);
-    const [touchEnd, setTouchEnd] = useState(null);
+    const [touchStart, setTouchStart] = useState<number | null>(null);
+    const [touchEnd, setTouchEnd] = useState<number | null>(null);
     const { popupOpen, currentPortfolioIndex, setCurrentPortfolioIndex } =
         useStore();
     const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
@@ -16,7 +16,7 @@ export const usePopup = (items: PortfolioItem[]) => {
         setCurrentPortfolioIndex(mapIndex(newIndex, items.length - 1));
     };
 
-    const onTouchStart = (e: any) => {
+    const onTouchStart = (e: TouchEvent) => {
         setTouchEnd(null);
 
         if (!popupOpen || e.touches.length > 1) return;
@@ -26,7 +26,7 @@ export const usePopup = (items: PortfolioItem[]) => {
         );
     };
 
-    const onTouchMove = (e: any) => {
+    const onTouchMove = (e: TouchEvent) => {
         if (!popupOpen) return;
 
         if (e.touches.length > 1) {
@@ -62,7 +62,7 @@ export const usePopup = (items: PortfolioItem[]) => {
         }
     };
 
-    const onKeyDown = (e: any) => {
+    const onKeyDown = (e: KeyboardEvent) => {
         if (!popupOpen) return;
 
         if (e.keyCode === 37) {

@@ -6,25 +6,27 @@ export const useMenu = () => {
     const [lastScrollY, setLastScrollY] = useState(0);
     const { sidebarOpen } = useStore();
 
-    const controlMenu = (e: any) => {
+    const controlMenu = (e: Event) => {
+        const target = e.target as HTMLElement;
+
         if (
             !sidebarOpen &&
-            e.target.scrollTop > 120 &&
-            e.target.scrollTop > lastScrollY
+            target.scrollTop > 120 &&
+            target.scrollTop > lastScrollY
         ) {
             // if scroll down hide the menu
             setVisible(false);
         } else if (
             sidebarOpen ||
-            e.target.scrollTop <= 120 ||
-            e.target.scrollTop + 20 <= lastScrollY
+            target.scrollTop <= 120 ||
+            target.scrollTop + 20 <= lastScrollY
         ) {
             // if scroll up show the menu
             setVisible(true);
         }
 
         // remember current page location to use in the next move
-        setLastScrollY(e.target.scrollTop);
+        setLastScrollY(target.scrollTop);
     };
 
     useEffect(() => {

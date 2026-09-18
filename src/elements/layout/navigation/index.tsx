@@ -1,14 +1,9 @@
 import { Page, pages, links } from "data/navigation";
-import {
-    Label,
-    NavElement,
-    NavLink,
-    NavList,
-    StyledNavigation,
-} from "./styles";
+import { NavElement, NavLink, NavList, StyledNavigation } from "./styles";
 import { lang } from "data/lang";
 import Text from "elements/components/text";
 import { useStore } from "hooks/useStore";
+import { colors } from "styles/variables";
 
 export interface NavigationProps {
     page: Page;
@@ -19,9 +14,13 @@ const Navigation = ({ page }: NavigationProps) => {
 
     return (
         <StyledNavigation>
-            <Label margin="0 0 0.5rem 0" fontSize="0.875rem">
+            <Text
+                color={colors.secondary}
+                margin="0 0 0.5rem 0"
+                fontSize="0.875rem"
+            >
                 {lang.work}
-            </Label>
+            </Text>
             <NavList>
                 {Object.keys(pages).map((key) => {
                     const { path, name } = pages[key];
@@ -50,9 +49,13 @@ const Navigation = ({ page }: NavigationProps) => {
                 })}
             </NavList>
 
-            <Label margin="0.5rem 0" fontSize="0.875rem">
+            <Text
+                color={colors.secondary}
+                margin="0.5rem 0"
+                fontSize="0.875rem"
+            >
                 {lang.links}
-            </Label>
+            </Text>
             <NavList>
                 {Object.keys(links).map((key) => {
                     const { path, name } = links[key];

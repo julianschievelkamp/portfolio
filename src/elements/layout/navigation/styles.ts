@@ -1,15 +1,10 @@
 import Link from "elements/components/link";
-import Text from "elements/components/text";
 import { styled } from "styled-components";
 import { colors, transition } from "styles/variables";
 
 export const StyledNavigation = styled.nav`
     margin-bottom: 3rem;
     margin-left: 0.5rem;
-`;
-
-export const Label = styled(Text)`
-    color: ${colors.secondary};
 `;
 
 export const NavList = styled.ul`

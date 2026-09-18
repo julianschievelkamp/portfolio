@@ -1,5 +1,5 @@
 import { useStore } from "hooks/useStore";
-import { StyledPopup } from "./styles";
+import { InnerWrapper, OuterWrapper, StyledPopup } from "./styles";
 import Div from "elements/components/div";
 import { usePopup } from "hooks/usePopup";
 import { portfolioData } from "data/portfolioData";
@@ -15,7 +15,18 @@ const Popup = () => {
 
     return (
         <StyledPopup $isOpen={popupOpen}>
-            <SelectedItem />
+            <OuterWrapper>
+                <Div
+                    position="absolute"
+                    width="100%"
+                    height="100%"
+                    onClick={() => setPopupOpen(false)}
+                />
+
+                <InnerWrapper>
+                    <SelectedItem />
+                </InnerWrapper>
+            </OuterWrapper>
 
             <Slider />
 

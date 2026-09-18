@@ -1,13 +1,13 @@
 import Text from "elements/components/text";
 import { PaletteItem } from "../styles";
-import { useStore } from "hooks/useStore";
-import { portfolioData } from "data/portfolioData";
+import { PortfolioItem } from "data/portfolioData";
 import Div from "elements/components/div";
 
-const ItemData = () => {
-    const { currentPortfolioIndex } = useStore();
-    const activeItem = portfolioData[currentPortfolioIndex];
+export interface ItemDataProps {
+    loadedItem: PortfolioItem;
+}
 
+const ItemData = ({ loadedItem }: ItemDataProps) => {
     return (
         <Div
             position="absolute"
@@ -18,7 +18,7 @@ const ItemData = () => {
             overflow="hidden"
             margin="0.25rem 0 0 0"
         >
-            {activeItem.palette.map((color) => {
+            {loadedItem.palette.map((color) => {
                 return <PaletteItem key={color} $background={color} />;
             })}
 
@@ -28,7 +28,7 @@ const ItemData = () => {
                 margin="0 0 0 0.25rem"
                 whiteSpace="nowrap"
             >
-                {activeItem.title}
+                {loadedItem.title}
             </Text>
         </Div>
     );
