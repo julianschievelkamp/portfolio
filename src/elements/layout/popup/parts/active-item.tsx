@@ -32,7 +32,7 @@ const ActiveItem = () => {
                 fadeInOnLoad
             />
 
-            {loadedItem.video && (
+            {activeItem === loadedItem && loadedItem.video && (
                 <Video
                     src={loadedItem.video}
                     poster={loadedItem.image}
