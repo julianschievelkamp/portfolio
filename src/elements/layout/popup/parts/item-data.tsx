@@ -16,6 +16,7 @@ const ItemData = ({ loadedItem }: ItemDataProps) => {
 
                 <Text
                     bold
+                    fontSize="0.875rem"
                     textAlign="right"
                     margin="0 0 0 0.25rem"
                     whiteSpace="nowrap"

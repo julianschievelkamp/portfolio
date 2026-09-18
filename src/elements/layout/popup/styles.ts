@@ -113,7 +113,7 @@ export const Notch = styled.div`
     display: flex;
     align-items: center;
     background: black;
-    padding: 0 0.5rem 0.375rem 0.25rem;
+    padding: 0 0.5rem 0.375rem 0.125rem;
 
     &::before {
         content: "";
@@ -130,10 +130,10 @@ export const Notch = styled.div`
 
 export const PaletteItem = styled.div<{ $background: string }>`
     background: ${({ $background }) => $background};
-    width: 0.75rem;
-    height: 0.75rem;
-    min-width: 0.75rem;
-    min-height: 0.75rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    min-width: 0.625rem;
+    min-height: 0.625rem;
     margin-right: 0.25rem;
 `;
 
