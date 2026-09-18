@@ -41,20 +41,8 @@ export const InnerWrapper = styled.div`
     position: relative;
     z-index: 1;
 
-    &&::before {
-        content: "";
-        position: absolute;
-        background: white;
-        width: calc(100% + 4rem);
-        height: calc(100% + 2rem);
-    }
-
     @media ${queries.landscapeLgMax} {
         margin-bottom: 0rem;
-
-        &::before {
-            display: none;
-        }
     }
 `;
 
@@ -179,7 +167,6 @@ export const InnerSliderContainer = styled.div<{
     transition: ${transition.fast};
     transition-delay: 300ms;
     opacity: ${({ $opacity }) => $opacity};
-    background: white;
 
     @media ${queries.landscapeLgMax} {
         flex-direction: column;
