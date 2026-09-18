@@ -3,15 +3,21 @@ import { InnerWrapper, OuterWrapper, StyledPopup } from "./styles";
 import Div from "elements/components/div";
 import { usePopup } from "hooks/usePopup";
 import { portfolioData } from "data/portfolioData";
-import SelectedItem from "./parts/selected-item";
 import Slider from "./parts/slider";
 import Button from "elements/components/button";
 import Icon from "elements/components/icon";
+import ActiveItem from "./parts/active-item";
+import Arrows from "./parts/arrows";
+import { useMediaQuery } from "hooks/useMediaQuery";
+import { queries } from "styles/variables";
 
 const Popup = () => {
     const { popupOpen, setPopupOpen } = useStore();
 
     usePopup(portfolioData);
+
+    const isLandscape = useMediaQuery(queries.landscape);
+    const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
 
     return (
         <StyledPopup $isOpen={popupOpen}>
@@ -24,7 +30,9 @@ const Popup = () => {
                 />
 
                 <InnerWrapper>
-                    <SelectedItem />
+                    {isLandscape && !isLandscapeLgMax && <Arrows />}
+
+                    <ActiveItem />
                 </InnerWrapper>
             </OuterWrapper>
 

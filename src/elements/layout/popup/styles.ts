@@ -108,6 +108,38 @@ export const Arrow = styled.div<{ $isRight?: boolean }>`
     }
 `;
 
+export const StyledItemData = styled.div`
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    right: 0;
+    bottom: 0;
+    transform: translateY(100%);
+`;
+
+export const Notch = styled.div`
+    position: relative;
+    width: auto;
+    display: flex;
+    align-items: center;
+    background: black;
+    padding: 0 0.5rem 0.375rem 0.25rem;
+
+    &::before {
+        content: "";
+        position: absolute;
+        background: black;
+        transform: rotate(45deg);
+        z-index: -1;
+        left: -1rem;
+        top: -1rem;
+        width: 2rem;
+        height: 2rem;
+    }
+`;
+
 export const PaletteItem = styled.div<{ $background: string }>`
     background: ${({ $background }) => $background};
     width: 0.75rem;
@@ -115,7 +147,6 @@ export const PaletteItem = styled.div<{ $background: string }>`
     min-width: 0.75rem;
     min-height: 0.75rem;
     margin-right: 0.25rem;
-    margin-bottom: 1px;
 `;
 
 export const SliderContainer = styled.div`

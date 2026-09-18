@@ -8,7 +8,7 @@ import Video from "elements/components/video";
 import { useEffect, useRef, useState } from "react";
 import ItemData from "./item-data";
 
-const SelectedItem = () => {
+const ActiveItem = () => {
     const { currentPortfolioIndex, popupOpen } = useStore();
 
     const activeItem = portfolioData[currentPortfolioIndex];
@@ -46,4 +46,4 @@ const SelectedItem = () => {
     );
 };
 
-export default SelectedItem;
+export default ActiveItem;
