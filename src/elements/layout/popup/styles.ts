@@ -96,7 +96,7 @@ export const Arrow = styled.div<{ $isRight?: boolean }>`
     }
 `;
 
-export const StyledItemData = styled.div`
+export const ItemData = styled.div`
     overflow: hidden;
     position: absolute;
     width: 100%;
@@ -113,7 +113,7 @@ export const Notch = styled.div`
     display: flex;
     align-items: center;
     background: black;
-    padding: 0 0.5rem 0.375rem 0.125rem;
+    padding: 0 0.5rem 0.375rem 0;
 
     &::before {
         content: "";
@@ -126,15 +126,6 @@ export const Notch = styled.div`
         width: 2rem;
         height: 2rem;
     }
-`;
-
-export const PaletteItem = styled.div<{ $background: string }>`
-    background: ${({ $background }) => $background};
-    width: 0.625rem;
-    height: 0.625rem;
-    min-width: 0.625rem;
-    min-height: 0.625rem;
-    margin-right: 0.25rem;
 `;
 
 export const SliderContainer = styled.div`

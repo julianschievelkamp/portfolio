@@ -1,4 +1,4 @@
-import { ItemContainer } from "../styles";
+import { ItemContainer, ItemData, Notch } from "../styles";
 import Image from "elements/components/image";
 import { useStore } from "hooks/useStore";
 import { useMediaQuery } from "hooks/useMediaQuery";
@@ -6,7 +6,7 @@ import { queries } from "styles/variables";
 import { portfolioData } from "data/portfolioData";
 import Video from "elements/components/video";
 import { useEffect, useRef, useState } from "react";
-import ItemData from "./item-data";
+import Text from "elements/components/text";
 
 const ActiveItem = () => {
     const { currentPortfolioIndex, popupOpen } = useStore();
@@ -41,7 +41,22 @@ const ActiveItem = () => {
                 />
             )}
 
-            {!isLandscapeLgMax && <ItemData loadedItem={loadedItem} />}
+            {!isLandscapeLgMax && (
+                <ItemData>
+                    <Notch>
+                        <Text
+                            bold
+                            fontSize="0.875rem"
+                            textAlign="right"
+                            whiteSpace="nowrap"
+                            color="white"
+                            lineHeight="1"
+                        >
+                            {loadedItem.title}
+                        </Text>
+                    </Notch>
+                </ItemData>
+            )}
         </ItemContainer>
     );
 };
