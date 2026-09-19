@@ -18,6 +18,8 @@ import Daniela from "assets/img/daniela.jpg";
 import Epilogue from "assets/img/epilogue.jpg";
 import DNA1 from "assets/img/dna_1.jpg";
 import DNA2 from "assets/img/dna_2.jpg";
+import Coriolis from "assets/img/coriolis.jpg";
+import Bianca from "assets/img/bianca.jpg";
 
 import DadaYaga600w from "assets/img/thumbnails/dada_yaga-600w.jpg";
 import Andromeda600w from "assets/img/thumbnails/andromeda-600w.jpg";
@@ -39,6 +41,8 @@ import Daniela400w from "assets/img/thumbnails/daniela-400w.jpg";
 import Epilogue600w from "assets/img/thumbnails/epilogue-600w.jpg";
 import DNA1400w from "assets/img/thumbnails/dna_1-400w.jpg";
 import DNA2400w from "assets/img/thumbnails/dna_2-400w.jpg";
+import Coriolis392w from "assets/img/thumbnails/coriolis-392w.jpg";
+import Bianca411w from "assets/img/thumbnails/bianca-411w.jpg";
 
 import AndromedaVideo from "assets/videos/andromeda.mp4";
 import VersusVideo from "assets/videos/versus.mp4";
@@ -181,5 +185,17 @@ export const portfolioData: PortfolioItem[] = [
         image: DNA2,
         imageSet: `${DNA2400w} 600w, ${DNA2} 1200w`,
         aspectRatio: "2/3",
+    },
+    {
+        title: "CORIOLIS, 2017",
+        image: Coriolis,
+        imageSet: `${Coriolis392w} 600w, ${Coriolis} 1200w`,
+        aspectRatio: "49/75",
+    },
+    {
+        title: "BIANCA, 2016",
+        image: Bianca,
+        imageSet: `${Bianca411w} 600w, ${Bianca} 1200w`,
+        aspectRatio: "137/200",
     },
 ];
