@@ -1,8 +1,6 @@
 import { ItemContainer, ItemData, Notch } from "../styles";
 import Image from "elements/components/image";
 import { useStore } from "hooks/useStore";
-import { useMediaQuery } from "hooks/useMediaQuery";
-import { queries } from "styles/variables";
 import { portfolioData } from "data/portfolioData";
 import Video from "elements/components/video";
 import { useEffect, useRef, useState } from "react";
@@ -16,7 +14,6 @@ const ActiveItem = () => {
     const [loadedItem, setLoadedItem] = useState(activeItem);
     const [loadingIndicator, setLoadingIndicator] = useState(false);
 
-    const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
     const videoRef = useRef<HTMLVideoElement | null>(null);
 
     useEffect(() => {
@@ -61,22 +58,20 @@ const ActiveItem = () => {
                 />
             )}
 
-            {!isLandscapeLgMax && (
-                <ItemData>
-                    <Notch>
-                        <Text
-                            bold
-                            fontSize="0.875rem"
-                            textAlign="right"
-                            whiteSpace="nowrap"
-                            color="white"
-                            lineHeight="1"
-                        >
-                            {loadingIndicator ? lang.loading : loadedItem.title}
-                        </Text>
-                    </Notch>
-                </ItemData>
-            )}
+            <ItemData>
+                <Notch>
+                    <Text
+                        bold
+                        fontSize="0.875rem"
+                        textAlign="right"
+                        whiteSpace="nowrap"
+                        color="white"
+                        lineHeight="1"
+                    >
+                        {loadingIndicator ? lang.loading : loadedItem.title}
+                    </Text>
+                </Notch>
+            </ItemData>
         </ItemContainer>
     );
 };

@@ -105,6 +105,10 @@ export const ItemData = styled.div`
     right: 0;
     bottom: 0;
     transform: translateY(100%);
+
+    @media ${queries.landscapeLgMax} {
+        display: none;
+    }
 `;
 
 export const Notch = styled.div`
