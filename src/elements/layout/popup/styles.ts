@@ -185,7 +185,9 @@ export const SliderItem = styled.button<{ $opacity: number }>`
         margin: 0 0 0.25rem 0;
     }
 
-    &:hover {
-        opacity: 1;
+    @media ${queries.hover} {
+        &:hover {
+            opacity: 1;
+        }
     }
 `;
