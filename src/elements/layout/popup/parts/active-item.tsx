@@ -7,15 +7,31 @@ import { portfolioData } from "data/portfolioData";
 import Video from "elements/components/video";
 import { useEffect, useRef, useState } from "react";
 import Text from "elements/components/text";
+import { lang } from "data/lang";
 
 const ActiveItem = () => {
     const { currentPortfolioIndex, popupOpen } = useStore();
 
     const activeItem = portfolioData[currentPortfolioIndex];
     const [loadedItem, setLoadedItem] = useState(activeItem);
+    const [loadingIndicator, setLoadingIndicator] = useState(false);
 
     const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
     const videoRef = useRef<HTMLVideoElement | null>(null);
+
+    useEffect(() => {
+        let timer: ReturnType<typeof setTimeout>;
+
+        if (activeItem !== loadedItem) {
+            timer = setTimeout(() => {
+                setLoadingIndicator(true);
+            }, 300);
+        } else {
+            setLoadingIndicator(false);
+        }
+
+        return () => clearTimeout(timer);
+    }, [activeItem, loadedItem]);
 
     useEffect(() => {
         if (!popupOpen) {
@@ -56,7 +72,7 @@ const ActiveItem = () => {
                             color="white"
                             lineHeight="1"
                         >
-                            {loadedItem.title}
+                            {loadingIndicator ? lang.loading : loadedItem.title}
                         </Text>
                     </Notch>
                 </ItemData>
