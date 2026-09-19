@@ -29,6 +29,7 @@ const Slider = () => {
                                 sizes={item.imageSet && thumbnailSize}
                                 alt={item.title}
                                 aspectRatio={item.aspectRatio}
+                                fadeInOnLoad
                             />
                         </SliderItem>
                     );

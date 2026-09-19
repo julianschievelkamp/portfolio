@@ -51,8 +51,8 @@ export type PortfolioItem = {
     title: string;
     image: string;
     imageSet: string;
+    aspectRatio: string;
     video?: string;
-    aspectRatio?: string;
 };
 
 export const portfolioData: PortfolioItem[] = [
@@ -119,42 +119,50 @@ export const portfolioData: PortfolioItem[] = [
         title: "TRANSCENDING EGO, 2017",
         image: TranscendingEgo,
         imageSet: `${TranscendingEgo420w} 600w, ${TranscendingEgo} 1200w`,
+        aspectRatio: "7/10",
     },
     {
         title: "KIYOSHI, 2022",
         image: Kiyoshi,
         imageSet: `${Kiyoshi450w} 600w, ${Kiyoshi} 1200w`,
+        aspectRatio: "3/4",
     },
     {
         title: "XVII, 2022",
         image: XVII,
         imageSet: `${XVII450w} 600w, ${XVII} 1200w`,
+        aspectRatio: "3/4",
     },
     {
         title: "CONSCIOUSNESS, 2017",
         image: Consciousness,
         imageSet: `${Consciousness392w} 600w, ${Consciousness} 1200w`,
         video: ConsciousnessVideo,
+        aspectRatio: "49/75",
     },
     {
         title: "MAYA I, 2017",
         image: Maya1,
         imageSet: `${Maya1420w} 600w, ${Maya1} 1200w`,
+        aspectRatio: "7/10",
     },
     {
         title: "MAYA II, 2017",
         image: Maya2,
         imageSet: `${Maya2400w} 600w, ${Maya2} 1200w`,
+        aspectRatio: "2/3",
     },
     {
         title: "APOPHENIA, 2016",
         image: Apophenia,
         imageSet: `${Apophenia415w} 600w, ${Apophenia} 1200w`,
+        aspectRatio: "83/120",
     },
     {
         title: "DANIELA, 2016",
         image: Daniela,
         imageSet: `${Daniela400w} 600w, ${Daniela} 1200w`,
+        aspectRatio: "2/3",
     },
     {
         title: "EPILOGUE, 2018",
@@ -166,10 +174,12 @@ export const portfolioData: PortfolioItem[] = [
         title: "DNA (XY) I, 2017",
         image: DNA1,
         imageSet: `${DNA1400w} 600w, ${DNA1} 1200w`,
+        aspectRatio: "2/3",
     },
     {
         title: "DNA (XY) II, 2017",
         image: DNA2,
         imageSet: `${DNA2400w} 600w, ${DNA2} 1200w`,
+        aspectRatio: "2/3",
     },
 ];
