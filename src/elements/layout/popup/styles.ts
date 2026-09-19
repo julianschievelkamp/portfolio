@@ -184,4 +184,8 @@ export const SliderItem = styled.button<{ $opacity: number }>`
     @media ${queries.landscapeLgMax} {
         margin: 0 0 0.25rem 0;
     }
+
+    &:hover {
+        opacity: 1;
+    }
 `;

@@ -65,9 +65,9 @@ export const usePopup = (items: PortfolioItem[]) => {
     const onKeyDown = (e: KeyboardEvent) => {
         if (!popupOpen) return;
 
-        if (e.keyCode === 37) {
+        if (e.key === "ArrowLeft") {
             showItem(currentPortfolioIndex - 1);
-        } else if (e.keyCode === 39) {
+        } else if (e.key === "ArrowRight") {
             showItem(currentPortfolioIndex + 1);
         }
     };
