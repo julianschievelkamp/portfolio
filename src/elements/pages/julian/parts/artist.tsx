@@ -14,6 +14,7 @@ const Artist = () => {
                 <Image
                     src={SelfPortrait}
                     alt="Julian Schievelkamp"
+                    loading="eager"
                     fadeInOnLoad
                 />
             </ImageWrapper>

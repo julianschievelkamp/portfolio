@@ -48,8 +48,9 @@ export const lang = {
             fine art photographer based in Cologne, Germany. Using both analog
             film and digital techniques, his recent work emphasizes the
             synergies of classic photography and computer-generated imagery.
-            Synaesthetic experiences, where sensory impressions merge into a
-            single picture, have a great influence on his way of working.
+            Synaesthetic and psychedelic experiences, where sensory impressions
+            merge into a single picture, have had a great influence on his way
+            of working.
             <br />
             <br />
             Schievelkamp has won several prizes and awards, including the 2017
