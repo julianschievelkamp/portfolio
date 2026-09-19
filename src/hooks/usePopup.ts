@@ -12,6 +12,11 @@ export const usePopup = (items: PortfolioItem[]) => {
         useStore();
     const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
 
+    useEffect(() => {
+        setTouchEnd(null);
+        setTouchStart(null);
+    }, [isLandscapeLgMax]);
+
     const showItem = (newIndex: number) => {
         setCurrentPortfolioIndex(mapIndex(newIndex, items.length - 1));
     };
