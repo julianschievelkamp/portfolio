@@ -19,7 +19,14 @@ const Social = () => {
         >
             <StyledProfile>
                 <ProfileImage>
-                    <Image src={Profile} alt="Instagram Profile" fadeInOnLoad />
+                    <Image
+                        src={Profile}
+                        alt="Instagram Profile"
+                        aspectRatio="1/1"
+                        width="100%"
+                        height="100%"
+                        fadeInOnLoad
+                    />
                 </ProfileImage>
             </StyledProfile>
 

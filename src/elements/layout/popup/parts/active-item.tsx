@@ -29,6 +29,7 @@ const ActiveItem = () => {
                 src={activeItem.image}
                 alt={activeItem.title}
                 onLoad={() => setLoadedItem(activeItem)}
+                loading="eager"
                 fadeInOnLoad
             />
 

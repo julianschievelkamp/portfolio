@@ -28,6 +28,7 @@ const Slider = () => {
                                 srcSet={item.imageSet}
                                 sizes={item.imageSet && thumbnailSize}
                                 alt={item.title}
+                                aspectRatio={item.aspectRatio}
                             />
                         </SliderItem>
                     );

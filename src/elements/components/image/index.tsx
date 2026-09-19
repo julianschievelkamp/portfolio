@@ -10,6 +10,8 @@ export interface ImageProps {
     height?: string;
     fadeInOnLoad?: boolean;
     onLoad?: () => void;
+    loading?: "lazy" | "eager";
+    aspectRatio?: string;
     className?: string;
 }
 
@@ -22,6 +24,8 @@ const Image = ({
     height,
     fadeInOnLoad,
     onLoad,
+    loading = "lazy",
+    aspectRatio,
     className,
 }: ImageProps) => {
     const [imageLoaded, setImageLoaded] = useState(false);
@@ -46,9 +50,10 @@ const Image = ({
                 setImageLoaded(true);
                 onLoad?.();
             }}
+            loading={loading}
+            $aspectRatio={aspectRatio}
             className={className}
             ref={imageRef}
-            loading="lazy"
         />
     );
 };
