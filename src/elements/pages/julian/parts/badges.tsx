@@ -19,7 +19,6 @@ const Badges = () => {
                             <Image
                                 src={badge.image}
                                 alt={badge.alt}
-                                aspectRatio="1/1"
                                 width="100%"
                                 height="100%"
                                 fadeInOnLoad

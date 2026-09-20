@@ -42,7 +42,6 @@ const ActiveItem = () => {
                 src={activeItem.image}
                 alt={activeItem.title}
                 onLoad={() => setLoadedItem(activeItem)}
-                loading="eager"
                 fadeInOnLoad
             />
 
@@ -51,7 +50,6 @@ const ActiveItem = () => {
                     src={loadedItem.video}
                     poster={loadedItem.image}
                     ariaLabel={loadedItem.title}
-                    aspectRatio={loadedItem.aspectRatio}
                     videoRef={videoRef}
                     width="100%"
                     height="100%"

@@ -26,7 +26,6 @@ const Portfolio = () => {
                                 srcSet={item.imageSet}
                                 sizes={item.imageSet && thumbnailSize}
                                 alt={item.title}
-                                aspectRatio={item.aspectRatio}
                                 margin={item.thumbnailMargin}
                                 fadeInOnLoad
                             />

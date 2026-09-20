@@ -2,13 +2,12 @@ import { styled } from "styled-components";
 import Button from "../button";
 import Icon from "../icon";
 
-export const StyledVideo = styled.video<{ $aspectRatio?: string }>`
+export const StyledVideo = styled.video`
     object-fit: cover;
     width: ${({ width }) => width};
     height: ${({ height }) => height};
     max-width: 100%;
     cursor: pointer;
-    aspect-ratio: ${({ $aspectRatio }) => $aspectRatio};
 `;
 
 export const PlayButton = styled(Button)`

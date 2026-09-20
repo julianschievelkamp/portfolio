@@ -8,7 +8,6 @@ export interface VideoProps {
     width?: string;
     height?: string;
     ariaLabel?: string;
-    aspectRatio?: string;
 }
 
 const Video = ({
@@ -18,7 +17,6 @@ const Video = ({
     width,
     height,
     ariaLabel,
-    aspectRatio,
 }: VideoProps) => {
     const [hasStarted, setHasStarted] = useState(false);
 
@@ -51,7 +49,6 @@ const Video = ({
                 disablePictureInPicture
                 onContextMenu={(e) => e.preventDefault()}
                 aria-label={ariaLabel}
-                $aspectRatio={aspectRatio}
             >
                 <source src={src} type="video/mp4" />
                 Your browser does not support the video tag.
