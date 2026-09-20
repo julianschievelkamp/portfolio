@@ -6,7 +6,7 @@ import Div from "elements/components/div";
 import Profile from "assets/img/misc/profile.jpg";
 import Link from "elements/components/link";
 import { colors } from "styles/variables";
-import { lang } from "data/lang";
+import { languageData } from "data/languageData";
 
 const Social = () => {
     return (
@@ -15,7 +15,7 @@ const Social = () => {
             margin="2rem 0 0 0"
             alignItems="center"
             width="fit-content"
-            onClick={() => window.open(lang.social.link)}
+            onClick={() => window.open(languageData.social.link)}
         >
             <StyledProfile>
                 <ProfileImage>
@@ -31,12 +31,12 @@ const Social = () => {
 
             <Div margin="0 1rem 0 0.5rem">
                 <Text fontSize="0.875rem" bold>
-                    <Link href={lang.social.link} target="_blank">
-                        {lang.social.profile}
+                    <Link href={languageData.social.link} target="_blank">
+                        {languageData.social.profile}
                     </Link>
                 </Text>
                 <Text fontSize="0.875rem" color={colors.secondary}>
-                    {lang.social.name}
+                    {languageData.social.name}
                 </Text>
             </Div>
         </StyledSocial>

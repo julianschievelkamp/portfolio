@@ -1,6 +1,6 @@
-import { Page, pages, links } from "data/navigation";
+import { Page, pages, links } from "data/navigationData";
 import { NavElement, NavLink, NavList, StyledNavigation } from "./styles";
-import { lang } from "data/lang";
+import { languageData } from "data/languageData";
 import Text from "elements/components/text";
 import { useStore } from "hooks/useStore";
 import { colors } from "styles/variables";
@@ -19,7 +19,7 @@ const Navigation = ({ page }: NavigationProps) => {
                 margin="0 0 0.5rem 0"
                 fontSize="0.875rem"
             >
-                {lang.work}
+                {languageData.work}
             </Text>
             <NavList>
                 {Object.keys(pages).map((key) => {
@@ -54,7 +54,7 @@ const Navigation = ({ page }: NavigationProps) => {
                 margin="0.5rem 0"
                 fontSize="0.875rem"
             >
-                {lang.links}
+                {languageData.links}
             </Text>
             <NavList>
                 {Object.keys(links).map((key) => {

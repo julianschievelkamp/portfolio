@@ -1,6 +1,6 @@
 import Text from "elements/components/text";
 import { ArtistWrapper, ImageWrapper } from "../styles";
-import { lang } from "data/lang";
+import { languageData } from "data/languageData";
 import Image from "elements/components/image";
 import Div from "elements/components/div";
 
@@ -20,7 +20,7 @@ const Artist = () => {
             </ImageWrapper>
             <Div>
                 <Text fontSize="0.875rem" textAlign="justify">
-                    {lang.julian}
+                    {languageData.julian}
                 </Text>
 
                 <Social />

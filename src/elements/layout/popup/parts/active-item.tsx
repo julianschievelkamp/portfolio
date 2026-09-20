@@ -5,7 +5,7 @@ import { portfolioData } from "data/portfolioData";
 import Video from "elements/components/video";
 import { useEffect, useRef, useState } from "react";
 import Text from "elements/components/text";
-import { lang } from "data/lang";
+import { languageData } from "data/languageData";
 
 const ActiveItem = () => {
     const { currentPortfolioIndex, popupOpen } = useStore();
@@ -68,7 +68,9 @@ const ActiveItem = () => {
                         color="white"
                         lineHeight="1"
                     >
-                        {loadingIndicator ? lang.loading : loadedItem.title}
+                        {loadingIndicator
+                            ? languageData.loading
+                            : loadedItem.title}
                     </Text>
                 </Notch>
             </ItemData>

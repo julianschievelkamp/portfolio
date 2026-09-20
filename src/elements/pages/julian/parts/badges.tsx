@@ -1,5 +1,5 @@
 import { BadgesWrapper } from "../styles";
-import { lang } from "data/lang";
+import { languageData } from "data/languageData";
 import Image from "elements/components/image";
 import Divider from "elements/components/divider";
 import Div from "elements/components/div";
@@ -7,9 +7,9 @@ import Div from "elements/components/div";
 const Badges = () => {
     return (
         <>
-            <Divider>{lang.badges.headline}</Divider>
+            <Divider>{languageData.badges.headline}</Divider>
             <BadgesWrapper>
-                {lang.badges.items.map((badge) => {
+                {languageData.badges.items.map((badge) => {
                     return (
                         <Div
                             key={badge.alt}

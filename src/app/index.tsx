@@ -2,7 +2,7 @@ import GlobalStyle from "styles/global";
 import { PageContainer, StyledApp } from "./styles";
 import Sidebar from "elements/layout/sidebar";
 import Menu from "elements/layout/menu";
-import { Page } from "data/navigation";
+import { Page } from "data/navigationData";
 import { useEffect } from "react";
 
 export interface AppProps {

@@ -1,5 +1,5 @@
 import { StyledHeadline, StyledMenu } from "./styles";
-import { lang } from "data/lang";
+import { languageData } from "data/languageData";
 import { useMenu } from "hooks/useMenu";
 import Div from "elements/components/div";
 import { useStore } from "hooks/useStore";
@@ -19,7 +19,7 @@ const Menu = () => {
                     onClick={() => setSidebarOpen(false)}
                     underline={false}
                 >
-                    {lang.title}
+                    {languageData.title}
                 </Link>
             </StyledHeadline>
 

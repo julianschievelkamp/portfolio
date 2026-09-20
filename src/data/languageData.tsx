@@ -3,7 +3,7 @@ import Badge1 from "assets/img/misc/badge1.png";
 import Badge2 from "assets/img/misc/badge2.jpg";
 import Badge3 from "assets/img/misc/badge3.png";
 
-export const lang = {
+export const languageData = {
     title: (
         <>
             JULIAN
