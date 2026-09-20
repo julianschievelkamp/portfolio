@@ -16,6 +16,7 @@ const Artist = () => {
                     alt="Julian Schievelkamp"
                     loading="eager"
                     aspectRatio="3/4"
+                    height="100%"
                     fadeInOnLoad
                 />
             </ImageWrapper>
