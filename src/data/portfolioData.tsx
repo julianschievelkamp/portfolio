@@ -120,15 +120,15 @@ export const portfolioData: PortfolioItem[] = [
         aspectRatio: "1/1",
     },
     {
-        title: "XVII, 2022",
-        image: XVII,
-        imageSet: `${XVII450w} 600w, ${XVII} 1200w`,
-        aspectRatio: "3/4",
-    },
-    {
         title: "KIYOSHI, 2022",
         image: Kiyoshi,
         imageSet: `${Kiyoshi450w} 600w, ${Kiyoshi} 1200w`,
+        aspectRatio: "3/4",
+    },
+    {
+        title: "XVII, 2022",
+        image: XVII,
+        imageSet: `${XVII450w} 600w, ${XVII} 1200w`,
         aspectRatio: "3/4",
     },
     {
