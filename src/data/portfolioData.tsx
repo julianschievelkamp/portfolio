@@ -56,6 +56,7 @@ export type PortfolioItem = {
     image: string;
     imageSet: string;
     aspectRatio: string;
+    thumbnailMargin?: string;
     video?: string;
 };
 
@@ -167,12 +168,14 @@ export const portfolioData: PortfolioItem[] = [
         image: Bianca,
         imageSet: `${Bianca411w} 600w, ${Bianca} 1200w`,
         aspectRatio: "137/200",
+        thumbnailMargin: "-12% 0 0",
     },
     {
         title: "CORIOLIS, 2017",
         image: Coriolis,
         imageSet: `${Coriolis392w} 600w, ${Coriolis} 1200w`,
         aspectRatio: "49/75",
+        thumbnailMargin: "-10% 0 0",
     },
     {
         title: "DNA (XY) I, 2017",
@@ -191,6 +194,7 @@ export const portfolioData: PortfolioItem[] = [
         image: Daniela,
         imageSet: `${Daniela400w} 600w, ${Daniela} 1200w`,
         aspectRatio: "2/3",
+        thumbnailMargin: "-6% 0 0",
     },
     {
         title: "EPILOGUE, 2018",

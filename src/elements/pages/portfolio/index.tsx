@@ -11,29 +11,28 @@ const Portfolio = () => {
     return (
         <>
             <StyledPortfolio>
-                {portfolioData.map(
-                    ({ title, image, imageSet, aspectRatio }, index) => {
-                        return (
-                            <PortfolioItem
-                                key={title + index}
-                                onClick={() => {
-                                    setCurrentPortfolioIndex(index);
-                                    setPopupOpen(true);
-                                }}
-                            >
-                                <Image
-                                    width="100%"
-                                    src={image}
-                                    srcSet={imageSet}
-                                    sizes={imageSet && thumbnailSize}
-                                    alt={title}
-                                    aspectRatio={aspectRatio}
-                                    fadeInOnLoad
-                                />
-                            </PortfolioItem>
-                        );
-                    },
-                )}
+                {portfolioData.map((item, index) => {
+                    return (
+                        <PortfolioItem
+                            key={item.title + index}
+                            onClick={() => {
+                                setCurrentPortfolioIndex(index);
+                                setPopupOpen(true);
+                            }}
+                        >
+                            <Image
+                                width="100%"
+                                src={item.image}
+                                srcSet={item.imageSet}
+                                sizes={item.imageSet && thumbnailSize}
+                                alt={item.title}
+                                aspectRatio={item.aspectRatio}
+                                margin={item.thumbnailMargin}
+                                fadeInOnLoad
+                            />
+                        </PortfolioItem>
+                    );
+                })}
             </StyledPortfolio>
 
             <Popup />

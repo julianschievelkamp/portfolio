@@ -8,6 +8,7 @@ export interface ImageProps {
     alt: string;
     width?: string;
     height?: string;
+    margin?: string;
     fadeInOnLoad?: boolean;
     onLoad?: () => void;
     loading?: "lazy" | "eager";
@@ -22,6 +23,7 @@ const Image = ({
     alt,
     width,
     height,
+    margin,
     fadeInOnLoad,
     onLoad,
     loading = "lazy",
@@ -45,6 +47,7 @@ const Image = ({
             alt={alt}
             width={width}
             height={height}
+            $margin={margin}
             $imageLoaded={!fadeInOnLoad || imageLoaded}
             onLoad={() => {
                 setImageLoaded(true);
