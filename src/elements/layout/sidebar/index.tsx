@@ -7,7 +7,7 @@ import {
 } from "./styles";
 import { languageData } from "data/languageData";
 import { useMediaQuery } from "hooks/useMediaQuery";
-import { queries } from "styles/variables";
+import { colors, queries } from "styles/variables";
 import Navigation from "elements/layout/navigation";
 import { useStore } from "hooks/useStore";
 import { Page } from "data/navigationData";
@@ -34,14 +34,22 @@ const Sidebar = ({ page }: SidebarProps) => {
 
                 <ScrollContainer margin="1.5rem 0 0 0">
                     <Div>
-                        <Text fontSize="0.875rem" margin="0 0 3rem 0">
+                        <Text
+                            fontSize="0.875rem"
+                            margin="0 0 3rem 0"
+                            color={colors.secondary}
+                        >
                             {languageData.intro}
                         </Text>
 
                         <Navigation page={page} />
                     </Div>
 
-                    <Text fontSize="0.875rem" margin="0.5rem 0 0 0">
+                    <Text
+                        fontSize="0.875rem"
+                        margin="0.5rem 0 0 0"
+                        color={colors.secondary}
+                    >
                         {languageData.copyright}
                     </Text>
                 </ScrollContainer>

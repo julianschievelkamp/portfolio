@@ -160,7 +160,7 @@ export const InnerSliderContainer = styled.div<{
     display: flex;
     overflow: hidden;
     transition: ${transition.fast};
-    transition-delay: 300ms;
+    // transition-delay: 100ms;
     opacity: ${({ $opacity }) => $opacity};
     background: white;
 
