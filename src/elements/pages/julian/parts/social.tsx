@@ -23,6 +23,7 @@ const Social = () => {
                         src={Profile}
                         alt="Instagram Profile"
                         aspectRatio="1/1"
+                        loading="eager"
                         width="100%"
                         height="100%"
                     />
