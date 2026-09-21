@@ -53,7 +53,7 @@ Error generating stack: `+e.message+`
         padding: 0;
         font-size: 100%;
         width: 100vw;
-        height: var(--100vh);
+        height: 100vh;
         overflow: hidden;
         background-color: white;
     }
