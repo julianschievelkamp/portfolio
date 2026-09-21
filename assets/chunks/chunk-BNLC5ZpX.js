@@ -411,7 +411,7 @@ Error generating stack: `+e.message+`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
     width: 100%;
     position: relative;
     z-index: 1;
@@ -432,7 +432,7 @@ Error generating stack: `+e.message+`
         object-fit: cover;
         overflow: hidden;
         min-height: 10rem;
-        max-height: calc(var(--100vh) - 13rem);
+        max-height: calc(var(--100vh) - 14rem);
 
         @media ${F.landscapeLgMax} {
             max-height: calc(var(--100vh) - 2rem);
