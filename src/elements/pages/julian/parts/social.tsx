@@ -2,8 +2,6 @@ import Text from "elements/components/text";
 import { StyledSocial, ProfileImage, StyledProfile } from "../styles";
 import Image from "elements/components/image";
 import Div from "elements/components/div";
-
-import Profile from "assets/img/misc/profile.jpg";
 import Link from "elements/components/link";
 import { colors } from "styles/variables";
 import { languageData } from "data/languageData";
@@ -20,7 +18,7 @@ const Social = () => {
             <StyledProfile>
                 <ProfileImage>
                     <Image
-                        src={Profile}
+                        src={languageData.social.image}
                         alt="Instagram Profile"
                         width="100%"
                         height="100%"

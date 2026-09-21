@@ -5,13 +5,11 @@ import { portfolioData } from "data/portfolioData";
 import { thumbnailSize } from "styles/variables";
 
 const Slider = () => {
-    const { popupOpen, currentPortfolioIndex, setCurrentPortfolioIndex } =
-        useStore();
+    const { currentPortfolioIndex, setCurrentPortfolioIndex } = useStore();
 
     return (
         <SliderContainer>
             <InnerSliderContainer
-                $opacity={popupOpen ? 1 : 0}
                 $currentPortfolioIndex={currentPortfolioIndex}
             >
                 {portfolioData.map((item, index) => {

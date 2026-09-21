@@ -150,7 +150,6 @@ export const SliderContainer = styled.div`
 
 export const InnerSliderContainer = styled.div<{
     $currentPortfolioIndex: number;
-    $opacity: number;
 }>`
     position: absolute;
     bottom: 0;
@@ -160,8 +159,6 @@ export const InnerSliderContainer = styled.div<{
     display: flex;
     overflow: hidden;
     transition: ${transition.fast};
-    // transition-delay: 100ms;
-    opacity: ${({ $opacity }) => $opacity};
     background: white;
 
     @media ${queries.landscapeLgMax} {

@@ -1,4 +1,8 @@
 import Link from "elements/components/link";
+
+import SelfPortrait from "assets/img/misc/self_portrait.jpg";
+import Profile from "assets/img/misc/profile.jpg";
+
 import Badge1 from "assets/img/misc/badge1.png";
 import Badge2 from "assets/img/misc/badge2.jpg";
 import Badge3 from "assets/img/misc/badge3.png";
@@ -43,35 +47,39 @@ export const languageData = {
             </Link>
         </>
     ),
-    julian: (
-        <>
-            Julian Schievelkamp (b. 1994) is a contemporary visual artist and
-            fine art photographer based in Cologne, Germany. Using both analog
-            film and digital techniques, his recent work emphasizes the
-            synergies of classic photography and computer-generated imagery.
-            Synaesthetic and psychedelic experiences, where sensory impressions
-            merge into a single picture, have had a great influence on his way
-            of working.
-            <br />
-            <br />
-            Schievelkamp has won several prizes and awards, including the 2017
-            Prix de la Photographie Paris. In 2019 the artist was awarded the
-            title <i>Fine Art Photographer of the Year</i> by the jury of the
-            5th Fine Art Photography Awards. He has exhibited his work in
-            London, Berlin and Cologne and over 100 YellowKorner galleries
-            worldwide.
-            <br />
-            <br />
-            High-quality fine art prints in various formats and sizes are
-            available upon request. For collaborations, commissions, or
-            inquiries, feel free to reach out via{" "}
-            <Link href="mailto:mail@julianschievelkamp.com" target="_blank">
-                email
-            </Link>{" "}
-            or social media.
-        </>
-    ),
+    julian: {
+        image: SelfPortrait,
+        text: (
+            <>
+                Julian Schievelkamp (b. 1994) is a contemporary visual artist
+                and fine art photographer based in Cologne, Germany. Using both
+                analog film and digital techniques, his recent work emphasizes
+                the synergies of classic photography and computer-generated
+                imagery. Synaesthetic and psychedelic experiences, where sensory
+                impressions merge into a single picture, have had a great
+                influence on his way of working.
+                <br />
+                <br />
+                Schievelkamp has won several prizes and awards, including the
+                2017 Prix de la Photographie Paris. In 2019 the artist was
+                awarded the title <i>Fine Art Photographer of the Year</i> by
+                the jury of the 5th Fine Art Photography Awards. He has
+                exhibited his work in London, Berlin and Cologne and over 100
+                YellowKorner galleries worldwide.
+                <br />
+                <br />
+                High-quality fine art prints in various formats and sizes are
+                available upon request. For collaborations, commissions, or
+                inquiries, feel free to reach out via{" "}
+                <Link href="mailto:mail@julianschievelkamp.com" target="_blank">
+                    email
+                </Link>{" "}
+                or social media.
+            </>
+        ),
+    },
     social: {
+        image: Profile,
         link: "https://www.instagram.com/julianschievelkamp/",
         name: "Julian Schievelkamp",
         profile: "@julianschievelkamp",
