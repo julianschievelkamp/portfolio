@@ -36,7 +36,7 @@ export const InnerWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 6rem;
+    margin-bottom: 5rem;
     width: 100%;
     position: relative;
     z-index: 1;
@@ -59,7 +59,7 @@ export const ItemContainer = styled.div`
         object-fit: cover;
         overflow: hidden;
         min-height: 10rem;
-        max-height: calc(var(--100vh) - 15rem);
+        max-height: calc(var(--100vh) - 14rem);
 
         @media ${queries.landscapeLgMax} {
             max-height: calc(var(--100vh) - 2rem);
