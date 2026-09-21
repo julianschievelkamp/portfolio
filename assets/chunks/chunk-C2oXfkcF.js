@@ -432,7 +432,7 @@ Error generating stack: `+e.message+`
         object-fit: cover;
         overflow: hidden;
         min-height: 10rem;
-        max-height: calc(var(--100vh) - 13rem);
+        max-height: calc(var(--100vh) - 14rem);
 
         @media ${F.landscapeLgMax} {
             max-height: calc(var(--100vh) - 2rem);
