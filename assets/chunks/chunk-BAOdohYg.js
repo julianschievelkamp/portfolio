@@ -71,7 +71,7 @@ Error generating stack: `+e.message+`
     }
 `,ur=P.div`
     width: 100vw;
-    height: var(--100vh);
+    height: 100vh;
     overflow: hidden;
     background-color: white;
     color: black;
@@ -80,7 +80,6 @@ Error generating stack: `+e.message+`
     ${lr}
 
     width: 100%;
-    //height: var(--100vh);
     height: 100vh;
     padding-top: 7.5rem;
 
