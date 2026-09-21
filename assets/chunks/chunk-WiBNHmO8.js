@@ -53,7 +53,6 @@ Error generating stack: `+e.message+`
         padding: 0;
         font-size: 100%;
         width: 100vw;
-        height: 100vh;
         overflow-x: hidden;
         background-color: white;
     }
@@ -71,13 +70,10 @@ Error generating stack: `+e.message+`
     }
 `,ur=P.div`
     width: 100vw;
-    height: 100vh;
     overflow-x: hidden;
     background-color: white;
     color: black;
     position: relative;
-
-    ${lr}
 `,dr=P.div`
     width: 100%;
     padding-top: 7.5rem;
