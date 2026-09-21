@@ -386,7 +386,7 @@ Error generating stack: `+e.message+`
     pointer-events: ${({$isOpen:e})=>e?`all`:`none`};
     transition: ${cr.fast};
     width: 100%;
-    height: 100%;
+    height: 100vh;
     padding: 1rem;
     user-select: none;
     z-index: 99;
