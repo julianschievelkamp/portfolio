@@ -518,7 +518,7 @@ Error generating stack: `+e.message+`
     transform: ${({$currentPortfolioIndex:e})=>`translateX(calc(-3.25rem * ${e}))`};
     display: flex;
     overflow: hidden;
-    transition: ${cr.fast};
+    transition: ${({$transition:e})=>e};
     background: white;
 
     @media ${F.landscapeLgMax} {
@@ -549,7 +549,7 @@ Error generating stack: `+e.message+`
             opacity: 1;
         }
     }
-`,Vi=(e,t)=>e>t?0:e<0?t:e,Hi=e=>{let[t,n]=(0,h.useState)(null),[r,i]=(0,h.useState)(null),{popupOpen:a,currentPortfolioIndex:o,setCurrentPortfolioIndex:s}=si(),c=Or(F.landscapeLgMax);(0,h.useEffect)(()=>{i(null),n(null)},[c]);let l=t=>{s(Vi(t,e.length-1))},u=e=>{i(null),!(!a||e.touches.length>1)&&n(c?e.touches[0].clientY:e.touches[0].clientX)},d=e=>{a&&(e.touches.length>1?(i(null),n(null)):i(c?e.touches[0].clientY:e.touches[0].clientX))},f=()=>{if(!a||!t||!r||window.visualViewport&&Math.abs(window.visualViewport.scale-1)>.05)return;let e=t-r;e>50?l(o+1):e<-50&&l(o-1)},p=e=>{a&&(e.key===`ArrowLeft`?l(o-1):e.key===`ArrowRight`&&l(o+1))};(0,h.useEffect)(()=>(document.addEventListener(`keydown`,p),document.addEventListener(`touchstart`,u,{passive:!0}),document.addEventListener(`touchmove`,d,{passive:!0}),document.addEventListener(`touchend`,f,{passive:!0}),()=>{document.removeEventListener(`keydown`,p),document.removeEventListener(`touchstart`,u),document.removeEventListener(`touchmove`,d),document.removeEventListener(`touchend`,f)}),[a,o,t,r])},Ui=()=>{let{currentPortfolioIndex:e,setCurrentPortfolioIndex:t}=si();return(0,I.jsx)(Ri,{children:(0,I.jsx)(zi,{$currentPortfolioIndex:e,children:Ai.map((n,r)=>(0,I.jsx)(Bi,{"aria-label":n.title,onClick:()=>t(r),$opacity:r===e?1:.5,children:(0,I.jsx)(zr,{width:`100%`,src:n.image,srcSet:n.imageSet,sizes:n.imageSet&&`(max-width: 1200px) 300px, 600px`,alt:n.title,margin:n.thumbnailMargin,fadeInOnLoad:!0})},n.title))})})},Wi=P.button`
+`,Vi=(e,t)=>e>t?0:e<0?t:e,Hi=e=>{let[t,n]=(0,h.useState)(null),[r,i]=(0,h.useState)(null),{popupOpen:a,currentPortfolioIndex:o,setCurrentPortfolioIndex:s}=si(),c=Or(F.landscapeLgMax);(0,h.useEffect)(()=>{i(null),n(null)},[c]);let l=t=>{s(Vi(t,e.length-1))},u=e=>{i(null),!(!a||e.touches.length>1)&&n(c?e.touches[0].clientY:e.touches[0].clientX)},d=e=>{a&&(e.touches.length>1?(i(null),n(null)):i(c?e.touches[0].clientY:e.touches[0].clientX))},f=()=>{if(!a||!t||!r||window.visualViewport&&Math.abs(window.visualViewport.scale-1)>.05)return;let e=t-r;e>50?l(o+1):e<-50&&l(o-1)},p=e=>{a&&(e.key===`ArrowLeft`?l(o-1):e.key===`ArrowRight`&&l(o+1))};(0,h.useEffect)(()=>(document.addEventListener(`keydown`,p),document.addEventListener(`touchstart`,u,{passive:!0}),document.addEventListener(`touchmove`,d,{passive:!0}),document.addEventListener(`touchend`,f,{passive:!0}),()=>{document.removeEventListener(`keydown`,p),document.removeEventListener(`touchstart`,u),document.removeEventListener(`touchmove`,d),document.removeEventListener(`touchend`,f)}),[a,o,t,r])},Ui=()=>{let{currentPortfolioIndex:e,setCurrentPortfolioIndex:t,popupOpen:n}=si(),[r,i]=(0,h.useState)(!1);return(0,h.useEffect)(()=>{i(n)},[n]),(0,I.jsx)(Ri,{children:(0,I.jsx)(zi,{$currentPortfolioIndex:e,$transition:r?cr.fast:void 0,children:Ai.map((n,r)=>(0,I.jsx)(Bi,{"aria-label":n.title,onClick:()=>t(r),$opacity:r===e?1:.5,children:(0,I.jsx)(zr,{width:`100%`,src:n.image,srcSet:n.imageSet,sizes:n.imageSet&&`(max-width: 1200px) 300px, 600px`,alt:n.title,margin:n.thumbnailMargin,fadeInOnLoad:!0})},n.title))})})},Wi=P.button`
     padding: 0;
     background: transparent;
     outline: none;
