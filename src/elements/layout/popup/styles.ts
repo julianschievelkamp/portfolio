@@ -150,6 +150,7 @@ export const SliderContainer = styled.div`
 
 export const InnerSliderContainer = styled.div<{
     $currentPortfolioIndex: number;
+    $transition?: string;
 }>`
     position: absolute;
     bottom: 0;
@@ -158,7 +159,7 @@ export const InnerSliderContainer = styled.div<{
         `translateX(calc(-3.25rem * ${$currentPortfolioIndex}))`};
     display: flex;
     overflow: hidden;
-    transition: ${transition.fast};
+    transition: ${({ $transition }) => $transition};
     background: white;
 
     @media ${queries.landscapeLgMax} {

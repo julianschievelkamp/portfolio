@@ -2,15 +2,23 @@ import { SliderContainer, InnerSliderContainer, SliderItem } from "../styles";
 import Image from "elements/components/image";
 import { useStore } from "hooks/useStore";
 import { portfolioData } from "data/portfolioData";
-import { thumbnailSize } from "styles/variables";
+import { thumbnailSize, transition } from "styles/variables";
+import { useEffect, useState } from "react";
 
 const Slider = () => {
-    const { currentPortfolioIndex, setCurrentPortfolioIndex } = useStore();
+    const { currentPortfolioIndex, setCurrentPortfolioIndex, popupOpen } =
+        useStore();
+    const [hasOpenedPopup, setHasOpenedPopup] = useState(false);
+
+    useEffect(() => {
+        setHasOpenedPopup(popupOpen);
+    }, [popupOpen]);
 
     return (
         <SliderContainer>
             <InnerSliderContainer
                 $currentPortfolioIndex={currentPortfolioIndex}
+                $transition={hasOpenedPopup ? transition.fast : undefined}
             >
                 {portfolioData.map((item, index) => {
                     return (
