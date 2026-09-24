@@ -10,7 +10,7 @@ export const StyledPopup = styled.div<{ $isOpen: boolean }>`
     visibility: ${({ $isOpen }) => ($isOpen ? "visible" : "hidden")};
     opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
     pointer-events: ${({ $isOpen }) => ($isOpen ? "all" : "none")};
-    transition: ${transition.fast};
+    transition: ${transition.fast} allow-discrete;
     width: 100%;
     height: 100%;
     padding: 1rem;
