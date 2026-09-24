@@ -386,10 +386,10 @@ Error generating stack: `+e.message+`
     top: 0;
     left: 0;
     background-color: white;
-    //visibility: ${({$isOpen:e})=>e?`visible`:`hidden`};
+    visibility: ${({$isOpen:e})=>e?`visible`:`hidden`};
     opacity: ${({$isOpen:e})=>+!!e};
     pointer-events: ${({$isOpen:e})=>e?`all`:`none`};
-    transition: ${cr.fast};
+    transition: ${cr.fast} allow-discrete;
     width: 100%;
     height: 100%;
     padding: 1rem;
