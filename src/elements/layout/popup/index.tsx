@@ -1,10 +1,9 @@
 import { useStore } from "hooks/useStore";
-import { InnerWrapper, OuterWrapper, StyledPopup } from "./styles";
+import { CloseButton, InnerWrapper, OuterWrapper, StyledPopup } from "./styles";
 import Div from "elements/components/div";
 import { usePopup } from "hooks/usePopup";
 import { portfolioData } from "data/portfolioData";
 import Slider from "./parts/slider";
-import Button from "elements/components/button";
 import Icon from "elements/components/icon";
 import ActiveItem from "./parts/active-item";
 import Arrows from "./parts/arrows";
@@ -21,19 +20,9 @@ const Popup = () => {
 
     return (
         <StyledPopup $isOpen={popupOpen}>
-            <Div
-                position="absolute"
-                top="1rem"
-                right="1rem"
-                zIndex={9}
-                background="white"
-                width="2rem"
-                height="2rem"
-            >
-                <Button onClick={() => setPopupOpen(false)} ariaLabel="Close">
-                    <Icon name="close" size="2rem" />
-                </Button>
-            </Div>
+            <CloseButton onClick={() => setPopupOpen(false)} ariaLabel="Close">
+                <Icon name="close" size="2rem" />
+            </CloseButton>
 
             <OuterWrapper>
                 <Div

@@ -25,6 +25,16 @@ export const StyledPopup = styled.div<{ $isOpen: boolean }>`
     }
 `;
 
+export const CloseButton = styled(Button)`
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 9;
+    background: white;
+    width: 2rem;
+    height: 2rem;
+`;
+
 export const OuterWrapper = styled.div`
     position: relative;
     height: 100%;
@@ -75,7 +85,7 @@ export const ItemContainer = styled.div`
     }
 `;
 
-export const Arrow = styled.div<{ $isRight?: boolean }>`
+export const Arrow = styled(Button)<{ $isRight?: boolean }>`
     position: absolute;
     height: calc(100% - 16px);
     top: 50%;
@@ -84,18 +94,12 @@ export const Arrow = styled.div<{ $isRight?: boolean }>`
     left: ${({ $isRight }) => ($isRight ? "unset" : "0")};
     right: ${({ $isRight }) => ($isRight ? "0" : "unset")};
 
-    > button {
-        position: relative;
-        width: 100%;
-        height: 100%;
-
-        > div {
-            position: absolute;
-            left: ${({ $isRight }) => ($isRight ? "unset" : "2rem")};
-            right: ${({ $isRight }) => ($isRight ? "2rem" : "unset")};
-            top: 50%;
-            transform: translateY(-50%);
-        }
+    > div {
+        position: absolute;
+        left: ${({ $isRight }) => ($isRight ? "unset" : "2rem")};
+        right: ${({ $isRight }) => ($isRight ? "2rem" : "unset")};
+        top: 50%;
+        transform: translateY(-50%);
     }
 `;
 
@@ -161,7 +165,6 @@ export const InnerSliderContainer = styled.div<{
     transform: ${({ $currentPortfolioIndex }) =>
         `translateX(calc(-3.25rem * ${$currentPortfolioIndex}))`};
     display: flex;
-    //overflow: hidden;
     transition: ${({ $transition }) => $transition};
     background: white;
 

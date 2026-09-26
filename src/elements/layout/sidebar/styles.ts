@@ -16,6 +16,7 @@ export const StyledSidebar = styled.div<{
     left: 0;
     transform: ${({ $sidebarOpen }) =>
         `translateX(${$sidebarOpen ? 0 : "-100%"})`};
+    visibility: ${({ $sidebarOpen }) => ($sidebarOpen ? "visible" : "hidden")};
     transition: ${transition.fast};
     overflow: hidden;
     display: flex;
@@ -26,6 +27,7 @@ export const StyledSidebar = styled.div<{
         width: 17rem;
         padding: 2rem;
         transform: translateX(0);
+        visibility: visible;
     }
 `;
 
@@ -40,7 +42,7 @@ export const CloseTrigger = styled.div<{ $isActive: boolean }>`
     pointer-events: ${({ $isActive }) => ($isActive ? "all" : "none")};
     opacity: ${({ $isActive }) => ($isActive ? 1 : 0)};
     visibility: ${({ $isActive }) => ($isActive ? "visible" : "hidden")};
-    z-index: 1;
+    z-index: 9;
 `;
 
 export const ScrollContainer = styled(Div)`

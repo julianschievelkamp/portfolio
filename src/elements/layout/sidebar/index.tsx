@@ -29,6 +29,7 @@ const Sidebar = ({ page }: SidebarProps) => {
                     $isActive={sidebarOpen}
                 />
             )}
+
             <StyledSidebar $sidebarOpen={sidebarOpen}>
                 <StyledHeadline>{languageData.title}</StyledHeadline>
 

@@ -14,7 +14,8 @@ const Portfolio = () => {
                 {portfolioData.map((item, index) => {
                     return (
                         <PortfolioItem
-                            key={item.title + index}
+                            key={item.title}
+                            aria-label={item.title}
                             onClick={() => {
                                 setCurrentPortfolioIndex(index);
                                 setPopupOpen(true);

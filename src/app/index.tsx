@@ -34,11 +34,11 @@ const App = ({ page }: AppProps) => {
         <StyledApp>
             <GlobalStyle />
 
-            <PageContainer id="page-container">{page.element}</PageContainer>
+            <Menu />
 
             <Sidebar page={page} />
 
-            <Menu />
+            <PageContainer id="page-container">{page.element}</PageContainer>
         </StyledApp>
     );
 };

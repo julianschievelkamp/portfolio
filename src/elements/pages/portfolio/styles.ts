@@ -1,3 +1,4 @@
+import Button from "elements/components/button";
 import { styled } from "styled-components";
 import { queries } from "styles/variables";
 
@@ -15,15 +16,14 @@ export const StyledPortfolio = styled.div`
     }
 `;
 
-export const PortfolioItem = styled.div`
+export const PortfolioItem = styled(Button)`
     overflow: hidden;
     position: relative;
     min-width: 5rem;
     min-height: 5rem;
     height: calc((100vw - 1.5rem) / 3);
     width: 100%;
-    cursor: pointer;
-    background-color: rgb(0, 0, 0, 0.05);
+    background-color: rgb(0, 0, 0, 0.1);
 
     @media ${queries.md} {
         height: calc((100vw - 1.5rem - 17rem) / 3);
