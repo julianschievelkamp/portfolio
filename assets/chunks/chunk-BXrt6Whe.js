@@ -76,7 +76,7 @@ Error generating stack: `+e.message+`
     background-color: white;
     color: black;
     position: relative;
-`,fr=N.div`
+`,fr=N.main`
     ${ur}
 
     width: 100%;
@@ -552,18 +552,18 @@ Error generating stack: `+e.message+`
     width: 3rem;
     height: 3rem;
     overflow: hidden;
-    opacity: ${({$opacity:e})=>e};
 
     @media ${P.landscapeLgMax} {
         margin: 0 0 0.25rem 0;
     }
 
-    &:focus {
-        opacity: 1;
+    img {
+        transition: none;
+        opacity: ${({$opacity:e})=>e};
     }
 
     @media ${P.hover} {
-        &:hover {
+        &:hover img {
             opacity: 1;
         }
     }
