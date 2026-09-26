@@ -54,6 +54,7 @@ export const InnerWrapper = styled.div`
 
     @media ${queries.landscapeLgMax} {
         margin-bottom: 0rem;
+        width: auto;
     }
 `;
 

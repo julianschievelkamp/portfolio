@@ -3,10 +3,13 @@ import Image from "elements/components/image";
 import { useStore } from "hooks/useStore";
 import { portfolioData } from "data/portfolioData";
 import Popup from "elements/layout/popup";
-import { thumbnailSize } from "styles/variables";
+import { queries, thumbnailSize } from "styles/variables";
+import { useMediaQuery } from "hooks/useMediaQuery";
 
 const Portfolio = () => {
-    const { setCurrentPortfolioIndex, setPopupOpen } = useStore();
+    const { setCurrentPortfolioIndex, setPopupOpen, popupOpen, sidebarOpen } =
+        useStore();
+    const isMd = useMediaQuery(queries.md);
 
     return (
         <>
@@ -20,6 +23,9 @@ const Portfolio = () => {
                                 setCurrentPortfolioIndex(index);
                                 setPopupOpen(true);
                             }}
+                            tabIndex={
+                                popupOpen || (!isMd && sidebarOpen) ? -1 : 0
+                            }
                         >
                             <Image
                                 width="100%"
