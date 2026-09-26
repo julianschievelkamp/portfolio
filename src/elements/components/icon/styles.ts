@@ -11,6 +11,8 @@ export const StyledIcon = styled.div<{
     justify-content: center;
     width: ${({ $size }) => $size};
     height: ${({ $size }) => $size};
+    min-height: ${({ $size }) => $size};
+    min-width: ${({ $size }) => $size};
     margin: ${({ $margin }) => $margin};
     padding: ${({ $padding }) => $padding};
     max-width: 100%;

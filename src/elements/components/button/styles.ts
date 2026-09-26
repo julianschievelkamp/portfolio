@@ -4,7 +4,7 @@ import { colors, transition } from "styles/variables";
 export const StyledButton = styled.button`
     padding: 0;
     background: transparent;
-    outline: none;
+    outline-color: ${colors.yellow};
     border: none;
     cursor: pointer;
 

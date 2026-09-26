@@ -5,6 +5,7 @@ import { colors, transition } from "styles/variables";
 export const StyledNavigation = styled.nav`
     margin-bottom: 3rem;
     margin-left: 0.5rem;
+    padding-right: 0.5rem;
 `;
 
 export const NavList = styled.ul`

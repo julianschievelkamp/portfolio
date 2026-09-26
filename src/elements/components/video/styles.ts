@@ -7,16 +7,17 @@ export const StyledVideo = styled.video`
     width: ${({ width }) => width};
     height: ${({ height }) => height};
     max-width: 100%;
-    cursor: pointer;
 `;
 
 export const PlayButton = styled(Button)`
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     overflow: hidden;
+    cursor: pointer;
 `;
 
 export const PlayIcon = styled(Icon)`

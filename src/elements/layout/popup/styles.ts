@@ -1,6 +1,7 @@
 import { queries } from "styles/variables";
 import { styled } from "styled-components";
 import { transition } from "styles/variables";
+import Button from "elements/components/button";
 
 export const StyledPopup = styled.div<{ $isOpen: boolean }>`
     position: fixed;
@@ -76,7 +77,9 @@ export const ItemContainer = styled.div`
 
 export const Arrow = styled.div<{ $isRight?: boolean }>`
     position: absolute;
-    height: 100%;
+    height: calc(100% - 16px);
+    top: 50%;
+    transform: translateY(-50%);
     width: 50%;
     left: ${({ $isRight }) => ($isRight ? "unset" : "0")};
     right: ${({ $isRight }) => ($isRight ? "0" : "unset")};
@@ -158,7 +161,7 @@ export const InnerSliderContainer = styled.div<{
     transform: ${({ $currentPortfolioIndex }) =>
         `translateX(calc(-3.25rem * ${$currentPortfolioIndex}))`};
     display: flex;
-    overflow: hidden;
+    //overflow: hidden;
     transition: ${({ $transition }) => $transition};
     background: white;
 
@@ -172,17 +175,13 @@ export const InnerSliderContainer = styled.div<{
     }
 `;
 
-export const SliderItem = styled.button<{ $opacity: number }>`
+export const SliderItem = styled(Button)<{ $opacity: number }>`
     margin: 0 0.25rem 0 0;
-    padding: 0;
-    outline: none;
-    border: none;
     background: transparent;
     width: 3rem;
     height: 3rem;
     overflow: hidden;
     opacity: ${({ $opacity }) => $opacity};
-    cursor: pointer;
 
     @media ${queries.landscapeLgMax} {
         margin: 0 0 0.25rem 0;

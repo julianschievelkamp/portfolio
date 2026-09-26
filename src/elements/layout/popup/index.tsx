@@ -21,6 +21,20 @@ const Popup = () => {
 
     return (
         <StyledPopup $isOpen={popupOpen}>
+            <Div
+                position="absolute"
+                top="1rem"
+                right="1rem"
+                zIndex={9}
+                background="white"
+                width="2rem"
+                height="2rem"
+            >
+                <Button onClick={() => setPopupOpen(false)} ariaLabel="Close">
+                    <Icon name="close" size="2rem" />
+                </Button>
+            </Div>
+
             <OuterWrapper>
                 <Div
                     position="absolute"
@@ -37,20 +51,6 @@ const Popup = () => {
             </OuterWrapper>
 
             <Slider />
-
-            <Div
-                position="absolute"
-                top="1rem"
-                right="1rem"
-                zIndex={1}
-                background="white"
-                width="2rem"
-                height="2rem"
-            >
-                <Button onClick={() => setPopupOpen(false)} ariaLabel="Close">
-                    <Icon name="close" size="2rem" />
-                </Button>
-            </Div>
         </StyledPopup>
     );
 };
