@@ -13,14 +13,18 @@ import { queries } from "styles/variables";
 const Popup = () => {
     const { popupOpen, setPopupOpen } = useStore();
 
-    usePopup(portfolioData);
-
     const isLandscape = useMediaQuery(queries.landscape);
     const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
 
+    usePopup(portfolioData);
+
     return (
         <StyledPopup $isOpen={popupOpen}>
-            <CloseButton onClick={() => setPopupOpen(false)} ariaLabel="Close">
+            <CloseButton
+                onClick={() => setPopupOpen(false)}
+                ariaLabel="Close"
+                tabIndex={-1}
+            >
                 <Icon name="close" size="2rem" />
             </CloseButton>
 

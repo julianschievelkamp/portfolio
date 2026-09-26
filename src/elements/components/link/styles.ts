@@ -5,7 +5,6 @@ export const StyledLink = styled.a<{ $underline: boolean }>`
     color: black;
     text-decoration: ${({ $underline }) => ($underline ? "underline" : "none")};
     transition: ${transition.fast};
-    outline-color: ${colors.primary};
 
     &:hover {
         color: ${colors.primary};

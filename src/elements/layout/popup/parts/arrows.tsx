@@ -11,6 +11,7 @@ const Arrows = () => {
         <>
             <Arrow
                 ariaLabel="Previous"
+                tabIndex={-1}
                 onClick={() =>
                     setCurrentPortfolioIndex(
                         mapIndex(
@@ -26,6 +27,7 @@ const Arrows = () => {
             <Arrow
                 $isRight
                 ariaLabel="Next"
+                tabIndex={-1}
                 onClick={() =>
                     setCurrentPortfolioIndex(
                         mapIndex(

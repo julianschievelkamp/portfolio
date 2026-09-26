@@ -27,6 +27,7 @@ export const StyledPopup = styled.div<{ $isOpen: boolean }>`
 
 export const CloseButton = styled(Button)`
     position: absolute;
+    outline: none;
     top: 1rem;
     right: 1rem;
     z-index: 9;
@@ -88,9 +89,8 @@ export const ItemContainer = styled.div`
 
 export const Arrow = styled(Button)<{ $isRight?: boolean }>`
     position: absolute;
-    height: calc(100% - 16px);
-    top: 50%;
-    transform: translateY(-50%);
+    outline: none;
+    height: 100%;
     width: 50%;
     left: ${({ $isRight }) => ($isRight ? "unset" : "0")};
     right: ${({ $isRight }) => ($isRight ? "0" : "unset")};
