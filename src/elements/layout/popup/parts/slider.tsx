@@ -2,31 +2,32 @@ import { SliderContainer, InnerSliderContainer, SliderItem } from "../styles";
 import Image from "elements/components/image";
 import { useStore } from "hooks/useStore";
 import { portfolioData } from "data/portfolioData";
-import { thumbnailSize, transition } from "styles/variables";
+import { thumbnailSize } from "styles/variables";
 import { useEffect, useState } from "react";
 
 const Slider = () => {
-    const { currentPortfolioIndex, setCurrentPortfolioIndex, popupOpen } =
-        useStore();
-    const [hasOpenedPopup, setHasOpenedPopup] = useState(false);
+    const { currentPortfolioIndex, setCurrentPortfolioIndex } = useStore();
+    const [selectedIndex, setSelectedIndex] = useState(currentPortfolioIndex);
 
     useEffect(() => {
-        setHasOpenedPopup(popupOpen);
-    }, [popupOpen]);
+        setSelectedIndex(currentPortfolioIndex);
+    }, [currentPortfolioIndex]);
 
     return (
         <SliderContainer>
-            <InnerSliderContainer
-                $currentPortfolioIndex={currentPortfolioIndex}
-                $transition={hasOpenedPopup ? transition.fast : undefined}
-            >
+            <InnerSliderContainer $selectedIndex={selectedIndex}>
                 {portfolioData.map((item, index) => {
                     return (
                         <SliderItem
                             key={item.title}
                             aria-label={item.title}
                             onClick={() => setCurrentPortfolioIndex(index)}
-                            $opacity={index === currentPortfolioIndex ? 1 : 0.5}
+                            onFocus={(e) => {
+                                // only if focused via tab
+                                if (e.target.matches(":focus-visible")) {
+                                    setSelectedIndex(index);
+                                }
+                            }}
                         >
                             <Image
                                 width="100%"
@@ -35,7 +36,9 @@ const Slider = () => {
                                 sizes={item.imageSet && thumbnailSize}
                                 alt={item.title}
                                 margin={item.thumbnailMargin}
-                                fadeInOnLoad
+                                opacity={
+                                    index === currentPortfolioIndex ? 1 : 0.5
+                                }
                             />
                         </SliderItem>
                     );

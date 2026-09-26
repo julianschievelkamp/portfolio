@@ -5,6 +5,7 @@ export const StyledButton = styled.button`
     padding: 0;
     background: transparent;
     outline-color: ${colors.yellow};
+    outline-offset: 1px;
     border: none;
     cursor: pointer;
 

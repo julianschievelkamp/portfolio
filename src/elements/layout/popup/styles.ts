@@ -157,16 +157,15 @@ export const SliderContainer = styled.div`
 `;
 
 export const InnerSliderContainer = styled.div<{
-    $currentPortfolioIndex: number;
-    $transition?: string;
+    $selectedIndex: number;
 }>`
     position: absolute;
     bottom: 0;
     left: calc(50% - 1.5rem);
-    transform: ${({ $currentPortfolioIndex }) =>
-        `translateX(calc(-3.25rem * ${$currentPortfolioIndex}))`};
+    transform: ${({ $selectedIndex }) =>
+        `translateX(calc(-3.25rem * ${$selectedIndex}))`};
     display: flex;
-    transition: ${({ $transition }) => $transition};
+    transition: ${transition.fast};
     background: white;
 
     @media ${queries.landscapeLgMax} {
@@ -174,25 +173,28 @@ export const InnerSliderContainer = styled.div<{
         bottom: unset;
         top: calc(50% - 1.5rem);
         left: 0;
-        transform: ${({ $currentPortfolioIndex }) =>
-            `translateY(calc(-3.25rem * ${$currentPortfolioIndex}))`};
+        transform: ${({ $selectedIndex }) =>
+            `translateY(calc(-3.25rem * ${$selectedIndex}))`};
     }
 `;
 
-export const SliderItem = styled(Button)<{ $opacity: number }>`
+export const SliderItem = styled(Button)`
     margin: 0 0.25rem 0 0;
     background: transparent;
     width: 3rem;
     height: 3rem;
     overflow: hidden;
-    opacity: ${({ $opacity }) => $opacity};
 
     @media ${queries.landscapeLgMax} {
         margin: 0 0 0.25rem 0;
     }
 
+    img {
+        transition: none;
+    }
+
     @media ${queries.hover} {
-        &:hover {
+        &:hover img {
             opacity: 1;
         }
     }

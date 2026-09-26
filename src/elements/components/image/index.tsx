@@ -13,6 +13,7 @@ export interface ImageProps {
     onLoad?: () => void;
     loading?: "lazy" | "eager";
     aspectRatio?: string;
+    opacity?: number;
     className?: string;
 }
 
@@ -28,6 +29,7 @@ const Image = ({
     onLoad,
     loading = "eager",
     aspectRatio,
+    opacity = 1,
     className,
 }: ImageProps) => {
     const [imageLoaded, setImageLoaded] = useState(false);
@@ -55,6 +57,7 @@ const Image = ({
             }}
             loading={loading}
             $aspectRatio={aspectRatio}
+            $opacity={opacity}
             className={className}
             ref={imageRef}
         />
