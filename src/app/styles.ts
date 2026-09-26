@@ -10,7 +10,7 @@ export const StyledApp = styled.div`
     position: relative;
 `;
 
-export const PageContainer = styled.div`
+export const PageContainer = styled.main`
     ${scrollStyles}
 
     width: 100%;
