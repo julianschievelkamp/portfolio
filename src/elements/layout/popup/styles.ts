@@ -178,9 +178,7 @@ export const InnerSliderContainer = styled.div<{
     }
 `;
 
-export const SliderItem = styled(Button)<{
-    $opacity: number;
-}>`
+export const SliderItem = styled(Button)<{ $opacity: number }>`
     margin: 0 0.25rem 0 0;
     background: transparent;
     width: 3rem;
