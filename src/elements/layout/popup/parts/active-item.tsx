@@ -22,7 +22,7 @@ const ActiveItem = () => {
         if (activeItem !== loadedItem) {
             timer = setTimeout(() => {
                 setLoadingIndicator(true);
-            }, 300);
+            }, 500);
         } else {
             setLoadingIndicator(false);
         }
