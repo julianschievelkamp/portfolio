@@ -28,6 +28,7 @@ const Slider = () => {
                                     setSelectedIndex(index);
                                 }
                             }}
+                            $opacity={index === currentPortfolioIndex ? 1 : 0.5}
                         >
                             <Image
                                 width="100%"
@@ -36,9 +37,6 @@ const Slider = () => {
                                 sizes={item.imageSet && thumbnailSize}
                                 alt={item.title}
                                 margin={item.thumbnailMargin}
-                                opacity={
-                                    index === currentPortfolioIndex ? 1 : 0.5
-                                }
                             />
                         </SliderItem>
                     );

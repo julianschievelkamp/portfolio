@@ -5,11 +5,10 @@ export const StyledImage = styled.img<{
     $imageLoaded: boolean;
     $margin?: string;
     $aspectRatio?: string;
-    $opacity?: number;
 }>`
     width: ${({ width }) => width};
     height: ${({ height }) => height};
-    opacity: ${({ $imageLoaded, $opacity }) => ($imageLoaded ? $opacity : 0)};
+    opacity: ${({ $imageLoaded }) => ($imageLoaded ? 1 : 0)};
     margin: ${({ $margin }) => $margin};
     aspect-ratio: ${({ $aspectRatio }) => $aspectRatio};
     max-width: 100%;

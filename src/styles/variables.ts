@@ -1,8 +1,8 @@
 import { css } from "styled-components";
 
 export const colors = {
+    primary: "#ffca00",
     secondary: "rgb(0, 0, 0, 0.5)",
-    yellow: "#ffca00",
 };
 
 export const queries = {

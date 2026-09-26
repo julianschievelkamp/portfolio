@@ -28,7 +28,7 @@ export const StyledSocial = styled(Div)`
         }
 
         a {
-            color: ${colors.yellow};
+            color: ${colors.primary};
             transition: ${transition.fastest};
         }
     }

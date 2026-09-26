@@ -8,8 +8,12 @@ import { queries } from "styles/variables";
 export const usePopup = (items: PortfolioItem[]) => {
     const [touchStart, setTouchStart] = useState<number | null>(null);
     const [touchEnd, setTouchEnd] = useState<number | null>(null);
-    const { popupOpen, currentPortfolioIndex, setCurrentPortfolioIndex } =
-        useStore();
+    const {
+        popupOpen,
+        setPopupOpen,
+        currentPortfolioIndex,
+        setCurrentPortfolioIndex,
+    } = useStore();
     const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
 
     useEffect(() => {
@@ -74,6 +78,8 @@ export const usePopup = (items: PortfolioItem[]) => {
             showItem(currentPortfolioIndex - 1);
         } else if (e.key === "ArrowRight") {
             showItem(currentPortfolioIndex + 1);
+        } else if (e.key === "Escape") {
+            setPopupOpen(false);
         }
     };
 

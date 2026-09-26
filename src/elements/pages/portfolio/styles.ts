@@ -23,7 +23,7 @@ export const PortfolioItem = styled(Button)`
     min-height: 5rem;
     height: calc((100vw - 1.5rem) / 3);
     width: 100%;
-    background-color: rgb(0, 0, 0, 0.1);
+    background-color: rgb(0, 0, 0, 0.05);
 
     @media ${queries.md} {
         height: calc((100vw - 1.5rem - 17rem) / 3);
@@ -33,7 +33,8 @@ export const PortfolioItem = styled(Button)`
         height: calc((100vw - 3.5rem - 17rem) / 4);
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
         img {
             transform: scale(1.05);
         }

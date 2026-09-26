@@ -178,23 +178,26 @@ export const InnerSliderContainer = styled.div<{
     }
 `;
 
-export const SliderItem = styled(Button)`
+export const SliderItem = styled(Button)<{
+    $opacity: number;
+}>`
     margin: 0 0.25rem 0 0;
     background: transparent;
     width: 3rem;
     height: 3rem;
     overflow: hidden;
+    opacity: ${({ $opacity }) => $opacity};
 
     @media ${queries.landscapeLgMax} {
         margin: 0 0 0.25rem 0;
     }
 
-    img {
-        transition: none;
+    &:focus {
+        opacity: 1;
     }
 
     @media ${queries.hover} {
-        &:hover img {
+        &:hover {
             opacity: 1;
         }
     }

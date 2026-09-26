@@ -28,13 +28,13 @@ export const NavLink = styled(Link)<{ $isActive?: boolean }>`
 
     p {
         display: inline-block;
-        background-color: ${({ $isActive }) => $isActive && colors.yellow};
+        background-color: ${({ $isActive }) => $isActive && colors.primary};
         padding: 0.25rem 0.5rem;
     }
 
     &:hover {
         p {
-            color: ${({ $isActive }) => !$isActive && colors.yellow};
+            color: ${({ $isActive }) => !$isActive && colors.primary};
             transition: ${transition.fastest};
         }
     }
