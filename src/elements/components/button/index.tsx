@@ -14,7 +14,7 @@ const Button = ({
     onFocus,
     children,
     ariaLabel,
-    tabIndex,
+    tabIndex = 0,
     className,
 }: ButtonProps) => {
     return (

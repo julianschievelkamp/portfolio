@@ -25,6 +25,7 @@ const Link = ({
             target={target}
             onClick={onClick}
             $underline={underline}
+            tabIndex={0}
             className={className}
         >
             {children}
