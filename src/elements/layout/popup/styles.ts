@@ -178,7 +178,7 @@ export const InnerSliderContainer = styled.div<{
     }
 `;
 
-export const SliderItem = styled(Button)<{ $opacity: number }>`
+export const SliderItem = styled(Button)<{ $imageOpacity: number }>`
     margin: 0 0.25rem 0 0;
     background: transparent;
     width: 3rem;
@@ -191,7 +191,7 @@ export const SliderItem = styled(Button)<{ $opacity: number }>`
 
     img {
         transition: none;
-        opacity: ${({ $opacity }) => $opacity};
+        opacity: ${({ $imageOpacity }) => $imageOpacity};
     }
 
     @media ${queries.hover} {
