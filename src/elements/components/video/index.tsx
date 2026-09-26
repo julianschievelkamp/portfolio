@@ -49,6 +49,7 @@ const Video = ({
                 disablePictureInPicture
                 onContextMenu={(e) => e.preventDefault()}
                 aria-label={ariaLabel}
+                tabIndex={-1}
             >
                 <source src={src} type="video/mp4" />
                 Your browser does not support the video tag.
