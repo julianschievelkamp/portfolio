@@ -61,7 +61,7 @@ Error generating stack: `+e.message+`
     .no-transition * {
         transition: none !important;
     }
-`,cr={secondary:`rgb(0, 0, 0, 0.5)`,yellow:`#ffca00`},P={sm:`screen and (min-width: 576px)`,md:`screen and (min-width: 768px)`,lg:`screen and (min-width: 992px)`,xl:`screen and (min-width: 1200px)`,hover:`(hover: hover)`,portrait:`(orientation: portrait)`,landscape:`(orientation: landscape)`,landscapeLgMax:`screen and (max-width: 991px) and (orientation: landscape)`},lr={fastest:`100ms ease-out`,fast:`300ms ease-out`},ur=nr`
+`,cr={primary:`#ffca00`,secondary:`rgb(0, 0, 0, 0.5)`},P={sm:`screen and (min-width: 576px)`,md:`screen and (min-width: 768px)`,lg:`screen and (min-width: 992px)`,xl:`screen and (min-width: 1200px)`,hover:`(hover: hover)`,portrait:`(orientation: portrait)`,landscape:`(orientation: landscape)`,landscapeLgMax:`screen and (max-width: 991px) and (orientation: landscape)`},lr={fastest:`100ms ease-out`,fast:`300ms ease-out`},ur=nr`
     overflow-y: scroll;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
@@ -188,10 +188,10 @@ Error generating stack: `+e.message+`
     color: black;
     text-decoration: ${({$underline:e})=>e?`underline`:`none`};
     transition: ${lr.fast};
-    outline-color: ${cr.yellow};
+    outline-color: ${cr.primary};
 
     &:hover {
-        color: ${cr.yellow};
+        color: ${cr.primary};
         transition: ${lr.fastest};
     }
 `,Dr=({children:e,href:t,target:n,onClick:r,underline:i=!0,className:a})=>(0,F.jsx)(Er,{href:t,target:n,onClick:r,$underline:i,className:a,children:e}),I={title:(0,F.jsxs)(F.Fragment,{children:[`JULIAN`,(0,F.jsx)(`br`,{}),`SCHIEVELKAMP`,(0,F.jsx)(`br`,{}),`CGN #1994`]}),intro:`Visual artist and fine art photographer highlighting the synergies of classic photography and CGI.`,work:`WORK`,links:`LINKS`,loading:`LOADING ...`,copyright:(0,F.jsxs)(F.Fragment,{children:[`© Julian Schievelkamp`,(0,F.jsx)(`br`,{}),`All rights reserved.`]}),impressum:(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(`b`,{children:`Angaben gemäß § 5 TMG:`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(`br`,{}),`Julian Schievelkamp`,(0,F.jsx)(`br`,{}),`Zollstocksweg 1`,(0,F.jsx)(`br`,{}),`50969 Köln`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`br`,{}),(0,F.jsx)(Dr,{href:`tel:+4915679602835`,children:`+49 156 796 028 35`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(Dr,{href:`mailto:mail@julianschievelkamp.com`,target:`_blank`,children:`mail@julianschievelkamp.com`})]}),julian:{image:`/assets/static/self_portrait.CGp_rvnj.jpg`,text:(0,F.jsxs)(F.Fragment,{children:[`Julian Schievelkamp (b. 1994) is a contemporary visual artist and fine art photographer based in Cologne, Germany. Using both analog film and digital techniques, his recent work emphasizes the synergies of classic photography and computer-generated imagery. Synaesthetic and psychedelic experiences, where sensory impressions merge into a single picture, have had a great influence on his way of working.`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`br`,{}),`Schievelkamp has won several prizes and awards, including the 2017 Prix de la Photographie Paris. In 2019 the artist was awarded the title `,(0,F.jsx)(`i`,{children:`Fine Art Photographer of the Year`}),` by the jury of the 5th Fine Art Photography Awards. He has exhibited his work in London, Berlin and Cologne and over 100 YellowKorner galleries worldwide.`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`br`,{}),`High-quality fine art prints in various formats and sizes are available upon request. For collaborations, commissions, or inquiries, feel free to reach out via`,` `,(0,F.jsx)(Dr,{href:`mailto:mail@julianschievelkamp.com`,target:`_blank`,children:`email`}),` `,`or social media.`]})},social:{image:`/assets/static/profile.BO7IoKNN.jpg`,link:`https://www.instagram.com/julianschievelkamp/`,name:`Julian Schievelkamp`,profile:`@julianschievelkamp`},references:{headline:(0,F.jsxs)(F.Fragment,{children:[`SELECTED`,(0,F.jsx)(`br`,{}),`REFERENCES`]}),publications:{title:`Publications`,subTitle:`2015—present`,listEntries1:[(0,F.jsxs)(F.Fragment,{children:[`Foundation`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`NFT Auctions`})]}),(0,F.jsxs)(F.Fragment,{children:[`Singulart`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`Limited Edition Prints`})]}),(0,F.jsx)(F.Fragment,{children:`YellowKorner Galleries`}),(0,F.jsx)(F.Fragment,{children:(0,F.jsx)(Dr,{href:`https://www.vogue.com/photovogue/photographers/71498`,target:`_blank`,children:`PhotoVogue`})}),(0,F.jsxs)(F.Fragment,{children:[`Art + Commerce`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`PhotoVogue Collection`})]})],listEntries2:[(0,F.jsx)(F.Fragment,{children:`Marie Claire Maison 11/17`}),(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(Dr,{href:`https://www.worldphoto.org/blogs/15-03-17/human-transformation-beauty-and-darkness-julian-schievelkamp-2017-swpa`,target:`_blank`,children:`Interview by Matthew Oxley`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`World Photography Organisation`})]}),(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(Dr,{href:`https://www.szerokikadr.pl/inspiracje/julian-schievelkamp`,target:`_blank`,children:`Inspiracje: Julian Schievelkamp`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`Szeroki Kadr by Nikon (polish)`})]})],listEntries3:[(0,F.jsxs)(F.Fragment,{children:[`SWPA exhibition 2016 & 2017`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`Somerset House, London`})]}),(0,F.jsxs)(F.Fragment,{children:[`photokina 09/2016`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`Koelnmesse, Cologne`})]}),(0,F.jsxs)(F.Fragment,{children:[`UPdate 2017`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`Titanic Hotel, Berlin`})]})]},awards:{title:`Awards`,subTitle:`2015—present`,listEntries1:[(0,F.jsxs)(F.Fragment,{children:[`ProfiFoto Scholarship`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`Fotoakademie-Koeln`})]}),(0,F.jsx)(F.Fragment,{children:`Canon Sponsoring Award`}),(0,F.jsx)(F.Fragment,{children:`PIC Förderpreis Selected 2018`})],listEntries2:[(0,F.jsxs)(F.Fragment,{children:[`Fine Art Photography Awards`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2019: Grand Prize Winner`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2016: Nominee "Fine Art"`})]}),(0,F.jsxs)(F.Fragment,{children:[`ND Awards`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2019: 1st Place (Gold) "Open Theme"`})]}),(0,F.jsxs)(F.Fragment,{children:[`Prix de la Photographie Paris`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2019: Honorable Mention "Fine Art"`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2017: 1st Place (Gold) "Self-Portrait"`})]}),(0,F.jsxs)(F.Fragment,{children:[`Sony World Photography Awards`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2017: Shortlist "Enhanced"`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2016: Commended "Enhanced"`})]}),(0,F.jsxs)(F.Fragment,{children:[`GoSee Awards`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2017: Silver, Best Portfolio`})]}),(0,F.jsxs)(F.Fragment,{children:[`International Photo Awards`,(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2016: Honorable Mention "Portrait"`}),(0,F.jsx)(`br`,{}),(0,F.jsx)(`span`,{children:`2016: Honorable Mention "Other"`})]})]}},badges:{headline:(0,F.jsxs)(F.Fragment,{children:[`FIRST PRIZE`,(0,F.jsx)(`br`,{}),`WINNER`]}),items:[{image:`/assets/static/badge1.DcKEMpgM.png`,alt:`Fine Art Photography Awards`},{image:`/assets/static/badge2.CgV35bug.jpg`,alt:`Prix de la Photographie Paris`},{image:`/assets/static/badge3.DVHDMXXq.png`,alt:`ND Awards`}]}},Or=(e,t,n=window)=>{let r=(0,h.useRef)(t);(0,h.useEffect)(()=>{r.current=t},[t]),(0,h.useEffect)(()=>{if(!(n&&n.addEventListener))return;let t=e=>r.current(e);return n.addEventListener(e,t),()=>{n.removeEventListener(e,t)}},[e,n])},kr=e=>{let[t,n]=(0,h.useState)(!1),[r,i]=(0,h.useState)(null);return(0,h.useEffect)(()=>{let t=window.matchMedia(e);i(t),n(t.matches)},[e]),Or(`change`,e=>n(e.matches),r),t},Ar=N.div`
@@ -216,7 +216,7 @@ Error generating stack: `+e.message+`
         }
 
         a {
-            color: ${cr.yellow};
+            color: ${cr.primary};
             transition: ${lr.fastest};
         }
     }
@@ -352,14 +352,14 @@ Error generating stack: `+e.message+`
 `,ei=()=>(0,F.jsx)($r,{children:(0,F.jsx)(gr,{fontSize:`0.875rem`,children:I.impressum})}),ti=N.button`
     padding: 0;
     background: transparent;
-    outline-color: ${cr.yellow};
+    outline-color: ${cr.primary};
     outline-offset: 1px;
     border: none;
     cursor: pointer;
 
     &:hover {
         svg {
-            fill: ${cr.yellow};
+            fill: ${cr.primary};
             transition: ${lr.fastest};
         }
     }
@@ -382,7 +382,7 @@ Error generating stack: `+e.message+`
     min-height: 5rem;
     height: calc((100vw - 1.5rem) / 3);
     width: 100%;
-    background-color: rgb(0, 0, 0, 0.1);
+    background-color: rgb(0, 0, 0, 0.05);
 
     @media ${P.md} {
         height: calc((100vw - 1.5rem - 17rem) / 3);
@@ -392,7 +392,8 @@ Error generating stack: `+e.message+`
         height: calc((100vw - 3.5rem - 17rem) / 4);
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
         img {
             transform: scale(1.05);
         }
@@ -563,12 +564,16 @@ Error generating stack: `+e.message+`
         transition: none;
     }
 
+    &:focus img {
+        opacity: 1;
+    }
+
     @media ${P.hover} {
         &:hover img {
             opacity: 1;
         }
     }
-`,Gi=(e,t)=>e>t?0:e<0?t:e,Ki=e=>{let[t,n]=(0,h.useState)(null),[r,i]=(0,h.useState)(null),{popupOpen:a,currentPortfolioIndex:o,setCurrentPortfolioIndex:s}=ui(),c=kr(P.landscapeLgMax);(0,h.useEffect)(()=>{i(null),n(null)},[c]);let l=t=>{s(Gi(t,e.length-1))},u=e=>{i(null),!(!a||e.touches.length>1)&&n(c?e.touches[0].clientY:e.touches[0].clientX)},d=e=>{a&&(e.touches.length>1?(i(null),n(null)):i(c?e.touches[0].clientY:e.touches[0].clientX))},f=()=>{if(!a||!t||!r||window.visualViewport&&Math.abs(window.visualViewport.scale-1)>.05)return;let e=t-r;e>50?l(o+1):e<-50&&l(o-1)},p=e=>{a&&(e.key===`ArrowLeft`?l(o-1):e.key===`ArrowRight`&&l(o+1))};(0,h.useEffect)(()=>(document.addEventListener(`keydown`,p),document.addEventListener(`touchstart`,u,{passive:!0}),document.addEventListener(`touchmove`,d,{passive:!0}),document.addEventListener(`touchend`,f,{passive:!0}),()=>{document.removeEventListener(`keydown`,p),document.removeEventListener(`touchstart`,u),document.removeEventListener(`touchmove`,d),document.removeEventListener(`touchend`,f)}),[a,o,t,r])},qi=()=>{let{currentPortfolioIndex:e,setCurrentPortfolioIndex:t}=ui(),[n,r]=(0,h.useState)(e);return(0,h.useEffect)(()=>{r(e)},[e]),(0,F.jsx)(Hi,{children:(0,F.jsx)(Ui,{$selectedIndex:n,children:Ni.map((n,i)=>(0,F.jsx)(Wi,{"aria-label":n.title,onClick:()=>t(i),onFocus:e=>{e.target.matches(`:focus-visible`)&&r(i)},children:(0,F.jsx)(Br,{width:`100%`,src:n.image,srcSet:n.imageSet,sizes:n.imageSet&&`(max-width: 1200px) 300px, 600px`,alt:n.title,margin:n.thumbnailMargin,opacity:i===e?1:.5})},n.title))})})},Ji={close:e=>(0,F.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:48,viewBox:`0 96 960 960`,width:48,...e,children:(0,F.jsx)(`path`,{d:`m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z`})}),menu:e=>(0,F.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:`24px`,viewBox:`0 -960 960 960`,width:`24px`,fill:`#e3e3e3`,...e,children:(0,F.jsx)(`path`,{d:`M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z`})}),play:e=>(0,F.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:`24px`,viewBox:`0 -960 960 960`,width:`24px`,...e,children:(0,F.jsx)(`path`,{d:`M320-200v-560l440 280-440 280Z`})}),chevronLeft:e=>(0,F.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:`24px`,viewBox:`0 -960 960 960`,width:`24px`,fill:`#e3e3e3`,...e,children:(0,F.jsx)(`path`,{d:`M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z`})}),chevronRight:e=>(0,F.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:`24px`,viewBox:`0 -960 960 960`,width:`24px`,fill:`#e3e3e3`,...e,children:(0,F.jsx)(`path`,{d:`M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z`})})},Yi=N.div`
+`,Gi=(e,t)=>e>t?0:e<0?t:e,Ki=e=>{let[t,n]=(0,h.useState)(null),[r,i]=(0,h.useState)(null),{popupOpen:a,setPopupOpen:o,currentPortfolioIndex:s,setCurrentPortfolioIndex:c}=ui(),l=kr(P.landscapeLgMax);(0,h.useEffect)(()=>{i(null),n(null)},[l]);let u=t=>{c(Gi(t,e.length-1))},d=e=>{i(null),!(!a||e.touches.length>1)&&n(l?e.touches[0].clientY:e.touches[0].clientX)},f=e=>{a&&(e.touches.length>1?(i(null),n(null)):i(l?e.touches[0].clientY:e.touches[0].clientX))},p=()=>{if(!a||!t||!r||window.visualViewport&&Math.abs(window.visualViewport.scale-1)>.05)return;let e=t-r;e>50?u(s+1):e<-50&&u(s-1)},m=e=>{a&&(e.key===`ArrowLeft`?u(s-1):e.key===`ArrowRight`?u(s+1):e.key===`Escape`&&o(!1))};(0,h.useEffect)(()=>(document.addEventListener(`keydown`,m),document.addEventListener(`touchstart`,d,{passive:!0}),document.addEventListener(`touchmove`,f,{passive:!0}),document.addEventListener(`touchend`,p,{passive:!0}),()=>{document.removeEventListener(`keydown`,m),document.removeEventListener(`touchstart`,d),document.removeEventListener(`touchmove`,f),document.removeEventListener(`touchend`,p)}),[a,s,t,r])},qi=()=>{let{currentPortfolioIndex:e,setCurrentPortfolioIndex:t}=ui(),[n,r]=(0,h.useState)(e);return(0,h.useEffect)(()=>{r(e)},[e]),(0,F.jsx)(Hi,{children:(0,F.jsx)(Ui,{$selectedIndex:n,children:Ni.map((n,i)=>(0,F.jsx)(Wi,{"aria-label":n.title,onClick:()=>t(i),onFocus:e=>{e.target.matches(`:focus-visible`)&&r(i)},children:(0,F.jsx)(Br,{width:`100%`,src:n.image,srcSet:n.imageSet,sizes:n.imageSet&&`(max-width: 1200px) 300px, 600px`,alt:n.title,margin:n.thumbnailMargin,opacity:i===e?1:.5})},n.title))})})},Ji={close:e=>(0,F.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:48,viewBox:`0 96 960 960`,width:48,...e,children:(0,F.jsx)(`path`,{d:`m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z`})}),menu:e=>(0,F.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:`24px`,viewBox:`0 -960 960 960`,width:`24px`,fill:`#e3e3e3`,...e,children:(0,F.jsx)(`path`,{d:`M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z`})}),play:e=>(0,F.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:`24px`,viewBox:`0 -960 960 960`,width:`24px`,...e,children:(0,F.jsx)(`path`,{d:`M320-200v-560l440 280-440 280Z`})}),chevronLeft:e=>(0,F.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:`24px`,viewBox:`0 -960 960 960`,width:`24px`,fill:`#e3e3e3`,...e,children:(0,F.jsx)(`path`,{d:`M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z`})}),chevronRight:e=>(0,F.jsx)(`svg`,{xmlns:`http://www.w3.org/2000/svg`,height:`24px`,viewBox:`0 -960 960 960`,width:`24px`,fill:`#e3e3e3`,...e,children:(0,F.jsx)(`path`,{d:`M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z`})})},Yi=N.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -629,13 +634,13 @@ Error generating stack: `+e.message+`
 
     p {
         display: inline-block;
-        background-color: ${({$isActive:e})=>e&&cr.yellow};
+        background-color: ${({$isActive:e})=>e&&cr.primary};
         padding: 0.25rem 0.5rem;
     }
 
     &:hover {
         p {
-            color: ${({$isActive:e})=>!e&&cr.yellow};
+            color: ${({$isActive:e})=>!e&&cr.primary};
             transition: ${lr.fastest};
         }
     }
