@@ -188,7 +188,6 @@ Error generating stack: `+e.message+`
     color: black;
     text-decoration: ${({$underline:e})=>e?`underline`:`none`};
     transition: ${lr.fast};
-    outline-color: ${cr.primary};
 
     &:hover {
         color: ${cr.primary};
@@ -352,8 +351,6 @@ Error generating stack: `+e.message+`
 `,ei=()=>(0,F.jsx)($r,{children:(0,F.jsx)(gr,{fontSize:`0.875rem`,children:I.impressum})}),ti=N.button`
     padding: 0;
     background: transparent;
-    outline-color: ${cr.primary};
-    outline-offset: 1px;
     border: none;
     cursor: pointer;
 
@@ -420,6 +417,7 @@ Error generating stack: `+e.message+`
     }
 `,Fi=N(ni)`
     position: absolute;
+    outline: none;
     top: 1rem;
     right: 1rem;
     z-index: 9;
@@ -473,9 +471,8 @@ Error generating stack: `+e.message+`
     }
 `,zi=N(ni)`
     position: absolute;
-    height: calc(100% - 16px);
-    top: 50%;
-    transform: translateY(-50%);
+    outline: none;
+    height: 100%;
     width: 50%;
     left: ${({$isRight:e})=>e?`unset`:`0`};
     right: ${({$isRight:e})=>e?`0`:`unset`};
@@ -611,7 +608,7 @@ Error generating stack: `+e.message+`
     transform: translate(-50%, -50%);
     backdrop-filter: blur(8px);
     background: rgb(0, 0, 0, 0.1);
-`,ea=({videoRef:e,src:t,poster:n,width:r,height:i,ariaLabel:a})=>{let[o,s]=(0,h.useState)(!1);(0,h.useEffect)(()=>{let t=()=>s(!0);return e?.current?.addEventListener(`play`,t),()=>e?.current?.removeEventListener(`play`,t)},[]);let c=()=>{e?.current?.paused?e?.current?.play():e?.current?.pause()};return(0,F.jsxs)(F.Fragment,{children:[(0,F.jsxs)(Zi,{ref:e,poster:n,width:r,height:i,playsInline:!0,loop:!0,disablePictureInPicture:!0,onContextMenu:e=>e.preventDefault(),"aria-label":a,children:[(0,F.jsx)(`source`,{src:t,type:`video/mp4`}),`Your browser does not support the video tag.`]},t),(0,F.jsx)(Qi,{onClick:()=>c(),children:!o&&(0,F.jsx)($i,{name:`play`,size:`4rem`,padding:`0.5rem`,color:`white`})})]})},ta=()=>{let{currentPortfolioIndex:e,popupOpen:t}=ui(),n=Ni[e],[r,i]=(0,h.useState)(n),[a,o]=(0,h.useState)(!1),s=(0,h.useRef)(null);return(0,h.useEffect)(()=>{let e;return n===r?o(!1):e=setTimeout(()=>{o(!0)},300),()=>clearTimeout(e)},[n,r]),(0,h.useEffect)(()=>{t||s?.current?.pause()},[t]),(0,F.jsxs)(Ri,{children:[(0,F.jsx)(Br,{src:n.image,alt:n.title,onLoad:()=>i(n),fadeInOnLoad:!0}),n===r&&r.video&&(0,F.jsx)(ea,{src:r.video,poster:r.image,ariaLabel:r.title,videoRef:s,width:`100%`,height:`100%`}),(0,F.jsx)(Bi,{children:(0,F.jsx)(Vi,{children:(0,F.jsx)(gr,{bold:!0,fontSize:`0.875rem`,textAlign:`right`,whiteSpace:`nowrap`,color:`white`,lineHeight:`1`,children:a?I.loading:r.title})})})]})},na=()=>{let{currentPortfolioIndex:e,setCurrentPortfolioIndex:t}=ui();return(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(zi,{ariaLabel:`Previous`,onClick:()=>t(Gi(e-1,Ni.length-1)),children:(0,F.jsx)(Xi,{name:`chevronLeft`,size:`4rem`})}),(0,F.jsx)(zi,{$isRight:!0,ariaLabel:`Next`,onClick:()=>t(Gi(e+1,Ni.length-1)),children:(0,F.jsx)(Xi,{name:`chevronRight`,size:`4rem`})})]})},ra=()=>{let{popupOpen:e,setPopupOpen:t}=ui();Ki(Ni);let n=kr(P.landscape),r=kr(P.landscapeLgMax);return(0,F.jsxs)(Pi,{$isOpen:e,children:[(0,F.jsx)(Fi,{onClick:()=>t(!1),ariaLabel:`Close`,children:(0,F.jsx)(Xi,{name:`close`,size:`2rem`})}),(0,F.jsxs)(Ii,{children:[(0,F.jsx)(xr,{position:`absolute`,width:`100%`,height:`100%`,onClick:()=>t(!1)}),(0,F.jsxs)(Li,{children:[n&&!r&&(0,F.jsx)(na,{}),(0,F.jsx)(ta,{})]})]}),(0,F.jsx)(qi,{})]})},ia={portfolio:{name:`Portfolio`,path:`/`,element:(0,F.jsx)(()=>{let{setCurrentPortfolioIndex:e,setPopupOpen:t,popupOpen:n,sidebarOpen:r}=ui(),i=kr(P.md);return(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(ri,{children:Ni.map((a,o)=>(0,F.jsx)(ii,{"aria-label":a.title,onClick:()=>{e(o),t(!0)},tabIndex:n||!i&&r?-1:0,children:(0,F.jsx)(Br,{width:`100%`,src:a.image,srcSet:a.imageSet,sizes:a.imageSet&&`(max-width: 1200px) 300px, 600px`,alt:a.title,margin:a.thumbnailMargin,fadeInOnLoad:!0})},a.title))}),(0,F.jsx)(ra,{})]})},{})},julian:{name:`Julian`,path:`/julian`,element:(0,F.jsx)(Qr,{})},impressum:{name:`Impressum`,path:`/impressum`,element:(0,F.jsx)(ei,{})}},aa={instagram:{name:`Instagram`,path:`https://www.instagram.com/julianschievelkamp/`}},oa=N.nav`
+`,ea=({videoRef:e,src:t,poster:n,width:r,height:i,ariaLabel:a})=>{let[o,s]=(0,h.useState)(!1);(0,h.useEffect)(()=>{let t=()=>s(!0);return e?.current?.addEventListener(`play`,t),()=>e?.current?.removeEventListener(`play`,t)},[]);let c=()=>{e?.current?.paused?e?.current?.play():e?.current?.pause()};return(0,F.jsxs)(F.Fragment,{children:[(0,F.jsxs)(Zi,{ref:e,poster:n,width:r,height:i,playsInline:!0,loop:!0,disablePictureInPicture:!0,onContextMenu:e=>e.preventDefault(),"aria-label":a,children:[(0,F.jsx)(`source`,{src:t,type:`video/mp4`}),`Your browser does not support the video tag.`]},t),(0,F.jsx)(Qi,{onClick:()=>c(),children:!o&&(0,F.jsx)($i,{name:`play`,size:`4rem`,padding:`0.5rem`,color:`white`})})]})},ta=()=>{let{currentPortfolioIndex:e,popupOpen:t}=ui(),n=Ni[e],[r,i]=(0,h.useState)(n),[a,o]=(0,h.useState)(!1),s=(0,h.useRef)(null);return(0,h.useEffect)(()=>{let e;return n===r?o(!1):e=setTimeout(()=>{o(!0)},300),()=>clearTimeout(e)},[n,r]),(0,h.useEffect)(()=>{t||s?.current?.pause()},[t]),(0,F.jsxs)(Ri,{children:[(0,F.jsx)(Br,{src:n.image,alt:n.title,onLoad:()=>i(n),fadeInOnLoad:!0}),n===r&&r.video&&(0,F.jsx)(ea,{src:r.video,poster:r.image,ariaLabel:r.title,videoRef:s,width:`100%`,height:`100%`}),(0,F.jsx)(Bi,{children:(0,F.jsx)(Vi,{children:(0,F.jsx)(gr,{bold:!0,fontSize:`0.875rem`,textAlign:`right`,whiteSpace:`nowrap`,color:`white`,lineHeight:`1`,children:a?I.loading:r.title})})})]})},na=()=>{let{currentPortfolioIndex:e,setCurrentPortfolioIndex:t}=ui();return(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(zi,{ariaLabel:`Previous`,tabIndex:-1,onClick:()=>t(Gi(e-1,Ni.length-1)),children:(0,F.jsx)(Xi,{name:`chevronLeft`,size:`4rem`})}),(0,F.jsx)(zi,{$isRight:!0,ariaLabel:`Next`,tabIndex:-1,onClick:()=>t(Gi(e+1,Ni.length-1)),children:(0,F.jsx)(Xi,{name:`chevronRight`,size:`4rem`})})]})},ra=()=>{let{popupOpen:e,setPopupOpen:t}=ui(),n=kr(P.landscape),r=kr(P.landscapeLgMax);return Ki(Ni),(0,F.jsxs)(Pi,{$isOpen:e,children:[(0,F.jsx)(Fi,{onClick:()=>t(!1),ariaLabel:`Close`,tabIndex:-1,children:(0,F.jsx)(Xi,{name:`close`,size:`2rem`})}),(0,F.jsxs)(Ii,{children:[(0,F.jsx)(xr,{position:`absolute`,width:`100%`,height:`100%`,onClick:()=>t(!1)}),(0,F.jsxs)(Li,{children:[n&&!r&&(0,F.jsx)(na,{}),(0,F.jsx)(ta,{})]})]}),(0,F.jsx)(qi,{})]})},ia={portfolio:{name:`Portfolio`,path:`/`,element:(0,F.jsx)(()=>{let{setCurrentPortfolioIndex:e,setPopupOpen:t,popupOpen:n,sidebarOpen:r}=ui(),i=kr(P.md);return(0,F.jsxs)(F.Fragment,{children:[(0,F.jsx)(ri,{children:Ni.map((a,o)=>(0,F.jsx)(ii,{"aria-label":a.title,onClick:()=>{e(o),t(!0)},tabIndex:n||!i&&r?-1:0,children:(0,F.jsx)(Br,{width:`100%`,src:a.image,srcSet:a.imageSet,sizes:a.imageSet&&`(max-width: 1200px) 300px, 600px`,alt:a.title,margin:a.thumbnailMargin,fadeInOnLoad:!0})},a.title))}),(0,F.jsx)(ra,{})]})},{})},julian:{name:`Julian`,path:`/julian`,element:(0,F.jsx)(Qr,{})},impressum:{name:`Impressum`,path:`/impressum`,element:(0,F.jsx)(ei,{})}},aa={instagram:{name:`Instagram`,path:`https://www.instagram.com/julianschievelkamp/`}},oa=N.nav`
     margin-bottom: 3rem;
     margin-left: 0.5rem;
     padding-right: 0.5rem;
