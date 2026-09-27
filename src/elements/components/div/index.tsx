@@ -7,6 +7,7 @@ export interface DivProps {
     width?: string;
     maxWidth?: string;
     height?: string;
+    minHeight?: string;
     onClick?: () => void;
     className?: string;
     position?: string;
@@ -32,6 +33,7 @@ const Div = ({
     width,
     maxWidth,
     height,
+    minHeight,
     onClick,
     className,
     position,
@@ -57,6 +59,7 @@ const Div = ({
             height={height}
             onClick={onClick}
             className={className}
+            $minHeight={minHeight}
             $maxWidth={maxWidth}
             $position={position}
             $display={display}

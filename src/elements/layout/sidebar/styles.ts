@@ -56,10 +56,8 @@ export const ScrollContainer = styled(Div)`
 
 export const StyledHeadline = styled(Headline)`
     font-size: 1.25rem;
-    color: white;
 
     @media ${queries.md} {
         font-size: 1.5rem;
-        color: black;
     }
 `;

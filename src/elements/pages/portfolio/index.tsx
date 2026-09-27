@@ -7,9 +7,9 @@ import { queries, thumbnailSize } from "styles/variables";
 import { useMediaQuery } from "hooks/useMediaQuery";
 
 const Portfolio = () => {
+    const isMd = useMediaQuery(queries.md);
     const { setCurrentPortfolioIndex, setPopupOpen, popupOpen, sidebarOpen } =
         useStore();
-    const isMd = useMediaQuery(queries.md);
 
     return (
         <>

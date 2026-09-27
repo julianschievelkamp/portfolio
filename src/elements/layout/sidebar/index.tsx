@@ -31,7 +31,11 @@ const Sidebar = ({ page }: SidebarProps) => {
             )}
 
             <StyledSidebar $sidebarOpen={sidebarOpen}>
-                <StyledHeadline>{languageData.title}</StyledHeadline>
+                {isMd ? (
+                    <StyledHeadline>{languageData.title}</StyledHeadline>
+                ) : (
+                    <Div minHeight="5.625rem" />
+                )}
 
                 <ScrollContainer margin="1.5rem 0 0 0">
                     <Div>
