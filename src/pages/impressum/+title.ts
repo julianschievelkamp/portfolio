@@ -1,3 +1,3 @@
 export function title() {
-    return `Julian Schievelkamp: Impressum`;
+    return "Julian Schievelkamp: Impressum";
 }
