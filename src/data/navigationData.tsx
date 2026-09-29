@@ -36,4 +36,8 @@ export const links: { [key: string]: Link } = {
         name: "Instagram",
         path: "https://www.instagram.com/julianschievelkamp/",
     },
+    vogue: {
+        name: "PhotoVogue",
+        path: "https://www.vogue.com/photovogue/photographers/71498",
+    },
 };
