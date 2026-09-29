@@ -39,6 +39,8 @@ const Slider = () => {
                                 sizes={item.imageSet && thumbnailSize}
                                 alt={item.title}
                                 margin={item.thumbnailMargin}
+                                aspectRatio={item.aspectRatio}
+                                loading="lazy"
                             />
                         </SliderItem>
                     );

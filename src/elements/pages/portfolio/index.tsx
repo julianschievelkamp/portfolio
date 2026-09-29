@@ -34,6 +34,8 @@ const Portfolio = () => {
                                 sizes={item.imageSet && thumbnailSize}
                                 alt={item.title}
                                 margin={item.thumbnailMargin}
+                                aspectRatio={item.aspectRatio}
+                                loading="lazy"
                                 fadeInOnLoad
                             />
                         </PortfolioItem>
