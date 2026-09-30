@@ -66,7 +66,7 @@ export const ItemContainer = styled.div`
     img,
     video {
         display: flex;
-        border: 8px solid black;
+        border: 0.5rem solid black;
 
         -o-object-fit: cover;
         object-fit: cover;
@@ -104,14 +104,14 @@ export const Arrow = styled(Button)<{ $isRight?: boolean }>`
     }
 `;
 
-export const ItemData = styled.div`
+export const NotchWrapper = styled.div`
     overflow: hidden;
     position: absolute;
     width: 100%;
     display: flex;
     justify-content: flex-end;
     right: 0;
-    bottom: 0;
+    bottom: 0.5rem;
     transform: translateY(100%);
 
     @media ${queries.landscapeLgMax} {
@@ -119,13 +119,13 @@ export const ItemData = styled.div`
     }
 `;
 
-export const Notch = styled.div`
+export const StyledNotch = styled.div`
     position: relative;
     width: auto;
     display: flex;
     align-items: center;
     background: black;
-    padding: 0 0.5rem 0.375rem 0;
+    padding: 0.5rem 0.5rem 0.5rem 0.25rem;
 
     &::before {
         content: "";
@@ -134,10 +134,17 @@ export const Notch = styled.div`
         transform: rotate(45deg);
         z-index: -1;
         left: -1rem;
-        top: -1rem;
+        top: -0.5rem;
         width: 2rem;
         height: 2rem;
     }
+`;
+
+export const VideoButtons = styled.div`
+    display: flex;
+    align-items: center;
+    height: 0.75rem;
+    margin-right: 0.5rem;
 `;
 
 export const SliderContainer = styled.div`

@@ -1,34 +1,20 @@
-import { ItemContainer, ItemData, Notch } from "../styles";
+import { ItemContainer } from "../styles";
 import Image from "elements/components/image";
 import { useStore } from "hooks/useStore";
 import { portfolioData } from "data/portfolioData";
 import Video from "elements/components/video";
 import { useEffect, useRef, useState } from "react";
-import Text from "elements/components/text";
-import { languageData } from "data/languageData";
+import Notch from "./notch";
 
 const ActiveItem = () => {
     const { currentPortfolioIndex, popupOpen } = useStore();
-
     const activeItem = portfolioData[currentPortfolioIndex];
+
     const [loadedItem, setLoadedItem] = useState(activeItem);
-    const [loadingIndicator, setLoadingIndicator] = useState(false);
+    const [isVideoOn, setIsVideoOn] = useState(true);
+    const [isVolumeOn, setIsVolumeOn] = useState(true);
 
     const videoRef = useRef<HTMLVideoElement | null>(null);
-
-    useEffect(() => {
-        let timer: ReturnType<typeof setTimeout>;
-
-        if (activeItem !== loadedItem) {
-            timer = setTimeout(() => {
-                setLoadingIndicator(true);
-            }, 500);
-        } else {
-            setLoadingIndicator(false);
-        }
-
-        return () => clearTimeout(timer);
-    }, [activeItem, loadedItem]);
 
     useEffect(() => {
         if (!popupOpen) {
@@ -45,33 +31,26 @@ const ActiveItem = () => {
                 fadeInOnLoad
             />
 
-            {activeItem === loadedItem && loadedItem.video && (
+            {activeItem === loadedItem && loadedItem.video && isVideoOn && (
                 <Video
                     src={loadedItem.video}
                     poster={loadedItem.image}
                     ariaLabel={loadedItem.title}
                     videoRef={videoRef}
+                    muted={!isVolumeOn}
                     width="100%"
                     height="100%"
                 />
             )}
 
-            <ItemData>
-                <Notch>
-                    <Text
-                        bold
-                        fontSize="0.875rem"
-                        textAlign="right"
-                        whiteSpace="nowrap"
-                        color="white"
-                        lineHeight="1"
-                    >
-                        {loadingIndicator
-                            ? languageData.loading
-                            : loadedItem.title}
-                    </Text>
-                </Notch>
-            </ItemData>
+            <Notch
+                activeItem={activeItem}
+                loadedItem={loadedItem}
+                isVideoOn={isVideoOn}
+                setIsVideoOn={setIsVideoOn}
+                isVolumeOn={isVolumeOn}
+                setIsVolumeOn={setIsVolumeOn}
+            />
         </ItemContainer>
     );
 };

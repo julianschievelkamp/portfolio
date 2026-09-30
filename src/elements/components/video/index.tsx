@@ -7,6 +7,7 @@ export interface VideoProps {
     poster: string;
     width?: string;
     height?: string;
+    muted?: boolean;
     ariaLabel?: string;
 }
 
@@ -16,6 +17,7 @@ const Video = ({
     poster,
     width,
     height,
+    muted,
     ariaLabel,
 }: VideoProps) => {
     const [hasStarted, setHasStarted] = useState(false);
@@ -44,6 +46,7 @@ const Video = ({
                 poster={poster}
                 width={width}
                 height={height}
+                muted={muted}
                 playsInline
                 loop
                 disablePictureInPicture

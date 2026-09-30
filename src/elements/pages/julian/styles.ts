@@ -63,7 +63,7 @@ export const ImageWrapper = styled.div`
 
     img {
         max-height: 30rem;
-        border: 8px solid black;
+        border: 0.5rem solid black;
     }
 
     @media ${queries.lg} {

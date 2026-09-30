@@ -11,13 +11,14 @@ export const StyledVideo = styled.video`
 
 export const PlayButton = styled(Button)`
     position: absolute;
-    width: calc(100% - 16px);
-    height: calc(100% - 16px);
+    width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
     cursor: pointer;
+    z-index: 9;
 `;
 
 export const PlayIcon = styled(Icon)`

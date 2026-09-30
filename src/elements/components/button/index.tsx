@@ -6,6 +6,7 @@ export interface ButtonProps {
     children: React.ReactNode;
     ariaLabel?: string;
     tabIndex?: number;
+    disabled?: boolean;
     className?: string;
 }
 
@@ -15,6 +16,7 @@ const Button = ({
     children,
     ariaLabel,
     tabIndex = 0,
+    disabled,
     className,
 }: ButtonProps) => {
     return (
@@ -23,6 +25,7 @@ const Button = ({
             onFocus={onFocus}
             aria-label={ariaLabel}
             tabIndex={tabIndex}
+            disabled={disabled}
             className={className}
         >
             {children}
