@@ -79,6 +79,11 @@ const Notch = ({
                             padding="0.25rem"
                         />
                     </Button>
+                </Buttons>
+                <NotchText bold fontSize="0.875rem">
+                    {loadingIndicator ? languageData.loading : loadedItem.title}
+                </NotchText>
+                <Buttons>
                     <Button
                         onClick={() => setIsInfoOn(!isInfoOn)}
                         ariaLabel="Toggle Info"
@@ -91,10 +96,6 @@ const Notch = ({
                         />
                     </Button>
                 </Buttons>
-
-                <NotchText bold fontSize="0.875rem">
-                    {loadingIndicator ? languageData.loading : loadedItem.title}
-                </NotchText>
             </StyledNotch>
         </NotchWrapper>
     );

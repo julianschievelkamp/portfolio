@@ -1,4 +1,4 @@
-import { queries } from "styles/variables";
+import { colors, queries } from "styles/variables";
 import { styled } from "styled-components";
 import { transition } from "styles/variables";
 import Button from "elements/components/button";
@@ -137,7 +137,7 @@ export const StyledNotch = styled.div`
     display: flex;
     align-items: center;
     background: black;
-    padding: 0.5rem 0.5rem 0.5rem 0;
+    padding: 0.5rem 0.25rem;
     max-width: 100%;
 
     &::before {
@@ -160,13 +160,14 @@ export const NotchText = styled(Text)`
     color: white;
     text-align: right;
     line-height: 1;
+    margin-left: 0.5rem;
+    margin-right: 0.25rem;
 `;
 
 export const Buttons = styled.div`
     display: flex;
     align-items: center;
     height: 0.75rem;
-    margin: 0 0.25rem;
 `;
 
 export const SliderContainer = styled.div`
