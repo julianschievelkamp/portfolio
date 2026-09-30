@@ -8,14 +8,12 @@ export default css`
     @font-face {
         font-family: "PlayfairDisplay";
         font-style: normal;
-        font-display: swap;
         src: url(${PlayfairDisplay}) format("woff2");
     }
 
     @font-face {
         font-family: "Poppins";
         font-style: normal;
-        font-display: swap;
         src: url(${PoppinsLight}) format("woff2");
     }
 
@@ -23,7 +21,6 @@ export default css`
         font-family: "Poppins";
         font-style: normal;
         font-weight: bold;
-        font-display: swap;
         src: url(${PoppinsBold}) format("woff2");
     }
 `;
