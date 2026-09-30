@@ -1,4 +1,4 @@
-import { colors, queries } from "styles/variables";
+import { queries } from "styles/variables";
 import { styled } from "styled-components";
 import { transition } from "styles/variables";
 import Button from "elements/components/button";
