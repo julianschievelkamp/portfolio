@@ -16,14 +16,12 @@ Error generating stack: `+e.message+`
     @font-face {
         font-family: "PlayfairDisplay";
         font-style: normal;
-        font-display: swap;
         src: url(${`/assets/static/PlayfairDisplay.CSUZDoAs.woff2`}) format("woff2");
     }
 
     @font-face {
         font-family: "Poppins";
         font-style: normal;
-        font-display: swap;
         src: url(${`/assets/static/Poppins-Light.BBOoPhLm.woff2`}) format("woff2");
     }
 
@@ -31,7 +29,6 @@ Error generating stack: `+e.message+`
         font-family: "Poppins";
         font-style: normal;
         font-weight: bold;
-        font-display: swap;
         src: url(${`/assets/static/Poppins-Bold.-aKA7T72.woff2`}) format("woff2");
     }
 `};
