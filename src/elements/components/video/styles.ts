@@ -27,5 +27,4 @@ export const PlayIcon = styled(Icon)`
     left: 50%;
     transform: translate(-50%, -50%);
     backdrop-filter: blur(8px);
-    background: rgb(0, 0, 0, 0.1);
 `;

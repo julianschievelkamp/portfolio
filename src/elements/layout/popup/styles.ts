@@ -105,6 +105,17 @@ export const Arrow = styled(Button)<{ $isRight?: boolean }>`
     }
 `;
 
+export const ItemInfo = styled.div<{ $isVisible: boolean }>`
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    width: calc(100% - 1rem);
+    backdrop-filter: blur(8px);
+    padding: 1rem;
+    visibility: ${({ $isVisible }) => ($isVisible ? "visible" : "hidden")};
+    overflow: hidden;
+`;
+
 export const NotchWrapper = styled.div`
     overflow: hidden;
     position: absolute;
@@ -149,14 +160,13 @@ export const NotchText = styled(Text)`
     color: white;
     text-align: right;
     line-height: 1;
-    margin-left: 0.5rem;
 `;
 
-export const VideoButtons = styled.div`
+export const Buttons = styled.div`
     display: flex;
     align-items: center;
     height: 0.75rem;
-    margin-left: 0.25rem;
+    margin: 0 0.25rem;
 `;
 
 export const SliderContainer = styled.div`
