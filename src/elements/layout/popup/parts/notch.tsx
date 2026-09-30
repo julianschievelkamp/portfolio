@@ -1,7 +1,6 @@
-import { NotchWrapper, StyledNotch, VideoButtons } from "../styles";
+import { NotchText, NotchWrapper, StyledNotch, VideoButtons } from "../styles";
 import { PortfolioItem } from "data/portfolioData";
 import { useEffect, useState } from "react";
-import Text from "elements/components/text";
 import { languageData } from "data/languageData";
 import Button from "elements/components/button";
 import Icon from "elements/components/icon";
@@ -74,16 +73,9 @@ const Notch = ({
                     </VideoButtons>
                 )}
 
-                <Text
-                    bold
-                    fontSize="0.875rem"
-                    textAlign="right"
-                    whiteSpace="nowrap"
-                    color="white"
-                    lineHeight="1"
-                >
+                <NotchText bold fontSize="0.875rem">
                     {loadingIndicator ? languageData.loading : loadedItem.title}
-                </Text>
+                </NotchText>
             </StyledNotch>
         </NotchWrapper>
     );
