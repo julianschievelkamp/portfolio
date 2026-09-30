@@ -16,20 +16,23 @@ Error generating stack: `+e.message+`
     @font-face {
         font-family: "PlayfairDisplay";
         font-style: normal;
-        src: url(${`/assets/static/PlayfairDisplay-VariableFont_wght.7tRKCQvy.ttf`}) format("truetype");
+        font-display: swap;
+        src: url(${`/assets/static/PlayfairDisplay.CSUZDoAs.woff2`}) format("woff2");
     }
 
     @font-face {
         font-family: "Poppins";
         font-style: normal;
-        src: url(${`/assets/static/Poppins-Light.DT6-CsId.ttf`}) format("truetype");
+        font-display: swap;
+        src: url(${`/assets/static/Poppins-Light.BBOoPhLm.woff2`}) format("woff2");
     }
 
     @font-face {
         font-family: "Poppins";
         font-style: normal;
         font-weight: bold;
-        src: url(${`/assets/static/Poppins-Bold.qTAUjFF7.ttf`}) format("truetype");
+        font-display: swap;
+        src: url(${`/assets/static/Poppins-Bold.-aKA7T72.woff2`}) format("woff2");
     }
 `};
 
