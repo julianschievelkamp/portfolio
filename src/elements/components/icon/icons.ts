@@ -9,6 +9,7 @@ import VideoOn from "assets/icons/video-on.svg?react";
 import VolumeOff from "assets/icons/volume-off.svg?react";
 import VolumeOn from "assets/icons/volume-on.svg?react";
 import Info from "assets/icons/info.svg?react";
+import InfoFilled from "assets/icons/info-filled.svg?react";
 
 export const icons = {
     close: Close,
@@ -21,4 +22,5 @@ export const icons = {
     volumeOff: VolumeOff,
     volumeOn: VolumeOn,
     info: Info,
+    infoFilled: InfoFilled,
 };

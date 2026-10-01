@@ -58,8 +58,8 @@ const Notch = ({
                                     ? "volumeOn"
                                     : "volumeOff"
                             }
-                            size="1rem"
                             color="white"
+                            size="1rem"
                             padding="0.25rem"
                         />
                     </Button>
@@ -74,24 +74,26 @@ const Notch = ({
                                     ? "videoOn"
                                     : "videoOff"
                             }
-                            size="1rem"
                             color="white"
+                            size="1rem"
                             padding="0.25rem"
                         />
                     </Button>
                 </Buttons>
+
                 <NotchText bold fontSize="0.875rem">
                     {loadingIndicator ? languageData.loading : loadedItem.title}
                 </NotchText>
+
                 <Buttons>
                     <Button
                         onClick={() => setIsInfoOn(!isInfoOn)}
                         ariaLabel="Toggle Info"
                     >
                         <Icon
-                            name="info"
-                            size="1rem"
+                            name={isInfoOn ? "infoFilled" : "info"}
                             color={isInfoOn ? colors.primary : "white"}
+                            size="1rem"
                             padding="0.25rem"
                         />
                     </Button>
