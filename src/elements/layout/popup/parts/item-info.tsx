@@ -39,6 +39,8 @@ const ItemInfo = ({ loadedItem, isInfoOn }: ItemInfoProps) => {
                                 <Image
                                     src={badge.image}
                                     alt={badge.alt}
+                                    loading="lazy"
+                                    aspectRatio="1/1"
                                     width="2rem"
                                     height="2rem"
                                 />
