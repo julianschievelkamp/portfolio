@@ -61,11 +61,10 @@ export const InnerWrapper = styled.div`
 `;
 
 export const ItemContainer = styled.div`
-    z-index: 1;
     position: relative;
 
-    img,
-    video {
+    > img,
+    > video {
         display: flex;
         border: 0.5rem solid black;
 
@@ -81,7 +80,7 @@ export const ItemContainer = styled.div`
         }
     }
 
-    video {
+    > video {
         position: absolute;
         top: 0;
         left: 0;
@@ -110,10 +109,26 @@ export const StyledItemInfo = styled.div<{ $isVisible: boolean }>`
     bottom: 0.5rem;
     left: 0.5rem;
     width: calc(100% - 1rem);
+    max-width: calc(100% - 1rem);
+    max-height: calc(100% - 1rem);
     backdrop-filter: blur(8px);
     padding: 1rem;
     visibility: ${({ $isVisible }) => ($isVisible ? "visible" : "hidden")};
+    opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    z-index: 9;
+`;
+
+export const BadgesWrapper = styled.div`
+    display: flex;
+    margin-left: 1rem;
+
+    img {
+        min-width: 2rem;
+        max-width: 2rem;
+    }
 `;
 
 export const NotchWrapper = styled.div`

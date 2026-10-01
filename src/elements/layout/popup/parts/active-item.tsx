@@ -6,6 +6,7 @@ import Video from "elements/components/video";
 import { useEffect, useRef, useState } from "react";
 import Notch from "./notch";
 import ItemInfo from "./item-info";
+import Div from "elements/components/div";
 
 const ActiveItem = () => {
     const { currentPortfolioIndex, popupOpen } = useStore();
@@ -31,8 +32,8 @@ const ActiveItem = () => {
     }, [loadedItem]);
 
     return (
-        <ItemContainer>
-            <div onClick={() => setIsInfoOn(false)}>
+        <Div zIndex={1}>
+            <ItemContainer onClick={() => setIsInfoOn(false)}>
                 <Image
                     src={activeItem.image}
                     alt={activeItem.title}
@@ -51,9 +52,9 @@ const ActiveItem = () => {
                         height="100%"
                     />
                 )}
+            </ItemContainer>
 
-                <ItemInfo loadedItem={loadedItem} isInfoOn={isInfoOn} />
-            </div>
+            <ItemInfo loadedItem={loadedItem} isInfoOn={isInfoOn} />
 
             <Notch
                 activeItem={activeItem}
@@ -65,7 +66,7 @@ const ActiveItem = () => {
                 isInfoOn={isInfoOn}
                 setIsInfoOn={setIsInfoOn}
             />
-        </ItemContainer>
+        </Div>
     );
 };
 
