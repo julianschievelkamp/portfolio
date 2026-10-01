@@ -43,10 +43,4 @@ export const StyledDiv = styled.div<{
     overflow: ${({ $overflow }) => $overflow};
     z-index: ${({ $zIndex }) => $zIndex};
     background: ${({ $background }) => $background};
-
-    ${({ onClick }) =>
-        onClick &&
-        css`
-            cursor: pointer;
-        `}
 `;
