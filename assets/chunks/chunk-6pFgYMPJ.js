@@ -130,10 +130,6 @@ Error generating stack: `+e.message+`
     overflow: ${({$overflow:e})=>e};
     z-index: ${({$zIndex:e})=>e};
     background: ${({$background:e})=>e};
-
-    ${({onClick:e})=>e&&nr`
-            cursor: pointer;
-        `}
 `,xr=({children:e,width:t,maxWidth:n,height:r,minHeight:i,onClick:a,className:o,position:s,display:c,flexDirection:l,justifyContent:u,flexWrap:d,alignItems:f,margin:p,padding:m,top:h,left:g,right:_,bottom:v,opacity:y,overflow:b,zIndex:ee,background:x})=>(0,F.jsx)(br,{width:t,height:r,onClick:a,className:o,$minHeight:i,$maxWidth:n,$position:s,$display:c,$flexDirection:l,$justifyContent:u,$flexWrap:d,$alignItems:f,$margin:p,$padding:m,$top:h,$left:g,$right:_,$bottom:v,$opacity:y,$overflow:b,$zIndex:ee,$background:x,children:e}),Sr=N.div`
     background-color: white;
     width: 15rem;
