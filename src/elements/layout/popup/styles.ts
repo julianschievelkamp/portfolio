@@ -105,7 +105,7 @@ export const Arrow = styled(Button)<{ $isRight?: boolean }>`
     }
 `;
 
-export const ItemInfo = styled.div<{ $isVisible: boolean }>`
+export const StyledItemInfo = styled.div<{ $isVisible: boolean }>`
     position: absolute;
     bottom: 0.5rem;
     left: 0.5rem;

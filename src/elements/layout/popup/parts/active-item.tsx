@@ -1,11 +1,11 @@
-import { ItemContainer, ItemInfo } from "../styles";
+import { ItemContainer } from "../styles";
 import Image from "elements/components/image";
 import { useStore } from "hooks/useStore";
 import { portfolioData } from "data/portfolioData";
 import Video from "elements/components/video";
 import { useEffect, useRef, useState } from "react";
 import Notch from "./notch";
-import Headline from "elements/components/headline";
+import ItemInfo from "./item-info";
 
 const ActiveItem = () => {
     const { currentPortfolioIndex, popupOpen } = useStore();
@@ -51,11 +51,11 @@ const ActiveItem = () => {
                 />
             )}
 
-            <ItemInfo $isVisible={isInfoOn}>
-                <Headline type="h2" color="white" fontSize="0.875rem">
-                    {loadedItem.title} / {loadedItem.year}
-                </Headline>
-            </ItemInfo>
+            <ItemInfo
+                loadedItem={loadedItem}
+                isInfoOn={isInfoOn}
+                setIsInfoOn={setIsInfoOn}
+            />
 
             <Notch
                 activeItem={activeItem}
