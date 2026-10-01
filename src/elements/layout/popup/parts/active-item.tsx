@@ -29,7 +29,7 @@ const ActiveItem = () => {
         setIsInfoOn(false);
         setIsVideoOn(true);
         setIsVolumeOn(true);
-    }, [loadedItem]);
+    }, [activeItem]);
 
     return (
         <Div zIndex={1}>
