@@ -30,7 +30,7 @@ const ItemInfo = ({ loadedItem, isInfoOn }: ItemInfoProps) => {
 
                         return (
                             <Div
-                                key={badge.alt}
+                                key={key}
                                 display="flex"
                                 justifyContent="center"
                                 alignItems="center"
