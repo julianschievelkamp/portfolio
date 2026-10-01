@@ -83,6 +83,7 @@ export const portfolioData: PortfolioItem[] = [
         imageSet: `${Andromeda600w} 600w, ${Andromeda} 1200w`,
         video: AndromedaVideo,
         aspectRatio: "1/1",
+        badges: ["fapa", "nd"],
     },
     {
         title: "VERSUS I",
@@ -92,6 +93,7 @@ export const portfolioData: PortfolioItem[] = [
         imageSet: `${Versus1600w} 600w, ${Versus1} 1200w`,
         video: VersusVideo,
         aspectRatio: "1/1",
+        badges: ["fapa", "nd"],
     },
     {
         title: "VERSUS II",
@@ -118,6 +120,7 @@ export const portfolioData: PortfolioItem[] = [
         imageSet: `${Aura600w} 600w, ${Aura} 1200w`,
         video: AuraVideo,
         aspectRatio: "1/1",
+        badges: ["fapa", "nd"],
     },
     {
         title: "MIMIKRY",
@@ -134,6 +137,7 @@ export const portfolioData: PortfolioItem[] = [
         image: ACuriousThing,
         imageSet: `${ACuriousThing600w} 600w, ${ACuriousThing} 1200w`,
         aspectRatio: "1/1",
+        badges: ["fapa", "nd"],
     },
     {
         title: "DOPPLER I",
