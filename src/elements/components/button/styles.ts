@@ -1,15 +1,16 @@
 import { css, styled } from "styled-components";
 import { colors, transition } from "styles/variables";
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.button<{ $hoverStyles: boolean }>`
     padding: 0;
     background: transparent;
     border: none;
     cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
     opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
 
-    ${({ disabled }) =>
+    ${({ disabled, $hoverStyles }) =>
         !disabled &&
+        $hoverStyles &&
         css`
             &:hover {
                 svg {

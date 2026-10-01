@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { languageData } from "data/languageData";
 import Button from "elements/components/button";
 import Icon from "elements/components/icon";
-import { colors } from "styles/variables";
+import { colors, queries } from "styles/variables";
+import { useMediaQuery } from "hooks/useMediaQuery";
 
 export interface NotchProps {
     activeItem: PortfolioItem;
@@ -27,6 +28,7 @@ const Notch = ({
     isInfoOn,
     setIsInfoOn,
 }: NotchProps) => {
+    const isHover = useMediaQuery(queries.hover);
     const [loadingIndicator, setLoadingIndicator] = useState(false);
 
     useEffect(() => {
@@ -35,7 +37,7 @@ const Notch = ({
         if (activeItem !== loadedItem) {
             timer = setTimeout(() => {
                 setLoadingIndicator(true);
-            }, 500);
+            }, 400);
         } else {
             setLoadingIndicator(false);
         }
@@ -51,6 +53,7 @@ const Notch = ({
                         onClick={() => setIsVolumeOn(!isVolumeOn)}
                         disabled={!loadedItem.video || !isVideoOn}
                         ariaLabel="Toggle Volume"
+                        hoverStyles={isHover}
                     >
                         <Icon
                             name={
@@ -67,6 +70,7 @@ const Notch = ({
                         onClick={() => setIsVideoOn(!isVideoOn)}
                         disabled={!loadedItem.video}
                         ariaLabel="Toggle Video"
+                        hoverStyles={isHover}
                     >
                         <Icon
                             name={
@@ -89,6 +93,7 @@ const Notch = ({
                     <Button
                         onClick={() => setIsInfoOn(!isInfoOn)}
                         ariaLabel="Toggle Info"
+                        hoverStyles={isHover}
                     >
                         <Icon
                             name={isInfoOn ? "infoFilled" : "info"}
