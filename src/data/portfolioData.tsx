@@ -242,7 +242,7 @@ export const portfolioData: PortfolioItem[] = [
     {
         title: "DANIELA",
         year: "2016",
-        type: "digital photograph",
+        type: "analog photograph",
         image: Daniela,
         imageSet: `${Daniela400w} 600w, ${Daniela} 1200w`,
         thumbnailMargin: "-6% 0 0",
