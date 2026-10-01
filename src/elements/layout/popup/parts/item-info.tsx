@@ -4,6 +4,7 @@ import Div from "elements/components/div";
 import Headline from "elements/components/headline";
 import Text from "elements/components/text";
 import Image from "elements/components/image";
+import Link from "elements/components/link";
 
 export interface ItemInfoProps {
     loadedItem: PortfolioItem;
@@ -28,13 +29,7 @@ const ItemInfo = ({ loadedItem, isInfoOn }: ItemInfoProps) => {
                         const badge = badges[key];
 
                         return (
-                            <Div
-                                key={key}
-                                display="flex"
-                                justifyContent="center"
-                                alignItems="center"
-                                margin="0 0 0 0.5rem"
-                            >
+                            <Link key={key} href={badge.link} target="_blank">
                                 <Image
                                     src={badge.image}
                                     alt={badge.alt}
@@ -43,7 +38,7 @@ const ItemInfo = ({ loadedItem, isInfoOn }: ItemInfoProps) => {
                                     width="2rem"
                                     height="2rem"
                                 />
-                            </Div>
+                            </Link>
                         );
                     })}
                 </BadgesWrapper>

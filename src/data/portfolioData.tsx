@@ -59,17 +59,17 @@ export const badges = {
     fapa: {
         image: Badge1,
         alt: "Fine Art Photography Awards",
-        link: "",
+        link: "https://fineartphotoawards.com/winners-gallery/fapa-2018-2019/amateur/grand-prize",
     },
     px3: {
         image: Badge2,
         alt: "Prix de la Photographie Paris",
-        link: "",
+        link: "https://px3.fr/winners/px3/2017/",
     },
     nd: {
         image: Badge3,
         alt: "ND Awards",
-        link: "",
+        link: "https://ndawards.net/winners-gallery/nd-awards-2019/non-professional/open-theme/735/gold-award/",
     },
 };
 
@@ -191,6 +191,7 @@ export const portfolioData: PortfolioItem[] = [
         image: TranscendingEgo,
         imageSet: `${TranscendingEgo420w} 600w, ${TranscendingEgo} 1200w`,
         aspectRatio: "7/10",
+        badges: ["px3"],
     },
     {
         title: "CONSCIOUSNESS",
@@ -200,6 +201,7 @@ export const portfolioData: PortfolioItem[] = [
         imageSet: `${Consciousness392w} 600w, ${Consciousness} 1200w`,
         video: ConsciousnessVideo,
         aspectRatio: "49/75",
+        badges: ["px3"],
     },
     {
         title: "MAYA I",

@@ -2,8 +2,8 @@ import { BadgesWrapper } from "../styles";
 import { languageData } from "data/languageData";
 import Image from "elements/components/image";
 import Divider from "elements/components/divider";
-import Div from "elements/components/div";
 import { badges } from "data/portfolioData";
+import Link from "elements/components/link";
 
 const Badges = () => {
     return (
@@ -14,12 +14,7 @@ const Badges = () => {
                     const badge = badges[key as keyof typeof badges];
 
                     return (
-                        <Div
-                            key={key}
-                            display="flex"
-                            justifyContent="center"
-                            alignItems="center"
-                        >
+                        <Link key={key} href={badge.link} target="_blank">
                             <Image
                                 src={badge.image}
                                 alt={badge.alt}
@@ -29,7 +24,7 @@ const Badges = () => {
                                 height="100%"
                                 fadeInOnLoad
                             />
-                        </Div>
+                        </Link>
                     );
                 })}
             </BadgesWrapper>

@@ -107,4 +107,9 @@ export const BadgesWrapper = styled.div`
     @media ${queries.sm} {
         grid-template-columns: 1fr 1fr 1fr;
     }
+
+    a {
+        display: flex;
+        align-items: center;
+    }
 `;

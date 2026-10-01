@@ -123,7 +123,14 @@ export const StyledItemInfo = styled.div<{ $isVisible: boolean }>`
 
 export const BadgesWrapper = styled.div`
     display: flex;
-    margin-left: 1rem;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 1.5rem;
+
+    a {
+        display: flex;
+        align-items: center;
+    }
 
     img {
         min-width: 2rem;
