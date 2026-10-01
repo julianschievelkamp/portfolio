@@ -32,30 +32,28 @@ const ActiveItem = () => {
 
     return (
         <ItemContainer>
-            <Image
-                src={activeItem.image}
-                alt={activeItem.title}
-                onLoad={() => setLoadedItem(activeItem)}
-                fadeInOnLoad
-            />
-
-            {activeItem === loadedItem && loadedItem.video && isVideoOn && (
-                <Video
-                    src={loadedItem.video}
-                    poster={loadedItem.image}
-                    ariaLabel={loadedItem.title}
-                    videoRef={videoRef}
-                    muted={!isVolumeOn}
-                    width="100%"
-                    height="100%"
+            <div onClick={() => setIsInfoOn(false)}>
+                <Image
+                    src={activeItem.image}
+                    alt={activeItem.title}
+                    onLoad={() => setLoadedItem(activeItem)}
+                    fadeInOnLoad
                 />
-            )}
 
-            <ItemInfo
-                loadedItem={loadedItem}
-                isInfoOn={isInfoOn}
-                setIsInfoOn={setIsInfoOn}
-            />
+                {activeItem === loadedItem && loadedItem.video && isVideoOn && (
+                    <Video
+                        src={loadedItem.video}
+                        poster={loadedItem.image}
+                        ariaLabel={loadedItem.title}
+                        videoRef={videoRef}
+                        muted={!isVolumeOn}
+                        width="100%"
+                        height="100%"
+                    />
+                )}
+
+                <ItemInfo loadedItem={loadedItem} isInfoOn={isInfoOn} />
+            </div>
 
             <Notch
                 activeItem={activeItem}
