@@ -1,6 +1,5 @@
-import { badges } from "data/languageData";
 import { BadgesWrapper, StyledItemInfo } from "../styles";
-import { PortfolioItem } from "data/portfolioData";
+import { badges, PortfolioItem } from "data/portfolioData";
 import Div from "elements/components/div";
 import Headline from "elements/components/headline";
 import Text from "elements/components/text";

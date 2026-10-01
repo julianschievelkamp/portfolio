@@ -2,27 +2,6 @@ import Link from "elements/components/link";
 
 import SelfPortrait from "assets/img/misc/self_portrait.jpg";
 import Profile from "assets/img/misc/profile.jpg";
-import Badge1 from "assets/img/misc/badge1.png";
-import Badge2 from "assets/img/misc/badge2.jpg";
-import Badge3 from "assets/img/misc/badge3.png";
-
-export const badges = {
-    fapa: {
-        image: Badge1,
-        alt: "Fine Art Photography Awards",
-        link: "",
-    },
-    px3: {
-        image: Badge2,
-        alt: "Prix de la Photographie Paris",
-        link: "",
-    },
-    nd: {
-        image: Badge3,
-        alt: "ND Awards",
-        link: "",
-    },
-};
 
 export const languageData = {
     title: (

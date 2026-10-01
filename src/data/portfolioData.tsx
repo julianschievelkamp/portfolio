@@ -1,5 +1,3 @@
-import { badges } from "./languageData";
-
 import DadaYaga from "assets/img/dada_yaga.jpg";
 import Andromeda from "assets/img/andromeda.jpg";
 import Versus1 from "assets/img/versus_1.jpg";
@@ -52,6 +50,28 @@ import ViscosityVideo from "assets/videos/viscosity_1080.mp4";
 import AuraVideo from "assets/videos/aura.mp4";
 import DopplerVideo from "assets/videos/doppler.mp4";
 import ConsciousnessVideo from "assets/videos/consciousness_1080.mp4";
+
+import Badge1 from "assets/img/misc/badge1.png";
+import Badge2 from "assets/img/misc/badge2.jpg";
+import Badge3 from "assets/img/misc/badge3.png";
+
+export const badges = {
+    fapa: {
+        image: Badge1,
+        alt: "Fine Art Photography Awards",
+        link: "",
+    },
+    px3: {
+        image: Badge2,
+        alt: "Prix de la Photographie Paris",
+        link: "",
+    },
+    nd: {
+        image: Badge3,
+        alt: "ND Awards",
+        link: "",
+    },
+};
 
 export type PortfolioItem = {
     title: string;
