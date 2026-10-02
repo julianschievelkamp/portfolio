@@ -127,14 +127,14 @@ export const BadgesWrapper = styled.div`
     gap: 0.5rem;
     margin-left: 1.5rem;
 
-    a {
+    > div {
         display: flex;
         align-items: center;
-    }
 
-    img {
-        min-width: 2rem;
-        max-width: 2rem;
+        img {
+            min-width: 2rem;
+            max-width: 2rem;
+        }
     }
 `;
 

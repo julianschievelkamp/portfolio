@@ -29,7 +29,7 @@ const ItemInfo = ({ loadedItem, isInfoOn }: ItemInfoProps) => {
                         const badge = badges[key];
 
                         return (
-                            <Link key={key} href={badge.link} target="_blank">
+                            <Div key={key}>
                                 <Image
                                     src={badge.image}
                                     alt={badge.alt}
@@ -38,7 +38,7 @@ const ItemInfo = ({ loadedItem, isInfoOn }: ItemInfoProps) => {
                                     width="2rem"
                                     height="2rem"
                                 />
-                            </Link>
+                            </Div>
                         );
                     })}
                 </BadgesWrapper>
