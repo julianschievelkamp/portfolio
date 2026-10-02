@@ -4,7 +4,6 @@ import Div from "elements/components/div";
 import Headline from "elements/components/headline";
 import Text from "elements/components/text";
 import Image from "elements/components/image";
-import Link from "elements/components/link";
 
 export interface ItemInfoProps {
     loadedItem: PortfolioItem;
