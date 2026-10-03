@@ -19,11 +19,11 @@ export const StyledDivider = styled.div`
 `;
 
 export const TextWrapper = styled.div`
-    margin: 0 auto;
+    margin: 4rem auto;
     width: fit-content;
     position: relative;
     z-index: 1;
-    padding: 4rem 1rem;
+    padding: 0 1rem;
 
     &::before {
         content: "";
