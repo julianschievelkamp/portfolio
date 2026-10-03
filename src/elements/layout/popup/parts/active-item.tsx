@@ -57,7 +57,6 @@ const ActiveItem = () => {
             <ItemInfo loadedItem={loadedItem} isInfoOn={isInfoOn} />
 
             <Notch
-                activeItem={activeItem}
                 loadedItem={loadedItem}
                 isVideoOn={isVideoOn}
                 setIsVideoOn={setIsVideoOn}

@@ -1,14 +1,11 @@
-import { Buttons, NotchText, NotchWrapper, StyledNotch } from "../styles";
+import { NotchWrapper, StyledNotch } from "../styles";
 import { PortfolioItem } from "data/portfolioData";
-import { useEffect, useState } from "react";
-import { languageData } from "data/languageData";
 import Button from "elements/components/button";
 import Icon from "elements/components/icon";
 import { colors, queries } from "styles/variables";
 import { useMediaQuery } from "hooks/useMediaQuery";
 
 export interface NotchProps {
-    activeItem: PortfolioItem;
     loadedItem: PortfolioItem;
     isVideoOn: boolean;
     setIsVideoOn: (videoOn: boolean) => void;
@@ -19,7 +16,6 @@ export interface NotchProps {
 }
 
 const Notch = ({
-    activeItem,
     loadedItem,
     isVideoOn,
     setIsVideoOn,
@@ -29,80 +25,56 @@ const Notch = ({
     setIsInfoOn,
 }: NotchProps) => {
     const isHover = useMediaQuery(queries.hover);
-    const [loadingIndicator, setLoadingIndicator] = useState(false);
-
-    useEffect(() => {
-        let timer: ReturnType<typeof setTimeout>;
-
-        if (activeItem !== loadedItem) {
-            timer = setTimeout(() => {
-                setLoadingIndicator(true);
-            }, 400);
-        } else {
-            setLoadingIndicator(false);
-        }
-
-        return () => clearTimeout(timer);
-    }, [activeItem, loadedItem]);
 
     return (
         <NotchWrapper>
             <StyledNotch>
-                <Buttons>
-                    <Button
-                        onClick={() => setIsVolumeOn(!isVolumeOn)}
-                        disabled={!loadedItem.video || !isVideoOn}
-                        ariaLabel="Toggle Volume"
-                        hoverStyles={isHover}
-                    >
-                        <Icon
-                            name={
-                                loadedItem.video && isVideoOn && isVolumeOn
-                                    ? "volumeOn"
-                                    : "volumeOff"
-                            }
-                            color="white"
-                            size="1rem"
-                            padding="0.25rem"
-                        />
-                    </Button>
-                    <Button
-                        onClick={() => setIsVideoOn(!isVideoOn)}
-                        disabled={!loadedItem.video}
-                        ariaLabel="Toggle Video"
-                        hoverStyles={isHover}
-                    >
-                        <Icon
-                            name={
-                                loadedItem.video && isVideoOn
-                                    ? "videoOn"
-                                    : "videoOff"
-                            }
-                            color="white"
-                            size="1rem"
-                            padding="0.25rem"
-                        />
-                    </Button>
-                </Buttons>
-
-                <NotchText bold fontSize="0.875rem">
-                    {loadingIndicator ? languageData.loading : loadedItem.title}
-                </NotchText>
-
-                <Buttons>
-                    <Button
-                        onClick={() => setIsInfoOn(!isInfoOn)}
-                        ariaLabel="Toggle Info"
-                        hoverStyles={isHover}
-                    >
-                        <Icon
-                            name={isInfoOn ? "infoFilled" : "info"}
-                            color={isInfoOn ? colors.primary : "white"}
-                            size="1rem"
-                            padding="0.25rem"
-                        />
-                    </Button>
-                </Buttons>
+                <Button
+                    onClick={() => setIsVolumeOn(!isVolumeOn)}
+                    disabled={!loadedItem.video || !isVideoOn}
+                    ariaLabel="Toggle Volume"
+                    hoverStyles={isHover}
+                >
+                    <Icon
+                        name={
+                            loadedItem.video && isVideoOn && isVolumeOn
+                                ? "volumeOn"
+                                : "volumeOff"
+                        }
+                        color="white"
+                        size="1rem"
+                        padding="0.25rem"
+                    />
+                </Button>
+                <Button
+                    onClick={() => setIsVideoOn(!isVideoOn)}
+                    disabled={!loadedItem.video}
+                    ariaLabel="Toggle Video"
+                    hoverStyles={isHover}
+                >
+                    <Icon
+                        name={
+                            loadedItem.video && isVideoOn
+                                ? "videoOn"
+                                : "videoOff"
+                        }
+                        color="white"
+                        size="1rem"
+                        padding="0.25rem"
+                    />
+                </Button>
+                <Button
+                    onClick={() => setIsInfoOn(!isInfoOn)}
+                    ariaLabel="Toggle Info"
+                    hoverStyles={isHover}
+                >
+                    <Icon
+                        name={isInfoOn ? "infoFilled" : "info"}
+                        color={isInfoOn ? colors.primary : "white"}
+                        size="1rem"
+                        padding="0.25rem"
+                    />
+                </Button>
             </StyledNotch>
         </NotchWrapper>
     );

@@ -2,7 +2,6 @@ import { queries } from "styles/variables";
 import { styled } from "styled-components";
 import { transition } from "styles/variables";
 import Button from "elements/components/button";
-import Text from "elements/components/text";
 
 export const StyledPopup = styled.div<{ $isOpen: boolean }>`
     position: fixed;
@@ -158,8 +157,10 @@ export const StyledNotch = styled.div`
     width: auto;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     background: black;
-    padding: 0.5rem 0.25rem;
+    padding-right: 0.25rem;
+    height: 1.75rem;
     max-width: 100%;
 
     &::before {
@@ -168,28 +169,11 @@ export const StyledNotch = styled.div`
         background: black;
         transform: rotate(45deg);
         z-index: -1;
-        left: -1rem;
-        top: -0.5rem;
-        width: 2rem;
-        height: 2rem;
+        left: -0.5rem;
+        top: -1.5rem;
+        width: 4rem;
+        height: 4rem;
     }
-`;
-
-export const NotchText = styled(Text)`
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    color: white;
-    text-align: right;
-    line-height: 1;
-    margin-left: 0.5rem;
-    margin-right: 0.25rem;
-`;
-
-export const Buttons = styled.div`
-    display: flex;
-    align-items: center;
-    height: 0.75rem;
 `;
 
 export const SliderContainer = styled.div`

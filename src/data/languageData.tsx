@@ -16,7 +16,6 @@ export const languageData = {
     intro: "Visual artist and fine art photographer highlighting the synergies of classic photography and CGI.",
     work: "WORK",
     links: "LINKS",
-    loading: "LOADING ...",
     copyright: (
         <>
             © Julian Schievelkamp
