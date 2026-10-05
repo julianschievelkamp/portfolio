@@ -62,7 +62,7 @@ const Video = ({
                 {!hasStarted && (
                     <PlayIcon
                         name="play"
-                        size="4rem"
+                        size="3.5rem"
                         padding="0.5rem"
                         color="white"
                     />
