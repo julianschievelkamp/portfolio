@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useStore } from "./useStore";
 import { mapIndex } from "utils/utils";
 import { PortfolioItem } from "data/portfolioData";
@@ -6,8 +6,9 @@ import { useMediaQuery } from "./useMediaQuery";
 import { queries } from "styles/variables";
 
 export const usePopup = (items: PortfolioItem[]) => {
-    const [touchStart, setTouchStart] = useState<number | null>(null);
-    const [touchEnd, setTouchEnd] = useState<number | null>(null);
+    // Touch-Koordinaten werden nur in Event-Handlern gelesen und brauchen kein Rendering
+    const touchStart = useRef<number | null>(null);
+    const touchEnd = useRef<number | null>(null);
     const {
         popupOpen,
         setPopupOpen,
@@ -17,8 +18,8 @@ export const usePopup = (items: PortfolioItem[]) => {
     const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
 
     useEffect(() => {
-        setTouchEnd(null);
-        setTouchStart(null);
+        touchEnd.current = null;
+        touchStart.current = null;
     }, [isLandscapeLgMax]);
 
     useEffect(() => {
@@ -27,34 +28,32 @@ export const usePopup = (items: PortfolioItem[]) => {
         };
 
         const onTouchStart = (e: TouchEvent) => {
-            setTouchEnd(null);
+            touchEnd.current = null;
 
             if (!popupOpen || e.touches.length > 1) return;
 
-            setTouchStart(
-                isLandscapeLgMax ? e.touches[0].clientY : e.touches[0].clientX,
-            );
+            touchStart.current = isLandscapeLgMax
+                ? e.touches[0].clientY
+                : e.touches[0].clientX;
         };
 
         const onTouchMove = (e: TouchEvent) => {
             if (!popupOpen) return;
 
             if (e.touches.length > 1) {
-                setTouchEnd(null);
-                setTouchStart(null);
+                touchEnd.current = null;
+                touchStart.current = null;
             } else {
-                setTouchEnd(
-                    isLandscapeLgMax
-                        ? e.touches[0].clientY
-                        : e.touches[0].clientX,
-                );
+                touchEnd.current = isLandscapeLgMax
+                    ? e.touches[0].clientY
+                    : e.touches[0].clientX;
             }
         };
 
         const onTouchEnd = () => {
             if (!popupOpen) return;
 
-            if (!touchStart || !touchEnd) return;
+            if (!touchStart.current || !touchEnd.current) return;
 
             if (window.visualViewport) {
                 if (Math.abs(window.visualViewport.scale - 1) > 0.05) {
@@ -63,7 +62,7 @@ export const usePopup = (items: PortfolioItem[]) => {
             }
 
             const minSwipeDistance = 50;
-            const distance = touchStart - touchEnd;
+            const distance = touchStart.current - touchEnd.current;
             const isPreviousSwipe = distance > minSwipeDistance;
             const isNextSwipe = distance < -minSwipeDistance;
 

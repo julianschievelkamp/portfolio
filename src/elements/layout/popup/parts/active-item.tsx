@@ -16,6 +16,7 @@ const ActiveItem = () => {
     const [isInfoOn, setIsInfoOn] = useState(false);
     const [isVideoOn, setIsVideoOn] = useState(true);
     const [isVolumeOn, setIsVolumeOn] = useState(true);
+    const [previousItem, setPreviousItem] = useState(activeItem);
 
     const videoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -25,11 +26,13 @@ const ActiveItem = () => {
         }
     }, [popupOpen]);
 
-    useEffect(() => {
+    // Beim Item-Wechsel werden die Zustände direkt beim Rendern zurückgesetzt
+    if (previousItem !== activeItem) {
+        setPreviousItem(activeItem);
         setIsInfoOn(false);
         setIsVideoOn(true);
         setIsVolumeOn(true);
-    }, [activeItem]);
+    }
 
     return (
         <Div zIndex={1}>

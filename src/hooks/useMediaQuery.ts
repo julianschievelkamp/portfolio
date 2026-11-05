@@ -1,24 +1,22 @@
-import { useState, useEffect } from "react";
-import { useEventListener } from "./useEventListener";
+import { useCallback, useSyncExternalStore } from "react";
 
 export const useMediaQuery = (mediaQuery: string) => {
-    const [isMatch, setMatch] = useState(false);
-    const [mediaQueryList, setMediaQueryList] = useState<MediaQueryList | null>(
-        null
+    // Abonniert Änderungen der Media Query; window wird nur im Browser berührt
+    const subscribe = useCallback(
+        (onChange: () => void) => {
+            const list = window.matchMedia(mediaQuery);
+
+            list.addEventListener("change", onChange);
+
+            return () => list.removeEventListener("change", onChange);
+        },
+        [mediaQuery],
     );
 
-    useEffect(() => {
-        const list = window.matchMedia(mediaQuery);
+    const getSnapshot = () => window.matchMedia(mediaQuery).matches;
 
-        setMediaQueryList(list);
-        setMatch(list.matches);
-    }, [mediaQuery]);
+    // Beim Pre-rendering gibt es kein window, daher false als Startwert
+    const getServerSnapshot = () => false;
 
-    useEventListener(
-        "change",
-        (e: MediaQueryListEvent) => setMatch(e.matches),
-        mediaQueryList
-    );
-
-    return isMatch;
+    return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 };

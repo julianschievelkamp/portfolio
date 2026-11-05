@@ -3,15 +3,21 @@ import Image from "elements/components/image";
 import { useStore } from "hooks/useStore";
 import { portfolioData } from "data/portfolioData";
 import { thumbnailSize } from "styles/variables";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Slider = () => {
     const { currentPortfolioIndex, setCurrentPortfolioIndex } = useStore();
-    const [selectedIndex, setSelectedIndex] = useState(currentPortfolioIndex);
+    // Per Tab fokussiertes Item samt Index, zu dem der Fokus entstanden ist
+    const [focus, setFocus] = useState<{
+        index: number;
+        baseIndex: number;
+    } | null>(null);
 
-    useEffect(() => {
-        setSelectedIndex(currentPortfolioIndex);
-    }, [currentPortfolioIndex]);
+    // Der Fokus gilt nur, solange sich der aktuelle Index nicht geändert hat
+    const selectedIndex =
+        focus?.baseIndex === currentPortfolioIndex
+            ? focus.index
+            : currentPortfolioIndex;
 
     return (
         <SliderContainer>
@@ -23,9 +29,12 @@ const Slider = () => {
                             aria-label={item.title}
                             onClick={() => setCurrentPortfolioIndex(index)}
                             onFocus={(e) => {
-                                // only if focused via tab
+                                // Nur wenn per Tab fokussiert wird
                                 if (e.target.matches(":focus-visible")) {
-                                    setSelectedIndex(index);
+                                    setFocus({
+                                        index,
+                                        baseIndex: currentPortfolioIndex,
+                                    });
                                 }
                             }}
                             $imageOpacity={
