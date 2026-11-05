@@ -5,11 +5,12 @@
     "homepage": "https://www.julianschievelkamp.com",
     "type": "module",
     "scripts": {
-        "dev": "vike dev",
+        "start": "vike dev",
+        "preview": "vike preview",
         "build": "tsc -b && vike build",
         "deploy": "tsc -b && vike build && gh-pages -d dist/client",
         "lint": "eslint .",
-        "preview": "vike preview"
+        "test": "node --test"
     },
     "dependencies": {
         "react": "^19.3.0",
