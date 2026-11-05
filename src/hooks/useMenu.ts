@@ -6,30 +6,30 @@ export const useMenu = () => {
     const [lastScrollY, setLastScrollY] = useState(0);
     const { sidebarOpen } = useStore();
 
-    const controlMenu = (e: Event) => {
-        const target = e.target as HTMLElement;
-
-        if (
-            !sidebarOpen &&
-            target.scrollTop > 120 &&
-            target.scrollTop > lastScrollY
-        ) {
-            // if scroll down hide the menu
-            setVisible(false);
-        } else if (
-            sidebarOpen ||
-            target.scrollTop <= 120 ||
-            target.scrollTop + 20 <= lastScrollY
-        ) {
-            // if scroll up show the menu
-            setVisible(true);
-        }
-
-        // remember current page location to use in the next move
-        setLastScrollY(target.scrollTop);
-    };
-
     useEffect(() => {
+        const controlMenu = (e: Event) => {
+            const target = e.target as HTMLElement;
+
+            if (
+                !sidebarOpen &&
+                target.scrollTop > 120 &&
+                target.scrollTop > lastScrollY
+            ) {
+                // if scroll down hide the menu
+                setVisible(false);
+            } else if (
+                sidebarOpen ||
+                target.scrollTop <= 120 ||
+                target.scrollTop + 20 <= lastScrollY
+            ) {
+                // if scroll up show the menu
+                setVisible(true);
+            }
+
+            // remember current page location to use in the next move
+            setLastScrollY(target.scrollTop);
+        };
+
         const pageContainer = document.getElementById("page-container");
 
         pageContainer?.addEventListener("scroll", controlMenu);
@@ -37,7 +37,7 @@ export const useMenu = () => {
         return () => {
             pageContainer?.removeEventListener("scroll", controlMenu);
         };
-    }, [lastScrollY]);
+    });
 
     return {
         isVisible,

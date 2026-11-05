@@ -21,69 +21,71 @@ export const usePopup = (items: PortfolioItem[]) => {
         setTouchStart(null);
     }, [isLandscapeLgMax]);
 
-    const showItem = (newIndex: number) => {
-        setCurrentPortfolioIndex(mapIndex(newIndex, items.length - 1));
-    };
+    useEffect(() => {
+        const showItem = (newIndex: number) => {
+            setCurrentPortfolioIndex(mapIndex(newIndex, items.length - 1));
+        };
 
-    const onTouchStart = (e: TouchEvent) => {
-        setTouchEnd(null);
-
-        if (!popupOpen || e.touches.length > 1) return;
-
-        setTouchStart(
-            isLandscapeLgMax ? e.touches[0].clientY : e.touches[0].clientX,
-        );
-    };
-
-    const onTouchMove = (e: TouchEvent) => {
-        if (!popupOpen) return;
-
-        if (e.touches.length > 1) {
+        const onTouchStart = (e: TouchEvent) => {
             setTouchEnd(null);
-            setTouchStart(null);
-        } else {
-            setTouchEnd(
+
+            if (!popupOpen || e.touches.length > 1) return;
+
+            setTouchStart(
                 isLandscapeLgMax ? e.touches[0].clientY : e.touches[0].clientX,
             );
-        }
-    };
+        };
 
-    const onTouchEnd = () => {
-        if (!popupOpen) return;
+        const onTouchMove = (e: TouchEvent) => {
+            if (!popupOpen) return;
 
-        if (!touchStart || !touchEnd) return;
-
-        if (window.visualViewport) {
-            if (Math.abs(window.visualViewport.scale - 1) > 0.05) {
-                return;
+            if (e.touches.length > 1) {
+                setTouchEnd(null);
+                setTouchStart(null);
+            } else {
+                setTouchEnd(
+                    isLandscapeLgMax
+                        ? e.touches[0].clientY
+                        : e.touches[0].clientX,
+                );
             }
-        }
+        };
 
-        const minSwipeDistance = 50;
-        const distance = touchStart - touchEnd;
-        const isPreviousSwipe = distance > minSwipeDistance;
-        const isNextSwipe = distance < -minSwipeDistance;
+        const onTouchEnd = () => {
+            if (!popupOpen) return;
 
-        if (isPreviousSwipe) {
-            showItem(currentPortfolioIndex + 1);
-        } else if (isNextSwipe) {
-            showItem(currentPortfolioIndex - 1);
-        }
-    };
+            if (!touchStart || !touchEnd) return;
 
-    const onKeyDown = (e: KeyboardEvent) => {
-        if (!popupOpen) return;
+            if (window.visualViewport) {
+                if (Math.abs(window.visualViewport.scale - 1) > 0.05) {
+                    return;
+                }
+            }
 
-        if (e.key === "ArrowLeft") {
-            showItem(currentPortfolioIndex - 1);
-        } else if (e.key === "ArrowRight") {
-            showItem(currentPortfolioIndex + 1);
-        } else if (e.key === "Escape") {
-            setPopupOpen(false);
-        }
-    };
+            const minSwipeDistance = 50;
+            const distance = touchStart - touchEnd;
+            const isPreviousSwipe = distance > minSwipeDistance;
+            const isNextSwipe = distance < -minSwipeDistance;
 
-    useEffect(() => {
+            if (isPreviousSwipe) {
+                showItem(currentPortfolioIndex + 1);
+            } else if (isNextSwipe) {
+                showItem(currentPortfolioIndex - 1);
+            }
+        };
+
+        const onKeyDown = (e: KeyboardEvent) => {
+            if (!popupOpen) return;
+
+            if (e.key === "ArrowLeft") {
+                showItem(currentPortfolioIndex - 1);
+            } else if (e.key === "ArrowRight") {
+                showItem(currentPortfolioIndex + 1);
+            } else if (e.key === "Escape") {
+                setPopupOpen(false);
+            }
+        };
+
         document.addEventListener("keydown", onKeyDown);
         document.addEventListener("touchstart", onTouchStart, {
             passive: true,
@@ -101,5 +103,5 @@ export const usePopup = (items: PortfolioItem[]) => {
             document.removeEventListener("touchmove", onTouchMove);
             document.removeEventListener("touchend", onTouchEnd);
         };
-    }, [popupOpen, currentPortfolioIndex, touchStart, touchEnd]);
+    });
 };

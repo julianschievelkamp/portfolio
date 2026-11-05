@@ -23,12 +23,13 @@ const Video = ({
     const [hasStarted, setHasStarted] = useState(false);
 
     useEffect(() => {
+        const video = videoRef?.current;
         const handlePlay = () => setHasStarted(true);
 
-        videoRef?.current?.addEventListener("play", handlePlay);
+        video?.addEventListener("play", handlePlay);
 
-        return () => videoRef?.current?.removeEventListener("play", handlePlay);
-    }, []);
+        return () => video?.removeEventListener("play", handlePlay);
+    });
 
     const toggleVideo = () => {
         if (videoRef?.current?.paused) {

@@ -37,7 +37,7 @@ const Image = ({
         if (!imageLoaded && imageRef?.current?.complete) {
             setImageLoaded(true);
         }
-    }, []);
+    }, [imageLoaded]);
 
     return (
         <StyledImage
