@@ -11,9 +11,6 @@ const Portfolio = () => {
     const { setCurrentPortfolioIndex, setPopupOpen, popupOpen, sidebarOpen } =
         useStore();
 
-    // Die Bilder der ersten Reihe liegen im sichtbaren Bereich und werden sofort geladen
-    const eagerImageCount = isMd ? 4 : 3;
-
     return (
         <>
             <StyledPortfolio>
@@ -38,9 +35,7 @@ const Portfolio = () => {
                                 alt={getAltText(item)}
                                 margin={item.thumbnailMargin}
                                 aspectRatio={item.aspectRatio}
-                                loading={
-                                    index < eagerImageCount ? "eager" : "lazy"
-                                }
+                                loading={index < 3 ? "eager" : "lazy"}
                                 fetchPriority={index === 0 ? "high" : undefined}
                                 fadeInOnLoad
                             />

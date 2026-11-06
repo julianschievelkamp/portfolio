@@ -41,6 +41,7 @@ const ActiveItem = () => {
                     src={activeItem.image}
                     alt={getAltText(activeItem)}
                     onLoad={() => setLoadedItem(activeItem)}
+                    loading="lazy"
                     fadeInOnLoad
                 />
 
