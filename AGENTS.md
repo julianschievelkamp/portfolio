@@ -11,7 +11,6 @@
 
 - `./public` – Konfigurationsdateien für das Deployment (z. B. `CNAME`) und globale Browser-Ressourcen (z. B. `favicon.ico`).
 - `./src` – Das Hauptverzeichnis, das alle Komponenten, Layouts, Funktionen und Inhalte der Website enthält.
-- `./src/app` – Globales Layout der Website als Komponente für die Vike-Einstiegspunkte.
 - `./src/assets` – **WICHTIG:** Dieser Ordner ist für den Agenten tabu (weder lesen noch editieren/verändern). Er enthält die produktiven Medien, Icons und Fonts des Projekts.
 - `./src/data` – Enthält statische Inhalte, Texte und Datenobjekte der Website (z. B. Bild-Metadaten).
 - `./src/elements` – Enthält alle wiederverwendbaren Komponenten, Layout-Bausteine und UI-Elemente der Website. Zugehörige Test-Dateien werden direkt im jeweiligen Komponenten-Ordner abgelegt.

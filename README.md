@@ -53,7 +53,6 @@ Starts the Vike dev server with hot module replacement.
 ```
 public/        Deployment config (e.g. CNAME) and global resources (e.g. favicon)
 src/
-├── app/       Global layout used by the Vike entry points
 ├── assets/    Media, icons and fonts
 ├── data/      Static content, texts and data objects (e.g. image metadata)
 ├── elements/  Reusable components and layout building blocks (tests are co-located)
