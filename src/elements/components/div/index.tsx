@@ -5,53 +5,29 @@ import { StyledDiv } from "./styles";
 export interface DivProps {
     children?: React.ReactNode;
     width?: string;
-    maxWidth?: string;
     height?: string;
     minHeight?: string;
     onClick?: () => void;
     className?: string;
     position?: string;
     display?: string;
-    flexDirection?: string;
-    justifyContent?: string;
-    flexWrap?: string;
     alignItems?: string;
     margin?: string;
-    padding?: string;
-    top?: string;
-    left?: string;
-    right?: string;
-    bottom?: string;
-    opacity?: number;
-    overflow?: string;
     zIndex?: number;
-    background?: string;
 }
 
 const Div = ({
     children,
     width,
-    maxWidth,
     height,
     minHeight,
     onClick,
     className,
     position,
     display,
-    flexDirection,
-    justifyContent,
-    flexWrap,
     alignItems,
     margin,
-    padding,
-    top,
-    left,
-    right,
-    bottom,
-    opacity,
-    overflow,
     zIndex,
-    background,
 }: DivProps) => {
     return (
         <StyledDiv
@@ -60,23 +36,11 @@ const Div = ({
             onClick={onClick}
             className={className}
             $minHeight={minHeight}
-            $maxWidth={maxWidth}
             $position={position}
             $display={display}
-            $flexDirection={flexDirection}
-            $justifyContent={justifyContent}
-            $flexWrap={flexWrap}
             $alignItems={alignItems}
             $margin={margin}
-            $padding={padding}
-            $top={top}
-            $left={left}
-            $right={right}
-            $bottom={bottom}
-            $opacity={opacity}
-            $overflow={overflow}
             $zIndex={zIndex}
-            $background={background}
         >
             {children}
         </StyledDiv>

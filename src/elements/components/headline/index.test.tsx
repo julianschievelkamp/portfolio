@@ -36,9 +36,7 @@ describe("Headline", () => {
             <Headline
                 color="red"
                 textAlign="right"
-                margin="2rem"
                 fontSize="3rem"
-                lineHeight="1"
             >
                 Title
             </Headline>,
@@ -48,9 +46,7 @@ describe("Headline", () => {
         expect(screen.getByRole("heading")).toHaveStyle({
             color: "rgb(255, 0, 0)",
             textAlign: "right",
-            margin: "32px",
             fontSize: "48px",
-            lineHeight: "1",
         });
     });
 

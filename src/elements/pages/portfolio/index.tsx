@@ -18,7 +18,7 @@ const Portfolio = () => {
                     return (
                         <PortfolioItem
                             key={item.title}
-                            aria-label={item.title}
+                            ariaLabel={item.title}
                             onClick={() => {
                                 setCurrentPortfolioIndex(index);
                                 setPopupOpen(true);

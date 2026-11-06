@@ -4,17 +4,15 @@ import { transition } from "styles/variables";
 type headlineProps = {
     color?: string;
     $textAlign?: "left" | "center" | "right" | "justify";
-    $margin?: string;
     $fontSize?: string;
-    $lineHeight?: string;
 };
 
 const headlineStyles = css<headlineProps>`
     text-align: ${({ $textAlign }) => $textAlign};
     font-size: ${({ $fontSize }) => $fontSize};
-    margin: ${({ $margin }) => $margin};
+    margin: 0;
     color: ${({ color }) => color ?? "black"};
-    line-height: ${({ $lineHeight }) => $lineHeight};
+    line-height: 1.5;
     transition: color ${transition.fast};
     font-family: "PlayfairDisplay", sans-serif;
     font-weight: 900;

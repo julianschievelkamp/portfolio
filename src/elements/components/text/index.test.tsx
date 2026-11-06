@@ -30,7 +30,6 @@ describe("Text", () => {
                 textAlign="center"
                 margin="1rem"
                 fontSize="2rem"
-                lineHeight="2"
             >
                 Hello
             </Text>,
@@ -43,13 +42,6 @@ describe("Text", () => {
             textAlign: "center",
             margin: "16px",
             fontSize: "32px",
-            lineHeight: "2",
         });
-    });
-
-    it("passes className through", () => {
-        render(<Text className="custom">Hello</Text>);
-
-        expect(screen.getByText("Hello")).toHaveClass("custom");
     });
 });

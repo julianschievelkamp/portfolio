@@ -22,16 +22,10 @@ describe("Div", () => {
 
     it.each([
         ["display", "flex"],
-        ["flexDirection", "column"],
-        ["justifyContent", "center"],
         ["alignItems", "center"],
-        ["flexWrap", "wrap"],
         ["margin", "16px"],
-        ["padding", "32px"],
         ["width", "50%"],
-        ["maxWidth", "80%"],
         ["minHeight", "160px"],
-        ["overflow", "hidden"],
         ["position", "absolute"],
     ] as const)("applies the %s prop", (prop, value) => {
         render(<Div {...{ [prop]: value }}>Content</Div>);
@@ -39,17 +33,10 @@ describe("Div", () => {
         expect(screen.getByText("Content")).toHaveStyle({ [prop]: value });
     });
 
-    it("applies zIndex and opacity", () => {
-        render(
-            <Div zIndex={5} opacity={0.5}>
-                Content
-            </Div>,
-        );
+    it("applies zIndex", () => {
+        render(<Div zIndex={5}>Content</Div>);
 
-        expect(screen.getByText("Content")).toHaveStyle({
-            zIndex: "5",
-            opacity: "0.5",
-        });
+        expect(screen.getByText("Content")).toHaveStyle({ zIndex: "5" });
     });
 
     it("calls onClick on click", async () => {

@@ -76,10 +76,4 @@ describe("Image", () => {
 
         completeSpy.mockRestore();
     });
-
-    it("passes className through", () => {
-        render(<Image src="/a.jpg" alt="Art" className="custom" />);
-
-        expect(screen.getByRole("img")).toHaveClass("custom");
-    });
 });

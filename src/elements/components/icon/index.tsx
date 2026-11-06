@@ -5,7 +5,6 @@ export interface IconProps {
     name: keyof typeof icons;
     color?: string;
     size?: string;
-    margin?: string;
     padding?: string;
     className?: string;
 }
@@ -15,7 +14,6 @@ const Icon = ({
     color,
     className,
     size = "1rem",
-    margin,
     padding,
 }: IconProps) => {
     const Icon = icons[name];
@@ -24,7 +22,6 @@ const Icon = ({
         <StyledIcon
             color={color}
             $size={size}
-            $margin={margin}
             $padding={padding}
             className={className}
         >

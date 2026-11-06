@@ -15,15 +15,14 @@ describe("Icon", () => {
     );
 
     // jsdom rechnet rem in px um (1rem = 16px)
-    it("applies size, margin and padding to the wrapper", () => {
+    it("applies size and padding to the wrapper", () => {
         const { container } = render(
-            <Icon name="close" size="2rem" margin="1rem" padding="0.5rem" />,
+            <Icon name="close" size="2rem" padding="0.5rem" />,
         );
 
         expect(container.firstChild).toHaveStyle({
             width: "32px",
             height: "32px",
-            margin: "16px",
             padding: "8px",
         });
     });

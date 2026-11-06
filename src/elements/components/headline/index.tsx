@@ -12,9 +12,7 @@ export interface HeadlineProps {
     className?: string;
     color?: string;
     textAlign?: "left" | "center" | "right" | "justify";
-    margin?: string;
     fontSize?: string;
-    lineHeight?: string;
     type?: "h1" | "h2";
 }
 
@@ -23,11 +21,8 @@ const Headline = ({
     className,
     color,
     textAlign,
-    margin = "0",
     fontSize = "1rem",
-    lineHeight = "1.5",
     type = "h1",
-    ...rest
 }: HeadlineProps) => {
     const HeadlineComponent = headlines[type];
 
@@ -36,10 +31,7 @@ const Headline = ({
             className={className}
             color={color}
             $textAlign={textAlign}
-            $margin={margin}
             $fontSize={fontSize}
-            $lineHeight={lineHeight}
-            {...rest}
         >
             {children}
         </HeadlineComponent>

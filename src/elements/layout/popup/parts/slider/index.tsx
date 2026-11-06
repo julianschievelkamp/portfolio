@@ -26,7 +26,7 @@ const Slider = () => {
                     return (
                         <SliderItem
                             key={item.title}
-                            aria-label={item.title}
+                            ariaLabel={item.title}
                             onClick={() => setCurrentPortfolioIndex(index)}
                             onFocus={(e) => {
                                 // Nur wenn per Tab fokussiert wird

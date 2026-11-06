@@ -7,7 +7,6 @@ export const StyledText = styled.p<{
     $textAlign?: "left" | "center" | "right" | "justify";
     $margin?: string;
     $fontSize?: string;
-    $lineHeight?: string;
     $whiteSpace?: "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
 }>`
     text-align: ${({ $textAlign }) => $textAlign};
@@ -15,7 +14,7 @@ export const StyledText = styled.p<{
     font-size: ${({ $fontSize }) => $fontSize};
     margin: ${({ $margin }) => $margin};
     color: ${({ color }) => color ?? "black"};
-    line-height: ${({ $lineHeight }) => $lineHeight};
+    line-height: 1.5;
     transition: color ${transition.fast};
     font-family: "Poppins", sans-serif;
 `;

@@ -3,7 +3,6 @@ import { transition, colors } from "styles/variables";
 
 export const StyledIcon = styled.div<{
     $size?: string;
-    $margin?: string;
     $padding?: string;
 }>`
     display: flex;
@@ -13,7 +12,6 @@ export const StyledIcon = styled.div<{
     height: ${({ $size }) => $size};
     min-height: ${({ $size }) => $size};
     min-width: ${({ $size }) => $size};
-    margin: ${({ $margin }) => $margin};
     padding: ${({ $padding }) => $padding};
     max-width: 100%;
     max-height: 100%;
