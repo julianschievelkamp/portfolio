@@ -20,16 +20,18 @@ const Video = ({
     muted,
     ariaLabel,
 }: VideoProps) => {
-    const [hasStarted, setHasStarted] = useState(false);
+    // Merkt sich, für welche Quelle das Video gestartet wurde.
+    // Bei einem Quellenwechsel gilt das Video so automatisch wieder als nicht gestartet.
+    const [startedSrc, setStartedSrc] = useState<string | null>(null);
 
     useEffect(() => {
         const video = videoRef?.current;
-        const handlePlay = () => setHasStarted(true);
+        const handlePlay = () => setStartedSrc(src);
 
         video?.addEventListener("play", handlePlay);
 
         return () => video?.removeEventListener("play", handlePlay);
-    });
+    }, [videoRef, src]);
 
     const toggleVideo = () => {
         if (videoRef?.current?.paused) {
@@ -60,7 +62,7 @@ const Video = ({
             </StyledVideo>
 
             <PlayButton onClick={() => toggleVideo()}>
-                {!hasStarted && (
+                {startedSrc !== src && (
                     <PlayIcon
                         name="play"
                         size="3.5rem"

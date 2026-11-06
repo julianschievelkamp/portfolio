@@ -23,6 +23,7 @@ const Link = ({
         <StyledLink
             href={href}
             target={target}
+            rel={target === "_blank" ? "noopener noreferrer" : undefined}
             onClick={onClick}
             $underline={underline}
             tabIndex={0}
