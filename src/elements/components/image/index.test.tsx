@@ -64,6 +64,19 @@ describe("Image", () => {
         expect(image).toHaveStyle("opacity: 1");
     });
 
+    it("shows a cached image immediately when it is already complete on mount", () => {
+        // jsdom lädt keine Bilder, daher wird "complete" für diesen Test simuliert
+        const completeSpy = vi
+            .spyOn(HTMLImageElement.prototype, "complete", "get")
+            .mockReturnValue(true);
+
+        render(<Image src="/a.jpg" alt="Art" fadeInOnLoad />);
+
+        expect(screen.getByRole("img")).toHaveStyle("opacity: 1");
+
+        completeSpy.mockRestore();
+    });
+
     it("passes className through", () => {
         render(<Image src="/a.jpg" alt="Art" className="custom" />);
 
