@@ -1,11 +1,9 @@
 import { useEffect, useRef } from "react";
 import { useStore } from "./useStore";
-import { mapIndex } from "utils/utils";
-import { PortfolioItem } from "data/portfolioData";
 import { useMediaQuery } from "./useMediaQuery";
 import { queries } from "styles/variables";
 
-export const usePopup = (items: PortfolioItem[]) => {
+export const usePopup = () => {
     // Touch-Koordinaten werden nur in Event-Handlern gelesen und brauchen kein Rendering
     const touchStart = useRef<number | null>(null);
     const touchEnd = useRef<number | null>(null);
@@ -24,7 +22,7 @@ export const usePopup = (items: PortfolioItem[]) => {
 
     useEffect(() => {
         const showItem = (newIndex: number) => {
-            setCurrentPortfolioIndex(mapIndex(newIndex, items.length - 1));
+            setCurrentPortfolioIndex(newIndex);
         };
 
         const onTouchStart = (e: TouchEvent) => {

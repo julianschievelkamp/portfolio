@@ -1,3 +1,4 @@
+import { portfolioData } from "data/portfolioData";
 import { create } from "zustand";
 
 interface State {
@@ -23,9 +24,18 @@ export const useStore = create<State & Actions>((set) => ({
         })),
 
     setCurrentPortfolioIndex: (index) =>
-        set(() => ({
-            currentPortfolioIndex: index,
-        })),
+        set(() => {
+            const maxIndex = portfolioData.length - 1;
+
+            // Index am Anfang bzw. Ende der Liste umbrechen
+            if (index > maxIndex) {
+                return { currentPortfolioIndex: 0 };
+            } else if (index < 0) {
+                return { currentPortfolioIndex: maxIndex };
+            }
+
+            return { currentPortfolioIndex: index };
+        }),
 
     setPopupOpen: (open) =>
         set(() => ({

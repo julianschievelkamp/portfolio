@@ -18,7 +18,6 @@
 - `./src/hooks` – Wiederverwendbare, benutzerdefinierte React-Hooks (Custom Hooks) zur Kapselung von Zustand und Logik abseits der UI-Komponenten.
 - `./src/pages` – Enthält die Routing-Einstiegspunkte für Vike.
 - `./src/styles` – Enthält globale Styling-Definitionen und Variablen.
-- `./src/utils` – Reine Hilfsfunktionen (Helper / Utility Functions) ohne React-Zustand.
 
 ## Umgebung & Befehle
 

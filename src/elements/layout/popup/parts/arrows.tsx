@@ -1,7 +1,5 @@
 import { Arrow } from "../styles";
 import { useStore } from "hooks/useStore";
-import { mapIndex } from "utils/utils";
-import { portfolioData } from "data/portfolioData";
 import Icon from "elements/components/icon";
 
 const Arrows = () => {
@@ -13,28 +11,17 @@ const Arrows = () => {
                 ariaLabel="Previous"
                 tabIndex={-1}
                 onClick={() =>
-                    setCurrentPortfolioIndex(
-                        mapIndex(
-                            currentPortfolioIndex - 1,
-                            portfolioData.length - 1,
-                        ),
-                    )
+                    setCurrentPortfolioIndex(currentPortfolioIndex - 1)
                 }
             >
                 <Icon name="chevronLeft" size="4rem" />
             </Arrow>
-
             <Arrow
                 $isRight
                 ariaLabel="Next"
                 tabIndex={-1}
                 onClick={() =>
-                    setCurrentPortfolioIndex(
-                        mapIndex(
-                            currentPortfolioIndex + 1,
-                            portfolioData.length - 1,
-                        ),
-                    )
+                    setCurrentPortfolioIndex(currentPortfolioIndex + 1)
                 }
             >
                 <Icon name="chevronRight" size="4rem" />
