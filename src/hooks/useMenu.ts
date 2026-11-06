@@ -15,18 +15,18 @@ export const useMenu = () => {
                 target.scrollTop > 120 &&
                 target.scrollTop > lastScrollY
             ) {
-                // if scroll down hide the menu
+                // Beim Scrollen nach unten das Menü ausblenden
                 setVisible(false);
             } else if (
                 sidebarOpen ||
                 target.scrollTop <= 120 ||
                 target.scrollTop + 20 <= lastScrollY
             ) {
-                // if scroll up show the menu
+                // Beim Scrollen nach oben das Menü einblenden
                 setVisible(true);
             }
 
-            // remember current page location to use in the next move
+            // Aktuelle Scrollposition für den nächsten Scroll-Vorgang merken
             setLastScrollY(target.scrollTop);
         };
 

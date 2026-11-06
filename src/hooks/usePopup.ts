@@ -4,16 +4,17 @@ import { useMediaQuery } from "./useMediaQuery";
 import { queries } from "styles/variables";
 
 export const usePopup = () => {
-    // Touch-Koordinaten werden nur in Event-Handlern gelesen und brauchen kein Rendering
-    const touchStart = useRef<number | null>(null);
-    const touchEnd = useRef<number | null>(null);
+    const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
     const {
         popupOpen,
         setPopupOpen,
         currentPortfolioIndex,
         setCurrentPortfolioIndex,
     } = useStore();
-    const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
+
+    // Touch-Koordinaten werden nur in Event-Handlern gelesen und brauchen kein Rendering
+    const touchStart = useRef<number | null>(null);
+    const touchEnd = useRef<number | null>(null);
 
     useEffect(() => {
         touchEnd.current = null;
@@ -21,10 +22,6 @@ export const usePopup = () => {
     }, [isLandscapeLgMax]);
 
     useEffect(() => {
-        const showItem = (newIndex: number) => {
-            setCurrentPortfolioIndex(newIndex);
-        };
-
         const onTouchStart = (e: TouchEvent) => {
             touchEnd.current = null;
 
@@ -65,9 +62,9 @@ export const usePopup = () => {
             const isNextSwipe = distance < -minSwipeDistance;
 
             if (isPreviousSwipe) {
-                showItem(currentPortfolioIndex + 1);
+                setCurrentPortfolioIndex(currentPortfolioIndex + 1);
             } else if (isNextSwipe) {
-                showItem(currentPortfolioIndex - 1);
+                setCurrentPortfolioIndex(currentPortfolioIndex - 1);
             }
         };
 
@@ -75,9 +72,9 @@ export const usePopup = () => {
             if (!popupOpen) return;
 
             if (e.key === "ArrowLeft") {
-                showItem(currentPortfolioIndex - 1);
+                setCurrentPortfolioIndex(currentPortfolioIndex - 1);
             } else if (e.key === "ArrowRight") {
-                showItem(currentPortfolioIndex + 1);
+                setCurrentPortfolioIndex(currentPortfolioIndex + 1);
             } else if (e.key === "Escape") {
                 setPopupOpen(false);
             }

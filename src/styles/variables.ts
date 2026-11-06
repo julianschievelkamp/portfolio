@@ -26,7 +26,7 @@ export const transition = {
 
 export const scrollStyles = css`
     overflow-y: scroll;
-    -ms-overflow-style: none; /* IE and Edge */
+    -ms-overflow-style: none; /* IE und Edge */
     scrollbar-width: none; /* Firefox */
 
     &::-webkit-scrollbar {
