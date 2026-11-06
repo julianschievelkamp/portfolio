@@ -31,6 +31,7 @@ const Navigation = ({ page }: NavigationProps) => {
                             <NavLink
                                 $isActive={isActive}
                                 href={path}
+                                ariaCurrent={isActive ? "page" : undefined}
                                 onClick={() => {
                                     if (!isActive) {
                                         setSidebarOpen(false);

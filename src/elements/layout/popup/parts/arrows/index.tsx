@@ -1,0 +1,33 @@
+import { Arrow } from "./styles";
+import { useStore } from "hooks/useStore";
+import Icon from "elements/components/icon";
+
+const Arrows = () => {
+    const { currentPortfolioIndex, setCurrentPortfolioIndex } = useStore();
+
+    return (
+        <>
+            <Arrow
+                ariaLabel="Previous"
+                tabIndex={-1}
+                onClick={() =>
+                    setCurrentPortfolioIndex(currentPortfolioIndex - 1)
+                }
+            >
+                <Icon name="chevronLeft" size="4rem" />
+            </Arrow>
+            <Arrow
+                $isRight
+                ariaLabel="Next"
+                tabIndex={-1}
+                onClick={() =>
+                    setCurrentPortfolioIndex(currentPortfolioIndex + 1)
+                }
+            >
+                <Icon name="chevronRight" size="4rem" />
+            </Arrow>
+        </>
+    );
+};
+
+export default Arrows;

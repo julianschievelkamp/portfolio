@@ -75,4 +75,19 @@ describe("Link", () => {
 
         expect(screen.getByRole("link")).toHaveFocus();
     });
+
+    it("sets aria-current only when ariaCurrent is given", () => {
+        const { rerender } = render(<Link href="/">Home</Link>);
+        expect(screen.getByRole("link")).not.toHaveAttribute("aria-current");
+
+        rerender(
+            <Link href="/" ariaCurrent="page">
+                Home
+            </Link>,
+        );
+        expect(screen.getByRole("link")).toHaveAttribute(
+            "aria-current",
+            "page",
+        );
+    });
 });

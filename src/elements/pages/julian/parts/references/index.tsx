@@ -1,5 +1,5 @@
 import Text from "elements/components/text";
-import { ListWrapper, ReferencesWrapper } from "../styles";
+import { ListWrapper, ReferencesWrapper } from "./styles";
 import { languageData } from "data/languageData";
 import Divider from "elements/components/divider";
 import Div from "elements/components/div";

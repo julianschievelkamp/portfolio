@@ -8,6 +8,7 @@ export interface LinkProps {
     target?: string;
     onClick?: () => void;
     underline?: boolean;
+    ariaCurrent?: "page";
     className?: string;
 }
 
@@ -17,6 +18,7 @@ const Link = ({
     target,
     onClick,
     underline = true,
+    ariaCurrent,
     className,
 }: LinkProps) => {
     return (
@@ -26,6 +28,7 @@ const Link = ({
             rel={target === "_blank" ? "noopener noreferrer" : undefined}
             onClick={onClick}
             $underline={underline}
+            aria-current={ariaCurrent}
             tabIndex={0}
             className={className}
         >

@@ -1,5 +1,5 @@
 import Text from "elements/components/text";
-import { StyledSocial, ProfileImage, StyledProfile } from "../styles";
+import { StyledSocial, ProfileImage, StyledProfile } from "./styles";
 import Image from "elements/components/image";
 import Div from "elements/components/div";
 import Link from "elements/components/link";

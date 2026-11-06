@@ -1,4 +1,4 @@
-import { BadgesWrapper } from "../styles";
+import { BadgesWrapper } from "./styles";
 import { languageData } from "data/languageData";
 import Image from "elements/components/image";
 import Divider from "elements/components/divider";
