@@ -41,10 +41,6 @@ const ActiveItem = () => {
                     src={activeItem.image}
                     alt={getAltText(activeItem)}
                     onLoad={() => setLoadedItem(activeItem)}
-                    aspectRatio={activeItem.aspectRatio}
-                    loading="lazy"
-                    width="100%"
-                    height="100%"
                     fadeInOnLoad
                 />
 

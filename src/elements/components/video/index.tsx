@@ -52,7 +52,6 @@ const Video = ({
                 playsInline
                 loop
                 disablePictureInPicture
-                preload="metadata"
                 onContextMenu={(e) => e.preventDefault()}
                 aria-label={ariaLabel}
                 tabIndex={-1}
