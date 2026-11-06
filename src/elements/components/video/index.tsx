@@ -20,7 +20,6 @@ const Video = ({
     muted,
     ariaLabel,
 }: VideoProps) => {
-    // Merkt sich, für welche Quelle das Video gestartet wurde.
     // Bei einem Quellenwechsel gilt das Video so automatisch wieder als nicht gestartet.
     const [startedSrc, setStartedSrc] = useState<string | null>(null);
 
@@ -53,6 +52,7 @@ const Video = ({
                 playsInline
                 loop
                 disablePictureInPicture
+                preload="metadata"
                 onContextMenu={(e) => e.preventDefault()}
                 aria-label={ariaLabel}
                 tabIndex={-1}
