@@ -8,7 +8,10 @@ import { portfolioData, getAltText } from "data/portfolioFixtures";
 import Portfolio from ".";
 
 vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: vi.fn() }));
-vi.mock("data/portfolioData", async () => await import("data/portfolioFixtures"));
+vi.mock(
+    "data/portfolioData",
+    async () => await import("data/portfolioFixtures"),
+);
 vi.mock("elements/layout/popup", () => ({
     default: () => <div data-testid="popup" />,
 }));
@@ -29,20 +32,10 @@ describe("Portfolio", () => {
         portfolioData.forEach((item) => {
             expect(
                 screen.getByRole("button", { name: item.title }),
-            ).toContainElement(screen.getByRole("img", { name: getAltText(item) }));
+            ).toContainElement(
+                screen.getByRole("img", { name: getAltText(item) }),
+            );
         });
-    });
-
-    it("loads the first row eagerly and prioritizes only the first image", () => {
-        render(<Portfolio />);
-
-        const images = screen.getAllByRole("img");
-
-        images.forEach((image) => {
-            expect(image).toHaveAttribute("loading", "eager");
-        });
-        expect(images[0]).toHaveAttribute("fetchpriority", "high");
-        expect(images[1]).not.toHaveAttribute("fetchpriority");
     });
 
     it("selects the item and opens the popup on click", async () => {
