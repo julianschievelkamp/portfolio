@@ -52,7 +52,7 @@
 - **Styling (Styled Components):** Nutze Styled Components für das gesamte Komponenten-Styling. Halte Stile wartbar, indem du globale Themes oder Variablen für Farben und Abstände verwendest. Benenne Styled Components sprechend, um die Lesbarkeit des JSX-Baums zu wahren.
 - **Komponenten-Design:** Halte React-Komponenten klein, funktional, wiederverwendbar und fokussiert auf eine einzige Aufgabe (Single-Purpose). Bevorzuge Custom Hooks zur Trennung von Logik und UI.
 - **Code-Stil:** Halte dich strikt an die bestehenden ESLint- und Prettier-Konfigurationen. Führe vor dem Abschluss einer Aufgabe immer `yarn lint` aus.
-- **Test-Erstellung (Co-location):** Jede neue Kernkomponente muss durch einen Unit-Test abgesichert werden. Die Test-Datei muss zwingend im selben Ordner wie die Komponente selbst liegen (Co-location).
+- **Unit-Tests (Co-location):** Jede neue Kernkomponente muss durch einen Unit-Test abgesichert werden. Die Test-Datei muss zwingend im selben Ordner wie die Komponente selbst liegen (Co-location). Führe vor dem Abschluss einer Aufgabe immer `yarn test` aus.
 
 ### 4. Leitplanken & Einschränkungen (Guardrails)
 
