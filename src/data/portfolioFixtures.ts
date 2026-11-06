@@ -2,9 +2,9 @@ import type { PortfolioItem } from "data/portfolioData";
 
 // Testdaten, die portfolioData und badges in den Popup-Tests ersetzen
 export const badges = {
-    fapa: { image: "fapa.png", alt: "Fine Art Photography Awards", link: "#" },
-    px3: { image: "px3.png", alt: "Prix de la Photographie Paris", link: "#" },
-    nd: { image: "nd.png", alt: "ND Awards", link: "#" },
+    fapa: { image: "fapa.png", alt: "Fine Art Photography Awards", link: "https://example.com/fapa" },
+    px3: { image: "px3.png", alt: "Prix de la Photographie Paris", link: "https://example.com/px3" },
+    nd: { image: "nd.png", alt: "ND Awards", link: "https://example.com/nd" },
 };
 
 export const portfolioData: PortfolioItem[] = [
