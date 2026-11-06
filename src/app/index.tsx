@@ -39,7 +39,7 @@ const App = ({ page }: AppProps) => {
             <Sidebar page={page} />
 
             <PageContainer id="page-container">
-                <PageHeading textAlign="center">{page.heading}</PageHeading>
+                <PageHeading>{page.heading}</PageHeading>
 
                 {page.element}
             </PageContainer>

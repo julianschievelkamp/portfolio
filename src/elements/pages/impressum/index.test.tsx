@@ -13,4 +13,13 @@ describe("Impressum", () => {
 
         expect(screen.getByText("Legal notice text")).toBeInTheDocument();
     });
+
+    it("marks the german text with lang de", () => {
+        render(<Impressum />);
+
+        expect(screen.getByText("Legal notice text").closest("[lang]")).toHaveAttribute(
+            "lang",
+            "de",
+        );
+    });
 });
