@@ -24,13 +24,13 @@ export const pages: { [key: string]: Page } = {
     julian: {
         name: "Julian",
         heading: "About Julian Schievelkamp",
-        path: "/julian",
+        path: "/julian/",
         element: <Julian />,
     },
     impressum: {
         name: "Impressum",
         heading: "Impressum",
-        path: "/impressum",
+        path: "/impressum/",
         element: <Impressum />,
     },
 };
