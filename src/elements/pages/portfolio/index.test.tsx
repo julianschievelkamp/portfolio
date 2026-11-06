@@ -4,7 +4,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useStore } from "hooks/useStore";
 import { useMediaQuery } from "hooks/useMediaQuery";
-import { portfolioData } from "data/portfolioFixtures";
+import { portfolioData, getAltText } from "data/portfolioFixtures";
 import Portfolio from ".";
 
 vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: vi.fn() }));
@@ -29,8 +29,20 @@ describe("Portfolio", () => {
         portfolioData.forEach((item) => {
             expect(
                 screen.getByRole("button", { name: item.title }),
-            ).toContainElement(screen.getByRole("img", { name: item.title }));
+            ).toContainElement(screen.getByRole("img", { name: getAltText(item) }));
         });
+    });
+
+    it("loads the first row eagerly and prioritizes only the first image", () => {
+        render(<Portfolio />);
+
+        const images = screen.getAllByRole("img");
+
+        images.forEach((image) => {
+            expect(image).toHaveAttribute("loading", "eager");
+        });
+        expect(images[0]).toHaveAttribute("fetchpriority", "high");
+        expect(images[1]).not.toHaveAttribute("fetchpriority");
     });
 
     it("selects the item and opens the popup on click", async () => {

@@ -35,3 +35,6 @@ export const portfolioData: PortfolioItem[] = [
         aspectRatio: "2/3",
     },
 ];
+
+export const getAltText = (item: PortfolioItem) =>
+    `${item.title} / ${item.year} – ${item.type} by Julian Schievelkamp`;

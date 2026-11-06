@@ -12,6 +12,7 @@ export interface ImageProps {
     fadeInOnLoad?: boolean;
     onLoad?: () => void;
     loading?: "lazy" | "eager";
+    fetchPriority?: "high" | "low" | "auto";
     aspectRatio?: string;
 }
 
@@ -26,6 +27,7 @@ const Image = ({
     fadeInOnLoad,
     onLoad,
     loading = "eager",
+    fetchPriority,
     aspectRatio,
 }: ImageProps) => {
     const [imageLoaded, setImageLoaded] = useState(false);
@@ -52,6 +54,7 @@ const Image = ({
                 onLoad?.();
             }}
             loading={loading}
+            fetchPriority={fetchPriority}
             $aspectRatio={aspectRatio}
             ref={imageRef}
         />

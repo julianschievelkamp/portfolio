@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useStore } from "hooks/useStore";
-import { portfolioData } from "data/portfolioFixtures";
+import { portfolioData, getAltText } from "data/portfolioFixtures";
 import Slider from ".";
 
 vi.mock("data/portfolioData", async () => await import("data/portfolioFixtures"));
@@ -37,7 +37,7 @@ describe("Slider", () => {
             const button = screen.getByRole("button", { name: item.title });
 
             expect(button).toContainElement(
-                screen.getByRole("img", { name: item.title }),
+                screen.getByRole("img", { name: getAltText(item) }),
             );
         });
     });

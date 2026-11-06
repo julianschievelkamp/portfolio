@@ -1,7 +1,7 @@
 import { SliderContainer, InnerSliderContainer, SliderItem } from "./styles";
 import Image from "elements/components/image";
 import { useStore } from "hooks/useStore";
-import { portfolioData } from "data/portfolioData";
+import { getAltText, portfolioData } from "data/portfolioData";
 import { thumbnailSize } from "styles/variables";
 import { useState } from "react";
 
@@ -46,7 +46,7 @@ const Slider = () => {
                                 src={item.image}
                                 srcSet={item.imageSet}
                                 sizes={item.imageSet && thumbnailSize}
-                                alt={item.title}
+                                alt={getAltText(item)}
                                 margin={item.thumbnailMargin}
                                 aspectRatio={item.aspectRatio}
                                 loading="lazy"

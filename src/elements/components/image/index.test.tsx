@@ -53,6 +53,12 @@ describe("Image", () => {
         expect(screen.getByRole("img")).toHaveStyle("opacity: 1");
     });
 
+    it("passes the fetch priority to the image", () => {
+        render(<Image src="/a.jpg" alt="Art" fetchPriority="high" />);
+
+        expect(screen.getByRole("img")).toHaveAttribute("fetchpriority", "high");
+    });
+
     it("fades in after loading when fadeInOnLoad is set", () => {
         render(<Image src="/a.jpg" alt="Art" fadeInOnLoad />);
         const image = screen.getByRole("img");

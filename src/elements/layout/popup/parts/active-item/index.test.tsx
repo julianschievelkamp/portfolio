@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useStore } from "hooks/useStore";
-import { portfolioData } from "data/portfolioFixtures";
+import { portfolioData, getAltText } from "data/portfolioFixtures";
 import ActiveItem from ".";
 
 vi.mock("data/portfolioData", async () => await import("data/portfolioFixtures"));
@@ -29,7 +29,7 @@ describe("ActiveItem", () => {
     it("renders the image of the active item with its title as alt text", () => {
         render(<ActiveItem />);
 
-        expect(screen.getByRole("img", { name: video.title })).toHaveAttribute(
+        expect(screen.getByRole("img", { name: getAltText(video) })).toHaveAttribute(
             "src",
             video.image,
         );
@@ -49,7 +49,7 @@ describe("ActiveItem", () => {
         useStore.setState({ currentPortfolioIndex: 0 });
         render(<ActiveItem />);
 
-        expect(screen.getByRole("img", { name: photo.title })).toBeInTheDocument();
+        expect(screen.getByRole("img", { name: getAltText(photo) })).toBeInTheDocument();
         expect(screen.queryByLabelText(video.title)).not.toBeInTheDocument();
     });
 
@@ -60,7 +60,7 @@ describe("ActiveItem", () => {
         act(() => useStore.setState({ currentPortfolioIndex: 1 }));
         expect(getVideo()).not.toBeInTheDocument();
 
-        fireEvent.load(screen.getByRole("img", { name: video.title }));
+        fireEvent.load(screen.getByRole("img", { name: getAltText(video) }));
 
         expect(getVideo()).toBeInTheDocument();
     });
@@ -102,7 +102,7 @@ describe("ActiveItem", () => {
         await clickButton("Toggle Info");
 
         // Das Bild hat pointer-events: none, der Klick geht an den Container
-        fireEvent.click(screen.getByRole("img", { name: video.title }));
+        fireEvent.click(screen.getByRole("img", { name: getAltText(video) }));
 
         expect(getInfoHeading()).not.toBeVisible();
     });
@@ -114,9 +114,9 @@ describe("ActiveItem", () => {
         await clickButton("Toggle Video");
 
         act(() => useStore.setState({ currentPortfolioIndex: 2 }));
-        fireEvent.load(screen.getByRole("img", { name: otherPhoto.title }));
+        fireEvent.load(screen.getByRole("img", { name: getAltText(otherPhoto) }));
         act(() => useStore.setState({ currentPortfolioIndex: 1 }));
-        fireEvent.load(screen.getByRole("img", { name: video.title }));
+        fireEvent.load(screen.getByRole("img", { name: getAltText(video) }));
 
         expect(getInfoHeading()).not.toBeVisible();
         expect(getVideo()).toBeInTheDocument();

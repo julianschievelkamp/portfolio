@@ -1,7 +1,7 @@
 import { ItemContainer } from "./styles";
 import Image from "elements/components/image";
 import { useStore } from "hooks/useStore";
-import { portfolioData } from "data/portfolioData";
+import { getAltText, portfolioData } from "data/portfolioData";
 import Video from "elements/components/video";
 import { useEffect, useRef, useState } from "react";
 import Notch from "../notch";
@@ -39,7 +39,7 @@ const ActiveItem = () => {
             <ItemContainer onClick={() => setIsInfoOn(false)}>
                 <Image
                     src={activeItem.image}
-                    alt={activeItem.title}
+                    alt={getAltText(activeItem)}
                     onLoad={() => setLoadedItem(activeItem)}
                     fadeInOnLoad
                 />

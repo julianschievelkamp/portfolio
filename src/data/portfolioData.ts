@@ -55,24 +55,6 @@ import Badge1 from "assets/img/misc/badge1.png";
 import Badge2 from "assets/img/misc/badge2.jpg";
 import Badge3 from "assets/img/misc/badge3.png";
 
-export const badges = {
-    fapa: {
-        image: Badge1,
-        alt: "Fine Art Photography Awards",
-        link: "https://fineartphotoawards.com/winners-gallery/fapa-2018-2019/amateur/grand-prize",
-    },
-    px3: {
-        image: Badge2,
-        alt: "Prix de la Photographie Paris",
-        link: "https://px3.fr/winners/px3/2017/",
-    },
-    nd: {
-        image: Badge3,
-        alt: "ND Awards",
-        link: "https://ndawards.net/winners-gallery/nd-awards-2019/non-professional/open-theme/735/gold-award/",
-    },
-};
-
 export type PortfolioItem = {
     title: string;
     year: string;
@@ -279,3 +261,25 @@ export const portfolioData: PortfolioItem[] = [
         aspectRatio: "1/1",
     },
 ];
+
+export const getAltText = (item: PortfolioItem) => {
+    return `${item.title} / ${item.year} – ${item.type} by Julian Schievelkamp`;
+};
+
+export const badges = {
+    fapa: {
+        image: Badge1,
+        alt: "Fine Art Photography Awards",
+        link: "https://fineartphotoawards.com/winners-gallery/fapa-2018-2019/amateur/grand-prize",
+    },
+    px3: {
+        image: Badge2,
+        alt: "Prix de la Photographie Paris",
+        link: "https://px3.fr/winners/px3/2017/",
+    },
+    nd: {
+        image: Badge3,
+        alt: "ND Awards",
+        link: "https://ndawards.net/winners-gallery/nd-awards-2019/non-professional/open-theme/735/gold-award/",
+    },
+};

@@ -1,7 +1,7 @@
 import { PortfolioItem, StyledPortfolio } from "./styles";
 import Image from "elements/components/image";
 import { useStore } from "hooks/useStore";
-import { portfolioData } from "data/portfolioData";
+import { getAltText, portfolioData } from "data/portfolioData";
 import Popup from "elements/layout/popup";
 import { queries, thumbnailSize } from "styles/variables";
 import { useMediaQuery } from "hooks/useMediaQuery";
@@ -10,6 +10,9 @@ const Portfolio = () => {
     const isMd = useMediaQuery(queries.md);
     const { setCurrentPortfolioIndex, setPopupOpen, popupOpen, sidebarOpen } =
         useStore();
+
+    // Die Bilder der ersten Reihe liegen im sichtbaren Bereich und werden sofort geladen
+    const eagerImageCount = isMd ? 4 : 3;
 
     return (
         <>
@@ -32,10 +35,13 @@ const Portfolio = () => {
                                 src={item.image}
                                 srcSet={item.imageSet}
                                 sizes={item.imageSet && thumbnailSize}
-                                alt={item.title}
+                                alt={getAltText(item)}
                                 margin={item.thumbnailMargin}
                                 aspectRatio={item.aspectRatio}
-                                loading="lazy"
+                                loading={
+                                    index < eagerImageCount ? "eager" : "lazy"
+                                }
+                                fetchPriority={index === 0 ? "high" : undefined}
                                 fadeInOnLoad
                             />
                         </PortfolioItem>
