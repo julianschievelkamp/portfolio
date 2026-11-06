@@ -35,8 +35,7 @@ const Portfolio = () => {
                                 alt={getAltText(item)}
                                 margin={item.thumbnailMargin}
                                 aspectRatio={item.aspectRatio}
-                                loading={index < 3 ? "eager" : "lazy"}
-                                fetchPriority={index === 0 ? "high" : undefined}
+                                loading="lazy"
                                 fadeInOnLoad
                             />
                         </PortfolioItem>

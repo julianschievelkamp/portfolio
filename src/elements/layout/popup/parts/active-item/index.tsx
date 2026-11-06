@@ -10,21 +10,14 @@ import Div from "elements/components/div";
 
 const ActiveItem = () => {
     const { currentPortfolioIndex, popupOpen } = useStore();
-    const activeItem = portfolioData[currentPortfolioIndex];
 
+    const activeItem = portfolioData[currentPortfolioIndex];
+    const [previousItem, setPreviousItem] = useState(activeItem);
     const [loadedItem, setLoadedItem] = useState(activeItem);
+
     const [isInfoOn, setIsInfoOn] = useState(false);
     const [isVideoOn, setIsVideoOn] = useState(true);
     const [isVolumeOn, setIsVolumeOn] = useState(true);
-    const [previousItem, setPreviousItem] = useState(activeItem);
-
-    const videoRef = useRef<HTMLVideoElement | null>(null);
-
-    useEffect(() => {
-        if (!popupOpen) {
-            videoRef?.current?.pause();
-        }
-    }, [popupOpen]);
 
     // Beim Item-Wechsel werden die Zustände direkt beim Rendern zurückgesetzt
     if (previousItem !== activeItem) {
@@ -33,6 +26,14 @@ const ActiveItem = () => {
         setIsVideoOn(true);
         setIsVolumeOn(true);
     }
+
+    const videoRef = useRef<HTMLVideoElement | null>(null);
+
+    useEffect(() => {
+        if (!popupOpen) {
+            videoRef?.current?.pause();
+        }
+    }, [popupOpen]);
 
     return (
         <Div zIndex={1}>
