@@ -1,4 +1,4 @@
-import { StyledHeadline, StyledMenu } from "./styles";
+import { StyledTitle, StyledMenu } from "./styles";
 import { languageData } from "data/languageData";
 import { useMenu } from "hooks/useMenu";
 import Div from "elements/components/div";
@@ -13,7 +13,7 @@ const Menu = () => {
 
     return (
         <StyledMenu $isVisible={isVisible}>
-            <StyledHeadline>
+            <StyledTitle>
                 <Link
                     href="/"
                     onClick={() => setSidebarOpen(false)}
@@ -21,7 +21,7 @@ const Menu = () => {
                 >
                     {languageData.title}
                 </Link>
-            </StyledHeadline>
+            </StyledTitle>
 
             <Div
                 height="100%"

@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { transition, queries } from "styles/variables";
-import Headline from "elements/components/headline";
+import Text from "elements/components/text";
 
 export const StyledMenu = styled.div<{ $isVisible: boolean }>`
     background-color: white;
@@ -22,7 +22,9 @@ export const StyledMenu = styled.div<{ $isVisible: boolean }>`
     }
 `;
 
-export const StyledHeadline = styled(Headline)`
+export const StyledTitle = styled(Text)`
+    font-family: "PlayfairDisplay", sans-serif;
+    font-weight: 900;
     font-size: 1.25rem;
 
     @media ${queries.md} {

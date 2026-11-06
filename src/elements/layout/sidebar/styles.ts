@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { queries, scrollStyles, transition } from "styles/variables";
-import Headline from "elements/components/headline";
+import Text from "elements/components/text";
 import Div from "elements/components/div";
 
 export const StyledSidebar = styled.div<{
@@ -43,6 +43,10 @@ export const CloseTrigger = styled.div<{ $isActive: boolean }>`
     opacity: ${({ $isActive }) => ($isActive ? 1 : 0)};
     visibility: ${({ $isActive }) => ($isActive ? "visible" : "hidden")};
     z-index: 9;
+
+    @media ${queries.md} {
+        display: none;
+    }
 `;
 
 export const ScrollContainer = styled(Div)`
@@ -54,10 +58,24 @@ export const ScrollContainer = styled(Div)`
     height: 100%;
 `;
 
-export const StyledHeadline = styled(Headline)`
+// Der Titel ist nur auf Desktop sichtbar; auf Mobile liegt er im Menü
+export const StyledTitle = styled(Text)`
+    font-family: "PlayfairDisplay", sans-serif;
+    font-weight: 900;
+    display: none;
     font-size: 1.25rem;
 
     @media ${queries.md} {
+        display: block;
         font-size: 1.5rem;
+    }
+`;
+
+// Platzhalter für die Höhe des Menüs, solange die Sidebar mobil darunter liegt
+export const MobileSpacer = styled.div`
+    min-height: 5.625rem;
+
+    @media ${queries.md} {
+        display: none;
     }
 `;

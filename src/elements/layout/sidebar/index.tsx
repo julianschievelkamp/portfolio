@@ -1,13 +1,13 @@
 import Text from "elements/components/text";
 import {
     CloseTrigger,
+    MobileSpacer,
     ScrollContainer,
-    StyledHeadline,
+    StyledTitle,
     StyledSidebar,
 } from "./styles";
 import { languageData } from "data/languageData";
-import { useMediaQuery } from "hooks/useMediaQuery";
-import { colors, queries } from "styles/variables";
+import { colors } from "styles/variables";
 import Navigation from "elements/layout/navigation";
 import { useStore } from "hooks/useStore";
 import { Page } from "data/navigationData";
@@ -19,23 +19,17 @@ export interface SidebarProps {
 
 const Sidebar = ({ page }: SidebarProps) => {
     const { sidebarOpen, setSidebarOpen } = useStore();
-    const isMd = useMediaQuery(queries.md);
 
     return (
         <>
-            {!isMd && (
-                <CloseTrigger
-                    onClick={() => setSidebarOpen(false)}
-                    $isActive={sidebarOpen}
-                />
-            )}
+            <CloseTrigger
+                onClick={() => setSidebarOpen(false)}
+                $isActive={sidebarOpen}
+            />
 
             <StyledSidebar $sidebarOpen={sidebarOpen}>
-                {isMd ? (
-                    <StyledHeadline>{languageData.title}</StyledHeadline>
-                ) : (
-                    <Div minHeight="5.625rem" />
-                )}
+                <StyledTitle>{languageData.title}</StyledTitle>
+                <MobileSpacer />
 
                 <ScrollContainer margin="1.5rem 0 0 0">
                     <Div>

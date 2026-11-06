@@ -4,6 +4,7 @@ import Portfolio from "elements/pages/portfolio";
 
 export type Page = {
     name: string;
+    heading: string;
     path: string;
     element: React.ReactNode;
 };
@@ -16,16 +17,19 @@ export type Link = {
 export const pages: { [key: string]: Page } = {
     portfolio: {
         name: "Portfolio",
+        heading: "Julian Schievelkamp – Fine Art Photography",
         path: "/",
         element: <Portfolio />,
     },
     julian: {
         name: "Julian",
+        heading: "About Julian Schievelkamp",
         path: "/julian",
         element: <Julian />,
     },
     impressum: {
         name: "Impressum",
+        heading: "Impressum",
         path: "/impressum",
         element: <Impressum />,
     },

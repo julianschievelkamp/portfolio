@@ -9,6 +9,7 @@ export interface TextProps {
     textAlign?: "left" | "center" | "right" | "justify";
     margin?: string;
     fontSize?: string;
+    className?: string;
 }
 
 const Text = ({
@@ -18,6 +19,7 @@ const Text = ({
     textAlign,
     margin = "0",
     fontSize = "1rem",
+    className,
 }: TextProps) => {
     return (
         <StyledText
@@ -26,6 +28,7 @@ const Text = ({
             $textAlign={textAlign}
             $margin={margin}
             $fontSize={fontSize}
+            className={className}
         >
             {children}
         </StyledText>

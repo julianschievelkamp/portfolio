@@ -3,10 +3,8 @@ import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useStore } from "hooks/useStore";
-import { useMediaQuery } from "hooks/useMediaQuery";
 import Sidebar from ".";
 
-vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: vi.fn() }));
 vi.mock("data/languageData", () => ({
     languageData: {
         title: "Site Title",
@@ -17,11 +15,11 @@ vi.mock("data/languageData", () => ({
     },
 }));
 vi.mock("data/navigationData", () => ({
-    pages: { home: { name: "Home", path: "/", element: null } },
+    pages: { home: { name: "Home", heading: "Home", path: "/", element: null } },
     links: { social: { name: "Social", path: "https://example.com" } },
 }));
 
-const page = { name: "Home", path: "/", element: null };
+const page = { name: "Home", heading: "Home", path: "/", element: null };
 
 // CloseTrigger ist ein reines div ohne Rolle und wird über seinen Style gefunden
 const findCloseTrigger = (container: HTMLElement) =>
@@ -31,7 +29,6 @@ describe("Sidebar", () => {
     beforeEach(() => {
         // Geöffnet, da eine geschlossene Sidebar per visibility versteckt ist
         useStore.setState({ sidebarOpen: true });
-        vi.mocked(useMediaQuery).mockReturnValue(true);
     });
 
     it("shows intro, copyright and the navigation", () => {
@@ -46,28 +43,21 @@ describe("Sidebar", () => {
         );
     });
 
-    it("shows the title and no close trigger on desktop", () => {
-        const { container } = render(<Sidebar page={page} />);
+    it("renders the title as plain text and not as a heading", () => {
+        render(<Sidebar page={page} />);
 
-        expect(
-            screen.getByRole("heading", { name: "Site Title" }),
-        ).toBeInTheDocument();
-        // Nur die Sidebar selbst, kein zusätzlicher CloseTrigger
-        expect(container.children).toHaveLength(1);
+        expect(screen.getByText("Site Title")).toBeInTheDocument();
+        expect(screen.queryByRole("heading")).not.toBeInTheDocument();
     });
 
-    it("shows no title but a close trigger on mobile", () => {
-        vi.mocked(useMediaQuery).mockReturnValue(false);
+    it("always renders the close trigger and the sidebar", () => {
+        // Die Umschaltung zwischen Mobile und Desktop erfolgt per CSS
         const { container } = render(<Sidebar page={page} />);
 
-        expect(
-            screen.queryByRole("heading", { name: "Site Title" }),
-        ).not.toBeInTheDocument();
         expect(container.children).toHaveLength(2);
     });
 
     it("closes the sidebar when the close trigger is clicked", async () => {
-        vi.mocked(useMediaQuery).mockReturnValue(false);
         const { container } = render(<Sidebar page={page} />);
 
         await userEvent.click(findCloseTrigger(container));
@@ -76,7 +66,6 @@ describe("Sidebar", () => {
     });
 
     it("activates the close trigger only while the sidebar is open", () => {
-        vi.mocked(useMediaQuery).mockReturnValue(false);
         const { container } = render(<Sidebar page={page} />);
         expect(findCloseTrigger(container)).toHaveStyle("pointer-events: all");
 

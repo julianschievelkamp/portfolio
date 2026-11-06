@@ -1,19 +1,15 @@
 import GlobalStyle from "styles/global";
-import { PageContainer, StyledApp } from "./styles";
+import { PageContainer, PageHeading, StyledApp } from "./styles";
 import Sidebar from "elements/layout/sidebar";
 import Menu from "elements/layout/menu";
 import { Page } from "data/navigationData";
 import { useEffect } from "react";
-import { useMediaQuery } from "hooks/useMediaQuery";
-import { queries } from "styles/variables";
 
 export interface AppProps {
     page: Page;
 }
 
 const App = ({ page }: AppProps) => {
-    const isMd = useMediaQuery(queries.md);
-
     useEffect(() => {
         let resizeTimer: ReturnType<typeof setTimeout>;
 
@@ -38,11 +34,15 @@ const App = ({ page }: AppProps) => {
         <StyledApp>
             <GlobalStyle />
 
-            {!isMd && <Menu />}
+            <Menu />
 
             <Sidebar page={page} />
 
-            <PageContainer id="page-container">{page.element}</PageContainer>
+            <PageContainer id="page-container">
+                <PageHeading textAlign="center">{page.heading}</PageHeading>
+
+                {page.element}
+            </PageContainer>
         </StyledApp>
     );
 };

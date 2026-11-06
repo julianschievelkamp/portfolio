@@ -1,5 +1,4 @@
 import { styled, css } from "styled-components";
-import { transition } from "styles/variables";
 
 type headlineProps = {
     color?: string;
@@ -13,7 +12,6 @@ const headlineStyles = css<headlineProps>`
     margin: 0;
     color: ${({ color }) => color ?? "black"};
     line-height: 1.5;
-    transition: color ${transition.fast};
     font-family: "PlayfairDisplay", sans-serif;
     font-weight: 900;
 `;
