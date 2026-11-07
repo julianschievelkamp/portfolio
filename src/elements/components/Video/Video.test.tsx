@@ -5,6 +5,9 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import Video from "./Video";
 
+const getPlayIcon = (container: HTMLElement) =>
+    container.querySelector("button svg")?.parentElement as HTMLElement;
+
 const renderVideo = (props: Partial<React.ComponentProps<typeof Video>> = {}) => {
     const videoRef = createRef<HTMLVideoElement>();
     const result = render(
@@ -53,7 +56,7 @@ describe("Video", () => {
     it("shows the play icon before the video has started", () => {
         const { container } = renderVideo();
 
-        expect(container.querySelector("button svg")).toBeInTheDocument();
+        expect(getPlayIcon(container)).toHaveStyle({ opacity: "1" });
     });
 
     it("hides the play icon after the play event", () => {
@@ -63,7 +66,7 @@ describe("Video", () => {
             fireEvent.play(videoRef.current as HTMLVideoElement);
         });
 
-        expect(container.querySelector("button svg")).not.toBeInTheDocument();
+        expect(getPlayIcon(container)).toHaveStyle({ opacity: "0" });
     });
 
     it("shows the play icon again and keeps listening after the src changes", () => {
@@ -71,7 +74,7 @@ describe("Video", () => {
         act(() => {
             fireEvent.play(videoRef.current as HTMLVideoElement);
         });
-        expect(container.querySelector("button svg")).not.toBeInTheDocument();
+        expect(getPlayIcon(container)).toHaveStyle({ opacity: "0" });
 
         rerender(
             <Video
@@ -81,12 +84,12 @@ describe("Video", () => {
                 ariaLabel="Showreel"
             />,
         );
-        expect(container.querySelector("button svg")).toBeInTheDocument();
+        expect(getPlayIcon(container)).toHaveStyle({ opacity: "1" });
 
         act(() => {
             fireEvent.play(videoRef.current as HTMLVideoElement);
         });
-        expect(container.querySelector("button svg")).not.toBeInTheDocument();
+        expect(getPlayIcon(container)).toHaveStyle({ opacity: "0" });
     });
 
     it("plays a paused video on click", async () => {

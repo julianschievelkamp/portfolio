@@ -61,14 +61,13 @@ const Video = ({
             </StyledVideo>
 
             <PlayButton onClick={() => toggleVideo()}>
-                {startedSrc !== src && (
-                    <PlayIcon
-                        name="play"
-                        size="3.5rem"
-                        padding="0.5rem"
-                        color="white"
-                    />
-                )}
+                <PlayIcon
+                    name="play"
+                    size="3.5rem"
+                    padding="0.5rem"
+                    color="white"
+                    $isHidden={startedSrc === src}
+                />
             </PlayButton>
         </>
     );

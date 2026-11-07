@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { keyframes, styled } from "styled-components";
 import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
 
@@ -19,10 +19,23 @@ export const PlayButton = styled(Button)`
     z-index: 9;
 `;
 
-export const PlayIcon = styled(Icon)`
+const fadeIn = keyframes`
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+`;
+
+export const PlayIcon = styled(Icon)<{ $isHidden: boolean }>`
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     backdrop-filter: blur(8px);
+    animation: ${fadeIn} 0.3s ease-in;
+    opacity: ${({ $isHidden }) => ($isHidden ? 0 : 1)};
+    transition: opacity 0.3s ease-out;
 `;
