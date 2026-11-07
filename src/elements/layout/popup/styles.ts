@@ -3,31 +3,52 @@ import { styled } from "styled-components";
 import { transition } from "styles/variables";
 import Button from "elements/components/button";
 
-export const StyledPopup = styled.div<{ $isOpen: boolean }>`
+export const StyledPopup = styled.dialog`
     position: fixed;
     top: 0;
     left: 0;
+    margin: 0;
+    border: none;
+    max-width: none;
+    max-height: none;
+    overflow: visible;
+    color: inherit;
     background-color: white;
-    visibility: ${({ $isOpen }) => ($isOpen ? "visible" : "hidden")};
-    opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
-    pointer-events: ${({ $isOpen }) => ($isOpen ? "all" : "none")};
-    transition: ${transition.fast};
     width: 100%;
     height: 100%;
     padding: 1rem;
     user-select: none;
-    z-index: 99;
 
     @media ${queries.md} {
         @media ${queries.portrait} {
             padding: 1rem 8rem;
         }
     }
+
+    &::backdrop {
+        background: transparent;
+    }
+
+    /* Ein-/Ausblenden: display und overlay müssen diskret mit animiert werden */
+    opacity: 0;
+    transition:
+        opacity ${transition.fast},
+        display ${transition.fast} allow-discrete,
+        overlay ${transition.fast} allow-discrete;
+
+    &[open] {
+        opacity: 1;
+    }
+
+    @starting-style {
+        &[open] {
+            opacity: 0;
+        }
+    }
 `;
 
 export const CloseButton = styled(Button)`
     position: absolute;
-    outline: none;
     top: 1rem;
     right: 1rem;
     z-index: 9;

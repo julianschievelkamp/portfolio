@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
@@ -10,7 +10,10 @@ import Popup from ".";
 
 vi.mock("hooks/usePopup", () => ({ usePopup: vi.fn() }));
 vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: vi.fn() }));
-vi.mock("data/portfolioData", async () => await import("data/portfolioFixtures"));
+vi.mock(
+    "data/portfolioData",
+    async () => await import("data/portfolioFixtures"),
+);
 vi.mock("./parts/slider", () => ({
     default: () => <div data-testid="slider" />,
 }));
@@ -34,11 +37,42 @@ describe("Popup", () => {
         mockMediaQueries({});
     });
 
-    it("closes via the close button, which is skipped by tab navigation", async () => {
+    it("renders a named modal dialog while open", () => {
+        render(<Popup />);
+
+        expect(
+            screen.getByRole("dialog", { name: "Artwork Dialog" }),
+        ).toBeInTheDocument();
+    });
+
+    it("opens and closes the native dialog with the store state", () => {
+        useStore.setState({ popupOpen: false });
+        render(<Popup />);
+        const dialog = document.querySelector("dialog") as HTMLDialogElement;
+
+        expect(dialog.open).toBe(false);
+
+        act(() => useStore.setState({ popupOpen: true }));
+        expect(dialog.open).toBe(true);
+
+        act(() => useStore.setState({ popupOpen: false }));
+        expect(dialog.open).toBe(false);
+    });
+
+    it("updates the store when the dialog closes itself, e.g. via ESC", () => {
+        render(<Popup />);
+        const dialog = document.querySelector("dialog") as HTMLDialogElement;
+
+        act(() => dialog.close());
+
+        expect(useStore.getState().popupOpen).toBe(false);
+    });
+
+    it("closes via the close button, which is reachable by keyboard", async () => {
         render(<Popup />);
         const close = screen.getByRole("button", { name: "Close" });
 
-        expect(close).toHaveAttribute("tabindex", "-1");
+        expect(close).toHaveAttribute("tabindex", "0");
 
         await userEvent.click(close);
 

@@ -8,8 +8,7 @@ import { useMediaQuery } from "hooks/useMediaQuery";
 
 const Portfolio = () => {
     const isMd = useMediaQuery(queries.md);
-    const { setCurrentPortfolioIndex, setPopupOpen, popupOpen, sidebarOpen } =
-        useStore();
+    const { setCurrentPortfolioIndex, setPopupOpen, sidebarOpen } = useStore();
 
     return (
         <>
@@ -23,9 +22,7 @@ const Portfolio = () => {
                                 setCurrentPortfolioIndex(index);
                                 setPopupOpen(true);
                             }}
-                            tabIndex={
-                                popupOpen || (!isMd && sidebarOpen) ? -1 : 0
-                            }
+                            tabIndex={!isMd && sidebarOpen ? -1 : 0}
                         >
                             <Image
                                 width="100%"

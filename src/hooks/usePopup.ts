@@ -7,7 +7,6 @@ export const usePopup = () => {
     const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
     const {
         popupOpen,
-        setPopupOpen,
         currentPortfolioIndex,
         setCurrentPortfolioIndex,
     } = useStore();
@@ -75,8 +74,6 @@ export const usePopup = () => {
                 setCurrentPortfolioIndex(currentPortfolioIndex - 1);
             } else if (e.key === "ArrowRight") {
                 setCurrentPortfolioIndex(currentPortfolioIndex + 1);
-            } else if (e.key === "Escape") {
-                setPopupOpen(false);
             }
         };
 

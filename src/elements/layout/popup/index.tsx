@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { useStore } from "hooks/useStore";
 import { CloseButton, InnerWrapper, OuterWrapper, StyledPopup } from "./styles";
 import Div from "elements/components/div";
@@ -11,19 +12,34 @@ import { queries } from "styles/variables";
 
 const Popup = () => {
     const { popupOpen, setPopupOpen } = useStore();
+    const dialogRef = useRef<HTMLDialogElement>(null);
 
     const isLandscape = useMediaQuery(queries.landscape);
     const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
 
     usePopup();
 
+    // Store-Zustand mit dem nativen Dialog synchronisieren
+    useEffect(() => {
+        const dialog = dialogRef.current;
+
+        if (!dialog) return;
+
+        if (popupOpen && !dialog.open) {
+            dialog.showModal();
+        } else if (!popupOpen && dialog.open) {
+            dialog.close();
+        }
+    }, [popupOpen]);
+
     return (
-        <StyledPopup $isOpen={popupOpen}>
-            <CloseButton
-                onClick={() => setPopupOpen(false)}
-                ariaLabel="Close"
-                tabIndex={-1}
-            >
+        <StyledPopup
+            ref={dialogRef}
+            aria-label="Artwork Dialog"
+            // Wird auch bei ESC ausgelöst, damit der Store synchron bleibt
+            onClose={() => setPopupOpen(false)}
+        >
+            <CloseButton onClick={() => setPopupOpen(false)} ariaLabel="Close">
                 <Icon name="close" size="2rem" />
             </CloseButton>
 

@@ -67,15 +67,6 @@ describe("Portfolio", () => {
         });
     });
 
-    it("removes the items from tab navigation while the popup is open", () => {
-        useStore.setState({ popupOpen: true });
-        render(<Portfolio />);
-
-        screen.getAllByRole("button").forEach((button) => {
-            expect(button).toHaveAttribute("tabindex", "-1");
-        });
-    });
-
     it("removes the items from tab navigation with an open sidebar on mobile", () => {
         useStore.setState({ sidebarOpen: true });
         vi.mocked(useMediaQuery).mockReturnValue(false);

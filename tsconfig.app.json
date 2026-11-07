@@ -16,6 +16,14 @@
         "jsx": "react-jsx",
         "types": ["@testing-library/jest-dom/vitest"],
 
+        /* Editor-Plugin: @starting-style nicht als unbekannte At-Rule melden */
+        "plugins": [
+            {
+                "name": "@styled/typescript-styled-plugin",
+                "lint": { "unknownAtRules": "ignore" }
+            }
+        ],
+
         "paths": { "*": ["./src/*"] },
         "rootDir": ".",
 
