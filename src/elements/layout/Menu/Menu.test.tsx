@@ -4,14 +4,14 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useStore } from "hooks/useStore";
 import { useMenu } from "hooks/useMenu";
-import Menu from ".";
+import Menu from "./Menu";
 
 vi.mock("hooks/useMenu", () => ({ useMenu: vi.fn() }));
 vi.mock("data/languageData", () => ({
     languageData: { title: "Site Title" },
 }));
 // Das Icon wird ersetzt, damit der gewählte Icon-Name prüfbar ist
-vi.mock("elements/components/icon", () => ({
+vi.mock("elements/components/Icon/Icon", () => ({
     default: ({ name }: { name: string }) => (
         <span data-testid="icon" data-name={name} />
     ),

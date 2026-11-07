@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import { queries, scrollStyles, transition } from "styles/variables";
-import Text from "elements/components/text";
-import Div from "elements/components/div";
+import Text from "elements/components/Text/Text";
+import Div from "elements/components/Div/Div";
 
 export const StyledSidebar = styled.div<{
     $sidebarOpen: boolean;

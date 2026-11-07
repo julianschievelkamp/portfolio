@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
-import Impressum from ".";
+import Impressum from "./Impressum";
 
 vi.mock("data/languageData", () => ({
     languageData: { impressum: "Legal notice text" },

@@ -1,7 +1,7 @@
 import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
-import References from ".";
+import References from "./References";
 
 vi.mock("data/languageData", () => ({
     languageData: {

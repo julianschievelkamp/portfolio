@@ -4,7 +4,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useStore } from "hooks/useStore";
 import { portfolioData } from "data/portfolioFixtures";
-import Arrows from ".";
+import Arrows from "./Arrows";
 
 vi.mock("data/portfolioData", async () => await import("data/portfolioFixtures"));
 

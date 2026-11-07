@@ -1,11 +1,11 @@
-import { StyledTitle, StyledMenu } from "./styles";
+import { StyledTitle, StyledMenu } from "./Menu.styles";
 import { languageData } from "data/languageData";
 import { useMenu } from "hooks/useMenu";
-import Div from "elements/components/div";
+import Div from "elements/components/Div/Div";
 import { useStore } from "hooks/useStore";
-import Link from "elements/components/link";
-import Button from "elements/components/button";
-import Icon from "elements/components/icon";
+import Link from "elements/components/Link/Link";
+import Button from "elements/components/Button/Button";
+import Icon from "elements/components/Icon/Icon";
 
 const Menu = () => {
     const { sidebarOpen, setSidebarOpen } = useStore();

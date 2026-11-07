@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { queries, transition } from "styles/variables";
-import Button from "elements/components/button";
+import Button from "elements/components/Button/Button";
 
 export const SliderContainer = styled.div`
     position: absolute;

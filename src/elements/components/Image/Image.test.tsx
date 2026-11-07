@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
-import Image from ".";
+import Image from "./Image";
 
 describe("Image", () => {
     it("renders an image with src and alt", () => {

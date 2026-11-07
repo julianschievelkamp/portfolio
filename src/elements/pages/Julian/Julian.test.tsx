@@ -1,11 +1,11 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
-import Julian from ".";
+import Julian from "./Julian";
 
-vi.mock("./artist", () => ({ default: () => <p>artist</p> }));
-vi.mock("./references", () => ({ default: () => <p>references</p> }));
-vi.mock("./badges", () => ({ default: () => <p>badges</p> }));
+vi.mock("./Artist/Artist", () => ({ default: () => <p>artist</p> }));
+vi.mock("./References/References", () => ({ default: () => <p>references</p> }));
+vi.mock("./Badges/Badges", () => ({ default: () => <p>badges</p> }));
 
 describe("Julian", () => {
     it("renders artist, references and badges in this order", () => {

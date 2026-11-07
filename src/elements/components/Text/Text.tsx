@@ -1,6 +1,6 @@
 import React from "react";
 
-import { StyledText } from "./styles";
+import { StyledText } from "./Text.styles";
 
 export interface TextProps {
     children?: React.ReactNode;

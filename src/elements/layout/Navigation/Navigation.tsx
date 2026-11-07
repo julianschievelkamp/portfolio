@@ -1,7 +1,7 @@
 import { Page, pages, links } from "data/navigationData";
-import { NavElement, NavLink, NavList, StyledNavigation } from "./styles";
+import { NavElement, NavLink, NavList, StyledNavigation } from "./Navigation.styles";
 import { languageData } from "data/languageData";
-import Text from "elements/components/text";
+import Text from "elements/components/Text/Text";
 import { useStore } from "hooks/useStore";
 import { colors } from "styles/variables";
 

@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useStore } from "hooks/useStore";
-import Sidebar from ".";
+import Sidebar from "./Sidebar";
 
 vi.mock("data/languageData", () => ({
     languageData: {

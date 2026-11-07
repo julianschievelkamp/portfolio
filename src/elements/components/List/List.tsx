@@ -1,7 +1,7 @@
 import React from "react";
 
-import { StyledList, ListItem } from "./styles";
-import Text from "../text";
+import { StyledList, ListItem } from "./List.styles";
+import Text from "../Text/Text";
 
 export interface ListProps {
     items: React.ReactNode[];

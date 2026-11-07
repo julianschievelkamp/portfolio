@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 import { badges } from "data/portfolioFixtures";
-import Badges from ".";
+import Badges from "./Badges";
 
 vi.mock("data/portfolioData", async () => await import("data/portfolioFixtures"));
 vi.mock("data/languageData", () => ({

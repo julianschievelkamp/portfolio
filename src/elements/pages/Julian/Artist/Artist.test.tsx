@@ -1,14 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
-import Artist from ".";
+import Artist from "./Artist";
 
 vi.mock("data/languageData", () => ({
     languageData: {
         julian: { image: "portrait.jpg", text: "Artist biography" },
     },
 }));
-vi.mock("./social", () => ({ default: () => <p>social</p> }));
+vi.mock("./Social/Social", () => ({ default: () => <p>social</p> }));
 
 describe("Artist", () => {
     it("shows the portrait with alt text and source", () => {

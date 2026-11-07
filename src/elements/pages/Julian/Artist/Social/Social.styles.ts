@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import Div from "elements/components/div";
+import Div from "elements/components/Div/Div";
 import { colors, transition } from "styles/variables";
 
 export const StyledSocial = styled(Div)`

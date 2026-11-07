@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { createRef } from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import Video from ".";
+import Video from "./Video";
 
 const renderVideo = (props: Partial<React.ComponentProps<typeof Video>> = {}) => {
     const videoRef = createRef<HTMLVideoElement>();

@@ -1,4 +1,4 @@
-import App from "elements/layout/app";
+import App from "elements/layout/App/App";
 import { pages } from "data/navigationData";
 
 export const Page = () => {

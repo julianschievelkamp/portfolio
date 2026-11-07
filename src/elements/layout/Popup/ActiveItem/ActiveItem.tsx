@@ -1,10 +1,10 @@
-import { ItemContainer, StyledActiveItem } from "./styles";
-import Image from "elements/components/image";
+import { ItemContainer, StyledActiveItem } from "./ActiveItem.styles";
+import Image from "elements/components/Image/Image";
 import { useActiveItem } from "hooks/useActiveItem";
 import { getAltText } from "data/portfolioData";
-import Video from "elements/components/video";
-import Notch from "./notch";
-import ItemInfo from "./item-info";
+import Video from "elements/components/Video/Video";
+import Notch from "./Notch/Notch";
+import ItemInfo from "./ItemInfo/ItemInfo";
 
 const ActiveItem = () => {
     const {

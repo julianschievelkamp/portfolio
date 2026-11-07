@@ -1,6 +1,6 @@
-import Julian from "elements/pages/julian";
-import Impressum from "elements/pages/impressum";
-import Portfolio from "elements/pages/portfolio";
+import Julian from "elements/pages/Julian/Julian";
+import Impressum from "elements/pages/Impressum/Impressum";
+import Portfolio from "elements/pages/Portfolio/Portfolio";
 
 export type Page = {
     name: string;

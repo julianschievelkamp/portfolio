@@ -1,8 +1,8 @@
-import { StyledJulian } from "./styles";
+import { StyledJulian } from "./Julian.styles";
 
-import Artist from "./artist";
-import References from "./references";
-import Badges from "./badges";
+import Artist from "./Artist/Artist";
+import References from "./References/References";
+import Badges from "./Badges/Badges";
 
 const Julian = () => {
     return (

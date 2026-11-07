@@ -1,10 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
-import App from ".";
+import App from "./App";
 
-vi.mock("elements/layout/sidebar", () => ({ default: () => <aside /> }));
-vi.mock("elements/layout/menu", () => ({ default: () => <header /> }));
+vi.mock("elements/layout/Sidebar/Sidebar", () => ({ default: () => <aside /> }));
+vi.mock("elements/layout/Menu/Menu", () => ({ default: () => <header /> }));
 
 const page = {
     name: "Test",

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { PlayButton, PlayIcon, StyledVideo } from "./styles";
+import { PlayButton, PlayIcon, StyledVideo } from "./Video.styles";
 
 export interface VideoProps {
     videoRef: React.RefObject<HTMLVideoElement | null>;

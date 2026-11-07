@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { StyledImage } from "./styles";
+import { StyledImage } from "./Image.styles";
 
 export interface ImageProps {
     src: string;

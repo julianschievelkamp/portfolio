@@ -5,14 +5,14 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { useStore } from "hooks/useStore";
 import { useMediaQuery } from "hooks/useMediaQuery";
 import { portfolioData, getAltText } from "data/portfolioFixtures";
-import Portfolio from ".";
+import Portfolio from "./Portfolio";
 
 vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: vi.fn() }));
 vi.mock(
     "data/portfolioData",
     async () => await import("data/portfolioFixtures"),
 );
-vi.mock("elements/layout/popup", () => ({
+vi.mock("elements/layout/Popup/Popup", () => ({
     default: () => <div data-testid="popup" />,
 }));
 

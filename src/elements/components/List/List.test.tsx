@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import List from ".";
+import List from "./List";
 
 describe("List", () => {
     it("renders one list item per entry", () => {

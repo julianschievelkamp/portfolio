@@ -1,6 +1,6 @@
 import React from "react";
 
-import { StyledDiv } from "./styles";
+import { StyledDiv } from "./Div.styles";
 
 export interface DivProps {
     children?: React.ReactNode;

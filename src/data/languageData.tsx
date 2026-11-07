@@ -1,4 +1,4 @@
-import Link from "elements/components/link";
+import Link from "elements/components/Link/Link";
 
 import SelfPortrait from "assets/img/misc/self_portrait.jpg";
 import Profile from "assets/img/misc/profile.jpg";

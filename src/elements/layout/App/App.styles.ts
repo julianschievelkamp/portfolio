@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import Headline from "elements/components/headline";
+import Headline from "elements/components/Headline/Headline";
 import { queries, scrollStyles, visuallyHidden } from "styles/variables";
 
 export const StyledApp = styled.div`

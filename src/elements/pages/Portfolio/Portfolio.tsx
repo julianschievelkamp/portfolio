@@ -1,8 +1,8 @@
-import { PortfolioItem, StyledPortfolio } from "./styles";
-import Image from "elements/components/image";
+import { PortfolioItem, StyledPortfolio } from "./Portfolio.styles";
+import Image from "elements/components/Image/Image";
 import { useStore } from "hooks/useStore";
 import { getAltText, portfolioData } from "data/portfolioData";
-import Popup from "elements/layout/popup";
+import Popup from "elements/layout/Popup/Popup";
 import { queries, thumbnailSize } from "styles/variables";
 import { useMediaQuery } from "hooks/useMediaQuery";
 

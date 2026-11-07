@@ -1,8 +1,8 @@
-import Text from "elements/components/text";
-import { StyledSocial, ProfileImage, StyledProfile } from "./styles";
-import Image from "elements/components/image";
-import Div from "elements/components/div";
-import Link from "elements/components/link";
+import Text from "elements/components/Text/Text";
+import { StyledSocial, ProfileImage, StyledProfile } from "./Social.styles";
+import Image from "elements/components/Image/Image";
+import Div from "elements/components/Div/Div";
+import Link from "elements/components/Link/Link";
 import { colors } from "styles/variables";
 import { languageData } from "data/languageData";
 

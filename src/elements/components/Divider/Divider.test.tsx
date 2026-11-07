@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import Divider from ".";
+import Divider from "./Divider";
 
 describe("Divider", () => {
     it("renders its content as a level 2 heading", () => {

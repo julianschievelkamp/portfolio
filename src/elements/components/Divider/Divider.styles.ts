@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { queries } from "styles/variables";
-import Headline from "../headline";
+import Headline from "../Headline/Headline";
 
 export const StyledDivider = styled.div`
     position: relative;

@@ -1,4 +1,4 @@
-import Button from "elements/components/button";
+import Button from "elements/components/Button/Button";
 import { styled } from "styled-components";
 import { queries } from "styles/variables";
 

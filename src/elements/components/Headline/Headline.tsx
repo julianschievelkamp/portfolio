@@ -1,6 +1,6 @@
 import React from "react";
 
-import { H1, H2 } from "./styles";
+import { H1, H2 } from "./Headline.styles";
 
 const headlines = {
     h1: H1,

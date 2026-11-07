@@ -1,12 +1,12 @@
 import { useEffect, useRef } from "react";
 import { useStore } from "hooks/useStore";
-import { CloseButton, InnerWrapper, OuterWrapper, StyledPopup } from "./styles";
-import Div from "elements/components/div";
+import { CloseButton, InnerWrapper, OuterWrapper, StyledPopup } from "./Popup.styles";
+import Div from "elements/components/Div/Div";
 import { usePopupControls } from "hooks/usePopupControls";
-import Slider from "./slider";
-import Icon from "elements/components/icon";
-import ActiveItem from "./active-item";
-import Arrows from "./arrows";
+import Slider from "./Slider/Slider";
+import Icon from "elements/components/Icon/Icon";
+import ActiveItem from "./ActiveItem/ActiveItem";
+import Arrows from "./Arrows/Arrows";
 import { useMediaQuery } from "hooks/useMediaQuery";
 import { queries } from "styles/variables";
 

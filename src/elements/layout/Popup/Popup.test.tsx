@@ -6,7 +6,7 @@ import { useStore } from "hooks/useStore";
 import { usePopupControls } from "hooks/usePopupControls";
 import { useMediaQuery } from "hooks/useMediaQuery";
 import { queries } from "styles/variables";
-import Popup from ".";
+import Popup from "./Popup";
 
 vi.mock("hooks/usePopupControls", () => ({ usePopupControls: vi.fn() }));
 vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: vi.fn() }));
@@ -14,13 +14,13 @@ vi.mock(
     "data/portfolioData",
     async () => await import("data/portfolioFixtures"),
 );
-vi.mock("./slider", () => ({
+vi.mock("./Slider/Slider", () => ({
     default: () => <div data-testid="slider" />,
 }));
-vi.mock("./active-item", () => ({
+vi.mock("./ActiveItem/ActiveItem", () => ({
     default: () => <div data-testid="active-item" />,
 }));
-vi.mock("./arrows", () => ({
+vi.mock("./Arrows/Arrows", () => ({
     default: () => <div data-testid="arrows" />,
 }));
 

@@ -1,9 +1,9 @@
-import { BadgesWrapper } from "./styles";
+import { BadgesWrapper } from "./Badges.styles";
 import { languageData } from "data/languageData";
-import Image from "elements/components/image";
-import Divider from "elements/components/divider";
+import Image from "elements/components/Image/Image";
+import Divider from "elements/components/Divider/Divider";
 import { badges } from "data/portfolioData";
-import Link from "elements/components/link";
+import Link from "elements/components/Link/Link";
 
 const Badges = () => {
     return (

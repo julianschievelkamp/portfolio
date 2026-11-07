@@ -1,17 +1,17 @@
-import Text from "elements/components/text";
+import Text from "elements/components/Text/Text";
 import {
     CloseTrigger,
     MobileSpacer,
     ScrollContainer,
     StyledTitle,
     StyledSidebar,
-} from "./styles";
+} from "./Sidebar.styles";
 import { languageData } from "data/languageData";
 import { colors } from "styles/variables";
-import Navigation from "elements/layout/navigation";
+import Navigation from "elements/layout/Navigation/Navigation";
 import { useStore } from "hooks/useStore";
 import { Page } from "data/navigationData";
-import Div from "elements/components/div";
+import Div from "elements/components/Div/Div";
 
 export interface SidebarProps {
     page: Page;

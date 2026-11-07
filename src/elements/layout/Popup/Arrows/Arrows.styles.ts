@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import Button from "elements/components/button";
+import Button from "elements/components/Button/Button";
 
 export const Arrow = styled(Button)<{ $isRight?: boolean }>`
     position: absolute;

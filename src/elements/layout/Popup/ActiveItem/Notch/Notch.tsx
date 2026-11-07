@@ -1,7 +1,7 @@
-import { NotchWrapper, StyledNotch } from "./styles";
+import { NotchWrapper, StyledNotch } from "./Notch.styles";
 import { PortfolioItem } from "data/portfolioData";
-import Button from "elements/components/button";
-import Icon from "elements/components/icon";
+import Button from "elements/components/Button/Button";
+import Icon from "elements/components/Icon/Icon";
 import { colors, queries } from "styles/variables";
 import { useMediaQuery } from "hooks/useMediaQuery";
 

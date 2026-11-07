@@ -4,11 +4,11 @@ import { describe, expect, it, vi } from "vitest";
 
 import { colors } from "styles/variables";
 import { portfolioData } from "data/portfolioFixtures";
-import Notch, { NotchProps } from ".";
+import Notch, { NotchProps } from "./Notch";
 
 vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: () => true }));
 // Das Icon wird ersetzt, damit Name und Farbe prüfbar sind
-vi.mock("elements/components/icon", () => ({
+vi.mock("elements/components/Icon/Icon", () => ({
     default: ({ name, color }: { name: string; color: string }) => (
         <span data-testid={`icon-${name}`} data-color={color} />
     ),

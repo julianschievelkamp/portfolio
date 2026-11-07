@@ -1,4 +1,4 @@
-import Link from "elements/components/link";
+import Link from "elements/components/Link/Link";
 import { styled } from "styled-components";
 import { colors, transition } from "styles/variables";
 

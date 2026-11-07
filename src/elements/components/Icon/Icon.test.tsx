@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import Icon from ".";
+import Icon from "./Icon";
 import { icons } from "./icons";
 
 describe("Icon", () => {

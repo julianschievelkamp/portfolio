@@ -1,9 +1,9 @@
-import Text from "elements/components/text";
-import { ArtistWrapper, ImageWrapper } from "./styles";
+import Text from "elements/components/Text/Text";
+import { ArtistWrapper, ImageWrapper } from "./Artist.styles";
 import { languageData } from "data/languageData";
-import Image from "elements/components/image";
-import Div from "elements/components/div";
-import Social from "./social";
+import Image from "elements/components/Image/Image";
+import Div from "elements/components/Div/Div";
+import Social from "./Social/Social";
 
 const Artist = () => {
     return (

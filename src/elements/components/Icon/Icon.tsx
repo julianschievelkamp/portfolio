@@ -1,5 +1,5 @@
 import { icons } from "./icons";
-import { StyledIcon } from "./styles";
+import { StyledIcon } from "./Icon.styles";
 
 export interface IconProps {
     name: keyof typeof icons;

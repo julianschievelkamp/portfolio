@@ -1,5 +1,5 @@
-import { SliderContainer, InnerSliderContainer, SliderItem } from "./styles";
-import Image from "elements/components/image";
+import { SliderContainer, InnerSliderContainer, SliderItem } from "./Slider.styles";
+import Image from "elements/components/Image/Image";
 import { useStore } from "hooks/useStore";
 import { getAltText, portfolioData } from "data/portfolioData";
 import { thumbnailSize } from "styles/variables";

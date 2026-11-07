@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import Headline from ".";
+import Headline from "./Headline";
 
 describe("Headline", () => {
     it("renders an h1 by default", () => {

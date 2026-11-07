@@ -1,9 +1,9 @@
-import { BadgesWrapper, InnerWrapper, StyledItemInfo } from "./styles";
+import { BadgesWrapper, InnerWrapper, StyledItemInfo } from "./ItemInfo.styles";
 import { badges, PortfolioItem } from "data/portfolioData";
-import Div from "elements/components/div";
-import Headline from "elements/components/headline";
-import Text from "elements/components/text";
-import Image from "elements/components/image";
+import Div from "elements/components/Div/Div";
+import Headline from "elements/components/Headline/Headline";
+import Text from "elements/components/Text/Text";
+import Image from "elements/components/Image/Image";
 
 export interface ItemInfoProps {
     loadedItem: PortfolioItem;

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { StyledDivider, StyledHeadline, TextWrapper } from "./styles";
+import { StyledDivider, StyledHeadline, TextWrapper } from "./Divider.styles";
 
 export interface DividerProps {
     children: React.ReactNode;

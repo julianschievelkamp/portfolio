@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
-import Link from ".";
+import Link from "./Link";
 
 describe("Link", () => {
     it("renders an anchor with href and children", () => {

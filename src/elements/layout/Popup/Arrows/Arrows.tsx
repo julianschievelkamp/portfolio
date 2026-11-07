@@ -1,6 +1,6 @@
-import { Arrow } from "./styles";
+import { Arrow } from "./Arrows.styles";
 import { useStore } from "hooks/useStore";
-import Icon from "elements/components/icon";
+import Icon from "elements/components/Icon/Icon";
 
 const Arrows = () => {
     const { currentPortfolioIndex, setCurrentPortfolioIndex } = useStore();

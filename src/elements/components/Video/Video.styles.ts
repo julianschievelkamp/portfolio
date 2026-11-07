@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
-import Button from "../button";
-import Icon from "../icon";
+import Button from "../Button/Button";
+import Icon from "../Icon/Icon";
 
 export const StyledVideo = styled.video`
     width: ${({ width }) => width};

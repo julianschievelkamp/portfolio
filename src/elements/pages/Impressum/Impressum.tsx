@@ -1,5 +1,5 @@
-import Text from "elements/components/text";
-import { StyledImpressum } from "./styles";
+import Text from "elements/components/Text/Text";
+import { StyledImpressum } from "./Impressum.styles";
 import { languageData } from "data/languageData";
 
 const Impressum = () => {

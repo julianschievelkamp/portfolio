@@ -1,9 +1,9 @@
-import Text from "elements/components/text";
-import { ListWrapper, ReferencesWrapper } from "./styles";
+import Text from "elements/components/Text/Text";
+import { ListWrapper, ReferencesWrapper } from "./References.styles";
 import { languageData } from "data/languageData";
-import Divider from "elements/components/divider";
-import Div from "elements/components/div";
-import List from "elements/components/list";
+import Divider from "elements/components/Divider/Divider";
+import Div from "elements/components/Div/Div";
+import List from "elements/components/List/List";
 
 const References = () => {
     return (
