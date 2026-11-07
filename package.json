@@ -2,7 +2,7 @@
     "name": "portfolio",
     "private": true,
     "version": "0.0.0",
-    "homepage": "https://www.julianschievelkamp.com",
+    "homepage": "https://www.julianschievelkamp.com/",
     "type": "module",
     "scripts": {
         "start": "vike dev",

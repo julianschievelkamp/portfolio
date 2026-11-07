@@ -1,6 +1,6 @@
 # Portfolio
 
-A portfolio website showcasing artistic images and videos. Live at [www.julianschievelkamp.com](https://www.julianschievelkamp.com).
+A portfolio website showcasing artistic images and videos. Live at [www.julianschievelkamp.com](https://www.julianschievelkamp.com/).
 
 The site is a pure frontend project: HTML is pre-rendered at build time, and there is no backend, database or user input.
 
