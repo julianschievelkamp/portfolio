@@ -12,22 +12,43 @@ const ActiveItem = () => {
     const { currentPortfolioIndex, popupOpen } = useStore();
 
     const activeItem = portfolioData[currentPortfolioIndex];
-    const [previousItem, setPreviousItem] = useState(activeItem);
     const loadedItem = usePreloadedItem(activeItem);
 
-    // Bleibt nach dem ersten Laden des Bildes dauerhaft true, damit nur einmal eingeblendet wird
-    const [isImageLoaded, setIsImageLoaded] = useState(false);
+    const [previousItem, setPreviousItem] = useState(loadedItem);
+    const [loadedImage, setLoadedImage] = useState<string | null>(null);
+    const [isRevealed, setIsRevealed] = useState(false);
+
     const [isInfoOn, setIsInfoOn] = useState(false);
     const [isVideoOn, setIsVideoOn] = useState(true);
     const [isVolumeOn, setIsVolumeOn] = useState(true);
 
     // Beim Item-Wechsel werden die Zustände direkt beim Rendern zurückgesetzt
-    if (previousItem !== activeItem) {
-        setPreviousItem(activeItem);
+    if (previousItem !== loadedItem) {
+        setPreviousItem(loadedItem);
         setIsInfoOn(false);
         setIsVideoOn(true);
         setIsVolumeOn(true);
     }
+
+    // Beim Schließen wird zurückgesetzt, damit das Popup beim nächsten Öffnen wieder einblendet
+    if (!popupOpen && isRevealed) {
+        setIsRevealed(false);
+    }
+
+    // Das Bild des angezeigten Items ist vollständig geladen
+    const isImageLoaded = !!loadedItem && loadedImage === loadedItem.image;
+
+    // Das gewählte Item ist angezeigt und sein Bild vollständig geladen
+    const isReady = popupOpen && isImageLoaded && loadedItem === activeItem;
+
+    useEffect(() => {
+        if (!isReady) return;
+
+        // Ein Frame mit opacity 0 muss gerendert sein, damit die Transition greift
+        const frame = requestAnimationFrame(() => setIsRevealed(true));
+
+        return () => cancelAnimationFrame(frame);
+    }, [isReady]);
 
     const videoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -37,20 +58,21 @@ const ActiveItem = () => {
         }
     }, [popupOpen]);
 
+    if (!loadedItem) return null;
+
     return (
-        <StyledActiveItem $isLoaded={isImageLoaded}>
+        <StyledActiveItem $isRevealed={isRevealed}>
             <ItemContainer onClick={() => setIsInfoOn(false)}>
                 <Image
                     src={loadedItem.image}
                     alt={getAltText(loadedItem)}
-                    aspectRatio={loadedItem.aspectRatio}
+                    onLoad={() => setLoadedImage(loadedItem.image)}
+                    onError={() => setLoadedImage(loadedItem.image)}
                     width="100%"
                     height="100%"
-                    onLoad={() => setIsImageLoaded(true)}
-                    loading="lazy"
                 />
 
-                {loadedItem.video && isVideoOn && (
+                {loadedItem.video && isVideoOn && isImageLoaded && (
                     <Video
                         src={loadedItem.video}
                         poster={loadedItem.image}

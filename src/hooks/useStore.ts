@@ -15,7 +15,8 @@ interface Actions {
 
 export const useStore = create<State & Actions>((set) => ({
     sidebarOpen: false,
-    currentPortfolioIndex: 0,
+    // -1 bedeutet, dass noch kein Item für das Popup gewählt wurde
+    currentPortfolioIndex: -1,
     popupOpen: false,
 
     setSidebarOpen: (open) =>

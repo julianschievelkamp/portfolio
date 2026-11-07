@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import type { PortfolioItem } from "data/portfolioData";
 
 // Liefert das zuletzt vollständig geladene Item. Das Bild eines neuen Items wird
-// zuerst unsichtbar vorgeladen, damit src und aspectRatio gemeinsam umschalten.
-export const usePreloadedItem = (activeItem: PortfolioItem) => {
+// zuerst unsichtbar vorgeladen, damit die Anzeige hart auf das neue Item umschaltet,
+// sobald es fertig geladen ist. Bis dahin bleibt das alte Item stehen.
+export const usePreloadedItem = (activeItem?: PortfolioItem) => {
     const [loadedItem, setLoadedItem] = useState(activeItem);
 
     useEffect(() => {
-        // Das initiale Item lädt die sichtbare Image-Komponente selbst (lazy)
-        if (activeItem === loadedItem) return;
+        if (!activeItem || activeItem === loadedItem) return;
 
         let cancelled = false;
         const preloader = new window.Image();

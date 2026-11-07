@@ -47,6 +47,15 @@ describe("Image", () => {
         expect(onLoad).toHaveBeenCalledTimes(1);
     });
 
+    it("calls onError after the error event", () => {
+        const onError = vi.fn();
+        render(<Image src="/a.jpg" alt="Art" onError={onError} />);
+
+        fireEvent.error(screen.getByRole("img"));
+
+        expect(onError).toHaveBeenCalledTimes(1);
+    });
+
     it("is visible immediately without fadeInOnLoad", () => {
         render(<Image src="/a.jpg" alt="Art" />);
 

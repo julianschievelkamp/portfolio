@@ -11,6 +11,7 @@ export interface ImageProps {
     margin?: string;
     fadeInOnLoad?: boolean;
     onLoad?: () => void;
+    onError?: () => void;
     loading?: "lazy" | "eager";
     aspectRatio?: string;
 }
@@ -25,6 +26,7 @@ const Image = ({
     margin,
     fadeInOnLoad,
     onLoad,
+    onError,
     loading = "eager",
     aspectRatio,
 }: ImageProps) => {
@@ -51,6 +53,7 @@ const Image = ({
                 setImageLoaded(true);
                 onLoad?.();
             }}
+            onError={onError}
             loading={loading}
             $aspectRatio={aspectRatio}
             ref={imageRef}

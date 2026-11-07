@@ -1,4 +1,4 @@
-import { act, fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
@@ -14,6 +14,8 @@ const [photo, video, otherPhoto] = portfolioData;
 const getVideo = () => screen.queryByLabelText(video.title) as HTMLVideoElement;
 const getInfoHeading = () =>
     screen.getByRole("heading", { level: 2, hidden: true });
+const loadImage = (item: typeof video) =>
+    fireEvent.load(screen.getByRole("img", { name: getAltText(item) }));
 const clickButton = (name: string) =>
     userEvent.click(screen.getByRole("button", { name }));
 
@@ -35,8 +37,11 @@ describe("ActiveItem", () => {
         );
     });
 
-    it("renders the video of an item with video", () => {
+    it("renders the video of an item with video once its image has loaded", () => {
         render(<ActiveItem />);
+        expect(getVideo()).not.toBeInTheDocument();
+
+        loadImage(video);
 
         expect(getVideo()).toBeInTheDocument();
         expect(getVideo().querySelector("source")).toHaveAttribute(
@@ -69,12 +74,16 @@ describe("ActiveItem", () => {
         const newImage = await screen.findByRole("img", { name: getAltText(video) });
 
         expect(newImage).toHaveAttribute("src", video.image);
-        expect(newImage).toHaveStyle({ aspectRatio: video.aspectRatio });
+        expect(getVideo()).not.toBeInTheDocument();
+
+        loadImage(video);
+
         expect(getVideo()).toBeInTheDocument();
     });
 
     it("hides and shows the video via the notch", async () => {
         render(<ActiveItem />);
+        loadImage(video);
 
         await clickButton("Toggle Video");
         expect(getVideo()).not.toBeInTheDocument();
@@ -85,6 +94,7 @@ describe("ActiveItem", () => {
 
     it("mutes and unmutes the video via the notch", async () => {
         render(<ActiveItem />);
+        loadImage(video);
         expect(getVideo().muted).toBe(false);
 
         await clickButton("Toggle Volume");
@@ -94,19 +104,65 @@ describe("ActiveItem", () => {
         expect(getVideo().muted).toBe(false);
     });
 
-    it("is invisible until the image has loaded for the first time", () => {
+    it("renders nothing while no item is selected", () => {
+        useStore.setState({ currentPortfolioIndex: -1 });
+        const { container } = render(<ActiveItem />);
+
+        expect(container).toBeEmptyDOMElement();
+    });
+
+    it("is invisible until the selected image has loaded", async () => {
         const { container } = render(<ActiveItem />);
         const activeItem = container.firstElementChild as HTMLElement;
         expect(activeItem).toHaveStyle({ opacity: "0" });
 
         fireEvent.load(screen.getByRole("img", { name: getAltText(video) }));
 
+        await waitFor(() => expect(activeItem).toHaveStyle({ opacity: "1" }));
+    });
+
+    it("fades in even if the image fails to load", async () => {
+        const { container } = render(<ActiveItem />);
+        const activeItem = container.firstElementChild as HTMLElement;
+
+        fireEvent.error(screen.getByRole("img", { name: getAltText(video) }));
+
+        await waitFor(() => expect(activeItem).toHaveStyle({ opacity: "1" }));
+    });
+
+    it("fades in again every time the popup is opened", async () => {
+        const { container } = render(<ActiveItem />);
+        const activeItem = container.firstElementChild as HTMLElement;
+        fireEvent.load(screen.getByRole("img", { name: getAltText(video) }));
+        await waitFor(() => expect(activeItem).toHaveStyle({ opacity: "1" }));
+
+        act(() => useStore.setState({ popupOpen: false }));
+        expect(activeItem).toHaveStyle({ opacity: "0" });
+
+        // Das Bild ist bereits geladen, es gibt kein erneutes load-Event
+        act(() => useStore.setState({ popupOpen: true }));
+        expect(activeItem).toHaveStyle({ opacity: "0" });
+        await waitFor(() => expect(activeItem).toHaveStyle({ opacity: "1" }));
+    });
+
+    it("stays visible while navigating between items", async () => {
+        const { container } = render(<ActiveItem />);
+        const activeItem = container.firstElementChild as HTMLElement;
+        fireEvent.load(screen.getByRole("img", { name: getAltText(video) }));
+        await waitFor(() => expect(activeItem).toHaveStyle({ opacity: "1" }));
+
+        act(() => useStore.setState({ currentPortfolioIndex: 2 }));
+
         expect(activeItem).toHaveStyle({ opacity: "1" });
+        expect(screen.getByRole("img", { name: getAltText(video) })).toBeInTheDocument();
     });
 
     it("toggles the info via the notch", async () => {
-        render(<ActiveItem />);
+        const { container } = render(<ActiveItem />);
         fireEvent.load(screen.getByRole("img", { name: getAltText(video) }));
+        await waitFor(() =>
+            expect(container.firstElementChild).toHaveStyle({ opacity: "1" }),
+        );
         expect(getInfoHeading()).not.toBeVisible();
 
         await clickButton("Toggle Info");
@@ -128,6 +184,7 @@ describe("ActiveItem", () => {
 
     it("resets info, video and volume when the item changes", async () => {
         render(<ActiveItem />);
+        loadImage(video);
         await clickButton("Toggle Info");
         await clickButton("Toggle Volume");
         await clickButton("Toggle Video");
@@ -136,6 +193,7 @@ describe("ActiveItem", () => {
         await screen.findByRole("img", { name: getAltText(otherPhoto) });
         act(() => useStore.setState({ currentPortfolioIndex: 1 }));
         await screen.findByRole("img", { name: getAltText(video) });
+        loadImage(video);
 
         expect(getInfoHeading()).not.toBeVisible();
         expect(getVideo()).toBeInTheDocument();
@@ -144,6 +202,7 @@ describe("ActiveItem", () => {
 
     it("pauses the video when the popup is closed", () => {
         render(<ActiveItem />);
+        loadImage(video);
         const pause = vi.mocked(HTMLMediaElement.prototype.pause);
         pause.mockClear();
 
