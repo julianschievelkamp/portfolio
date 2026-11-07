@@ -69,7 +69,7 @@ export const InnerWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
     width: 100%;
     position: relative;
     z-index: 1;

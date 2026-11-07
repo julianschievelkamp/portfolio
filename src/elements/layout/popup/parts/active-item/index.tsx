@@ -40,12 +40,16 @@ const ActiveItem = () => {
             <ItemContainer onClick={() => setIsInfoOn(false)}>
                 <Image
                     src={activeItem.image}
-                    alt={getAltText(activeItem)}
+                    alt={getAltText(loadedItem)}
                     onLoad={() => setLoadedItem(activeItem)}
+                    aspectRatio={loadedItem.aspectRatio}
+                    width="100%"
+                    height="100%"
+                    loading="lazy"
                     fadeInOnLoad
                 />
 
-                {activeItem === loadedItem && loadedItem.video && isVideoOn && (
+                {loadedItem.video && isVideoOn && (
                     <Video
                         src={loadedItem.video}
                         poster={loadedItem.image}

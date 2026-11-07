@@ -3,21 +3,19 @@ import { queries } from "styles/variables";
 
 export const ItemContainer = styled.div`
     position: relative;
+    display: flex;
+    border: 0.5rem solid black;
+    overflow: hidden;
 
     > img,
     > video {
-        display: flex;
-        border: 0.5rem solid black;
-
-        -o-object-fit: cover;
         object-fit: cover;
-        overflow: hidden;
         min-height: 10rem;
         max-height: calc(var(--100vh) - 14rem);
 
         @media ${queries.landscapeLgMax} {
-            max-height: calc(var(--100vh) - 2rem);
-            max-width: calc(100vw - 10rem);
+            max-height: calc(var(--100vh) - 3rem);
+            max-width: calc(100vw - 11rem);
         }
     }
 
