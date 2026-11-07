@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 import fonts from "./fonts";
-import { focusStyles } from "./variables";
 
 export default createGlobalStyle`
     ${fonts};
@@ -21,7 +20,7 @@ export default createGlobalStyle`
     }
 
     :focus-visible {
-        ${focusStyles};
+        outline: 0;
     }
 
     html, body {

@@ -2,8 +2,7 @@ import { NotchWrapper, StyledNotch } from "./Notch.styles";
 import { PortfolioItem } from "data/portfolioData";
 import Button from "elements/components/Button/Button";
 import Icon from "elements/components/Icon/Icon";
-import { colors, queries } from "styles/variables";
-import { useMediaQuery } from "hooks/useMediaQuery";
+import { colors } from "styles/variables";
 
 export interface NotchProps {
     loadedItem: PortfolioItem;
@@ -24,8 +23,6 @@ const Notch = ({
     isInfoOn,
     setIsInfoOn,
 }: NotchProps) => {
-    const isHover = useMediaQuery(queries.hover);
-
     return (
         <NotchWrapper>
             <StyledNotch>
@@ -33,7 +30,6 @@ const Notch = ({
                     onClick={() => setIsVolumeOn(!isVolumeOn)}
                     disabled={!loadedItem.video || !isVideoOn}
                     ariaLabel="Toggle Volume"
-                    hoverStyles={isHover}
                 >
                     <Icon
                         name={
@@ -50,7 +46,6 @@ const Notch = ({
                     onClick={() => setIsVideoOn(!isVideoOn)}
                     disabled={!loadedItem.video}
                     ariaLabel="Toggle Video"
-                    hoverStyles={isHover}
                 >
                     <Icon
                         name={
@@ -66,7 +61,6 @@ const Notch = ({
                 <Button
                     onClick={() => setIsInfoOn(!isInfoOn)}
                     ariaLabel="Toggle Info"
-                    hoverStyles={isHover}
                 >
                     <Icon
                         name={isInfoOn ? "infoFilled" : "info"}

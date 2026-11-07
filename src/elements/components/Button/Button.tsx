@@ -10,7 +10,6 @@ export interface ButtonProps {
     id?: string;
     tabIndex?: number;
     disabled?: boolean;
-    hoverStyles?: boolean;
     className?: string;
 }
 
@@ -24,7 +23,6 @@ const Button = ({
     id,
     tabIndex = 0,
     disabled,
-    hoverStyles = true,
     className,
 }: ButtonProps) => {
     return (
@@ -37,7 +35,6 @@ const Button = ({
             aria-controls={ariaControls}
             tabIndex={tabIndex}
             disabled={disabled}
-            $hoverStyles={hoverStyles}
             className={className}
         >
             {children}

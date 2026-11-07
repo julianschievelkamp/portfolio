@@ -1,6 +1,5 @@
 import { styled } from "styled-components";
 import Button from "elements/components/Button/Button";
-import { focusStyles } from "styles/variables";
 
 export const Arrow = styled(Button)<{ $isRight?: boolean }>`
     position: absolute;
@@ -15,14 +14,5 @@ export const Arrow = styled(Button)<{ $isRight?: boolean }>`
         right: ${({ $isRight }) => ($isRight ? "2rem" : "unset")};
         top: 50%;
         transform: translateY(-50%);
-    }
-
-    /* Statt der gesamten Klickfläche wird nur das Icon eckig hervorgehoben */
-    &:focus-visible {
-        outline: none;
-
-        > div {
-            ${focusStyles};
-        }
     }
 `;

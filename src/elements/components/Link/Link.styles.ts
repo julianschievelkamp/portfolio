@@ -4,10 +4,11 @@ import { colors, transition } from "styles/variables";
 export const StyledLink = styled.a<{ $underline: boolean }>`
     color: black;
     text-decoration: ${({ $underline }) => ($underline ? "underline" : "none")};
-    transition: ${transition.fast};
+    transition: color ${transition.fast};
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
         color: ${colors.primary};
-        transition: ${transition.fastest};
+        transition: color ${transition.fastest};
     }
 `;

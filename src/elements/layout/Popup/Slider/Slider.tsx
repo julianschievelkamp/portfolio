@@ -1,4 +1,8 @@
-import { SliderContainer, InnerSliderContainer, SliderItem } from "./Slider.styles";
+import {
+    SliderContainer,
+    InnerSliderContainer,
+    SliderItem,
+} from "./Slider.styles";
 import Image from "elements/components/Image/Image";
 import { useStore } from "hooks/useStore";
 import { getAltText, portfolioData } from "data/portfolioData";
@@ -35,7 +39,11 @@ const Slider = () => {
                                 }
                             }}
                             $imageOpacity={
-                                index === currentPortfolioIndex ? 1 : 0.5
+                                [currentPortfolioIndex, selectedIndex].includes(
+                                    index,
+                                )
+                                    ? 1
+                                    : 0.5
                             }
                         >
                             <Image

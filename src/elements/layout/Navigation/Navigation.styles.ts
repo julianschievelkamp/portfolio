@@ -32,7 +32,8 @@ export const NavLink = styled(Link)<{ $isActive?: boolean }>`
         padding: 0.25rem 0.5rem;
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
         p {
             color: ${({ $isActive }) => !$isActive && colors.primary};
             transition: ${transition.fastest};

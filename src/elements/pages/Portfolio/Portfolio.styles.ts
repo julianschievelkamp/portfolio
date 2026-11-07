@@ -34,7 +34,7 @@ export const PortfolioItem = styled(Button)`
     }
 
     &:hover,
-    &:focus {
+    &:focus-visible {
         img {
             transform: scale(1.05);
         }
