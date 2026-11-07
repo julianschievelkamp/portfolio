@@ -24,7 +24,7 @@ export const StyledNotch = styled.div`
     justify-content: flex-end;
     background: black;
     padding-right: 0.25rem;
-    height: 1.75rem;
+    height: 2rem;
     max-width: 100%;
 
     &::before {
@@ -33,7 +33,7 @@ export const StyledNotch = styled.div`
         background: black;
         transform: rotate(45deg);
         z-index: -1;
-        left: -0.5rem;
+        left: -0.75rem;
         top: -1.5rem;
         width: 4rem;
         height: 4rem;

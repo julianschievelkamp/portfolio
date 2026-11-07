@@ -42,7 +42,7 @@ const Notch = ({
                                 : "volumeOff"
                         }
                         color="white"
-                        size="1rem"
+                        size="1.25rem"
                         padding="0.25rem"
                     />
                 </Button>
@@ -59,7 +59,7 @@ const Notch = ({
                                 : "videoOff"
                         }
                         color="white"
-                        size="1rem"
+                        size="1.25rem"
                         padding="0.25rem"
                     />
                 </Button>
@@ -71,7 +71,7 @@ const Notch = ({
                     <Icon
                         name={isInfoOn ? "infoFilled" : "info"}
                         color={isInfoOn ? colors.primary : "white"}
-                        size="1rem"
+                        size="1.25rem"
                         padding="0.25rem"
                     />
                 </Button>
