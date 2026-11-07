@@ -1,5 +1,12 @@
 import { css } from "styled-components";
 
+export const TRANSITION_DEFAULT = 300;
+
+export const transition = {
+    fastest: `${TRANSITION_DEFAULT / 3}ms ease-out`,
+    fast: `${TRANSITION_DEFAULT}ms ease-out`,
+};
+
 export const colors = {
     primary: "#ffca00",
     secondary: "rgb(0, 0, 0, 0.5)",
@@ -18,11 +25,6 @@ export const queries = {
 };
 
 export const thumbnailSize = "(max-width: 1200px) 300px, 600px";
-
-export const transition = {
-    fastest: "100ms ease-out",
-    fast: "300ms ease-out",
-};
 
 export const scrollStyles = css`
     overflow-y: scroll;

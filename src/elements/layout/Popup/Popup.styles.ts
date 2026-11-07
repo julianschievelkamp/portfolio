@@ -29,21 +29,12 @@ export const StyledPopup = styled.dialog`
         background: transparent;
     }
 
-    /* Ein-/Ausblenden: display und overlay müssen diskret mit animiert werden */
+    /* Ein-/Ausblenden über data-visible; das Schließen erfolgt per JS nach der Transition */
     opacity: 0;
-    transition:
-        opacity ${transition.fast},
-        display ${transition.fast} allow-discrete,
-        overlay ${transition.fast} allow-discrete;
+    transition: opacity ${transition.fast};
 
-    &[open] {
+    &[data-visible="true"] {
         opacity: 1;
-    }
-
-    @starting-style {
-        &[open] {
-            opacity: 0;
-        }
     }
 `;
 
