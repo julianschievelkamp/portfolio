@@ -7,17 +7,17 @@ import { useState } from "react";
 
 const Slider = () => {
     const { currentPortfolioIndex, setCurrentPortfolioIndex } = useStore();
-    // Per Tab fokussiertes Item samt Index, zu dem der Fokus entstanden ist
-    const [focus, setFocus] = useState<{
-        index: number;
-        baseIndex: number;
-    } | null>(null);
 
-    // Der Fokus gilt nur, solange sich der aktuelle Index nicht geändert hat
-    const selectedIndex =
-        focus?.baseIndex === currentPortfolioIndex
-            ? focus.index
-            : currentPortfolioIndex;
+    const [selectedIndex, setSelectedIndex] = useState(currentPortfolioIndex);
+    const [prevPortfolioIndex, setPrevPortfolioIndex] = useState(
+        currentPortfolioIndex,
+    );
+
+    // Bei Änderung des aktuellen Index wird der selectedIndex sofort angeglichen
+    if (prevPortfolioIndex !== currentPortfolioIndex) {
+        setPrevPortfolioIndex(currentPortfolioIndex);
+        setSelectedIndex(currentPortfolioIndex);
+    }
 
     return (
         <SliderContainer>
@@ -31,10 +31,7 @@ const Slider = () => {
                             onFocus={(e) => {
                                 // Nur wenn per Tab fokussiert wird
                                 if (e.target.matches(":focus-visible")) {
-                                    setFocus({
-                                        index,
-                                        baseIndex: currentPortfolioIndex,
-                                    });
+                                    setSelectedIndex(index);
                                 }
                             }}
                             $imageOpacity={
