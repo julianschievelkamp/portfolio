@@ -8,13 +8,18 @@ export const StyledItemInfo = styled.div<{ $isVisible: boolean }>`
     max-width: calc(100% - 1rem);
     max-height: calc(100% - 1rem);
     backdrop-filter: blur(8px);
-    padding: 1rem;
     visibility: ${({ $isVisible }) => ($isVisible ? "visible" : "hidden")};
     opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
     overflow: hidden;
+    z-index: 9;
+`;
+
+export const InnerWrapper = styled.div`
     display: flex;
     justify-content: space-between;
-    z-index: 9;
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
 `;
 
 export const BadgesWrapper = styled.div`

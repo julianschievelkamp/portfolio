@@ -5,7 +5,6 @@ export const ItemContainer = styled.div`
     position: relative;
     display: flex;
     border: 0.5rem solid black;
-    overflow: hidden;
 
     > img,
     > video {
