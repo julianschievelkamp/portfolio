@@ -1,17 +1,11 @@
 import { useEffect, useRef } from "react";
 import { useStore } from "./useStore";
-import { useMediaQuery } from "./useMediaQuery";
-import { TRANSITION_DEFAULT, queries } from "styles/variables";
+import { TRANSITION_DEFAULT } from "styles/variables";
 
 export const usePopupDialog = () => {
-    const isTouch = useMediaQuery(queries.touch);
     const popupOpen = useStore((state) => state.popupOpen);
     const dialogRef = useRef<HTMLDialogElement>(null);
 
-    // Store-Zustand mit dem nativen Dialog synchronisieren.
-    // Das Ausblenden läuft über das Attribut data-visible, da Safari/iOS
-    // display und overlay nicht diskret animiert: Der Dialog wird erst nach
-    // Ende der Transition wirklich geschlossen.
     useEffect(() => {
         const dialog = dialogRef.current;
 
@@ -19,16 +13,23 @@ export const usePopupDialog = () => {
 
         if (popupOpen) {
             if (!dialog.open) {
-                // Auslöser vorab entfokussieren, damit der Browser beim
-                // Schließen keinen Fokus auf den Grid-Button zurücksetzt
-                if (isTouch && document.activeElement instanceof HTMLElement) {
-                    document.activeElement.blur();
+                const trigger = document.activeElement;
+
+                const isKeyboardUser =
+                    trigger instanceof HTMLElement &&
+                    trigger.matches(":focus-visible");
+
+                // Bei Maus/Touch den Auslöser vorab entfokussieren, damit der
+                // Browser beim Schließen keinen Fokus zurücksetzt
+                if (!isKeyboardUser && trigger instanceof HTMLElement) {
+                    trigger.blur();
                 }
 
                 dialog.showModal();
 
-                // Fokus auf den Dialog selbst statt auf den CloseButton
-                if (isTouch) dialog.focus({ preventScroll: true });
+                // Fokus auf den Dialog selbst statt auf den CloseButton,
+                // damit kein Fokusrahmen vom Hauptbild ablenkt
+                if (!isKeyboardUser) dialog.focus({ preventScroll: true });
             }
 
             // Ein Frame Verzögerung, damit die Startwerte gerendert werden
@@ -46,7 +47,7 @@ export const usePopupDialog = () => {
         }, TRANSITION_DEFAULT);
 
         return () => clearTimeout(timeout);
-    }, [popupOpen, isTouch]);
+    }, [popupOpen]);
 
     return dialogRef;
 };
