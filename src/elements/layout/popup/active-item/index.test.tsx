@@ -15,9 +15,9 @@ const getVideo = () => screen.queryByLabelText(video.title) as HTMLVideoElement;
 const getInfoHeading = () =>
     screen.getByRole("heading", { level: 2, hidden: true });
 const loadImage = (item: typeof video) =>
-    fireEvent.load(screen.getByRole("img", { name: getAltText(item) }));
+    fireEvent.load(screen.getByAltText(getAltText(item)));
 const clickButton = (name: string) =>
-    userEvent.click(screen.getByRole("button", { name }));
+    userEvent.click(screen.getByLabelText(name));
 
 describe("ActiveItem", () => {
     beforeEach(() => {
@@ -31,7 +31,7 @@ describe("ActiveItem", () => {
     it("renders the image of the active item with its title as alt text", () => {
         render(<ActiveItem />);
 
-        expect(screen.getByRole("img", { name: getAltText(video) })).toHaveAttribute(
+        expect(screen.getByAltText(getAltText(video))).toHaveAttribute(
             "src",
             video.image,
         );
@@ -54,7 +54,7 @@ describe("ActiveItem", () => {
         useStore.setState({ currentPortfolioIndex: 0 });
         render(<ActiveItem />);
 
-        expect(screen.getByRole("img", { name: getAltText(photo) })).toBeInTheDocument();
+        expect(screen.getByAltText(getAltText(photo))).toBeInTheDocument();
         expect(screen.queryByLabelText(video.title)).not.toBeInTheDocument();
     });
 
@@ -65,13 +65,13 @@ describe("ActiveItem", () => {
         act(() => useStore.setState({ currentPortfolioIndex: 1 }));
 
         // Direkt nach dem Wechsel sind Bild und Video noch die des alten Items
-        expect(screen.getByRole("img", { name: getAltText(photo) })).toHaveAttribute(
+        expect(screen.getByAltText(getAltText(photo))).toHaveAttribute(
             "src",
             photo.image,
         );
         expect(getVideo()).not.toBeInTheDocument();
 
-        const newImage = await screen.findByRole("img", { name: getAltText(video) });
+        const newImage = await screen.findByAltText(getAltText(video));
 
         expect(newImage).toHaveAttribute("src", video.image);
         expect(getVideo()).not.toBeInTheDocument();
@@ -115,51 +115,57 @@ describe("ActiveItem", () => {
         const { container } = render(<ActiveItem />);
         const activeItem = container.firstElementChild as HTMLElement;
         expect(activeItem).toHaveStyle({ opacity: "0" });
+        expect(activeItem).not.toBeVisible();
 
-        fireEvent.load(screen.getByRole("img", { name: getAltText(video) }));
+        fireEvent.load(screen.getByAltText(getAltText(video)));
 
         await waitFor(() => expect(activeItem).toHaveStyle({ opacity: "1" }));
+        expect(activeItem).toBeVisible();
     });
 
     it("fades in even if the image fails to load", async () => {
         const { container } = render(<ActiveItem />);
         const activeItem = container.firstElementChild as HTMLElement;
 
-        fireEvent.error(screen.getByRole("img", { name: getAltText(video) }));
+        fireEvent.error(screen.getByAltText(getAltText(video)));
 
         await waitFor(() => expect(activeItem).toHaveStyle({ opacity: "1" }));
+        expect(activeItem).toBeVisible();
     });
 
     it("fades in again every time the popup is opened", async () => {
         const { container } = render(<ActiveItem />);
         const activeItem = container.firstElementChild as HTMLElement;
-        fireEvent.load(screen.getByRole("img", { name: getAltText(video) }));
+        fireEvent.load(screen.getByAltText(getAltText(video)));
         await waitFor(() => expect(activeItem).toHaveStyle({ opacity: "1" }));
 
         act(() => useStore.setState({ popupOpen: false }));
         expect(activeItem).toHaveStyle({ opacity: "0" });
+        expect(activeItem).not.toBeVisible();
 
         // Das Bild ist bereits geladen, es gibt kein erneutes load-Event
         act(() => useStore.setState({ popupOpen: true }));
         expect(activeItem).toHaveStyle({ opacity: "0" });
+        expect(activeItem).not.toBeVisible();
         await waitFor(() => expect(activeItem).toHaveStyle({ opacity: "1" }));
+        expect(activeItem).toBeVisible();
     });
 
     it("stays visible while navigating between items", async () => {
         const { container } = render(<ActiveItem />);
         const activeItem = container.firstElementChild as HTMLElement;
-        fireEvent.load(screen.getByRole("img", { name: getAltText(video) }));
+        fireEvent.load(screen.getByAltText(getAltText(video)));
         await waitFor(() => expect(activeItem).toHaveStyle({ opacity: "1" }));
 
         act(() => useStore.setState({ currentPortfolioIndex: 2 }));
 
         expect(activeItem).toHaveStyle({ opacity: "1" });
-        expect(screen.getByRole("img", { name: getAltText(video) })).toBeInTheDocument();
+        expect(screen.getByAltText(getAltText(video))).toBeInTheDocument();
     });
 
     it("toggles the info via the notch", async () => {
         const { container } = render(<ActiveItem />);
-        fireEvent.load(screen.getByRole("img", { name: getAltText(video) }));
+        fireEvent.load(screen.getByAltText(getAltText(video)));
         await waitFor(() =>
             expect(container.firstElementChild).toHaveStyle({ opacity: "1" }),
         );
@@ -177,7 +183,7 @@ describe("ActiveItem", () => {
         await clickButton("Toggle Info");
 
         // Das Bild hat pointer-events: none, der Klick geht an den Container
-        fireEvent.click(screen.getByRole("img", { name: getAltText(video) }));
+        fireEvent.click(screen.getByAltText(getAltText(video)));
 
         expect(getInfoHeading()).not.toBeVisible();
     });
@@ -190,9 +196,9 @@ describe("ActiveItem", () => {
         await clickButton("Toggle Video");
 
         act(() => useStore.setState({ currentPortfolioIndex: 2 }));
-        await screen.findByRole("img", { name: getAltText(otherPhoto) });
+        await screen.findByAltText(getAltText(otherPhoto));
         act(() => useStore.setState({ currentPortfolioIndex: 1 }));
-        await screen.findByRole("img", { name: getAltText(video) });
+        await screen.findByAltText(getAltText(video));
         loadImage(video);
 
         expect(getInfoHeading()).not.toBeVisible();
