@@ -6,6 +6,7 @@ import { useStore } from "hooks/useStore";
 import Link from "elements/components/Link/Link";
 import Button from "elements/components/Button/Button";
 import Icon from "elements/components/Icon/Icon";
+import { SIDEBAR_ID, SIDEBAR_TOGGLE_ID } from "elements/layout/Sidebar/sidebarIds";
 
 const Menu = () => {
     const { sidebarOpen, setSidebarOpen } = useStore();
@@ -31,7 +32,10 @@ const Menu = () => {
             >
                 <Button
                     onClick={() => setSidebarOpen(!sidebarOpen)}
+                    id={SIDEBAR_TOGGLE_ID}
                     ariaLabel="Toggle Sidebar"
+                    ariaExpanded={sidebarOpen}
+                    ariaControls={SIDEBAR_ID}
                 >
                     <Icon name={sidebarOpen ? "close" : "menu"} size="2rem" />
                 </Button>

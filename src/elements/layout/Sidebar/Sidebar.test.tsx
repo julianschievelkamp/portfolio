@@ -73,4 +73,42 @@ describe("Sidebar", () => {
 
         expect(findCloseTrigger(container)).toHaveStyle("pointer-events: none");
     });
+
+    it("uses semantic landmarks for aside, navigation and footer", () => {
+        render(<Sidebar page={page} />);
+
+        expect(screen.getByRole("complementary")).toHaveAttribute("id", "sidebar");
+        expect(screen.getByRole("contentinfo")).toHaveTextContent("Copyright text");
+        expect(
+            screen.getByRole("navigation", { name: "Main navigation" }),
+        ).toBeInTheDocument();
+    });
+
+    it("closes the sidebar with Escape and returns focus to the toggle", async () => {
+        render(
+            <>
+                <button id="sidebar-toggle">Toggle</button>
+                <Sidebar page={page} />
+            </>,
+        );
+
+        await userEvent.keyboard("{Escape}");
+
+        expect(useStore.getState().sidebarOpen).toBe(false);
+        expect(screen.getByRole("button", { name: "Toggle" })).toHaveFocus();
+    });
+
+    it("ignores Escape while the sidebar is closed", async () => {
+        useStore.setState({ sidebarOpen: false });
+        render(
+            <>
+                <button id="sidebar-toggle">Toggle</button>
+                <Sidebar page={page} />
+            </>,
+        );
+
+        await userEvent.keyboard("{Escape}");
+
+        expect(screen.getByRole("button", { name: "Toggle" })).not.toHaveFocus();
+    });
 });

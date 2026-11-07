@@ -81,4 +81,16 @@ describe("Menu", () => {
 
         expect(screen.getByRole("link", { hidden: true })).not.toBeVisible();
     });
+
+    it("exposes the sidebar state via aria-expanded and aria-controls", async () => {
+        render(<Menu />);
+        const button = screen.getByRole("button", { name: "Toggle Sidebar" });
+
+        expect(button).toHaveAttribute("aria-controls", "sidebar");
+        expect(button).toHaveAttribute("aria-expanded", "false");
+
+        await userEvent.click(button);
+
+        expect(button).toHaveAttribute("aria-expanded", "true");
+    });
 });

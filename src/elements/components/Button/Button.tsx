@@ -5,6 +5,9 @@ export interface ButtonProps {
     onFocus?: (e: React.FocusEvent<HTMLButtonElement>) => void;
     children: React.ReactNode;
     ariaLabel?: string;
+    ariaExpanded?: boolean;
+    ariaControls?: string;
+    id?: string;
     tabIndex?: number;
     disabled?: boolean;
     hoverStyles?: boolean;
@@ -16,6 +19,9 @@ const Button = ({
     onFocus,
     children,
     ariaLabel,
+    ariaExpanded,
+    ariaControls,
+    id,
     tabIndex = 0,
     disabled,
     hoverStyles = true,
@@ -25,7 +31,10 @@ const Button = ({
         <StyledButton
             onClick={onClick}
             onFocus={onFocus}
+            id={id}
             aria-label={ariaLabel}
+            aria-expanded={ariaExpanded}
+            aria-controls={ariaControls}
             tabIndex={tabIndex}
             disabled={disabled}
             $hoverStyles={hoverStyles}

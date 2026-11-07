@@ -3,7 +3,7 @@ import { queries, scrollStyles, transition } from "styles/variables";
 import Text from "elements/components/Text/Text";
 import Div from "elements/components/Div/Div";
 
-export const StyledSidebar = styled.div<{
+export const StyledSidebar = styled.aside<{
     $sidebarOpen: boolean;
 }>`
     background-color: white;
@@ -78,4 +78,8 @@ export const MobileSpacer = styled.div`
     @media ${queries.md} {
         display: none;
     }
+`;
+
+export const SidebarFooter = styled.footer`
+    margin-top: 0.5rem;
 `;
