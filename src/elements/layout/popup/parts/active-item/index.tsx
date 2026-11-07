@@ -1,20 +1,22 @@
-import { ItemContainer } from "./styles";
+import { ItemContainer, StyledActiveItem } from "./styles";
 import Image from "elements/components/image";
 import { useStore } from "hooks/useStore";
+import { usePreloadedItem } from "hooks/usePreloadedItem";
 import { getAltText, portfolioData } from "data/portfolioData";
 import Video from "elements/components/video";
 import { useEffect, useRef, useState } from "react";
 import Notch from "../notch";
 import ItemInfo from "../item-info";
-import Div from "elements/components/div";
 
 const ActiveItem = () => {
     const { currentPortfolioIndex, popupOpen } = useStore();
 
     const activeItem = portfolioData[currentPortfolioIndex];
     const [previousItem, setPreviousItem] = useState(activeItem);
-    const [loadedItem, setLoadedItem] = useState(activeItem);
+    const loadedItem = usePreloadedItem(activeItem);
 
+    // Bleibt nach dem ersten Laden des Bildes dauerhaft true, damit nur einmal eingeblendet wird
+    const [isImageLoaded, setIsImageLoaded] = useState(false);
     const [isInfoOn, setIsInfoOn] = useState(false);
     const [isVideoOn, setIsVideoOn] = useState(true);
     const [isVolumeOn, setIsVolumeOn] = useState(true);
@@ -36,17 +38,16 @@ const ActiveItem = () => {
     }, [popupOpen]);
 
     return (
-        <Div zIndex={1}>
+        <StyledActiveItem $isLoaded={isImageLoaded}>
             <ItemContainer onClick={() => setIsInfoOn(false)}>
                 <Image
-                    src={activeItem.image}
+                    src={loadedItem.image}
                     alt={getAltText(loadedItem)}
-                    onLoad={() => setLoadedItem(activeItem)}
                     aspectRatio={loadedItem.aspectRatio}
                     width="100%"
                     height="100%"
+                    onLoad={() => setIsImageLoaded(true)}
                     loading="lazy"
-                    fadeInOnLoad
                 />
 
                 {loadedItem.video && isVideoOn && (
@@ -73,7 +74,7 @@ const ActiveItem = () => {
                 isInfoOn={isInfoOn}
                 setIsInfoOn={setIsInfoOn}
             />
-        </Div>
+        </StyledActiveItem>
     );
 };
 

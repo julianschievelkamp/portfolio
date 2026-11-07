@@ -18,3 +18,8 @@ HTMLDialogElement.prototype.close = function close() {
     this.removeAttribute("open");
     this.dispatchEvent(new Event("close"));
 };
+
+// jsdom implementiert decode() von <img> nicht
+HTMLImageElement.prototype.decode = function decode() {
+    return Promise.resolve();
+};

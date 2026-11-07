@@ -53,15 +53,23 @@ describe("ActiveItem", () => {
         expect(screen.queryByLabelText(video.title)).not.toBeInTheDocument();
     });
 
-    it("shows the video of a new item only after its image has loaded", () => {
+    it("keeps the previous image until the new one is preloaded", async () => {
         useStore.setState({ currentPortfolioIndex: 0 });
         render(<ActiveItem />);
 
         act(() => useStore.setState({ currentPortfolioIndex: 1 }));
+
+        // Direkt nach dem Wechsel sind Bild und Video noch die des alten Items
+        expect(screen.getByRole("img", { name: getAltText(photo) })).toHaveAttribute(
+            "src",
+            photo.image,
+        );
         expect(getVideo()).not.toBeInTheDocument();
 
-        fireEvent.load(screen.getByRole("img", { name: getAltText(video) }));
+        const newImage = await screen.findByRole("img", { name: getAltText(video) });
 
+        expect(newImage).toHaveAttribute("src", video.image);
+        expect(newImage).toHaveStyle({ aspectRatio: video.aspectRatio });
         expect(getVideo()).toBeInTheDocument();
     });
 
@@ -86,8 +94,19 @@ describe("ActiveItem", () => {
         expect(getVideo().muted).toBe(false);
     });
 
+    it("is invisible until the image has loaded for the first time", () => {
+        const { container } = render(<ActiveItem />);
+        const activeItem = container.firstElementChild as HTMLElement;
+        expect(activeItem).toHaveStyle({ opacity: "0" });
+
+        fireEvent.load(screen.getByRole("img", { name: getAltText(video) }));
+
+        expect(activeItem).toHaveStyle({ opacity: "1" });
+    });
+
     it("toggles the info via the notch", async () => {
         render(<ActiveItem />);
+        fireEvent.load(screen.getByRole("img", { name: getAltText(video) }));
         expect(getInfoHeading()).not.toBeVisible();
 
         await clickButton("Toggle Info");
@@ -114,9 +133,9 @@ describe("ActiveItem", () => {
         await clickButton("Toggle Video");
 
         act(() => useStore.setState({ currentPortfolioIndex: 2 }));
-        fireEvent.load(screen.getByRole("img", { name: getAltText(otherPhoto) }));
+        await screen.findByRole("img", { name: getAltText(otherPhoto) });
         act(() => useStore.setState({ currentPortfolioIndex: 1 }));
-        fireEvent.load(screen.getByRole("img", { name: getAltText(video) }));
+        await screen.findByRole("img", { name: getAltText(video) });
 
         expect(getInfoHeading()).not.toBeVisible();
         expect(getVideo()).toBeInTheDocument();
