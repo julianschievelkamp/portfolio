@@ -12,9 +12,7 @@ export const StyledImage = styled.img<{
     margin: ${({ $margin }) => $margin};
     aspect-ratio: ${({ $aspectRatio }) => $aspectRatio};
     max-width: 100%;
-    transition:
-        ${transition.fast},
-        aspect-ratio 0s;
+    transition: ${transition.fast};
     pointer-events: none;
     user-select: none;
     -moz-user-select: none;
