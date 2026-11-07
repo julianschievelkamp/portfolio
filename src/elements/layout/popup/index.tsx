@@ -3,10 +3,10 @@ import { useStore } from "hooks/useStore";
 import { CloseButton, InnerWrapper, OuterWrapper, StyledPopup } from "./styles";
 import Div from "elements/components/div";
 import { usePopupControls } from "hooks/usePopupControls";
-import Slider from "./parts/slider";
+import Slider from "./slider";
 import Icon from "elements/components/icon";
-import ActiveItem from "./parts/active-item";
-import Arrows from "./parts/arrows";
+import ActiveItem from "./active-item";
+import Arrows from "./arrows";
 import { useMediaQuery } from "hooks/useMediaQuery";
 import { queries } from "styles/variables";
 

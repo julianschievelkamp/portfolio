@@ -3,7 +3,7 @@ import { ArtistWrapper, ImageWrapper } from "./styles";
 import { languageData } from "data/languageData";
 import Image from "elements/components/image";
 import Div from "elements/components/div";
-import Social from "../social";
+import Social from "./social";
 
 const Artist = () => {
     return (

@@ -14,13 +14,13 @@ vi.mock(
     "data/portfolioData",
     async () => await import("data/portfolioFixtures"),
 );
-vi.mock("./parts/slider", () => ({
+vi.mock("./slider", () => ({
     default: () => <div data-testid="slider" />,
 }));
-vi.mock("./parts/active-item", () => ({
+vi.mock("./active-item", () => ({
     default: () => <div data-testid="active-item" />,
 }));
-vi.mock("./parts/arrows", () => ({
+vi.mock("./arrows", () => ({
     default: () => <div data-testid="arrows" />,
 }));
 

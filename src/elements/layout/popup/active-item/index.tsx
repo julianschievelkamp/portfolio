@@ -3,8 +3,8 @@ import Image from "elements/components/image";
 import { useActiveItem } from "hooks/useActiveItem";
 import { getAltText } from "data/portfolioData";
 import Video from "elements/components/video";
-import Notch from "../notch";
-import ItemInfo from "../item-info";
+import Notch from "./notch";
+import ItemInfo from "./item-info";
 
 const ActiveItem = () => {
     const {

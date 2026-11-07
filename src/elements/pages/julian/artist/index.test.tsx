@@ -4,9 +4,11 @@ import { describe, expect, it, vi } from "vitest";
 import Artist from ".";
 
 vi.mock("data/languageData", () => ({
-    languageData: { julian: { image: "portrait.jpg", text: "Artist biography" } },
+    languageData: {
+        julian: { image: "portrait.jpg", text: "Artist biography" },
+    },
 }));
-vi.mock("../social", () => ({ default: () => <p>social</p> }));
+vi.mock("./social", () => ({ default: () => <p>social</p> }));
 
 describe("Artist", () => {
     it("shows the portrait with alt text and source", () => {
