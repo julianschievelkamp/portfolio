@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import fonts from "./fonts";
+import { focusStyles } from "./variables";
 
 export default createGlobalStyle`
     ${fonts};
@@ -17,6 +18,10 @@ export default createGlobalStyle`
     * {
         box-sizing: border-box;
         -webkit-tap-highlight-color: transparent;
+    }
+
+    :focus-visible {
+        ${focusStyles};
     }
 
     html, body {

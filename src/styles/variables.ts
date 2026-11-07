@@ -48,3 +48,10 @@ export const visuallyHidden = css`
     white-space: nowrap;
     border: 0;
 `;
+
+// Eckiger Fokus-Ring in der Primärfarbe für per Tastatur fokussierte Elemente
+export const focusStyles = css`
+    outline: 2px solid ${colors.primary};
+    outline-offset: 0;
+    border-radius: 0;
+`;

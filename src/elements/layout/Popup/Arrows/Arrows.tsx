@@ -8,8 +8,7 @@ const Arrows = () => {
     return (
         <>
             <Arrow
-                ariaLabel="Previous"
-                tabIndex={-1}
+                ariaLabel="Previous Artwork"
                 onClick={() =>
                     setCurrentPortfolioIndex(currentPortfolioIndex - 1)
                 }
@@ -18,8 +17,7 @@ const Arrows = () => {
             </Arrow>
             <Arrow
                 $isRight
-                ariaLabel="Next"
-                tabIndex={-1}
+                ariaLabel="Next Artwork"
                 onClick={() =>
                     setCurrentPortfolioIndex(currentPortfolioIndex + 1)
                 }

@@ -19,18 +19,18 @@ describe("Arrows", () => {
         render(<Arrows />);
 
         expect(
-            screen.getByRole("button", { name: "Previous" }),
+            screen.getByRole("button", { name: "Previous Artwork" }),
         ).toBeInTheDocument();
-        expect(screen.getByRole("button", { name: "Next" })).toBeInTheDocument();
+        expect(screen.getByRole("button", { name: "Next Artwork" })).toBeInTheDocument();
     });
 
     it("moves to the next and previous item", async () => {
         render(<Arrows />);
 
-        await userEvent.click(screen.getByRole("button", { name: "Next" }));
+        await userEvent.click(screen.getByRole("button", { name: "Next Artwork" }));
         expect(useStore.getState().currentPortfolioIndex).toBe(2);
 
-        await userEvent.click(screen.getByRole("button", { name: "Previous" }));
+        await userEvent.click(screen.getByRole("button", { name: "Previous Artwork" }));
         expect(useStore.getState().currentPortfolioIndex).toBe(1);
     });
 
@@ -38,7 +38,7 @@ describe("Arrows", () => {
         useStore.setState({ currentPortfolioIndex: lastIndex });
         render(<Arrows />);
 
-        await userEvent.click(screen.getByRole("button", { name: "Next" }));
+        await userEvent.click(screen.getByRole("button", { name: "Next Artwork" }));
 
         expect(useStore.getState().currentPortfolioIndex).toBe(0);
     });
@@ -47,16 +47,16 @@ describe("Arrows", () => {
         useStore.setState({ currentPortfolioIndex: 0 });
         render(<Arrows />);
 
-        await userEvent.click(screen.getByRole("button", { name: "Previous" }));
+        await userEvent.click(screen.getByRole("button", { name: "Previous Artwork" }));
 
         expect(useStore.getState().currentPortfolioIndex).toBe(lastIndex);
     });
 
-    it("excludes both buttons from tab navigation", () => {
+    it("keeps both buttons in the tab order", () => {
         render(<Arrows />);
 
         screen.getAllByRole("button").forEach((button) => {
-            expect(button).toHaveAttribute("tabindex", "-1");
+            expect(button).toHaveAttribute("tabindex", "0");
         });
     });
 });
