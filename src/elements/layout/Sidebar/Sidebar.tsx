@@ -32,7 +32,11 @@ const Sidebar = ({ page }: SidebarProps) => {
                 $isActive={sidebarOpen}
             />
 
-            <StyledSidebar id={SIDEBAR_ID} $sidebarOpen={sidebarOpen}>
+            <StyledSidebar
+                id={SIDEBAR_ID}
+                aria-label="Site navigation"
+                $sidebarOpen={sidebarOpen}
+            >
                 <StyledTitle>{languageData.title}</StyledTitle>
 
                 <MobileSpacer />

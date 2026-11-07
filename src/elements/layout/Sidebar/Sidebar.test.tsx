@@ -77,7 +77,9 @@ describe("Sidebar", () => {
     it("uses semantic landmarks for aside, navigation and footer", () => {
         render(<Sidebar page={page} />);
 
-        expect(screen.getByRole("complementary")).toHaveAttribute("id", "sidebar");
+        expect(
+            screen.getByRole("complementary", { name: "Site navigation" }),
+        ).toHaveAttribute("id", "sidebar");
         expect(screen.getByRole("contentinfo")).toHaveTextContent("Copyright text");
         expect(
             screen.getByRole("navigation", { name: "Main navigation" }),

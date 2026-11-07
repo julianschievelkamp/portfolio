@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 import { transition, queries } from "styles/variables";
 import Text from "elements/components/Text/Text";
 
-export const StyledMenu = styled.div<{ $isVisible: boolean }>`
+export const StyledMenu = styled.header<{ $isVisible: boolean }>`
     background-color: white;
     width: 100vw;
     position: fixed;

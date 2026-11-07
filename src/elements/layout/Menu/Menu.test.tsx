@@ -32,6 +32,14 @@ describe("Menu", () => {
         );
     });
 
+    it("uses a header element as banner landmark", () => {
+        render(<Menu />);
+
+        expect(screen.getByRole("banner")).toContainElement(
+            screen.getByRole("link", { name: "Site Title" }),
+        );
+    });
+
     it("closes the sidebar when the title link is clicked", async () => {
         useStore.setState({ sidebarOpen: true });
         render(<Menu />);
