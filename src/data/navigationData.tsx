@@ -9,11 +9,6 @@ export type Page = {
     element: React.ReactNode;
 };
 
-export type Link = {
-    name: string;
-    path: string;
-};
-
 export const pages: { [key: string]: Page } = {
     portfolio: {
         name: "Portfolio",
@@ -33,6 +28,11 @@ export const pages: { [key: string]: Page } = {
         path: "/impressum/",
         element: <Impressum />,
     },
+};
+
+type Link = {
+    name: string;
+    path: string;
 };
 
 export const links: { [key: string]: Link } = {
