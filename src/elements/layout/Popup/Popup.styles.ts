@@ -9,6 +9,7 @@ export const StyledPopup = styled.dialog`
     left: 0;
     margin: 0;
     border: none;
+    outline: none;
     max-width: none;
     max-height: none;
     overflow: visible;

@@ -18,6 +18,7 @@ export const queries = {
     lg: "screen and (min-width: 992px)",
     xl: "screen and (min-width: 1200px)",
     hover: "(hover: hover)",
+    touch: "(pointer: coarse)",
     portrait: "(orientation: portrait)",
     landscape: "(orientation: landscape)",
     landscapeLgMax:

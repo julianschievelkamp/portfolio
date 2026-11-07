@@ -29,6 +29,8 @@ const Popup = () => {
         <StyledPopup
             ref={dialogRef}
             aria-label="Artwork Dialog"
+            // Macht den Dialog programmatisch fokussierbar (nicht per Tab)
+            tabIndex={-1}
             // Hält den Store synchron, falls der Dialog anderweitig schließt
             onClose={() => setPopupOpen(false)}
             // ESC schließt nicht sofort, sondern über den Store (mit Transition)

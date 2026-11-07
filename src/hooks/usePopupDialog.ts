@@ -1,8 +1,10 @@
 import { useEffect, useRef } from "react";
 import { useStore } from "./useStore";
-import { TRANSITION_DEFAULT } from "styles/variables";
+import { useMediaQuery } from "./useMediaQuery";
+import { TRANSITION_DEFAULT, queries } from "styles/variables";
 
 export const usePopupDialog = () => {
+    const isTouch = useMediaQuery(queries.touch);
     const popupOpen = useStore((state) => state.popupOpen);
     const dialogRef = useRef<HTMLDialogElement>(null);
 
@@ -16,7 +18,18 @@ export const usePopupDialog = () => {
         if (!dialog) return;
 
         if (popupOpen) {
-            if (!dialog.open) dialog.showModal();
+            if (!dialog.open) {
+                // Auslöser vorab entfokussieren, damit der Browser beim
+                // Schließen keinen Fokus auf den Grid-Button zurücksetzt
+                if (isTouch && document.activeElement instanceof HTMLElement) {
+                    document.activeElement.blur();
+                }
+
+                dialog.showModal();
+
+                // Fokus auf den Dialog selbst statt auf den CloseButton
+                if (isTouch) dialog.focus({ preventScroll: true });
+            }
 
             // Ein Frame Verzögerung, damit die Startwerte gerendert werden
             const frame = requestAnimationFrame(() => {
@@ -33,7 +46,7 @@ export const usePopupDialog = () => {
         }, TRANSITION_DEFAULT);
 
         return () => clearTimeout(timeout);
-    }, [popupOpen]);
+    }, [popupOpen, isTouch]);
 
     return dialogRef;
 };
