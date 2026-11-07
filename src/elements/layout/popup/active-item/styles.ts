@@ -6,6 +6,8 @@ export const StyledActiveItem = styled.div<{ $isItemRevealed: boolean }>`
     z-index: 1;
     max-width: 100%;
     opacity: ${({ $isItemRevealed }) => ($isItemRevealed ? 1 : 0)};
+    visibility: ${({ $isItemRevealed }) =>
+        $isItemRevealed ? "visible" : "hidden"};
     transition: ${({ $isItemRevealed }) =>
         $isItemRevealed ? `opacity ${transition.fast}` : "none"};
 `;
