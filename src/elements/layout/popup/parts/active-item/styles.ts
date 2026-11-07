@@ -1,13 +1,13 @@
 import { styled } from "styled-components";
 import { queries, transition } from "styles/variables";
 
-export const StyledActiveItem = styled.div<{ $isRevealed: boolean }>`
+export const StyledActiveItem = styled.div<{ $isItemRevealed: boolean }>`
     position: relative;
     z-index: 1;
     max-width: 100%;
-    opacity: ${({ $isRevealed }) => ($isRevealed ? 1 : 0)};
-    transition: ${({ $isRevealed }) =>
-        $isRevealed ? `opacity ${transition.fast}` : "none"};
+    opacity: ${({ $isItemRevealed }) => ($isItemRevealed ? 1 : 0)};
+    transition: ${({ $isItemRevealed }) =>
+        $isItemRevealed ? `opacity ${transition.fast}` : "none"};
 `;
 
 export const ItemContainer = styled.div`

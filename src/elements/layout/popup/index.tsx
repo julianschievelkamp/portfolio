@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { useStore } from "hooks/useStore";
 import { CloseButton, InnerWrapper, OuterWrapper, StyledPopup } from "./styles";
 import Div from "elements/components/div";
-import { usePopup } from "hooks/usePopup";
+import { usePopupControls } from "hooks/usePopupControls";
 import Slider from "./parts/slider";
 import Icon from "elements/components/icon";
 import ActiveItem from "./parts/active-item";
@@ -17,7 +17,7 @@ const Popup = () => {
     const isLandscape = useMediaQuery(queries.landscape);
     const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
 
-    usePopup();
+    usePopupControls();
 
     // Store-Zustand mit dem nativen Dialog synchronisieren
     useEffect(() => {

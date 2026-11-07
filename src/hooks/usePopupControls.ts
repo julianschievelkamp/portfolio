@@ -3,13 +3,10 @@ import { useStore } from "./useStore";
 import { useMediaQuery } from "./useMediaQuery";
 import { queries } from "styles/variables";
 
-export const usePopup = () => {
+export const usePopupControls = () => {
     const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
-    const {
-        popupOpen,
-        currentPortfolioIndex,
-        setCurrentPortfolioIndex,
-    } = useStore();
+    const { popupOpen, currentPortfolioIndex, setCurrentPortfolioIndex } =
+        useStore();
 
     // Touch-Koordinaten werden nur in Event-Handlern gelesen und brauchen kein Rendering
     const touchStart = useRef<number | null>(null);

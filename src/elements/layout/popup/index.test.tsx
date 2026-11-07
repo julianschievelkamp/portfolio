@@ -3,12 +3,12 @@ import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useStore } from "hooks/useStore";
-import { usePopup } from "hooks/usePopup";
+import { usePopupControls } from "hooks/usePopupControls";
 import { useMediaQuery } from "hooks/useMediaQuery";
 import { queries } from "styles/variables";
 import Popup from ".";
 
-vi.mock("hooks/usePopup", () => ({ usePopup: vi.fn() }));
+vi.mock("hooks/usePopupControls", () => ({ usePopupControls: vi.fn() }));
 vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: vi.fn() }));
 vi.mock(
     "data/portfolioData",
@@ -93,7 +93,7 @@ describe("Popup", () => {
     it("registers the popup hook", () => {
         render(<Popup />);
 
-        expect(usePopup).toHaveBeenCalled();
+        expect(usePopupControls).toHaveBeenCalled();
     });
 
     it("always renders the active item and the slider", () => {
