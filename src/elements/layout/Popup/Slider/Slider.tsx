@@ -7,10 +7,11 @@ import Image from "elements/components/Image/Image";
 import { useStore } from "hooks/useStore";
 import { getAltText, portfolioData } from "data/portfolioData";
 import { thumbnailSize } from "styles/variables";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Slider = () => {
     const { currentPortfolioIndex, setCurrentPortfolioIndex } = useStore();
+    const containerRef = useRef<HTMLDivElement>(null);
 
     const [selectedIndex, setSelectedIndex] = useState(currentPortfolioIndex);
     const [prevPortfolioIndex, setPrevPortfolioIndex] = useState(
@@ -23,8 +24,20 @@ const Slider = () => {
         setSelectedIndex(currentPortfolioIndex);
     }
 
+    // Liegt der Fokus bereits im Slider, folgt er dem per Tastatur gewechselten Index,
+    // damit von dort aus weitergetabbt werden kann
+    useEffect(() => {
+        const container = containerRef.current;
+
+        if (!container?.contains(document.activeElement)) return;
+
+        const buttons = container.querySelectorAll("button");
+
+        buttons[currentPortfolioIndex]?.focus({ preventScroll: true });
+    }, [currentPortfolioIndex]);
+
     return (
-        <SliderContainer>
+        <SliderContainer ref={containerRef}>
             <InnerSliderContainer $selectedIndex={selectedIndex}>
                 {portfolioData.map((item, index) => {
                     return (
