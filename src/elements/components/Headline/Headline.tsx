@@ -1,6 +1,6 @@
 import React from "react";
 
-import { H1, H2, HeadlineWrapper, StyledHeadline } from "./Headline.styles";
+import { H1, H2 } from "./Headline.styles";
 
 const headlines = {
     h1: H1,
@@ -17,11 +17,9 @@ const Headline = ({ type = "h1", children, visuallyHidden }: HeadlineProps) => {
     const HeadlineComponent = headlines[type];
 
     return (
-        <StyledHeadline $visuallyHidden={visuallyHidden}>
-            <HeadlineWrapper>
-                <HeadlineComponent>{children}</HeadlineComponent>
-            </HeadlineWrapper>
-        </StyledHeadline>
+        <HeadlineComponent $visuallyHidden={visuallyHidden}>
+            {children}
+        </HeadlineComponent>
     );
 };
 
