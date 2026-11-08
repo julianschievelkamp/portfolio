@@ -26,25 +26,18 @@ describe("Portfolio", () => {
         vi.mocked(useMediaQuery).mockReturnValue(true);
     });
 
-    it("renders a labelled button with a matching image for every item", () => {
+    it("renders a labelled button and an image outside of it for every item", () => {
         render(<Portfolio />);
 
         portfolioData.forEach((item) => {
-            expect(
-                screen.getByRole("button", { name: `Show ${item.title}` }),
-            ).toContainElement(
-                screen.getByRole("img", { name: getAltText(item) }),
-            );
+            const button = screen.getByRole("button", {
+                name: `Show ${item.title}`,
+            });
+            const image = screen.getByRole("img", { name: getAltText(item) });
+
+            expect(button).not.toContainElement(image);
+            expect(button.closest("figure")).toContainElement(image);
         });
-    });
-
-    it("renders the items as a list", () => {
-        render(<Portfolio />);
-
-        expect(screen.getByRole("list")).toBeInTheDocument();
-        expect(screen.getAllByRole("listitem")).toHaveLength(
-            portfolioData.length,
-        );
     });
 
     it("wraps every item in a figure with a caption outside the button", () => {
@@ -67,7 +60,9 @@ describe("Portfolio", () => {
         render(<Portfolio />);
 
         await userEvent.click(
-            screen.getByRole("button", { name: `Show ${portfolioData[2].title}` }),
+            screen.getByRole("button", {
+                name: `Show ${portfolioData[2].title}`,
+            }),
         );
 
         expect(useStore.getState().activeIndex).toBe(2);

@@ -1,4 +1,4 @@
-import { ItemContainer, StyledActiveItem } from "./ActiveItem.styles";
+import { ItemFigure, StyledActiveItem } from "./ActiveItem.styles";
 import Image from "elements/components/Image/Image";
 import { useActiveItem } from "hooks/useActiveItem";
 import { getAltText } from "data/portfolioData";
@@ -25,7 +25,7 @@ const ActiveItem = () => {
 
     return (
         <StyledActiveItem $isItemRevealed={isItemRevealed}>
-            <ItemContainer onClick={() => setIsInfoOn(false)}>
+            <ItemFigure onClick={() => setIsInfoOn(false)}>
                 <Image
                     src={loadedItem.image}
                     alt={getAltText(loadedItem)}
@@ -48,7 +48,7 @@ const ActiveItem = () => {
                 )}
 
                 <ItemInfo loadedItem={loadedItem} isInfoOn={isInfoOn} />
-            </ItemContainer>
+            </ItemFigure>
 
             <Notch
                 loadedItem={loadedItem}

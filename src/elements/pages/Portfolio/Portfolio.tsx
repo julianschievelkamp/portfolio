@@ -1,9 +1,8 @@
 import {
+    PortfolioButton,
     PortfolioCaption,
     PortfolioFigure,
     PortfolioGrid,
-    PortfolioItem,
-    PortfolioListItem,
 } from "./Portfolio.styles";
 import Image from "elements/components/Image/Image";
 import { useStore } from "hooks/useStore";
@@ -18,36 +17,34 @@ const Portfolio = () => {
 
     return (
         <>
-            <PortfolioGrid role="list">
+            <PortfolioGrid>
                 {portfolioData.map((item, index) => {
                     return (
-                        <PortfolioListItem key={item.title}>
-                            <PortfolioFigure>
-                                <PortfolioItem
-                                    ariaLabel={`Show ${item.title}`}
-                                    onClick={() => {
-                                        setActiveIndex(index);
-                                        setPopupOpen(true);
-                                    }}
-                                    tabIndex={!isMd && sidebarOpen ? -1 : 0}
-                                >
-                                    <Image
-                                        width="100%"
-                                        src={item.image}
-                                        srcSet={item.imageSet}
-                                        sizes={item.imageSet && thumbnailSize}
-                                        alt={getAltText(item)}
-                                        margin={item.thumbnailMargin}
-                                        aspectRatio={item.aspectRatio}
-                                        loading="lazy"
-                                        fadeInOnLoad
-                                    />
-                                </PortfolioItem>
-                                <PortfolioCaption>
-                                    {getCaption(item)}
-                                </PortfolioCaption>
-                            </PortfolioFigure>
-                        </PortfolioListItem>
+                        <PortfolioFigure key={item.title}>
+                            <PortfolioButton
+                                tabIndex={!isMd && sidebarOpen ? -1 : 0}
+                                ariaLabel={`Show ${item.title}`}
+                                onClick={() => {
+                                    setActiveIndex(index);
+                                    setPopupOpen(true);
+                                }}
+                            />
+
+                            <Image
+                                width="100%"
+                                src={item.image}
+                                srcSet={item.imageSet}
+                                sizes={item.imageSet && thumbnailSize}
+                                alt={getAltText(item)}
+                                margin={item.thumbnailMargin}
+                                aspectRatio={item.aspectRatio}
+                                loading="lazy"
+                                fadeInOnLoad
+                            />
+                            <PortfolioCaption>
+                                {getCaption(item)}
+                            </PortfolioCaption>
+                        </PortfolioFigure>
                     );
                 })}
             </PortfolioGrid>

@@ -2,11 +2,10 @@ import Button from "elements/components/Button/Button";
 import { styled } from "styled-components";
 import { queries, visuallyHidden } from "styles/variables";
 
-export const PortfolioGrid = styled.ul`
+export const PortfolioGrid = styled.section`
     position: relative;
     display: grid;
     margin: 0;
-    list-style: none;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 0.25rem;
     padding: 0.5rem;
@@ -18,11 +17,15 @@ export const PortfolioGrid = styled.ul`
     }
 `;
 
-export const PortfolioListItem = styled.li`
+export const PortfolioFigure = styled.figure`
+    overflow: hidden;
+    position: relative;
+    margin: 0;
     min-width: 5rem;
     min-height: 5rem;
     height: calc((100vw - 1.5rem) / 3);
     width: 100%;
+    background-color: rgb(0, 0, 0, 0.05);
 
     @media ${queries.md} {
         height: calc((100vw - 1.5rem - 17rem) / 3);
@@ -33,25 +36,16 @@ export const PortfolioListItem = styled.li`
     }
 `;
 
-export const PortfolioFigure = styled.figure`
-    position: relative;
-    margin: 0;
+// Das Bild liegt bewusst nicht im Button, damit Reader-Modi es erhalten.
+export const PortfolioButton = styled(Button)`
+    position: absolute;
+    inset: 0;
     height: 100%;
     width: 100%;
-`;
 
-export const PortfolioItem = styled(Button)`
-    overflow: hidden;
-    position: relative;
-    height: 100%;
-    width: 100%;
-    background-color: rgb(0, 0, 0, 0.05);
-
-    &:hover,
-    &:focus-visible {
-        img {
-            transform: scale(1.05);
-        }
+    &:hover + img,
+    &:focus-visible + img {
+        transform: scale(1.05);
     }
 `;
 
