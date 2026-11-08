@@ -6,7 +6,8 @@ import { usePreloadedItem } from "hooks/usePreloadedItem";
 // Kapselt die Logik des aktiven Popup-Items: Vorladen, Einblenden sowie die
 // Zustände von Info, Video und Ton.
 export const useActiveItem = () => {
-    const { activeIndex, popupOpen } = useStore();
+    const activeIndex = useStore((state) => state.activeIndex);
+    const popupOpen = useStore((state) => state.popupOpen);
     const videoRef = useRef<HTMLVideoElement | null>(null);
 
     const activeItem = portfolioData[activeIndex];

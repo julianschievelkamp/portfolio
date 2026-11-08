@@ -5,7 +5,9 @@ import { queries } from "styles/variables";
 
 export const usePopupControls = () => {
     const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
-    const { popupOpen, activeIndex, setActiveIndex } = useStore();
+    const popupOpen = useStore((state) => state.popupOpen);
+    const activeIndex = useStore((state) => state.activeIndex);
+    const setActiveIndex = useStore((state) => state.setActiveIndex);
 
     // Touch-Koordinaten werden nur in Event-Handlern gelesen und brauchen kein Rendering
     const touchStart = useRef<number | null>(null);

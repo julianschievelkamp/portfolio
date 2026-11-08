@@ -11,17 +11,17 @@ export type Page = {
 export const pages: { [key: string]: Page } = {
     portfolio: {
         name: "Portfolio",
-        heading: titleIndex().toUpperCase(),
+        heading: titleIndex(),
         path: "/",
     },
     julian: {
         name: "Julian",
-        heading: titleJulian().toUpperCase(),
+        heading: titleJulian(),
         path: "/julian/",
     },
     impressum: {
         name: "Impressum",
-        heading: titleImpressum().toUpperCase(),
+        heading: titleImpressum(),
         path: "/impressum/",
     },
 };

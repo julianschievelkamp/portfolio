@@ -2,7 +2,7 @@ import { FocusEvent, useEffect, useRef, useState } from "react";
 import { useStore } from "./useStore";
 
 export const useSliderFocus = () => {
-    const { activeIndex } = useStore();
+    const activeIndex = useStore((state) => state.activeIndex);
     const containerRef = useRef<HTMLDivElement>(null);
 
     const [focusedIndex, setFocusedIndex] = useState(activeIndex);

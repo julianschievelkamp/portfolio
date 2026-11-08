@@ -16,7 +16,7 @@ import { useMediaQuery } from "hooks/useMediaQuery";
 import { queries } from "styles/variables";
 
 const Popup = () => {
-    const { setPopupOpen } = useStore();
+    const setPopupOpen = useStore((state) => state.setPopupOpen);
 
     const isLandscape = useMediaQuery(queries.landscape);
     const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);

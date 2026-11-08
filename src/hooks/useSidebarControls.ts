@@ -3,7 +3,8 @@ import { useStore } from "./useStore";
 
 // Schließt die geöffnete Sidebar per Escape und gibt den Fokus an den Toggle zurück
 export const useSidebarControls = () => {
-    const { sidebarOpen, setSidebarOpen } = useStore();
+    const sidebarOpen = useStore((state) => state.sidebarOpen);
+    const setSidebarOpen = useStore((state) => state.setSidebarOpen);
 
     useEffect(() => {
         if (!sidebarOpen) {

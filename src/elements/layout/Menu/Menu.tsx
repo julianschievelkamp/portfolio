@@ -8,7 +8,8 @@ import Button from "elements/components/Button/Button";
 import Icon from "elements/components/Icon/Icon";
 
 const Menu = () => {
-    const { sidebarOpen, setSidebarOpen } = useStore();
+    const sidebarOpen = useStore((state) => state.sidebarOpen);
+    const setSidebarOpen = useStore((state) => state.setSidebarOpen);
     const { isVisible } = useMenuVisibility();
 
     return (

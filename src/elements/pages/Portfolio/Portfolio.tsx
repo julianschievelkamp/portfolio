@@ -16,7 +16,9 @@ import { languageData } from "data/languageData";
 
 const Portfolio = () => {
     const isMd = useMediaQuery(queries.md);
-    const { setActiveIndex, setPopupOpen, sidebarOpen } = useStore();
+    const setActiveIndex = useStore((state) => state.setActiveIndex);
+    const setPopupOpen = useStore((state) => state.setPopupOpen);
+    const sidebarOpen = useStore((state) => state.sidebarOpen);
 
     return (
         <>

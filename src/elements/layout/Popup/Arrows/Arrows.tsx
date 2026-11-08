@@ -3,7 +3,8 @@ import { useStore } from "hooks/useStore";
 import Icon from "elements/components/Icon/Icon";
 
 const Arrows = () => {
-    const { activeIndex, setActiveIndex } = useStore();
+    const activeIndex = useStore((state) => state.activeIndex);
+    const setActiveIndex = useStore((state) => state.setActiveIndex);
 
     return (
         <>

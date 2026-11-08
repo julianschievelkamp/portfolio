@@ -21,7 +21,8 @@ export interface SidebarProps {
 }
 
 const Sidebar = ({ page }: SidebarProps) => {
-    const { sidebarOpen, setSidebarOpen } = useStore();
+    const sidebarOpen = useStore((state) => state.sidebarOpen);
+    const setSidebarOpen = useStore((state) => state.setSidebarOpen);
 
     useSidebarControls();
 

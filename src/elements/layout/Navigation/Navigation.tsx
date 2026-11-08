@@ -15,7 +15,7 @@ export interface NavigationProps {
 }
 
 const Navigation = ({ page }: NavigationProps) => {
-    const { setSidebarOpen } = useStore();
+    const setSidebarOpen = useStore((state) => state.setSidebarOpen);
 
     return (
         <StyledNavigation aria-label="Navigation">

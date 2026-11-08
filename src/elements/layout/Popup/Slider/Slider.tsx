@@ -11,7 +11,8 @@ import { getAltText, portfolioData } from "data/portfolioData";
 import { thumbnailSize } from "styles/variables";
 
 const Slider = () => {
-    const { activeIndex, setActiveIndex } = useStore();
+    const activeIndex = useStore((state) => state.activeIndex);
+    const setActiveIndex = useStore((state) => state.setActiveIndex);
     const { containerRef, focusedIndex, handleItemFocus, handleBlur } =
         useSliderFocus();
 
