@@ -1,5 +1,9 @@
 import Text from "elements/components/Text/Text";
-import { ListWrapper, ReferencesWrapper } from "./References.styles";
+import {
+    ListWrapper,
+    ReferencesSection,
+    ReferencesWrapper,
+} from "./References.styles";
 import { languageData } from "data/languageData";
 import Divider from "elements/components/Divider/Divider";
 import Div from "elements/components/Div/Div";
@@ -9,7 +13,7 @@ const References = () => {
     const referencesData = languageData.julian.references;
 
     return (
-        <>
+        <ReferencesSection>
             <Divider>{referencesData.headline}</Divider>
             <ReferencesWrapper>
                 <Div>
@@ -47,7 +51,7 @@ const References = () => {
                     <List items={referencesData.awards.listEntries2} />
                 </ListWrapper>
             </ReferencesWrapper>
-        </>
+        </ReferencesSection>
     );
 };
 

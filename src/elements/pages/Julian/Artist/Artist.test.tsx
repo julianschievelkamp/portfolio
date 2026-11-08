@@ -7,6 +7,7 @@ vi.mock("data/languageData", () => ({
     languageData: {
         julian: {
             artist: {
+                headline: "Artist headline",
                 image: {
                     src: "portrait.jpg",
                     alt: "Portrait alt",
@@ -26,6 +27,17 @@ describe("Artist", () => {
         expect(
             screen.getByRole("img", { name: "Portrait alt" }),
         ).toHaveAttribute("src", "portrait.jpg");
+    });
+
+    it("labels the section with a heading", () => {
+        render(<Artist />);
+
+        const heading = screen.getByRole("heading", {
+            level: 2,
+            name: "Artist headline",
+        });
+
+        expect(heading.closest("section")).not.toBeNull();
     });
 
     it("captions the portrait in a figure", () => {

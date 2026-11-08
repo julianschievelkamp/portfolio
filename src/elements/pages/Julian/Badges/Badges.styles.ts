@@ -1,6 +1,8 @@
 import { styled } from "styled-components";
 import { queries } from "styles/variables";
 
+export const BadgesSection = styled.section``;
+
 export const BadgesWrapper = styled.div`
     display: grid;
     grid-gap: 2rem;

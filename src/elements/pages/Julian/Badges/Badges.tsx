@@ -1,4 +1,4 @@
-import { BadgesWrapper, StyledLink } from "./Badges.styles";
+import { BadgesSection, BadgesWrapper, StyledLink } from "./Badges.styles";
 import { languageData } from "data/languageData";
 import Image from "elements/components/Image/Image";
 import Divider from "elements/components/Divider/Divider";
@@ -8,7 +8,7 @@ const Badges = () => {
     const badgesData = languageData.julian.badges;
 
     return (
-        <>
+        <BadgesSection>
             <Divider>{badgesData.headline}</Divider>
             <BadgesWrapper>
                 {Object.keys(badges).map((key) => {
@@ -29,7 +29,7 @@ const Badges = () => {
                     );
                 })}
             </BadgesWrapper>
-        </>
+        </BadgesSection>
     );
 };
 

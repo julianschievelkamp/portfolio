@@ -17,4 +17,12 @@ describe("Divider", () => {
 
         expect(screen.getByRole("heading")).toHaveStyle("text-align: center");
     });
+
+    it("applies a passed className to the divider", () => {
+        const { container } = render(
+            <Divider className="custom">Projects</Divider>,
+        );
+
+        expect(container.firstElementChild).toHaveClass("custom");
+    });
 });

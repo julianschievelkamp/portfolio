@@ -1,8 +1,10 @@
 import Text from "elements/components/Text/Text";
 import {
+    ArtistSection,
     ArtistWrapper,
     PortraitCaption,
     PortraitFigure,
+    StyledDivider,
 } from "./Artist.styles";
 import { languageData } from "data/languageData";
 import Image from "elements/components/Image/Image";
@@ -13,24 +15,29 @@ const Artist = () => {
     const artistData = languageData.julian.artist;
 
     return (
-        <ArtistWrapper>
-            <PortraitFigure>
-                <Image
-                    src={artistData.image.src}
-                    alt={artistData.image.alt}
-                    height="100%"
-                    fadeInOnLoad
-                />
-                <PortraitCaption>{artistData.image.caption}</PortraitCaption>
-            </PortraitFigure>
-            <Div>
-                <Text fontSize="0.875rem" textAlign="justify">
-                    {artistData.text}
-                </Text>
+        <ArtistSection>
+            <StyledDivider>{artistData.headline}</StyledDivider>
+            <ArtistWrapper>
+                <PortraitFigure>
+                    <Image
+                        src={artistData.image.src}
+                        alt={artistData.image.alt}
+                        height="100%"
+                        fadeInOnLoad
+                    />
+                    <PortraitCaption>
+                        {artistData.image.caption}
+                    </PortraitCaption>
+                </PortraitFigure>
+                <Div>
+                    <Text fontSize="0.875rem" textAlign="justify">
+                        {artistData.text}
+                    </Text>
 
-                <Social />
-            </Div>
-        </ArtistWrapper>
+                    <Social />
+                </Div>
+            </ArtistWrapper>
+        </ArtistSection>
     );
 };
 

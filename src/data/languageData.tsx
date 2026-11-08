@@ -44,6 +44,7 @@ export const languageData = {
     ),
     julian: {
         artist: {
+            headline: "ABOUT THE ARTIST",
             image: {
                 src: SelfPortrait,
                 alt: "Julian Schievelkamp",

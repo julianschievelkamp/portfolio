@@ -4,11 +4,12 @@ import { StyledDivider, StyledHeadline, TextWrapper } from "./Divider.styles";
 
 export interface DividerProps {
     children: React.ReactNode;
+    className?: string;
 }
 
-const Divider = ({ children }: DividerProps) => {
+const Divider = ({ children, className }: DividerProps) => {
     return (
-        <StyledDivider>
+        <StyledDivider className={className}>
             <TextWrapper>
                 <StyledHeadline type="h2" textAlign="center">
                     {children}

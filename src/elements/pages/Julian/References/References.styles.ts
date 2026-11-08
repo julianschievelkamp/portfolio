@@ -1,6 +1,8 @@
 import { styled } from "styled-components";
 import { colors, queries } from "styles/variables";
 
+export const ReferencesSection = styled.section``;
+
 export const ReferencesWrapper = styled.div`
     display: grid;
     grid-gap: 2rem;
