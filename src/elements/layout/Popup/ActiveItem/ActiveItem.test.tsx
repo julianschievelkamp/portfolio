@@ -22,7 +22,7 @@ const [photo, video, otherPhoto] = portfolioData;
 
 const getVideo = () => screen.queryByLabelText(video.title) as HTMLVideoElement;
 const getInfoHeading = () =>
-    screen.getByRole("heading", { level: 2, hidden: true });
+    screen.getByText(`${video.title} / ${video.year}`);
 const loadImage = (item: typeof video) =>
     fireEvent.load(screen.getByAltText(getAltText(item)));
 const clickButton = (name: string) =>

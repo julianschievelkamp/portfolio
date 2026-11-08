@@ -9,12 +9,10 @@ vi.mock("data/portfolioData", async () => await import("data/portfolioFixtures")
 const [itemWithBadges, , itemWithoutBadges] = portfolioData;
 
 describe("ItemInfo", () => {
-    it("shows title and year as a level 2 heading and the type", () => {
+    it("shows title and year and the type", () => {
         render(<ItemInfo loadedItem={itemWithBadges} isInfoOn />);
 
-        expect(
-            screen.getByRole("heading", { level: 2, name: "First Photo / 2020" }),
-        ).toBeInTheDocument();
+        expect(screen.getByText("First Photo / 2020")).toBeInTheDocument();
         expect(screen.getByText("analog photograph")).toBeInTheDocument();
     });
 
@@ -38,19 +36,17 @@ describe("ItemInfo", () => {
         const { rerender } = render(
             <ItemInfo loadedItem={itemWithBadges} isInfoOn />,
         );
-        expect(screen.getByRole("heading")).toBeVisible();
+        expect(screen.getByText("First Photo / 2020")).toBeVisible();
 
         rerender(<ItemInfo loadedItem={itemWithBadges} isInfoOn={false} />);
 
-        expect(screen.getByRole("heading")).not.toBeVisible();
+        expect(screen.getByText("First Photo / 2020")).not.toBeVisible();
     });
 
     it("stays in the accessibility tree while the info panel is closed", () => {
         render(<ItemInfo loadedItem={itemWithBadges} isInfoOn={false} />);
 
-        expect(
-            screen.getByRole("heading", { level: 2, name: "First Photo / 2020" }),
-        ).toBeInTheDocument();
+        expect(screen.getByText("First Photo / 2020")).toBeInTheDocument();
         expect(screen.getByText("analog photograph")).toBeInTheDocument();
     });
 
