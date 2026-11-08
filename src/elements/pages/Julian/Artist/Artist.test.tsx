@@ -6,7 +6,14 @@ import Artist from "./Artist";
 vi.mock("data/languageData", () => ({
     languageData: {
         julian: {
-            artist: { image: "portrait.jpg", text: "Artist biography" },
+            artist: {
+                image: {
+                    src: "portrait.jpg",
+                    alt: "Portrait alt",
+                    caption: "Portrait caption",
+                },
+                text: "Artist biography",
+            },
         },
     },
 }));
@@ -17,8 +24,19 @@ describe("Artist", () => {
         render(<Artist />);
 
         expect(
-            screen.getByRole("img", { name: "Julian Schievelkamp" }),
+            screen.getByRole("img", { name: "Portrait alt" }),
         ).toHaveAttribute("src", "portrait.jpg");
+    });
+
+    it("captions the portrait in a figure", () => {
+        render(<Artist />);
+
+        const caption = screen.getByText("Portrait caption");
+
+        expect(caption.tagName).toBe("FIGCAPTION");
+        expect(caption.closest("figure")).toContainElement(
+            screen.getByRole("img", { name: "Portrait alt" }),
+        );
     });
 
     it("shows the biography text", () => {

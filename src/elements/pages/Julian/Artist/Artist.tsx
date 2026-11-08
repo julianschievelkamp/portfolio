@@ -1,5 +1,5 @@
 import Text from "elements/components/Text/Text";
-import { ArtistWrapper, ImageWrapper } from "./Artist.styles";
+import { ArtistWrapper, PortraitCaption, PortraitFigure } from "./Artist.styles";
 import { languageData } from "data/languageData";
 import Image from "elements/components/Image/Image";
 import Div from "elements/components/Div/Div";
@@ -10,14 +10,17 @@ const Artist = () => {
 
     return (
         <ArtistWrapper>
-            <ImageWrapper>
+            <PortraitFigure>
                 <Image
-                    src={artistData.image}
-                    alt="Julian Schievelkamp"
+                    src={artistData.image.src}
+                    alt={artistData.image.alt}
                     height="100%"
                     fadeInOnLoad
                 />
-            </ImageWrapper>
+                <PortraitCaption>
+                    {artistData.image.caption}
+                </PortraitCaption>
+            </PortraitFigure>
             <Div>
                 <Text fontSize="0.875rem" textAlign="justify">
                     {artistData.text}

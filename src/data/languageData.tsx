@@ -44,7 +44,11 @@ export const languageData = {
     ),
     julian: {
         artist: {
-            image: SelfPortrait,
+            image: {
+                src: SelfPortrait,
+                alt: "Julian Schievelkamp",
+                caption: "Self-portrait of Julian Schievelkamp",
+            },
             text: (
                 <>
                     Julian Schievelkamp (b. 1994) is a contemporary visual

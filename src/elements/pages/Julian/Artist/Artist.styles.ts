@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { queries } from "styles/variables";
+import { queries, visuallyHidden } from "styles/variables";
 
 export const ArtistWrapper = styled.div`
     display: flex;
@@ -10,10 +10,10 @@ export const ArtistWrapper = styled.div`
     }
 `;
 
-export const ImageWrapper = styled.div`
+export const PortraitFigure = styled.figure`
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin: 0 0 2rem;
     height: fit-content;
 
     img {
@@ -22,8 +22,12 @@ export const ImageWrapper = styled.div`
     }
 
     @media ${queries.lg} {
-        margin-bottom: 0;
-        margin-right: 2rem;
+        margin: 0 2rem 0 0;
         min-width: 30%;
     }
+`;
+
+// Bildunterschrift nur für Screenreader und Suchmaschinen, optisch ausgeblendet
+export const PortraitCaption = styled.figcaption`
+    ${visuallyHidden}
 `;
