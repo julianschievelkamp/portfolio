@@ -5,7 +5,9 @@ import Artist from "./Artist";
 
 vi.mock("data/languageData", () => ({
     languageData: {
-        julian: { image: "portrait.jpg", text: "Artist biography" },
+        julian: {
+            artist: { image: "portrait.jpg", text: "Artist biography" },
+        },
     },
 }));
 vi.mock("./Social/Social", () => ({ default: () => <p>social</p> }));

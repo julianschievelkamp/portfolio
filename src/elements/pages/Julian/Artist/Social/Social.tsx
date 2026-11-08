@@ -7,18 +7,20 @@ import { colors } from "styles/variables";
 import { languageData } from "data/languageData";
 
 const Social = () => {
+    const socialData = languageData.julian.artist.social;
+
     return (
         <StyledSocial
             display="flex"
             margin="2rem 0 0 0"
             alignItems="center"
             width="fit-content"
-            onClick={() => window.open(languageData.social.link)}
+            onClick={() => window.open(socialData.link)}
         >
             <StyledProfile>
                 <ProfileImage>
                     <Image
-                        src={languageData.social.image}
+                        src={socialData.image}
                         alt="Instagram Profile"
                         width="100%"
                         height="100%"
@@ -30,12 +32,12 @@ const Social = () => {
 
             <Div margin="0 1rem 0 0.5rem">
                 <Text fontSize="0.875rem" bold>
-                    <Link href={languageData.social.link} target="_blank">
-                        {languageData.social.profile}
+                    <Link href={socialData.link} target="_blank">
+                        {socialData.profile}
                     </Link>
                 </Text>
                 <Text fontSize="0.875rem" color={colors.secondary}>
-                    {languageData.social.name}
+                    {socialData.name}
                 </Text>
             </Div>
         </StyledSocial>

@@ -6,11 +6,15 @@ import Social from "./Social";
 
 vi.mock("data/languageData", () => ({
     languageData: {
-        social: {
-            image: "profile.jpg",
-            link: "https://example.com/profile",
-            name: "Full Name",
-            profile: "@handle",
+        julian: {
+            artist: {
+                social: {
+                    image: "profile.jpg",
+                    link: "https://example.com/profile",
+                    name: "Full Name",
+                    profile: "@handle",
+                },
+            },
         },
     },
 }));

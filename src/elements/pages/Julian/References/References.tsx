@@ -6,51 +6,45 @@ import Div from "elements/components/Div/Div";
 import List from "elements/components/List/List";
 
 const References = () => {
+    const referencesData = languageData.julian.references;
+
     return (
         <>
-            <Divider>{languageData.references.headline}</Divider>
+            <Divider>{referencesData.headline}</Divider>
             <ReferencesWrapper>
                 <Div>
                     <Text fontSize="0.875rem" bold>
-                        {languageData.references.publications.title}
+                        {referencesData.publications.title}
                     </Text>
                     <Text fontSize="0.875rem">
-                        {languageData.references.publications.subTitle}
+                        {referencesData.publications.subTitle}
                     </Text>
                 </Div>
                 <ListWrapper>
                     <List
-                        items={
-                            languageData.references.publications.listEntries1
-                        }
+                        items={referencesData.publications.listEntries1}
                         margin="0 0 1rem 0"
                     />
                     <List
-                        items={
-                            languageData.references.publications.listEntries2
-                        }
+                        items={referencesData.publications.listEntries2}
                         margin="0 0 1rem 0"
                     />
-                    <List
-                        items={
-                            languageData.references.publications.listEntries3
-                        }
-                    />
+                    <List items={referencesData.publications.listEntries3} />
                 </ListWrapper>
                 <Div>
                     <Text fontSize="0.875rem" bold>
-                        {languageData.references.awards.title}
+                        {referencesData.awards.title}
                     </Text>
                     <Text fontSize="0.875rem">
-                        {languageData.references.awards.subTitle}
+                        {referencesData.awards.subTitle}
                     </Text>
                 </Div>
                 <ListWrapper>
                     <List
-                        items={languageData.references.awards.listEntries1}
+                        items={referencesData.awards.listEntries1}
                         margin="0 0 1rem 0"
                     />
-                    <List items={languageData.references.awards.listEntries2} />
+                    <List items={referencesData.awards.listEntries2} />
                 </ListWrapper>
             </ReferencesWrapper>
         </>

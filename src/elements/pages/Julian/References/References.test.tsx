@@ -5,20 +5,22 @@ import References from "./References";
 
 vi.mock("data/languageData", () => ({
     languageData: {
-        references: {
-            headline: "REFERENCES",
-            publications: {
-                title: "Publications",
-                subTitle: "2015—present",
-                listEntries1: ["Pub A", "Pub B"],
-                listEntries2: ["Pub C"],
-                listEntries3: ["Pub D", "Pub E", "Pub F"],
-            },
-            awards: {
-                title: "Awards",
-                subTitle: "2016—2019",
-                listEntries1: ["Award A"],
-                listEntries2: ["Award B", "Award C"],
+        julian: {
+            references: {
+                headline: "REFERENCES",
+                publications: {
+                    title: "Publications",
+                    subTitle: "2015—present",
+                    listEntries1: ["Pub A", "Pub B"],
+                    listEntries2: ["Pub C"],
+                    listEntries3: ["Pub D", "Pub E", "Pub F"],
+                },
+                awards: {
+                    title: "Awards",
+                    subTitle: "2016—2019",
+                    listEntries1: ["Award A"],
+                    listEntries2: ["Award B", "Award C"],
+                },
             },
         },
     },

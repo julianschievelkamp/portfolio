@@ -5,9 +5,11 @@ import Divider from "elements/components/Divider/Divider";
 import { badges } from "data/portfolioData";
 
 const Badges = () => {
+    const badgesData = languageData.julian.badges;
+
     return (
         <>
-            <Divider>{languageData.badges.headline}</Divider>
+            <Divider>{badgesData.headline}</Divider>
             <BadgesWrapper>
                 {Object.keys(badges).map((key) => {
                     const badge = badges[key as keyof typeof badges];
