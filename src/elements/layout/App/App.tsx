@@ -1,9 +1,10 @@
 import GlobalStyle from "styles/global";
-import { PageContainer, PageHeading, StyledApp } from "./App.styles";
+import { PageContainer, StyledApp } from "./App.styles";
 import Sidebar from "elements/layout/Sidebar/Sidebar";
 import Menu from "elements/layout/Menu/Menu";
 import { Page } from "data/navigationData";
 import { useEffect } from "react";
+import Headline from "elements/components/Headline/Headline";
 
 export interface AppProps {
     page: Page;
@@ -39,7 +40,7 @@ const App = ({ page }: AppProps) => {
             <Sidebar page={page} />
 
             <PageContainer id="page-container">
-                <PageHeading>{page.heading}</PageHeading>
+                <Headline visuallyHidden>{page.heading}</Headline>
 
                 {page.element}
             </PageContainer>

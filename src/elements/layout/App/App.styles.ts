@@ -1,6 +1,5 @@
 import { styled } from "styled-components";
-import Headline from "elements/components/Headline/Headline";
-import { queries, scrollStyles, visuallyHidden } from "styles/variables";
+import { queries, scrollStyles } from "styles/variables";
 
 export const StyledApp = styled.div`
     width: 100vw;
@@ -22,9 +21,4 @@ export const PageContainer = styled.main`
         padding-left: 17rem;
         padding-top: unset;
     }
-`;
-
-// Seitenüberschrift (h1) für Screenreader und Suchmaschinen, optisch ausgeblendet
-export const PageHeading = styled(Headline)`
-    ${visuallyHidden}
 `;

@@ -1,3 +1,4 @@
+import Text from "elements/components/Text/Text";
 import { styled } from "styled-components";
 
 export const StyledItemInfo = styled.figcaption<{ $isVisible: boolean }>`
@@ -21,6 +22,11 @@ export const InnerWrapper = styled.div`
     padding: 1rem;
     width: 100%;
     height: 100%;
+`;
+
+export const ImageTitle = styled(Text)`
+    font-family: "PlayfairDisplay", sans-serif;
+    font-weight: 900;
 `;
 
 export const BadgesWrapper = styled.div`

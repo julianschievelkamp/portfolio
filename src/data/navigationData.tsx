@@ -12,19 +12,19 @@ export type Page = {
 export const pages: { [key: string]: Page } = {
     portfolio: {
         name: "Portfolio",
-        heading: "Julian Schievelkamp – Fine Art Photography",
+        heading: "JULIAN SCHEVELKAMP – FINE ART PHOTOGRAPHER & VISUAL ARTIST",
         path: "/",
         element: <Portfolio />,
     },
     julian: {
         name: "Julian",
-        heading: "About Julian Schievelkamp",
+        heading: "ABOUT – JULIAN SCHEVELKAMP",
         path: "/julian/",
         element: <Julian />,
     },
     impressum: {
         name: "Impressum",
-        heading: "Impressum",
+        heading: "IMPRESSUM – JULIAN SCHEVELKAMP",
         path: "/impressum/",
         element: <Impressum />,
     },

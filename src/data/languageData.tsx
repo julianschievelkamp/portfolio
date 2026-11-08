@@ -23,25 +23,9 @@ export const languageData = {
             All rights reserved.
         </>
     ),
-    impressum: (
-        <>
-            <b>Angaben gemäß § 5 TMG:</b>
-            <br />
-            <br />
-            Julian Schievelkamp
-            <br />
-            Zollstocksweg 1
-            <br />
-            50969 Köln
-            <br />
-            <br />
-            <Link href="tel:+4915679602835">+49 156 796 028 35</Link>
-            <br />
-            <Link href="mailto:mail@julianschievelkamp.com" target="_blank">
-                mail@julianschievelkamp.com
-            </Link>
-        </>
-    ),
+    portfolio: {
+        headline: "PORTFOLIO",
+    },
     julian: {
         artist: {
             headline: "ABOUT THE ARTIST",
@@ -231,4 +215,23 @@ export const languageData = {
             ),
         },
     },
+    impressum: (
+        <>
+            <b>Angaben gemäß § 5 TMG:</b>
+            <br />
+            <br />
+            Julian Schievelkamp
+            <br />
+            Zollstocksweg 1
+            <br />
+            50969 Köln
+            <br />
+            <br />
+            <Link href="tel:+4915679602835">+49 156 796 028 35</Link>
+            <br />
+            <Link href="mailto:mail@julianschievelkamp.com" target="_blank">
+                mail@julianschievelkamp.com
+            </Link>
+        </>
+    ),
 };

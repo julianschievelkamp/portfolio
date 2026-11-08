@@ -1,6 +1,6 @@
 import React from "react";
 
-import { H1, H2 } from "./Headline.styles";
+import { H1, H2, HeadlineWrapper, StyledHeadline } from "./Headline.styles";
 
 const headlines = {
     h1: H1,
@@ -8,33 +8,20 @@ const headlines = {
 };
 
 export interface HeadlineProps {
-    children?: React.ReactNode;
-    className?: string;
-    color?: string;
-    textAlign?: "left" | "center" | "right" | "justify";
-    fontSize?: string;
     type?: "h1" | "h2";
+    children?: React.ReactNode;
+    visuallyHidden?: boolean;
 }
 
-const Headline = ({
-    children,
-    className,
-    color,
-    textAlign,
-    fontSize = "1rem",
-    type = "h1",
-}: HeadlineProps) => {
+const Headline = ({ type = "h1", children, visuallyHidden }: HeadlineProps) => {
     const HeadlineComponent = headlines[type];
 
     return (
-        <HeadlineComponent
-            className={className}
-            color={color}
-            $textAlign={textAlign}
-            $fontSize={fontSize}
-        >
-            {children}
-        </HeadlineComponent>
+        <StyledHeadline $visuallyHidden={visuallyHidden}>
+            <HeadlineWrapper>
+                <HeadlineComponent>{children}</HeadlineComponent>
+            </HeadlineWrapper>
+        </StyledHeadline>
     );
 };
 

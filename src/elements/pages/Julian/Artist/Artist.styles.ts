@@ -1,13 +1,7 @@
 import { styled } from "styled-components";
-import Divider from "elements/components/Divider/Divider";
 import { queries, visuallyHidden } from "styles/variables";
 
 export const ArtistSection = styled.section``;
-
-// Überschrift nur für Screenreader und Suchmaschinen, optisch ausgeblendet
-export const StyledDivider = styled(Divider)`
-    ${visuallyHidden}
-`;
 
 export const ArtistWrapper = styled.div`
     display: flex;

@@ -5,16 +5,16 @@ import {
     ReferencesWrapper,
 } from "./References.styles";
 import { languageData } from "data/languageData";
-import Divider from "elements/components/Divider/Divider";
 import Div from "elements/components/Div/Div";
 import List from "elements/components/List/List";
+import Headline from "elements/components/Headline/Headline";
 
 const References = () => {
     const referencesData = languageData.julian.references;
 
     return (
         <ReferencesSection>
-            <Divider>{referencesData.headline}</Divider>
+            <Headline type="h2">{referencesData.headline}</Headline>
             <ReferencesWrapper>
                 <Div>
                     <Text fontSize="0.875rem" bold>

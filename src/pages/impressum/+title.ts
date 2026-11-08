@@ -1,3 +1,3 @@
 export function title() {
-    return "Legal Notice – Julian Schievelkamp";
+    return "Impressum – Julian Schievelkamp";
 }

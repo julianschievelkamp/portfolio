@@ -4,19 +4,21 @@ import {
     ArtistWrapper,
     PortraitCaption,
     PortraitFigure,
-    StyledDivider,
 } from "./Artist.styles";
 import { languageData } from "data/languageData";
 import Image from "elements/components/Image/Image";
 import Div from "elements/components/Div/Div";
 import Social from "./Social/Social";
+import Headline from "elements/components/Headline/Headline";
 
 const Artist = () => {
     const artistData = languageData.julian.artist;
 
     return (
         <ArtistSection>
-            <StyledDivider>{artistData.headline}</StyledDivider>
+            <Headline type="h2" visuallyHidden>
+                {artistData.headline}
+            </Headline>
             <ArtistWrapper>
                 <PortraitFigure>
                     <Image

@@ -1,7 +1,11 @@
-import { BadgesWrapper, InnerWrapper, StyledItemInfo } from "./ItemInfo.styles";
+import {
+    BadgesWrapper,
+    ImageTitle,
+    InnerWrapper,
+    StyledItemInfo,
+} from "./ItemInfo.styles";
 import { badges, PortfolioItem } from "data/portfolioData";
 import Div from "elements/components/Div/Div";
-import Headline from "elements/components/Headline/Headline";
 import Text from "elements/components/Text/Text";
 import Image from "elements/components/Image/Image";
 
@@ -15,9 +19,9 @@ const ItemInfo = ({ loadedItem, isInfoOn }: ItemInfoProps) => {
         <StyledItemInfo $isVisible={isInfoOn}>
             <InnerWrapper>
                 <Div>
-                    <Headline type="h2" color="white" fontSize="0.875rem">
+                    <ImageTitle color="white" fontSize="0.875rem">
                         {loadedItem.title} / {loadedItem.year}
-                    </Headline>
+                    </ImageTitle>
                     <Text color="white" fontSize="0.875rem">
                         {loadedItem.type}
                     </Text>

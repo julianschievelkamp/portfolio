@@ -1,15 +1,15 @@
 import { BadgesSection, BadgesWrapper, StyledLink } from "./Badges.styles";
 import { languageData } from "data/languageData";
 import Image from "elements/components/Image/Image";
-import Divider from "elements/components/Divider/Divider";
 import { badges } from "data/portfolioData";
+import Headline from "elements/components/Headline/Headline";
 
 const Badges = () => {
     const badgesData = languageData.julian.badges;
 
     return (
         <BadgesSection>
-            <Divider>{badgesData.headline}</Divider>
+            <Headline type="h2">{badgesData.headline}</Headline>
             <BadgesWrapper>
                 {Object.keys(badges).map((key) => {
                     const badge = badges[key as keyof typeof badges];
