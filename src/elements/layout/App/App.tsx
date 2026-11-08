@@ -3,33 +3,26 @@ import { PageContainer, StyledApp } from "./App.styles";
 import Sidebar from "elements/layout/Sidebar/Sidebar";
 import Menu from "elements/layout/Menu/Menu";
 import { Page } from "data/navigationData";
-import { useEffect } from "react";
+import { useEffect, type ReactNode } from "react";
 import Headline from "elements/components/Headline/Headline";
+import { useResizeTransition } from "hooks/useResizeTransition";
 
 export interface AppProps {
     page: Page;
+    children: ReactNode;
 }
 
-const App = ({ page }: AppProps) => {
+const App = ({ page, children }: AppProps) => {
+    useResizeTransition();
+
+    // Scrollposition des Seitencontainers beim Seitenwechsel zurücksetzen
     useEffect(() => {
-        let resizeTimer: ReturnType<typeof setTimeout>;
+        const container = document.getElementById("page-container");
 
-        const handleResize = () => {
-            if (!document.body.classList.contains("no-transition")) {
-                document.body.classList.add("no-transition");
-            }
-
-            clearTimeout(resizeTimer);
-
-            resizeTimer = setTimeout(() => {
-                document.body.classList.remove("no-transition");
-            }, 400);
-        };
-
-        window.addEventListener("resize", handleResize);
-
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+        if (container) {
+            container.scrollTop = 0;
+        }
+    }, [page.path]);
 
     return (
         <StyledApp>
@@ -42,7 +35,7 @@ const App = ({ page }: AppProps) => {
             <PageContainer id="page-container">
                 <Headline visuallyHidden>{page.heading}</Headline>
 
-                {page.element}
+                {children}
             </PageContainer>
         </StyledApp>
     );

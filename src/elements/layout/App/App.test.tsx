@@ -10,12 +10,14 @@ const page = {
     name: "Test",
     heading: "Test heading",
     path: "/test",
-    element: <p>Content</p>,
+    element: null,
 };
 
 describe("App", () => {
     it("renders exactly one h1 with the page heading inside main", () => {
-        render(<App page={page} />);
+        render(<App page={page}>
+                <p>Content</p>
+            </App>);
 
         const headings = screen.getAllByRole("heading", { level: 1 });
 
@@ -25,13 +27,17 @@ describe("App", () => {
     });
 
     it("renders the page content", () => {
-        render(<App page={page} />);
+        render(<App page={page}>
+                <p>Content</p>
+            </App>);
 
         expect(screen.getByText("Content")).toBeInTheDocument();
     });
 
     it("always renders menu and sidebar regardless of the viewport", () => {
-        render(<App page={page} />);
+        render(<App page={page}>
+                <p>Content</p>
+            </App>);
 
         expect(screen.getByRole("banner")).toBeInTheDocument();
         expect(screen.getByRole("complementary")).toBeInTheDocument();

@@ -1,6 +1,5 @@
-import App from "elements/layout/App/App";
-import { pages } from "data/navigationData";
+import Portfolio from "elements/pages/Portfolio/Portfolio";
 
 export const Page = () => {
-    return <App page={pages.portfolio} />;
+    return <Portfolio />;
 };

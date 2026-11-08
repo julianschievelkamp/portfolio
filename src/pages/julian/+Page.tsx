@@ -1,6 +1,5 @@
-import App from "elements/layout/App/App";
-import { pages } from "data/navigationData";
+import Julian from "elements/pages/Julian/Julian";
 
 export const Page = () => {
-    return <App page={pages.julian} />;
+    return <Julian />;
 };

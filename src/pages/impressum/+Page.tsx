@@ -1,6 +1,5 @@
-import App from "elements/layout/App/App";
-import { pages } from "data/navigationData";
+import Impressum from "elements/pages/Impressum/Impressum";
 
 export const Page = () => {
-    return <App page={pages.impressum} />;
+    return <Impressum />;
 };
