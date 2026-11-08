@@ -11,23 +11,22 @@ describe("Image", () => {
         expect(image).toHaveAttribute("src", "/art.jpg");
     });
 
-    it("passes srcSet, sizes, width and height through", () => {
+    it("passes srcSet and sizes through and applies width and height as styles", () => {
         render(
             <Image
                 src="/art.jpg"
                 alt="Abstract painting"
                 srcSet="/art-300.jpg 300w"
                 sizes="300px"
-                width="300"
-                height="200"
+                width="300px"
+                height="200px"
             />,
         );
 
         const image = screen.getByRole("img");
         expect(image).toHaveAttribute("srcset", "/art-300.jpg 300w");
         expect(image).toHaveAttribute("sizes", "300px");
-        expect(image).toHaveAttribute("width", "300");
-        expect(image).toHaveAttribute("height", "200");
+        expect(image).toHaveStyle({ width: "300px", height: "200px" });
     });
 
     it("loads eagerly by default and supports lazy loading", () => {

@@ -3,9 +3,12 @@ import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
 import { transition } from "styles/variables";
 
-export const StyledVideo = styled.video`
-    width: ${({ width }) => width};
-    height: ${({ height }) => height};
+export const StyledVideo = styled.video<{
+    $width?: string;
+    $height?: string;
+}>`
+    width: ${({ $width }) => $width};
+    height: ${({ $height }) => $height};
     max-width: 100%;
 `;
 

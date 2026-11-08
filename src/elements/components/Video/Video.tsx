@@ -46,8 +46,8 @@ const Video = ({
                 key={src}
                 ref={videoRef}
                 poster={poster}
-                width={width}
-                height={height}
+                $width={width}
+                $height={height}
                 muted={muted}
                 playsInline
                 loop

@@ -3,7 +3,7 @@ import { StyledButton } from "./Button.styles";
 export interface ButtonProps {
     onClick: () => void;
     onFocus?: (e: React.FocusEvent<HTMLButtonElement>) => void;
-    children: React.ReactNode;
+    children?: React.ReactNode;
     ariaLabel?: string;
     ariaExpanded?: boolean;
     ariaControls?: string;

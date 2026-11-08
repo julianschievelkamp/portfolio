@@ -3,11 +3,13 @@ import { transition } from "styles/variables";
 
 export const StyledImage = styled.img<{
     $imageLoaded: boolean;
+    $width?: string;
+    $height?: string;
     $margin?: string;
     $aspectRatio?: string;
 }>`
-    width: ${({ width }) => width};
-    height: ${({ height }) => height};
+    width: ${({ $width }) => $width};
+    height: ${({ $height }) => $height};
     opacity: ${({ $imageLoaded }) => ($imageLoaded ? 1 : 0)};
     margin: ${({ $margin }) => $margin};
     aspect-ratio: ${({ $aspectRatio }) => $aspectRatio};

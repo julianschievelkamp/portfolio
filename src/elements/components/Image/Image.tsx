@@ -45,8 +45,8 @@ const Image = ({
             srcSet={srcSet}
             sizes={sizes}
             alt={alt}
-            width={width}
-            height={height}
+            $width={width}
+            $height={height}
             $margin={margin}
             $imageLoaded={!fadeInOnLoad || imageLoaded}
             onLoad={() => {
