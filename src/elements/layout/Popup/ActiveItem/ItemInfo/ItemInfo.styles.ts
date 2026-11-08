@@ -1,15 +1,16 @@
 import { styled } from "styled-components";
 
-export const StyledItemInfo = styled.div<{ $isVisible: boolean }>`
+export const StyledItemInfo = styled.figcaption<{ $isVisible: boolean }>`
     position: absolute;
-    bottom: 0.5rem;
-    left: 0.5rem;
-    width: calc(100% - 1rem);
-    max-width: calc(100% - 1rem);
-    max-height: calc(100% - 1rem);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
     backdrop-filter: blur(8px);
-    visibility: ${({ $isVisible }) => ($isVisible ? "visible" : "hidden")};
+    /* Nur per opacity ausblenden, damit Screenreader die Caption auch bei geschlossenem Info-Panel vorlesen */
     opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
+    pointer-events: none;
     overflow: hidden;
     z-index: 9;
 `;

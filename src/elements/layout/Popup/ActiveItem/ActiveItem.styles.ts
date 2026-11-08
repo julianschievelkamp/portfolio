@@ -12,7 +12,8 @@ export const StyledActiveItem = styled.div<{ $isItemRevealed: boolean }>`
         $isItemRevealed ? `opacity ${transition.default}` : "none"};
 `;
 
-export const ItemContainer = styled.div`
+export const ItemContainer = styled.figure`
+    margin: 0;
     position: relative;
     display: flex;
     border: 0.5rem solid black;

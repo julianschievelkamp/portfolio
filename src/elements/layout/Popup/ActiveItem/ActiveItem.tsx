@@ -46,9 +46,9 @@ const ActiveItem = () => {
                         height="100%"
                     />
                 )}
-            </ItemContainer>
 
-            <ItemInfo loadedItem={loadedItem} isInfoOn={isInfoOn} />
+                <ItemInfo loadedItem={loadedItem} isInfoOn={isInfoOn} />
+            </ItemContainer>
 
             <Notch
                 loadedItem={loadedItem}

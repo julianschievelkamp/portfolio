@@ -42,6 +42,23 @@ describe("ItemInfo", () => {
 
         rerender(<ItemInfo loadedItem={itemWithBadges} isInfoOn={false} />);
 
-        expect(screen.getByRole("heading", { hidden: true })).not.toBeVisible();
+        expect(screen.getByRole("heading")).not.toBeVisible();
+    });
+
+    it("stays in the accessibility tree while the info panel is closed", () => {
+        render(<ItemInfo loadedItem={itemWithBadges} isInfoOn={false} />);
+
+        expect(
+            screen.getByRole("heading", { level: 2, name: "First Photo / 2020" }),
+        ).toBeInTheDocument();
+        expect(screen.getByText("analog photograph")).toBeInTheDocument();
+    });
+
+    it("renders as a figcaption", () => {
+        const { container } = render(
+            <ItemInfo loadedItem={itemWithBadges} isInfoOn />,
+        );
+
+        expect(container.firstElementChild?.tagName).toBe("FIGCAPTION");
     });
 });
