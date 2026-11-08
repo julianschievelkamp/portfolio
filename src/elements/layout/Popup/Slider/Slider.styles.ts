@@ -56,6 +56,10 @@ export const SliderItem = styled(Button)<{ $imageOpacity: number }>`
         opacity: ${({ $imageOpacity }) => $imageOpacity};
     }
 
+    &:focus-visible img {
+        opacity: 1;
+    }
+
     @media ${queries.hover} {
         &:hover img {
             opacity: 1;
