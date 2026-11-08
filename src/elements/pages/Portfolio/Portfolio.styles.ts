@@ -2,7 +2,7 @@ import Button from "elements/components/Button/Button";
 import { styled } from "styled-components";
 import { queries, visuallyHidden } from "styles/variables";
 
-export const PortfolioGrid = styled.div`
+export const PortfolioGrid = styled.section`
     position: relative;
     display: grid;
     margin: 0;
