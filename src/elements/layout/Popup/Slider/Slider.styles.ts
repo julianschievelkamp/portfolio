@@ -18,7 +18,7 @@ export const SliderContainer = styled.div`
     }
 `;
 
-export const InnerSliderContainer = styled.div<{
+export const InnerSliderContainer = styled.ul<{
     $focusedIndex: number;
 }>`
     position: absolute;
@@ -27,6 +27,9 @@ export const InnerSliderContainer = styled.div<{
     transform: ${({ $focusedIndex }) =>
         `translateX(calc(-3.25rem * ${$focusedIndex}))`};
     display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
     transition: ${transition.default};
     background: white;
 
@@ -40,16 +43,21 @@ export const InnerSliderContainer = styled.div<{
     }
 `;
 
-export const SliderItem = styled(Button)<{ $imageOpacity: number }>`
+export const SliderListItem = styled.li`
     margin: 0 0.25rem 0 0;
-    background: transparent;
     width: 3rem;
     height: 3rem;
-    overflow: hidden;
 
     @media ${queries.landscapeLgMax} {
         margin: 0 0 0.25rem 0;
     }
+`;
+
+export const SliderItem = styled(Button)<{ $imageOpacity: number }>`
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 
     img {
         transition: none;

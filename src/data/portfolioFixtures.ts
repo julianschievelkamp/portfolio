@@ -37,4 +37,7 @@ export const portfolioData: PortfolioItem[] = [
 ];
 
 export const getAltText = (item: PortfolioItem) =>
-    `${item.title} / ${item.year} – ${item.type} by Julian Schievelkamp`;
+    `${item.title} by Julian Schievelkamp`;
+
+export const getCaption = (item: PortfolioItem) =>
+    `${item.title} / ${item.year} – ${item.type}`;

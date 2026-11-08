@@ -4,7 +4,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useStore } from "hooks/useStore";
 import { useMediaQuery } from "hooks/useMediaQuery";
-import { portfolioData, getAltText } from "data/portfolioFixtures";
+import { portfolioData, getAltText, getCaption } from "data/portfolioFixtures";
 import Portfolio from "./Portfolio";
 
 vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: vi.fn() }));
@@ -31,10 +31,35 @@ describe("Portfolio", () => {
 
         portfolioData.forEach((item) => {
             expect(
-                screen.getByRole("button", { name: item.title }),
+                screen.getByRole("button", { name: `Show ${item.title}` }),
             ).toContainElement(
                 screen.getByRole("img", { name: getAltText(item) }),
             );
+        });
+    });
+
+    it("renders the items as a list", () => {
+        render(<Portfolio />);
+
+        expect(screen.getByRole("list")).toBeInTheDocument();
+        expect(screen.getAllByRole("listitem")).toHaveLength(
+            portfolioData.length,
+        );
+    });
+
+    it("wraps every item in a figure with a caption outside the button", () => {
+        render(<Portfolio />);
+
+        portfolioData.forEach((item) => {
+            const caption = screen.getByText(getCaption(item));
+            const figure = caption.closest("figure");
+
+            expect(caption.tagName).toBe("FIGCAPTION");
+            expect(figure).not.toBeNull();
+            expect(figure).toContainElement(
+                screen.getByRole("button", { name: `Show ${item.title}` }),
+            );
+            expect(caption.closest("button")).toBeNull();
         });
     });
 
@@ -42,7 +67,7 @@ describe("Portfolio", () => {
         render(<Portfolio />);
 
         await userEvent.click(
-            screen.getByRole("button", { name: portfolioData[2].title }),
+            screen.getByRole("button", { name: `Show ${portfolioData[2].title}` }),
         );
 
         expect(useStore.getState().activeIndex).toBe(2);

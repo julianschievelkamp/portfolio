@@ -263,7 +263,11 @@ export const portfolioData: PortfolioItem[] = [
 ];
 
 export const getAltText = (item: PortfolioItem) => {
-    return `${item.title} / ${item.year} – ${item.type} by Julian Schievelkamp`;
+    return `${item.title} by Julian Schievelkamp`;
+};
+
+export const getCaption = (item: PortfolioItem) => {
+    return `${item.title} / ${item.year} – ${item.type}`;
 };
 
 export const badges = {

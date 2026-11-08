@@ -2,6 +2,7 @@ import {
     SliderContainer,
     InnerSliderContainer,
     SliderItem,
+    SliderListItem,
 } from "./Slider.styles";
 import Image from "elements/components/Image/Image";
 import { useStore } from "hooks/useStore";
@@ -16,27 +17,28 @@ const Slider = () => {
 
     return (
         <SliderContainer ref={containerRef} onBlur={handleBlur}>
-            <InnerSliderContainer $focusedIndex={focusedIndex}>
+            <InnerSliderContainer role="list" $focusedIndex={focusedIndex}>
                 {portfolioData.map((item, index) => {
                     return (
-                        <SliderItem
-                            key={item.title}
-                            ariaLabel={item.title}
-                            onClick={() => setActiveIndex(index)}
-                            onFocus={(e) => handleItemFocus(e, index)}
-                            $imageOpacity={index === activeIndex ? 1 : 0.5}
-                        >
-                            <Image
-                                width="100%"
-                                src={item.image}
-                                srcSet={item.imageSet}
-                                sizes={item.imageSet && thumbnailSize}
-                                alt={getAltText(item)}
-                                margin={item.thumbnailMargin}
-                                aspectRatio={item.aspectRatio}
-                                loading="lazy"
-                            />
-                        </SliderItem>
+                        <SliderListItem key={item.title}>
+                            <SliderItem
+                                ariaLabel={`Show ${item.title}`}
+                                onClick={() => setActiveIndex(index)}
+                                onFocus={(e) => handleItemFocus(e, index)}
+                                $imageOpacity={index === activeIndex ? 1 : 0.5}
+                            >
+                                <Image
+                                    width="100%"
+                                    src={item.image}
+                                    srcSet={item.imageSet}
+                                    sizes={item.imageSet && thumbnailSize}
+                                    alt={getAltText(item)}
+                                    margin={item.thumbnailMargin}
+                                    aspectRatio={item.aspectRatio}
+                                    loading="lazy"
+                                />
+                            </SliderItem>
+                        </SliderListItem>
                     );
                 })}
             </InnerSliderContainer>

@@ -25,7 +25,7 @@ const getTransform = (container: HTMLElement) =>
         .transform;
 
 const getThirdButton = () =>
-    screen.getByRole("button", { name: portfolioData[2].title });
+    screen.getByRole("button", { name: `Show ${portfolioData[2].title}` });
 
 describe("Slider", () => {
     beforeEach(() => {
@@ -36,12 +36,21 @@ describe("Slider", () => {
         render(<Slider />);
 
         portfolioData.forEach((item) => {
-            const button = screen.getByRole("button", { name: item.title });
+            const button = screen.getByRole("button", { name: `Show ${item.title}` });
 
             expect(button).toContainElement(
                 screen.getByRole("img", { name: getAltText(item) }),
             );
         });
+    });
+
+    it("renders the items as a list", () => {
+        render(<Slider />);
+
+        expect(screen.getByRole("list")).toBeInTheDocument();
+        expect(screen.getAllByRole("listitem")).toHaveLength(
+            portfolioData.length,
+        );
     });
 
     it("loads all thumbnails lazily", () => {
@@ -56,7 +65,7 @@ describe("Slider", () => {
         render(<Slider />);
 
         await userEvent.click(
-            screen.getByRole("button", { name: portfolioData[2].title }),
+            screen.getByRole("button", { name: `Show ${portfolioData[2].title}` }),
         );
 
         expect(useStore.getState().activeIndex).toBe(2);
