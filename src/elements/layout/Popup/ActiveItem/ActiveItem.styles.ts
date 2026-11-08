@@ -9,7 +9,7 @@ export const StyledActiveItem = styled.div<{ $isItemRevealed: boolean }>`
     visibility: ${({ $isItemRevealed }) =>
         $isItemRevealed ? "visible" : "hidden"};
     transition: ${({ $isItemRevealed }) =>
-        $isItemRevealed ? `opacity ${transition.fast}` : "none"};
+        $isItemRevealed ? `opacity ${transition.default}` : "none"};
 `;
 
 export const ItemContainer = styled.div`

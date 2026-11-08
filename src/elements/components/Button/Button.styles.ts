@@ -15,7 +15,7 @@ export const StyledButton = styled.button`
             &:focus-visible {
                 svg {
                     fill: ${colors.primary};
-                    transition: ${transition.fastest};
+                    transition: ${transition.fast};
                 }
             }
         `}

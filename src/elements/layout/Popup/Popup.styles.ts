@@ -36,7 +36,7 @@ export const StyledPopup = styled.dialog`
 
     &[data-visible="true"] {
         opacity: 1;
-        transition: opacity ${transition.fast};
+        transition: opacity ${transition.default};
     }
 `;
 

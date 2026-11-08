@@ -27,7 +27,7 @@ export const InnerSliderContainer = styled.div<{
     transform: ${({ $selectedIndex }) =>
         `translateX(calc(-3.25rem * ${$selectedIndex}))`};
     display: flex;
-    transition: ${transition.fast};
+    transition: ${transition.default};
     background: white;
 
     @media ${queries.landscapeLgMax} {

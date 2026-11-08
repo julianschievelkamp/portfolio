@@ -10,7 +10,7 @@ export const StyledSocial = styled(Div)`
 
         a {
             color: ${colors.primary};
-            transition: ${transition.fastest};
+            transition: ${transition.fast};
         }
     }
 `;

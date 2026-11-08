@@ -36,7 +36,7 @@ export const PlayIcon = styled(Icon)<{ $isHidden: boolean }>`
     left: 50%;
     transform: translate(-50%, -50%);
     backdrop-filter: blur(8px);
-    animation: ${fadeIn} ${transition.fast};
+    animation: ${fadeIn} ${transition.default};
     opacity: ${({ $isHidden }) => ($isHidden ? 0 : 1)};
     transition: opacity ${TRANSITION_DEFAULT}ms ease-in;
 `;

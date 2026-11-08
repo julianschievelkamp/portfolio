@@ -3,8 +3,8 @@ import { css } from "styled-components";
 export const TRANSITION_DEFAULT = 300;
 
 export const transition = {
-    fastest: `${TRANSITION_DEFAULT / 3}ms ease-out`,
-    fast: `${TRANSITION_DEFAULT}ms ease-out`,
+    default: `${TRANSITION_DEFAULT}ms ease-out`,
+    fast: `${TRANSITION_DEFAULT / 3}ms ease-out`,
 };
 
 export const colors = {

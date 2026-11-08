@@ -15,6 +15,6 @@ export const StyledText = styled.p<{
     margin: ${({ $margin }) => $margin};
     color: ${({ color }) => color ?? "black"};
     line-height: 1.5;
-    transition: color ${transition.fast};
+    transition: color ${transition.default};
     font-family: "Poppins", sans-serif;
 `;
