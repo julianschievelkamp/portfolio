@@ -14,7 +14,9 @@ export const StyledMenu = styled.header<{ $isVisible: boolean }>`
     left: 0;
     transform: ${({ $isVisible }) => `translateY(${$isVisible ? 0 : "-100%"})`};
     visibility: ${({ $isVisible }) => ($isVisible ? "visible" : "hidden")};
-    transition: ${transition.default};
+    /* Beim Öffnen ease-out, beim Schließen ease-in */
+    transition: ${({ $isVisible }) =>
+        $isVisible ? transition.default : transition.defaultIn};
     z-index: 99;
 
     @media ${queries.md} {
