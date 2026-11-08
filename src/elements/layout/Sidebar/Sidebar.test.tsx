@@ -15,7 +15,9 @@ vi.mock("data/languageData", () => ({
     },
 }));
 vi.mock("data/navigationData", () => ({
-    pages: { home: { name: "Home", heading: "Home", path: "/", element: null } },
+    pages: {
+        home: { name: "Home", heading: "Home", path: "/", element: null },
+    },
     links: { social: { name: "Social", path: "https://example.com" } },
 }));
 
@@ -67,22 +69,24 @@ describe("Sidebar", () => {
 
     it("activates the close trigger only while the sidebar is open", () => {
         const { container } = render(<Sidebar page={page} />);
-        expect(findCloseTrigger(container)).toHaveStyle("pointer-events: all");
+        expect(findCloseTrigger(container)).toHaveStyle("visibility: visible");
 
         act(() => useStore.setState({ sidebarOpen: false }));
 
-        expect(findCloseTrigger(container)).toHaveStyle("pointer-events: none");
+        expect(findCloseTrigger(container)).toHaveStyle("visibility: hidden");
     });
 
     it("uses semantic landmarks for aside, navigation and footer", () => {
         render(<Sidebar page={page} />);
 
         expect(
-            screen.getByRole("complementary", { name: "Site navigation" }),
+            screen.getByRole("complementary", { name: "Sidebar" }),
         ).toHaveAttribute("id", "sidebar");
-        expect(screen.getByRole("contentinfo")).toHaveTextContent("Copyright text");
+        expect(screen.getByRole("contentinfo")).toHaveTextContent(
+            "Copyright text",
+        );
         expect(
-            screen.getByRole("navigation", { name: "Main navigation" }),
+            screen.getByRole("navigation", { name: "Navigation" }),
         ).toBeInTheDocument();
     });
 
@@ -111,6 +115,8 @@ describe("Sidebar", () => {
 
         await userEvent.keyboard("{Escape}");
 
-        expect(screen.getByRole("button", { name: "Toggle" })).not.toHaveFocus();
+        expect(
+            screen.getByRole("button", { name: "Toggle" }),
+        ).not.toHaveFocus();
     });
 });

@@ -1,9 +1,8 @@
 import { useEffect } from "react";
-import { SIDEBAR_TOGGLE_ID } from "elements/layout/Sidebar/sidebarIds";
 import { useStore } from "./useStore";
 
 // Schließt die geöffnete Sidebar per Escape und gibt den Fokus an den Toggle zurück
-export const useSidebarEscape = () => {
+export const useSidebarControls = () => {
     const { sidebarOpen, setSidebarOpen } = useStore();
 
     useEffect(() => {
@@ -14,7 +13,7 @@ export const useSidebarEscape = () => {
         const handleKeyDown = (e: KeyboardEvent) => {
             if (e.key === "Escape") {
                 setSidebarOpen(false);
-                document.getElementById(SIDEBAR_TOGGLE_ID)?.focus();
+                document.getElementById("sidebar-toggle")?.focus();
             }
         };
 

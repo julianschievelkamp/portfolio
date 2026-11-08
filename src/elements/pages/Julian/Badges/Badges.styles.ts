@@ -9,9 +9,16 @@ export const BadgesWrapper = styled.div`
     @media ${queries.sm} {
         grid-template-columns: 1fr 1fr 1fr;
     }
+`;
 
-    a {
-        display: flex;
-        align-items: center;
+export const StyledLink = styled.a`
+    display: flex;
+    align-items: center;
+
+    &:hover,
+    &:focus-visible {
+        img {
+            transform: scale(1.05);
+        }
     }
 `;

@@ -1,20 +1,20 @@
 import Text from "elements/components/Text/Text";
 import {
     CloseTrigger,
-    MobileSpacer,
     ScrollContainer,
     SidebarFooter,
-    StyledTitle,
+    MainTitle,
     StyledSidebar,
 } from "./Sidebar.styles";
 import { languageData } from "data/languageData";
 import { colors } from "styles/variables";
 import Navigation from "elements/layout/Navigation/Navigation";
 import { useStore } from "hooks/useStore";
-import { useSidebarEscape } from "hooks/useSidebarEscape";
+import { useSidebarControls } from "hooks/useSidebarControls";
 import { Page } from "data/navigationData";
-import { SIDEBAR_ID } from "elements/layout/Sidebar/sidebarIds";
+
 import Div from "elements/components/Div/Div";
+import Link from "elements/components/Link/Link";
 
 export interface SidebarProps {
     page: Page;
@@ -23,7 +23,7 @@ export interface SidebarProps {
 const Sidebar = ({ page }: SidebarProps) => {
     const { sidebarOpen, setSidebarOpen } = useStore();
 
-    useSidebarEscape();
+    useSidebarControls();
 
     return (
         <>
@@ -33,13 +33,19 @@ const Sidebar = ({ page }: SidebarProps) => {
             />
 
             <StyledSidebar
-                id={SIDEBAR_ID}
-                aria-label="Site navigation"
+                id="sidebar"
+                aria-label="Sidebar"
                 $sidebarOpen={sidebarOpen}
             >
-                <StyledTitle>{languageData.title}</StyledTitle>
-
-                <MobileSpacer />
+                <MainTitle>
+                    <Link
+                        href="/"
+                        onClick={() => setSidebarOpen(false)}
+                        underline={false}
+                    >
+                        {languageData.title}
+                    </Link>
+                </MainTitle>
 
                 <ScrollContainer margin="1.5rem 0 0 0">
                     <Div>

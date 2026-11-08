@@ -1,4 +1,4 @@
-import { StyledTitle, StyledMenu } from "./Menu.styles";
+import { MainTitle, StyledMenu } from "./Menu.styles";
 import { languageData } from "data/languageData";
 import { useMenu } from "hooks/useMenu";
 import Div from "elements/components/Div/Div";
@@ -6,7 +6,6 @@ import { useStore } from "hooks/useStore";
 import Link from "elements/components/Link/Link";
 import Button from "elements/components/Button/Button";
 import Icon from "elements/components/Icon/Icon";
-import { SIDEBAR_ID, SIDEBAR_TOGGLE_ID } from "elements/layout/Sidebar/sidebarIds";
 
 const Menu = () => {
     const { sidebarOpen, setSidebarOpen } = useStore();
@@ -14,7 +13,7 @@ const Menu = () => {
 
     return (
         <StyledMenu $isVisible={isVisible}>
-            <StyledTitle>
+            <MainTitle>
                 <Link
                     href="/"
                     onClick={() => setSidebarOpen(false)}
@@ -22,7 +21,7 @@ const Menu = () => {
                 >
                     {languageData.title}
                 </Link>
-            </StyledTitle>
+            </MainTitle>
 
             <Div
                 height="100%"
@@ -32,10 +31,10 @@ const Menu = () => {
             >
                 <Button
                     onClick={() => setSidebarOpen(!sidebarOpen)}
-                    id={SIDEBAR_TOGGLE_ID}
-                    ariaLabel="Toggle Sidebar"
                     ariaExpanded={sidebarOpen}
-                    ariaControls={SIDEBAR_ID}
+                    ariaLabel="Toggle Sidebar"
+                    ariaControls="sidebar"
+                    id="sidebar-toggle"
                 >
                     <Icon name={sidebarOpen ? "close" : "menu"} size="2rem" />
                 </Button>

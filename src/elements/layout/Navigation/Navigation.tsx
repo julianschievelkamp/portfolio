@@ -18,7 +18,7 @@ const Navigation = ({ page }: NavigationProps) => {
     const { setSidebarOpen } = useStore();
 
     return (
-        <StyledNavigation aria-label="Main navigation">
+        <StyledNavigation aria-label="Navigation">
             <Text
                 color={colors.secondary}
                 margin="0 0 0.5rem 0"

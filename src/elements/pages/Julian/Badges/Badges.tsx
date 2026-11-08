@@ -1,9 +1,8 @@
-import { BadgesWrapper } from "./Badges.styles";
+import { BadgesWrapper, StyledLink } from "./Badges.styles";
 import { languageData } from "data/languageData";
 import Image from "elements/components/Image/Image";
 import Divider from "elements/components/Divider/Divider";
 import { badges } from "data/portfolioData";
-import Link from "elements/components/Link/Link";
 
 const Badges = () => {
     return (
@@ -14,7 +13,7 @@ const Badges = () => {
                     const badge = badges[key as keyof typeof badges];
 
                     return (
-                        <Link key={key} href={badge.link} target="_blank">
+                        <StyledLink key={key} href={badge.link} target="_blank">
                             <Image
                                 src={badge.image}
                                 alt={badge.alt}
@@ -24,7 +23,7 @@ const Badges = () => {
                                 height="100%"
                                 fadeInOnLoad
                             />
-                        </Link>
+                        </StyledLink>
                     );
                 })}
             </BadgesWrapper>
