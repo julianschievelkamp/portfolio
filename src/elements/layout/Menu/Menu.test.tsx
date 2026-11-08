@@ -3,10 +3,10 @@ import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useStore } from "hooks/useStore";
-import { useMenu } from "hooks/useMenu";
+import { useMenuVisibility } from "hooks/useMenuVisibility";
 import Menu from "./Menu";
 
-vi.mock("hooks/useMenu", () => ({ useMenu: vi.fn() }));
+vi.mock("hooks/useMenuVisibility", () => ({ useMenuVisibility: vi.fn() }));
 vi.mock("data/languageData", () => ({
     languageData: { title: "Site Title" },
 }));
@@ -20,7 +20,7 @@ vi.mock("elements/components/Icon/Icon", () => ({
 describe("Menu", () => {
     beforeEach(() => {
         useStore.setState({ sidebarOpen: false });
-        vi.mocked(useMenu).mockReturnValue({ isVisible: true });
+        vi.mocked(useMenuVisibility).mockReturnValue({ isVisible: true });
     });
 
     it("renders the site title as a link to the start page", () => {
@@ -80,11 +80,11 @@ describe("Menu", () => {
         expect(screen.getByTestId("icon")).toHaveAttribute("data-name", "close");
     });
 
-    it("follows the visibility from useMenu", () => {
+    it("follows the visibility from useMenuVisibility", () => {
         const { rerender } = render(<Menu />);
         expect(screen.getByRole("link")).toBeVisible();
 
-        vi.mocked(useMenu).mockReturnValue({ isVisible: false });
+        vi.mocked(useMenuVisibility).mockReturnValue({ isVisible: false });
         rerender(<Menu />);
 
         expect(screen.getByRole("link", { hidden: true })).not.toBeVisible();

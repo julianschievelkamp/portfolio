@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useStore } from "./useStore";
 
-export const useMenu = () => {
+export const useMenuVisibility = () => {
     const [isVisible, setVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const { sidebarOpen } = useStore();

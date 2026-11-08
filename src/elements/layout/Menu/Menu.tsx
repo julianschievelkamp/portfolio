@@ -1,6 +1,6 @@
 import { MainTitle, StyledMenu } from "./Menu.styles";
 import { languageData } from "data/languageData";
-import { useMenu } from "hooks/useMenu";
+import { useMenuVisibility } from "hooks/useMenuVisibility";
 import Div from "elements/components/Div/Div";
 import { useStore } from "hooks/useStore";
 import Link from "elements/components/Link/Link";
@@ -9,7 +9,7 @@ import Icon from "elements/components/Icon/Icon";
 
 const Menu = () => {
     const { sidebarOpen, setSidebarOpen } = useStore();
-    const { isVisible } = useMenu();
+    const { isVisible } = useMenuVisibility();
 
     return (
         <StyledMenu $isVisible={isVisible}>
