@@ -6,11 +6,11 @@ import Link from "./Link";
 
 describe("Link", () => {
     it("renders an anchor with href and children", () => {
-        render(<Link href="/julian">About</Link>);
+        render(<Link href="/about">About</Link>);
 
         expect(screen.getByRole("link", { name: "About" })).toHaveAttribute(
             "href",
-            "/julian",
+            "/about",
         );
     });
 
@@ -38,7 +38,7 @@ describe("Link", () => {
     });
 
     it("sets no rel without target _blank", () => {
-        render(<Link href="/julian">About</Link>);
+        render(<Link href="/about">About</Link>);
 
         expect(screen.getByRole("link")).not.toHaveAttribute("rel");
     });

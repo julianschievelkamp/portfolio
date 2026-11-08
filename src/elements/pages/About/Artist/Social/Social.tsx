@@ -7,7 +7,7 @@ import { colors } from "styles/variables";
 import { languageData } from "data/languageData";
 
 const Social = () => {
-    const socialData = languageData.julian.artist.social;
+    const socialData = languageData.about.artist.social;
 
     return (
         <StyledSocial

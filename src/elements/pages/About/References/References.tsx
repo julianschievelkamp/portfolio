@@ -10,7 +10,7 @@ import List from "elements/components/List/List";
 import Headline from "elements/components/Headline/Headline";
 
 const References = () => {
-    const referencesData = languageData.julian.references;
+    const referencesData = languageData.about.references;
 
     return (
         <ReferencesSection>

@@ -1,5 +1,5 @@
 import { title as titleImpressum } from "pages/impressum/+title";
-import { title as titleJulian } from "pages/julian/+title";
+import { title as titleAbout } from "pages/about/+title";
 import { title as titleIndex } from "pages/index/+title";
 
 export type Page = {
@@ -14,10 +14,10 @@ export const pages: { [key: string]: Page } = {
         heading: titleIndex(),
         path: "/",
     },
-    julian: {
-        name: "Julian",
-        heading: titleJulian(),
-        path: "/julian/",
+    about: {
+        name: "About",
+        heading: titleAbout(),
+        path: "/about/",
     },
     impressum: {
         name: "Impressum",

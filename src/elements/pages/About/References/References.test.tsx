@@ -5,7 +5,7 @@ import References from "./References";
 
 vi.mock("data/languageData", () => ({
     languageData: {
-        julian: {
+        about: {
             references: {
                 headline: "REFERENCES",
                 publications: {

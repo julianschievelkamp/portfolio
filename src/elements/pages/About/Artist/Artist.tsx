@@ -12,7 +12,7 @@ import Social from "./Social/Social";
 import Headline from "elements/components/Headline/Headline";
 
 const Artist = () => {
-    const artistData = languageData.julian.artist;
+    const artistData = languageData.about.artist;
 
     return (
         <ArtistSection>

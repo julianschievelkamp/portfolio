@@ -5,7 +5,7 @@ import Artist from "./Artist";
 
 vi.mock("data/languageData", () => ({
     languageData: {
-        julian: {
+        about: {
             artist: {
                 headline: "Artist headline",
                 image: {

@@ -5,7 +5,7 @@ import { badges } from "data/portfolioData";
 import Headline from "elements/components/Headline/Headline";
 
 const Badges = () => {
-    const badgesData = languageData.julian.badges;
+    const badgesData = languageData.about.badges;
 
     return (
         <BadgesSection>

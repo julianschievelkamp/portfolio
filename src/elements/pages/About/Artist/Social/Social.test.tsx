@@ -6,7 +6,7 @@ import Social from "./Social";
 
 vi.mock("data/languageData", () => ({
     languageData: {
-        julian: {
+        about: {
             artist: {
                 social: {
                     image: "profile.jpg",

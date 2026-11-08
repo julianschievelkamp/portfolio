@@ -6,7 +6,7 @@ import Badges from "./Badges";
 
 vi.mock("data/portfolioData", async () => await import("data/portfolioFixtures"));
 vi.mock("data/languageData", () => ({
-    languageData: { julian: { badges: { headline: "FIRST PRIZE" } } },
+    languageData: { about: { badges: { headline: "FIRST PRIZE" } } },
 }));
 
 describe("Badges", () => {

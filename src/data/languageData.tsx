@@ -26,7 +26,7 @@ export const languageData = {
     portfolio: {
         headline: "PORTFOLIO",
     },
-    julian: {
+    about: {
         artist: {
             headline: "ABOUT THE ARTIST",
             image: {
