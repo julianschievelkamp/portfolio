@@ -6,7 +6,10 @@ import { useStore } from "hooks/useStore";
 import { portfolioData, getAltText } from "data/portfolioFixtures";
 import Slider from "./Slider";
 
-vi.mock("data/portfolioData", async () => await import("data/portfolioFixtures"));
+vi.mock(
+    "data/portfolioData",
+    async () => await import("data/portfolioFixtures"),
+);
 
 // jsdom kennt :focus-visible nicht zuverlässig, daher wird matches gesteuert
 const mockFocusVisible = (value: boolean) =>
@@ -18,16 +21,15 @@ const mockFocusVisible = (value: boolean) =>
 
 // Die Verschiebung des Sliders verrät den ausgewählten Index
 const getTransform = (container: HTMLElement) =>
-    getComputedStyle(
-        container.firstElementChild?.firstElementChild as Element,
-    ).transform;
+    getComputedStyle(container.firstElementChild?.firstElementChild as Element)
+        .transform;
 
 const getThirdButton = () =>
     screen.getByRole("button", { name: portfolioData[2].title });
 
 describe("Slider", () => {
     beforeEach(() => {
-        useStore.setState({ currentPortfolioIndex: 0 });
+        useStore.setState({ activeIndex: 0 });
     });
 
     it("renders a labelled button with a matching image for every item", () => {
@@ -57,11 +59,11 @@ describe("Slider", () => {
             screen.getByRole("button", { name: portfolioData[2].title }),
         );
 
-        expect(useStore.getState().currentPortfolioIndex).toBe(2);
+        expect(useStore.getState().activeIndex).toBe(2);
     });
 
     it("highlights only the current item", () => {
-        useStore.setState({ currentPortfolioIndex: 1 });
+        useStore.setState({ activeIndex: 1 });
         render(<Slider />);
 
         const images = screen.getAllByRole("img");
@@ -102,7 +104,7 @@ describe("Slider", () => {
         fireEvent.focus(button);
         const focused = getTransform(container);
 
-        act(() => useStore.setState({ currentPortfolioIndex: 1 }));
+        act(() => useStore.setState({ activeIndex: 1 }));
 
         expect(getTransform(container)).not.toBe(focused);
         expect(images[1]).toHaveStyle("opacity: 1");

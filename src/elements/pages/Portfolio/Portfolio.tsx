@@ -8,7 +8,7 @@ import { useMediaQuery } from "hooks/useMediaQuery";
 
 const Portfolio = () => {
     const isMd = useMediaQuery(queries.md);
-    const { setCurrentPortfolioIndex, setPopupOpen, sidebarOpen } = useStore();
+    const { setActiveIndex, setPopupOpen, sidebarOpen } = useStore();
 
     return (
         <>
@@ -19,7 +19,7 @@ const Portfolio = () => {
                             key={item.title}
                             ariaLabel={item.title}
                             onClick={() => {
-                                setCurrentPortfolioIndex(index);
+                                setActiveIndex(index);
                                 setPopupOpen(true);
                             }}
                             tabIndex={!isMd && sidebarOpen ? -1 : 0}

@@ -19,13 +19,13 @@ export const SliderContainer = styled.div`
 `;
 
 export const InnerSliderContainer = styled.div<{
-    $selectedIndex: number;
+    $focusedIndex: number;
 }>`
     position: absolute;
     bottom: 0;
     left: calc(50% - 1.5rem);
-    transform: ${({ $selectedIndex }) =>
-        `translateX(calc(-3.25rem * ${$selectedIndex}))`};
+    transform: ${({ $focusedIndex }) =>
+        `translateX(calc(-3.25rem * ${$focusedIndex}))`};
     display: flex;
     transition: ${transition.default};
     background: white;
@@ -35,8 +35,8 @@ export const InnerSliderContainer = styled.div<{
         bottom: unset;
         top: calc(50% - 1.5rem);
         left: 0;
-        transform: ${({ $selectedIndex }) =>
-            `translateY(calc(-3.25rem * ${$selectedIndex}))`};
+        transform: ${({ $focusedIndex }) =>
+            `translateY(calc(-3.25rem * ${$focusedIndex}))`};
     }
 `;
 

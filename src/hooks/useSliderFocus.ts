@@ -2,18 +2,16 @@ import { FocusEvent, useEffect, useRef, useState } from "react";
 import { useStore } from "./useStore";
 
 export const useSliderFocus = () => {
-    const { currentPortfolioIndex } = useStore();
+    const { activeIndex } = useStore();
     const containerRef = useRef<HTMLDivElement>(null);
 
-    const [selectedIndex, setSelectedIndex] = useState(currentPortfolioIndex);
-    const [prevPortfolioIndex, setPrevPortfolioIndex] = useState(
-        currentPortfolioIndex,
-    );
+    const [focusedIndex, setFocusedIndex] = useState(activeIndex);
+    const [prevActiveIndex, setPrevActiveIndex] = useState(activeIndex);
 
-    // Bei Änderung des aktuellen Index wird der selectedIndex sofort angeglichen
-    if (prevPortfolioIndex !== currentPortfolioIndex) {
-        setPrevPortfolioIndex(currentPortfolioIndex);
-        setSelectedIndex(currentPortfolioIndex);
+    // Bei Änderung des aktuellen Index wird der focusedIndex sofort angeglichen
+    if (prevActiveIndex !== activeIndex) {
+        setPrevActiveIndex(activeIndex);
+        setFocusedIndex(activeIndex);
     }
 
     // Liegt der Fokus bereits im Slider, folgt er dem per Tastatur gewechselten Index,
@@ -25,22 +23,22 @@ export const useSliderFocus = () => {
 
         const buttons = container.querySelectorAll("button");
 
-        buttons[currentPortfolioIndex]?.focus({ preventScroll: true });
-    }, [currentPortfolioIndex]);
+        buttons[activeIndex]?.focus({ preventScroll: true });
+    }, [activeIndex]);
 
     // Nur wenn per Tab fokussiert wird, folgt der Slider dem fokussierten Item
     const handleItemFocus = (e: FocusEvent<HTMLElement>, index: number) => {
         if (e.target.matches(":focus-visible")) {
-            setSelectedIndex(index);
+            setFocusedIndex(index);
         }
     };
 
     // Verlässt der Fokus den Slider, wird wieder das aktuelle Bild zentriert
     const handleBlur = (e: FocusEvent<HTMLElement>) => {
         if (!e.currentTarget.contains(e.relatedTarget)) {
-            setSelectedIndex(currentPortfolioIndex);
+            setFocusedIndex(activeIndex);
         }
     };
 
-    return { containerRef, selectedIndex, handleItemFocus, handleBlur };
+    return { containerRef, focusedIndex, handleItemFocus, handleBlur };
 };

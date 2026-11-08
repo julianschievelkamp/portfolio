@@ -19,7 +19,7 @@ vi.mock("elements/layout/Popup/Popup", () => ({
 describe("Portfolio", () => {
     beforeEach(() => {
         useStore.setState({
-            currentPortfolioIndex: 0,
+            activeIndex: 0,
             popupOpen: false,
             sidebarOpen: false,
         });
@@ -45,7 +45,7 @@ describe("Portfolio", () => {
             screen.getByRole("button", { name: portfolioData[2].title }),
         );
 
-        expect(useStore.getState().currentPortfolioIndex).toBe(2);
+        expect(useStore.getState().activeIndex).toBe(2);
         expect(useStore.getState().popupOpen).toBe(true);
     });
 
@@ -55,7 +55,7 @@ describe("Portfolio", () => {
         await userEvent.tab();
         await userEvent.keyboard("{Enter}");
 
-        expect(useStore.getState().currentPortfolioIndex).toBe(0);
+        expect(useStore.getState().activeIndex).toBe(0);
         expect(useStore.getState().popupOpen).toBe(true);
     });
 

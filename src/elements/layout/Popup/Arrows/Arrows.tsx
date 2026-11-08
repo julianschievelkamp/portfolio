@@ -3,24 +3,20 @@ import { useStore } from "hooks/useStore";
 import Icon from "elements/components/Icon/Icon";
 
 const Arrows = () => {
-    const { currentPortfolioIndex, setCurrentPortfolioIndex } = useStore();
+    const { activeIndex, setActiveIndex } = useStore();
 
     return (
         <>
             <Arrow
                 ariaLabel="Previous Artwork"
-                onClick={() =>
-                    setCurrentPortfolioIndex(currentPortfolioIndex - 1)
-                }
+                onClick={() => setActiveIndex(activeIndex - 1)}
             >
                 <Icon name="chevronLeft" size="4rem" />
             </Arrow>
             <Arrow
                 $isRight
                 ariaLabel="Next Artwork"
-                onClick={() =>
-                    setCurrentPortfolioIndex(currentPortfolioIndex + 1)
-                }
+                onClick={() => setActiveIndex(activeIndex + 1)}
             >
                 <Icon name="chevronRight" size="4rem" />
             </Arrow>

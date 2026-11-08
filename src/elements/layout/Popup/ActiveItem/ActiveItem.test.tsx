@@ -1,4 +1,10 @@
-import { act, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import {
+    act,
+    fireEvent,
+    render,
+    screen,
+    waitFor,
+} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
@@ -6,7 +12,10 @@ import { useStore } from "hooks/useStore";
 import { portfolioData, getAltText } from "data/portfolioFixtures";
 import ActiveItem from "./ActiveItem";
 
-vi.mock("data/portfolioData", async () => await import("data/portfolioFixtures"));
+vi.mock(
+    "data/portfolioData",
+    async () => await import("data/portfolioFixtures"),
+);
 vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: () => true }));
 
 const [photo, video, otherPhoto] = portfolioData;
@@ -21,7 +30,7 @@ const clickButton = (name: string) =>
 
 describe("ActiveItem", () => {
     beforeEach(() => {
-        useStore.setState({ currentPortfolioIndex: 1, popupOpen: true });
+        useStore.setState({ activeIndex: 1, popupOpen: true });
         // jsdom implementiert pause nicht
         vi.spyOn(HTMLMediaElement.prototype, "pause").mockImplementation(
             () => {},
@@ -51,7 +60,7 @@ describe("ActiveItem", () => {
     });
 
     it("renders no video for an item without video", () => {
-        useStore.setState({ currentPortfolioIndex: 0 });
+        useStore.setState({ activeIndex: 0 });
         render(<ActiveItem />);
 
         expect(screen.getByAltText(getAltText(photo))).toBeInTheDocument();
@@ -59,10 +68,10 @@ describe("ActiveItem", () => {
     });
 
     it("keeps the previous image until the new one is preloaded", async () => {
-        useStore.setState({ currentPortfolioIndex: 0 });
+        useStore.setState({ activeIndex: 0 });
         render(<ActiveItem />);
 
-        act(() => useStore.setState({ currentPortfolioIndex: 1 }));
+        act(() => useStore.setState({ activeIndex: 1 }));
 
         // Direkt nach dem Wechsel sind Bild und Video noch die des alten Items
         expect(screen.getByAltText(getAltText(photo))).toHaveAttribute(
@@ -105,7 +114,7 @@ describe("ActiveItem", () => {
     });
 
     it("renders nothing while no item is selected", () => {
-        useStore.setState({ currentPortfolioIndex: -1 });
+        useStore.setState({ activeIndex: -1 });
         const { container } = render(<ActiveItem />);
 
         expect(container).toBeEmptyDOMElement();
@@ -157,7 +166,7 @@ describe("ActiveItem", () => {
         fireEvent.load(screen.getByAltText(getAltText(video)));
         await waitFor(() => expect(activeItem).toHaveStyle({ opacity: "1" }));
 
-        act(() => useStore.setState({ currentPortfolioIndex: 2 }));
+        act(() => useStore.setState({ activeIndex: 2 }));
 
         expect(activeItem).toHaveStyle({ opacity: "1" });
         expect(screen.getByAltText(getAltText(video))).toBeInTheDocument();
@@ -195,9 +204,9 @@ describe("ActiveItem", () => {
         await clickButton("Toggle Volume");
         await clickButton("Toggle Video");
 
-        act(() => useStore.setState({ currentPortfolioIndex: 2 }));
+        act(() => useStore.setState({ activeIndex: 2 }));
         await screen.findByAltText(getAltText(otherPhoto));
-        act(() => useStore.setState({ currentPortfolioIndex: 1 }));
+        act(() => useStore.setState({ activeIndex: 1 }));
         await screen.findByAltText(getAltText(video));
         loadImage(video);
 

@@ -5,8 +5,7 @@ import { queries } from "styles/variables";
 
 export const usePopupControls = () => {
     const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
-    const { popupOpen, currentPortfolioIndex, setCurrentPortfolioIndex } =
-        useStore();
+    const { popupOpen, activeIndex, setActiveIndex } = useStore();
 
     // Touch-Koordinaten werden nur in Event-Handlern gelesen und brauchen kein Rendering
     const touchStart = useRef<number | null>(null);
@@ -58,9 +57,9 @@ export const usePopupControls = () => {
             const isNextSwipe = distance < -minSwipeDistance;
 
             if (isPreviousSwipe) {
-                setCurrentPortfolioIndex(currentPortfolioIndex + 1);
+                setActiveIndex(activeIndex + 1);
             } else if (isNextSwipe) {
-                setCurrentPortfolioIndex(currentPortfolioIndex - 1);
+                setActiveIndex(activeIndex - 1);
             }
         };
 
@@ -68,9 +67,9 @@ export const usePopupControls = () => {
             if (!popupOpen) return;
 
             if (e.key === "ArrowLeft") {
-                setCurrentPortfolioIndex(currentPortfolioIndex - 1);
+                setActiveIndex(activeIndex - 1);
             } else if (e.key === "ArrowRight") {
-                setCurrentPortfolioIndex(currentPortfolioIndex + 1);
+                setActiveIndex(activeIndex + 1);
             }
         };
 
