@@ -1,3 +1,4 @@
+import Link from "elements/components/Link/Link";
 import { styled } from "styled-components";
 import { queries } from "styles/variables";
 
@@ -13,7 +14,7 @@ export const BadgesWrapper = styled.div`
     }
 `;
 
-export const StyledLink = styled.a`
+export const StyledLink = styled(Link)`
     display: flex;
     align-items: center;
 
