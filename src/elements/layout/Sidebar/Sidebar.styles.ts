@@ -22,7 +22,9 @@ export const StyledSidebar = styled.aside<{
     transform: ${({ $sidebarOpen }) =>
         `translateX(${$sidebarOpen ? 0 : "-100%"})`};
     visibility: ${({ $sidebarOpen }) => ($sidebarOpen ? "visible" : "hidden")};
-    transition: ${transition.default};
+    /* Beim Öffnen ease-out, beim Schließen ease-in */
+    transition: ${({ $sidebarOpen }) =>
+        $sidebarOpen ? transition.default : transition.defaultIn};
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -43,7 +45,9 @@ export const CloseTrigger = styled.div<{ $isActive: boolean }>`
     top: 0;
     left: 0;
     backdrop-filter: blur(2px);
-    transition: ${transition.default};
+    /* Beim Öffnen ease-out, beim Schließen ease-in */
+    transition: ${({ $isActive }) =>
+        $isActive ? transition.default : transition.defaultIn};
     opacity: ${({ $isActive }) => ($isActive ? 1 : 0)};
     visibility: ${({ $isActive }) => ($isActive ? "visible" : "hidden")};
     z-index: 9;

@@ -1,7 +1,7 @@
 import { keyframes, styled } from "styled-components";
 import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
-import { transition, TRANSITION_DEFAULT } from "styles/variables";
+import { transition } from "styles/variables";
 
 export const StyledVideo = styled.video`
     width: ${({ width }) => width};
@@ -38,5 +38,5 @@ export const PlayIcon = styled(Icon)<{ $isHidden: boolean }>`
     backdrop-filter: blur(8px);
     animation: ${fadeIn} ${transition.default};
     opacity: ${({ $isHidden }) => ($isHidden ? 0 : 1)};
-    transition: opacity ${TRANSITION_DEFAULT}ms ease-in;
+    transition: opacity ${transition.defaultIn};
 `;

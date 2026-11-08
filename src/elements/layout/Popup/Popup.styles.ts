@@ -1,6 +1,6 @@
 import { queries } from "styles/variables";
 import { styled } from "styled-components";
-import { transition, TRANSITION_DEFAULT } from "styles/variables";
+import { transition } from "styles/variables";
 import Button from "elements/components/Button/Button";
 
 export const StyledPopup = styled.dialog`
@@ -32,7 +32,7 @@ export const StyledPopup = styled.dialog`
 
     /* Ein-/Ausblenden über data-visible; das Schließen erfolgt per JS nach der Transition */
     opacity: 0;
-    transition: opacity ${TRANSITION_DEFAULT}ms ease-in;
+    transition: opacity ${transition.defaultIn};
 
     &[data-visible="true"] {
         opacity: 1;
