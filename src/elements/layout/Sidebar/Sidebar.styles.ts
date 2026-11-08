@@ -76,6 +76,4 @@ export const MainTitle = styled(Text)`
     }
 `;
 
-export const SidebarFooter = styled.footer`
-    margin-top: 0.5rem;
-`;
+export const SidebarFooter = styled.footer``;

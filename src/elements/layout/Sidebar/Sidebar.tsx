@@ -49,11 +49,7 @@ const Sidebar = ({ page }: SidebarProps) => {
 
                 <ScrollContainer margin="1.5rem 0 0 0">
                     <Div>
-                        <Text
-                            fontSize="0.875rem"
-                            margin="0 0 3rem 0"
-                            color={colors.secondary}
-                        >
+                        <Text fontSize="0.875rem" color={colors.secondary}>
                             {languageData.intro}
                         </Text>
 
