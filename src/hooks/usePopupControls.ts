@@ -92,5 +92,5 @@ export const usePopupControls = () => {
             document.removeEventListener("touchmove", onTouchMove);
             document.removeEventListener("touchend", onTouchEnd);
         };
-    });
+    }, [popupOpen, activeIndex, isLandscapeLgMax, setActiveIndex]);
 };
