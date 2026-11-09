@@ -12,6 +12,8 @@ export const ArtistWrapper = styled.div`
     }
 `;
 
+export const ArtistContent = styled.div``;
+
 export const PortraitFigure = styled.figure`
     display: flex;
     justify-content: center;

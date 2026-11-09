@@ -1,11 +1,11 @@
 import { useStore } from "hooks/useStore";
 import {
+    Backdrop,
     CloseButton,
     InnerWrapper,
     OuterWrapper,
     StyledPopup,
 } from "./Popup.styles";
-import Div from "elements/components/Div/Div";
 import { usePopupControls } from "hooks/usePopupControls";
 import { usePopupDialog } from "hooks/usePopupDialog";
 import Slider from "./Slider/Slider";
@@ -44,12 +44,7 @@ const Popup = () => {
             </CloseButton>
 
             <OuterWrapper>
-                <Div
-                    position="absolute"
-                    width="100%"
-                    height="100%"
-                    onClick={() => setPopupOpen(false)}
-                />
+                <Backdrop onClick={() => setPopupOpen(false)} />
 
                 <InnerWrapper>
                     {isLandscape && !isLandscapeLgMax && <Arrows />}

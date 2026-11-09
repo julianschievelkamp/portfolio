@@ -1,5 +1,6 @@
 import Text from "elements/components/Text/Text";
 import {
+    ArtistContent,
     ArtistSection,
     ArtistWrapper,
     PortraitCaption,
@@ -7,7 +8,6 @@ import {
 } from "./Artist.styles";
 import { languageData } from "data/languageData";
 import Image from "elements/components/Image/Image";
-import Div from "elements/components/Div/Div";
 import Social from "./Social/Social";
 import Headline from "elements/components/Headline/Headline";
 
@@ -31,13 +31,13 @@ const Artist = () => {
                         {artistData.image.caption}
                     </PortraitCaption>
                 </PortraitFigure>
-                <Div>
+                <ArtistContent>
                     <Text fontSize="0.875rem" textAlign="justify">
                         {artistData.text}
                     </Text>
 
                     <Social />
-                </Div>
+                </ArtistContent>
             </ArtistWrapper>
         </ArtistSection>
     );

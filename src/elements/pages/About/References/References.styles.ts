@@ -21,6 +21,8 @@ export const ReferencesWrapper = styled.div`
     }
 `;
 
+export const ReferenceHeader = styled.div``;
+
 export const ListWrapper = styled.div`
     padding: 0 0 0 1rem;
 

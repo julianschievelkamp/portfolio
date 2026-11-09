@@ -24,6 +24,10 @@ export const InnerWrapper = styled.div`
     height: 100%;
 `;
 
+export const TitleWrapper = styled.div``;
+
+export const BadgeItem = styled.div``;
+
 export const ImageTitle = styled(Text)`
     font-family: "PlayfairDisplay", sans-serif;
     font-weight: 900;

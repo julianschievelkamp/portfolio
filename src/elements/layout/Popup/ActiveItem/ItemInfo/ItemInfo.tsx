@@ -1,11 +1,12 @@
 import {
+    BadgeItem,
     BadgesWrapper,
     ImageTitle,
     InnerWrapper,
     StyledItemInfo,
+    TitleWrapper,
 } from "./ItemInfo.styles";
 import { badges, PortfolioItem } from "data/portfolioData";
-import Div from "elements/components/Div/Div";
 import Text from "elements/components/Text/Text";
 import Image from "elements/components/Image/Image";
 
@@ -18,14 +19,14 @@ const ItemInfo = ({ loadedItem, isInfoOn }: ItemInfoProps) => {
     return (
         <StyledItemInfo $isVisible={isInfoOn}>
             <InnerWrapper>
-                <Div>
+                <TitleWrapper>
                     <ImageTitle color="white" fontSize="0.875rem">
                         {loadedItem.title} / {loadedItem.year}
                     </ImageTitle>
                     <Text color="white" fontSize="0.875rem">
                         {loadedItem.type}
                     </Text>
-                </Div>
+                </TitleWrapper>
 
                 {loadedItem.badges && (
                     <BadgesWrapper>
@@ -33,7 +34,7 @@ const ItemInfo = ({ loadedItem, isInfoOn }: ItemInfoProps) => {
                             const badge = badges[key];
 
                             return (
-                                <Div key={key}>
+                                <BadgeItem key={key}>
                                     <Image
                                         src={badge.image}
                                         alt={badge.alt}
@@ -42,7 +43,7 @@ const ItemInfo = ({ loadedItem, isInfoOn }: ItemInfoProps) => {
                                         width="2rem"
                                         height="2rem"
                                     />
-                                </Div>
+                                </BadgeItem>
                             );
                         })}
                     </BadgesWrapper>

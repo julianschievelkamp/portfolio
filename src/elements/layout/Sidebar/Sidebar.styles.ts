@@ -6,7 +6,6 @@ import {
     transition,
 } from "styles/variables";
 import Text from "elements/components/Text/Text";
-import Div from "elements/components/Div/Div";
 
 export const StyledSidebar = styled.aside<{
     $sidebarOpen: boolean;
@@ -57,9 +56,10 @@ export const CloseTrigger = styled.div<{ $isActive: boolean }>`
     }
 `;
 
-export const ScrollContainer = styled(Div)`
+export const ScrollContainer = styled.div`
     ${scrollStyles}
 
+    margin: 1.5rem 0 0 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -75,5 +75,7 @@ export const MainTitle = styled(Text)`
         visibility: visible;
     }
 `;
+
+export const SidebarContent = styled.div``;
 
 export const SidebarFooter = styled.footer``;

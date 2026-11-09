@@ -1,11 +1,11 @@
 import Text from "elements/components/Text/Text";
 import {
     ListWrapper,
+    ReferenceHeader,
     ReferencesSection,
     ReferencesWrapper,
 } from "./References.styles";
 import { languageData } from "data/languageData";
-import Div from "elements/components/Div/Div";
 import List from "elements/components/List/List";
 import Headline from "elements/components/Headline/Headline";
 
@@ -16,14 +16,14 @@ const References = () => {
         <ReferencesSection>
             <Headline type="h2">{referencesData.headline}</Headline>
             <ReferencesWrapper>
-                <Div>
+                <ReferenceHeader>
                     <Text fontSize="0.875rem" bold>
                         {referencesData.publications.title}
                     </Text>
                     <Text fontSize="0.875rem">
                         {referencesData.publications.subTitle}
                     </Text>
-                </Div>
+                </ReferenceHeader>
                 <ListWrapper>
                     <List
                         items={referencesData.publications.listEntries1}
@@ -35,14 +35,14 @@ const References = () => {
                     />
                     <List items={referencesData.publications.listEntries3} />
                 </ListWrapper>
-                <Div>
+                <ReferenceHeader>
                     <Text fontSize="0.875rem" bold>
                         {referencesData.awards.title}
                     </Text>
                     <Text fontSize="0.875rem">
                         {referencesData.awards.subTitle}
                     </Text>
-                </Div>
+                </ReferenceHeader>
                 <ListWrapper>
                     <List
                         items={referencesData.awards.listEntries1}

@@ -2,6 +2,7 @@ import Text from "elements/components/Text/Text";
 import {
     CloseTrigger,
     ScrollContainer,
+    SidebarContent,
     SidebarFooter,
     MainTitle,
     StyledSidebar,
@@ -13,7 +14,6 @@ import { useStore } from "hooks/useStore";
 import { useSidebarControls } from "hooks/useSidebarControls";
 import { Page } from "data/navigationData";
 
-import Div from "elements/components/Div/Div";
 import Link from "elements/components/Link/Link";
 
 export interface SidebarProps {
@@ -48,14 +48,14 @@ const Sidebar = ({ page }: SidebarProps) => {
                     </Link>
                 </MainTitle>
 
-                <ScrollContainer margin="1.5rem 0 0 0">
-                    <Div>
+                <ScrollContainer>
+                    <SidebarContent>
                         <Text fontSize="0.875rem" color={colors.secondary}>
                             {languageData.intro}
                         </Text>
 
                         <Navigation page={page} />
-                    </Div>
+                    </SidebarContent>
 
                     <SidebarFooter>
                         <Text fontSize="0.875rem" color={colors.secondary}>

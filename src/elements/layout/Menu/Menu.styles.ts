@@ -24,6 +24,13 @@ export const StyledMenu = styled.header<{ $isVisible: boolean }>`
     }
 `;
 
+export const ToggleWrapper = styled.div`
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 2rem;
+`;
+
 export const MainTitle = styled(Text)`
     ${mainTitleStyles}
 `;

@@ -1,7 +1,6 @@
-import { MainTitle, StyledMenu } from "./Menu.styles";
+import { MainTitle, StyledMenu, ToggleWrapper } from "./Menu.styles";
 import { languageData } from "data/languageData";
 import { useMenuVisibility } from "hooks/useMenuVisibility";
-import Div from "elements/components/Div/Div";
 import { useStore } from "hooks/useStore";
 import Link from "elements/components/Link/Link";
 import Button from "elements/components/Button/Button";
@@ -24,12 +23,7 @@ const Menu = () => {
                 </Link>
             </MainTitle>
 
-            <Div
-                height="100%"
-                display="flex"
-                alignItems="center"
-                margin="0 0 0 2rem"
-            >
+            <ToggleWrapper>
                 <Button
                     onClick={() => setSidebarOpen(!sidebarOpen)}
                     ariaExpanded={sidebarOpen}
@@ -39,7 +33,7 @@ const Menu = () => {
                 >
                     <Icon name={sidebarOpen ? "close" : "menu"} size="2rem" />
                 </Button>
-            </Div>
+            </ToggleWrapper>
         </StyledMenu>
     );
 };

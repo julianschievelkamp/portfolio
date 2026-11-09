@@ -1,8 +1,12 @@
 import { styled } from "styled-components";
-import Div from "elements/components/Div/Div";
 import { colors, transition } from "styles/variables";
 
-export const StyledSocial = styled(Div)`
+export const StyledSocial = styled.div`
+    display: flex;
+    align-items: center;
+    margin: 2rem 0 0 0;
+    width: fit-content;
+
     &:hover {
         img {
             transform: scale(1.1);
@@ -13,6 +17,10 @@ export const StyledSocial = styled(Div)`
             transition: ${transition.fast};
         }
     }
+`;
+
+export const SocialText = styled.div`
+    margin: 0 1rem 0 0.5rem;
 `;
 
 export const StyledProfile = styled.div`
