@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 import {
     mainTitleStyles,
-    overlayExtensionStyles,
     queries,
     scrollOffsets,
     scrollStyles,
@@ -11,12 +10,8 @@ import {
 } from "styles/variables";
 import Text from "elements/components/Text/Text";
 
-// Mobil absolut positioniert, siehe viewportOverlayStyles
-const mobileOverlayStyles = viewportOverlayStyles(scrollOffsets.sidebar);
-
 export const StyledSidebar = styled.aside<{ $sidebarOpen: boolean }>`
-    ${mobileOverlayStyles}
-    ${overlayExtensionStyles("white")}
+    ${viewportOverlayStyles(scrollOffsets.sidebar)}
 
     background-color: white;
     width: 15rem;
@@ -51,7 +46,7 @@ export const StyledSidebar = styled.aside<{ $sidebarOpen: boolean }>`
 `;
 
 export const CloseTrigger = styled.div<{ $isActive: boolean }>`
-    ${mobileOverlayStyles}
+    ${viewportOverlayStyles(scrollOffsets.sidebar)}
 
     /* Der Blur lässt sich nicht per Schatten verlängern, daher reicht das
        Overlay selbst bis hinter die Adressleiste (eine Bildschirmhöhe extra,

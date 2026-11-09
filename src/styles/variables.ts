@@ -36,22 +36,13 @@ export const scrollOffsets = {
 
 // Berührt ein sichtbares fixed-Element den unteren Rand, füllt Safari (iOS)
 // die Fläche hinter der Adressleiste mit der Seitenfarbe. Absolut positionierte
-// Elemente lösen das nicht aus. Da die Seite bei geöffnetem Overlay gesperrt
-// ist, liegt es über die Scrollposition (useScrollOffset) trotzdem genau im
-// sichtbaren Bereich. Die Höhe entspricht dem sichtbaren Bereich, damit sich
-// Inhalte weiterhin daran ausrichten.
+// Elemente lösen das nicht aus.
 export const viewportOverlayStyles = (offsetProperty: string) => css`
     position: absolute;
-    top: var(${offsetProperty}, 0);
     left: 0;
+    top: var(${offsetProperty}, 0);
     height: var(--100svh);
-`;
-
-// Verlängert den Hintergrund eines Overlays bis hinter die Adressleiste. Der
-// Schatten ist eine Kopie direkt unter dem Overlay; er beeinflusst das Layout
-// nicht und wird durch overflow nicht abgeschnitten.
-export const overlayExtensionStyles = (color: string) => css`
-    box-shadow: 0 var(--100svh) 0 0 ${color};
+    box-shadow: 0 var(--100svh) 0 0 white;
 `;
 
 export const thumbnailSize = "(max-width: 1200px) 300px, 600px";

@@ -1,5 +1,4 @@
 import {
-    overlayExtensionStyles,
     queries,
     scrollOffsets,
     viewportOverlayStyles,
@@ -9,17 +8,13 @@ import { transition } from "styles/variables";
 import Button from "elements/components/Button/Button";
 
 export const StyledPopup = styled.dialog`
-    /* Absolut statt fixed, siehe viewportOverlayStyles. Im Top Layer bezieht
-       sich die Position auf den Dokumentanfang */
     ${viewportOverlayStyles(scrollOffsets.popup)}
-    ${overlayExtensionStyles("white")}
 
     margin: 0;
     border: none;
     outline: none;
     max-width: none;
     max-height: none;
-    /* Verhindert den horizontalen Overflow durch den Slider */
     overflow: hidden;
     color: inherit;
     background-color: white;
@@ -33,8 +28,6 @@ export const StyledPopup = styled.dialog`
         }
     }
 
-    /* Der Backdrop ist fixed und bildschirmfüllend und würde in Safari
-       ebenfalls die weiße Fläche hinter der Adressleiste auslösen */
     &::backdrop {
         display: none;
     }
