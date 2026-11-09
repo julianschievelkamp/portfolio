@@ -12,12 +12,15 @@ export const StyledMenu = styled.header<{ $isVisible: boolean }>`
     justify-content: space-between;
     top: 0;
     left: 0;
+    z-index: 99;
     transform: ${({ $isVisible }) => `translateY(${$isVisible ? 0 : "-100%"})`};
     visibility: ${({ $isVisible }) => ($isVisible ? "visible" : "hidden")};
     /* Beim Öffnen ease-out, beim Schließen ease-in */
-    transition: ${({ $isVisible }) =>
-        $isVisible ? transition.default : transition.defaultIn};
-    z-index: 99;
+    transition: ${({ $isVisible }) => {
+        const timing = $isVisible ? transition.default : transition.defaultIn;
+
+        return `transform ${timing}, visibility ${timing}`;
+    }};
 
     @media ${queries.md} {
         display: none;

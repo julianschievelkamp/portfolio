@@ -1,7 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 import fonts from "./fonts";
 
-export default createGlobalStyle`
+interface GlobalStyleProps {
+    // Sperrt das Scrollen der Seite, solange ein Overlay geöffnet ist
+    $scrollLocked?: boolean;
+}
+
+export default createGlobalStyle<GlobalStyleProps>`
     ${fonts};
 
     :root {
@@ -27,10 +32,10 @@ export default createGlobalStyle`
         margin: 0;
         padding: 0;
         font-size: 100%;
+        overflow-x: hidden;
         width: 100vw;
-        height: var(--100svh);
-        overflow: hidden;
         background-color: white;
+        overflow-y: ${({ $scrollLocked }) => ($scrollLocked ? "hidden" : "visible")};
     }
 
     .no-transition * {

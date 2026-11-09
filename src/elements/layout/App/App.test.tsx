@@ -8,6 +8,12 @@ import App from "./App";
 vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: vi.fn() }));
 vi.mock("elements/layout/Sidebar/Sidebar", () => ({ default: () => <aside /> }));
 vi.mock("elements/layout/Menu/Menu", () => ({ default: () => <header /> }));
+// jsdom erhält keine Styles von styled-components, daher wird die Prop direkt geprüft
+vi.mock("styles/global", () => ({
+    default: ({ $scrollLocked }: { $scrollLocked?: boolean }) => (
+        <span data-testid="global-style" data-scroll-locked={$scrollLocked} />
+    ),
+}));
 
 const page = {
     name: "Test",
@@ -19,7 +25,7 @@ const page = {
 
 describe("App", () => {
     beforeEach(() => {
-        useStore.setState({ sidebarOpen: false });
+        useStore.setState({ sidebarOpen: false, popupOpen: false });
         vi.mocked(useMediaQuery).mockReturnValue(false);
     });
 
@@ -79,5 +85,54 @@ describe("App", () => {
             </App>);
 
         expect(screen.getByRole("main")).not.toHaveAttribute("inert");
+    });
+
+    it("keeps the page scrollable while no overlay is open", () => {
+        render(<App page={page}>
+                <p>Content</p>
+            </App>);
+
+        expect(screen.getByTestId("global-style")).toHaveAttribute(
+            "data-scroll-locked",
+            "false",
+        );
+    });
+
+    it("locks page scrolling while the sidebar is open on mobile", () => {
+        useStore.setState({ sidebarOpen: true });
+        render(<App page={page}>
+                <p>Content</p>
+            </App>);
+
+        expect(screen.getByTestId("global-style")).toHaveAttribute(
+            "data-scroll-locked",
+            "true",
+        );
+    });
+
+    it("keeps the page scrollable with an open sidebar on desktop", () => {
+        useStore.setState({ sidebarOpen: true });
+        vi.mocked(useMediaQuery).mockReturnValue(true);
+        render(<App page={page}>
+                <p>Content</p>
+            </App>);
+
+        expect(screen.getByTestId("global-style")).toHaveAttribute(
+            "data-scroll-locked",
+            "false",
+        );
+    });
+
+    it("locks page scrolling while the popup is open", () => {
+        useStore.setState({ popupOpen: true });
+        vi.mocked(useMediaQuery).mockReturnValue(true);
+        render(<App page={page}>
+                <p>Content</p>
+            </App>);
+
+        expect(screen.getByTestId("global-style")).toHaveAttribute(
+            "data-scroll-locked",
+            "true",
+        );
     });
 });

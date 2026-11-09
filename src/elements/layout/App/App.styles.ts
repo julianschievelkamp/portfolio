@@ -1,20 +1,8 @@
 import { styled } from "styled-components";
-import { queries, scrollStyles } from "styles/variables";
+import { queries } from "styles/variables";
 
-export const StyledApp = styled.div`
-    width: 100vw;
-    height: var(--100svh);
-    overflow: hidden;
-    background-color: white;
-    color: black;
-    position: relative;
-`;
-
-export const PageContainer = styled.main`
-    ${scrollStyles}
-
+export const Main = styled.main`
     width: 100%;
-    height: var(--100svh);
     padding-top: 7.5rem;
 
     @media ${queries.md} {
