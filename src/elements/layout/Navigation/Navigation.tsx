@@ -23,6 +23,7 @@ const Navigation = ({ page }: NavigationProps) => {
                 color={colors.secondary}
                 margin="0 0 0.5rem 0"
                 fontSize="0.875rem"
+                toUpperCase
             >
                 {languageData.work}
             </Text>
@@ -59,6 +60,7 @@ const Navigation = ({ page }: NavigationProps) => {
                 color={colors.secondary}
                 margin="0.5rem 0"
                 fontSize="0.875rem"
+                toUpperCase
             >
                 {languageData.links}
             </Text>

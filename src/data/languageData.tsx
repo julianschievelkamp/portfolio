@@ -14,8 +14,8 @@ export const languageData = {
         </>
     ),
     intro: "Visual artist and fine art photographer highlighting the synergies of classic photography and CGI.",
-    work: "WORK",
-    links: "LINKS",
+    work: "Work",
+    links: "Links",
     copyright: (
         <>
             © Julian Schievelkamp
@@ -28,7 +28,7 @@ export const languageData = {
     },
     about: {
         artist: {
-            headline: "About the artist",
+            headline: "About the Artist",
             image: {
                 src: SelfPortrait,
                 alt: "Julian Schievelkamp",
@@ -78,7 +78,7 @@ export const languageData = {
                 <>
                     Selected
                     <br />
-                    references
+                    References
                 </>
             ),
             publications: {
@@ -208,9 +208,9 @@ export const languageData = {
         badges: {
             headline: (
                 <>
-                    First prize
+                    First Prize
                     <br />
-                    winner
+                    Winner
                 </>
             ),
         },

@@ -9,6 +9,7 @@ export interface TextProps {
     textAlign?: "left" | "center" | "right" | "justify";
     margin?: string;
     fontSize?: string;
+    toUpperCase?: boolean;
     className?: string;
 }
 
@@ -19,6 +20,7 @@ const Text = ({
     textAlign,
     margin = "0",
     fontSize = "1rem",
+    toUpperCase = false,
     className,
 }: TextProps) => {
     return (
@@ -28,6 +30,7 @@ const Text = ({
             $textAlign={textAlign}
             $margin={margin}
             $fontSize={fontSize}
+            $toUpperCase={toUpperCase}
             className={className}
         >
             {children}
