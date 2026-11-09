@@ -1,21 +1,19 @@
 import {
-    overlayBottomInset,
-    overlayPositionStyles,
+    overlayExtensionStyles,
     queries,
     scrollOffsets,
+    viewportOverlayStyles,
 } from "styles/variables";
 import { styled } from "styled-components";
 import { transition } from "styles/variables";
 import Button from "elements/components/Button/Button";
 
 export const StyledPopup = styled.dialog`
-    /* Absolut statt fixed, siehe overlayPositionStyles. Im Top Layer bezieht
+    /* Absolut statt fixed, siehe viewportOverlayStyles. Im Top Layer bezieht
        sich die Position auf den Dokumentanfang */
-    ${overlayPositionStyles(scrollOffsets.popup)}
+    ${viewportOverlayStyles(scrollOffsets.popup)}
+    ${overlayExtensionStyles("white")}
 
-    /* Der Dialog selbst füllt nur den sichtbaren Bereich, damit sich seine
-       Inhalte (z. B. der Slider) weiterhin daran ausrichten */
-    height: var(--100svh);
     margin: 0;
     border: none;
     outline: none;
@@ -34,11 +32,6 @@ export const StyledPopup = styled.dialog`
             padding: 1rem 8rem;
         }
     }
-
-    /* Verlängert den weißen Hintergrund bis hinter die Adressleiste. Als
-       Schatten statt Kind-Element, da overflow den eigenen Schatten nicht
-       abschneidet */
-    box-shadow: 0 ${overlayBottomInset} 0 0 white;
 
     /* Der Backdrop ist fixed und bildschirmfüllend und würde in Safari
        ebenfalls die weiße Fläche hinter der Adressleiste auslösen */

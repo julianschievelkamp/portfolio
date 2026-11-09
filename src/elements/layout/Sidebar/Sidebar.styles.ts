@@ -1,11 +1,12 @@
 import { styled } from "styled-components";
 import {
     mainTitleStyles,
-    overlayBottomInset,
+    overlayExtensionStyles,
     queries,
     scrollOffsets,
     scrollStyles,
     transition,
+    TRANSITION_DEFAULT,
     viewportOverlayStyles,
 } from "styles/variables";
 import Text from "elements/components/Text/Text";
@@ -15,6 +16,7 @@ const mobileOverlayStyles = viewportOverlayStyles(scrollOffsets.sidebar);
 
 export const StyledSidebar = styled.aside<{ $sidebarOpen: boolean }>`
     ${mobileOverlayStyles}
+    ${overlayExtensionStyles("white")}
 
     background-color: white;
     width: 15rem;
@@ -40,6 +42,7 @@ export const StyledSidebar = styled.aside<{ $sidebarOpen: boolean }>`
         position: fixed;
         top: 0;
         height: 100%;
+        box-shadow: none;
         width: 17rem;
         padding: 2rem;
         transform: translateX(0);
@@ -50,15 +53,21 @@ export const StyledSidebar = styled.aside<{ $sidebarOpen: boolean }>`
 export const CloseTrigger = styled.div<{ $isActive: boolean }>`
     ${mobileOverlayStyles}
 
+    /* Der Blur lässt sich nicht per Schatten verlängern, daher reicht das
+       Overlay selbst bis hinter die Adressleiste (eine Bildschirmhöhe extra,
+       wie der Schatten der Sidebar). Nur während es aktiv ist bzw. ausblendet,
+       da es sonst kurze Seiten künstlich verlängern würde */
+    height: ${({ $isActive }) =>
+        $isActive ? "calc(var(--100svh) * 2)" : "var(--100svh)"};
     width: 100%;
     backdrop-filter: blur(2px);
     /* Beim Öffnen ease-out, beim Schließen ease-in. Nur opacity und
-       visibility animieren, damit der Wechsel von top nicht mitläuft */
-    transition: ${({ $isActive }) => {
-        const timing = $isActive ? transition.default : transition.defaultIn;
-
-        return `opacity ${timing}, visibility ${timing}`;
-    }};
+       visibility animieren, damit der Wechsel von top nicht mitläuft. Die
+       Höhe springt beim Schließen erst nach dem Ausblenden zurück */
+    transition: ${({ $isActive }) =>
+        $isActive
+            ? `opacity ${transition.default}, visibility ${transition.default}`
+            : `opacity ${transition.defaultIn}, visibility ${transition.defaultIn}, height 0s ${TRANSITION_DEFAULT}ms`};
     opacity: ${({ $isActive }) => ($isActive ? 1 : 0)};
     visibility: ${({ $isActive }) => ($isActive ? "visible" : "hidden")};
     z-index: 9;
@@ -72,18 +81,10 @@ export const ScrollContainer = styled.div`
     ${scrollStyles}
 
     margin: 1.5rem 0 0 0;
-    /* Abstand in Höhe der Adressleiste, damit der Inhalt nicht dahinter verschwindet */
-    /* inklusive Zugabe, damit der Footer an seiner Position bleibt */
-    padding-bottom: ${overlayBottomInset};
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-
-    @media ${queries.md} {
-        /* Auf Desktop ist die Sidebar fixed und ohne Zugabe */
-        padding-bottom: 0;
-    }
 `;
 
 // Der Titel ist nur auf Desktop sichtbar; auf Mobile liegt er im Menü
