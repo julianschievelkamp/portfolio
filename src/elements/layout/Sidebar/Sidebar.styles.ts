@@ -75,7 +75,3 @@ export const MainTitle = styled(Text)`
         visibility: visible;
     }
 `;
-
-export const SidebarContent = styled.div``;
-
-export const SidebarFooter = styled.footer``;
