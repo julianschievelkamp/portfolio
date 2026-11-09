@@ -3,7 +3,7 @@ import { queries, scrollStyles } from "styles/variables";
 
 export const StyledApp = styled.div`
     width: 100vw;
-    height: var(--100vh);
+    height: var(--100svh);
     overflow: hidden;
     background-color: white;
     color: black;
@@ -14,7 +14,7 @@ export const PageContainer = styled.main`
     ${scrollStyles}
 
     width: 100%;
-    height: var(--100vh);
+    height: var(--100svh);
     padding-top: 7.5rem;
 
     @media ${queries.md} {

@@ -23,10 +23,10 @@ export const ItemFigure = styled.figure`
     > video {
         object-fit: cover;
         min-height: 10rem;
-        max-height: calc(var(--100vh) - 14rem);
+        max-height: calc(var(--100svh) - 14rem);
 
         @media ${queries.landscapeLgMax} {
-            max-height: calc(var(--100vh) - 3rem);
+            max-height: calc(var(--100svh) - 3rem);
             max-width: calc(100vw - 11rem);
         }
     }
