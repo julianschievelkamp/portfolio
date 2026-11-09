@@ -32,10 +32,10 @@ export default createGlobalStyle<GlobalStyleProps>`
         margin: 0;
         padding: 0;
         font-size: 100%;
+        background-color: white;
         /* clip statt hidden: erzeugt keinen eigenen Scroll-Container auf body,
            der auf iOS position: fixed und die Adressleiste stört */
         overflow-x: clip;
-        background-color: white;
         overflow-y: ${({ $scrollLocked }) => ($scrollLocked ? "hidden" : "visible")};
     }
 

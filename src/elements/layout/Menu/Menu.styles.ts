@@ -13,13 +13,7 @@ export const StyledMenu = styled.header<{ $isVisible: boolean }>`
     left: 0;
     right: 0;
     z-index: 99;
-    /* Dauerhafte Compositing-Ebene, damit die Animation auf iOS nicht vom
-       Main-Thread abhängt, der beim Ein- und Ausklappen der Adressleiste
-       ausgelastet ist */
-    will-change: transform;
-    backface-visibility: hidden;
-    transform: ${({ $isVisible }) =>
-        `translate3d(0, ${$isVisible ? 0 : "-100%"}, 0)`};
+    transform: ${({ $isVisible }) => `translateY(${$isVisible ? 0 : "-100%"})`};
     visibility: ${({ $isVisible }) => ($isVisible ? "visible" : "hidden")};
     /* Beim Öffnen ease-out, beim Schließen ease-in */
     transition: ${({ $isVisible }) => {

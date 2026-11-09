@@ -38,11 +38,7 @@ const Navigation = ({ page }: NavigationProps) => {
                                 $isActive={isActive}
                                 href={path}
                                 ariaCurrent={isActive ? "page" : undefined}
-                                onClick={() => {
-                                    if (!isActive) {
-                                        setSidebarOpen(false);
-                                    }
-                                }}
+                                onClick={() => setSidebarOpen(false)}
                             >
                                 <Text
                                     bold={isActive}

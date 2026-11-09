@@ -60,12 +60,12 @@ describe("Navigation", () => {
         );
     });
 
-    it("keeps the sidebar open when the active page is clicked", async () => {
+    it("closes the sidebar when the active page is clicked", async () => {
         render(<Navigation page={home} />);
 
         await userEvent.click(screen.getByRole("link", { name: "Home" }));
 
-        expect(useStore.getState().sidebarOpen).toBe(true);
+        expect(useStore.getState().sidebarOpen).toBe(false);
     });
 
     it("closes the sidebar when another page is clicked", async () => {
