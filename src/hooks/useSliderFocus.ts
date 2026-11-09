@@ -1,4 +1,4 @@
-import { FocusEvent, useEffect, useRef, useState } from "react";
+import { FocusEvent, useCallback, useEffect, useRef, useState } from "react";
 import { useStore } from "./useStore";
 
 export const useSliderFocus = () => {
@@ -27,11 +27,15 @@ export const useSliderFocus = () => {
     }, [activeIndex]);
 
     // Nur wenn per Tab fokussiert wird, folgt der Slider dem fokussierten Item
-    const handleItemFocus = (e: FocusEvent<HTMLElement>, index: number) => {
-        if (e.target.matches(":focus-visible")) {
-            setFocusedIndex(index);
-        }
-    };
+    // Referenzstabil, damit die memoisierten Slider-Thumbnails nicht neu rendern
+    const handleItemFocus = useCallback(
+        (e: FocusEvent<HTMLElement>, index: number) => {
+            if (e.target.matches(":focus-visible")) {
+                setFocusedIndex(index);
+            }
+        },
+        [],
+    );
 
     // Verlässt der Fokus den Slider, wird wieder das aktuelle Bild zentriert
     const handleBlur = (e: FocusEvent<HTMLElement>) => {

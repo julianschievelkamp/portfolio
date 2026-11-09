@@ -1,14 +1,10 @@
-import {
-    PortfolioButton,
-    PortfolioCaption,
-    PortfolioFigure,
-    PortfolioGrid,
-} from "./Portfolio.styles";
-import Image from "elements/components/Image/Image";
+import { useCallback } from "react";
+import { PortfolioGrid } from "./Portfolio.styles";
+import PortfolioThumbnail from "./PortfolioThumbnail/PortfolioThumbnail";
 import { useStore } from "hooks/useStore";
-import { getAltText, getCaption, portfolioData } from "data/portfolioData";
+import { portfolioData } from "data/portfolioData";
 import Popup from "elements/layout/Popup/Popup";
-import { queries, Section, thumbnailSize } from "styles/variables";
+import { queries, Section } from "styles/variables";
 import { useMediaQuery } from "hooks/useMediaQuery";
 import Headline from "elements/components/Headline/Headline";
 import { languageData } from "data/languageData";
@@ -19,6 +15,17 @@ const Portfolio = () => {
     const setPopupOpen = useStore((state) => state.setPopupOpen);
     const sidebarOpen = useStore((state) => state.sidebarOpen);
 
+    const tabIndex = !isMd && sidebarOpen ? -1 : 0;
+
+    // Referenzstabil, damit die memoisierten Thumbnails nicht neu rendern
+    const handleSelect = useCallback(
+        (index: number) => {
+            setActiveIndex(index);
+            setPopupOpen(true);
+        },
+        [setActiveIndex, setPopupOpen],
+    );
+
     return (
         <>
             <Section>
@@ -28,31 +35,13 @@ const Portfolio = () => {
                 <PortfolioGrid>
                     {portfolioData.map((item, index) => {
                         return (
-                            <PortfolioFigure key={item.title}>
-                                <PortfolioButton
-                                    tabIndex={!isMd && sidebarOpen ? -1 : 0}
-                                    ariaLabel={`Show ${item.title}`}
-                                    onClick={() => {
-                                        setActiveIndex(index);
-                                        setPopupOpen(true);
-                                    }}
-                                />
-
-                                <Image
-                                    width="100%"
-                                    src={item.image}
-                                    srcSet={item.imageSet}
-                                    sizes={item.imageSet && thumbnailSize}
-                                    alt={getAltText(item)}
-                                    margin={item.thumbnailMargin}
-                                    aspectRatio={item.aspectRatio}
-                                    loading="lazy"
-                                    fadeInOnLoad
-                                />
-                                <PortfolioCaption>
-                                    {getCaption(item)}
-                                </PortfolioCaption>
-                            </PortfolioFigure>
+                            <PortfolioThumbnail
+                                key={item.title}
+                                item={item}
+                                index={index}
+                                tabIndex={tabIndex}
+                                onSelect={handleSelect}
+                            />
                         );
                     })}
                 </PortfolioGrid>

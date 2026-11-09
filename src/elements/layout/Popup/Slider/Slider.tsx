@@ -1,14 +1,8 @@
-import {
-    SliderContainer,
-    InnerSliderContainer,
-    SliderItem,
-    SliderListItem,
-} from "./Slider.styles";
-import Image from "elements/components/Image/Image";
+import { SliderContainer, InnerSliderContainer } from "./Slider.styles";
+import SliderThumbnail from "./SliderThumbnail/SliderThumbnail";
 import { useStore } from "hooks/useStore";
 import { useSliderFocus } from "hooks/useSliderFocus";
-import { getAltText, portfolioData } from "data/portfolioData";
-import { thumbnailSize } from "styles/variables";
+import { portfolioData } from "data/portfolioData";
 
 const Slider = () => {
     const activeIndex = useStore((state) => state.activeIndex);
@@ -21,26 +15,14 @@ const Slider = () => {
             <InnerSliderContainer role="list" $focusedIndex={focusedIndex}>
                 {portfolioData.map((item, index) => {
                     return (
-                        <SliderListItem key={item.title}>
-                            <SliderItem
-                                ariaLabel={`Show ${item.title}`}
-                                onClick={() => setActiveIndex(index)}
-                                onFocus={(e) => handleItemFocus(e, index)}
-                                ariaCurrent={index === activeIndex}
-                                $isActive={index === activeIndex}
-                            >
-                                <Image
-                                    width="100%"
-                                    src={item.image}
-                                    srcSet={item.imageSet}
-                                    sizes={item.imageSet && thumbnailSize}
-                                    alt={getAltText(item)}
-                                    margin={item.thumbnailMargin}
-                                    aspectRatio={item.aspectRatio}
-                                    loading="lazy"
-                                />
-                            </SliderItem>
-                        </SliderListItem>
+                        <SliderThumbnail
+                            key={item.title}
+                            item={item}
+                            index={index}
+                            isActive={index === activeIndex}
+                            onSelect={setActiveIndex}
+                            onItemFocus={handleItemFocus}
+                        />
                     );
                 })}
             </InnerSliderContainer>
