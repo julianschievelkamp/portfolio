@@ -8,9 +8,7 @@ const headlineStyles = css<{ $visuallyHidden?: boolean }>`
     font-family: "PlayfairDisplay", sans-serif;
     font-weight: 900;
     line-height: 1.5;
-
-    ${({ $visuallyHidden }) => $visuallyHidden && visuallyHidden}
-
+    text-transform: uppercase;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -22,6 +20,8 @@ const headlineStyles = css<{ $visuallyHidden?: boolean }>`
         height: 1px;
         background: black;
     }
+
+    ${({ $visuallyHidden }) => $visuallyHidden && visuallyHidden}
 `;
 
 export const H1 = styled.h1<{ $visuallyHidden?: boolean }>`

@@ -267,7 +267,7 @@ export const getAltText = (item: PortfolioItem) => {
 };
 
 export const getCaption = (item: PortfolioItem) => {
-    return `${item.title} / ${item.year} – ${item.type}`;
+    return `${item.title}, ${item.year} – ${item.type}`;
 };
 
 export const badges = {

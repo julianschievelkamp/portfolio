@@ -21,7 +21,7 @@ const ItemInfo = ({ loadedItem, isInfoOn }: ItemInfoProps) => {
             <InnerWrapper>
                 <TitleWrapper>
                     <ImageTitle color="white" fontSize="0.875rem">
-                        {loadedItem.title} / {loadedItem.year}
+                        {loadedItem.title}, {loadedItem.year}
                     </ImageTitle>
                     <Text color="white" fontSize="0.875rem">
                         {loadedItem.type}

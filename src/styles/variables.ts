@@ -38,6 +38,7 @@ export const scrollStyles = css`
 `;
 
 export const mainTitleStyles = css`
+    text-transform: uppercase;
     font-family: "PlayfairDisplay", sans-serif;
     font-weight: 900;
     font-size: 1.25rem;

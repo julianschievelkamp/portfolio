@@ -2,8 +2,16 @@ import type { PortfolioItem } from "data/portfolioData";
 
 // Testdaten, die portfolioData und badges in den Popup-Tests ersetzen
 export const badges = {
-    fapa: { image: "fapa.png", alt: "Fine Art Photography Awards", link: "https://example.com/fapa" },
-    px3: { image: "px3.png", alt: "Prix de la Photographie Paris", link: "https://example.com/px3" },
+    fapa: {
+        image: "fapa.png",
+        alt: "Fine Art Photography Awards",
+        link: "https://example.com/fapa",
+    },
+    px3: {
+        image: "px3.png",
+        alt: "Prix de la Photographie Paris",
+        link: "https://example.com/px3",
+    },
     nd: { image: "nd.png", alt: "ND Awards", link: "https://example.com/nd" },
 };
 
@@ -40,4 +48,4 @@ export const getAltText = (item: PortfolioItem) =>
     `${item.title} by Julian Schievelkamp`;
 
 export const getCaption = (item: PortfolioItem) =>
-    `${item.title} / ${item.year} – ${item.type}`;
+    `${item.title}, ${item.year} – ${item.type}`;

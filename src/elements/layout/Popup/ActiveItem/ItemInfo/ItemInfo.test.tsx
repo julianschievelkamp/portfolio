@@ -12,7 +12,7 @@ describe("ItemInfo", () => {
     it("shows title and year and the type", () => {
         render(<ItemInfo loadedItem={itemWithBadges} isInfoOn />);
 
-        expect(screen.getByText("First Photo / 2020")).toBeInTheDocument();
+        expect(screen.getByText("First Photo, 2020")).toBeInTheDocument();
         expect(screen.getByText("analog photograph")).toBeInTheDocument();
     });
 
@@ -36,17 +36,17 @@ describe("ItemInfo", () => {
         const { rerender } = render(
             <ItemInfo loadedItem={itemWithBadges} isInfoOn />,
         );
-        expect(screen.getByText("First Photo / 2020")).toBeVisible();
+        expect(screen.getByText("First Photo, 2020")).toBeVisible();
 
         rerender(<ItemInfo loadedItem={itemWithBadges} isInfoOn={false} />);
 
-        expect(screen.getByText("First Photo / 2020")).not.toBeVisible();
+        expect(screen.getByText("First Photo, 2020")).not.toBeVisible();
     });
 
     it("stays in the accessibility tree while the info panel is closed", () => {
         render(<ItemInfo loadedItem={itemWithBadges} isInfoOn={false} />);
 
-        expect(screen.getByText("First Photo / 2020")).toBeInTheDocument();
+        expect(screen.getByText("First Photo, 2020")).toBeInTheDocument();
         expect(screen.getByText("analog photograph")).toBeInTheDocument();
     });
 

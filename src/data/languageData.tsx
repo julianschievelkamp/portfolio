@@ -6,9 +6,9 @@ import Profile from "assets/img/misc/profile.jpg";
 export const languageData = {
     title: (
         <>
-            JULIAN
+            Julian
             <br />
-            SCHIEVELKAMP
+            Schievelkamp
             <br />
             CGN #1994
         </>
@@ -24,11 +24,11 @@ export const languageData = {
         </>
     ),
     portfolio: {
-        headline: "PORTFOLIO",
+        headline: "Portfolio",
     },
     about: {
         artist: {
-            headline: "ABOUT THE ARTIST",
+            headline: "About the artist",
             image: {
                 src: SelfPortrait,
                 alt: "Julian Schievelkamp",
@@ -76,9 +76,9 @@ export const languageData = {
         references: {
             headline: (
                 <>
-                    SELECTED
+                    Selected
                     <br />
-                    REFERENCES
+                    references
                 </>
             ),
             publications: {
@@ -208,9 +208,9 @@ export const languageData = {
         badges: {
             headline: (
                 <>
-                    FIRST PRIZE
+                    First prize
                     <br />
-                    WINNER
+                    winner
                 </>
             ),
         },
