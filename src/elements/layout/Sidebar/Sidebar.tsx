@@ -6,7 +6,13 @@ import {
     StyledSidebar,
 } from "./Sidebar.styles";
 import { languageData } from "data/languageData";
-import { colors, Div, Footer, queries } from "styles/variables";
+import {
+    colors,
+    Div,
+    Footer,
+    queries,
+    scrollOffsets,
+} from "styles/variables";
 import Navigation from "elements/layout/Navigation/Navigation";
 import { useStore } from "hooks/useStore";
 import { useSidebarControls } from "hooks/useSidebarControls";
@@ -32,7 +38,7 @@ const Sidebar = ({ page }: SidebarProps) => {
     }, [isMd, setSidebarOpen]);
 
     useSidebarControls();
-    useScrollOffset(sidebarOpen);
+    useScrollOffset(sidebarOpen, scrollOffsets.sidebar);
 
     return (
         <>

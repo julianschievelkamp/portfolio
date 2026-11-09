@@ -13,7 +13,8 @@ import Icon from "elements/components/Icon/Icon";
 import ActiveItem from "./ActiveItem/ActiveItem";
 import Arrows from "./Arrows/Arrows";
 import { useMediaQuery } from "hooks/useMediaQuery";
-import { queries } from "styles/variables";
+import { useScrollOffset } from "hooks/useScrollOffset";
+import { queries, scrollOffsets } from "styles/variables";
 
 const Popup = () => {
     const setPopupOpen = useStore((state) => state.setPopupOpen);
@@ -21,7 +22,11 @@ const Popup = () => {
     const isLandscape = useMediaQuery(queries.landscape);
     const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
 
+    const popupOpen = useStore((state) => state.popupOpen);
+
     const dialogRef = usePopupDialog();
+
+    useScrollOffset(popupOpen, scrollOffsets.popup);
 
     usePopupControls();
 

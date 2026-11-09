@@ -1,27 +1,17 @@
-import { css, styled } from "styled-components";
+import { styled } from "styled-components";
 import {
     mainTitleStyles,
+    overlayBottomInset,
     queries,
+    scrollOffsets,
     scrollStyles,
     transition,
+    viewportOverlayStyles,
 } from "styles/variables";
 import Text from "elements/components/Text/Text";
 
-// Zusätzliche Höhe der mobilen Overlays über den großen Viewport hinaus
-const OVERLAY_EXTRA_HEIGHT = "10rem";
-
-// Berührt ein sichtbares fixed-Element den unteren Rand, füllt Safari (iOS)
-// die Fläche hinter der Adressleiste mit der Seitenfarbe. Absolut positionierte
-// Elemente lösen das nicht aus. Da die Seite bei geöffneter Sidebar gesperrt
-// ist, liegen die Overlays über die Scrollposition (useScrollOffset) trotzdem
-// genau im sichtbaren Bereich.
-const mobileOverlayStyles = css`
-    position: absolute;
-    top: var(--scroll-offset, 0);
-    left: 0;
-    /* Bis hinter die Adressleiste, mit Zugabe, damit unten keine Lücke bleibt */
-    height: calc(var(--100lvh) + ${OVERLAY_EXTRA_HEIGHT});
-`;
+// Mobil absolut positioniert, siehe viewportOverlayStyles
+const mobileOverlayStyles = viewportOverlayStyles(scrollOffsets.sidebar);
 
 export const StyledSidebar = styled.aside<{ $sidebarOpen: boolean }>`
     ${mobileOverlayStyles}
@@ -84,9 +74,7 @@ export const ScrollContainer = styled.div`
     margin: 1.5rem 0 0 0;
     /* Abstand in Höhe der Adressleiste, damit der Inhalt nicht dahinter verschwindet */
     /* inklusive Zugabe, damit der Footer an seiner Position bleibt */
-    padding-bottom: calc(
-        var(--100lvh) - var(--100svh) + ${OVERLAY_EXTRA_HEIGHT}
-    );
+    padding-bottom: ${overlayBottomInset};
     display: flex;
     flex-direction: column;
     justify-content: space-between;

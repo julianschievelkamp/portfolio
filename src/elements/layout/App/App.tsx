@@ -23,10 +23,14 @@ const App = ({ page, children }: AppProps) => {
 
     // Die Sidebar überlagert den Inhalt nur mobil, das Popup immer
     const sidebarOverlay = !isMd && sidebarOpen;
-    // Die Seite bleibt gesperrt, bis die Sidebar herausgefahren ist, da sie
-    // mobil absolut positioniert ist und sonst kurz mitscrollen würde
+    // Die Seite bleibt gesperrt, bis Sidebar bzw. Popup ausgeblendet sind, da
+    // beide absolut positioniert sind und sonst kurz mitscrollen würden
     const sidebarScrollLock = useDelayedDeactivation(
         sidebarOverlay,
+        TRANSITION_DEFAULT,
+    );
+    const popupScrollLock = useDelayedDeactivation(
+        popupOpen,
         TRANSITION_DEFAULT,
     );
 
@@ -34,7 +38,7 @@ const App = ({ page, children }: AppProps) => {
 
     return (
         <>
-            <GlobalStyle $scrollLocked={sidebarScrollLock || popupOpen} />
+            <GlobalStyle $scrollLocked={sidebarScrollLock || popupScrollLock} />
 
             <Menu />
 

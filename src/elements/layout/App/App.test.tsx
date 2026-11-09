@@ -135,6 +135,30 @@ describe("App", () => {
         vi.useRealTimers();
     });
 
+    it("keeps page scrolling locked until the popup has closed", () => {
+        vi.useFakeTimers();
+        useStore.setState({ popupOpen: true });
+        render(<App page={page}>
+                <p>Content</p>
+            </App>);
+
+        act(() => useStore.setState({ popupOpen: false }));
+
+        // Während der Ausblend-Animation weiterhin gesperrt
+        expect(screen.getByTestId("global-style")).toHaveAttribute(
+            "data-scroll-locked",
+            "true",
+        );
+
+        act(() => vi.advanceTimersByTime(TRANSITION_DEFAULT));
+
+        expect(screen.getByTestId("global-style")).toHaveAttribute(
+            "data-scroll-locked",
+            "false",
+        );
+        vi.useRealTimers();
+    });
+
     it("keeps the page scrollable with an open sidebar on desktop", () => {
         useStore.setState({ sidebarOpen: true });
         vi.mocked(useMediaQuery).mockReturnValue(true);
