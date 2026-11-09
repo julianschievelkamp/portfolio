@@ -1,3 +1,5 @@
+import { pages } from "data/navigationData";
+
 export function description() {
-    return "Legal notice and contact details of Julian Schievelkamp.";
+    return pages.impressum.description;
 }

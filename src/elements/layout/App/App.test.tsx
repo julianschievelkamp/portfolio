@@ -11,7 +11,8 @@ vi.mock("elements/layout/Menu/Menu", () => ({ default: () => <header /> }));
 
 const page = {
     name: "Test",
-    heading: "Test heading",
+    title: "Test heading",
+    description: "Test description",
     path: "/test",
     element: null,
 };

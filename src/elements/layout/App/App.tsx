@@ -39,7 +39,7 @@ const App = ({ page, children }: AppProps) => {
             <Sidebar page={page} />
 
             <PageContainer id="page-container" inert={!isMd && sidebarOpen}>
-                <Headline visuallyHidden>{page.heading}</Headline>
+                <Headline visuallyHidden>{page.title}</Headline>
 
                 {children}
             </PageContainer>

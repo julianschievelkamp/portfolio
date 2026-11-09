@@ -1,3 +1,5 @@
+import { pages } from "data/navigationData";
+
 export function title() {
-    return "About – Julian Schievelkamp";
+    return pages.about.title;
 }

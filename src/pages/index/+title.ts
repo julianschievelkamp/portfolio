@@ -1,3 +1,5 @@
+import { pages } from "data/navigationData";
+
 export function title() {
-    return "Julian Schievelkamp – Fine Art Photographer & Visual Artist";
+    return pages.portfolio.title;
 }

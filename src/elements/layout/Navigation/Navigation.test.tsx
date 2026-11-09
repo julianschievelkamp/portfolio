@@ -10,8 +10,8 @@ vi.mock("data/languageData", () => ({
 }));
 vi.mock("data/navigationData", () => ({
     pages: {
-        home: { name: "Home", heading: "Home", path: "/", element: null },
-        about: { name: "About", heading: "About", path: "/about", element: null },
+        home: { name: "Home", title: "Home", description: "Home", path: "/", element: null },
+        about: { name: "About", title: "About", description: "About", path: "/about", element: null },
     },
     links: {
         social: { name: "Social", path: "https://example.com/social" },
@@ -19,7 +19,7 @@ vi.mock("data/navigationData", () => ({
     },
 }));
 
-const home = { name: "Home", heading: "Home", path: "/", element: null };
+const home = { name: "Home", title: "Home", description: "Home", path: "/", element: null };
 
 describe("Navigation", () => {
     beforeEach(() => {

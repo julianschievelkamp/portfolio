@@ -1,3 +1,5 @@
+import { pages } from "data/navigationData";
+
 export function title() {
-    return "Impressum – Julian Schievelkamp";
+    return pages.impressum.title;
 }

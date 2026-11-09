@@ -1,27 +1,30 @@
-import { title as titleImpressum } from "pages/impressum/+title";
-import { title as titleAbout } from "pages/about/+title";
-import { title as titleIndex } from "pages/index/+title";
-
 export type Page = {
     name: string;
-    heading: string;
+    title: string;
+    description: string;
     path: string;
 };
 
 export const pages: { [key: string]: Page } = {
     portfolio: {
         name: "Portfolio",
-        heading: titleIndex(),
+        title: "Julian Schievelkamp – Fine Art Photographer & Visual Artist",
+        description:
+            "Fine art photography and digital artworks by Julian Schievelkamp, a visual artist from Cologne combining classic photography and CGI.",
         path: "/",
     },
     about: {
         name: "About",
-        heading: titleAbout(),
+        title: "About – Julian Schievelkamp",
+        description:
+            "Julian Schievelkamp (b. 1994) is a visual artist and fine art photographer from Cologne. Winner of the Prix de la Photographie Paris 2017 and Fine Art Photographer of the Year 2019.",
         path: "/about/",
     },
     impressum: {
         name: "Impressum",
-        heading: titleImpressum(),
+        title: "Impressum – Julian Schievelkamp",
+        description:
+            "Legal notice and contact details of Julian Schievelkamp.",
         path: "/impressum/",
     },
 };
