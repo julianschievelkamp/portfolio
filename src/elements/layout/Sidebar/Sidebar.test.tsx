@@ -1,9 +1,14 @@
 import { act, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import type { ReactElement } from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useStore } from "hooks/useStore";
+import { useMediaQuery } from "hooks/useMediaQuery";
 import Sidebar from "./Sidebar";
+
+// jsdom kennt kein window.matchMedia, daher wird die Media Query gemockt
+vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: vi.fn() }));
 
 vi.mock("data/languageData", () => ({
     languageData: {
@@ -27,14 +32,60 @@ const page = { name: "Home", title: "Home", description: "Home", path: "/", elem
 const findCloseTrigger = (container: HTMLElement) =>
     container.firstElementChild as HTMLElement;
 
+const openSidebar = () => act(() => useStore.setState({ sidebarOpen: true }));
+
+// Rendert und öffnet die Sidebar erst danach, da sie beim ersten Rendern
+// geschlossen wird und eine geschlossene Sidebar per visibility versteckt ist
+const renderOpenSidebar = (ui: ReactElement = <Sidebar page={page} />) => {
+    const result = render(ui);
+    openSidebar();
+
+    return result;
+};
+
 describe("Sidebar", () => {
     beforeEach(() => {
-        // Geöffnet, da eine geschlossene Sidebar per visibility versteckt ist
+        useStore.setState({ sidebarOpen: false });
+        vi.mocked(useMediaQuery).mockReturnValue(false);
+    });
+
+    it("closes the sidebar on the first render", () => {
         useStore.setState({ sidebarOpen: true });
+
+        render(<Sidebar page={page} />);
+
+        expect(useStore.getState().sidebarOpen).toBe(false);
+    });
+
+    it("closes the sidebar when switching to the desktop layout", () => {
+        const { rerender } = renderOpenSidebar();
+
+        vi.mocked(useMediaQuery).mockReturnValue(true);
+        rerender(<Sidebar page={page} />);
+
+        expect(useStore.getState().sidebarOpen).toBe(false);
+    });
+
+    it("closes the sidebar when switching to the mobile layout", () => {
+        vi.mocked(useMediaQuery).mockReturnValue(true);
+        const { rerender } = renderOpenSidebar();
+
+        vi.mocked(useMediaQuery).mockReturnValue(false);
+        rerender(<Sidebar page={page} />);
+
+        expect(useStore.getState().sidebarOpen).toBe(false);
+    });
+
+    it("keeps the sidebar open while the layout does not change", () => {
+        const { rerender } = renderOpenSidebar();
+
+        rerender(<Sidebar page={page} />);
+
+        expect(useStore.getState().sidebarOpen).toBe(true);
     });
 
     it("shows intro, copyright and the navigation", () => {
-        render(<Sidebar page={page} />);
+        renderOpenSidebar();
 
         expect(screen.getByText("Intro text")).toBeInTheDocument();
         expect(screen.getByText("Copyright text")).toBeInTheDocument();
@@ -46,7 +97,7 @@ describe("Sidebar", () => {
     });
 
     it("renders the title as plain text and not as a heading", () => {
-        render(<Sidebar page={page} />);
+        renderOpenSidebar();
 
         expect(screen.getByText("Site Title")).toBeInTheDocument();
         expect(screen.queryByRole("heading")).not.toBeInTheDocument();
@@ -54,13 +105,13 @@ describe("Sidebar", () => {
 
     it("always renders the close trigger and the sidebar", () => {
         // Die Umschaltung zwischen Mobile und Desktop erfolgt per CSS
-        const { container } = render(<Sidebar page={page} />);
+        const { container } = renderOpenSidebar();
 
         expect(container.children).toHaveLength(2);
     });
 
     it("closes the sidebar when the close trigger is clicked", async () => {
-        const { container } = render(<Sidebar page={page} />);
+        const { container } = renderOpenSidebar();
 
         await userEvent.click(findCloseTrigger(container));
 
@@ -68,7 +119,7 @@ describe("Sidebar", () => {
     });
 
     it("activates the close trigger only while the sidebar is open", () => {
-        const { container } = render(<Sidebar page={page} />);
+        const { container } = renderOpenSidebar();
         expect(findCloseTrigger(container)).toHaveStyle("visibility: visible");
 
         act(() => useStore.setState({ sidebarOpen: false }));
@@ -77,7 +128,7 @@ describe("Sidebar", () => {
     });
 
     it("uses semantic landmarks for aside, navigation and footer", () => {
-        render(<Sidebar page={page} />);
+        renderOpenSidebar();
 
         expect(
             screen.getByRole("complementary", { name: "Sidebar" }),
@@ -91,7 +142,7 @@ describe("Sidebar", () => {
     });
 
     it("closes the sidebar with Escape and returns focus to the toggle", async () => {
-        render(
+        renderOpenSidebar(
             <>
                 <button id="sidebar-toggle">Toggle</button>
                 <Sidebar page={page} />
@@ -105,7 +156,6 @@ describe("Sidebar", () => {
     });
 
     it("ignores Escape while the sidebar is closed", async () => {
-        useStore.setState({ sidebarOpen: false });
         render(
             <>
                 <button id="sidebar-toggle">Toggle</button>

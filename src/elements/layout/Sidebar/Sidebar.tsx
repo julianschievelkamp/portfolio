@@ -26,10 +26,9 @@ const Sidebar = ({ page }: SidebarProps) => {
     const setSidebarOpen = useStore((state) => state.setSidebarOpen);
     const isMd = useMediaQuery(queries.md);
 
+    // Bei jedem Wechsel zwischen Mobile- und Desktop-Layout schließen
     useEffect(() => {
-        if (isMd) {
-            setSidebarOpen(false);
-        }
+        setSidebarOpen(false);
     }, [isMd, setSidebarOpen]);
 
     useSidebarControls();
