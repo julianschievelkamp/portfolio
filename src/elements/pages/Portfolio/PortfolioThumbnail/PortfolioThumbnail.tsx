@@ -11,18 +11,16 @@ import { thumbnailSize } from "styles/variables";
 export interface PortfolioThumbnailProps {
     item: PortfolioItem;
     index: number;
-    tabIndex: number;
     onSelect: (index: number) => void;
 }
 
-// Mit memo löst ein Umschalten der Sidebar nur dann ein Neurendern aus,
-// wenn sich der tabIndex tatsächlich ändert.
+// Mit memo löst ein Neurendern der Seite keine Neurenderung der Thumbnails aus,
+// solange item, index und onSelect unverändert bleiben.
 const PortfolioThumbnail = memo(
-    ({ item, index, tabIndex, onSelect }: PortfolioThumbnailProps) => {
+    ({ item, index, onSelect }: PortfolioThumbnailProps) => {
         return (
             <PortfolioFigure>
                 <PortfolioButton
-                    tabIndex={tabIndex}
                     ariaLabel={`Show ${item.title}`}
                     onClick={() => onSelect(index)}
                 />

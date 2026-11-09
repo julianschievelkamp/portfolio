@@ -4,18 +4,14 @@ import PortfolioThumbnail from "./PortfolioThumbnail/PortfolioThumbnail";
 import { useStore } from "hooks/useStore";
 import { portfolioData } from "data/portfolioData";
 import Popup from "elements/layout/Popup/Popup";
-import { queries, Section } from "styles/variables";
-import { useMediaQuery } from "hooks/useMediaQuery";
+import { Section } from "styles/variables";
 import Headline from "elements/components/Headline/Headline";
 import { languageData } from "data/languageData";
 
 const Portfolio = () => {
-    const isMd = useMediaQuery(queries.md);
     const setActiveIndex = useStore((state) => state.setActiveIndex);
     const setPopupOpen = useStore((state) => state.setPopupOpen);
-    const sidebarOpen = useStore((state) => state.sidebarOpen);
 
-    const tabIndex = !isMd && sidebarOpen ? -1 : 0;
 
     // Referenzstabil, damit die memoisierten Thumbnails nicht neu rendern
     const handleSelect = useCallback(
@@ -39,7 +35,6 @@ const Portfolio = () => {
                                 key={item.title}
                                 item={item}
                                 index={index}
-                                tabIndex={tabIndex}
                                 onSelect={handleSelect}
                             />
                         );

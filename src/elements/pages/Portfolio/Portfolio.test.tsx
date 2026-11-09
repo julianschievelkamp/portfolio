@@ -3,11 +3,9 @@ import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useStore } from "hooks/useStore";
-import { useMediaQuery } from "hooks/useMediaQuery";
 import { portfolioData, getAltText, getCaption } from "data/portfolioFixtures";
 import Portfolio from "./Portfolio";
 
-vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: vi.fn() }));
 vi.mock(
     "data/portfolioData",
     async () => await import("data/portfolioFixtures"),
@@ -23,7 +21,6 @@ describe("Portfolio", () => {
             popupOpen: false,
             sidebarOpen: false,
         });
-        vi.mocked(useMediaQuery).mockReturnValue(true);
     });
 
     it("renders a labelled button and an image outside of it for every item", () => {
@@ -77,33 +74,6 @@ describe("Portfolio", () => {
 
         expect(useStore.getState().activeIndex).toBe(0);
         expect(useStore.getState().popupOpen).toBe(true);
-    });
-
-    it("makes the items focusable by default", () => {
-        render(<Portfolio />);
-
-        screen.getAllByRole("button").forEach((button) => {
-            expect(button).toHaveAttribute("tabindex", "0");
-        });
-    });
-
-    it("removes the items from tab navigation with an open sidebar on mobile", () => {
-        useStore.setState({ sidebarOpen: true });
-        vi.mocked(useMediaQuery).mockReturnValue(false);
-        render(<Portfolio />);
-
-        screen.getAllByRole("button").forEach((button) => {
-            expect(button).toHaveAttribute("tabindex", "-1");
-        });
-    });
-
-    it("keeps the items focusable with an open sidebar on desktop", () => {
-        useStore.setState({ sidebarOpen: true });
-        render(<Portfolio />);
-
-        screen.getAllByRole("button").forEach((button) => {
-            expect(button).toHaveAttribute("tabindex", "0");
-        });
     });
 
     it("renders the popup", () => {

@@ -12,14 +12,13 @@ vi.mock(
 
 const item = portfolioData[0];
 
-const renderThumbnail = (tabIndex = 0) => {
+const renderThumbnail = () => {
     const onSelect = vi.fn();
 
     render(
         <PortfolioThumbnail
             item={item}
             index={2}
-            tabIndex={tabIndex}
             onSelect={onSelect}
         />,
     );
@@ -49,11 +48,5 @@ describe("PortfolioThumbnail", () => {
         await userEvent.click(screen.getByRole("button"));
 
         expect(onSelect).toHaveBeenCalledWith(2);
-    });
-
-    it("passes the tab index on to the button", () => {
-        renderThumbnail(-1);
-
-        expect(screen.getByRole("button")).toHaveAttribute("tabindex", "-1");
     });
 });
