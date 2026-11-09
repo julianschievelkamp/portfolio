@@ -75,11 +75,11 @@ describe("Slider", () => {
         useStore.setState({ activeIndex: 1 });
         render(<Slider />);
 
-        const images = screen.getAllByRole("img");
+        const buttons = screen.getAllByRole("button");
 
-        expect(images[1]).toHaveStyle("opacity: 1");
-        expect(images[0]).toHaveStyle("opacity: 0.5");
-        expect(images[2]).toHaveStyle("opacity: 0.5");
+        expect(buttons[1]).toHaveAttribute("aria-current", "true");
+        expect(buttons[0]).toHaveAttribute("aria-current", "false");
+        expect(buttons[2]).toHaveAttribute("aria-current", "false");
     });
 
     it("moves the slider to a tab-focused item", () => {
@@ -107,7 +107,7 @@ describe("Slider", () => {
     it("drops the tab focus once the current item changes", () => {
         const { container } = render(<Slider />);
         const button = getThirdButton();
-        const images = screen.getAllByRole("img");
+        const buttons = screen.getAllByRole("button");
         mockFocusVisible(true);
 
         fireEvent.focus(button);
@@ -116,6 +116,6 @@ describe("Slider", () => {
         act(() => useStore.setState({ activeIndex: 1 }));
 
         expect(getTransform(container)).not.toBe(focused);
-        expect(images[1]).toHaveStyle("opacity: 1");
+        expect(buttons[1]).toHaveAttribute("aria-current", "true");
     });
 });

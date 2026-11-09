@@ -26,7 +26,8 @@ const Slider = () => {
                                 ariaLabel={`Show ${item.title}`}
                                 onClick={() => setActiveIndex(index)}
                                 onFocus={(e) => handleItemFocus(e, index)}
-                                $imageOpacity={index === activeIndex ? 1 : 0.5}
+                                ariaCurrent={index === activeIndex}
+                                $isActive={index === activeIndex}
                             >
                                 <Image
                                     width="100%"

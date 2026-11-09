@@ -7,6 +7,7 @@ export interface ButtonProps {
     ariaLabel?: string;
     ariaExpanded?: boolean;
     ariaControls?: string;
+    ariaCurrent?: boolean;
     id?: string;
     tabIndex?: number;
     disabled?: boolean;
@@ -20,6 +21,7 @@ const Button = ({
     ariaLabel,
     ariaExpanded,
     ariaControls,
+    ariaCurrent,
     id,
     tabIndex = 0,
     disabled,
@@ -33,6 +35,7 @@ const Button = ({
             aria-label={ariaLabel}
             aria-expanded={ariaExpanded}
             aria-controls={ariaControls}
+            aria-current={ariaCurrent}
             tabIndex={tabIndex}
             disabled={disabled}
             className={className}
