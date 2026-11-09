@@ -8,7 +8,8 @@ import Headline from "elements/components/Headline/Headline";
 import { useResizeTransition } from "hooks/useResizeTransition";
 import { useStore } from "hooks/useStore";
 import { useMediaQuery } from "hooks/useMediaQuery";
-import { queries } from "styles/variables";
+import { useDelayedDeactivation } from "hooks/useDelayedDeactivation";
+import { queries, TRANSITION_DEFAULT } from "styles/variables";
 
 export interface AppProps {
     page: Page;
@@ -22,12 +23,18 @@ const App = ({ page, children }: AppProps) => {
 
     // Die Sidebar überlagert den Inhalt nur mobil, das Popup immer
     const sidebarOverlay = !isMd && sidebarOpen;
+    // Die Seite bleibt gesperrt, bis die Sidebar herausgefahren ist, da sie
+    // mobil absolut positioniert ist und sonst kurz mitscrollen würde
+    const sidebarScrollLock = useDelayedDeactivation(
+        sidebarOverlay,
+        TRANSITION_DEFAULT,
+    );
 
     useResizeTransition();
 
     return (
         <>
-            <GlobalStyle $scrollLocked={sidebarOverlay || popupOpen} />
+            <GlobalStyle $scrollLocked={sidebarScrollLock || popupOpen} />
 
             <Menu />
 

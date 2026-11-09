@@ -1,8 +1,9 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useStore } from "hooks/useStore";
 import { useMediaQuery } from "hooks/useMediaQuery";
+import { TRANSITION_DEFAULT } from "styles/variables";
 import App from "./App";
 
 vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: vi.fn() }));
@@ -108,6 +109,30 @@ describe("App", () => {
             "data-scroll-locked",
             "true",
         );
+    });
+
+    it("keeps page scrolling locked until the sidebar has closed", () => {
+        vi.useFakeTimers();
+        useStore.setState({ sidebarOpen: true });
+        render(<App page={page}>
+                <p>Content</p>
+            </App>);
+
+        act(() => useStore.setState({ sidebarOpen: false }));
+
+        // Während der Schließen-Animation weiterhin gesperrt
+        expect(screen.getByTestId("global-style")).toHaveAttribute(
+            "data-scroll-locked",
+            "true",
+        );
+
+        act(() => vi.advanceTimersByTime(TRANSITION_DEFAULT));
+
+        expect(screen.getByTestId("global-style")).toHaveAttribute(
+            "data-scroll-locked",
+            "false",
+        );
+        vi.useRealTimers();
     });
 
     it("keeps the page scrollable with an open sidebar on desktop", () => {

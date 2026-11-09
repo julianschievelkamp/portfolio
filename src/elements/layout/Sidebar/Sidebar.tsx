@@ -6,13 +6,16 @@ import {
     StyledSidebar,
 } from "./Sidebar.styles";
 import { languageData } from "data/languageData";
-import { colors, Div, Footer } from "styles/variables";
+import { colors, Div, Footer, queries } from "styles/variables";
 import Navigation from "elements/layout/Navigation/Navigation";
 import { useStore } from "hooks/useStore";
 import { useSidebarControls } from "hooks/useSidebarControls";
+import { useScrollOffset } from "hooks/useScrollOffset";
 import { Page } from "data/navigationData";
 
 import Link from "elements/components/Link/Link";
+import { useMediaQuery } from "hooks/useMediaQuery";
+import { useEffect } from "react";
 
 export interface SidebarProps {
     page: Page;
@@ -21,8 +24,16 @@ export interface SidebarProps {
 const Sidebar = ({ page }: SidebarProps) => {
     const sidebarOpen = useStore((state) => state.sidebarOpen);
     const setSidebarOpen = useStore((state) => state.setSidebarOpen);
+    const isMd = useMediaQuery(queries.md);
+
+    useEffect(() => {
+        if (isMd) {
+            setSidebarOpen(false);
+        }
+    }, [isMd, setSidebarOpen]);
 
     useSidebarControls();
+    useScrollOffset(sidebarOpen);
 
     return (
         <>

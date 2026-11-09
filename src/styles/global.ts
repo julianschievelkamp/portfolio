@@ -11,11 +11,19 @@ export default createGlobalStyle<GlobalStyleProps>`
 
     :root {
         --100svh: 100vh;
+        --100lvh: 100vh;
     }
 
     @supports (height: 100svh) {
         :root {
             --100svh: 100svh;
+        }
+    }
+
+    /* Großer Viewport: reicht auf iOS bis hinter die eingeblendete Adressleiste */
+    @supports (height: 100lvh) {
+        :root {
+            --100lvh: 100lvh;
         }
     }
 
