@@ -1,14 +1,15 @@
-import { BadgesSection, BadgesWrapper, StyledLink } from "./Badges.styles";
+import { BadgesWrapper, StyledLink } from "./Badges.styles";
 import { languageData } from "data/languageData";
 import Image from "elements/components/Image/Image";
 import { badges } from "data/portfolioData";
 import Headline from "elements/components/Headline/Headline";
+import { Section } from "styles/variables";
 
 const Badges = () => {
     const badgesData = languageData.about.badges;
 
     return (
-        <BadgesSection>
+        <Section>
             <Headline type="h2">{badgesData.headline}</Headline>
             <BadgesWrapper>
                 {Object.keys(badges).map((key) => {
@@ -29,7 +30,7 @@ const Badges = () => {
                     );
                 })}
             </BadgesWrapper>
-        </BadgesSection>
+        </Section>
     );
 };
 

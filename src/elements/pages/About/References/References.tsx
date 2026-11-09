@@ -1,29 +1,25 @@
 import Text from "elements/components/Text/Text";
-import {
-    ListWrapper,
-    ReferenceHeader,
-    ReferencesSection,
-    ReferencesWrapper,
-} from "./References.styles";
+import { ListWrapper, ReferencesWrapper } from "./References.styles";
 import { languageData } from "data/languageData";
 import List from "elements/components/List/List";
 import Headline from "elements/components/Headline/Headline";
+import { Div, Section } from "styles/variables";
 
 const References = () => {
     const referencesData = languageData.about.references;
 
     return (
-        <ReferencesSection>
+        <Section>
             <Headline type="h2">{referencesData.headline}</Headline>
             <ReferencesWrapper>
-                <ReferenceHeader>
+                <Div>
                     <Text fontSize="0.875rem" bold>
                         {referencesData.publications.title}
                     </Text>
                     <Text fontSize="0.875rem">
                         {referencesData.publications.subTitle}
                     </Text>
-                </ReferenceHeader>
+                </Div>
                 <ListWrapper>
                     <List
                         items={referencesData.publications.listEntries1}
@@ -35,14 +31,14 @@ const References = () => {
                     />
                     <List items={referencesData.publications.listEntries3} />
                 </ListWrapper>
-                <ReferenceHeader>
+                <Div>
                     <Text fontSize="0.875rem" bold>
                         {referencesData.awards.title}
                     </Text>
                     <Text fontSize="0.875rem">
                         {referencesData.awards.subTitle}
                     </Text>
-                </ReferenceHeader>
+                </Div>
                 <ListWrapper>
                     <List
                         items={referencesData.awards.listEntries1}
@@ -51,7 +47,7 @@ const References = () => {
                     <List items={referencesData.awards.listEntries2} />
                 </ListWrapper>
             </ReferencesWrapper>
-        </ReferencesSection>
+        </Section>
     );
 };
 

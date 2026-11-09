@@ -1,7 +1,9 @@
-import { css } from "styled-components";
+import { css, styled } from "styled-components";
+
+export const Section = styled.section``;
+export const Div = styled.div``;
 
 export const TRANSITION_DEFAULT = 300;
-
 export const transition = {
     default: `${TRANSITION_DEFAULT}ms ease-out`,
     defaultIn: `${TRANSITION_DEFAULT}ms ease-in`,

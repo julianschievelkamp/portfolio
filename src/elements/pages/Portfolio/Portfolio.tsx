@@ -3,13 +3,12 @@ import {
     PortfolioCaption,
     PortfolioFigure,
     PortfolioGrid,
-    PortfolioSection,
 } from "./Portfolio.styles";
 import Image from "elements/components/Image/Image";
 import { useStore } from "hooks/useStore";
 import { getAltText, getCaption, portfolioData } from "data/portfolioData";
 import Popup from "elements/layout/Popup/Popup";
-import { queries, thumbnailSize } from "styles/variables";
+import { queries, Section, thumbnailSize } from "styles/variables";
 import { useMediaQuery } from "hooks/useMediaQuery";
 import Headline from "elements/components/Headline/Headline";
 import { languageData } from "data/languageData";
@@ -22,7 +21,7 @@ const Portfolio = () => {
 
     return (
         <>
-            <PortfolioSection>
+            <Section>
                 <Headline type="h2" visuallyHidden>
                     {languageData.portfolio.headline}
                 </Headline>
@@ -57,7 +56,7 @@ const Portfolio = () => {
                         );
                     })}
                 </PortfolioGrid>
-            </PortfolioSection>
+            </Section>
 
             <Popup />
         </>

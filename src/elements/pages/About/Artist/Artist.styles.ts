@@ -1,8 +1,6 @@
 import { styled } from "styled-components";
 import { queries, visuallyHidden } from "styles/variables";
 
-export const ArtistSection = styled.section``;
-
 export const ArtistWrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -11,8 +9,6 @@ export const ArtistWrapper = styled.div`
         flex-direction: row;
     }
 `;
-
-export const ArtistContent = styled.div``;
 
 export const PortraitFigure = styled.figure`
     display: flex;

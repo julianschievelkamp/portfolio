@@ -17,6 +17,7 @@ export const ItemFigure = styled.figure`
     position: relative;
     display: flex;
     border: 0.5rem solid black;
+    overflow: hidden;
 
     > img,
     > video {

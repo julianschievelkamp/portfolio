@@ -14,23 +14,16 @@ export const StyledItemInfo = styled.figcaption<{ $isVisible: boolean }>`
     pointer-events: none;
     overflow: hidden;
     z-index: 9;
-`;
-
-export const InnerWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 1rem;
-    width: 100%;
-    height: 100%;
 `;
 
-export const TitleWrapper = styled.div``;
-
-export const BadgeItem = styled.div``;
-
 export const ImageTitle = styled(Text)`
-    font-family: "PlayfairDisplay", sans-serif;
-    font-weight: 900;
+    span {
+        font-family: "PlayfairDisplay", sans-serif;
+        font-weight: 900;
+    }
 `;
 
 export const BadgesWrapper = styled.div`
@@ -39,13 +32,8 @@ export const BadgesWrapper = styled.div`
     gap: 0.5rem;
     margin-left: 1.5rem;
 
-    > div {
-        display: flex;
-        align-items: center;
-
-        img {
-            min-width: 2rem;
-            max-width: 2rem;
-        }
+    img {
+        min-width: 2rem;
+        max-width: 2rem;
     }
 `;

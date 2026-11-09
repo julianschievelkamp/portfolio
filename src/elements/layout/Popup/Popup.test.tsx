@@ -94,7 +94,7 @@ describe("Popup", () => {
 
     it("closes via the close button, which is reachable by keyboard", () => {
         render(<Popup />);
-        const close = screen.getByRole("button", { name: "Close" });
+        const close = screen.getByRole("button", { name: "Close Dialog" });
 
         expect(close).toHaveAttribute("tabindex", "0");
 
