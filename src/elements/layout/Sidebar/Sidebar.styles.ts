@@ -7,13 +7,13 @@ import {
 } from "styles/variables";
 import Text from "elements/components/Text/Text";
 
-export const StyledSidebar = styled.aside<{
-    $sidebarOpen: boolean;
-}>`
+export const StyledSidebar = styled.aside<{ $sidebarOpen: boolean }>`
     background-color: white;
     width: 15rem;
     max-width: calc(100vw - 4rem);
-    height: 100%;
+    /* Endet an der Oberkante der Adressleiste: Berührt ein fixed-Element den
+       unteren Rand, füllt Safari die Fläche hinter der Leiste weiß */
+    height: var(--100svh);
     position: fixed;
     padding: 1rem;
     top: 0;
@@ -40,7 +40,8 @@ export const StyledSidebar = styled.aside<{
 export const CloseTrigger = styled.div<{ $isActive: boolean }>`
     position: fixed;
     width: 100%;
-    height: 100%;
+    /* Endet an der Oberkante der Adressleiste (siehe StyledSidebar) */
+    height: var(--100svh);
     top: 0;
     left: 0;
     backdrop-filter: blur(2px);
@@ -75,7 +76,3 @@ export const MainTitle = styled(Text)`
         visibility: visible;
     }
 `;
-
-export const SidebarContent = styled.div``;
-
-export const SidebarFooter = styled.footer``;

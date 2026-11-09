@@ -2,13 +2,11 @@ import Text from "elements/components/Text/Text";
 import {
     CloseTrigger,
     ScrollContainer,
-    SidebarContent,
-    SidebarFooter,
     MainTitle,
     StyledSidebar,
 } from "./Sidebar.styles";
 import { languageData } from "data/languageData";
-import { colors } from "styles/variables";
+import { colors, Div, Footer } from "styles/variables";
 import Navigation from "elements/layout/Navigation/Navigation";
 import { useStore } from "hooks/useStore";
 import { useSidebarControls } from "hooks/useSidebarControls";
@@ -49,19 +47,19 @@ const Sidebar = ({ page }: SidebarProps) => {
                 </MainTitle>
 
                 <ScrollContainer>
-                    <SidebarContent>
+                    <Div>
                         <Text fontSize="0.875rem" color={colors.secondary}>
                             {languageData.intro}
                         </Text>
 
                         <Navigation page={page} />
-                    </SidebarContent>
+                    </Div>
 
-                    <SidebarFooter>
+                    <Footer>
                         <Text fontSize="0.875rem" color={colors.secondary}>
                             {languageData.copyright}
                         </Text>
-                    </SidebarFooter>
+                    </Footer>
                 </ScrollContainer>
             </StyledSidebar>
         </>

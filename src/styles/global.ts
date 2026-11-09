@@ -17,7 +17,7 @@ export default createGlobalStyle<GlobalStyleProps>`
         :root {
             --100svh: 100svh;
         }
-    }  
+    }
 
     * {
         box-sizing: border-box;
