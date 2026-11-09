@@ -4,7 +4,6 @@ import Text from "elements/components/Text/Text";
 
 export const StyledMenu = styled.header<{ $isVisible: boolean }>`
     background-color: white;
-    width: 100vw;
     position: fixed;
     height: 7.5rem;
     padding: 1rem;
@@ -12,8 +11,15 @@ export const StyledMenu = styled.header<{ $isVisible: boolean }>`
     justify-content: space-between;
     top: 0;
     left: 0;
+    right: 0;
     z-index: 99;
-    transform: ${({ $isVisible }) => `translateY(${$isVisible ? 0 : "-100%"})`};
+    /* Dauerhafte Compositing-Ebene, damit die Animation auf iOS nicht vom
+       Main-Thread abhängt, der beim Ein- und Ausklappen der Adressleiste
+       ausgelastet ist */
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: ${({ $isVisible }) =>
+        `translate3d(0, ${$isVisible ? 0 : "-100%"}, 0)`};
     visibility: ${({ $isVisible }) => ($isVisible ? "visible" : "hidden")};
     /* Beim Öffnen ease-out, beim Schließen ease-in */
     transition: ${({ $isVisible }) => {
