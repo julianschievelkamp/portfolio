@@ -77,7 +77,10 @@ describe("Image", () => {
         expect(screen.getByRole("img")).toHaveStyle("will-change: auto");
 
         rerender(<Image src="/a.jpg" alt="Art" fadeInOnLoad />);
-        expect(screen.getByRole("img")).toHaveStyle("will-change: opacity");
+        // jsdom normalisiert den Wert ohne Leerzeichen nach dem Komma
+        expect(screen.getByRole("img")).toHaveStyle(
+            "will-change: opacity,transform",
+        );
     });
 
     it("shows a cached image immediately when it is already complete on mount", () => {
