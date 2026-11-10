@@ -13,6 +13,7 @@ import { useSidebarControls } from "hooks/useSidebarControls";
 import { Page } from "data/navigationData";
 
 import Link from "elements/components/Link/Link";
+import { useFixedAbsolute } from "hooks/useFixedAbsolute";
 
 export interface SidebarProps {
     page: Page;
@@ -24,6 +25,8 @@ const Sidebar = ({ page }: SidebarProps) => {
 
     useSidebarControls();
 
+    const sidebarRef = useFixedAbsolute<HTMLElement>();
+
     return (
         <>
             <CloseTrigger
@@ -32,6 +35,7 @@ const Sidebar = ({ page }: SidebarProps) => {
             />
 
             <StyledSidebar
+                ref={sidebarRef}
                 id="sidebar"
                 aria-label="Sidebar"
                 $sidebarOpen={sidebarOpen}

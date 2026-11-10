@@ -28,8 +28,7 @@ export default createGlobalStyle`
         padding: 0;
         font-size: 100%;
         width: 100vw;
-        height: var(--100svh);
-        overflow: hidden;
+        overflow-x: hidden;
         background-color: white;
     }
 
