@@ -20,7 +20,6 @@ export const StyledSidebar = styled.aside<{
     }};
 
     width: 15rem;
-    max-width: calc(100vw - 4rem);
     padding: 1rem;
     left: 0;
     z-index: 9;
