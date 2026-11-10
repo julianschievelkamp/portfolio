@@ -15,7 +15,13 @@ export interface SliderThumbnailProps {
 // Mit memo rendern beim Weiterschalten nur das alte und das neue aktive
 // Thumbnail neu, sofern onSelect und onItemFocus referenzstabil sind.
 const SliderThumbnail = memo(
-    ({ item, index, isActive, onSelect, onItemFocus }: SliderThumbnailProps) => {
+    ({
+        item,
+        index,
+        isActive,
+        onSelect,
+        onItemFocus,
+    }: SliderThumbnailProps) => {
         return (
             <SliderListItem>
                 <SliderItem
@@ -34,6 +40,7 @@ const SliderThumbnail = memo(
                         margin={item.thumbnailMargin}
                         aspectRatio={item.aspectRatio}
                         loading="lazy"
+                        fadeInOnLoad
                     />
                 </SliderItem>
             </SliderListItem>
