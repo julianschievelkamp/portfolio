@@ -30,6 +30,7 @@ export default createGlobalStyle<GlobalStyleProps>`
         width: 100vw;
         overflow-x: hidden;
         overflow-y: ${({ $isPageLocked }) => ($isPageLocked ? "hidden" : "scroll")};
+        touch-action: pan-y;
         background-color: white;
         position: relative;
     }
