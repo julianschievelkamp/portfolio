@@ -40,14 +40,11 @@ const SliderThumbnail = memo(
                         margin={item.thumbnailMargin}
                         aspectRatio={item.aspectRatio}
                         loading="lazy"
-                        fadeInOnLoad
                     />
                 </SliderItem>
             </SliderListItem>
         );
     },
 );
-
-SliderThumbnail.displayName = "SliderThumbnail";
 
 export default SliderThumbnail;

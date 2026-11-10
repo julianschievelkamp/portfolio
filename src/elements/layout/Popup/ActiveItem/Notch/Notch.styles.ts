@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { queries } from "styles/variables";
+import { queries, transition } from "styles/variables";
 
 export const NotchWrapper = styled.div`
     overflow: hidden;
@@ -9,7 +9,13 @@ export const NotchWrapper = styled.div`
     justify-content: flex-end;
     right: 0;
     bottom: 0.5rem;
+    z-index: -1;
+    transition: transform ${transition.default};
     transform: translateY(100%);
+
+    html:has([data-pinching]) & {
+        transform: translateY(0);
+    }
 
     @media ${queries.landscapeLgMax} {
         display: none;
