@@ -1,11 +1,11 @@
-import { queries } from "styles/variables";
+import { absoluteOverlayStyles, queries } from "styles/variables";
 import { styled } from "styled-components";
 import { transition } from "styles/variables";
 import Button from "elements/components/Button/Button";
 
 export const StyledPopup = styled.dialog`
-    top: 0;
-    left: 0;
+    ${absoluteOverlayStyles}
+
     margin: 0;
     border: none;
     outline: none;
@@ -13,7 +13,6 @@ export const StyledPopup = styled.dialog`
     max-height: none;
     color: inherit;
     user-select: none;
-    background-color: white;
     width: 100%;
     padding: 1rem;
 
@@ -34,16 +33,6 @@ export const StyledPopup = styled.dialog`
         @media ${queries.portrait} {
             padding: 1rem 8rem;
         }
-    }
-
-    /* Positionierung */
-    position: absolute;
-    overflow: hidden;
-    height: var(--100svh);
-    box-shadow: 0 var(--100svh) 0 0 white;
-
-    @media ${queries.md} {
-        position: fixed;
     }
 `;
 

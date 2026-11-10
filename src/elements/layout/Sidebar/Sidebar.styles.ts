@@ -1,10 +1,17 @@
 import { styled } from "styled-components";
-import { mainTitleStyles, queries, transition } from "styles/variables";
+import {
+    absoluteOverlayStyles,
+    mainTitleStyles,
+    queries,
+    transition,
+} from "styles/variables";
 import Text from "elements/components/Text/Text";
 
 export const StyledSidebar = styled.aside<{
     $sidebarOpen: boolean;
 }>`
+    ${absoluteOverlayStyles}
+
     transform: ${({ $sidebarOpen }) =>
         `translateX(${$sidebarOpen ? 0 : "-100%"})`};
     visibility: ${({ $sidebarOpen }) => ($sidebarOpen ? "visible" : "hidden")};
@@ -17,21 +24,11 @@ export const StyledSidebar = styled.aside<{
 
     width: 15rem;
     padding: 1rem;
-    top: 0;
-    left: 0;
     z-index: 9;
     display: flex;
     flex-direction: column;
-    background-color: white;
-
-    /* Positionierung */
-    position: absolute;
-    overflow: hidden;
-    height: var(--100svh);
-    box-shadow: 0 var(--100svh) 0 0 white;
 
     @media ${queries.md} {
-        position: fixed;
         width: 17rem;
         padding: 2rem;
         transform: translateX(0);

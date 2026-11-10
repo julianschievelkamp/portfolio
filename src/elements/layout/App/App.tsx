@@ -27,7 +27,7 @@ const App = ({ page, children }: AppProps) => {
 
     return (
         <>
-            <GlobalStyle $isScrollLocked={isPageLocked} />
+            <GlobalStyle $isPageLocked={isPageLocked} />
 
             <Menu />
 

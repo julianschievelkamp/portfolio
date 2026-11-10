@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import fonts from "./fonts";
 
 interface GlobalStyleProps {
-    $isScrollLocked: boolean;
+    $isPageLocked: boolean;
 }
 
 export default createGlobalStyle<GlobalStyleProps>`
@@ -23,20 +23,19 @@ export default createGlobalStyle<GlobalStyleProps>`
         -webkit-tap-highlight-color: transparent;
     }
 
-    :focus-visible {
-        outline: 0;
-    }
-
     html, body {
         margin: 0;
         padding: 0;
         font-size: 100%;
         width: 100vw;
         overflow-x: hidden;
-        overflow-y: ${({ $isScrollLocked }) => ($isScrollLocked ? "hidden" : "scroll")};
-        touch-action: ${({ $isScrollLocked }) => ($isScrollLocked ? "none" : undefined)};
+        overflow-y: ${({ $isPageLocked }) => ($isPageLocked ? "hidden" : "scroll")};
         background-color: white;
         position: relative;
+    }
+
+    :focus-visible {
+        outline: 0;
     }
 
     .no-transition * {
