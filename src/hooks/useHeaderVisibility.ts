@@ -6,9 +6,9 @@ import { useStore } from "./useStore";
 // Bereich am Seitenanfang, in dem der Header immer sichtbar bleibt
 const TOP_OFFSET = 120;
 // Zusammenhängende Scroll-Strecke nach unten, ab der der Header ausgeblendet wird
-const HIDE_DISTANCE = 50;
+const HIDE_DISTANCE = 10;
 // Zusammenhängende Scroll-Strecke nach oben, ab der der Header eingeblendet wird
-const SHOW_DISTANCE = 50;
+const SHOW_DISTANCE = 40;
 // Zeitfenster nach einer Viewport-Änderung (z. B. iOS-Adressleiste), in dem Scroll-Werte ignoriert werden
 const RESIZE_SETTLE_MS = 200;
 
