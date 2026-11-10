@@ -20,11 +20,11 @@ const Popup = () => {
     const isLandscape = useMediaQuery(queries.landscape);
     const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
 
-    const dialogRef = usePopupOverlay();
+    const popupRef = usePopupOverlay();
 
     return (
         <StyledPopup
-            ref={dialogRef}
+            ref={popupRef}
             aria-label="Artwork Dialog"
             // Macht den Dialog programmatisch fokussierbar (nicht per Tab)
             tabIndex={-1}

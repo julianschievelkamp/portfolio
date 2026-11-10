@@ -6,12 +6,12 @@ import { usePopupControls } from "./usePopupControls";
 
 export const usePopupOverlay = () => {
     const popupOpen = useStore((state) => state.popupOpen);
-    const dialogRef = useAbsoluteOverlay<HTMLDialogElement>();
+    const popupRef = useAbsoluteOverlay<HTMLDialogElement>();
 
     usePopupControls();
 
     useEffect(() => {
-        const dialog = dialogRef.current;
+        const dialog = popupRef.current;
 
         if (!dialog) return;
 
@@ -51,7 +51,7 @@ export const usePopupOverlay = () => {
         }, TRANSITION_DEFAULT);
 
         return () => clearTimeout(timeout);
-    }, [popupOpen, dialogRef]);
+    }, [popupOpen, popupRef]);
 
-    return dialogRef;
+    return popupRef;
 };
