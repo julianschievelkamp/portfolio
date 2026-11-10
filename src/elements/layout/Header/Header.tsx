@@ -1,18 +1,18 @@
-import { MainTitle, StyledMenu, ToggleWrapper } from "./Menu.styles";
+import { MainTitle, StyledHeader, ToggleWrapper } from "./Header.styles";
 import { languageData } from "data/languageData";
-import { useMenuVisibility } from "hooks/useMenuVisibility";
+import { useHeaderVisibility } from "hooks/useHeaderVisibility";
 import { useStore } from "hooks/useStore";
 import Link from "elements/components/Link/Link";
 import Button from "elements/components/Button/Button";
 import Icon from "elements/components/Icon/Icon";
 
-const Menu = () => {
+const Header = () => {
     const sidebarOpen = useStore((state) => state.sidebarOpen);
     const setSidebarOpen = useStore((state) => state.setSidebarOpen);
-    const { isVisible } = useMenuVisibility();
+    const { isVisible } = useHeaderVisibility();
 
     return (
-        <StyledMenu $isVisible={isVisible}>
+        <StyledHeader $isVisible={isVisible}>
             <MainTitle>
                 <Link
                     href="/"
@@ -31,11 +31,11 @@ const Menu = () => {
                     ariaControls="sidebar"
                     id="sidebar-toggle"
                 >
-                    <Icon name={sidebarOpen ? "close" : "menu"} size="2rem" />
+                    <Icon name={sidebarOpen ? "close" : "hamburger"} size="2rem" />
                 </Button>
             </ToggleWrapper>
-        </StyledMenu>
+        </StyledHeader>
     );
 };
 
-export default Menu;
+export default Header;

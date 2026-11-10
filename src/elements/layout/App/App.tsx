@@ -1,7 +1,7 @@
 import GlobalStyle from "styles/global";
 import { Main } from "./App.styles";
 import Sidebar from "elements/layout/Sidebar/Sidebar";
-import Menu from "elements/layout/Menu/Menu";
+import Header from "elements/layout/Header/Header";
 import { Page } from "data/navigationData";
 import { type ReactNode } from "react";
 import Headline from "elements/components/Headline/Headline";
@@ -29,7 +29,7 @@ const App = ({ page, children }: AppProps) => {
         <>
             <GlobalStyle $isPageLocked={isPageLocked} />
 
-            <Menu />
+            <Header />
 
             <Sidebar page={page} />
 

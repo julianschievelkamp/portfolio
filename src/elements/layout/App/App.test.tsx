@@ -7,7 +7,7 @@ import App from "./App";
 
 vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: vi.fn() }));
 vi.mock("elements/layout/Sidebar/Sidebar", () => ({ default: () => <aside /> }));
-vi.mock("elements/layout/Menu/Menu", () => ({ default: () => <header /> }));
+vi.mock("elements/layout/Header/Header", () => ({ default: () => <header /> }));
 
 const page = {
     name: "Test",
@@ -43,7 +43,7 @@ describe("App", () => {
         expect(screen.getByText("Content")).toBeInTheDocument();
     });
 
-    it("always renders menu and sidebar regardless of the viewport", () => {
+    it("always renders header and sidebar regardless of the viewport", () => {
         render(<App page={page}>
                 <p>Content</p>
             </App>);

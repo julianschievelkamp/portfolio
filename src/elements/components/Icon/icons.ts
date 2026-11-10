@@ -1,6 +1,6 @@
 /// <reference types="vite-plugin-svgr/client" />
 import Close from "assets/icons/close.svg?react";
-import Menu from "assets/icons/menu.svg?react";
+import Hamburger from "assets/icons/hamburger.svg?react";
 import Play from "assets/icons/play.svg?react";
 import ChevronLeft from "assets/icons/chevron-left.svg?react";
 import ChevronRight from "assets/icons/chevron-right.svg?react";
@@ -13,7 +13,7 @@ import InfoFilled from "assets/icons/info-filled.svg?react";
 
 export const icons = {
     close: Close,
-    menu: Menu,
+    hamburger: Hamburger,
     play: Play,
     chevronLeft: ChevronLeft,
     chevronRight: ChevronRight,

@@ -3,10 +3,10 @@ import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useStore } from "hooks/useStore";
-import { useMenuVisibility } from "hooks/useMenuVisibility";
-import Menu from "./Menu";
+import { useHeaderVisibility } from "hooks/useHeaderVisibility";
+import Header from "./Header";
 
-vi.mock("hooks/useMenuVisibility", () => ({ useMenuVisibility: vi.fn() }));
+vi.mock("hooks/useHeaderVisibility", () => ({ useHeaderVisibility: vi.fn() }));
 vi.mock("data/languageData", () => ({
     languageData: { title: "Site Title" },
 }));
@@ -17,14 +17,14 @@ vi.mock("elements/components/Icon/Icon", () => ({
     ),
 }));
 
-describe("Menu", () => {
+describe("Header", () => {
     beforeEach(() => {
         useStore.setState({ sidebarOpen: false });
-        vi.mocked(useMenuVisibility).mockReturnValue({ isVisible: true });
+        vi.mocked(useHeaderVisibility).mockReturnValue({ isVisible: true });
     });
 
     it("renders the site title as a link to the start page", () => {
-        render(<Menu />);
+        render(<Header />);
 
         expect(screen.getByRole("link", { name: "Site Title" })).toHaveAttribute(
             "href",
@@ -33,7 +33,7 @@ describe("Menu", () => {
     });
 
     it("uses a header element as banner landmark", () => {
-        render(<Menu />);
+        render(<Header />);
 
         expect(screen.getByRole("banner")).toContainElement(
             screen.getByRole("link", { name: "Site Title" }),
@@ -42,7 +42,7 @@ describe("Menu", () => {
 
     it("closes the sidebar when the title link is clicked", async () => {
         useStore.setState({ sidebarOpen: true });
-        render(<Menu />);
+        render(<Header />);
 
         await userEvent.click(screen.getByRole("link", { name: "Site Title" }));
 
@@ -50,7 +50,7 @@ describe("Menu", () => {
     });
 
     it("has a keyboard reachable toggle button", async () => {
-        render(<Menu />);
+        render(<Header />);
 
         await userEvent.tab();
         await userEvent.tab();
@@ -61,7 +61,7 @@ describe("Menu", () => {
     });
 
     it("opens a closed sidebar and closes an open one", async () => {
-        render(<Menu />);
+        render(<Header />);
         const button = screen.getByRole("button", { name: "Toggle Sidebar" });
 
         await userEvent.click(button);
@@ -71,27 +71,27 @@ describe("Menu", () => {
         expect(useStore.getState().sidebarOpen).toBe(false);
     });
 
-    it("shows the menu icon when closed and the close icon when open", async () => {
-        render(<Menu />);
-        expect(screen.getByTestId("icon")).toHaveAttribute("data-name", "menu");
+    it("shows the hamburger icon when closed and the close icon when open", async () => {
+        render(<Header />);
+        expect(screen.getByTestId("icon")).toHaveAttribute("data-name", "hamburger");
 
         await userEvent.click(screen.getByRole("button"));
 
         expect(screen.getByTestId("icon")).toHaveAttribute("data-name", "close");
     });
 
-    it("follows the visibility from useMenuVisibility", () => {
-        const { rerender } = render(<Menu />);
+    it("follows the visibility from useHeaderVisibility", () => {
+        const { rerender } = render(<Header />);
         expect(screen.getByRole("link")).toBeVisible();
 
-        vi.mocked(useMenuVisibility).mockReturnValue({ isVisible: false });
-        rerender(<Menu />);
+        vi.mocked(useHeaderVisibility).mockReturnValue({ isVisible: false });
+        rerender(<Header />);
 
         expect(screen.getByRole("link", { hidden: true })).not.toBeVisible();
     });
 
     it("exposes the sidebar state via aria-expanded and aria-controls", async () => {
-        render(<Menu />);
+        render(<Header />);
         const button = screen.getByRole("button", { name: "Toggle Sidebar" });
 
         expect(button).toHaveAttribute("aria-controls", "sidebar");

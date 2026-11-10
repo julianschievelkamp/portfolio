@@ -3,7 +3,7 @@ import { queries } from "styles/variables";
 import { useMediaQuery } from "./useMediaQuery";
 import { useStore } from "./useStore";
 
-export const useMenuVisibility = () => {
+export const useHeaderVisibility = () => {
     const sidebarOpen = useStore((state) => state.sidebarOpen);
     const isMd = useMediaQuery(queries.md);
 
@@ -13,7 +13,7 @@ export const useMenuVisibility = () => {
     useEffect(() => {
         if (isMd) return;
 
-        const controlMenu = () => {
+        const controlHeader = () => {
             const scrollY = window.scrollY;
 
             if (
@@ -36,9 +36,9 @@ export const useMenuVisibility = () => {
             lastScrollY.current = scrollY;
         };
 
-        window.addEventListener("scroll", controlMenu, { passive: true });
+        window.addEventListener("scroll", controlHeader, { passive: true });
 
-        return () => window.removeEventListener("scroll", controlMenu);
+        return () => window.removeEventListener("scroll", controlHeader);
     }, [sidebarOpen, isMd]);
 
     return {
