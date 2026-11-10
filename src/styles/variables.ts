@@ -32,9 +32,10 @@ export const thumbnailSize = "(max-width: 1200px) 300px, 600px";
 
 export const scrollStyles = css`
     overflow-y: scroll;
+    overscroll-behavior-y: contain;
+
     -ms-overflow-style: none; /* IE und Edge */
     scrollbar-width: none; /* Firefox */
-    overscroll-behavior-y: contain;
 
     &::-webkit-scrollbar {
         display: none;

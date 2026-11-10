@@ -21,7 +21,7 @@ const App = ({ page, children }: AppProps) => {
 
     useResizeTransition();
 
-    // Scrollposition des Seitencontainers beim Seitenwechsel zurücksetzen
+    // Scrollposition beim Seitenwechsel zurücksetzen
     useEffect(() => {
         const main = document.querySelector("main");
 
