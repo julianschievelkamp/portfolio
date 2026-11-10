@@ -1,6 +1,6 @@
 import Text from "elements/components/Text/Text";
 import {
-    CloseTrigger,
+    Backdrop,
     ScrollContainer,
     MainTitle,
     StyledSidebar,
@@ -11,7 +11,6 @@ import Navigation from "elements/layout/Navigation/Navigation";
 import { useStore } from "hooks/useStore";
 import { useSidebarControls } from "hooks/useSidebarControls";
 import { Page } from "data/navigationData";
-
 import Link from "elements/components/Link/Link";
 import { useFixedAbsolute } from "hooks/useFixedAbsolute";
 
@@ -23,13 +22,13 @@ const Sidebar = ({ page }: SidebarProps) => {
     const sidebarOpen = useStore((state) => state.sidebarOpen);
     const setSidebarOpen = useStore((state) => state.setSidebarOpen);
 
-    useSidebarControls();
-
     const sidebarRef = useFixedAbsolute<HTMLElement>();
+
+    useSidebarControls();
 
     return (
         <>
-            <CloseTrigger
+            <Backdrop
                 onClick={() => setSidebarOpen(false)}
                 $isActive={sidebarOpen}
             />

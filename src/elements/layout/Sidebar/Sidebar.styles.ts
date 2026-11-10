@@ -43,22 +43,23 @@ export const StyledSidebar = styled.aside<{
     }
 `;
 
-export const CloseTrigger = styled.div<{ $isActive: boolean }>`
-    position: fixed;
+export const Backdrop = styled.div<{ $isActive: boolean }>`
+    position: absolute;
     width: 100%;
-    height: 50%;
+    height: 100%;
     top: 0;
     left: 0;
+    z-index: 9;
     backdrop-filter: blur(2px);
+
+    opacity: ${({ $isActive }) => ($isActive ? 1 : 0)};
+    visibility: ${({ $isActive }) => ($isActive ? "visible" : "hidden")};
     /* Beim Öffnen ease-out, beim Schließen ease-in */
     transition: ${({ $isActive }) => {
         const timing = $isActive ? transition.default : transition.defaultIn;
 
         return `opacity ${timing}, visibility ${timing}`;
     }};
-    opacity: ${({ $isActive }) => ($isActive ? 1 : 0)};
-    visibility: ${({ $isActive }) => ($isActive ? "visible" : "hidden")};
-    z-index: 9;
 
     @media ${queries.md} {
         display: none;

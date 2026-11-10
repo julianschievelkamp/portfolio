@@ -30,6 +30,7 @@ export default createGlobalStyle`
         width: 100vw;
         overflow-x: hidden;
         background-color: white;
+        position: relative;
     }
 
     .no-transition * {

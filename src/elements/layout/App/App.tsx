@@ -3,7 +3,7 @@ import { Main } from "./App.styles";
 import Sidebar from "elements/layout/Sidebar/Sidebar";
 import Menu from "elements/layout/Menu/Menu";
 import { Page } from "data/navigationData";
-import { useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import Headline from "elements/components/Headline/Headline";
 import { useResizeTransition } from "hooks/useResizeTransition";
 import { useStore } from "hooks/useStore";
@@ -20,15 +20,6 @@ const App = ({ page, children }: AppProps) => {
     const sidebarOpen = useStore((state) => state.sidebarOpen);
 
     useResizeTransition();
-
-    // Scrollposition beim Seitenwechsel zurücksetzen
-    useEffect(() => {
-        const main = document.querySelector("main");
-
-        if (main) {
-            main.scrollTop = 0;
-        }
-    }, [page.path]);
 
     return (
         <>
