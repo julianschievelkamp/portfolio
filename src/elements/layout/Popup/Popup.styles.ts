@@ -6,7 +6,7 @@ import Button from "elements/components/Button/Button";
 export const StyledPopup = styled.dialog`
     ${absoluteOverlayStyles}
 
-    margin: 0;
+    overflow: visible;
     border: none;
     outline: none;
     max-width: none;
@@ -15,6 +15,7 @@ export const StyledPopup = styled.dialog`
     user-select: none;
     width: 100%;
     padding: 1rem;
+    margin: 0;
 
     &::backdrop {
         display: none;

@@ -6,12 +6,14 @@ export const SliderContainer = styled.div`
     bottom: 1rem;
     left: 0;
     width: 100%;
+    height: 3rem;
+    overflow: hidden;
 
     @media ${queries.landscapeLgMax} {
         top: 0;
         left: 1rem;
         bottom: unset;
-        width: unset;
+        width: 3rem;
         height: 100%;
     }
 `;

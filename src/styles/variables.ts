@@ -44,7 +44,6 @@ export const mainTitleStyles = css`
 // Hintergrundflächen bis hinter die mobilen dynamischen Browser-Leisten ermöglichen
 export const absoluteOverlayStyles = css`
     position: absolute;
-    overflow: hidden;
     background-color: white;
     top: 0;
     left: 0;
