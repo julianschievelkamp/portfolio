@@ -1,5 +1,5 @@
 import GlobalStyle from "styles/global";
-import { PageContainer, StyledApp } from "./App.styles";
+import { Main } from "./App.styles";
 import Sidebar from "elements/layout/Sidebar/Sidebar";
 import Menu from "elements/layout/Menu/Menu";
 import { Page } from "data/navigationData";
@@ -23,27 +23,27 @@ const App = ({ page, children }: AppProps) => {
 
     // Scrollposition des Seitencontainers beim Seitenwechsel zurücksetzen
     useEffect(() => {
-        const container = document.getElementById("page-container");
+        const main = document.querySelector("main");
 
-        if (container) {
-            container.scrollTop = 0;
+        if (main) {
+            main.scrollTop = 0;
         }
     }, [page.path]);
 
     return (
-        <StyledApp>
+        <>
             <GlobalStyle />
 
             <Menu />
 
             <Sidebar page={page} />
 
-            <PageContainer id="page-container" inert={!isMd && sidebarOpen}>
+            <Main inert={!isMd && sidebarOpen}>
                 <Headline visuallyHidden>{page.title}</Headline>
 
                 {children}
-            </PageContainer>
-        </StyledApp>
+            </Main>
+        </>
     );
 };
 

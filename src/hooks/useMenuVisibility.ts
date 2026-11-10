@@ -31,12 +31,12 @@ export const useMenuVisibility = () => {
             lastScrollY.current = target.scrollTop;
         };
 
-        const pageContainer = document.getElementById("page-container");
+        const main = document.querySelector("main");
 
-        pageContainer?.addEventListener("scroll", controlMenu);
+        main?.addEventListener("scroll", controlMenu);
 
         return () => {
-            pageContainer?.removeEventListener("scroll", controlMenu);
+            main?.removeEventListener("scroll", controlMenu);
         };
     }, [sidebarOpen]);
 

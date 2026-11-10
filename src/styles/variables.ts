@@ -34,6 +34,7 @@ export const scrollStyles = css`
     overflow-y: scroll;
     -ms-overflow-style: none; /* IE und Edge */
     scrollbar-width: none; /* Firefox */
+    overscroll-behavior-y: contain;
 
     &::-webkit-scrollbar {
         display: none;
