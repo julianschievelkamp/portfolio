@@ -1,10 +1,5 @@
 import { styled } from "styled-components";
-import {
-    mainTitleStyles,
-    queries,
-    scrollStyles,
-    transition,
-} from "styles/variables";
+import { mainTitleStyles, queries, transition } from "styles/variables";
 import Text from "elements/components/Text/Text";
 
 export const StyledSidebar = styled.aside<{
@@ -67,8 +62,7 @@ export const Backdrop = styled.div<{ $isActive: boolean }>`
 `;
 
 export const ScrollContainer = styled.div`
-    ${scrollStyles}
-
+    overflow-y: scroll;
     margin: 1.5rem 0 0 0;
     display: flex;
     flex-direction: column;

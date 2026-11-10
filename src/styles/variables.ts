@@ -30,18 +30,6 @@ export const queries = {
 
 export const thumbnailSize = "(max-width: 1200px) 300px, 600px";
 
-export const scrollStyles = css`
-    overflow-y: scroll;
-    overscroll-behavior-y: contain;
-
-    -ms-overflow-style: none; /* IE und Edge */
-    scrollbar-width: none; /* Firefox */
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
-`;
-
 export const mainTitleStyles = css`
     text-transform: uppercase;
     font-family: "PlayfairDisplay", sans-serif;

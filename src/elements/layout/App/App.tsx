@@ -19,17 +19,20 @@ const App = ({ page, children }: AppProps) => {
     const isMd = useMediaQuery(queries.md);
     const sidebarOpen = useStore((state) => state.sidebarOpen);
 
+    // Scrollen sperren, solange die Sidebar als mobiles Overlay geöffnet ist
+    const isScrollLocked = !isMd && sidebarOpen;
+
     useResizeTransition();
 
     return (
         <>
-            <GlobalStyle />
+            <GlobalStyle $isScrollLocked={isScrollLocked} />
 
             <Menu />
 
             <Sidebar page={page} />
 
-            <Main inert={!isMd && sidebarOpen}>
+            <Main inert={isScrollLocked}>
                 <Headline visuallyHidden>{page.title}</Headline>
 
                 {children}

@@ -1,7 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 import fonts from "./fonts";
 
-export default createGlobalStyle`
+interface GlobalStyleProps {
+    $isScrollLocked: boolean;
+}
+
+export default createGlobalStyle<GlobalStyleProps>`
     ${fonts};
 
     :root {
@@ -29,6 +33,8 @@ export default createGlobalStyle`
         font-size: 100%;
         width: 100vw;
         overflow-x: hidden;
+        overflow-y: ${({ $isScrollLocked }) => ($isScrollLocked ? "hidden" : "scroll")};
+        touch-action: ${({ $isScrollLocked }) => ($isScrollLocked ? "none" : undefined)};
         background-color: white;
         position: relative;
     }
