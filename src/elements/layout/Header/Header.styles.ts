@@ -12,7 +12,11 @@ export const StyledHeader = styled.header<{ $isVisible: boolean }>`
     justify-content: space-between;
     top: 0;
     left: 0;
-    transform: ${({ $isVisible }) => `translateY(${$isVisible ? 0 : "-100%"})`};
+    /* translate3d und will-change halten den Header auf einer eigenen GPU-Ebene (flüssiger auf iOS) */
+    transform: ${({ $isVisible }) =>
+        `translate3d(0, ${$isVisible ? 0 : "-100%"}, 0)`};
+    will-change: transform;
+    backface-visibility: hidden;
     visibility: ${({ $isVisible }) => ($isVisible ? "visible" : "hidden")};
     /* Beim Öffnen ease-out, beim Schließen ease-in */
     transition: ${({ $isVisible }) => {
