@@ -68,4 +68,16 @@ describe("SliderThumbnail", () => {
             "true",
         );
     });
+
+    it("shows the image of the active item fully opaque", () => {
+        renderThumbnail(true);
+
+        expect(screen.getByRole("img")).toHaveStyle("opacity: 1");
+    });
+
+    it("dims the image of an inactive item", () => {
+        renderThumbnail();
+
+        expect(screen.getByRole("img")).toHaveStyle("opacity: 0.5");
+    });
 });

@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import fonts from "./fonts";
+import { transition } from "./variables";
 
 interface GlobalStyleProps {
     $isPageLocked: boolean;
@@ -33,8 +34,15 @@ export default createGlobalStyle<GlobalStyleProps>`
         /* Sperrt den nativen Pinch-Zoom der gesamten Seite, Scrollen bleibt erhalten.
            Nur das ActiveItem ist über usePinchZoom zoombar. */
         touch-action: pan-x pan-y;
-        background-color: white;
+        transition: background-color ${transition.default};
         position: relative;
+    }
+
+    /* Während das ActiveItem gezoomt wird (data-pinching aus usePinchZoom),
+       färbt sich die Seite passend zum Popup schwarz */
+    html:has([data-pinching]),
+    html:has([data-pinching]) body {
+        background-color: black;
     }
 
     :focus-visible {

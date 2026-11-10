@@ -13,29 +13,23 @@ export const SliderListItem = styled.li`
 `;
 
 export const SliderItem = styled(Button)<{ $isActive: boolean }>`
-    position: relative;
     background: transparent;
     width: 100%;
     height: 100%;
     overflow: hidden;
 
-    /* Abdunklung als Overlay statt Bild-Opacity, damit iOS das Bild nicht neu rastert */
-    &::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: rgba(255, 255, 255, 0.5);
-        opacity: ${({ $isActive }) => ($isActive ? 0 : 1)};
-        pointer-events: none;
+    img {
+        transition: none;
+        opacity: ${({ $isActive }) => ($isActive ? 1 : 0.5)};
     }
 
-    &:focus-visible::after {
-        opacity: 0;
+    &:focus-visible img {
+        opacity: 1;
     }
 
     @media ${queries.hover} {
-        &:hover::after {
-            opacity: 0;
+        &:hover img {
+            opacity: 1;
         }
     }
 `;

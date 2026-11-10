@@ -22,9 +22,15 @@ export const StyledHeader = styled.header<{ $isVisible: boolean }>`
     transition: ${({ $isVisible }) => {
         const timing = $isVisible ? transition.default : transition.defaultIn;
 
-        return `transform ${timing}, visibility ${timing}`;
+        return `transform ${timing}, visibility ${timing}, background-color ${transition.default}`;
     }};
     z-index: 99;
+
+    /* Safari färbt die Statusleiste anhand des fixierten Headers ein. Während das
+       ActiveItem gezoomt wird (data-pinching aus usePinchZoom), wird er daher schwarz. */
+    html:has([data-pinching]) & {
+        background-color: black;
+    }
 
     @media ${queries.md} {
         display: none;

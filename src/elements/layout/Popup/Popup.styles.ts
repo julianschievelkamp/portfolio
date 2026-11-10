@@ -23,11 +23,23 @@ export const StyledPopup = styled.dialog`
 
     /* Ein-/Ausblenden über data-visible; das Schließen erfolgt per JS nach der Transition */
     opacity: 0;
-    transition: opacity ${transition.defaultIn};
+    transition:
+        opacity ${transition.defaultIn},
+        background-color ${transition.default},
+        box-shadow ${transition.default};
 
     &[data-visible="true"] {
         opacity: 1;
-        transition: opacity ${transition.default};
+        transition:
+            opacity ${transition.default},
+            background-color ${transition.default},
+            box-shadow ${transition.default};
+    }
+
+    /* Während das ActiveItem gezoomt wird (data-pinching aus usePinchZoom),
+       färben sich Hintergrund und box-shadow schwarz */
+    &:has([data-pinching]) {
+        --overlay-color: black;
     }
 
     @media ${queries.md} {

@@ -31,7 +31,6 @@ export const InnerSliderContainer = styled.ul<{
     padding: 0;
     list-style: none;
     transition: transform ${transition.default};
-    background: white;
 
     @media ${queries.landscapeLgMax} {
         flex-direction: column;
