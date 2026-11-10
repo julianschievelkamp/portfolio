@@ -1,11 +1,19 @@
 import { useEffect } from "react";
 
-// Deaktiviert CSS-Transitions, solange die Fenstergröße verändert wird
+// Deaktiviert CSS-Transitions, solange die Fensterbreite verändert wird
+// (Höhenänderungen durch die mobile Adressleiste beim Scrollen werden ignoriert)
 export const useResizeTransition = () => {
     useEffect(() => {
         let resizeTimer: ReturnType<typeof setTimeout>;
+        let lastWidth = window.innerWidth;
 
         const handleResize = () => {
+            if (window.innerWidth === lastWidth) {
+                return;
+            }
+
+            lastWidth = window.innerWidth;
+
             if (!document.body.classList.contains("no-transition")) {
                 document.body.classList.add("no-transition");
             }
