@@ -3,13 +3,25 @@ import { queries, transition } from "styles/variables";
 
 export const StyledActiveItem = styled.div<{ $isItemRevealed: boolean }>`
     position: relative;
-    z-index: 1;
+    z-index: 9;
     max-width: 100%;
     opacity: ${({ $isItemRevealed }) => ($isItemRevealed ? 1 : 0)};
     visibility: ${({ $isItemRevealed }) =>
         $isItemRevealed ? "visible" : "hidden"};
     transition: ${({ $isItemRevealed }) =>
-        $isItemRevealed ? `opacity ${transition.default}` : "none"};
+        $isItemRevealed
+            ? `opacity ${transition.default}, transform ${transition.default}`
+            : "none"};
+    /* Gesten werden vollständig von usePinchZoom übernommen */
+    touch-action: none;
+    /* Transformation aus usePinchZoom, ohne Geste gleitet das Werk zurück */
+    transform: var(--pinch-transform, none);
+    transform-origin: 0 0;
+
+    /* Während der Geste folgt das Werk den Fingern ohne Verzögerung */
+    &[data-pinching] {
+        transition: opacity ${transition.default};
+    }
 `;
 
 export const ItemFigure = styled.figure`

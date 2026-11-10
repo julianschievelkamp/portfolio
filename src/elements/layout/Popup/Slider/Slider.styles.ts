@@ -13,7 +13,6 @@ export const SliderContainer = styled.div`
         bottom: unset;
         width: unset;
         height: 100%;
-        z-index: 1;
     }
 `;
 

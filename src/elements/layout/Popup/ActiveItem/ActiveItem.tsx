@@ -5,8 +5,11 @@ import { getAltText } from "data/portfolioData";
 import Video from "elements/components/Video/Video";
 import Notch from "./Notch/Notch";
 import ItemInfo from "./ItemInfo/ItemInfo";
+import { usePinchZoom } from "hooks/usePinchZoom";
 
 const ActiveItem = () => {
+    const pinchZoomRef = usePinchZoom<HTMLDivElement>();
+
     const {
         loadedItem,
         isItemRevealed,
@@ -24,7 +27,7 @@ const ActiveItem = () => {
     if (!loadedItem) return null;
 
     return (
-        <StyledActiveItem $isItemRevealed={isItemRevealed}>
+        <StyledActiveItem ref={pinchZoomRef} $isItemRevealed={isItemRevealed}>
             <ItemFigure onClick={() => setIsInfoOn(false)}>
                 <Image
                     src={loadedItem.image}

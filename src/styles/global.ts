@@ -30,7 +30,9 @@ export default createGlobalStyle<GlobalStyleProps>`
         width: 100vw;
         overflow-x: hidden;
         overflow-y: ${({ $isPageLocked }) => ($isPageLocked ? "hidden" : "scroll")};
-        touch-action: pan-y;
+        /* Sperrt den nativen Pinch-Zoom der gesamten Seite, Scrollen bleibt erhalten.
+           Nur das ActiveItem ist über usePinchZoom zoombar. */
+        touch-action: pan-x pan-y;
         background-color: white;
         position: relative;
     }
