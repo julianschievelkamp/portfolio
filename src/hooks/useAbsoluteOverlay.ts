@@ -3,8 +3,8 @@ import { queries } from "styles/variables";
 import { useMediaQuery } from "./useMediaQuery";
 
 // Hält ein absolut positioniertes Element per Ref auf Höhe der Scroll-Position,
-// um ein fixiertes Element zu simulieren (nur in mobilen Layouts, ab md ist es fixed)
-export const useFixedAbsolute = <T extends HTMLElement>() => {
+// um ein fixiertes Element zu simulieren (nur in mobilen Layouts)
+export const useAbsoluteOverlay = <T extends HTMLElement>() => {
     const elementRef = useRef<T>(null);
     const isMd = useMediaQuery(queries.md);
 

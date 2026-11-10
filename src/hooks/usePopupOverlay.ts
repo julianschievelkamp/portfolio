@@ -1,11 +1,14 @@
 import { useEffect } from "react";
 import { useStore } from "./useStore";
 import { TRANSITION_DEFAULT } from "styles/variables";
-import { useFixedAbsolute } from "./useFixedAbsolute";
+import { useAbsoluteOverlay } from "./useAbsoluteOverlay";
+import { usePopupControls } from "./usePopupControls";
 
-export const usePopupDialog = () => {
+export const usePopupOverlay = () => {
     const popupOpen = useStore((state) => state.popupOpen);
-    const dialogRef = useFixedAbsolute<HTMLDialogElement>();
+    const dialogRef = useAbsoluteOverlay<HTMLDialogElement>();
+
+    usePopupControls();
 
     useEffect(() => {
         const dialog = dialogRef.current;

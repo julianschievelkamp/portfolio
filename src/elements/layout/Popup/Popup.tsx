@@ -6,8 +6,7 @@ import {
     OuterWrapper,
     StyledPopup,
 } from "./Popup.styles";
-import { usePopupControls } from "hooks/usePopupControls";
-import { usePopupDialog } from "hooks/usePopupDialog";
+import { usePopupOverlay } from "hooks/usePopupOverlay";
 import Slider from "./Slider/Slider";
 import Icon from "elements/components/Icon/Icon";
 import ActiveItem from "./ActiveItem/ActiveItem";
@@ -21,9 +20,7 @@ const Popup = () => {
     const isLandscape = useMediaQuery(queries.landscape);
     const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
 
-    const dialogRef = usePopupDialog();
-
-    usePopupControls();
+    const dialogRef = usePopupOverlay();
 
     return (
         <StyledPopup

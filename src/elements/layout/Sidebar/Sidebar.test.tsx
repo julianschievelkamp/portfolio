@@ -5,7 +5,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { useStore } from "hooks/useStore";
 import Sidebar from "./Sidebar";
 
-// Mobile Layout, damit useFixedAbsolute aktiv ist und kein window.matchMedia nötig ist
+// Mobile Layout, damit useAbsoluteOverlay aktiv ist und kein window.matchMedia nötig ist
 vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: () => false }));
 vi.mock("data/languageData", () => ({
     languageData: {
