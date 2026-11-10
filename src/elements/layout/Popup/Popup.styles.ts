@@ -4,7 +4,6 @@ import { transition } from "styles/variables";
 import Button from "elements/components/Button/Button";
 
 export const StyledPopup = styled.dialog`
-    position: fixed;
     top: 0;
     left: 0;
     margin: 0;
@@ -12,22 +11,14 @@ export const StyledPopup = styled.dialog`
     outline: none;
     max-width: none;
     max-height: none;
-    overflow: visible;
     color: inherit;
+    user-select: none;
     background-color: white;
     width: 100%;
-    height: 100%;
     padding: 1rem;
-    user-select: none;
-
-    @media ${queries.md} {
-        @media ${queries.portrait} {
-            padding: 1rem 8rem;
-        }
-    }
 
     &::backdrop {
-        background: transparent;
+        display: none;
     }
 
     /* Ein-/Ausblenden über data-visible; das Schließen erfolgt per JS nach der Transition */
@@ -37,6 +28,22 @@ export const StyledPopup = styled.dialog`
     &[data-visible="true"] {
         opacity: 1;
         transition: opacity ${transition.default};
+    }
+
+    @media ${queries.md} {
+        @media ${queries.portrait} {
+            padding: 1rem 8rem;
+        }
+    }
+
+    /* Positionierung */
+    position: absolute;
+    overflow: hidden;
+    height: var(--100svh);
+    box-shadow: 0 var(--100svh) 0 0 white;
+
+    @media ${queries.md} {
+        position: fixed;
     }
 `;
 

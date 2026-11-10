@@ -1,10 +1,11 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { useStore } from "./useStore";
 import { TRANSITION_DEFAULT } from "styles/variables";
+import { useFixedAbsolute } from "./useFixedAbsolute";
 
 export const usePopupDialog = () => {
     const popupOpen = useStore((state) => state.popupOpen);
-    const dialogRef = useRef<HTMLDialogElement>(null);
+    const dialogRef = useFixedAbsolute<HTMLDialogElement>();
 
     useEffect(() => {
         const dialog = dialogRef.current;
@@ -47,7 +48,7 @@ export const usePopupDialog = () => {
         }, TRANSITION_DEFAULT);
 
         return () => clearTimeout(timeout);
-    }, [popupOpen]);
+    }, [popupOpen, dialogRef]);
 
     return dialogRef;
 };
