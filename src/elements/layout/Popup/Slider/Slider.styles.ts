@@ -29,7 +29,7 @@ export const InnerSliderContainer = styled.ul<{
     margin: 0;
     padding: 0;
     list-style: none;
-    transition: ${transition.default};
+    transition: transform ${transition.default};
     background: white;
 
     @media ${queries.landscapeLgMax} {

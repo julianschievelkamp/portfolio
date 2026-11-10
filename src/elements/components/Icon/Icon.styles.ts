@@ -18,7 +18,7 @@ export const StyledIcon = styled.div<{
     box-sizing: content-box;
 
     svg {
-        transition: ${transition.default};
+        transition: fill ${transition.default};
         fill: ${({ color }) => color ?? colors.secondary};
         width: ${({ $size }) => $size};
         height: ${({ $size }) => $size};

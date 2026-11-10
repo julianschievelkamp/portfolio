@@ -14,7 +14,7 @@ export const StyledSocial = styled.div`
 
         a {
             color: ${colors.primary};
-            transition: ${transition.fast};
+            transition: color ${transition.fast};
         }
     }
 `;

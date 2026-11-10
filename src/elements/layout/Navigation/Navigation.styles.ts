@@ -37,7 +37,7 @@ export const NavLink = styled(Link)<{ $isActive?: boolean }>`
     &:focus-visible {
         p {
             color: ${({ $isActive }) => !$isActive && colors.primary};
-            transition: ${transition.fast};
+            transition: color ${transition.fast};
         }
     }
 `;
