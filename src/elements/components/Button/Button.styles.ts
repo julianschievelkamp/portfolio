@@ -7,6 +7,7 @@ export const StyledButton = styled.button`
     border: none;
     cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
     opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
+    transition: opacity ${transition.default};
 
     ${({ disabled }) =>
         !disabled &&

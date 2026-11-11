@@ -17,6 +17,7 @@ export const StyledActiveItem = styled.div`
 `;
 
 export const InnerWrapper = styled.div<{ $isItemRevealed: boolean }>`
+    background-color: black;
     position: relative;
     z-index: 9;
 
@@ -31,10 +32,9 @@ export const InnerWrapper = styled.div<{ $isItemRevealed: boolean }>`
 
 export const ItemFigure = styled.figure`
     position: relative;
-
     display: flex;
     overflow: hidden;
-    border: 0.5rem solid black;
+    padding: 0.5rem;
     margin: 0;
     z-index: 9;
 
@@ -62,7 +62,9 @@ export const ItemFigure = styled.figure`
 
     > video {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 0.5rem;
+        left: 0.5rem;
+        width: calc(100% - 1rem);
+        height: calc(100% - 1rem);
     }
 `;

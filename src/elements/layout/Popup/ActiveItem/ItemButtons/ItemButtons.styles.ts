@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { queries, transition } from "styles/variables";
+import { queries } from "styles/variables";
 
 export const StyledItemButtons = styled.div`
     overflow: hidden;
@@ -8,22 +8,15 @@ export const StyledItemButtons = styled.div`
     display: flex;
     justify-content: flex-end;
     right: 0;
-    bottom: 0.5rem;
+    bottom: 0;
     transform: translateY(100%);
-
-    will-change: opacity;
-    transition: opacity ${transition.default};
-
-    html:has([data-pinching]) & {
-        opacity: 0;
-    }
 
     @media ${queries.landscapeLgMax} {
         height: 100%;
         flex-direction: column;
         transform: translateX(100%);
         bottom: 0;
-        right: 0.5rem;
+        right: 0;
     }
 `;
 
@@ -34,26 +27,22 @@ export const Notch = styled.div`
     align-items: center;
     justify-content: flex-end;
     background-color: black;
-
-    &::before {
-        content: "";
-        position: absolute;
-        background: black;
-        transform: rotate(45deg);
-        z-index: -1;
-        left: -1.25rem;
-        top: -2rem;
-        width: 4rem;
-        height: 4rem;
-    }
+    padding: 0 0 0 2rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 2rem 100%);
 
     @media ${queries.landscapeLgMax} {
         height: auto;
         width: fit-content;
         flex-direction: column;
+        padding: 2rem 0 0 0;
+        clip-path: polygon(0 0, 100% 2rem, 100% 100%, 0 100%);
+    }
 
-        &::before {
-            left: -3rem;
+    button {
+        will-change: opacity;
+
+        html:has([data-pinching]) & {
+            opacity: 0;
         }
     }
 `;
