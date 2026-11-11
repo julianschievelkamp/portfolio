@@ -55,6 +55,7 @@ export const CloseButton = styled(Button)`
     right: 1rem;
     width: 2rem;
     height: 2rem;
+    z-index: 1;
 `;
 
 export const OuterWrapper = styled.div`
@@ -78,7 +79,6 @@ export const InnerWrapper = styled.div`
     margin-bottom: 4.5rem;
     width: 100%;
     position: relative;
-    z-index: 1;
 
     @media ${queries.landscapeLgMax} {
         margin-bottom: 0rem;
