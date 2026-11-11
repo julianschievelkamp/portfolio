@@ -1,4 +1,4 @@
-import { ItemFigure } from "./ActiveItem.styles";
+import { ItemFigure, StyledActiveItem } from "./ActiveItem.styles";
 import Image from "elements/components/Image/Image";
 import { useActiveItem } from "hooks/useActiveItem";
 import { getAltText } from "data/portfolioData";
@@ -29,8 +29,8 @@ const ActiveItem = () => {
     if (!loadedItem) return null;
 
     return (
-        <>
-            <ItemFigure ref={pinchZoomRef} $isItemRevealed={isItemRevealed}>
+        <StyledActiveItem $isItemRevealed={isItemRevealed}>
+            <ItemFigure ref={pinchZoomRef}>
                 <Image
                     src={loadedItem.image}
                     alt={getAltText(loadedItem)}
@@ -50,6 +50,7 @@ const ActiveItem = () => {
                         onClick={toggleVideo}
                         width="100%"
                         height="100%"
+                        // DEBUG: opacity über isVideoOn
                     />
                 )}
 
@@ -65,7 +66,7 @@ const ActiveItem = () => {
                 isInfoOn={isInfoOn}
                 setIsInfoOn={setIsInfoOn}
             />
-        </>
+        </StyledActiveItem>
     );
 };
 

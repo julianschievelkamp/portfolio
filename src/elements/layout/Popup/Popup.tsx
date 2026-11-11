@@ -1,12 +1,11 @@
 import { useStore } from "hooks/useStore";
-import { InnerWrapper, OuterWrapper, StyledPopup } from "./Popup.styles";
+import { StyledPopup } from "./Popup.styles";
 import { usePopupOverlay } from "hooks/usePopupOverlay";
 import Slider from "./Slider/Slider";
 import ActiveItem from "./ActiveItem/ActiveItem";
 
 const Popup = () => {
     const setPopupOpen = useStore((state) => state.setPopupOpen);
-
     const popupRef = usePopupOverlay();
 
     return (
@@ -23,11 +22,7 @@ const Popup = () => {
                 setPopupOpen(false);
             }}
         >
-            <OuterWrapper>
-                <InnerWrapper>
-                    <ActiveItem />
-                </InnerWrapper>
-            </OuterWrapper>
+            <ActiveItem />
 
             <Slider />
         </StyledPopup>

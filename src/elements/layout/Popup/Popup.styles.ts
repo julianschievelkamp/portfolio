@@ -44,25 +44,3 @@ export const StyledPopup = styled.dialog`
         }
     }
 `;
-
-export const OuterWrapper = styled.div`
-    position: relative;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`;
-
-export const InnerWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 4.5rem;
-    width: 100%;
-    position: relative;
-
-    @media ${queries.landscapeLgMax} {
-        margin-bottom: 0rem;
-        width: auto;
-    }
-`;

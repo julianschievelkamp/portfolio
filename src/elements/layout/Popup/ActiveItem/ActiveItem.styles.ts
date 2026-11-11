@@ -1,25 +1,37 @@
 import { styled } from "styled-components";
 import { queries, transition } from "styles/variables";
 
-export const ItemFigure = styled.figure<{ $isItemRevealed: boolean }>`
-    margin: 0;
-    position: relative;
-    display: flex;
-    border: 0.5rem solid black;
-    overflow: hidden;
-
-    z-index: 9;
-    max-width: 100%;
+export const StyledActiveItem = styled.div<{ $isItemRevealed: boolean }>`
     opacity: ${({ $isItemRevealed }) => ($isItemRevealed ? 1 : 0)};
     visibility: ${({ $isItemRevealed }) =>
         $isItemRevealed ? "visible" : "hidden"};
-    /* Transformation aus usePinchZoom, ohne Geste gleitet das Werk zurück */
-    transform: var(--pinch-transform, none);
-    transform-origin: 0 0;
-    transition:
-        transform ${transition.default},
-        opacity ${transition.default};
+    transition: opacity ${transition.default};
 
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 4rem;
+
+    @media ${queries.landscapeLgMax} {
+        padding-bottom: 0rem;
+    }
+`;
+
+export const ItemFigure = styled.figure`
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    border: 0.5rem solid black;
+    margin: 0;
+    z-index: 9;
+
+    /* Transformation aus usePinchZoom, ohne Geste gleitet das Werk zurück */
+    transform-origin: 0 0;
+    transform: var(--pinch-transform, none);
+    transition: transform ${transition.default};
     /* Während der Geste folgt das Werk den Fingern ohne Verzögerung */
     &[data-pinching] {
         transition: none;
