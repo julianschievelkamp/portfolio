@@ -35,7 +35,6 @@ const Video = ({
             onContextMenu={(e) => e.preventDefault()}
             onClick={onClick}
             aria-label={ariaLabel}
-            tabIndex={-1}
         >
             <source src={src} type="video/mp4" />
             Your browser does not support the video tag.

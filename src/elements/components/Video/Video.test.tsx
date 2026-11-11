@@ -1,12 +1,9 @@
-import { act, fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { createRef } from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import Video from "./Video";
-
-const getPlayIcon = (container: HTMLElement) =>
-    container.querySelector("button svg")?.parentElement as HTMLElement;
 
 const renderVideo = (props: Partial<React.ComponentProps<typeof Video>> = {}) => {
     const videoRef = createRef<HTMLVideoElement>();
@@ -53,65 +50,29 @@ describe("Video", () => {
         expect(videoRef.current).toBeInstanceOf(HTMLVideoElement);
     });
 
-    it("shows the play icon before the video has started", () => {
-        const { container } = renderVideo();
+    it("calls onClick when the video is clicked", async () => {
+        const onClick = vi.fn();
+        renderVideo({ onClick });
 
-        expect(getPlayIcon(container)).toHaveStyle({ opacity: "1" });
+        await userEvent.click(screen.getByLabelText("Showreel"));
+
+        expect(onClick).toHaveBeenCalledTimes(1);
     });
 
-    it("hides the play icon after the play event", () => {
-        const { container, videoRef } = renderVideo();
-
-        act(() => {
-            fireEvent.play(videoRef.current as HTMLVideoElement);
-        });
-
-        expect(getPlayIcon(container)).toHaveStyle({ opacity: "0" });
-    });
-
-    it("shows the play icon again and keeps listening after the src changes", () => {
-        const { container, videoRef, rerender } = renderVideo();
-        act(() => {
-            fireEvent.play(videoRef.current as HTMLVideoElement);
-        });
-        expect(getPlayIcon(container)).toHaveStyle({ opacity: "0" });
+    it("mutes the video via the muted prop", () => {
+        const { videoRef, rerender } = renderVideo({ muted: true });
+        expect(videoRef.current?.muted).toBe(true);
 
         rerender(
             <Video
                 videoRef={videoRef}
-                src="/other.mp4"
+                src="/clip.mp4"
                 poster="/poster.jpg"
                 ariaLabel="Showreel"
+                muted={false}
             />,
         );
-        expect(getPlayIcon(container)).toHaveStyle({ opacity: "1" });
-
-        act(() => {
-            fireEvent.play(videoRef.current as HTMLVideoElement);
-        });
-        expect(getPlayIcon(container)).toHaveStyle({ opacity: "0" });
-    });
-
-    it("plays a paused video on click", async () => {
-        renderVideo();
-
-        await userEvent.click(screen.getByRole("button"));
-
-        expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(1);
-        expect(HTMLMediaElement.prototype.pause).not.toHaveBeenCalled();
-    });
-
-    it("pauses a playing video on click", async () => {
-        const { videoRef } = renderVideo();
-        Object.defineProperty(videoRef.current, "paused", {
-            value: false,
-            configurable: true,
-        });
-
-        await userEvent.click(screen.getByRole("button"));
-
-        expect(HTMLMediaElement.prototype.pause).toHaveBeenCalledTimes(1);
-        expect(HTMLMediaElement.prototype.play).not.toHaveBeenCalled();
+        expect(videoRef.current?.muted).toBe(false);
     });
 
     it("prevents the context menu on the video", () => {

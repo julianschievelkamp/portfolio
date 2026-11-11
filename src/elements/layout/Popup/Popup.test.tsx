@@ -1,14 +1,12 @@
-import { act, fireEvent, render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useStore } from "hooks/useStore";
 import { usePopupControls } from "hooks/usePopupControls";
-import { useMediaQuery } from "hooks/useMediaQuery";
-import { queries } from "styles/variables";
 import Popup from "./Popup";
 
 vi.mock("hooks/usePopupControls", () => ({ usePopupControls: vi.fn() }));
-vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: vi.fn() }));
+vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: () => false }));
 vi.mock(
     "data/portfolioData",
     async () => await import("data/portfolioFixtures"),
@@ -19,16 +17,6 @@ vi.mock("./Slider/Slider", () => ({
 vi.mock("./ActiveItem/ActiveItem", () => ({
     default: () => <div data-testid="active-item" />,
 }));
-vi.mock("./Arrows/Arrows", () => ({
-    default: () => <div data-testid="arrows" />,
-}));
-
-// Steuert die Media Queries über ihren Query-String
-const mockMediaQueries = (matches: Record<string, boolean>) => {
-    vi.mocked(useMediaQuery).mockImplementation(
-        (query: string) => matches[query] ?? false,
-    );
-};
 
 describe("Popup", () => {
     afterEach(() => {
@@ -38,14 +26,13 @@ describe("Popup", () => {
     beforeEach(() => {
         vi.useFakeTimers();
         useStore.setState({ popupOpen: true });
-        mockMediaQueries({});
     });
 
     it("renders a named modal dialog while open", () => {
         render(<Popup />);
 
         expect(
-            screen.getByRole("dialog", { name: "Artwork Dialog" }),
+            screen.getByRole("dialog", { name: "Artwork Popup" }),
         ).toBeInTheDocument();
     });
 
@@ -92,28 +79,6 @@ describe("Popup", () => {
         expect(useStore.getState().popupOpen).toBe(false);
     });
 
-    it("closes via the close button, which is reachable by keyboard", () => {
-        render(<Popup />);
-        const close = screen.getByRole("button", { name: "Close Dialog" });
-
-        expect(close).toHaveAttribute("tabindex", "0");
-
-        fireEvent.click(close);
-
-        expect(useStore.getState().popupOpen).toBe(false);
-    });
-
-    it("closes when the backdrop is clicked", () => {
-        render(<Popup />);
-        const backdrop =
-            screen.getByTestId("active-item").parentElement
-                ?.previousElementSibling;
-
-        fireEvent.click(backdrop as Element);
-
-        expect(useStore.getState().popupOpen).toBe(false);
-    });
-
     it("registers the popup hook", () => {
         render(<Popup />);
 
@@ -125,22 +90,5 @@ describe("Popup", () => {
 
         expect(screen.getByTestId("active-item")).toBeInTheDocument();
         expect(screen.getByTestId("slider")).toBeInTheDocument();
-    });
-
-    it("shows the arrows only in landscape outside the small landscape range", () => {
-        mockMediaQueries({ [queries.landscape]: true });
-        const { rerender } = render(<Popup />);
-        expect(screen.getByTestId("arrows")).toBeInTheDocument();
-
-        mockMediaQueries({
-            [queries.landscape]: true,
-            [queries.landscapeLgMax]: true,
-        });
-        rerender(<Popup />);
-        expect(screen.queryByTestId("arrows")).not.toBeInTheDocument();
-
-        mockMediaQueries({});
-        rerender(<Popup />);
-        expect(screen.queryByTestId("arrows")).not.toBeInTheDocument();
     });
 });

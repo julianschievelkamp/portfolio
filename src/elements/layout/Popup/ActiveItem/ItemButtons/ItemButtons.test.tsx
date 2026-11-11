@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
 import { colors } from "styles/variables";
+import { useStore } from "hooks/useStore";
 import { portfolioData } from "data/portfolioFixtures";
 import ItemButtons, { ItemButtonsProps } from "./ItemButtons";
 
@@ -38,10 +39,10 @@ const renderItemButtons = (props: Partial<ItemButtonsProps> = {}) => {
 };
 
 describe("ItemButtons", () => {
-    it("renders the volume, video and info buttons", () => {
+    it("renders the video, volume, info and close buttons", () => {
         renderItemButtons();
 
-        ["Toggle Volume", "Toggle Video", "Toggle Info"].forEach((name) => {
+        ["Toggle Video", "Toggle Volume", "Toggle Info", "Close Popup"].forEach((name) => {
             expect(screen.getByRole("button", { name })).toBeInTheDocument();
         });
     });
@@ -133,5 +134,14 @@ describe("ItemButtons", () => {
             "data-color",
             "white",
         );
+    });
+
+    it("closes the popup via the close button", async () => {
+        useStore.setState({ popupOpen: true });
+        renderItemButtons();
+
+        await userEvent.click(screen.getByRole("button", { name: "Close Popup" }));
+
+        expect(useStore.getState().popupOpen).toBe(false);
     });
 });

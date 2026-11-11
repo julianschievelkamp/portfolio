@@ -90,20 +90,23 @@ describe("ActiveItem", () => {
         expect(getVideo()).toBeInTheDocument();
     });
 
-    it("hides and shows the video via the item buttons", async () => {
+    it("enables the volume button only while the video is switched on", async () => {
         render(<ActiveItem />);
         loadImage(video);
+        const volumeButton = screen.getByLabelText("Toggle Volume");
+        expect(volumeButton).toBeDisabled();
 
         await clickButton("Toggle Video");
-        expect(getVideo()).not.toBeInTheDocument();
+        expect(volumeButton).toBeEnabled();
 
         await clickButton("Toggle Video");
-        expect(getVideo()).toBeInTheDocument();
+        expect(volumeButton).toBeDisabled();
     });
 
     it("mutes and unmutes the video via the item buttons", async () => {
         render(<ActiveItem />);
         loadImage(video);
+        await clickButton("Toggle Video");
         expect(getVideo().muted).toBe(false);
 
         await clickButton("Toggle Volume");
@@ -111,6 +114,26 @@ describe("ActiveItem", () => {
 
         await clickButton("Toggle Volume");
         expect(getVideo().muted).toBe(false);
+    });
+
+    it("plays and pauses the video when it is clicked", async () => {
+        const play = vi
+            .spyOn(HTMLMediaElement.prototype, "play")
+            .mockResolvedValue();
+        const pause = vi.mocked(HTMLMediaElement.prototype.pause);
+        render(<ActiveItem />);
+        loadImage(video);
+
+        await userEvent.click(getVideo());
+        expect(play).toHaveBeenCalledTimes(1);
+
+        Object.defineProperty(getVideo(), "paused", {
+            value: false,
+            configurable: true,
+        });
+        pause.mockClear();
+        await userEvent.click(getVideo());
+        expect(pause).toHaveBeenCalledTimes(1);
     });
 
     it("renders nothing while no item is selected", () => {
@@ -201,8 +224,9 @@ describe("ActiveItem", () => {
         render(<ActiveItem />);
         loadImage(video);
         await clickButton("Toggle Info");
-        await clickButton("Toggle Volume");
         await clickButton("Toggle Video");
+        await clickButton("Toggle Volume");
+        expect(getVideo().muted).toBe(true);
 
         act(() => useStore.setState({ activeIndex: 2 }));
         await screen.findByAltText(getAltText(otherPhoto));
@@ -213,6 +237,7 @@ describe("ActiveItem", () => {
         expect(getInfoHeading()).not.toBeVisible();
         expect(getVideo()).toBeInTheDocument();
         expect(getVideo().muted).toBe(false);
+        expect(screen.getByLabelText("Toggle Volume")).toBeDisabled();
     });
 
     it("pauses the video when the popup is closed", () => {
