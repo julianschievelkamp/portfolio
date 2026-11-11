@@ -23,7 +23,9 @@ export const InnerWrapper = styled.div<{ $isItemRevealed: boolean }>`
     opacity: ${({ $isItemRevealed }) => ($isItemRevealed ? 1 : 0)};
     visibility: ${({ $isItemRevealed }) =>
         $isItemRevealed ? "visible" : "hidden"};
-    transition: opacity ${transition.default};
+    transition:
+        opacity ${transition.default},
+        visibility ${transition.default};
 `;
 
 export const ItemFigure = styled.figure`
