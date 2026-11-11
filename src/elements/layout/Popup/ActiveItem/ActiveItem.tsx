@@ -1,4 +1,4 @@
-import { ItemFigure, StyledActiveItem } from "./ActiveItem.styles";
+import { ItemFigure } from "./ActiveItem.styles";
 import Image from "elements/components/Image/Image";
 import { useActiveItem } from "hooks/useActiveItem";
 import { getAltText } from "data/portfolioData";
@@ -29,8 +29,8 @@ const ActiveItem = () => {
     if (!loadedItem) return null;
 
     return (
-        <StyledActiveItem $isItemRevealed={isItemRevealed}>
-            <ItemFigure ref={pinchZoomRef}>
+        <>
+            <ItemFigure ref={pinchZoomRef} $isItemRevealed={isItemRevealed}>
                 <Image
                     src={loadedItem.image}
                     alt={getAltText(loadedItem)}
@@ -65,7 +65,7 @@ const ActiveItem = () => {
                 isInfoOn={isInfoOn}
                 setIsInfoOn={setIsInfoOn}
             />
-        </StyledActiveItem>
+        </>
     );
 };
 

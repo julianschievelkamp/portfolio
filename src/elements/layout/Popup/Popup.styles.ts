@@ -1,7 +1,6 @@
 import { absoluteOverlayStyles, queries } from "styles/variables";
 import { styled } from "styled-components";
 import { transition } from "styles/variables";
-import Button from "elements/components/Button/Button";
 
 export const StyledPopup = styled.dialog`
     ${absoluteOverlayStyles}
@@ -46,27 +45,12 @@ export const StyledPopup = styled.dialog`
     }
 `;
 
-export const CloseButton = styled(Button)`
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 2rem;
-    height: 2rem;
-    z-index: 1;
-`;
-
 export const OuterWrapper = styled.div`
     position: relative;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-`;
-
-export const Backdrop = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 100%;
 `;
 
 export const InnerWrapper = styled.div`

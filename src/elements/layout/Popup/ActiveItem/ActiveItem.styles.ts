@@ -1,29 +1,24 @@
 import { styled } from "styled-components";
 import { queries, transition } from "styles/variables";
 
-export const StyledActiveItem = styled.div<{ $isItemRevealed: boolean }>`
-    position: relative;
-    z-index: 9;
-    max-width: 100%;
-
-    opacity: ${({ $isItemRevealed }) => ($isItemRevealed ? 1 : 0)};
-    visibility: ${({ $isItemRevealed }) =>
-        $isItemRevealed ? "visible" : "hidden"};
-    transition: ${({ $isItemRevealed }) =>
-        $isItemRevealed ? `opacity ${transition.default}` : "none"};
-`;
-
-export const ItemFigure = styled.figure`
+export const ItemFigure = styled.figure<{ $isItemRevealed: boolean }>`
     margin: 0;
     position: relative;
     display: flex;
     border: 0.5rem solid black;
     overflow: hidden;
 
+    z-index: 9;
+    max-width: 100%;
+    opacity: ${({ $isItemRevealed }) => ($isItemRevealed ? 1 : 0)};
+    visibility: ${({ $isItemRevealed }) =>
+        $isItemRevealed ? "visible" : "hidden"};
     /* Transformation aus usePinchZoom, ohne Geste gleitet das Werk zurück */
     transform: var(--pinch-transform, none);
     transform-origin: 0 0;
-    transition: transform ${transition.default};
+    transition:
+        transform ${transition.default},
+        opacity ${transition.default};
 
     /* Während der Geste folgt das Werk den Fingern ohne Verzögerung */
     &[data-pinching] {

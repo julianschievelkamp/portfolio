@@ -10,7 +10,6 @@ export const StyledItemButtons = styled.div`
     right: 0;
     bottom: 0;
     transform: translateY(100%);
-    z-index: -1;
 
     @media ${queries.landscapeLgMax} {
         display: none;

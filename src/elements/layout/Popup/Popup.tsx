@@ -1,10 +1,5 @@
 import { useStore } from "hooks/useStore";
-import {
-    Backdrop,
-    InnerWrapper,
-    OuterWrapper,
-    StyledPopup,
-} from "./Popup.styles";
+import { InnerWrapper, OuterWrapper, StyledPopup } from "./Popup.styles";
 import { usePopupOverlay } from "hooks/usePopupOverlay";
 import Slider from "./Slider/Slider";
 import ActiveItem from "./ActiveItem/ActiveItem";
@@ -29,8 +24,6 @@ const Popup = () => {
             }}
         >
             <OuterWrapper>
-                <Backdrop onClick={() => setPopupOpen(false)} />
-
                 <InnerWrapper>
                     <ActiveItem />
                 </InnerWrapper>
