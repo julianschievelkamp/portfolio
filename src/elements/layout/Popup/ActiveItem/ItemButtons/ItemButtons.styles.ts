@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import { queries } from "styles/variables";
 
-export const ItemButtonsWrapper = styled.div`
+export const StyledItemButtons = styled.div`
     overflow: hidden;
     position: absolute;
     width: 100%;
@@ -15,13 +15,4 @@ export const ItemButtonsWrapper = styled.div`
     @media ${queries.landscapeLgMax} {
         display: none;
     }
-`;
-
-export const StyledItemButtons = styled.div`
-    position: relative;
-    width: auto;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    max-width: 100%;
 `;
