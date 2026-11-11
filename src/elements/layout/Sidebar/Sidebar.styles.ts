@@ -61,7 +61,7 @@ export const Backdrop = styled.div<{ $isActive: boolean }>`
 `;
 
 export const ScrollContainer = styled.div`
-    touch-action: pan-x pan-y;
+    touch-action: pan-y;
     overflow-y: scroll;
     overscroll-behavior-y: contain;
     margin: 1.5rem 0 0 0;

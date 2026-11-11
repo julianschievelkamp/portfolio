@@ -20,7 +20,7 @@ export default createGlobalStyle<GlobalStyleProps>`
         font-size: 100%;
         width: 100vw;
         position: relative;
-        touch-action: pan-x pan-y;
+        touch-action: pan-y;
         overflow-x: hidden;
         overflow-y: ${({ $isPageLocked }) => ($isPageLocked ? "hidden" : "scroll")};
         transition: background-color ${transition.default};
