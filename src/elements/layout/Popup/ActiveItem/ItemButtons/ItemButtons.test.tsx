@@ -17,7 +17,7 @@ vi.mock("elements/components/Icon/Icon", () => ({
 
 const [photo, video] = portfolioData;
 
-// Das Icon wird innerhalb des Buttons gesucht, da "close" auch am Schließen-Button vorkommt
+// Das Icon wird innerhalb des Buttons gesucht, damit es eindeutig dem Button zugeordnet ist
 const getIcon = (buttonName: string, iconName: string) =>
     within(screen.getByRole("button", { name: buttonName })).getByTestId(
         `icon-${iconName}`,
@@ -80,7 +80,7 @@ describe("ItemButtons", () => {
         expect(handlers.setIsInfoOn).toHaveBeenCalledWith(true);
     });
 
-    it("shows the close icon while the video is on and the play icon while it is off", () => {
+    it("shows the pause icon while the video is on and the play icon while it is off", () => {
         const { unmount } = render(
             <ItemButtons
                 loadedItem={video}
@@ -92,7 +92,7 @@ describe("ItemButtons", () => {
                 setIsInfoOn={vi.fn()}
             />,
         );
-        expect(getIcon("Toggle Video", "close")).toBeInTheDocument();
+        expect(getIcon("Toggle Video", "pause")).toBeInTheDocument();
         unmount();
 
         renderItemButtons({ isVideoOn: false });

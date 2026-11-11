@@ -35,10 +35,10 @@ const ItemButtons = ({
                     ariaLabel="Toggle Video"
                 >
                     <Icon
-                        name={loadedItem.video && isVideoOn ? "close" : "play"}
+                        name={loadedItem.video && isVideoOn ? "pause" : "play"}
+                        color={loadedItem.video ? colors.primary : "white"}
                         size="1.5rem"
                         padding="0.5rem 0.25rem"
-                        color={loadedItem.video ? colors.primary : "white"}
                     />
                 </Button>
                 <Button
@@ -48,12 +48,11 @@ const ItemButtons = ({
                 >
                     <Icon
                         name={isVolumeOn ? "volumeOn" : "volumeOff"}
+                        color={loadedItem.video ? colors.primary : "white"}
                         size="1.5rem"
                         padding="0.5rem 0.25rem"
-                        color={loadedItem.video ? colors.primary : "white"}
                     />
                 </Button>
-
                 <Button
                     onClick={() => setIsInfoOn(!isInfoOn)}
                     ariaLabel="Toggle Info"
