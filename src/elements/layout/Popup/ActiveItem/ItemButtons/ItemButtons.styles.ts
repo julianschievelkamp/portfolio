@@ -3,13 +3,17 @@ import { queries } from "styles/variables";
 
 export const StyledItemButtons = styled.div`
     position: absolute;
-    width: 100%;
     display: flex;
+    align-items: center;
     justify-content: center;
-    left: 0;
+    right: 0;
     bottom: 4rem;
+    width: 100%;
 
     @media ${queries.landscapeLgMax} {
-        display: none;
+        bottom: 0;
+        flex-direction: column;
+        width: unset;
+        height: 100%;
     }
 `;
