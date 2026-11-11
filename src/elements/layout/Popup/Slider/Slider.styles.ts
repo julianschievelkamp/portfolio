@@ -9,6 +9,13 @@ export const SliderContainer = styled.div`
     height: 3rem;
     overflow-x: clip;
 
+    will-change: opacity;
+    transition: opacity ${transition.default};
+
+    html:has([data-pinching]) & {
+        opacity: 0;
+    }
+
     @media ${queries.landscapeLgMax} {
         top: 0;
         left: 1rem;
@@ -26,6 +33,7 @@ export const InnerSliderContainer = styled.ul<{
     left: calc(50% - 1.5rem);
     transform: ${({ $focusedIndex }) =>
         `translateX(calc(-3.25rem * ${$focusedIndex}))`};
+    will-change: transform;
     display: flex;
     margin: 0;
     padding: 0;

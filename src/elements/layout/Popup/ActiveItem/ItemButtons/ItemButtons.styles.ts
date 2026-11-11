@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { queries } from "styles/variables";
+import { queries, transition } from "styles/variables";
 
 export const StyledItemButtons = styled.div`
     overflow: hidden;
@@ -11,8 +11,19 @@ export const StyledItemButtons = styled.div`
     bottom: 0.5rem;
     transform: translateY(100%);
 
+    will-change: opacity;
+    transition: opacity ${transition.default};
+
+    html:has([data-pinching]) & {
+        opacity: 0;
+    }
+
     @media ${queries.landscapeLgMax} {
-        display: none;
+        height: 100%;
+        flex-direction: column;
+        transform: translateX(100%);
+        bottom: 0;
+        right: 0.5rem;
     }
 `;
 
@@ -30,9 +41,19 @@ export const Notch = styled.div`
         background: black;
         transform: rotate(45deg);
         z-index: -1;
-        left: -1.5rem;
+        left: -1.25rem;
         top: -2rem;
         width: 4rem;
         height: 4rem;
+    }
+
+    @media ${queries.landscapeLgMax} {
+        height: auto;
+        width: fit-content;
+        flex-direction: column;
+
+        &::before {
+            left: -3rem;
+        }
     }
 `;

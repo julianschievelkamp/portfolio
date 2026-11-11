@@ -26,8 +26,8 @@ const ItemButtons = ({
 }: ItemButtonsProps) => {
     const setPopupOpen = useStore((state) => state.setPopupOpen);
 
-    const iconSize = "1.25rem";
-    const iconPadding = "0.5rem 0.25rem";
+    const iconSize = "1rem";
+    const iconPadding = "0.5rem";
 
     return (
         <StyledItemButtons>
