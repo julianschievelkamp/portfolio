@@ -1,5 +1,5 @@
 import { useStore } from "hooks/useStore";
-import { StyledPopup } from "./Popup.styles";
+import { ItemContainer, StyledPopup } from "./Popup.styles";
 import { usePopupOverlay } from "hooks/usePopupOverlay";
 import Slider from "./Slider/Slider";
 import ActiveItem from "./ActiveItem/ActiveItem";
@@ -12,7 +12,6 @@ const Popup = () => {
         <StyledPopup
             ref={popupRef}
             aria-label="Artwork Popup"
-            // Macht den Dialog programmatisch fokussierbar (nicht per Tab)
             tabIndex={-1}
             // Hält den Store synchron, falls der Dialog anderweitig schließt
             onClose={() => setPopupOpen(false)}
@@ -22,7 +21,9 @@ const Popup = () => {
                 setPopupOpen(false);
             }}
         >
-            <ActiveItem />
+            <ItemContainer>
+                <ActiveItem />
+            </ItemContainer>
 
             <Slider />
         </StyledPopup>

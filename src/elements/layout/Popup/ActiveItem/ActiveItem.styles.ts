@@ -2,26 +2,18 @@ import { styled } from "styled-components";
 import { queries, transition } from "styles/variables";
 
 export const StyledActiveItem = styled.div<{ $isItemRevealed: boolean }>`
+    position: relative;
+    z-index: 9;
+
     opacity: ${({ $isItemRevealed }) => ($isItemRevealed ? 1 : 0)};
     visibility: ${({ $isItemRevealed }) =>
         $isItemRevealed ? "visible" : "hidden"};
     transition: opacity ${transition.default};
-
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    padding-bottom: 4rem;
-
-    @media ${queries.landscapeLgMax} {
-        padding-bottom: 0rem;
-    }
 `;
 
 export const ItemFigure = styled.figure`
     position: relative;
+
     display: flex;
     overflow: hidden;
     border: 0.5rem solid black;
