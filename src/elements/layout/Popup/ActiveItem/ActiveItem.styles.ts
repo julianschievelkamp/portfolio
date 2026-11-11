@@ -26,6 +26,7 @@ export const InnerWrapper = styled.div<{ $isItemRevealed: boolean }>`
     transition:
         opacity ${transition.default},
         visibility ${transition.default};
+    will-change: opacity;
 `;
 
 export const ItemFigure = styled.figure`
@@ -38,6 +39,7 @@ export const ItemFigure = styled.figure`
     z-index: 9;
 
     /* Transformation aus usePinchZoom, ohne Geste gleitet das Werk zurück */
+    will-change: transform;
     transform-origin: 0 0;
     transform: var(--pinch-transform, none);
     transition: transform ${transition.default};
