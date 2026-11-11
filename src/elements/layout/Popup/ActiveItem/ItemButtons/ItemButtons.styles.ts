@@ -30,7 +30,7 @@ export const Notch = styled.div`
         background: black;
         transform: rotate(45deg);
         z-index: -1;
-        left: -2rem;
+        left: -1.5rem;
         top: -2rem;
         width: 4rem;
         height: 4rem;

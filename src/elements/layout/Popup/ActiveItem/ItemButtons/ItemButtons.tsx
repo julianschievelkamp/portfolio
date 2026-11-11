@@ -26,42 +26,45 @@ const ItemButtons = ({
 }: ItemButtonsProps) => {
     const setPopupOpen = useStore((state) => state.setPopupOpen);
 
+    const iconSize = "1.25rem";
+    const iconPadding = "0.5rem 0.25rem";
+
     return (
         <StyledItemButtons>
             <Notch>
                 <Button
                     onClick={() => setIsVideoOn(!isVideoOn)}
                     disabled={!loadedItem.video}
-                    ariaLabel="Toggle Video"
+                    ariaLabel={isVideoOn ? "Pause Video" : "Play Video"}
                 >
                     <Icon
-                        name={loadedItem.video && isVideoOn ? "pause" : "play"}
+                        name={isVideoOn ? "pause" : "play"}
                         color={loadedItem.video ? colors.primary : "white"}
-                        size="1.5rem"
-                        padding="0.5rem 0.25rem"
+                        size={iconSize}
+                        padding={iconPadding}
                     />
                 </Button>
                 <Button
                     onClick={() => setIsVolumeOn(!isVolumeOn)}
                     disabled={!loadedItem.video}
-                    ariaLabel="Toggle Volume"
+                    ariaLabel={isVolumeOn ? "Mute Video" : "Unmute Video"}
                 >
                     <Icon
                         name={isVolumeOn ? "volumeOn" : "volumeOff"}
                         color={loadedItem.video ? colors.primary : "white"}
-                        size="1.5rem"
-                        padding="0.5rem 0.25rem"
+                        size={iconSize}
+                        padding={iconPadding}
                     />
                 </Button>
                 <Button
                     onClick={() => setIsInfoOn(!isInfoOn)}
-                    ariaLabel="Toggle Info"
+                    ariaLabel={isInfoOn ? "Hide Info" : "Show Info"}
                 >
                     <Icon
                         name={isInfoOn ? "infoFilled" : "info"}
                         color={isInfoOn ? colors.primary : "white"}
-                        size="1.5rem"
-                        padding="0.5rem 0.25rem"
+                        size={iconSize}
+                        padding={iconPadding}
                     />
                 </Button>
                 <Button
@@ -70,8 +73,8 @@ const ItemButtons = ({
                 >
                     <Icon
                         name="close"
-                        size="1.5rem"
-                        padding="0.5rem 0.25rem"
+                        size={iconSize}
+                        padding={iconPadding}
                         color="white"
                     />
                 </Button>
