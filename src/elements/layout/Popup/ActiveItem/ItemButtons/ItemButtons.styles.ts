@@ -8,7 +8,7 @@ export const StyledItemButtons = styled.div`
     display: flex;
     justify-content: flex-end;
     right: 0;
-    bottom: 0;
+    bottom: 1px;
     transform: translateY(100%);
 
     @media ${queries.landscapeLgMax} {
@@ -16,7 +16,7 @@ export const StyledItemButtons = styled.div`
         flex-direction: column;
         transform: translateX(100%);
         bottom: 0;
-        right: 0;
+        right: 1px;
     }
 `;
 

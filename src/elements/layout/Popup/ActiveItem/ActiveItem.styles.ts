@@ -6,7 +6,8 @@ export const StyledActiveItem = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 4rem;
+    // 3rem Slider + 1rem + 2rem Notch
+    padding-bottom: 6rem;
     width: 100%;
     height: 100%;
 
@@ -52,7 +53,7 @@ export const ItemFigure = styled.figure`
     > video {
         object-fit: cover;
         min-height: 10rem;
-        max-height: calc(100dvh - 14rem);
+        max-height: calc(100dvh - 13rem);
 
         @media ${queries.landscapeLgMax} {
             max-height: calc(100dvh - 3rem);
