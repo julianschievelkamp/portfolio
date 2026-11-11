@@ -21,7 +21,7 @@ export default createGlobalStyle<GlobalStyleProps>`
         width: 100vw;
         position: relative;
         touch-action: pan-y;
-        overflow-x: hidden;
+        overflow-x: clip;
         overflow-y: ${({ $isPageLocked }) => ($isPageLocked ? "hidden" : "scroll")};
         transition: background-color ${transition.default};
     }

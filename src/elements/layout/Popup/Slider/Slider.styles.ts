@@ -7,7 +7,7 @@ export const SliderContainer = styled.div`
     left: 0;
     width: 100%;
     height: 3rem;
-    overflow: hidden;
+    overflow-x: clip;
 
     @media ${queries.landscapeLgMax} {
         top: 0;
