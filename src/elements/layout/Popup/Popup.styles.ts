@@ -18,12 +18,8 @@ export const StyledPopup = styled.dialog`
     padding: 1rem;
     margin: 0;
 
-    /* Ein-/Ausblenden über data-visible; das Schließen erfolgt per JS nach der Transition */
     opacity: 0;
-    transition:
-        opacity ${transition.defaultIn},
-        background-color ${transition.default},
-        box-shadow ${transition.default};
+    transition: opacity ${transition.defaultIn};
 
     &[data-visible="true"] {
         opacity: 1;
