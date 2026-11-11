@@ -3,15 +3,17 @@ import { transition, queries, mainTitleStyles } from "styles/variables";
 import Text from "elements/components/Text/Text";
 
 export const StyledHeader = styled.header<{ $isVisible: boolean }>`
-    background-color: white;
-    width: 100vw;
     position: fixed;
+    width: 100vw;
     height: 7.5rem;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
     top: 0;
     left: 0;
+    padding: 1rem;
+    z-index: 99;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+
     /* translate3d und will-change halten den Header auf einer eigenen GPU-Ebene (flüssiger auf iOS) */
     transform: ${({ $isVisible }) =>
         `translate3d(0, ${$isVisible ? 0 : "-100%"}, 0)`};
@@ -24,7 +26,6 @@ export const StyledHeader = styled.header<{ $isVisible: boolean }>`
 
         return `transform ${timing}, visibility ${timing}, background-color ${transition.default}`;
     }};
-    z-index: 99;
 
     /* Safari färbt die Statusleiste anhand des fixierten Headers ein. Während das
        ActiveItem gezoomt wird (data-pinching aus usePinchZoom), wird er daher schwarz. */

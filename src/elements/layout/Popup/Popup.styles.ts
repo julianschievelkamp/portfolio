@@ -14,13 +14,9 @@ export const StyledPopup = styled.dialog`
     max-height: none;
     color: inherit;
     user-select: none;
-    width: 100%;
+    width: 100vw;
     padding: 1rem;
     margin: 0;
-
-    &::backdrop {
-        display: none;
-    }
 
     /* Ein-/Ausblenden über data-visible; das Schließen erfolgt per JS nach der Transition */
     opacity: 0;
@@ -41,6 +37,10 @@ export const StyledPopup = styled.dialog`
        färben sich Hintergrund und box-shadow schwarz */
     &:has([data-pinching]) {
         --overlay-color: black;
+    }
+
+    &::backdrop {
+        display: none;
     }
 
     @media ${queries.md} {
