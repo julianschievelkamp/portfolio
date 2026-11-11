@@ -90,7 +90,7 @@ describe("ActiveItem", () => {
         expect(getVideo()).toBeInTheDocument();
     });
 
-    it("hides and shows the video via the notch", async () => {
+    it("hides and shows the video via the item buttons", async () => {
         render(<ActiveItem />);
         loadImage(video);
 
@@ -101,7 +101,7 @@ describe("ActiveItem", () => {
         expect(getVideo()).toBeInTheDocument();
     });
 
-    it("mutes and unmutes the video via the notch", async () => {
+    it("mutes and unmutes the video via the item buttons", async () => {
         render(<ActiveItem />);
         loadImage(video);
         expect(getVideo().muted).toBe(false);
@@ -172,7 +172,7 @@ describe("ActiveItem", () => {
         expect(screen.getByAltText(getAltText(video))).toBeInTheDocument();
     });
 
-    it("toggles the info via the notch", async () => {
+    it("toggles the info via the item buttons", async () => {
         const { container } = render(<ActiveItem />);
         fireEvent.load(screen.getByAltText(getAltText(video)));
         await waitFor(() =>

@@ -4,7 +4,7 @@ import { describe, expect, it, vi } from "vitest";
 
 import { colors } from "styles/variables";
 import { portfolioData } from "data/portfolioFixtures";
-import Notch, { NotchProps } from "./Notch";
+import ItemButtons, { ItemButtonsProps } from "./ItemButtons";
 
 vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: () => true }));
 // Das Icon wird ersetzt, damit Name und Farbe prüfbar sind
@@ -16,7 +16,7 @@ vi.mock("elements/components/Icon/Icon", () => ({
 
 const [photo, video] = portfolioData;
 
-const renderNotch = (props: Partial<NotchProps> = {}) => {
+const renderItemButtons = (props: Partial<ItemButtonsProps> = {}) => {
     const handlers = {
         setIsVideoOn: vi.fn(),
         setIsVolumeOn: vi.fn(),
@@ -24,7 +24,7 @@ const renderNotch = (props: Partial<NotchProps> = {}) => {
     };
 
     render(
-        <Notch
+        <ItemButtons
             loadedItem={video}
             isVideoOn
             isVolumeOn
@@ -37,9 +37,9 @@ const renderNotch = (props: Partial<NotchProps> = {}) => {
     return handlers;
 };
 
-describe("Notch", () => {
+describe("ItemButtons", () => {
     it("renders the volume, video and info buttons", () => {
-        renderNotch();
+        renderItemButtons();
 
         ["Toggle Volume", "Toggle Video", "Toggle Info"].forEach((name) => {
             expect(screen.getByRole("button", { name })).toBeInTheDocument();
@@ -47,7 +47,7 @@ describe("Notch", () => {
     });
 
     it("disables volume and video for an item without video", () => {
-        renderNotch({ loadedItem: photo });
+        renderItemButtons({ loadedItem: photo });
 
         expect(screen.getByRole("button", { name: "Toggle Volume" })).toBeDisabled();
         expect(screen.getByRole("button", { name: "Toggle Video" })).toBeDisabled();
@@ -55,14 +55,14 @@ describe("Notch", () => {
     });
 
     it("disables only volume while the video is switched off", () => {
-        renderNotch({ isVideoOn: false });
+        renderItemButtons({ isVideoOn: false });
 
         expect(screen.getByRole("button", { name: "Toggle Volume" })).toBeDisabled();
         expect(screen.getByRole("button", { name: "Toggle Video" })).toBeEnabled();
     });
 
     it("calls the setters with the inverted values", async () => {
-        const handlers = renderNotch();
+        const handlers = renderItemButtons();
 
         await userEvent.click(screen.getByRole("button", { name: "Toggle Volume" }));
         await userEvent.click(screen.getByRole("button", { name: "Toggle Video" }));
@@ -74,7 +74,7 @@ describe("Notch", () => {
     });
 
     it("shows the on icons when video and volume are active", () => {
-        renderNotch();
+        renderItemButtons();
 
         expect(screen.getByTestId("icon-volumeOn")).toBeInTheDocument();
         expect(screen.getByTestId("icon-videoOn")).toBeInTheDocument();
@@ -83,7 +83,7 @@ describe("Notch", () => {
 
     it("shows the off icons without video, with video off or volume off", () => {
         const { unmount } = render(
-            <Notch
+            <ItemButtons
                 loadedItem={photo}
                 isVideoOn
                 isVolumeOn
@@ -98,13 +98,13 @@ describe("Notch", () => {
         expect(screen.getByTestId("icon-infoFilled")).toBeInTheDocument();
         unmount();
 
-        renderNotch({ isVideoOn: false });
+        renderItemButtons({ isVideoOn: false });
         expect(screen.getByTestId("icon-volumeOff")).toBeInTheDocument();
         expect(screen.getByTestId("icon-videoOff")).toBeInTheDocument();
     });
 
     it("shows the volume off icon while the volume is off", () => {
-        renderNotch({ isVolumeOn: false });
+        renderItemButtons({ isVolumeOn: false });
 
         expect(screen.getByTestId("icon-volumeOff")).toBeInTheDocument();
         expect(screen.getByTestId("icon-videoOn")).toBeInTheDocument();
@@ -112,7 +112,7 @@ describe("Notch", () => {
 
     it("colors the info icon with the primary color only when active", () => {
         const { unmount } = render(
-            <Notch
+            <ItemButtons
                 loadedItem={video}
                 isVideoOn
                 isVolumeOn
@@ -128,7 +128,7 @@ describe("Notch", () => {
         );
         unmount();
 
-        renderNotch();
+        renderItemButtons();
         expect(screen.getByTestId("icon-info")).toHaveAttribute(
             "data-color",
             "white",

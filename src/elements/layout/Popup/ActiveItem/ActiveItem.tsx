@@ -3,7 +3,7 @@ import Image from "elements/components/Image/Image";
 import { useActiveItem } from "hooks/useActiveItem";
 import { getAltText } from "data/portfolioData";
 import Video from "elements/components/Video/Video";
-import Notch from "./Notch/Notch";
+import ItemButtons from "./ItemButtons/ItemButtons";
 import ItemInfo from "./ItemInfo/ItemInfo";
 import { usePinchZoom } from "hooks/usePinchZoom";
 import { useVideoPlayback } from "hooks/useVideoPlayback";
@@ -56,7 +56,7 @@ const ActiveItem = () => {
                 <ItemInfo loadedItem={loadedItem} isInfoOn={isInfoOn} />
             </ItemFigure>
 
-            <Notch
+            <ItemButtons
                 loadedItem={loadedItem}
                 isVideoOn={isVideoOn}
                 setIsVideoOn={setIsVideoOn}

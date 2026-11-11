@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import { queries } from "styles/variables";
 
-export const NotchWrapper = styled.div`
+export const ItemButtonsWrapper = styled.div`
     overflow: hidden;
     position: absolute;
     width: 100%;
@@ -17,7 +17,7 @@ export const NotchWrapper = styled.div`
     }
 `;
 
-export const StyledNotch = styled.div`
+export const StyledItemButtons = styled.div`
     position: relative;
     width: auto;
     display: flex;

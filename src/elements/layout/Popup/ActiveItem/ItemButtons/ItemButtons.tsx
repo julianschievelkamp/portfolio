@@ -1,11 +1,11 @@
-import { NotchWrapper, StyledNotch } from "./Notch.styles";
+import { ItemButtonsWrapper, StyledItemButtons } from "./ItemButtons.styles";
 import { PortfolioItem } from "data/portfolioData";
 import Button from "elements/components/Button/Button";
 import Icon from "elements/components/Icon/Icon";
 import { useStore } from "hooks/useStore";
 import { colors } from "styles/variables";
 
-export interface NotchProps {
+export interface ItemButtonsProps {
     loadedItem: PortfolioItem;
     isVideoOn: boolean;
     setIsVideoOn: (videoOn: boolean) => void;
@@ -15,7 +15,7 @@ export interface NotchProps {
     setIsInfoOn: (infoOn: boolean) => void;
 }
 
-const Notch = ({
+const ItemButtons = ({
     loadedItem,
     isVideoOn,
     setIsVideoOn,
@@ -23,14 +23,14 @@ const Notch = ({
     setIsVolumeOn,
     isInfoOn,
     setIsInfoOn,
-}: NotchProps) => {
+}: ItemButtonsProps) => {
     const setPopupOpen = useStore((state) => state.setPopupOpen);
     const activeIndex = useStore((state) => state.activeIndex);
     const setActiveIndex = useStore((state) => state.setActiveIndex);
 
     return (
-        <NotchWrapper>
-            <StyledNotch>
+        <ItemButtonsWrapper>
+            <StyledItemButtons>
                 <Button
                     ariaLabel="Previous Artwork"
                     onClick={() => setActiveIndex(activeIndex - 1)}
@@ -90,9 +90,9 @@ const Notch = ({
                 >
                     <Icon name="close" size="2rem" padding="0.5rem" />
                 </Button>
-            </StyledNotch>
-        </NotchWrapper>
+            </StyledItemButtons>
+        </ItemButtonsWrapper>
     );
 };
 
-export default Notch;
+export default ItemButtons;
