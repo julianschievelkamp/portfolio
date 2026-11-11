@@ -2,6 +2,7 @@ import { NotchWrapper, StyledNotch } from "./Notch.styles";
 import { PortfolioItem } from "data/portfolioData";
 import Button from "elements/components/Button/Button";
 import Icon from "elements/components/Icon/Icon";
+import { useStore } from "hooks/useStore";
 import { colors } from "styles/variables";
 
 export interface NotchProps {
@@ -23,9 +24,19 @@ const Notch = ({
     isInfoOn,
     setIsInfoOn,
 }: NotchProps) => {
+    const setPopupOpen = useStore((state) => state.setPopupOpen);
+    const activeIndex = useStore((state) => state.activeIndex);
+    const setActiveIndex = useStore((state) => state.setActiveIndex);
+
     return (
         <NotchWrapper>
             <StyledNotch>
+                <Button
+                    ariaLabel="Previous Artwork"
+                    onClick={() => setActiveIndex(activeIndex - 1)}
+                >
+                    <Icon name="chevronLeft" size="2rem" padding="0.5rem" />
+                </Button>
                 <Button
                     onClick={() => setIsVolumeOn(!isVolumeOn)}
                     disabled={!loadedItem.video || !isVideoOn}
@@ -37,9 +48,8 @@ const Notch = ({
                                 ? "volumeOn"
                                 : "volumeOff"
                         }
-                        color="white"
-                        size="1.25rem"
-                        padding="0.25rem"
+                        size="2rem"
+                        padding="0.5rem"
                     />
                 </Button>
                 <Button
@@ -53,9 +63,8 @@ const Notch = ({
                                 ? "videoOn"
                                 : "videoOff"
                         }
-                        color="white"
-                        size="1.25rem"
-                        padding="0.25rem"
+                        size="2rem"
+                        padding="0.5rem"
                     />
                 </Button>
                 <Button
@@ -64,10 +73,22 @@ const Notch = ({
                 >
                     <Icon
                         name={isInfoOn ? "infoFilled" : "info"}
-                        color={isInfoOn ? colors.primary : "white"}
-                        size="1.25rem"
-                        padding="0.25rem"
+                        color={isInfoOn ? colors.primary : undefined}
+                        size="2rem"
+                        padding="0.5rem"
                     />
+                </Button>
+                <Button
+                    ariaLabel="Next Artwork"
+                    onClick={() => setActiveIndex(activeIndex + 1)}
+                >
+                    <Icon name="chevronRight" size="2rem" padding="0.5rem" />
+                </Button>
+                <Button
+                    onClick={() => setPopupOpen(false)}
+                    ariaLabel="Close Popup"
+                >
+                    <Icon name="close" size="2rem" padding="0.5rem" />
                 </Button>
             </StyledNotch>
         </NotchWrapper>

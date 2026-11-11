@@ -18,7 +18,7 @@ export const useActiveItem = () => {
     const [isItemRevealed, setIsItemRevealed] = useState(false);
 
     const [isInfoOn, setIsInfoOn] = useState(false);
-    const [isVideoOn, setIsVideoOn] = useState(true);
+    const [isVideoOn, setIsVideoOn] = useState(false);
     const [isVolumeOn, setIsVolumeOn] = useState(true);
 
     // Wird beim Laden und bei Ladefehlern aufgerufen, damit das ActiveItem nicht unsichtbar bleibt
@@ -36,7 +36,7 @@ export const useActiveItem = () => {
     if (previousItem !== loadedItem) {
         setPreviousItem(loadedItem);
         setIsInfoOn(false);
-        setIsVideoOn(true);
+        setIsVideoOn(false);
         setIsVolumeOn(true);
     }
 
