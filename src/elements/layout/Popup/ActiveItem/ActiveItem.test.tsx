@@ -101,10 +101,10 @@ describe("ActiveItem", () => {
         loadImage(video);
         pause.mockClear();
 
-        await clickButton("Toggle Video");
+        await clickButton("Play Video");
         expect(play).toHaveBeenCalledTimes(1);
 
-        await clickButton("Toggle Video");
+        await clickButton("Pause Video");
         expect(pause).toHaveBeenCalledTimes(1);
     });
 
@@ -113,10 +113,10 @@ describe("ActiveItem", () => {
         loadImage(video);
         expect(getVideo().muted).toBe(false);
 
-        await clickButton("Toggle Volume");
+        await clickButton("Mute Video");
         expect(getVideo().muted).toBe(true);
 
-        await clickButton("Toggle Volume");
+        await clickButton("Unmute Video");
         expect(getVideo().muted).toBe(false);
     });
 
@@ -201,16 +201,16 @@ describe("ActiveItem", () => {
         );
         expect(getInfoHeading()).not.toBeVisible();
 
-        await clickButton("Toggle Info");
+        await clickButton("Show Info");
         expect(getInfoHeading()).toBeVisible();
 
-        await clickButton("Toggle Info");
+        await clickButton("Hide Info");
         expect(getInfoHeading()).not.toBeVisible();
     });
 
     it("hides the info when the image area is clicked", async () => {
         render(<ActiveItem />);
-        await clickButton("Toggle Info");
+        await clickButton("Show Info");
 
         // Das Bild hat pointer-events: none, der Klick geht an den Container
         fireEvent.click(screen.getByAltText(getAltText(video)));
@@ -221,9 +221,9 @@ describe("ActiveItem", () => {
     it("resets info and video but keeps the volume when the item changes", async () => {
         render(<ActiveItem />);
         loadImage(video);
-        await clickButton("Toggle Info");
-        await clickButton("Toggle Video");
-        await clickButton("Toggle Volume");
+        await clickButton("Show Info");
+        await clickButton("Play Video");
+        await clickButton("Mute Video");
         expect(getVideo().muted).toBe(true);
 
         act(() => useStore.setState({ activeIndex: 2 }));
@@ -240,14 +240,14 @@ describe("ActiveItem", () => {
         // Ist das Video zurückgesetzt, startet der nächste Klick die Wiedergabe
         const play = vi.mocked(HTMLMediaElement.prototype.play);
         play.mockClear();
-        await clickButton("Toggle Video");
+        await clickButton("Play Video");
         expect(play).toHaveBeenCalledTimes(1);
     });
 
     it("pauses the video when the popup is closed", async () => {
         render(<ActiveItem />);
         loadImage(video);
-        await clickButton("Toggle Video");
+        await clickButton("Play Video");
         const pause = vi.mocked(HTMLMediaElement.prototype.pause);
         pause.mockClear();
 
