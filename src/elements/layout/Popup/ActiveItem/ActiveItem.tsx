@@ -51,7 +51,8 @@ const ActiveItem = () => {
                             ariaLabel={loadedItem.title}
                             muted={!isVolumeOn}
                             onClick={() => setIsVideoOn(!isVideoOn)}
-                            // DEBUG: opacity über isVideoOn
+                            width="100%"
+                            height="100%"
                         />
                     )}
 

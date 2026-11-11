@@ -3,9 +3,9 @@ import { styled } from "styled-components";
 
 export const StyledItemInfo = styled.figcaption<{ $isVisible: boolean }>`
     position: absolute;
-    bottom: 0.5rem;
-    left: 0.5rem;
-    width: calc(100% - 1rem);
+    bottom: 0;
+    left: 0;
+    width: 100%;
     max-width: 100%;
     max-height: 100%;
     backdrop-filter: blur(8px);
@@ -16,6 +16,10 @@ export const StyledItemInfo = styled.figcaption<{ $isVisible: boolean }>`
     display: flex;
     justify-content: space-between;
     padding: 1rem;
+
+    html:has([data-pinching]) & {
+        display: none;
+    }
 `;
 
 export const ImageTitle = styled(Text)`

@@ -35,7 +35,7 @@ export const ItemFigure = styled.figure`
     position: relative;
     display: flex;
     overflow: hidden;
-    padding: 0.5rem;
+    border: 0.5rem solid black;
     margin: 0;
     z-index: 9;
 
@@ -63,9 +63,7 @@ export const ItemFigure = styled.figure`
 
     > video {
         position: absolute;
-        top: 0.5rem;
-        left: 0.5rem;
-        width: calc(100% - 1rem);
-        height: calc(100% - 1rem);
+        top: 0;
+        left: 0;
     }
 `;
