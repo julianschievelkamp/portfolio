@@ -34,7 +34,7 @@ const ItemButtons = ({
                 ariaLabel="Previous Artwork"
                 onClick={() => setActiveIndex(activeIndex - 1)}
             >
-                <Icon name="chevronLeft" size="2rem" padding="0.5rem" />
+                <Icon name="chevronLeft" size="1.5rem" padding="0.5rem" />
             </Button>
             <Button
                 onClick={() => setIsVolumeOn(!isVolumeOn)}
@@ -47,7 +47,7 @@ const ItemButtons = ({
                             ? "volumeOn"
                             : "volumeOff"
                     }
-                    size="2rem"
+                    size="1.5rem"
                     padding="0.5rem"
                 />
             </Button>
@@ -60,7 +60,7 @@ const ItemButtons = ({
                     name={
                         loadedItem.video && isVideoOn ? "videoOn" : "videoOff"
                     }
-                    size="2rem"
+                    size="1.5rem"
                     padding="0.5rem"
                 />
             </Button>
@@ -71,7 +71,7 @@ const ItemButtons = ({
                 <Icon
                     name={isInfoOn ? "infoFilled" : "info"}
                     color={isInfoOn ? colors.primary : undefined}
-                    size="2rem"
+                    size="1.5rem"
                     padding="0.5rem"
                 />
             </Button>
@@ -79,10 +79,10 @@ const ItemButtons = ({
                 ariaLabel="Next Artwork"
                 onClick={() => setActiveIndex(activeIndex + 1)}
             >
-                <Icon name="chevronRight" size="2rem" padding="0.5rem" />
+                <Icon name="chevronRight" size="1.5rem" padding="0.5rem" />
             </Button>
             <Button onClick={() => setPopupOpen(false)} ariaLabel="Close Popup">
-                <Icon name="close" size="2rem" padding="0.5rem" />
+                <Icon name="close" size="1.5rem" padding="0.5rem" />
             </Button>
         </StyledItemButtons>
     );
