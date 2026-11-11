@@ -27,6 +27,9 @@ const loadImage = (item: typeof video) =>
     fireEvent.load(screen.getByAltText(getAltText(item)));
 const clickButton = (name: string) =>
     userEvent.click(screen.getByLabelText(name));
+// Der InnerWrapper steuert das Ein- und Ausblenden des ActiveItems
+const getInnerWrapper = (container: HTMLElement) =>
+    container.firstElementChild?.firstElementChild as HTMLElement;
 
 describe("ActiveItem", () => {
     beforeEach(() => {
@@ -145,7 +148,7 @@ describe("ActiveItem", () => {
 
     it("is invisible until the selected image has loaded", async () => {
         const { container } = render(<ActiveItem />);
-        const activeItem = container.firstElementChild as HTMLElement;
+        const activeItem = getInnerWrapper(container);
         expect(activeItem).toHaveStyle({ opacity: "0" });
         expect(activeItem).not.toBeVisible();
 
@@ -157,7 +160,7 @@ describe("ActiveItem", () => {
 
     it("fades in even if the image fails to load", async () => {
         const { container } = render(<ActiveItem />);
-        const activeItem = container.firstElementChild as HTMLElement;
+        const activeItem = getInnerWrapper(container);
 
         fireEvent.error(screen.getByAltText(getAltText(video)));
 
@@ -167,7 +170,7 @@ describe("ActiveItem", () => {
 
     it("fades in again every time the popup is opened", async () => {
         const { container } = render(<ActiveItem />);
-        const activeItem = container.firstElementChild as HTMLElement;
+        const activeItem = getInnerWrapper(container);
         fireEvent.load(screen.getByAltText(getAltText(video)));
         await waitFor(() => expect(activeItem).toHaveStyle({ opacity: "1" }));
 
@@ -185,7 +188,7 @@ describe("ActiveItem", () => {
 
     it("stays visible while navigating between items", async () => {
         const { container } = render(<ActiveItem />);
-        const activeItem = container.firstElementChild as HTMLElement;
+        const activeItem = getInnerWrapper(container);
         fireEvent.load(screen.getByAltText(getAltText(video)));
         await waitFor(() => expect(activeItem).toHaveStyle({ opacity: "1" }));
 
@@ -199,7 +202,7 @@ describe("ActiveItem", () => {
         const { container } = render(<ActiveItem />);
         fireEvent.load(screen.getByAltText(getAltText(video)));
         await waitFor(() =>
-            expect(container.firstElementChild).toHaveStyle({ opacity: "1" }),
+            expect(getInnerWrapper(container)).toHaveStyle({ opacity: "1" }),
         );
         expect(getInfoHeading()).not.toBeVisible();
 

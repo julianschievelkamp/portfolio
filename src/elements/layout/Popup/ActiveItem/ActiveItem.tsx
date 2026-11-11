@@ -1,4 +1,8 @@
-import { ItemFigure, StyledActiveItem } from "./ActiveItem.styles";
+import {
+    InnerWrapper,
+    ItemFigure,
+    StyledActiveItem,
+} from "./ActiveItem.styles";
 import Image from "elements/components/Image/Image";
 import { useActiveItem } from "hooks/useActiveItem";
 import { getAltText } from "data/portfolioData";
@@ -29,43 +33,45 @@ const ActiveItem = () => {
     if (!loadedItem) return null;
 
     return (
-        <StyledActiveItem $isItemRevealed={isItemRevealed}>
-            <ItemFigure ref={pinchZoomRef}>
-                <Image
-                    src={loadedItem.image}
-                    alt={getAltText(loadedItem)}
-                    onLoad={markImageLoaded}
-                    onError={markImageLoaded}
-                    width="100%"
-                    height="100%"
-                />
-
-                {loadedItem.video && isImageLoaded && (
-                    <Video
-                        src={loadedItem.video}
-                        poster={loadedItem.image}
-                        ariaLabel={loadedItem.title}
-                        videoRef={videoRef}
-                        muted={!isVolumeOn}
-                        onClick={toggleVideo}
+        <StyledActiveItem>
+            <InnerWrapper $isItemRevealed={isItemRevealed}>
+                <ItemFigure ref={pinchZoomRef}>
+                    <Image
+                        src={loadedItem.image}
+                        alt={getAltText(loadedItem)}
+                        onLoad={markImageLoaded}
+                        onError={markImageLoaded}
                         width="100%"
                         height="100%"
-                        // DEBUG: opacity über isVideoOn
                     />
-                )}
 
-                <ItemInfo loadedItem={loadedItem} isInfoOn={isInfoOn} />
-            </ItemFigure>
+                    {loadedItem.video && isImageLoaded && (
+                        <Video
+                            src={loadedItem.video}
+                            poster={loadedItem.image}
+                            ariaLabel={loadedItem.title}
+                            videoRef={videoRef}
+                            muted={!isVolumeOn}
+                            onClick={toggleVideo}
+                            width="100%"
+                            height="100%"
+                            // DEBUG: opacity über isVideoOn
+                        />
+                    )}
 
-            <ItemButtons
-                loadedItem={loadedItem}
-                isVideoOn={isVideoOn}
-                setIsVideoOn={setIsVideoOn}
-                isVolumeOn={isVolumeOn}
-                setIsVolumeOn={setIsVolumeOn}
-                isInfoOn={isInfoOn}
-                setIsInfoOn={setIsInfoOn}
-            />
+                    <ItemInfo loadedItem={loadedItem} isInfoOn={isInfoOn} />
+                </ItemFigure>
+
+                <ItemButtons
+                    loadedItem={loadedItem}
+                    isVideoOn={isVideoOn}
+                    setIsVideoOn={setIsVideoOn}
+                    isVolumeOn={isVolumeOn}
+                    setIsVolumeOn={setIsVolumeOn}
+                    isInfoOn={isInfoOn}
+                    setIsInfoOn={setIsInfoOn}
+                />
+            </InnerWrapper>
         </StyledActiveItem>
     );
 };

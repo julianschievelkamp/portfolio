@@ -44,18 +44,3 @@ export const StyledPopup = styled.dialog`
         }
     }
 `;
-
-export const ItemContainer = styled.div`
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 4rem;
-    width: 100%;
-    height: 100%;
-
-    @media ${queries.landscapeLgMax} {
-        padding-bottom: 0;
-        width: auto;
-    }
-`;

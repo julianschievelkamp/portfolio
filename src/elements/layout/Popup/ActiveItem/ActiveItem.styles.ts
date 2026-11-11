@@ -1,7 +1,22 @@
 import { styled } from "styled-components";
 import { queries, transition } from "styles/variables";
 
-export const StyledActiveItem = styled.div<{ $isItemRevealed: boolean }>`
+export const StyledActiveItem = styled.div`
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 4rem;
+    width: 100%;
+    height: 100%;
+
+    @media ${queries.landscapeLgMax} {
+        padding-bottom: 0;
+        width: auto;
+    }
+`;
+
+export const InnerWrapper = styled.div<{ $isItemRevealed: boolean }>`
     position: relative;
     z-index: 9;
 

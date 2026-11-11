@@ -1,5 +1,5 @@
 import { useStore } from "hooks/useStore";
-import { ItemContainer, StyledPopup } from "./Popup.styles";
+import { StyledPopup } from "./Popup.styles";
 import { usePopupOverlay } from "hooks/usePopupOverlay";
 import Slider from "./Slider/Slider";
 import ActiveItem from "./ActiveItem/ActiveItem";
@@ -21,9 +21,7 @@ const Popup = () => {
                 setPopupOpen(false);
             }}
         >
-            <ItemContainer>
-                <ActiveItem />
-            </ItemContainer>
+            <ActiveItem />
 
             <Slider />
         </StyledPopup>
