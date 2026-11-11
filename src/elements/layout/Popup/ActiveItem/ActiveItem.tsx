@@ -8,7 +8,7 @@ import ItemInfo from "./ItemInfo/ItemInfo";
 import { usePinchZoom } from "hooks/usePinchZoom";
 
 const ActiveItem = () => {
-    const pinchZoomRef = usePinchZoom<HTMLDivElement>();
+    const pinchZoomRef = usePinchZoom<HTMLElement>();
 
     const {
         loadedItem,
@@ -27,8 +27,8 @@ const ActiveItem = () => {
     if (!loadedItem) return null;
 
     return (
-        <StyledActiveItem ref={pinchZoomRef} $isItemRevealed={isItemRevealed}>
-            <ItemFigure onClick={() => setIsInfoOn(false)}>
+        <StyledActiveItem $isItemRevealed={isItemRevealed}>
+            <ItemFigure ref={pinchZoomRef} onClick={() => setIsInfoOn(false)}>
                 <Image
                     src={loadedItem.image}
                     alt={getAltText(loadedItem)}

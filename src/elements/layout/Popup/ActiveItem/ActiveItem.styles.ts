@@ -10,18 +10,7 @@ export const StyledActiveItem = styled.div<{ $isItemRevealed: boolean }>`
     visibility: ${({ $isItemRevealed }) =>
         $isItemRevealed ? "visible" : "hidden"};
     transition: ${({ $isItemRevealed }) =>
-        $isItemRevealed
-            ? `opacity ${transition.default}, transform ${transition.default}`
-            : "none"};
-
-    /* Transformation aus usePinchZoom, ohne Geste gleitet das Werk zurück */
-    transform: var(--pinch-transform, none);
-    transform-origin: 0 0;
-
-    /* Während der Geste folgt das Werk den Fingern ohne Verzögerung */
-    &[data-pinching] {
-        transition: opacity ${transition.default};
-    }
+        $isItemRevealed ? `opacity ${transition.default}` : "none"};
 `;
 
 export const ItemFigure = styled.figure`
@@ -30,6 +19,16 @@ export const ItemFigure = styled.figure`
     display: flex;
     border: 0.5rem solid black;
     overflow: hidden;
+
+    /* Transformation aus usePinchZoom, ohne Geste gleitet das Werk zurück */
+    transform: var(--pinch-transform, none);
+    transform-origin: 0 0;
+    transition: transform ${transition.default};
+
+    /* Während der Geste folgt das Werk den Fingern ohne Verzögerung */
+    &[data-pinching] {
+        transition: none;
+    }
 
     > img,
     > video {
