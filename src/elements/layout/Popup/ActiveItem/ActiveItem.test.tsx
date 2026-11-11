@@ -34,7 +34,8 @@ const getInnerWrapper = (container: HTMLElement) =>
 describe("ActiveItem", () => {
     beforeEach(() => {
         useStore.setState({ activeIndex: 1, popupOpen: true });
-        // jsdom implementiert pause nicht
+        // jsdom implementiert play und pause nicht
+        vi.spyOn(HTMLMediaElement.prototype, "play").mockResolvedValue();
         vi.spyOn(HTMLMediaElement.prototype, "pause").mockImplementation(
             () => {},
         );
@@ -93,23 +94,23 @@ describe("ActiveItem", () => {
         expect(getVideo()).toBeInTheDocument();
     });
 
-    it("enables the volume button only while the video is switched on", async () => {
+    it("plays and pauses the video via the video button", async () => {
+        const play = vi.mocked(HTMLMediaElement.prototype.play);
+        const pause = vi.mocked(HTMLMediaElement.prototype.pause);
         render(<ActiveItem />);
         loadImage(video);
-        const volumeButton = screen.getByLabelText("Toggle Volume");
-        expect(volumeButton).toBeDisabled();
+        pause.mockClear();
 
         await clickButton("Toggle Video");
-        expect(volumeButton).toBeEnabled();
+        expect(play).toHaveBeenCalledTimes(1);
 
         await clickButton("Toggle Video");
-        expect(volumeButton).toBeDisabled();
+        expect(pause).toHaveBeenCalledTimes(1);
     });
 
-    it("mutes and unmutes the video via the item buttons", async () => {
+    it("mutes and unmutes the video via the item buttons, even before it plays", async () => {
         render(<ActiveItem />);
         loadImage(video);
-        await clickButton("Toggle Video");
         expect(getVideo().muted).toBe(false);
 
         await clickButton("Toggle Volume");
@@ -120,21 +121,15 @@ describe("ActiveItem", () => {
     });
 
     it("plays and pauses the video when it is clicked", async () => {
-        const play = vi
-            .spyOn(HTMLMediaElement.prototype, "play")
-            .mockResolvedValue();
+        const play = vi.mocked(HTMLMediaElement.prototype.play);
         const pause = vi.mocked(HTMLMediaElement.prototype.pause);
         render(<ActiveItem />);
         loadImage(video);
+        pause.mockClear();
 
         await userEvent.click(getVideo());
         expect(play).toHaveBeenCalledTimes(1);
 
-        Object.defineProperty(getVideo(), "paused", {
-            value: false,
-            configurable: true,
-        });
-        pause.mockClear();
         await userEvent.click(getVideo());
         expect(pause).toHaveBeenCalledTimes(1);
     });
@@ -223,7 +218,7 @@ describe("ActiveItem", () => {
         expect(getInfoHeading()).not.toBeVisible();
     });
 
-    it("resets info, video and volume when the item changes", async () => {
+    it("resets info and video but keeps the volume when the item changes", async () => {
         render(<ActiveItem />);
         loadImage(video);
         await clickButton("Toggle Info");
@@ -239,13 +234,20 @@ describe("ActiveItem", () => {
 
         expect(getInfoHeading()).not.toBeVisible();
         expect(getVideo()).toBeInTheDocument();
-        expect(getVideo().muted).toBe(false);
-        expect(screen.getByLabelText("Toggle Volume")).toBeDisabled();
+        // Die Ton-Einstellung bleibt über Item-Wechsel hinweg erhalten
+        expect(getVideo().muted).toBe(true);
+
+        // Ist das Video zurückgesetzt, startet der nächste Klick die Wiedergabe
+        const play = vi.mocked(HTMLMediaElement.prototype.play);
+        play.mockClear();
+        await clickButton("Toggle Video");
+        expect(play).toHaveBeenCalledTimes(1);
     });
 
-    it("pauses the video when the popup is closed", () => {
+    it("pauses the video when the popup is closed", async () => {
         render(<ActiveItem />);
         loadImage(video);
+        await clickButton("Toggle Video");
         const pause = vi.mocked(HTMLMediaElement.prototype.pause);
         pause.mockClear();
 

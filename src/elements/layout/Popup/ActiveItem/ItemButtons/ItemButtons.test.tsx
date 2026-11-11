@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
@@ -16,6 +16,12 @@ vi.mock("elements/components/Icon/Icon", () => ({
 }));
 
 const [photo, video] = portfolioData;
+
+// Das Icon wird innerhalb des Buttons gesucht, da "close" auch am Schließen-Button vorkommt
+const getIcon = (buttonName: string, iconName: string) =>
+    within(screen.getByRole("button", { name: buttonName })).getByTestId(
+        `icon-${iconName}`,
+    );
 
 const renderItemButtons = (props: Partial<ItemButtonsProps> = {}) => {
     const handlers = {
@@ -55,10 +61,10 @@ describe("ItemButtons", () => {
         expect(screen.getByRole("button", { name: "Toggle Info" })).toBeEnabled();
     });
 
-    it("disables only volume while the video is switched off", () => {
+    it("keeps volume and video enabled for an item with video while the video is off", () => {
         renderItemButtons({ isVideoOn: false });
 
-        expect(screen.getByRole("button", { name: "Toggle Volume" })).toBeDisabled();
+        expect(screen.getByRole("button", { name: "Toggle Volume" })).toBeEnabled();
         expect(screen.getByRole("button", { name: "Toggle Video" })).toBeEnabled();
     });
 
@@ -74,41 +80,81 @@ describe("ItemButtons", () => {
         expect(handlers.setIsInfoOn).toHaveBeenCalledWith(true);
     });
 
-    it("shows the on icons when video and volume are active", () => {
-        renderItemButtons();
-
-        expect(screen.getByTestId("icon-volumeOn")).toBeInTheDocument();
-        expect(screen.getByTestId("icon-videoOn")).toBeInTheDocument();
-        expect(screen.getByTestId("icon-info")).toBeInTheDocument();
-    });
-
-    it("shows the off icons without video, with video off or volume off", () => {
+    it("shows the close icon while the video is on and the play icon while it is off", () => {
         const { unmount } = render(
             <ItemButtons
-                loadedItem={photo}
+                loadedItem={video}
                 isVideoOn
                 isVolumeOn
-                isInfoOn
+                isInfoOn={false}
                 setIsVideoOn={vi.fn()}
                 setIsVolumeOn={vi.fn()}
                 setIsInfoOn={vi.fn()}
             />,
         );
-        expect(screen.getByTestId("icon-volumeOff")).toBeInTheDocument();
-        expect(screen.getByTestId("icon-videoOff")).toBeInTheDocument();
-        expect(screen.getByTestId("icon-infoFilled")).toBeInTheDocument();
+        expect(getIcon("Toggle Video", "close")).toBeInTheDocument();
         unmount();
 
         renderItemButtons({ isVideoOn: false });
-        expect(screen.getByTestId("icon-volumeOff")).toBeInTheDocument();
-        expect(screen.getByTestId("icon-videoOff")).toBeInTheDocument();
+        expect(getIcon("Toggle Video", "play")).toBeInTheDocument();
     });
 
-    it("shows the volume off icon while the volume is off", () => {
-        renderItemButtons({ isVolumeOn: false });
+    it("shows the play icon for an item without video", () => {
+        renderItemButtons({ loadedItem: photo });
 
-        expect(screen.getByTestId("icon-volumeOff")).toBeInTheDocument();
-        expect(screen.getByTestId("icon-videoOn")).toBeInTheDocument();
+        expect(getIcon("Toggle Video", "play")).toBeInTheDocument();
+    });
+
+    it("shows the volume icon according to the volume state, independent of the video", () => {
+        const { unmount } = render(
+            <ItemButtons
+                loadedItem={video}
+                isVideoOn={false}
+                isVolumeOn
+                isInfoOn={false}
+                setIsVideoOn={vi.fn()}
+                setIsVolumeOn={vi.fn()}
+                setIsInfoOn={vi.fn()}
+            />,
+        );
+        expect(getIcon("Toggle Volume", "volumeOn")).toBeInTheDocument();
+        unmount();
+
+        renderItemButtons({ isVolumeOn: false });
+        expect(getIcon("Toggle Volume", "volumeOff")).toBeInTheDocument();
+    });
+
+    it("colors the video and volume icons with the primary color only for items with video", () => {
+        const { unmount } = render(
+            <ItemButtons
+                loadedItem={video}
+                isVideoOn={false}
+                isVolumeOn
+                isInfoOn={false}
+                setIsVideoOn={vi.fn()}
+                setIsVolumeOn={vi.fn()}
+                setIsInfoOn={vi.fn()}
+            />,
+        );
+        expect(getIcon("Toggle Video", "play")).toHaveAttribute(
+            "data-color",
+            colors.primary,
+        );
+        expect(getIcon("Toggle Volume", "volumeOn")).toHaveAttribute(
+            "data-color",
+            colors.primary,
+        );
+        unmount();
+
+        renderItemButtons({ loadedItem: photo });
+        expect(getIcon("Toggle Video", "play")).toHaveAttribute(
+            "data-color",
+            "white",
+        );
+        expect(getIcon("Toggle Volume", "volumeOn")).toHaveAttribute(
+            "data-color",
+            "white",
+        );
     });
 
     it("colors the info icon with the primary color only when active", () => {

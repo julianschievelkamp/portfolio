@@ -10,9 +10,10 @@ import Video from "elements/components/Video/Video";
 import ItemButtons from "./ItemButtons/ItemButtons";
 import ItemInfo from "./ItemInfo/ItemInfo";
 import { usePinchZoom } from "hooks/usePinchZoom";
-import { useVideoPlayback } from "hooks/useVideoPlayback";
 
 const ActiveItem = () => {
+    const pinchZoomRef = usePinchZoom<HTMLElement>();
+
     const {
         loadedItem,
         isItemRevealed,
@@ -26,9 +27,6 @@ const ActiveItem = () => {
         isVolumeOn,
         setIsVolumeOn,
     } = useActiveItem();
-
-    const pinchZoomRef = usePinchZoom<HTMLElement>();
-    const { toggleVideo } = useVideoPlayback(videoRef);
 
     if (!loadedItem) return null;
 
@@ -47,12 +45,12 @@ const ActiveItem = () => {
 
                     {loadedItem.video && isImageLoaded && (
                         <Video
+                            videoRef={videoRef}
                             src={loadedItem.video}
                             poster={loadedItem.image}
                             ariaLabel={loadedItem.title}
-                            videoRef={videoRef}
                             muted={!isVolumeOn}
-                            onClick={toggleVideo}
+                            onClick={() => setIsVideoOn(!isVideoOn)}
                             width="100%"
                             height="100%"
                             // DEBUG: opacity über isVideoOn

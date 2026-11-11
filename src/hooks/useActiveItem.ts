@@ -6,9 +6,9 @@ import { usePreloadedItem } from "hooks/usePreloadedItem";
 // Kapselt die Logik des aktiven Popup-Items: Vorladen, Einblenden sowie die
 // Zustände von Info, Video und Ton.
 export const useActiveItem = () => {
-    const activeIndex = useStore((state) => state.activeIndex);
-    const popupOpen = useStore((state) => state.popupOpen);
     const videoRef = useRef<HTMLVideoElement | null>(null);
+    const popupOpen = useStore((state) => state.popupOpen);
+    const activeIndex = useStore((state) => state.activeIndex);
 
     const activeItem = portfolioData[activeIndex];
     const loadedItem = usePreloadedItem(activeItem);
@@ -32,17 +32,21 @@ export const useActiveItem = () => {
     // Das gewählte Item ist angezeigt und sein Bild vollständig geladen
     const isItemReady = popupOpen && isImageLoaded && loadedItem === activeItem;
 
-    // Beim Item-Wechsel werden die Zustände direkt beim Rendern zurückgesetzt
+    // Beim Item-Wechsel Zustände zurücksetzen
     if (previousItem !== loadedItem) {
         setPreviousItem(loadedItem);
         setIsInfoOn(false);
         setIsVideoOn(false);
-        setIsVolumeOn(true);
     }
 
     // Beim Schließen wird zurückgesetzt, damit das ActiveItem beim nächsten Öffnen wieder einblendet
     if (!popupOpen && isItemRevealed) {
         setIsItemRevealed(false);
+    }
+
+    // Beim Schließen wird das Video gestoppt; der Effect unten pausiert daraufhin das Element
+    if (!popupOpen && isVideoOn) {
+        setIsVideoOn(false);
     }
 
     useEffect(() => {
@@ -55,10 +59,12 @@ export const useActiveItem = () => {
     }, [isItemReady]);
 
     useEffect(() => {
-        if (!popupOpen) {
-            videoRef.current?.pause();
+        if (isVideoOn) {
+            videoRef?.current?.play();
+        } else {
+            videoRef?.current?.pause();
         }
-    }, [popupOpen]);
+    }, [isVideoOn]);
 
     return {
         loadedItem,
