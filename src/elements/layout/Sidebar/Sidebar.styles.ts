@@ -37,6 +37,7 @@ export const StyledSidebar = styled.aside<{
 `;
 
 export const Backdrop = styled.div<{ $isActive: boolean }>`
+    touch-action: none;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -60,7 +61,9 @@ export const Backdrop = styled.div<{ $isActive: boolean }>`
 `;
 
 export const ScrollContainer = styled.div`
+    touch-action: pan-x pan-y;
     overflow-y: scroll;
+    overscroll-behavior-y: contain;
     margin: 1.5rem 0 0 0;
     display: flex;
     flex-direction: column;

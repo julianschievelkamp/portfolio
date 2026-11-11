@@ -12,8 +12,6 @@ export const StyledActiveItem = styled.div<{ $isItemRevealed: boolean }>`
         $isItemRevealed
             ? `opacity ${transition.default}, transform ${transition.default}`
             : "none"};
-    /* Gesten werden vollständig von usePinchZoom übernommen */
-    touch-action: none;
     /* Transformation aus usePinchZoom, ohne Geste gleitet das Werk zurück */
     transform: var(--pinch-transform, none);
     transform-origin: 0 0;
@@ -35,10 +33,10 @@ export const ItemFigure = styled.figure`
     > video {
         object-fit: cover;
         min-height: 10rem;
-        max-height: calc(var(--100svh) - 14rem);
+        max-height: calc(100dvh - 14rem);
 
         @media ${queries.landscapeLgMax} {
-            max-height: calc(var(--100svh) - 3rem);
+            max-height: calc(100dvh - 3rem);
             max-width: calc(100vw - 11rem);
         }
     }
