@@ -18,6 +18,7 @@ export const StyledPopup = styled.dialog`
     margin: 0;
 
     opacity: 0;
+    will-change: opacity, background-color, box-shadow;
     transition: opacity ${transition.defaultIn};
 
     &[data-visible="true"] {
