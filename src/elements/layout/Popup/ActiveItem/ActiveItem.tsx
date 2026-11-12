@@ -7,27 +7,33 @@ import Image from "elements/components/Image/Image";
 import { useActiveItem } from "hooks/useActiveItem";
 import { getAltText } from "data/portfolioData";
 import Video from "elements/components/Video/Video";
-import ItemButtons from "./ItemButtons/ItemButtons";
 import ItemInfo from "./ItemInfo/ItemInfo";
 import { usePinchZoom } from "hooks/usePinchZoom";
 import ClickAreas from "./ClickAreas/ClickAreas";
+import { useEffect, useRef } from "react";
+import { useStore } from "hooks/useStore";
 
 const ActiveItem = () => {
-    const pinchZoomRef = usePinchZoom<HTMLElement>();
+    const popupOpen = useStore((state) => state.popupOpen);
+    const { loadedItem, isItemRevealed, isImageLoaded, setLoadedImage } =
+        useActiveItem();
 
-    const {
-        loadedItem,
-        isItemRevealed,
-        isImageLoaded,
-        markImageLoaded,
-        videoRef,
-        isInfoOn,
-        setIsInfoOn,
-        isVideoOn,
-        setIsVideoOn,
-        isVolumeOn,
-        setIsVolumeOn,
-    } = useActiveItem();
+    const pinchZoomRef = usePinchZoom<HTMLElement>();
+    const videoRef = useRef<HTMLVideoElement | null>(null);
+
+    const toggleVideo = () => {
+        if (videoRef?.current?.paused) {
+            videoRef?.current?.play();
+        } else {
+            videoRef?.current?.pause();
+        }
+    };
+
+    useEffect(() => {
+        if (!popupOpen) {
+            videoRef?.current?.pause();
+        }
+    }, [popupOpen]);
 
     if (!loadedItem) return null;
 
@@ -40,8 +46,8 @@ const ActiveItem = () => {
                     <Image
                         src={loadedItem.image}
                         alt={getAltText(loadedItem)}
-                        onLoad={markImageLoaded}
-                        onError={markImageLoaded}
+                        onLoad={() => setLoadedImage(loadedItem.image)}
+                        onError={() => setLoadedImage(loadedItem.image)}
                         width="100%"
                         height="100%"
                     />
@@ -52,25 +58,14 @@ const ActiveItem = () => {
                             src={loadedItem.video}
                             poster={loadedItem.image}
                             ariaLabel={loadedItem.title}
-                            muted={!isVolumeOn}
-                            onClick={() => setIsVideoOn(!isVideoOn)}
+                            onClick={() => toggleVideo()}
                             width="100%"
                             height="100%"
                         />
                     )}
 
-                    <ItemInfo loadedItem={loadedItem} isInfoOn={isInfoOn} />
+                    <ItemInfo loadedItem={loadedItem} />
                 </ItemFigure>
-
-                <ItemButtons
-                    loadedItem={loadedItem}
-                    isVideoOn={isVideoOn}
-                    setIsVideoOn={setIsVideoOn}
-                    isVolumeOn={isVolumeOn}
-                    setIsVolumeOn={setIsVolumeOn}
-                    isInfoOn={isInfoOn}
-                    setIsInfoOn={setIsInfoOn}
-                />
             </InnerWrapper>
         </StyledActiveItem>
     );

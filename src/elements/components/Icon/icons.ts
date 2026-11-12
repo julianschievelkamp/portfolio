@@ -2,23 +2,13 @@
 import Close from "assets/icons/close.svg?react";
 import Hamburger from "assets/icons/hamburger.svg?react";
 import Play from "assets/icons/play.svg?react";
-import Pause from "assets/icons/pause.svg?react";
 import ChevronLeft from "assets/icons/chevron-left.svg?react";
 import ChevronRight from "assets/icons/chevron-right.svg?react";
-import VolumeOff from "assets/icons/volume-off.svg?react";
-import VolumeOn from "assets/icons/volume-on.svg?react";
-import Info from "assets/icons/info.svg?react";
-import InfoFilled from "assets/icons/info-filled.svg?react";
 
 export const icons = {
     close: Close,
     hamburger: Hamburger,
     play: Play,
-    pause: Pause,
     chevronLeft: ChevronLeft,
     chevronRight: ChevronRight,
-    volumeOff: VolumeOff,
-    volumeOn: VolumeOn,
-    info: Info,
-    infoFilled: InfoFilled,
 };

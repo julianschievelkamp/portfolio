@@ -6,7 +6,6 @@ export interface VideoProps {
     poster: string;
     width?: string;
     height?: string;
-    muted?: boolean;
     ariaLabel?: string;
     onClick?: () => void;
 }
@@ -17,7 +16,6 @@ const Video = ({
     poster,
     width,
     height,
-    muted,
     ariaLabel,
     onClick,
 }: VideoProps) => {
@@ -28,13 +26,11 @@ const Video = ({
             poster={poster}
             $width={width}
             $height={height}
-            muted={muted}
-            playsInline
-            loop
-            disablePictureInPicture
+            aria-label={ariaLabel}
             onContextMenu={(e) => e.preventDefault()}
             onClick={onClick}
-            aria-label={ariaLabel}
+            playsInline
+            loop
         >
             <source src={src} type="video/mp4" />
             Your browser does not support the video tag.

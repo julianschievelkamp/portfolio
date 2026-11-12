@@ -7,5 +7,5 @@ export const StyledVideo = styled.video<{
     width: ${({ $width }) => $width};
     height: ${({ $height }) => $height};
     max-width: 100%;
-    cursor: ${({ onClick }) => onClick && "pointer"};
+    cursor: pointer;
 `;

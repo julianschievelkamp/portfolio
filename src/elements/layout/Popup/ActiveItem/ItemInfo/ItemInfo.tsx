@@ -4,12 +4,11 @@ import Image from "elements/components/Image/Image";
 
 export interface ItemInfoProps {
     loadedItem: PortfolioItem;
-    isInfoOn: boolean;
 }
 
-const ItemInfo = ({ loadedItem, isInfoOn }: ItemInfoProps) => {
+const ItemInfo = ({ loadedItem }: ItemInfoProps) => {
     return (
-        <StyledItemInfo $isVisible={isInfoOn}>
+        <StyledItemInfo $isVisible={false}>
             <ImageTitle color="white" fontSize="0.875rem">
                 <span>
                     {loadedItem.title}, {loadedItem.year}
