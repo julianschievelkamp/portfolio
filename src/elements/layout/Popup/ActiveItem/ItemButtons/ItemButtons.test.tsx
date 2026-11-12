@@ -124,15 +124,15 @@ describe("ItemButtons", () => {
         expect(getIcon("Unmute Video", "volumeOff")).toBeInTheDocument();
     });
 
-    it("colors the video and volume icons with the primary color only for items with video", () => {
+    it("colors the video and volume icons white, with and without video", () => {
         const { unmount } = renderItemButtons({ isVideoOn: false });
         expect(getIcon("Play Video", "play")).toHaveAttribute(
             "data-color",
-            colors.primary,
+            "white",
         );
         expect(getIcon("Mute Video", "volumeOn")).toHaveAttribute(
             "data-color",
-            colors.primary,
+            "white",
         );
         unmount();
 

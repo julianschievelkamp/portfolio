@@ -14,9 +14,15 @@ const ClickAreas = () => {
 
     return (
         <>
-            <Close onClick={() => setPopupOpen(false)} />
-            <Previous onClick={() => setActiveIndex(activeIndex - 1)} />
-            <Next onClick={() => setActiveIndex(activeIndex + 1)} />
+            <Close aria-hidden="true" onClick={() => setPopupOpen(false)} />
+            <Previous
+                aria-hidden="true"
+                onClick={() => setActiveIndex(activeIndex - 1)}
+            />
+            <Next
+                aria-hidden="true"
+                onClick={() => setActiveIndex(activeIndex + 1)}
+            />
         </>
     );
 };
