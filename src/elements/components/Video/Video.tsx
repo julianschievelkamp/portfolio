@@ -1,40 +1,44 @@
-import { StyledVideo } from "./Video.styles";
+import { useVideoPlayback } from "hooks/useVideoPlayback";
+import Icon from "../Icon/Icon";
+import { PlayButton, StyledVideo } from "./Video.styles";
 
 export interface VideoProps {
-    videoRef: React.RefObject<HTMLVideoElement | null>;
     src: string;
     poster: string;
     width?: string;
     height?: string;
     ariaLabel?: string;
-    onClick?: () => void;
 }
 
-const Video = ({
-    videoRef,
-    src,
-    poster,
-    width,
-    height,
-    ariaLabel,
-    onClick,
-}: VideoProps) => {
+const Video = ({ src, poster, width, height, ariaLabel }: VideoProps) => {
+    const { videoRef, toggleVideo, isStarted } = useVideoPlayback(src);
+
     return (
-        <StyledVideo
-            key={src}
-            ref={videoRef}
-            poster={poster}
-            $width={width}
-            $height={height}
-            aria-label={ariaLabel}
-            onContextMenu={(e) => e.preventDefault()}
-            onClick={onClick}
-            playsInline
-            loop
-        >
-            <source src={src} type="video/mp4" />
-            Your browser does not support the video tag.
-        </StyledVideo>
+        <>
+            <StyledVideo
+                key={src}
+                ref={videoRef}
+                poster={poster}
+                $width={width}
+                $height={height}
+                aria-label={ariaLabel}
+                onContextMenu={(e) => e.preventDefault()}
+                onClick={() => toggleVideo()}
+                playsInline
+                loop
+            >
+                <source src={src} type="video/mp4" />
+                Your browser does not support the video tag.
+            </StyledVideo>
+
+            <PlayButton
+                $isVisible={!isStarted}
+                onClick={() => toggleVideo()}
+                ariaLabel="Play Video"
+            >
+                <Icon name="play" color="white" size="3rem" padding="0.5rem" />
+            </PlayButton>
+        </>
     );
 };
 

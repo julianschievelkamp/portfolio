@@ -10,12 +10,9 @@ import Video from "elements/components/Video/Video";
 import ItemInfo from "./ItemInfo/ItemInfo";
 import { usePinchZoom } from "hooks/usePinchZoom";
 import ClickAreas from "./ClickAreas/ClickAreas";
-import { useVideoPlayback } from "hooks/useVideoPlayback";
 
 const ActiveItem = () => {
     const pinchZoomRef = usePinchZoom<HTMLElement>();
-
-    const { videoRef, toggleVideo } = useVideoPlayback();
     const { loadedItem, isItemRevealed, isImageLoaded, setLoadedImage } =
         useActiveItem();
 
@@ -38,11 +35,9 @@ const ActiveItem = () => {
 
                     {loadedItem.video && isImageLoaded && (
                         <Video
-                            videoRef={videoRef}
                             src={loadedItem.video}
                             poster={loadedItem.image}
                             ariaLabel={loadedItem.title}
-                            onClick={() => toggleVideo()}
                             width="100%"
                             height="100%"
                         />

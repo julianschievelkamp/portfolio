@@ -8,10 +8,8 @@ export interface ButtonProps {
     ariaExpanded?: boolean;
     ariaControls?: string;
     ariaCurrent?: boolean;
-    id?: string;
-    tabIndex?: number;
-    disabled?: boolean;
     className?: string;
+    id?: string;
 }
 
 const Button = ({
@@ -22,10 +20,8 @@ const Button = ({
     ariaExpanded,
     ariaControls,
     ariaCurrent,
-    id,
-    tabIndex = 0,
-    disabled,
     className,
+    id,
 }: ButtonProps) => {
     return (
         <StyledButton
@@ -36,8 +32,6 @@ const Button = ({
             aria-expanded={ariaExpanded}
             aria-controls={ariaControls}
             aria-current={ariaCurrent}
-            tabIndex={tabIndex}
-            disabled={disabled}
             className={className}
         >
             {children}
