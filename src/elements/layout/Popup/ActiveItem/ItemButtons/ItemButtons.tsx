@@ -39,7 +39,7 @@ const ItemButtons = ({
                 >
                     <Icon
                         name={isVideoOn ? "pause" : "play"}
-                        color={loadedItem.video ? colors.primary : "white"}
+                        color="white"
                         size={iconSize}
                         padding={iconPadding}
                     />
@@ -51,7 +51,7 @@ const ItemButtons = ({
                 >
                     <Icon
                         name={isVolumeOn ? "volumeOn" : "volumeOff"}
-                        color={loadedItem.video ? colors.primary : "white"}
+                        color="white"
                         size={iconSize}
                         padding={iconPadding}
                     />
