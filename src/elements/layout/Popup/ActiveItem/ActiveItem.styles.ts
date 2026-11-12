@@ -36,7 +36,7 @@ export const Artwork = styled.div`
     position: relative;
     display: flex;
     overflow: hidden;
-    border: 0.5rem solid transparent;
+    border: 0.5rem solid black;
     margin: 0;
 
     /* Transformation aus usePinchZoom, ohne Geste gleitet das Werk zurück */
@@ -70,7 +70,6 @@ export const Artwork = styled.div`
 `;
 
 export const ItemCaption = styled.figcaption`
-    transform: translate3d(0, 0, 0);
     position: absolute;
     right: 0;
     top: 100%;
@@ -87,7 +86,7 @@ export const ItemCaption = styled.figcaption`
         right: auto;
         width: max-content;
         transform-origin: top left;
-        transform: rotate(-90deg) translate3d(0, 0, 0);
+        transform: rotate(-90deg);
 
         > p {
             text-align: left;
