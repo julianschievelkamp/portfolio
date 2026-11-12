@@ -13,7 +13,7 @@ export const Previous = styled.div`
     left: 0;
     transform: translateX(-100%);
     cursor: ${createIconCursor(chevronLeft, {
-        size: 48,
+        size: 64,
         color: colors.secondary,
     })};
 `;
@@ -25,7 +25,7 @@ export const Next = styled.div`
     right: 0;
     transform: translateX(100%);
     cursor: ${createIconCursor(chevronRight, {
-        size: 48,
+        size: 64,
         color: colors.secondary,
     })};
 `;
