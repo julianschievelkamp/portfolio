@@ -77,6 +77,10 @@ export const ItemCaption = styled.figcaption`
     padding-top: 0.25rem;
     z-index: -1;
 
+    > p {
+        text-align: right;
+    }
+
     @media ${queries.landscapeLgMax} {
         top: 100%;
         left: 100%;
