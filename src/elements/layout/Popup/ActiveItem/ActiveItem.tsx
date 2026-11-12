@@ -10,30 +10,14 @@ import Video from "elements/components/Video/Video";
 import ItemInfo from "./ItemInfo/ItemInfo";
 import { usePinchZoom } from "hooks/usePinchZoom";
 import ClickAreas from "./ClickAreas/ClickAreas";
-import { useEffect, useRef } from "react";
-import { useStore } from "hooks/useStore";
+import { useVideoPlayback } from "hooks/useVideoPlayback";
 
 const ActiveItem = () => {
-    const popupOpen = useStore((state) => state.popupOpen);
+    const pinchZoomRef = usePinchZoom<HTMLElement>();
+
+    const { videoRef, toggleVideo } = useVideoPlayback();
     const { loadedItem, isItemRevealed, isImageLoaded, setLoadedImage } =
         useActiveItem();
-
-    const pinchZoomRef = usePinchZoom<HTMLElement>();
-    const videoRef = useRef<HTMLVideoElement | null>(null);
-
-    const toggleVideo = () => {
-        if (videoRef?.current?.paused) {
-            videoRef?.current?.play();
-        } else {
-            videoRef?.current?.pause();
-        }
-    };
-
-    useEffect(() => {
-        if (!popupOpen) {
-            videoRef?.current?.pause();
-        }
-    }, [popupOpen]);
 
     if (!loadedItem) return null;
 
