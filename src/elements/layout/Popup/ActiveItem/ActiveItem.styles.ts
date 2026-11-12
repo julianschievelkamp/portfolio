@@ -19,7 +19,7 @@ export const StyledActiveItem = styled.div`
 export const InnerWrapper = styled.div<{ $isItemRevealed: boolean }>`
     background-color: black;
     position: relative;
-    z-index: 9;
+    z-index: 99;
 
     opacity: ${({ $isItemRevealed }) => ($isItemRevealed ? 1 : 0)};
     visibility: ${({ $isItemRevealed }) =>
@@ -37,7 +37,6 @@ export const ItemFigure = styled.figure`
     overflow: hidden;
     border: 0.5rem solid transparent;
     margin: 0;
-    z-index: 9;
 
     /* Transformation aus usePinchZoom, ohne Geste gleitet das Werk zurück */
     will-change: transform;

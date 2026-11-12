@@ -1,5 +1,5 @@
 import { useStore } from "hooks/useStore";
-import { StyledPopup } from "./Popup.styles";
+import { Backdrop, StyledPopup } from "./Popup.styles";
 import { usePopupOverlay } from "hooks/usePopupOverlay";
 import Slider from "./Slider/Slider";
 import ActiveItem from "./ActiveItem/ActiveItem";
@@ -21,6 +21,8 @@ const Popup = () => {
                 setPopupOpen(false);
             }}
         >
+            <Backdrop onClick={() => setPopupOpen(false)} aria-hidden="true" />
+
             <ActiveItem />
 
             <Slider />

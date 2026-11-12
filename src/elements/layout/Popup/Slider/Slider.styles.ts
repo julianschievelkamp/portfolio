@@ -7,6 +7,7 @@ export const SliderContainer = styled.div`
     left: 0;
     width: 100%;
     height: 3rem;
+    z-index: 9;
     overflow-x: clip;
 
     will-change: opacity;

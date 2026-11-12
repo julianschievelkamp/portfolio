@@ -1,4 +1,8 @@
-import { absoluteOverlayStyles, queries } from "styles/variables";
+/// <reference types="vite/client" />
+import close from "assets/icons/close.svg?raw";
+
+import { createIconCursor } from "styles/createIconCursor";
+import { absoluteOverlayStyles, colors, queries } from "styles/variables";
 import { styled } from "styled-components";
 import { transition } from "styles/variables";
 
@@ -44,4 +48,14 @@ export const StyledPopup = styled.dialog`
             padding: 1rem 8rem;
         }
     }
+`;
+
+export const Backdrop = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    cursor: ${createIconCursor(close, { size: 32, color: colors.secondary })};
 `;
