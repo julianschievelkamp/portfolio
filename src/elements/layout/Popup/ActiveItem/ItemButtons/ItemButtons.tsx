@@ -1,4 +1,4 @@
-import { Notch, StyledItemButtons } from "./ItemButtons.styles";
+import { StyledItemButtons } from "./ItemButtons.styles";
 import { PortfolioItem } from "data/portfolioData";
 import Button from "elements/components/Button/Button";
 import Icon from "elements/components/Icon/Icon";
@@ -31,54 +31,49 @@ const ItemButtons = ({
 
     return (
         <StyledItemButtons>
-            <Notch>
-                <Button
-                    onClick={() => setIsVideoOn(!isVideoOn)}
-                    disabled={!loadedItem.video}
-                    ariaLabel={isVideoOn ? "Pause Video" : "Play Video"}
-                >
-                    <Icon
-                        name={isVideoOn ? "pause" : "play"}
-                        color="white"
-                        size={iconSize}
-                        padding={iconPadding}
-                    />
-                </Button>
-                <Button
-                    onClick={() => setIsVolumeOn(!isVolumeOn)}
-                    disabled={!loadedItem.video}
-                    ariaLabel={isVolumeOn ? "Mute Video" : "Unmute Video"}
-                >
-                    <Icon
-                        name={isVolumeOn ? "volumeOn" : "volumeOff"}
-                        color="white"
-                        size={iconSize}
-                        padding={iconPadding}
-                    />
-                </Button>
-                <Button
-                    onClick={() => setIsInfoOn(!isInfoOn)}
-                    ariaLabel={isInfoOn ? "Hide Info" : "Show Info"}
-                >
-                    <Icon
-                        name={isInfoOn ? "infoFilled" : "info"}
-                        color={isInfoOn ? colors.primary : "white"}
-                        size={iconSize}
-                        padding={iconPadding}
-                    />
-                </Button>
-                <Button
-                    onClick={() => setPopupOpen(false)}
-                    ariaLabel="Close Popup"
-                >
-                    <Icon
-                        name="close"
-                        size={iconSize}
-                        padding={iconPadding}
-                        color="white"
-                    />
-                </Button>
-            </Notch>
+            <Button
+                onClick={() => setIsVideoOn(!isVideoOn)}
+                disabled={!loadedItem.video}
+                ariaLabel={isVideoOn ? "Pause Video" : "Play Video"}
+            >
+                <Icon
+                    name={isVideoOn ? "pause" : "play"}
+                    color="white"
+                    size={iconSize}
+                    padding={iconPadding}
+                />
+            </Button>
+            <Button
+                onClick={() => setIsVolumeOn(!isVolumeOn)}
+                disabled={!loadedItem.video}
+                ariaLabel={isVolumeOn ? "Mute Video" : "Unmute Video"}
+            >
+                <Icon
+                    name={isVolumeOn ? "volumeOn" : "volumeOff"}
+                    color="white"
+                    size={iconSize}
+                    padding={iconPadding}
+                />
+            </Button>
+            <Button
+                onClick={() => setIsInfoOn(!isInfoOn)}
+                ariaLabel={isInfoOn ? "Hide Info" : "Show Info"}
+            >
+                <Icon
+                    name={isInfoOn ? "infoFilled" : "info"}
+                    color={isInfoOn ? colors.primary : "white"}
+                    size={iconSize}
+                    padding={iconPadding}
+                />
+            </Button>
+            <Button onClick={() => setPopupOpen(false)} ariaLabel="Close Popup">
+                <Icon
+                    name="close"
+                    size={iconSize}
+                    padding={iconPadding}
+                    color="white"
+                />
+            </Button>
         </StyledItemButtons>
     );
 };

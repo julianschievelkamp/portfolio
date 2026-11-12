@@ -2,39 +2,24 @@ import { styled } from "styled-components";
 import { queries } from "styles/variables";
 
 export const StyledItemButtons = styled.div`
-    overflow: hidden;
     position: absolute;
-    width: 100%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    background-color: black;
+
     right: 0;
     bottom: 1px;
-    transform: translateY(100%);
-
-    @media ${queries.landscapeLgMax} {
-        height: 100%;
-        flex-direction: column;
-        transform: translateX(100%);
-        bottom: 0;
-        right: 1px;
-    }
-`;
-
-export const Notch = styled.div`
-    position: relative;
-    width: auto;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    background-color: black;
     padding: 0 0 0 2rem;
+    transform: translateY(100%);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 2rem 100%);
 
     @media ${queries.landscapeLgMax} {
-        height: auto;
-        width: fit-content;
         flex-direction: column;
+        right: 1px;
+        bottom: 0;
         padding: 2rem 0 0 0;
+        transform: translateX(100%);
         clip-path: polygon(0 0, 100% 2rem, 100% 100%, 0 100%);
     }
 

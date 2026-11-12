@@ -34,7 +34,7 @@ export const ItemFigure = styled.figure`
     position: relative;
     display: flex;
     overflow: hidden;
-    border: 0.5rem solid black;
+    border: 0.5rem solid transparent;
     margin: 0;
     z-index: 9;
 
@@ -51,6 +51,7 @@ export const ItemFigure = styled.figure`
     > img,
     > video {
         object-fit: cover;
+        min-width: 10rem;
         min-height: 10rem;
         max-height: calc(100dvh - 14rem);
 
