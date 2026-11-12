@@ -10,6 +10,7 @@ import Video from "elements/components/Video/Video";
 import ItemButtons from "./ItemButtons/ItemButtons";
 import ItemInfo from "./ItemInfo/ItemInfo";
 import { usePinchZoom } from "hooks/usePinchZoom";
+import ClickAreas from "./ClickAreas/ClickAreas";
 
 const ActiveItem = () => {
     const pinchZoomRef = usePinchZoom<HTMLElement>();
@@ -33,6 +34,8 @@ const ActiveItem = () => {
     return (
         <StyledActiveItem>
             <InnerWrapper $isItemRevealed={isItemRevealed}>
+                <ClickAreas />
+
                 <ItemFigure ref={pinchZoomRef}>
                     <Image
                         src={loadedItem.image}
