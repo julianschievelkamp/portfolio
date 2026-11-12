@@ -1,7 +1,7 @@
 import GlobalStyle from "styles/global";
 import { Main } from "./App.styles";
-import Sidebar from "elements/layout/Sidebar/Sidebar";
-import Header from "elements/layout/Header/Header";
+import Sidebar from "elements/layout/App/Sidebar/Sidebar";
+import Header from "elements/layout/App/Header/Header";
 import { Page } from "data/navigationData";
 import { type ReactNode } from "react";
 import Headline from "elements/components/Headline/Headline";

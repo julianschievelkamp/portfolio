@@ -7,7 +7,7 @@ import {
 } from "./Sidebar.styles";
 import { languageData } from "data/languageData";
 import { colors, Div, Footer } from "styles/variables";
-import Navigation from "elements/layout/Navigation/Navigation";
+import Navigation from "elements/layout/App/Sidebar/Navigation/Navigation";
 import { useStore } from "hooks/useStore";
 import { useSidebarOverlay } from "hooks/useSidebarOverlay";
 import { Page } from "data/navigationData";
