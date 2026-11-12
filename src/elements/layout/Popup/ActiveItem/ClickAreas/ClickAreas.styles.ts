@@ -8,13 +8,12 @@ import { createIconCursor } from "./createIconCursor";
 
 export const Previous = styled.div`
     position: absolute;
-    background: blue;
     width: 100vw;
     height: 100%;
     left: 0;
     transform: translateX(-100%);
     cursor: ${createIconCursor(chevronLeft, {
-        size: 48,
+        size: 64,
         color: colors.secondary,
     })};
 `;
@@ -26,7 +25,7 @@ export const Next = styled.div`
     right: 0;
     transform: translateX(100%);
     cursor: ${createIconCursor(chevronRight, {
-        size: 48,
+        size: 64,
         color: colors.secondary,
     })};
 `;
@@ -39,5 +38,4 @@ export const Close = styled.div`
     left: 50%;
     transform: translateX(-50%) translateY(-100%);
     cursor: ${createIconCursor(close, { size: 32, color: colors.secondary })};
-    background: blue;
 `;
