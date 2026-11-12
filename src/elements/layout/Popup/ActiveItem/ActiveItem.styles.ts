@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import { queries, transition } from "styles/variables";
+import Text from "elements/components/Text/Text";
 
 export const StyledActiveItem = styled.div`
     position: relative;
@@ -16,10 +17,11 @@ export const StyledActiveItem = styled.div`
     }
 `;
 
-export const InnerWrapper = styled.div<{ $isItemRevealed: boolean }>`
+export const ItemFigure = styled.figure<{ $isItemRevealed: boolean }>`
     background-color: black;
     position: relative;
     z-index: 99;
+    margin: 0;
 
     opacity: ${({ $isItemRevealed }) => ($isItemRevealed ? 1 : 0)};
     visibility: ${({ $isItemRevealed }) =>
@@ -30,7 +32,7 @@ export const InnerWrapper = styled.div<{ $isItemRevealed: boolean }>`
     will-change: opacity;
 `;
 
-export const ItemFigure = styled.figure`
+export const Artwork = styled.div`
     position: relative;
     isolation: isolate;
     display: flex;
@@ -66,4 +68,17 @@ export const ItemFigure = styled.figure`
         top: 0;
         left: 0;
     }
+`;
+
+export const ItemCaption = styled.figcaption`
+    transform: translate3d(0, 0, 0);
+    position: absolute;
+    right: 0;
+    padding-top: 0.25rem;
+    z-index: -1;
+`;
+
+export const ItemTitle = styled(Text)`
+    font-family: "PlayfairDisplay", sans-serif;
+    font-weight: 900;
 `;

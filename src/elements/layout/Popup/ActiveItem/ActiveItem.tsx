@@ -1,28 +1,31 @@
 import {
-    InnerWrapper,
-    ItemFigure,
+    ItemTitle,
+    Artwork,
     StyledActiveItem,
+    ItemFigure,
+    ItemCaption,
 } from "./ActiveItem.styles";
 import Image from "elements/components/Image/Image";
 import { useActiveItem } from "hooks/useActiveItem";
 import { getAltText } from "data/portfolioData";
 import Video from "elements/components/Video/Video";
-import ItemInfo from "./ItemInfo/ItemInfo";
 import { usePinchZoom } from "hooks/usePinchZoom";
 import ClickAreas from "./ClickAreas/ClickAreas";
+import { colors } from "styles/variables";
+import Text from "elements/components/Text/Text";
 
 const ActiveItem = () => {
-    const pinchZoomRef = usePinchZoom<HTMLElement>();
+    const pinchZoomRef = usePinchZoom<HTMLDivElement>();
     const { loadedItem, isItemRevealed, setLoadedImage } = useActiveItem();
 
     if (!loadedItem) return null;
 
     return (
         <StyledActiveItem>
-            <InnerWrapper $isItemRevealed={isItemRevealed}>
+            <ItemFigure $isItemRevealed={isItemRevealed}>
                 <ClickAreas />
 
-                <ItemFigure ref={pinchZoomRef}>
+                <Artwork ref={pinchZoomRef}>
                     <Image
                         src={loadedItem.image}
                         alt={getAltText(loadedItem)}
@@ -42,10 +45,21 @@ const ActiveItem = () => {
                             height="100%"
                         />
                     )}
+                </Artwork>
 
-                    <ItemInfo loadedItem={loadedItem} />
-                </ItemFigure>
-            </InnerWrapper>
+                <ItemCaption>
+                    <ItemTitle fontSize="0.875rem" textAlign="right">
+                        {loadedItem.title}, {loadedItem.year}
+                    </ItemTitle>
+                    <Text
+                        fontSize="0.875rem"
+                        textAlign="right"
+                        color={colors.secondary}
+                    >
+                        {loadedItem.type}
+                    </Text>
+                </ItemCaption>
+            </ItemFigure>
         </StyledActiveItem>
     );
 };

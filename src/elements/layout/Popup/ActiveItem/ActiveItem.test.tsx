@@ -21,8 +21,6 @@ vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: () => true }));
 const [photo, video, otherPhoto] = portfolioData;
 
 const getVideo = () => screen.queryByLabelText(video.title) as HTMLVideoElement;
-const getInfoHeading = () =>
-    screen.getByText(`${video.title}, ${video.year}`);
 const loadImage = (item: typeof video) =>
     fireEvent.load(screen.getByAltText(getAltText(item)));
 const clickButton = (name: string) =>
@@ -36,18 +34,18 @@ describe("ActiveItem", () => {
         useStore.setState({ activeIndex: 1, popupOpen: true });
         // jsdom implementiert play und pause nicht, daher wird der Wiedergabezustand nachgebildet
         let isPaused = true;
-        vi.spyOn(HTMLMediaElement.prototype, "paused", "get").mockImplementation(
-            () => isPaused,
-        );
+        vi.spyOn(
+            HTMLMediaElement.prototype,
+            "paused",
+            "get",
+        ).mockImplementation(() => isPaused);
         vi.spyOn(HTMLMediaElement.prototype, "play").mockImplementation(() => {
             isPaused = false;
             return Promise.resolve();
         });
-        vi.spyOn(HTMLMediaElement.prototype, "pause").mockImplementation(
-            () => {
-                isPaused = true;
-            },
-        );
+        vi.spyOn(HTMLMediaElement.prototype, "pause").mockImplementation(() => {
+            isPaused = true;
+        });
     });
 
     it("renders the image of the active item with its title as alt text", () => {
@@ -171,16 +169,6 @@ describe("ActiveItem", () => {
 
         expect(activeItem).toHaveStyle({ opacity: "1" });
         expect(screen.getByAltText(getAltText(video))).toBeInTheDocument();
-    });
-
-    it("keeps the info hidden", async () => {
-        const { container } = render(<ActiveItem />);
-        loadImage(video);
-        await waitFor(() =>
-            expect(getInnerWrapper(container)).toHaveStyle({ opacity: "1" }),
-        );
-
-        expect(getInfoHeading()).not.toBeVisible();
     });
 
     it("resets the video when the item changes", async () => {
