@@ -11,7 +11,7 @@ export interface VideoProps {
 }
 
 const Video = ({ src, poster, width, height, ariaLabel }: VideoProps) => {
-    const { videoRef, toggleVideo, isStarted } = useVideoPlayback(src);
+    const { videoRef, toggleVideo, isStarted } = useVideoPlayback();
 
     return (
         <>

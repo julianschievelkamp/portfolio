@@ -32,6 +32,7 @@ export const InnerWrapper = styled.div<{ $isItemRevealed: boolean }>`
 
 export const ItemFigure = styled.figure`
     position: relative;
+    isolation: isolate;
     display: flex;
     overflow: hidden;
     border: 0.5rem solid transparent;

@@ -36,7 +36,6 @@ export const useActiveItem = () => {
     return {
         loadedItem,
         isItemRevealed,
-        isImageLoaded,
         setLoadedImage,
     };
 };

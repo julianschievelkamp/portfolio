@@ -13,8 +13,7 @@ import ClickAreas from "./ClickAreas/ClickAreas";
 
 const ActiveItem = () => {
     const pinchZoomRef = usePinchZoom<HTMLElement>();
-    const { loadedItem, isItemRevealed, isImageLoaded, setLoadedImage } =
-        useActiveItem();
+    const { loadedItem, isItemRevealed, setLoadedImage } = useActiveItem();
 
     if (!loadedItem) return null;
 
@@ -33,8 +32,9 @@ const ActiveItem = () => {
                         height="100%"
                     />
 
-                    {loadedItem.video && isImageLoaded && (
+                    {loadedItem.video && (
                         <Video
+                            key={loadedItem.title}
                             src={loadedItem.video}
                             poster={loadedItem.image}
                             ariaLabel={loadedItem.title}
