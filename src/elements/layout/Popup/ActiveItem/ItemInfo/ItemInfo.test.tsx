@@ -10,16 +10,17 @@ const [itemWithBadges, , itemWithoutBadges] = portfolioData;
 
 describe("ItemInfo", () => {
     it("shows title and year and the type", () => {
-        render(<ItemInfo loadedItem={itemWithBadges} isInfoOn />);
+        render(<ItemInfo loadedItem={itemWithBadges} />);
 
         expect(screen.getByText("First Photo, 2020")).toBeInTheDocument();
         expect(screen.getByText("analog photograph")).toBeInTheDocument();
     });
 
     it("shows the badges with their alt text", () => {
-        render(<ItemInfo loadedItem={itemWithBadges} isInfoOn />);
+        render(<ItemInfo loadedItem={itemWithBadges} />);
 
-        const images = screen.getAllByRole("img");
+        // Die Info ist ausgeblendet, daher werden auch versteckte Bilder gesucht
+        const images = screen.getAllByRole("img", { hidden: true });
 
         expect(images).toHaveLength(2);
         expect(images[0]).toHaveAttribute("alt", badges.fapa.alt);
@@ -27,33 +28,22 @@ describe("ItemInfo", () => {
     });
 
     it("shows no badges for an item without badges", () => {
-        render(<ItemInfo loadedItem={itemWithoutBadges} isInfoOn />);
+        render(<ItemInfo loadedItem={itemWithoutBadges} />);
 
-        expect(screen.queryByRole("img")).not.toBeInTheDocument();
+        expect(
+            screen.queryByRole("img", { hidden: true }),
+        ).not.toBeInTheDocument();
     });
 
-    it("follows isInfoOn for its visibility", () => {
-        const { rerender } = render(
-            <ItemInfo loadedItem={itemWithBadges} isInfoOn />,
-        );
-        expect(screen.getByText("First Photo, 2020")).toBeVisible();
+    it("is hidden but stays in the document", () => {
+        render(<ItemInfo loadedItem={itemWithBadges} />);
 
-        rerender(<ItemInfo loadedItem={itemWithBadges} isInfoOn={false} />);
-
+        expect(screen.getByText("First Photo, 2020")).toBeInTheDocument();
         expect(screen.getByText("First Photo, 2020")).not.toBeVisible();
     });
 
-    it("stays in the accessibility tree while the info panel is closed", () => {
-        render(<ItemInfo loadedItem={itemWithBadges} isInfoOn={false} />);
-
-        expect(screen.getByText("First Photo, 2020")).toBeInTheDocument();
-        expect(screen.getByText("analog photograph")).toBeInTheDocument();
-    });
-
     it("renders as a figcaption", () => {
-        const { container } = render(
-            <ItemInfo loadedItem={itemWithBadges} isInfoOn />,
-        );
+        const { container } = render(<ItemInfo loadedItem={itemWithBadges} />);
 
         expect(container.firstElementChild?.tagName).toBe("FIGCAPTION");
     });

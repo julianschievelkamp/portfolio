@@ -91,4 +91,30 @@ describe("Popup", () => {
         expect(screen.getByTestId("active-item")).toBeInTheDocument();
         expect(screen.getByTestId("slider")).toBeInTheDocument();
     });
+
+    // Der Backdrop hat weder Rolle noch Label, er ist das erste Kind des Dialogs
+    const getBackdrop = () =>
+        document.querySelector("dialog")?.firstElementChild as HTMLElement;
+
+    it("hides the backdrop from assistive technologies", () => {
+        render(<Popup />);
+
+        expect(getBackdrop()).toHaveAttribute("aria-hidden", "true");
+    });
+
+    it("closes the popup via the backdrop", () => {
+        render(<Popup />);
+
+        act(() => getBackdrop().click());
+
+        expect(useStore.getState().popupOpen).toBe(false);
+    });
+
+    it("uses a custom close cursor with a pointer fallback on the backdrop", () => {
+        render(<Popup />);
+
+        const { cursor } = getComputedStyle(getBackdrop());
+        expect(cursor).toContain("data:image/svg+xml");
+        expect(cursor).toContain("pointer");
+    });
 });

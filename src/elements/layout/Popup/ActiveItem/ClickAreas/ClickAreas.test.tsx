@@ -22,11 +22,9 @@ const maxIndex = portfolioData.length - 1;
 // Die Klickflächen haben weder Rolle noch Label, daher Zugriff über die Reihenfolge
 const renderClickAreas = () => {
     const { container } = render(<ClickAreas />);
-    const [close, previous, next] = Array.from(
-        container.children,
-    ) as HTMLElement[];
+    const [previous, next] = Array.from(container.children) as HTMLElement[];
 
-    return { container, close, previous, next };
+    return { container, previous, next };
 };
 
 describe("ClickAreas", () => {
@@ -35,19 +33,19 @@ describe("ClickAreas", () => {
         useStore.setState({ activeIndex: 1, popupOpen: true });
     });
 
-    it("renders the close, previous and next areas on large screens", () => {
-        const { container, close, previous, next } = renderClickAreas();
+    it("renders the previous and next areas on large screens", () => {
+        const { container, previous, next } = renderClickAreas();
 
-        expect(container.children).toHaveLength(3);
-        [close, previous, next].forEach((area) => {
+        expect(container.children).toHaveLength(2);
+        [previous, next].forEach((area) => {
             expect(area).toBeInTheDocument();
         });
     });
 
     it("hides the areas from assistive technologies", () => {
-        const { close, previous, next } = renderClickAreas();
+        const { previous, next } = renderClickAreas();
 
-        [close, previous, next].forEach((area) => {
+        [previous, next].forEach((area) => {
             expect(area).toHaveAttribute("aria-hidden", "true");
         });
     });
@@ -57,15 +55,6 @@ describe("ClickAreas", () => {
         const { container } = render(<ClickAreas />);
 
         expect(container).toBeEmptyDOMElement();
-    });
-
-    it("closes the popup via the close area", async () => {
-        const { close } = renderClickAreas();
-
-        await userEvent.click(close);
-
-        expect(useStore.getState().popupOpen).toBe(false);
-        expect(useStore.getState().activeIndex).toBe(1);
     });
 
     it("shows the previous item via the previous area", async () => {
@@ -98,9 +87,9 @@ describe("ClickAreas", () => {
     });
 
     it("uses custom icon cursors with a pointer fallback", () => {
-        const { close, previous, next } = renderClickAreas();
+        const { previous, next } = renderClickAreas();
 
-        [close, previous, next].forEach((area) => {
+        [previous, next].forEach((area) => {
             const { cursor } = getComputedStyle(area);
             expect(cursor).toContain("data:image/svg+xml");
             expect(cursor).toContain("pointer");

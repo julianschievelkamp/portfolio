@@ -1,37 +1,40 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { createRef } from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
+import { useStore } from "hooks/useStore";
 import Video from "./Video";
 
-const renderVideo = (props: Partial<React.ComponentProps<typeof Video>> = {}) => {
-    const videoRef = createRef<HTMLVideoElement>();
-    const result = render(
-        <Video
-            videoRef={videoRef}
-            src="/clip.mp4"
-            poster="/poster.jpg"
-            ariaLabel="Showreel"
-            {...props}
-        />,
-    );
-    return { videoRef, ...result };
-};
+const renderVideo = () =>
+    render(<Video src="/clip.mp4" poster="/poster.jpg" ariaLabel="Showreel" />);
+
+const getVideo = () => screen.getByLabelText("Showreel") as HTMLVideoElement;
+const getPlayButton = () => screen.getByLabelText("Play Video");
 
 describe("Video", () => {
     beforeEach(() => {
-        // jsdom implementiert play/pause nicht
-        vi.spyOn(HTMLMediaElement.prototype, "play").mockResolvedValue();
+        useStore.setState({ popupOpen: true });
+
+        // jsdom implementiert play/pause nicht, daher wird der Wiedergabezustand nachgebildet
+        let isPaused = true;
+        vi.spyOn(HTMLMediaElement.prototype, "paused", "get").mockImplementation(
+            () => isPaused,
+        );
+        vi.spyOn(HTMLMediaElement.prototype, "play").mockImplementation(() => {
+            isPaused = false;
+            return Promise.resolve();
+        });
         vi.spyOn(HTMLMediaElement.prototype, "pause").mockImplementation(
-            () => {},
+            () => {
+                isPaused = true;
+            },
         );
     });
 
     it("renders the video with source, poster and label", () => {
         const { container } = renderVideo();
 
-        const video = screen.getByLabelText("Showreel");
+        const video = getVideo();
         expect(video.tagName).toBe("VIDEO");
         expect(video).toHaveAttribute("poster", "/poster.jpg");
         expect(container.querySelector("source")).toHaveAttribute(
@@ -44,43 +47,48 @@ describe("Video", () => {
         );
     });
 
-    it("attaches the passed ref to the video element", () => {
-        const { videoRef } = renderVideo();
+    it("shows the play button until the video has been started", async () => {
+        renderVideo();
+        expect(getPlayButton()).toBeVisible();
 
-        expect(videoRef.current).toBeInstanceOf(HTMLVideoElement);
+        await userEvent.click(getPlayButton());
+
+        expect(getPlayButton()).not.toBeVisible();
     });
 
-    it("calls onClick when the video is clicked", async () => {
-        const onClick = vi.fn();
-        renderVideo({ onClick });
+    it("plays the video via the play button", async () => {
+        renderVideo();
 
-        await userEvent.click(screen.getByLabelText("Showreel"));
+        await userEvent.click(getPlayButton());
 
-        expect(onClick).toHaveBeenCalledTimes(1);
+        expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(1);
     });
 
-    it("mutes the video via the muted prop", () => {
-        const { videoRef, rerender } = renderVideo({ muted: true });
-        expect(videoRef.current?.muted).toBe(true);
+    it("plays and pauses the video when it is clicked", async () => {
+        renderVideo();
 
-        rerender(
-            <Video
-                videoRef={videoRef}
-                src="/clip.mp4"
-                poster="/poster.jpg"
-                ariaLabel="Showreel"
-                muted={false}
-            />,
-        );
-        expect(videoRef.current?.muted).toBe(false);
+        await userEvent.click(getVideo());
+        expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(1);
+        expect(getPlayButton()).not.toBeVisible();
+
+        await userEvent.click(getVideo());
+        expect(HTMLMediaElement.prototype.pause).toHaveBeenCalledTimes(1);
+    });
+
+    it("pauses the video when the popup is closed", async () => {
+        renderVideo();
+        await userEvent.click(getPlayButton());
+
+        act(() => useStore.setState({ popupOpen: false }));
+
+        expect(HTMLMediaElement.prototype.pause).toHaveBeenCalledTimes(1);
+        expect(getVideo().paused).toBe(true);
     });
 
     it("prevents the context menu on the video", () => {
         renderVideo();
 
-        const notPrevented = fireEvent.contextMenu(
-            screen.getByLabelText("Showreel"),
-        );
+        const notPrevented = fireEvent.contextMenu(getVideo());
 
         expect(notPrevented).toBe(false);
     });

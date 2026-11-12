@@ -6,8 +6,12 @@ import { useMediaQuery } from "hooks/useMediaQuery";
 import App from "./App";
 
 vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: vi.fn() }));
-vi.mock("elements/layout/Sidebar/Sidebar", () => ({ default: () => <aside /> }));
-vi.mock("elements/layout/Header/Header", () => ({ default: () => <header /> }));
+vi.mock("elements/layout/App/Sidebar/Sidebar", () => ({
+    default: () => <aside />,
+}));
+vi.mock("elements/layout/App/Header/Header", () => ({
+    default: () => <header />,
+}));
 
 const page = {
     name: "Test",

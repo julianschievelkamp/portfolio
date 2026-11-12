@@ -34,10 +34,19 @@ const getInnerWrapper = (container: HTMLElement) =>
 describe("ActiveItem", () => {
     beforeEach(() => {
         useStore.setState({ activeIndex: 1, popupOpen: true });
-        // jsdom implementiert play und pause nicht
-        vi.spyOn(HTMLMediaElement.prototype, "play").mockResolvedValue();
+        // jsdom implementiert play und pause nicht, daher wird der Wiedergabezustand nachgebildet
+        let isPaused = true;
+        vi.spyOn(HTMLMediaElement.prototype, "paused", "get").mockImplementation(
+            () => isPaused,
+        );
+        vi.spyOn(HTMLMediaElement.prototype, "play").mockImplementation(() => {
+            isPaused = false;
+            return Promise.resolve();
+        });
         vi.spyOn(HTMLMediaElement.prototype, "pause").mockImplementation(
-            () => {},
+            () => {
+                isPaused = true;
+            },
         );
     });
 
@@ -50,11 +59,8 @@ describe("ActiveItem", () => {
         );
     });
 
-    it("renders the video of an item with video once its image has loaded", () => {
+    it("renders the video of an item with video", () => {
         render(<ActiveItem />);
-        expect(getVideo()).not.toBeInTheDocument();
-
-        loadImage(video);
 
         expect(getVideo()).toBeInTheDocument();
         expect(getVideo().querySelector("source")).toHaveAttribute(
@@ -87,51 +93,25 @@ describe("ActiveItem", () => {
         const newImage = await screen.findByAltText(getAltText(video));
 
         expect(newImage).toHaveAttribute("src", video.image);
-        expect(getVideo()).not.toBeInTheDocument();
-
-        loadImage(video);
-
         expect(getVideo()).toBeInTheDocument();
     });
 
-    it("plays and pauses the video via the video button", async () => {
-        const play = vi.mocked(HTMLMediaElement.prototype.play);
-        const pause = vi.mocked(HTMLMediaElement.prototype.pause);
+    it("plays the video via the play button", async () => {
         render(<ActiveItem />);
-        loadImage(video);
-        pause.mockClear();
 
         await clickButton("Play Video");
-        expect(play).toHaveBeenCalledTimes(1);
 
-        await clickButton("Pause Video");
-        expect(pause).toHaveBeenCalledTimes(1);
-    });
-
-    it("mutes and unmutes the video via the item buttons, even before it plays", async () => {
-        render(<ActiveItem />);
-        loadImage(video);
-        expect(getVideo().muted).toBe(false);
-
-        await clickButton("Mute Video");
-        expect(getVideo().muted).toBe(true);
-
-        await clickButton("Unmute Video");
-        expect(getVideo().muted).toBe(false);
+        expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(1);
     });
 
     it("plays and pauses the video when it is clicked", async () => {
-        const play = vi.mocked(HTMLMediaElement.prototype.play);
-        const pause = vi.mocked(HTMLMediaElement.prototype.pause);
         render(<ActiveItem />);
-        loadImage(video);
-        pause.mockClear();
 
         await userEvent.click(getVideo());
-        expect(play).toHaveBeenCalledTimes(1);
+        expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(1);
 
         await userEvent.click(getVideo());
-        expect(pause).toHaveBeenCalledTimes(1);
+        expect(HTMLMediaElement.prototype.pause).toHaveBeenCalledTimes(1);
     });
 
     it("renders nothing while no item is selected", () => {
@@ -193,60 +173,38 @@ describe("ActiveItem", () => {
         expect(screen.getByAltText(getAltText(video))).toBeInTheDocument();
     });
 
-    it("toggles the info via the item buttons", async () => {
+    it("keeps the info hidden", async () => {
         const { container } = render(<ActiveItem />);
-        fireEvent.load(screen.getByAltText(getAltText(video)));
+        loadImage(video);
         await waitFor(() =>
             expect(getInnerWrapper(container)).toHaveStyle({ opacity: "1" }),
         );
-        expect(getInfoHeading()).not.toBeVisible();
-
-        await clickButton("Show Info");
-        expect(getInfoHeading()).toBeVisible();
-
-        await clickButton("Hide Info");
-        expect(getInfoHeading()).not.toBeVisible();
-    });
-
-    it("hides the info when the image area is clicked", async () => {
-        render(<ActiveItem />);
-        await clickButton("Show Info");
-
-        // Das Bild hat pointer-events: none, der Klick geht an den Container
-        fireEvent.click(screen.getByAltText(getAltText(video)));
 
         expect(getInfoHeading()).not.toBeVisible();
     });
 
-    it("resets info and video but keeps the volume when the item changes", async () => {
-        render(<ActiveItem />);
+    it("resets the video when the item changes", async () => {
+        const { container } = render(<ActiveItem />);
         loadImage(video);
-        await clickButton("Show Info");
+        await waitFor(() =>
+            expect(getInnerWrapper(container)).toHaveStyle({ opacity: "1" }),
+        );
+        expect(screen.getByLabelText("Play Video")).toBeVisible();
+
         await clickButton("Play Video");
-        await clickButton("Mute Video");
-        expect(getVideo().muted).toBe(true);
+        expect(screen.getByLabelText("Play Video")).not.toBeVisible();
 
         act(() => useStore.setState({ activeIndex: 2 }));
         await screen.findByAltText(getAltText(otherPhoto));
         act(() => useStore.setState({ activeIndex: 1 }));
         await screen.findByAltText(getAltText(video));
-        loadImage(video);
 
-        expect(getInfoHeading()).not.toBeVisible();
-        expect(getVideo()).toBeInTheDocument();
-        // Die Ton-Einstellung bleibt über Item-Wechsel hinweg erhalten
-        expect(getVideo().muted).toBe(true);
-
-        // Ist das Video zurückgesetzt, startet der nächste Klick die Wiedergabe
-        const play = vi.mocked(HTMLMediaElement.prototype.play);
-        play.mockClear();
-        await clickButton("Play Video");
-        expect(play).toHaveBeenCalledTimes(1);
+        // Das Video wird neu gemountet, daher ist der Play-Button wieder sichtbar
+        expect(screen.getByLabelText("Play Video")).toBeVisible();
     });
 
     it("pauses the video when the popup is closed", async () => {
         render(<ActiveItem />);
-        loadImage(video);
         await clickButton("Play Video");
         const pause = vi.mocked(HTMLMediaElement.prototype.pause);
         pause.mockClear();

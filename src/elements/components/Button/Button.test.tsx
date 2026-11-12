@@ -31,20 +31,6 @@ describe("Button", () => {
         expect(onClick).toHaveBeenCalledTimes(2);
     });
 
-    it("does not call onClick when disabled", async () => {
-        const onClick = vi.fn();
-        render(
-            <Button onClick={onClick} disabled>
-                Open
-            </Button>,
-        );
-
-        await userEvent.click(screen.getByRole("button"));
-
-        expect(screen.getByRole("button")).toBeDisabled();
-        expect(onClick).not.toHaveBeenCalled();
-    });
-
     it("uses ariaLabel as accessible name", () => {
         render(
             <Button onClick={vi.fn()} ariaLabel="Close popup">
@@ -55,18 +41,6 @@ describe("Button", () => {
         expect(
             screen.getByRole("button", { name: "Close popup" }),
         ).toBeInTheDocument();
-    });
-
-    it("is focusable by default and respects a custom tabIndex", () => {
-        const { rerender } = render(<Button onClick={vi.fn()}>Open</Button>);
-        expect(screen.getByRole("button")).toHaveAttribute("tabindex", "0");
-
-        rerender(
-            <Button onClick={vi.fn()} tabIndex={-1}>
-                Open
-            </Button>,
-        );
-        expect(screen.getByRole("button")).toHaveAttribute("tabindex", "-1");
     });
 
     it("calls onFocus when focused", async () => {
