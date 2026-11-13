@@ -50,17 +50,16 @@ export const mainTitleStyles = css`
 `;
 
 // Hintergrundflächen bis hinter die mobilen dynamischen Browser-Leisten ermöglichen.
-// Die Farbe lässt sich über die CSS-Variable "--overlay-color" anpassen (Standard: weiß).
 export const absoluteOverlayStyles = css`
     touch-action: none;
     position: absolute;
-    background-color: var(--overlay-color, white);
+    background-color: white;
     top: 0;
     left: 0;
     height: 100vh;
     height: 100dvh;
-    box-shadow: 0 100vh 0 0 var(--overlay-color, white);
-    box-shadow: 0 100svh 0 0 var(--overlay-color, white);
+    box-shadow: 0 100vh 0 0 white;
+    box-shadow: 0 100svh 0 0 white;
 
     @media ${queries.md} {
         position: fixed;

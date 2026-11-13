@@ -27,9 +27,12 @@ export const StyledPopup = styled.dialog`
         calc(1rem + ${safeArea.left});
     margin: 0;
 
-    opacity: 0;
     will-change: opacity, background-color, box-shadow;
-    transition: opacity ${transition.defaultIn};
+    opacity: 0;
+    transition:
+        opacity ${transition.defaultIn},
+        background-color ${transition.default},
+        box-shadow ${transition.default};
 
     &[data-visible="true"] {
         opacity: 1;
@@ -39,10 +42,10 @@ export const StyledPopup = styled.dialog`
             box-shadow ${transition.default};
     }
 
-    /* Während das ActiveItem gezoomt wird (data-pinching aus usePinchZoom),
-       färben sich Hintergrund und box-shadow schwarz */
-    &:has([data-pinching]) {
-        --overlay-color: black;
+    html:has([data-pinching]) & {
+        background-color: black;
+        box-shadow: 0 100vh 0 0 black;
+        box-shadow: 0 100svh 0 0 black;
     }
 
     &::backdrop {
