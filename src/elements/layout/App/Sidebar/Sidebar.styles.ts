@@ -13,7 +13,7 @@ export const StyledSidebar = styled.aside<{
 }>`
     ${absoluteOverlayStyles}
 
-    will-change: transform;
+    will-change: transform, background-color, box-shadow;
     transform: ${({ $sidebarOpen }) =>
         `translateX(${$sidebarOpen ? 0 : "-100%"})`};
     visibility: ${({ $sidebarOpen }) => ($sidebarOpen ? "visible" : "hidden")};

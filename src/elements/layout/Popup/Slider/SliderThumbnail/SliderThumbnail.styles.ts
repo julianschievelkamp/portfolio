@@ -17,17 +17,21 @@ export const SliderItem = styled(Button)<{ $isActive: boolean }>`
     height: 100%;
     overflow: hidden;
 
-    img {
-        opacity: ${({ $isActive }) => ($isActive ? 1 : 0.5)};
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: white;
+        opacity: ${({ $isActive }) => ($isActive ? 0 : 0.5)};
     }
 
-    &:focus-visible img {
-        opacity: 1;
+    &:focus-visible::after {
+        opacity: 0;
     }
 
     @media ${queries.hover} {
-        &:hover img {
-            opacity: 1;
+        &:hover::after {
+            opacity: 0;
         }
     }
 `;

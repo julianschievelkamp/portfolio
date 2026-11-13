@@ -9,8 +9,6 @@ export const SliderContainer = styled.div`
     height: 3rem;
     z-index: 9;
     overflow-x: clip;
-
-    will-change: opacity;
     transition: opacity ${transition.default};
 
     html:has([data-pinching]) & {

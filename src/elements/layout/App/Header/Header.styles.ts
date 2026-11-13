@@ -22,7 +22,7 @@ export const StyledHeader = styled.header<{ $isVisible: boolean }>`
 
     transform: ${({ $isVisible }) =>
         `translate3d(0, ${$isVisible ? 0 : "-100%"}, 0)`};
-    will-change: transform;
+    will-change: transform, background-color;
     backface-visibility: hidden;
     visibility: ${({ $isVisible }) => ($isVisible ? "visible" : "hidden")};
     /* Beim Öffnen ease-out, beim Schließen ease-in */
