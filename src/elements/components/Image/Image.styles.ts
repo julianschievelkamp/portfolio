@@ -12,8 +12,7 @@ export const StyledImage = styled.img<{
     width: ${({ $width }) => $width};
     height: ${({ $height }) => $height};
     opacity: ${({ $imageLoaded }) => ($imageLoaded ? 1 : 0)};
-    will-change: ${({ $fadeInOnLoad }) =>
-        $fadeInOnLoad ? "opacity, transform" : "auto"};
+
     margin: ${({ $margin }) => $margin};
     aspect-ratio: ${({ $aspectRatio }) => $aspectRatio};
     max-width: 100%;

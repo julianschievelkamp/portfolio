@@ -49,7 +49,6 @@ const Image = ({
             $height={height}
             $margin={margin}
             $imageLoaded={!fadeInOnLoad || imageLoaded}
-            $fadeInOnLoad={fadeInOnLoad}
             onLoad={() => {
                 setImageLoaded(true);
                 onLoad?.();
