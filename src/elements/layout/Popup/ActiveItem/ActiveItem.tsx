@@ -1,5 +1,5 @@
 import {
-    ItemTitle,
+    Title,
     Artwork,
     StyledActiveItem,
     ItemFigure,
@@ -60,9 +60,9 @@ const ActiveItem = () => {
                 </Artwork>
 
                 <ItemCaption>
-                    <ItemTitle fontSize="0.875rem">
+                    <Title fontSize="0.875rem">
                         {loadedItem.title}, {loadedItem.year}
-                    </ItemTitle>
+                    </Title>
                     <Text fontSize="0.875rem" color={colors.secondary}>
                         {loadedItem.type}
                     </Text>

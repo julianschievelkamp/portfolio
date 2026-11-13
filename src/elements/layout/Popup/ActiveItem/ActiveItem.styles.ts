@@ -120,6 +120,7 @@ export const ItemCaption = styled.figcaption`
     z-index: -1;
 
     > p {
+        white-space: nowrap;
         text-align: right;
     }
 
@@ -137,7 +138,7 @@ export const ItemCaption = styled.figcaption`
     }
 `;
 
-export const ItemTitle = styled(Text)`
+export const Title = styled(Text)`
     font-family: "PlayfairDisplay", sans-serif;
     font-weight: 900;
 `;
