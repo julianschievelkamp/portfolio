@@ -67,7 +67,8 @@ export const ScrollContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+    flex: 1;
+    min-height: 0;
 `;
 
 // Der Titel ist nur auf Desktop sichtbar; auf Mobile liegt er im Menü

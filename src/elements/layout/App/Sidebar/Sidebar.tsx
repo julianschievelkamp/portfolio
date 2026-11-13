@@ -10,6 +10,7 @@ import { colors, Div, Footer } from "styles/variables";
 import Navigation from "elements/layout/App/Sidebar/Navigation/Navigation";
 import { useStore } from "hooks/useStore";
 import { useSidebarOverlay } from "hooks/useSidebarOverlay";
+import { SCROLL_ALLOWED_ATTRIBUTE } from "hooks/useScrollLock";
 import { Page } from "data/navigationData";
 import Link from "elements/components/Link/Link";
 
@@ -46,7 +47,7 @@ const Sidebar = ({ page }: SidebarProps) => {
                     </Link>
                 </MainTitle>
 
-                <ScrollContainer>
+                <ScrollContainer {...{ [SCROLL_ALLOWED_ATTRIBUTE]: "" }}>
                     <Div>
                         <Text fontSize="0.875rem" color={colors.secondary}>
                             {languageData.intro}
