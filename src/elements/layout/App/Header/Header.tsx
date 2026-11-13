@@ -31,7 +31,10 @@ const Header = () => {
                     ariaControls="sidebar"
                     id="sidebar-toggle"
                 >
-                    <Icon name={sidebarOpen ? "close" : "hamburger"} size="2rem" />
+                    <Icon
+                        name={sidebarOpen ? "close" : "hamburger"}
+                        size="2rem"
+                    />
                 </Button>
             </ToggleWrapper>
         </StyledHeader>

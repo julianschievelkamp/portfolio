@@ -1,6 +1,11 @@
-import { styled } from "styled-components";
-import { queries, transition } from "styles/variables";
+/// <reference types="vite/client" />
+import chevronLeft from "assets/icons/chevron-left.svg?raw";
+import chevronRight from "assets/icons/chevron-right.svg?raw";
+
 import Text from "elements/components/Text/Text";
+import { styled } from "styled-components";
+import { queries, transition, colors } from "styles/variables";
+import { createIconCursor } from "styles/createIconCursor";
 
 export const StyledActiveItem = styled.div`
     position: relative;
@@ -30,6 +35,40 @@ export const ItemFigure = styled.figure<{ $isItemRevealed: boolean }>`
         opacity ${transition.default},
         visibility ${transition.default};
     will-change: opacity;
+`;
+
+export const Previous = styled.div`
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    left: 0;
+    transform: translateX(-100%);
+
+    cursor: ${createIconCursor(chevronLeft, {
+        size: 48,
+        color: colors.secondary,
+    })};
+
+    @media ${queries.landscapeLgMax} {
+        display: none;
+    }
+`;
+
+export const Next = styled.div`
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    right: 0;
+    transform: translateX(100%);
+
+    cursor: ${createIconCursor(chevronRight, {
+        size: 48,
+        color: colors.secondary,
+    })};
+
+    @media ${queries.landscapeLgMax} {
+        display: none;
+    }
 `;
 
 export const Artwork = styled.div`

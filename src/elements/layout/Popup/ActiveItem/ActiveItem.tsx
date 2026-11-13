@@ -4,17 +4,22 @@ import {
     StyledActiveItem,
     ItemFigure,
     ItemCaption,
+    Previous,
+    Next,
 } from "./ActiveItem.styles";
 import Image from "elements/components/Image/Image";
 import { useActiveItem } from "hooks/useActiveItem";
 import { getAltText } from "data/portfolioData";
 import Video from "elements/components/Video/Video";
 import { usePinchZoom } from "hooks/usePinchZoom";
-import ClickAreas from "./ClickAreas/ClickAreas";
 import { colors } from "styles/variables";
 import Text from "elements/components/Text/Text";
+import { useStore } from "hooks/useStore";
 
 const ActiveItem = () => {
+    const activeIndex = useStore((state) => state.activeIndex);
+    const setActiveIndex = useStore((state) => state.setActiveIndex);
+
     const pinchZoomRef = usePinchZoom<HTMLDivElement>();
     const { loadedItem, isItemRevealed, setLoadedImage } = useActiveItem();
 
@@ -23,7 +28,14 @@ const ActiveItem = () => {
     return (
         <StyledActiveItem>
             <ItemFigure $isItemRevealed={isItemRevealed}>
-                <ClickAreas />
+                <Previous
+                    aria-hidden="true"
+                    onClick={() => setActiveIndex(activeIndex - 1)}
+                />
+                <Next
+                    aria-hidden="true"
+                    onClick={() => setActiveIndex(activeIndex + 1)}
+                />
 
                 <Artwork ref={pinchZoomRef}>
                     <Image
