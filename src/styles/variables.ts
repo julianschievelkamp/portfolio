@@ -12,9 +12,9 @@ export const transition = {
 };
 
 export const colors = {
-    primary: "#ffca00",
-    secondary: "rgb(0, 0, 0, 0.5)",
-    tertiary: "#f2f2f2",
+    highlight: "rgba(255, 200, 0, 1)",
+    secondary: "rgba(0, 0, 0, 0.5)",
+    fade: "rgb(240, 240, 240)",
 };
 
 export const queries = {

@@ -13,7 +13,7 @@ export const StyledSocial = styled.div`
         }
 
         a {
-            color: ${colors.primary};
+            color: ${colors.highlight};
             transition: color ${transition.fast};
         }
     }

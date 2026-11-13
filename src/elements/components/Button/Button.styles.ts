@@ -14,7 +14,7 @@ export const StyledButton = styled.button`
             &:hover,
             &:focus-visible {
                 svg {
-                    fill: ${colors.primary};
+                    fill: ${colors.highlight};
                     transition: fill ${transition.fast};
                 }
             }

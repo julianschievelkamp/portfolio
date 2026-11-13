@@ -22,7 +22,7 @@ export const Fader = styled.span<{
 }>`
     opacity: ${({ $imageLoaded }) => ($imageLoaded ? 0 : 1)};
     transition: opacity ${transition.default};
-    background-color: ${colors.tertiary};
+    background-color: ${colors.fade};
     pointer-events: none;
     position: absolute;
     inset: 0;

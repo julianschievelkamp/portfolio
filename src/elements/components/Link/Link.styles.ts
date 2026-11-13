@@ -9,7 +9,7 @@ export const StyledLink = styled.a<{ $underline: boolean }>`
 
     &:hover,
     &:focus-visible {
-        color: ${colors.primary};
+        color: ${colors.highlight};
         transition: color ${transition.fast};
     }
 `;
