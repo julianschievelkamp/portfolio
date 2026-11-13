@@ -3,6 +3,7 @@ import {
     absoluteOverlayStyles,
     mainTitleStyles,
     queries,
+    safeArea,
     transition,
 } from "styles/variables";
 import Text from "elements/components/Text/Text";
@@ -23,15 +24,15 @@ export const StyledSidebar = styled.aside<{
         return `transform ${timing}, visibility ${timing}`;
     }};
 
-    width: 15rem;
-    padding: 1rem;
+    width: calc(15rem + ${safeArea.left});
+    padding: 1rem 1rem 1rem calc(1rem + ${safeArea.left});
     z-index: 9;
     display: flex;
     flex-direction: column;
 
     @media ${queries.md} {
-        width: 17rem;
-        padding: 2rem;
+        width: calc(17rem + ${safeArea.left});
+        padding: 2rem 2rem 2rem calc(2rem + ${safeArea.left});
         transform: translateX(0);
         visibility: visible;
     }

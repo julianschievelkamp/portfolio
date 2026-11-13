@@ -1,5 +1,10 @@
 import { styled } from "styled-components";
-import { transition, queries, mainTitleStyles } from "styles/variables";
+import {
+    transition,
+    queries,
+    mainTitleStyles,
+    safeArea,
+} from "styles/variables";
 import Text from "elements/components/Text/Text";
 
 export const StyledHeader = styled.header<{ $isVisible: boolean }>`
@@ -8,7 +13,8 @@ export const StyledHeader = styled.header<{ $isVisible: boolean }>`
     height: 7.5rem;
     top: 0;
     left: 0;
-    padding: 1rem;
+    padding: 1rem calc(1rem + ${safeArea.right}) 1rem
+        calc(1rem + ${safeArea.left});
     z-index: 99;
     display: flex;
     justify-content: space-between;

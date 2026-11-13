@@ -1,6 +1,6 @@
 import Button from "elements/components/Button/Button";
 import { styled } from "styled-components";
-import { queries, visuallyHidden } from "styles/variables";
+import { visuallyHidden } from "styles/variables";
 
 export const PortfolioFigure = styled.figure`
     overflow: hidden;
@@ -8,17 +8,8 @@ export const PortfolioFigure = styled.figure`
     margin: 0;
     min-width: 5rem;
     min-height: 5rem;
-    height: calc((100vw - 1.5rem) / 3);
-    width: 100%;
     background-color: rgb(0, 0, 0, 0.05);
-
-    @media ${queries.md} {
-        height: calc((100vw - 1.5rem - 17rem) / 3);
-    }
-
-    @media ${queries.lg} {
-        height: calc((100vw - 3.5rem - 17rem) / 4);
-    }
+    aspect-ratio: 1 / 1;
 `;
 
 // Das Bild liegt bewusst nicht im Button, damit Reader-Modi es erhalten.

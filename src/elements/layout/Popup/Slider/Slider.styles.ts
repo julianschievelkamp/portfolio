@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { queries, transition } from "styles/variables";
+import { queries, safeArea, transition } from "styles/variables";
 
 export const SliderContainer = styled.div`
     position: absolute;
@@ -19,7 +19,7 @@ export const SliderContainer = styled.div`
 
     @media ${queries.landscapeLgMax} {
         top: 0;
-        left: 1rem;
+        left: calc(1rem + ${safeArea.left});
         bottom: unset;
         width: 3rem;
         height: 100%;

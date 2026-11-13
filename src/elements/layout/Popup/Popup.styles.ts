@@ -2,7 +2,12 @@
 import close from "assets/icons/close.svg?raw";
 
 import { createIconCursor } from "styles/createIconCursor";
-import { absoluteOverlayStyles, colors, queries } from "styles/variables";
+import {
+    absoluteOverlayStyles,
+    colors,
+    queries,
+    safeArea,
+} from "styles/variables";
 import { styled } from "styled-components";
 import { transition } from "styles/variables";
 
@@ -18,7 +23,8 @@ export const StyledPopup = styled.dialog`
     color: inherit;
     user-select: none;
     width: 100vw;
-    padding: 1rem;
+    padding: 1rem calc(1rem + ${safeArea.right}) 1rem
+        calc(1rem + ${safeArea.left});
     margin: 0;
 
     opacity: 0;
@@ -45,7 +51,8 @@ export const StyledPopup = styled.dialog`
 
     @media ${queries.md} {
         @media ${queries.portrait} {
-            padding: 1rem 8rem;
+            padding: 1rem calc(8rem + ${safeArea.right}) 1rem
+                calc(8rem + ${safeArea.left});
         }
     }
 `;

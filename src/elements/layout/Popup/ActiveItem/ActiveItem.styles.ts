@@ -4,8 +4,10 @@ import chevronRight from "assets/icons/chevron-right.svg?raw";
 
 import Text from "elements/components/Text/Text";
 import { styled } from "styled-components";
-import { queries, transition, colors } from "styles/variables";
+import { queries, transition, colors, safeArea } from "styles/variables";
 import { createIconCursor } from "styles/createIconCursor";
+
+const insetX = `${safeArea.left} - ${safeArea.right}`;
 
 export const StyledActiveItem = styled.div`
     position: relative;
@@ -99,7 +101,7 @@ export const Artwork = styled.div`
         @media ${queries.landscapeLgMax} {
             max-height: calc(100vh - 3rem);
             max-height: calc(100dvh - 3rem);
-            max-width: calc(100vw - 11rem);
+            max-width: calc(100vw - 11rem - ${insetX});
         }
     }
 
