@@ -35,7 +35,7 @@ export const safeArea = {
     left: "env(safe-area-inset-left, 0px)",
 };
 
-export const thumbnailSize ="(max-width: 1200px) 300px, 600px";
+export const thumbnailSize = "(max-width: 1200px) 300px, 600px";
 
 export const mainTitleStyles = css`
     text-transform: uppercase;
