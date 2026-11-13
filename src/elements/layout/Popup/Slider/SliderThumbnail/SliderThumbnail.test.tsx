@@ -31,6 +31,26 @@ const renderThumbnail = (isActive = false) => {
     return { onSelect, onItemFocus };
 };
 
+// Die Abdunklung liegt als ::after-Overlay auf dem Button. jsdom wertet
+// Pseudo-Elemente in getComputedStyle nicht aus, daher werden die CSS-Regeln gelesen
+const getOverlayOpacity = () => {
+    const button = screen.getByRole("button");
+    const rules = Array.from(document.styleSheets).flatMap((sheet) =>
+        Array.from(sheet.cssRules),
+    );
+    const overlayRule = rules.find(
+        (rule): rule is CSSStyleRule =>
+            rule instanceof CSSStyleRule &&
+            rule.selectorText.endsWith("::after") &&
+            Array.from(button.classList).some((className) =>
+                rule.selectorText.startsWith(`.${className}`),
+            ) &&
+            rule.style.opacity !== "",
+    );
+
+    return overlayRule?.style.opacity;
+};
+
 describe("SliderThumbnail", () => {
     it("renders a labelled button with a lazy loaded image", () => {
         renderThumbnail();
@@ -69,15 +89,15 @@ describe("SliderThumbnail", () => {
         );
     });
 
-    it("shows the image of the active item fully opaque", () => {
+    it("shows the active item without dimming overlay", () => {
         renderThumbnail(true);
 
-        expect(screen.getByRole("img")).toHaveStyle("opacity: 1");
+        expect(getOverlayOpacity()).toBe("0");
     });
 
-    it("dims the image of an inactive item", () => {
+    it("dims an inactive item with an overlay", () => {
         renderThumbnail();
 
-        expect(screen.getByRole("img")).toHaveStyle("opacity: 0.5");
+        expect(getOverlayOpacity()).toBe("0.5");
     });
 });

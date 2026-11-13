@@ -58,18 +58,20 @@ describe("Image", () => {
     it("is visible immediately without fadeInOnLoad", () => {
         render(<Image src="/a.jpg" alt="Art" />);
 
-        expect(screen.getByRole("img")).toHaveStyle("opacity: 1");
+        // Die Überblendung liegt als Geschwister-Element über dem Bild
+        expect(screen.getByRole("img").nextElementSibling).toBeNull();
     });
 
     it("fades in after loading when fadeInOnLoad is set", () => {
         render(<Image src="/a.jpg" alt="Art" fadeInOnLoad />);
         const image = screen.getByRole("img");
+        const fader = image.nextElementSibling;
         // jsdom lädt keine Bilder, daher ist "complete" hier nicht gesetzt
-        expect(image).toHaveStyle("opacity: 0");
+        expect(fader).toHaveStyle("opacity: 1");
 
         fireEvent.load(image);
 
-        expect(image).toHaveStyle("opacity: 1");
+        expect(fader).toHaveStyle("opacity: 0");
     });
 
     it("shows a cached image immediately when it is already complete on mount", () => {
@@ -80,7 +82,9 @@ describe("Image", () => {
 
         render(<Image src="/a.jpg" alt="Art" fadeInOnLoad />);
 
-        expect(screen.getByRole("img")).toHaveStyle("opacity: 1");
+        expect(screen.getByRole("img").nextElementSibling).toHaveStyle(
+            "opacity: 0",
+        );
 
         completeSpy.mockRestore();
     });
