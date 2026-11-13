@@ -13,7 +13,7 @@ export const transition = {
 
 export const colors = {
     primary: "#ffca00",
-    secondary: "#7f7f7f",
+    secondary: "rgb(0, 0, 0, 0.5)",
     tertiary: "#f2f2f2",
 };
 

@@ -34,6 +34,7 @@ export const ItemFigure = styled.figure<{ $isItemRevealed: boolean }>`
     transition:
         opacity ${transition.default},
         visibility ${transition.default};
+    will-change: opacity;
 `;
 
 export const Previous = styled.div`
