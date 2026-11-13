@@ -13,13 +13,11 @@ export const SliderListItem = styled.li`
 `;
 
 export const SliderItem = styled(Button)<{ $isActive: boolean }>`
-    background: transparent;
     width: 100%;
     height: 100%;
     overflow: hidden;
 
     img {
-        transition: none;
         opacity: ${({ $isActive }) => ($isActive ? 1 : 0.5)};
     }
 

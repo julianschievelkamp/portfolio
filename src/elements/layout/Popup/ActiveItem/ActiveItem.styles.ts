@@ -34,7 +34,6 @@ export const ItemFigure = styled.figure<{ $isItemRevealed: boolean }>`
     transition:
         opacity ${transition.default},
         visibility ${transition.default};
-    will-change: opacity;
 `;
 
 export const Previous = styled.div`
@@ -107,8 +106,7 @@ export const Artwork = styled.div`
 
     > video {
         position: absolute;
-        top: 0;
-        left: 0;
+        inset: 0;
     }
 `;
 

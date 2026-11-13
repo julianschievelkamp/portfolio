@@ -13,7 +13,8 @@ export const transition = {
 
 export const colors = {
     primary: "#ffca00",
-    secondary: "rgb(0, 0, 0, 0.5)",
+    secondary: "#7f7f7f",
+    tertiary: "#f2f2f2",
 };
 
 export const queries = {

@@ -2,10 +2,11 @@ import { css, styled } from "styled-components";
 import { colors, transition } from "styles/variables";
 
 export const StyledButton = styled.button`
-    padding: 0;
+    position: relative;
     background: transparent;
     border: none;
     cursor: pointer;
+    padding: 0;
 
     ${({ disabled }) =>
         !disabled &&

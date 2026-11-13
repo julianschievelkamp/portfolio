@@ -1,9 +1,7 @@
 import { styled } from "styled-components";
-import { transition } from "styles/variables";
+import { colors, transition } from "styles/variables";
 
 export const StyledImage = styled.img<{
-    $imageLoaded: boolean;
-    $fadeInOnLoad?: boolean;
     $width?: string;
     $height?: string;
     $margin?: string;
@@ -11,18 +9,21 @@ export const StyledImage = styled.img<{
 }>`
     width: ${({ $width }) => $width};
     height: ${({ $height }) => $height};
-    opacity: ${({ $imageLoaded }) => ($imageLoaded ? 1 : 0)};
-
     margin: ${({ $margin }) => $margin};
     aspect-ratio: ${({ $aspectRatio }) => $aspectRatio};
     max-width: 100%;
-    transition:
-        opacity ${transition.default},
-        transform ${transition.default};
+    transition: transform ${transition.default};
     pointer-events: none;
     user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+`;
+
+export const Fader = styled.span<{
+    $imageLoaded: boolean;
+}>`
+    opacity: ${({ $imageLoaded }) => ($imageLoaded ? 0 : 1)};
+    transition: opacity ${transition.default};
+    background-color: ${colors.tertiary};
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
 `;

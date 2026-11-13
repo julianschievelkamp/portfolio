@@ -20,7 +20,6 @@ export const StyledHeader = styled.header<{ $isVisible: boolean }>`
     justify-content: space-between;
     background-color: white;
 
-    /* translate3d und will-change halten den Header auf einer eigenen GPU-Ebene (flüssiger auf iOS) */
     transform: ${({ $isVisible }) =>
         `translate3d(0, ${$isVisible ? 0 : "-100%"}, 0)`};
     will-change: transform;

@@ -59,10 +59,7 @@ export const StyledPopup = styled.dialog`
 
 export const Backdrop = styled.div`
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    inset: 0;
     z-index: 1;
     cursor: ${createIconCursor(close, { size: 32, color: colors.secondary })};
 `;

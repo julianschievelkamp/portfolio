@@ -41,10 +41,7 @@ export const StyledSidebar = styled.aside<{
 export const Backdrop = styled.div<{ $isActive: boolean }>`
     touch-action: none;
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    inset: 0;
     z-index: 9;
     backdrop-filter: blur(2px);
 

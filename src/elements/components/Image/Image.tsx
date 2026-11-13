@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { StyledImage } from "./Image.styles";
+import { useCallback, useState } from "react";
+import { Fader, StyledImage } from "./Image.styles";
 
 export interface ImageProps {
     src: string;
@@ -30,34 +30,48 @@ const Image = ({
     loading = "eager",
     aspectRatio,
 }: ImageProps) => {
-    const [imageLoaded, setImageLoaded] = useState(false);
-    const imageRef = useRef<HTMLImageElement | null>(null);
+    const [loadedSrc, setLoadedSrc] = useState<string | null>(null);
 
-    useEffect(() => {
-        if (!imageLoaded && imageRef?.current?.complete) {
-            setImageLoaded(true);
-        }
-    }, [imageLoaded]);
+    const imageRef = useCallback(
+        (image: HTMLImageElement | null) => {
+            if (!image) return;
+
+            const markLoaded = () => setLoadedSrc(src);
+
+            if (image.complete) {
+                markLoaded();
+                return;
+            }
+
+            image.addEventListener("load", markLoaded, { once: true });
+
+            return () => image.removeEventListener("load", markLoaded);
+        },
+        [src],
+    );
 
     return (
-        <StyledImage
-            src={src}
-            srcSet={srcSet}
-            sizes={sizes}
-            alt={alt}
-            $width={width}
-            $height={height}
-            $margin={margin}
-            $imageLoaded={!fadeInOnLoad || imageLoaded}
-            onLoad={() => {
-                setImageLoaded(true);
-                onLoad?.();
-            }}
-            onError={onError}
-            loading={loading}
-            $aspectRatio={aspectRatio}
-            ref={imageRef}
-        />
+        <>
+            <StyledImage
+                src={src}
+                srcSet={srcSet}
+                sizes={sizes}
+                alt={alt}
+                $width={width}
+                $height={height}
+                $margin={margin}
+                onLoad={() => {
+                    setLoadedSrc(src);
+                    onLoad?.();
+                }}
+                onError={onError}
+                loading={loading}
+                $aspectRatio={aspectRatio}
+                ref={imageRef}
+            />
+
+            {fadeInOnLoad && <Fader $imageLoaded={loadedSrc === src} />}
+        </>
     );
 };
 
