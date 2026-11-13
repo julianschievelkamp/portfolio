@@ -23,7 +23,6 @@ export const StyledActiveItem = styled.div`
 `;
 
 export const ItemFigure = styled.figure<{ $isItemRevealed: boolean }>`
-    background-color: black;
     position: relative;
     z-index: 99;
     margin: 0;
