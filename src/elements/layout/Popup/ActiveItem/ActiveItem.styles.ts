@@ -93,7 +93,7 @@ export const Artwork = styled.div`
         min-width: 10rem;
         min-height: 10rem;
         max-height: calc(100vh - 14rem);
-        max-height: calc(100dvh - 14rem);
+        max-height: calc(100svh - 14rem);
 
         @media ${queries.landscapeLgMax} {
             max-height: calc(100vh - 3rem);
