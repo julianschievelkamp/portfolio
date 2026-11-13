@@ -19,6 +19,7 @@ export default createGlobalStyle<GlobalStyleProps>`
         padding: 0;
         font-size: 100%;
         width: 100vw;
+        min-height: 100vh;
         min-height: 100svh;
         position: relative;
         touch-action: pan-y;
