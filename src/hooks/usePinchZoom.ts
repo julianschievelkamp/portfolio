@@ -1,7 +1,6 @@
 import { useCallback } from "react";
 
-// Maximaler Zoomfaktor, darüber hinaus wirken die Werke pixelig
-export const PINCH_MAX_SCALE = 4;
+export const PINCH_MAX_SCALE = 2;
 
 // Zeitfenster nach einer Geste, in dem Klicks verworfen werden
 const CLICK_SUPPRESS_DURATION = 300;

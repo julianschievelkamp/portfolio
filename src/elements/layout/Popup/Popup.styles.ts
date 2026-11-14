@@ -68,9 +68,13 @@ export const Background = styled.div`
     }
 `;
 
-export const Backdrop = styled.div`
+export const Close = styled.div`
     position: absolute;
     inset: 0;
     z-index: 1;
     cursor: ${createIconCursor(close, { size: 32, color: colors.secondary })};
+
+    html:has([data-pinching]) & {
+        display: none;
+    }
 `;

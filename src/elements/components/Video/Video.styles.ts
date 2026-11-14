@@ -25,4 +25,9 @@ export const PlayButton = styled(Button)<{ $isVisible: boolean }>`
     border-radius: 100px;
     backdrop-filter: blur(8px);
     background-color: ${colors.secondary};
+
+    html:has([data-pinching]) & {
+        opacity: 0;
+        visibility: hidden;
+    }
 `;
