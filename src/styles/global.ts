@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import fonts from "./fonts";
-import { transition } from "./variables";
+import { colors, transition } from "./variables";
 
 interface GlobalStyleProps {
     $isPageLocked: boolean;
@@ -35,7 +35,7 @@ export default createGlobalStyle<GlobalStyleProps>`
     }
 
     :focus-visible {
-        outline: 0;
+        outline: 2px solid ${colors.highlight};
     }
 
     .no-transition * {

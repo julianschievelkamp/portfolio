@@ -16,23 +16,11 @@ export const usePopupOverlay = () => {
 
         if (popupOpen) {
             if (!dialog.open) {
-                const trigger = document.activeElement;
-
-                const isKeyboardUser =
-                    trigger instanceof HTMLElement &&
-                    trigger.matches(":focus-visible");
-
-                // Bei Maus/Touch den Auslöser vorab entfokussieren, damit der
-                // Browser beim Schließen keinen Fokus zurücksetzt
-                if (!isKeyboardUser && trigger instanceof HTMLElement) {
-                    trigger.blur();
-                }
-
                 dialog.showModal();
 
                 // Fokus auf den Dialog selbst statt auf den CloseButton,
                 // damit kein Fokusrahmen vom Hauptbild ablenkt
-                if (!isKeyboardUser) dialog.focus({ preventScroll: true });
+                dialog.focus({ preventScroll: true });
             }
 
             // Ein Frame Verzögerung, damit die Startwerte gerendert werden
