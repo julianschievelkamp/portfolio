@@ -22,6 +22,8 @@ export default createGlobalStyle<GlobalStyleProps>`
         min-height: 100svh;
         position: relative;
         overflow-x: clip;
+        //overscroll-behavior-x: none;
+        //overscroll-behavior-y: none;
     }
 
     body {

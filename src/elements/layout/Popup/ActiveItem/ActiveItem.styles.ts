@@ -82,6 +82,7 @@ export const Artwork = styled.div`
     overflow: clip;
     border: 0.5rem solid transparent;
     margin: 0;
+    touch-action: pan-x pan-y;
 
     /* Transformation aus usePinchZoom, ohne Geste gleitet das Werk zurück */
     transform-origin: 0 0;

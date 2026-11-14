@@ -25,8 +25,8 @@ const App = ({ page, children }: AppProps) => {
     // Scrollen sperren, solange die Sidebar oder das Popup als mobiles Overlay geöffnet ist
     const isPageLocked = popupOpen || (!isMd && sidebarOpen);
 
-    useScrollLock(isPageLocked);
-    usePinchZoomLock();
+    //useScrollLock(isPageLocked);
+    //usePinchZoomLock();
 
     useResizeTransition();
 

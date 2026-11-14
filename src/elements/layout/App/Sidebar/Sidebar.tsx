@@ -14,6 +14,7 @@ import { useSidebarOverlay } from "hooks/useSidebarOverlay";
 import { SCROLL_ALLOWED_ATTRIBUTE } from "hooks/useScrollLock";
 import { Page } from "data/navigationData";
 import Link from "elements/components/Link/Link";
+import { scrollToTop } from "utils/scrollToTop";
 
 export interface SidebarProps {
     page: Page;
@@ -28,7 +29,10 @@ const Sidebar = ({ page }: SidebarProps) => {
     return (
         <>
             <Backdrop
-                onClick={() => setSidebarOpen(false)}
+                onClick={async () => {
+                    await scrollToTop();
+                    setSidebarOpen(false);
+                }}
                 $sidebarOpen={sidebarOpen}
             />
 

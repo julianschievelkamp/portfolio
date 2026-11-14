@@ -47,6 +47,12 @@ export const usePopupControls = () => {
 
             if (!touchStart.current || !touchEnd.current) return;
 
+            if (window.visualViewport) {
+                if (Math.abs(window.visualViewport.scale - 1) > 0.05) {
+                    return;
+                }
+            }
+
             const minSwipeDistance = 50;
             const distance = touchStart.current - touchEnd.current;
             const isPreviousSwipe = distance > minSwipeDistance;

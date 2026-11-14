@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import { queries, mainTitleStyles } from "styles/variables";
 import Text from "elements/components/Text/Text";
+import Button from "elements/components/Button/Button";
 
 export const StyledHeader = styled.header`
     position: absolute;
@@ -17,12 +18,16 @@ export const StyledHeader = styled.header`
     }
 `;
 
-export const ToggleWrapper = styled.div`
-    display: flex;
-    align-items: center;
+export const SidebarToggle = styled(Button)`
+    position: absolute;
+    right: 1rem;
     margin: 0 0 0 2rem;
+    top: 50%;
+    transform: translateY(-50%);
 `;
 
-export const MainTitle = styled(Text)`
+export const MainTitle = styled(Text)<{ $sidebarOpen: boolean }>`
     ${mainTitleStyles}
+
+    position: ${({ $sidebarOpen }) => ($sidebarOpen ? "fixed" : "relative")};
 `;

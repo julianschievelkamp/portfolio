@@ -4,7 +4,7 @@ const SCROLL_TIMEOUT_MS = 1500;
 // Scrollt weich nach oben und löst auf, sobald die Position 0 erreicht ist
 export const scrollToTop = (): Promise<void> =>
     new Promise((resolve) => {
-        if (window.scrollY <= 0) {
+        if (window.scrollY <= 0 && window.scrollX <= 0) {
             resolve();
             return;
         }
@@ -16,7 +16,7 @@ export const scrollToTop = (): Promise<void> =>
         };
 
         const handleScroll = () => {
-            if (window.scrollY <= 0) {
+            if (window.scrollY <= 0 && window.scrollX <= 0) {
                 finish();
             }
         };
