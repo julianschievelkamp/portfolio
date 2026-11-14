@@ -1,6 +1,6 @@
 import Button from "elements/components/Button/Button";
 import { styled } from "styled-components";
-import { transition, visuallyHidden } from "styles/variables";
+import { colors, transition, visuallyHidden } from "styles/variables";
 
 export const PortfolioFigure = styled.figure`
     overflow: clip;
@@ -9,6 +9,11 @@ export const PortfolioFigure = styled.figure`
     min-width: 5rem;
     min-height: 5rem;
     aspect-ratio: 1 / 1;
+
+    // Platzhalterfarbe bevor das Bild einblendet
+    span {
+        background-color: ${colors.fade};
+    }
 `;
 
 // Das Bild liegt bewusst nicht im Button, damit Reader-Modi es erhalten.

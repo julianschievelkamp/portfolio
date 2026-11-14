@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { colors, transition } from "styles/variables";
+import { transition } from "styles/variables";
 
 export const StyledImage = styled.img<{
     $width?: string;
@@ -21,7 +21,7 @@ export const Fader = styled.span<{
 }>`
     opacity: ${({ $imageLoaded }) => ($imageLoaded ? 0 : 1)};
     transition: opacity ${transition.default};
-    background-color: ${colors.fade};
+    background-color: white;
     pointer-events: none;
     position: absolute;
     inset: 0;

@@ -14,7 +14,8 @@ export const transition = {
 export const colors = {
     highlight: "rgba(255, 200, 0, 1)",
     secondary: "rgba(0, 0, 0, 0.5)",
-    fade: "rgb(240, 240, 240)",
+    playButton: "rgba(0, 0, 0, 0.4)",
+    fade: "rgb(245, 245, 245)",
 };
 
 export const queries = {
