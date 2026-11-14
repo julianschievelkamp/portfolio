@@ -20,8 +20,9 @@ export const StyledHeader = styled.header`
 
 export const SidebarToggle = styled(Button)`
     position: absolute;
+    background-color: white;
     right: 1rem;
-    margin: 0 0 0 2rem;
+    margin: 2px 0 0 2rem;
     top: 50%;
     transform: translateY(-50%);
 `;
