@@ -1,7 +1,7 @@
 /// <reference types="vite/client" />
 import close from "assets/icons/close.svg?raw";
 
-import { createIconCursor } from "styles/createIconCursor";
+import { createIconCursor } from "utils/createIconCursor";
 import { colors, queries } from "styles/variables";
 import { styled } from "styled-components";
 import { transition } from "styles/variables";

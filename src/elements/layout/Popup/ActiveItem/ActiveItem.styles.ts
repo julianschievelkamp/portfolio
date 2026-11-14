@@ -5,7 +5,7 @@ import chevronRight from "assets/icons/chevron-right.svg?raw";
 import Text from "elements/components/Text/Text";
 import { styled } from "styled-components";
 import { queries, transition, colors } from "styles/variables";
-import { createIconCursor } from "styles/createIconCursor";
+import { createIconCursor } from "utils/createIconCursor";
 
 export const StyledActiveItem = styled.div`
     position: relative;

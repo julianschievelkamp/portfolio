@@ -58,7 +58,8 @@ src/
 ├── elements/  Reusable components and layout building blocks (tests are co-located)
 ├── hooks/     Custom React hooks
 ├── pages/     Vike routing entry points
-└── styles/    Global styles and variables
+├── styles/    Global styles and variables
+└── utils/     Pure helper functions
 ```
 
 ## Quality Guidelines
