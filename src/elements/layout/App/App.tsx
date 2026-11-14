@@ -6,11 +6,11 @@ import { Page } from "data/navigationData";
 import { type ReactNode } from "react";
 import Headline from "elements/components/Headline/Headline";
 import { useResizeTransition } from "hooks/useResizeTransition";
-import { usePinchZoomLock } from "hooks/usePinchZoomLock";
 import { useStore } from "hooks/useStore";
 import { useMediaQuery } from "hooks/useMediaQuery";
 import { queries } from "styles/variables";
 import { useScrollLock } from "hooks/useScrollLock";
+import { useVisualViewport } from "hooks/useVisualViewport";
 
 export interface AppProps {
     page: Page;
@@ -22,17 +22,16 @@ const App = ({ page, children }: AppProps) => {
     const sidebarOpen = useStore((state) => state.sidebarOpen);
     const popupOpen = useStore((state) => state.popupOpen);
 
-    // Scrollen sperren, solange die Sidebar oder das Popup als mobiles Overlay geöffnet ist
+    const isZoomed = useVisualViewport();
     const isPageLocked = popupOpen || (!isMd && sidebarOpen);
 
-    //useScrollLock(isPageLocked);
-    //usePinchZoomLock();
+    useScrollLock(isPageLocked && !isZoomed);
 
     useResizeTransition();
 
     return (
         <>
-            <GlobalStyle $isPageLocked={isPageLocked} />
+            <GlobalStyle $isPageLocked={isPageLocked} $isZoomed={isZoomed} />
 
             <Header />
 

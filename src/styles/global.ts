@@ -1,9 +1,10 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, css } from "styled-components";
 import fonts from "./fonts";
 import { colors, transition } from "./variables";
 
 interface GlobalStyleProps {
     $isPageLocked: boolean;
+    $isZoomed: boolean;
 }
 
 export default createGlobalStyle<GlobalStyleProps>`
@@ -22,8 +23,13 @@ export default createGlobalStyle<GlobalStyleProps>`
         min-height: 100svh;
         position: relative;
         overflow-x: clip;
-        //overscroll-behavior-x: none;
-        //overscroll-behavior-y: none;
+
+        ${({ $isZoomed }) =>
+            $isZoomed &&
+            css`
+                overscroll-behavior-x: none;
+                overscroll-behavior-y: none;
+            `}
     }
 
     body {
