@@ -16,7 +16,6 @@ const Video = ({ src, poster, width, height, ariaLabel }: VideoProps) => {
     return (
         <>
             <StyledVideo
-                key={src}
                 ref={videoRef}
                 poster={poster}
                 $width={width}
@@ -32,8 +31,8 @@ const Video = ({ src, poster, width, height, ariaLabel }: VideoProps) => {
             </StyledVideo>
 
             <PlayButton
-                $isVisible={!isStarted}
                 onClick={() => toggleVideo()}
+                $isVisible={!isStarted}
                 ariaLabel="Play Video"
             >
                 <Icon name="play" color="white" size="3rem" padding="0.5rem" />

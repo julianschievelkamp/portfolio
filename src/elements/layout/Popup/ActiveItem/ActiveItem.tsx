@@ -28,14 +28,8 @@ const ActiveItem = () => {
     return (
         <StyledActiveItem>
             <ItemFigure $isItemRevealed={isItemRevealed}>
-                <Previous
-                    aria-hidden="true"
-                    onClick={() => setActiveIndex(activeIndex - 1)}
-                />
-                <Next
-                    aria-hidden="true"
-                    onClick={() => setActiveIndex(activeIndex + 1)}
-                />
+                <Previous onClick={() => setActiveIndex(activeIndex - 1)} />
+                <Next onClick={() => setActiveIndex(activeIndex + 1)} />
 
                 <Artwork ref={pinchZoomRef}>
                     <Image
@@ -49,7 +43,7 @@ const ActiveItem = () => {
 
                     {loadedItem.video && (
                         <Video
-                            key={loadedItem.title}
+                            key={loadedItem.video}
                             src={loadedItem.video}
                             poster={loadedItem.image}
                             ariaLabel={loadedItem.title}
