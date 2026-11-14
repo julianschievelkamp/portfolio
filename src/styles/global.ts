@@ -22,17 +22,16 @@ export default createGlobalStyle<GlobalStyleProps>`
         min-height: 100vh;
         min-height: 100svh;
         position: relative;
-        transition: background-color ${transition.default};
-    }
-
-    html:has([data-pinching]),
-    html:has([data-pinching]) body {
-        background-color: black;
     }
 
     body {
         overflow-x: clip;
         overflow-y: ${({ $isPageLocked }) => ($isPageLocked ? "hidden" : "scroll")};
+        transition: background-color ${transition.default};
+
+        html:has([data-pinching]) & {
+            background-color: black;
+        }
     }
 
     :focus-visible {
