@@ -22,20 +22,17 @@ export default createGlobalStyle<GlobalStyleProps>`
         min-height: 100vh;
         min-height: 100svh;
         position: relative;
-        overflow-x: clip;
         transition: background-color ${transition.default};
     }
 
-    body {
-        overflow-y: ${({ $isPageLocked }) => ($isPageLocked ? "hidden" : "scroll")};
-        touch-action: pan-y;
-    }
-    
-    /* Während das ActiveItem gezoomt wird (data-pinching aus usePinchZoom),
-       färbt sich die Seite passend zum Popup schwarz */
     html:has([data-pinching]),
     html:has([data-pinching]) body {
         background-color: black;
+    }
+
+    body {
+        overflow-x: clip;
+        overflow-y: ${({ $isPageLocked }) => ($isPageLocked ? "hidden" : "scroll")};
     }
 
     :focus-visible {

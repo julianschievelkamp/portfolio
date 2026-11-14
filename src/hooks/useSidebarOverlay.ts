@@ -1,11 +1,9 @@
 import { useEffect } from "react";
 import { useStore } from "./useStore";
-import { useAbsoluteOverlay } from "./useAbsoluteOverlay";
 
 export const useSidebarOverlay = () => {
     const sidebarOpen = useStore((state) => state.sidebarOpen);
     const setSidebarOpen = useStore((state) => state.setSidebarOpen);
-    const sidebarRef = useAbsoluteOverlay<HTMLElement>();
 
     // Schließt die geöffnete Sidebar per Escape und gibt den Fokus an den Toggle zurück
     useEffect(() => {
@@ -24,6 +22,4 @@ export const useSidebarOverlay = () => {
 
         return () => document.removeEventListener("keydown", handleKeyDown);
     }, [sidebarOpen, setSidebarOpen]);
-
-    return sidebarRef;
 };

@@ -1,6 +1,5 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 import {
-    absoluteOverlayStyles,
     mainTitleStyles,
     queries,
     safeArea,
@@ -8,10 +7,20 @@ import {
 } from "styles/variables";
 import Text from "elements/components/Text/Text";
 
-export const StyledSidebar = styled.aside<{
+export const sidebarStyles = css<{
     $sidebarOpen: boolean;
 }>`
-    ${absoluteOverlayStyles}
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    height: 100dvh;
+    width: calc(15rem + ${safeArea.left});
+    padding: 1rem 1rem 1rem calc(1rem + ${safeArea.left});
+
+    z-index: 9;
+    display: flex;
+    flex-direction: column;
 
     will-change: transform;
     transform: ${({ $sidebarOpen }) =>
@@ -24,12 +33,6 @@ export const StyledSidebar = styled.aside<{
         return `transform ${timing}, visibility ${timing}`;
     }};
 
-    width: calc(15rem + ${safeArea.left});
-    padding: 1rem 1rem 1rem calc(1rem + ${safeArea.left});
-    z-index: 9;
-    display: flex;
-    flex-direction: column;
-
     @media ${queries.md} {
         width: calc(17rem + ${safeArea.left});
         padding: 2rem 2rem 2rem calc(2rem + ${safeArea.left});
@@ -38,18 +41,31 @@ export const StyledSidebar = styled.aside<{
     }
 `;
 
-export const Backdrop = styled.div<{ $isActive: boolean }>`
-    touch-action: none;
+export const StyledSidebar = styled.aside<{
+    $sidebarOpen: boolean;
+}>`
+    ${sidebarStyles}
+`;
+
+export const Background = styled.div<{ $sidebarOpen: boolean }>`
+    ${sidebarStyles}
+
+    background-color: white;
+    position: absolute;
+    height: 100%;
+`;
+
+export const Backdrop = styled.div<{ $sidebarOpen: boolean }>`
     position: absolute;
     inset: 0;
     z-index: 9;
     backdrop-filter: blur(2px);
 
-    opacity: ${({ $isActive }) => ($isActive ? 1 : 0)};
-    visibility: ${({ $isActive }) => ($isActive ? "visible" : "hidden")};
+    opacity: ${({ $sidebarOpen }) => ($sidebarOpen ? 1 : 0)};
+    visibility: ${({ $sidebarOpen }) => ($sidebarOpen ? "visible" : "hidden")};
     /* Beim Öffnen ease-out, beim Schließen ease-in */
-    transition: ${({ $isActive }) => {
-        const timing = $isActive ? transition.default : transition.defaultIn;
+    transition: ${({ $sidebarOpen }) => {
+        const timing = $sidebarOpen ? transition.default : transition.defaultIn;
 
         return `opacity ${timing}, visibility ${timing}`;
     }};
@@ -60,7 +76,6 @@ export const Backdrop = styled.div<{ $isActive: boolean }>`
 `;
 
 export const ScrollContainer = styled.div`
-    touch-action: pan-y;
     overflow-y: scroll;
     overscroll-behavior-y: contain;
     margin: 1.5rem 0 0 0;

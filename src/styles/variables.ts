@@ -49,23 +49,6 @@ export const mainTitleStyles = css`
     }
 `;
 
-// Hintergrundflächen bis hinter die mobilen dynamischen Browser-Leisten ermöglichen.
-export const absoluteOverlayStyles = css`
-    touch-action: none;
-    position: absolute;
-    background-color: white;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    height: 100dvh;
-    box-shadow: 0 100vh 0 0 white;
-    box-shadow: 0 100svh 0 0 white;
-
-    @media ${queries.md} {
-        position: fixed;
-    }
-`;
-
 // Blendet Inhalte visuell aus, lässt sie aber für Screenreader und Suchmaschinen bestehen
 export const visuallyHidden = css`
     position: absolute;

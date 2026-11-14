@@ -4,6 +4,7 @@ import {
     ScrollContainer,
     MainTitle,
     StyledSidebar,
+    Background,
 } from "./Sidebar.styles";
 import { languageData } from "data/languageData";
 import { colors, Div, Footer } from "styles/variables";
@@ -22,17 +23,18 @@ const Sidebar = ({ page }: SidebarProps) => {
     const sidebarOpen = useStore((state) => state.sidebarOpen);
     const setSidebarOpen = useStore((state) => state.setSidebarOpen);
 
-    const sidebarRef = useSidebarOverlay();
+    useSidebarOverlay();
 
     return (
         <>
             <Backdrop
                 onClick={() => setSidebarOpen(false)}
-                $isActive={sidebarOpen}
+                $sidebarOpen={sidebarOpen}
             />
 
+            <Background $sidebarOpen={sidebarOpen} />
+
             <StyledSidebar
-                ref={sidebarRef}
                 id="sidebar"
                 aria-label="Sidebar"
                 $sidebarOpen={sidebarOpen}

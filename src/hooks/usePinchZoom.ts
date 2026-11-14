@@ -144,7 +144,7 @@ export const usePinchZoom = <T extends HTMLElement>() =>
         const handleTouchMove = (event: TouchEvent) => {
             if (!isActive) return;
 
-            // Verhindert native Gesten (z. B. Safari), falls touch-action ignoriert wird
+            // Verhindert native Gesten (z. B. Safari)
             if (event.cancelable) event.preventDefault();
 
             const [a, b] = [event.touches[0], event.touches[1]];

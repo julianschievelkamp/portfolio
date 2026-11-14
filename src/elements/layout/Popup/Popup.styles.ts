@@ -2,50 +2,37 @@
 import close from "assets/icons/close.svg?raw";
 
 import { createIconCursor } from "styles/createIconCursor";
-import {
-    absoluteOverlayStyles,
-    colors,
-    queries,
-    safeArea,
-} from "styles/variables";
+import { colors, queries, safeArea } from "styles/variables";
 import { styled } from "styled-components";
 import { transition } from "styles/variables";
 
 export const StyledPopup = styled.dialog`
-    ${absoluteOverlayStyles}
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    height: 100dvh;
+    width: 100vw;
+    background-color: transparent;
+    padding: 1rem calc(1rem + ${safeArea.right}) 1rem
+        calc(1rem + ${safeArea.left});
 
-    overflow-y: visible;
-    overflow-x: clip;
+    margin: 0;
+    overflow: clip;
     border: none;
     outline: none;
     max-width: none;
     max-height: none;
     color: inherit;
     user-select: none;
-    width: 100vw;
-    padding: 1rem calc(1rem + ${safeArea.right}) 1rem
-        calc(1rem + ${safeArea.left});
-    margin: 0;
 
-    will-change: opacity, background-color, box-shadow;
+    will-change: opacity;
     opacity: 0;
-    transition:
-        opacity ${transition.defaultIn},
-        background-color ${transition.default},
-        box-shadow ${transition.default};
+    transition: opacity ${transition.defaultIn};
 
     &[data-visible="true"] {
         opacity: 1;
-        transition:
-            opacity ${transition.default},
-            background-color ${transition.default},
-            box-shadow ${transition.default};
-    }
-
-    html:has([data-pinching]) & {
-        background-color: black;
-        box-shadow: 0 100vh 0 0 black;
-        box-shadow: 0 100svh 0 0 black;
+        transition: opacity ${transition.default};
     }
 
     &::backdrop {
@@ -57,6 +44,31 @@ export const StyledPopup = styled.dialog`
             padding: 1rem calc(8rem + ${safeArea.right}) 1rem
                 calc(8rem + ${safeArea.left});
         }
+    }
+`;
+
+export const Background = styled.div`
+    position: absolute;
+    inset: 0;
+    z-index: 99;
+    pointer-events: none;
+
+    will-change: opacity, background-color;
+    background-color: white;
+    opacity: 0;
+    transition:
+        opacity ${transition.defaultIn},
+        background-color ${transition.default};
+
+    html:has([data-visible="true"]) & {
+        opacity: 1;
+        transition:
+            opacity ${transition.default},
+            background-color ${transition.default};
+    }
+
+    html:has([data-pinching]) & {
+        background-color: black;
     }
 `;
 

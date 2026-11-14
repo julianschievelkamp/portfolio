@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-// Verhindert das native Pinch-Zoomen der gesamten Seite zusätzlich zu "touch-action"
+// Verhindert das native Pinch-Zoomen der gesamten Seite
 export const usePinchZoomLock = () => {
     useEffect(() => {
         const preventDefault = (e: Event) => {

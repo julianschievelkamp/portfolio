@@ -1,6 +1,5 @@
 import { MainTitle, StyledHeader, ToggleWrapper } from "./Header.styles";
 import { languageData } from "data/languageData";
-import { useHeaderVisibility } from "hooks/useHeaderVisibility";
 import { useStore } from "hooks/useStore";
 import Link from "elements/components/Link/Link";
 import Button from "elements/components/Button/Button";
@@ -9,10 +8,9 @@ import Icon from "elements/components/Icon/Icon";
 const Header = () => {
     const sidebarOpen = useStore((state) => state.sidebarOpen);
     const setSidebarOpen = useStore((state) => state.setSidebarOpen);
-    const { isVisible } = useHeaderVisibility();
 
     return (
-        <StyledHeader $isVisible={isVisible}>
+        <StyledHeader>
             <MainTitle>
                 <Link
                     href="/"
@@ -27,7 +25,7 @@ const Header = () => {
                 <Button
                     onClick={() => setSidebarOpen(!sidebarOpen)}
                     ariaExpanded={sidebarOpen}
-                    ariaLabel="Toggle Sidebar"
+                    ariaLabel={sidebarOpen ? "Close Sidebar" : "Open Sidebar"}
                     ariaControls="sidebar"
                     id="sidebar-toggle"
                 >
