@@ -1,10 +1,5 @@
 import { css, styled } from "styled-components";
-import {
-    mainTitleStyles,
-    queries,
-    safeArea,
-    transition,
-} from "styles/variables";
+import { mainTitleStyles, queries, transition } from "styles/variables";
 import Text from "elements/components/Text/Text";
 
 export const sidebarStyles = css<{
@@ -15,8 +10,8 @@ export const sidebarStyles = css<{
     left: 0;
     height: 100vh;
     height: 100dvh;
-    width: calc(15rem + ${safeArea.left});
-    padding: 1rem 1rem 1rem calc(1rem + ${safeArea.left});
+    width: 15rem;
+    padding: 1rem;
 
     z-index: 9;
     display: flex;
@@ -33,8 +28,8 @@ export const sidebarStyles = css<{
     }};
 
     @media ${queries.md} {
-        width: calc(17rem + ${safeArea.left});
-        padding: 2rem 2rem 2rem calc(2rem + ${safeArea.left});
+        width: 17rem;
+        padding: 2rem;
         transform: translateX(0);
         visibility: visible;
     }

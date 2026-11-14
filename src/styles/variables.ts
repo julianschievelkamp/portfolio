@@ -29,13 +29,6 @@ export const queries = {
         "screen and (max-width: 991px) and (orientation: landscape)",
 };
 
-// Seitliche sichere Abstände für Geräte mit Notch/Dynamic Island im Querformat (viewport-fit=cover).
-// Ohne Notch bzw. auf Desktop liefern die Werte 0px.
-export const safeArea = {
-    right: "env(safe-area-inset-right, 0px)",
-    left: "env(safe-area-inset-left, 0px)",
-};
-
 export const thumbnailSize = "(max-width: 1200px) 300px, 600px";
 
 export const mainTitleStyles = css`

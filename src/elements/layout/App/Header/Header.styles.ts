@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { queries, mainTitleStyles, safeArea } from "styles/variables";
+import { queries, mainTitleStyles } from "styles/variables";
 import Text from "elements/components/Text/Text";
 
 export const StyledHeader = styled.header`
@@ -7,8 +7,7 @@ export const StyledHeader = styled.header`
     z-index: 99;
     width: 100%;
     height: 7.5rem;
-    padding: 1rem calc(1rem + ${safeArea.right}) 1rem
-        calc(1rem + ${safeArea.left});
+    padding: 1rem;
 
     display: flex;
     justify-content: space-between;

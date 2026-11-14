@@ -2,7 +2,7 @@
 import close from "assets/icons/close.svg?raw";
 
 import { createIconCursor } from "styles/createIconCursor";
-import { colors, queries, safeArea } from "styles/variables";
+import { colors, queries } from "styles/variables";
 import { styled } from "styled-components";
 import { transition } from "styles/variables";
 
@@ -14,8 +14,7 @@ export const StyledPopup = styled.dialog`
     height: 100dvh;
     width: 100%;
     background-color: transparent;
-    padding: 1rem calc(1rem + ${safeArea.right}) 1rem
-        calc(1rem + ${safeArea.left});
+    padding: 1rem;
 
     margin: 0;
     overflow: clip;
@@ -40,8 +39,7 @@ export const StyledPopup = styled.dialog`
 
     @media ${queries.md} {
         @media ${queries.portrait} {
-            padding: 1rem calc(8rem + ${safeArea.right}) 1rem
-                calc(8rem + ${safeArea.left});
+            padding: 1rem 8rem;
         }
     }
 `;
