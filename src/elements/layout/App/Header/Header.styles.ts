@@ -18,7 +18,6 @@ export const StyledHeader = styled.header`
 `;
 
 export const ToggleWrapper = styled.div`
-    height: 100%;
     display: flex;
     align-items: center;
     margin: 0 0 0 2rem;

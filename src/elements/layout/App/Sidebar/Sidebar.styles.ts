@@ -5,14 +5,10 @@ import Text from "elements/components/Text/Text";
 export const sidebarStyles = css<{
     $sidebarOpen: boolean;
 }>`
-    position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
-    height: 100dvh;
     width: 15rem;
     padding: 1rem;
-
     z-index: 9;
     display: flex;
     flex-direction: column;
@@ -39,6 +35,11 @@ export const StyledSidebar = styled.aside<{
     $sidebarOpen: boolean;
 }>`
     ${sidebarStyles}
+
+    background-color: transparent;
+    position: fixed;
+    height: 100vh;
+    height: 100dvh;
 `;
 
 export const Background = styled.div<{ $sidebarOpen: boolean }>`
@@ -71,11 +72,10 @@ export const Backdrop = styled.div<{ $sidebarOpen: boolean }>`
 
 export const ScrollContainer = styled.div`
     overflow-y: scroll;
-    overscroll-behavior-y: contain;
-    margin: 1.5rem 0 0 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin: 1.5rem 0 0 0;
     flex: 1;
     min-height: 0;
 `;
