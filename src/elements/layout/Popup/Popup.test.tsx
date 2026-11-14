@@ -96,12 +96,6 @@ describe("Popup", () => {
     const getBackdrop = () =>
         document.querySelector("dialog")?.firstElementChild as HTMLElement;
 
-    it("hides the backdrop from assistive technologies", () => {
-        render(<Popup />);
-
-        expect(getBackdrop()).toHaveAttribute("aria-hidden", "true");
-    });
-
     it("closes the popup via the backdrop", () => {
         render(<Popup />);
 

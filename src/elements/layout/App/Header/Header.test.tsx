@@ -3,10 +3,8 @@ import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useStore } from "hooks/useStore";
-import { useHeaderVisibility } from "hooks/useHeaderVisibility";
 import Header from "./Header";
 
-vi.mock("hooks/useHeaderVisibility", () => ({ useHeaderVisibility: vi.fn() }));
 vi.mock("data/languageData", () => ({
     languageData: { title: "Site Title" },
 }));
@@ -20,7 +18,6 @@ vi.mock("elements/components/Icon/Icon", () => ({
 describe("Header", () => {
     beforeEach(() => {
         useStore.setState({ sidebarOpen: false });
-        vi.mocked(useHeaderVisibility).mockReturnValue({ isVisible: true });
     });
 
     it("renders the site title as a link to the start page", () => {
@@ -56,13 +53,13 @@ describe("Header", () => {
         await userEvent.tab();
 
         expect(
-            screen.getByRole("button", { name: "Toggle Sidebar" }),
+            screen.getByRole("button", { name: "Open Sidebar" }),
         ).toHaveFocus();
     });
 
     it("opens a closed sidebar and closes an open one", async () => {
         render(<Header />);
-        const button = screen.getByRole("button", { name: "Toggle Sidebar" });
+        const button = screen.getByRole("button", { name: "Open Sidebar" });
 
         await userEvent.click(button);
         expect(useStore.getState().sidebarOpen).toBe(true);
@@ -80,19 +77,9 @@ describe("Header", () => {
         expect(screen.getByTestId("icon")).toHaveAttribute("data-name", "close");
     });
 
-    it("follows the visibility from useHeaderVisibility", () => {
-        const { rerender } = render(<Header />);
-        expect(screen.getByRole("link")).toBeVisible();
-
-        vi.mocked(useHeaderVisibility).mockReturnValue({ isVisible: false });
-        rerender(<Header />);
-
-        expect(screen.getByRole("link", { hidden: true })).not.toBeVisible();
-    });
-
     it("exposes the sidebar state via aria-expanded and aria-controls", async () => {
         render(<Header />);
-        const button = screen.getByRole("button", { name: "Toggle Sidebar" });
+        const button = screen.getByRole("button", { name: "Open Sidebar" });
 
         expect(button).toHaveAttribute("aria-controls", "sidebar");
         expect(button).toHaveAttribute("aria-expanded", "false");

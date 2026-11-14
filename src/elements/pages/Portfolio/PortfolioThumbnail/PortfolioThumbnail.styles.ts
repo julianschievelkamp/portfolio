@@ -8,7 +8,6 @@ export const PortfolioFigure = styled.figure`
     margin: 0;
     min-width: 5rem;
     min-height: 5rem;
-    background-color: rgb(0, 0, 0, 0.05);
     aspect-ratio: 1 / 1;
 `;
 

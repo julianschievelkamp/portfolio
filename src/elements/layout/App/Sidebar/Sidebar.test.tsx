@@ -54,11 +54,11 @@ describe("Sidebar", () => {
         expect(screen.queryByRole("heading")).not.toBeInTheDocument();
     });
 
-    it("always renders the close trigger and the sidebar", () => {
+    it("always renders the close trigger, the background and the sidebar", () => {
         // Die Umschaltung zwischen Mobile und Desktop erfolgt per CSS
         const { container } = render(<Sidebar page={page} />);
 
-        expect(container.children).toHaveLength(2);
+        expect(container.children).toHaveLength(3);
     });
 
     it("closes the sidebar when the close trigger is clicked", async () => {
