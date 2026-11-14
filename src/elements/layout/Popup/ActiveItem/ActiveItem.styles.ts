@@ -72,7 +72,7 @@ export const Next = styled.div`
 export const Artwork = styled.div`
     position: relative;
     display: flex;
-    overflow: hidden;
+    overflow: clip;
     border: 0.5rem solid black;
     margin: 0;
 

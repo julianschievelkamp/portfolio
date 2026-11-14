@@ -15,7 +15,7 @@ export const SliderListItem = styled.li`
 export const SliderItem = styled(Button)<{ $isActive: boolean }>`
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: clip;
 
     &::after {
         content: "";

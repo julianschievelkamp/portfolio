@@ -18,16 +18,16 @@ export default createGlobalStyle<GlobalStyleProps>`
         margin: 0;
         padding: 0;
         font-size: 100%;
-        width: 100vw;
         min-height: 100vh;
         min-height: 100svh;
         position: relative;
+        overflow-x: clip;
     }
 
     body {
-        overflow-x: clip;
         overflow-y: ${({ $isPageLocked }) => ($isPageLocked ? "hidden" : "scroll")};
         transition: background-color ${transition.default};
+        background-color: white;
 
         html:has([data-pinching]) & {
             background-color: black;

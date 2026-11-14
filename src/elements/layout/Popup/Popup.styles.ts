@@ -12,7 +12,7 @@ export const StyledPopup = styled.dialog`
     left: 0;
     height: 100vh;
     height: 100dvh;
-    width: 100vw;
+    width: 100%;
     background-color: transparent;
     padding: 1rem calc(1rem + ${safeArea.right}) 1rem
         calc(1rem + ${safeArea.left});

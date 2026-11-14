@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import { visuallyHidden } from "styles/variables";
 
 export const PortfolioFigure = styled.figure`
-    overflow: hidden;
+    overflow: clip;
     position: relative;
     margin: 0;
     min-width: 5rem;

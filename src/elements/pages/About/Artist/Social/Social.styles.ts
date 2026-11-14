@@ -38,7 +38,7 @@ export const StyledProfile = styled.div`
 `;
 
 export const ProfileImage = styled.div`
-    overflow: hidden;
+    overflow: clip;
     border-radius: 100px;
     width: 100%;
     height: 100%;
