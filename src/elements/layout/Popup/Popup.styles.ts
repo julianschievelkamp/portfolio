@@ -26,7 +26,6 @@ export const StyledPopup = styled.dialog`
     color: inherit;
     user-select: none;
 
-    will-change: opacity;
     opacity: 0;
     transition: opacity ${transition.defaultIn};
 
@@ -53,7 +52,6 @@ export const Background = styled.div`
     z-index: 99;
     pointer-events: none;
 
-    will-change: opacity, background-color;
     background-color: white;
     opacity: 0;
     transition:

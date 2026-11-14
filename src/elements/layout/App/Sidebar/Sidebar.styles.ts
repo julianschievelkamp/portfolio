@@ -22,7 +22,6 @@ export const sidebarStyles = css<{
     display: flex;
     flex-direction: column;
 
-    will-change: transform;
     transform: ${({ $sidebarOpen }) =>
         `translateX(${$sidebarOpen ? 0 : "-100%"})`};
     visibility: ${({ $sidebarOpen }) => ($sidebarOpen ? "visible" : "hidden")};

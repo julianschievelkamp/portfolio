@@ -33,7 +33,6 @@ export const ItemFigure = styled.figure<{ $isItemRevealed: boolean }>`
     transition:
         opacity ${transition.default},
         visibility ${transition.default};
-    will-change: opacity;
 `;
 
 export const Previous = styled.div`
@@ -78,7 +77,6 @@ export const Artwork = styled.div`
     margin: 0;
 
     /* Transformation aus usePinchZoom, ohne Geste gleitet das Werk zurück */
-    will-change: transform;
     transform-origin: 0 0;
     transform: var(--pinch-transform, none);
     transition: transform ${transition.default};

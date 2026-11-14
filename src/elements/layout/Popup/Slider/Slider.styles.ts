@@ -32,7 +32,6 @@ export const InnerSliderContainer = styled.ul<{
     left: calc(50% - 1.5rem);
     transform: ${({ $focusedIndex }) =>
         `translateX(calc(-3.25rem * ${$focusedIndex}))`};
-    will-change: transform;
     display: flex;
     margin: 0;
     padding: 0;
