@@ -33,6 +33,13 @@ export const ItemFigure = styled.figure<{ $isItemRevealed: boolean }>`
     transition:
         opacity ${transition.default},
         visibility ${transition.default};
+
+    &::before {
+        content: "";
+        inset: 0;
+        position: absolute;
+        background-color: black;
+    }
 `;
 
 export const Previous = styled.div`
@@ -73,7 +80,7 @@ export const Artwork = styled.div`
     position: relative;
     display: flex;
     overflow: clip;
-    border: 0.5rem solid black;
+    border: 0.5rem solid transparent;
     margin: 0;
 
     /* Transformation aus usePinchZoom, ohne Geste gleitet das Werk zurück */
