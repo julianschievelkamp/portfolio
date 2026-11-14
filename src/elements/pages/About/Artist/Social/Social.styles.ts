@@ -7,6 +7,10 @@ export const StyledSocial = styled.div`
     margin: 2rem 0 0 0;
     width: fit-content;
 
+    img {
+        transition: transform ${transition.default};
+    }
+
     &:hover {
         img {
             transform: scale(1.1);

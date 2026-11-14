@@ -12,7 +12,6 @@ export const StyledImage = styled.img<{
     margin: ${({ $margin }) => $margin};
     aspect-ratio: ${({ $aspectRatio }) => $aspectRatio};
     max-width: 100%;
-    transition: transform ${transition.default};
     pointer-events: none;
     user-select: none;
 `;

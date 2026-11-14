@@ -1,6 +1,6 @@
 import Button from "elements/components/Button/Button";
 import { styled } from "styled-components";
-import { visuallyHidden } from "styles/variables";
+import { transition, visuallyHidden } from "styles/variables";
 
 export const PortfolioFigure = styled.figure`
     overflow: clip;
@@ -18,6 +18,10 @@ export const PortfolioButton = styled(Button)`
     inset: 0;
     height: 100%;
     width: 100%;
+
+    + img {
+        transition: transform ${transition.default};
+    }
 
     &:hover + img,
     &:focus-visible + img {

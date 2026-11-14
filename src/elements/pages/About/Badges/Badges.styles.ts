@@ -1,6 +1,6 @@
 import Link from "elements/components/Link/Link";
 import { styled } from "styled-components";
-import { queries } from "styles/variables";
+import { queries, transition } from "styles/variables";
 
 export const BadgesWrapper = styled.div`
     display: grid;
@@ -15,6 +15,10 @@ export const BadgesWrapper = styled.div`
 export const StyledLink = styled(Link)`
     display: flex;
     align-items: center;
+
+    img {
+        transition: transform ${transition.default};
+    }
 
     &:hover,
     &:focus-visible {
