@@ -1,0 +1,18 @@
+import { styled } from "styled-components";
+import { colors, transition } from "styles/variables";
+
+export const StyledButton = styled.button`
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    &:hover,
+    &:focus-visible {
+        svg {
+            fill: ${colors.highlight};
+            transition: fill ${transition.fast};
+        }
+    }
+`;

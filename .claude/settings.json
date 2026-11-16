@@ -1,0 +1,21 @@
+{
+    "permissions": {
+        "deny": [
+            "Read(./src/assets/**)",
+            "Write(./src/assets/**)",
+            "Create(./src/assets/**)",
+            "Read(./node_modules/**)",
+            "Write(./node_modules/**)",
+            "Create(./node_modules/**)",
+            "Read(./.yarn/**)",
+            "Write(./.yarn/**)",
+            "Create(./.yarn/**)",
+            "Read(./dist/**)",
+            "Write(./dist/**)",
+            "Create(./dist/**)",
+            "Read(./public/**)",
+            "Write(./public/**)",
+            "Create(./public/**)"
+        ]
+    }
+}

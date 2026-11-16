@@ -1,0 +1,35 @@
+import Button from "elements/components/Button/Button";
+import { styled } from "styled-components";
+import { colors, transition, visuallyHidden } from "styles/variables";
+
+export const PortfolioFigure = styled.figure`
+    overflow: clip;
+    position: relative;
+    margin: 0;
+    min-width: 5rem;
+    min-height: 5rem;
+    aspect-ratio: 1 / 1;
+    // Platzhalterfarbe bevor das Bild einblendet
+    background-color: ${colors.fade};
+`;
+
+// Das Bild liegt bewusst nicht im Button, damit Reader-Modi es erhalten.
+export const PortfolioButton = styled(Button)`
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+
+    + img {
+        transition: transform ${transition.default};
+    }
+
+    &:hover + img,
+    &:focus-visible + img {
+        transform: scale(1.05);
+    }
+`;
+
+export const PortfolioCaption = styled.figcaption`
+    ${visuallyHidden}
+`;
