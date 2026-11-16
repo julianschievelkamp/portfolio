@@ -9,7 +9,7 @@
 
 ## Projektstruktur & Dateipfade
 
-- `./public` – Konfigurationsdateien für das Deployment (z. B. `CNAME`) und globale Browser-Ressourcen (z. B. `favicon.ico`).
+- `./public` – Konfigurationsdateien für das Deployment (z. B. `CNAME`) und globale Browser-Ressourcen (z. B. `favicon.png`).
 - `./src` – Das Hauptverzeichnis, das alle Komponenten, Layouts, Funktionen und Inhalte der Website enthält.
 - `./src/assets` – **WICHTIG:** Dieser Ordner ist für den Agenten tabu (weder lesen noch editieren/verändern). Er enthält die produktiven Medien, Icons und Fonts des Projekts.
 - `./src/data` – Enthält statische Inhalte, Texte und Datenobjekte der Website (z. B. Bild-Metadaten).

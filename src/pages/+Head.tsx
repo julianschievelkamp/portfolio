@@ -12,8 +12,12 @@ export const Head = () => {
 
     return (
         <>
-            <link rel="icon" type="image/x-icon" href="/favicon.ico" />
             <link rel="icon" type="image/png" href="/favicon.png" />
+            <link
+                rel="apple-touch-icon"
+                sizes="180x180"
+                href="/apple-touch-icon.png"
+            ></link>
             <link rel="canonical" href={canonicalUrl} />
             <meta
                 name="viewport"
