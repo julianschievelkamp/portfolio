@@ -59,11 +59,10 @@ const ActiveItem = () => {
 
                     {loadedItem.video && (
                         <Video
-                            key={loadedItem.video}
                             videoRef={videoRef}
+                            key={loadedItem.video}
                             src={loadedItem.video}
                             audio={loadedItem.audio}
-                            poster={loadedItem.image}
                             ariaLabel={loadedItem.title}
                             width="100%"
                             height="100%"

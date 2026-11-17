@@ -6,6 +6,8 @@ export const useVideoPlayback = (
     audioSrc?: string,
 ) => {
     const [hasStarted, setHasStarted] = useState(false);
+    const [isPaused, setIsPaused] = useState(true);
+
     const { prepare, start, stop, isPlaying } = useGaplessAudio(audioSrc);
 
     const toggleVideo = () => {
@@ -22,6 +24,25 @@ export const useVideoPlayback = (
             videoRef.current?.pause();
         }
     };
+
+    // Hält den Pausenzustand über die nativen Video-Events synchron
+    useEffect(() => {
+        const video = videoRef.current;
+
+        if (!video) return;
+
+        const handlePlay = () => setIsPaused(false);
+        const handlePause = () => setIsPaused(true);
+
+        setIsPaused(video.paused);
+        video.addEventListener("play", handlePlay);
+        video.addEventListener("pause", handlePause);
+
+        return () => {
+            video.removeEventListener("play", handlePlay);
+            video.removeEventListener("pause", handlePause);
+        };
+    }, [videoRef]);
 
     // Das Audio startet an der Videoposition und loopt danach unabhängig weiter.
     useEffect(() => {
@@ -44,5 +65,5 @@ export const useVideoPlayback = (
         };
     }, [videoRef, audioSrc, start, stop, isPlaying]);
 
-    return { videoRef, toggleVideo, hasStarted };
+    return { videoRef, toggleVideo, hasStarted, isPaused };
 };

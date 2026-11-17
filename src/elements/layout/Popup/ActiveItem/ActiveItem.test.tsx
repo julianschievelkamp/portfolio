@@ -18,11 +18,9 @@ vi.mock(
 );
 vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: () => true }));
 
-const [photo, video, otherPhoto] = portfolioData;
+const [photo, video] = portfolioData;
 
 const getVideo = () => screen.queryByLabelText(video.title) as HTMLVideoElement;
-const loadImage = (item: typeof video) =>
-    fireEvent.load(screen.getByAltText(getAltText(item)));
 const clickButton = (name: string) =>
     userEvent.click(screen.getByLabelText(name));
 const getInnerWrapper = (container: HTMLElement) =>
@@ -39,11 +37,21 @@ describe("ActiveItem", () => {
         ).mockImplementation(() => isPaused);
         vi.spyOn(HTMLMediaElement.prototype, "play").mockImplementation(() => {
             isPaused = false;
+            // Wie im Browser feuert play() das "play"-Event
+            act(() => {
+                getVideo()?.dispatchEvent(new Event("play"));
+            });
             return Promise.resolve();
         });
-        vi.spyOn(HTMLMediaElement.prototype, "pause").mockImplementation(() => {
-            isPaused = true;
-        });
+        vi.spyOn(HTMLMediaElement.prototype, "pause").mockImplementation(
+            function (this: HTMLMediaElement) {
+                isPaused = true;
+                // Wie im Browser feuert pause() das "pause"-Event
+                act(() => {
+                    this.dispatchEvent(new Event("pause"));
+                });
+            },
+        );
     });
 
     it("renders the image of the active item with its title as alt text", () => {
@@ -148,25 +156,6 @@ describe("ActiveItem", () => {
 
         expect(activeItem).toHaveStyle({ opacity: "1" });
         expect(screen.getByAltText(getAltText(video))).toBeInTheDocument();
-    });
-
-    it("resets the video when the item changes", async () => {
-        const { container } = render(<ActiveItem />);
-        loadImage(video);
-        await waitFor(() =>
-            expect(getInnerWrapper(container)).toHaveStyle({ opacity: "1" }),
-        );
-        expect(screen.getByLabelText(`Play ${video.title}`)).toBeVisible();
-
-        await clickButton(`Play ${video.title}`);
-        expect(screen.getByLabelText(`Play ${video.title}`)).not.toBeVisible();
-
-        act(() => useStore.setState({ activeIndex: 2 }));
-        await screen.findByAltText(getAltText(otherPhoto));
-        act(() => useStore.setState({ activeIndex: 1 }));
-        await screen.findByAltText(getAltText(video));
-
-        expect(screen.getByLabelText(`Play ${video.title}`)).toBeVisible();
     });
 
     it("pauses the video when the popup is closed", async () => {

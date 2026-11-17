@@ -6,7 +6,6 @@ import { RefObject } from "react";
 export interface VideoProps {
     videoRef: RefObject<HTMLVideoElement | null>;
     src: string;
-    poster: string;
     width: string;
     height: string;
     ariaLabel: string;
@@ -16,25 +15,27 @@ export interface VideoProps {
 const Video = ({
     videoRef,
     src,
-    poster,
     width,
     height,
     ariaLabel,
     audio,
 }: VideoProps) => {
-    const { toggleVideo, hasStarted } = useVideoPlayback(videoRef, audio);
+    const { toggleVideo, hasStarted, isPaused } = useVideoPlayback(
+        videoRef,
+        audio,
+    );
 
     return (
         <>
             <StyledVideo
                 ref={videoRef}
-                poster={poster}
                 $width={width}
                 $height={height}
-                aria-label={ariaLabel}
+                $isVisible={hasStarted}
                 onContextMenu={(e) => e.preventDefault()}
-                onClick={() => toggleVideo()}
-                preload="none"
+                onClick={toggleVideo}
+                aria-label={ariaLabel}
+                preload="metadata"
                 playsInline
                 muted
                 loop
@@ -44,11 +45,16 @@ const Video = ({
             </StyledVideo>
 
             <PlayButton
-                onClick={() => toggleVideo()}
+                onClick={toggleVideo}
+                ariaLabel={`${isPaused ? "Play" : "Pause"} ${ariaLabel}`}
                 $isVisible={!hasStarted}
-                ariaLabel={`Play ${ariaLabel}`}
             >
-                <Icon name="play" color="white" size="3rem" padding="0.5rem" />
+                <Icon
+                    name={isPaused ? "play" : "pause"}
+                    color="white"
+                    size="3rem"
+                    padding="0.5rem"
+                />
             </PlayButton>
         </>
     );

@@ -13,6 +13,11 @@ import { useRef } from "react";
 import { useStore } from "hooks/useStore";
 import Video from "./Video";
 
+// Das Icon wird durch seinen Namen ersetzt, damit der Wechsel prüfbar ist
+vi.mock("../Icon/Icon", () => ({
+    default: ({ name }: { name: string }) => <span data-testid={name} />,
+}));
+
 // jsdom kennt die Web Audio API nicht, daher wird sie nachgebildet
 const sourceStart = vi.fn();
 const sourceStop = vi.fn();
@@ -70,7 +75,6 @@ const VideoWithRef = ({ audio }: { audio?: string }) => {
         <Video
             videoRef={videoRef}
             src="/clip.mp4"
-            poster="/poster.jpg"
             ariaLabel="Showreel"
             width="100%"
             height="100%"
@@ -83,6 +87,7 @@ const renderVideo = (audio?: string) => render(<VideoWithRef audio={audio} />);
 
 const getVideo = () => screen.getByLabelText("Showreel") as HTMLVideoElement;
 const getPlayButton = () => screen.getByLabelText("Play Showreel");
+const getPauseButton = () => screen.getByLabelText("Pause Showreel");
 
 describe("Video", () => {
     afterEach(() => {
@@ -114,6 +119,12 @@ describe("Video", () => {
         ).mockImplementation(() => isPaused);
         vi.spyOn(HTMLMediaElement.prototype, "play").mockImplementation(() => {
             isPaused = false;
+            // Wie im Browser feuert play() das "play"-Event
+            act(() => {
+                document
+                    .querySelector("video")
+                    ?.dispatchEvent(new Event("play"));
+            });
             return Promise.resolve();
         });
         vi.spyOn(HTMLMediaElement.prototype, "pause").mockImplementation(
@@ -125,12 +136,11 @@ describe("Video", () => {
         );
     });
 
-    it("renders the video with source, poster and label", () => {
+    it("renders the video with source and label", () => {
         const { container } = renderVideo();
 
         const video = getVideo();
         expect(video.tagName).toBe("VIDEO");
-        expect(video).toHaveAttribute("poster", "/poster.jpg");
         expect(container.querySelector("source")).toHaveAttribute(
             "src",
             "/clip.mp4",
@@ -147,7 +157,21 @@ describe("Video", () => {
 
         await userEvent.click(getPlayButton());
 
-        expect(getPlayButton()).not.toBeVisible();
+        expect(getPauseButton()).not.toBeVisible();
+    });
+
+    it("switches icon and label between play and pause with the playback state", async () => {
+        renderVideo();
+        expect(screen.getByTestId("play")).toBeInTheDocument();
+
+        await userEvent.click(getVideo());
+        expect(screen.getByTestId("pause")).toBeInTheDocument();
+        expect(screen.queryByTestId("play")).not.toBeInTheDocument();
+        expect(getPauseButton()).toBeInTheDocument();
+
+        await userEvent.click(getVideo());
+        expect(screen.getByTestId("play")).toBeInTheDocument();
+        expect(getPlayButton()).toBeInTheDocument();
     });
 
     it("plays the video via the play button", async () => {
@@ -163,7 +187,7 @@ describe("Video", () => {
 
         await userEvent.click(getVideo());
         expect(HTMLMediaElement.prototype.play).toHaveBeenCalledTimes(1);
-        expect(getPlayButton()).not.toBeVisible();
+        expect(getPauseButton()).not.toBeVisible();
 
         await userEvent.click(getVideo());
         expect(HTMLMediaElement.prototype.pause).toHaveBeenCalledTimes(1);
