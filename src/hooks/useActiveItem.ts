@@ -1,12 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { portfolioData } from "data/portfolioData";
 import { useStore } from "hooks/useStore";
 import { usePreloadedItem } from "hooks/usePreloadedItem";
 import { useNeighborPreload } from "hooks/useNeighborPreload";
 
 export const useActiveItem = () => {
-    const videoRef = useRef<HTMLVideoElement | null>(null);
-
     const popupOpen = useStore((state) => state.popupOpen);
     const activeIndex = useStore((state) => state.activeIndex);
 
@@ -37,16 +35,9 @@ export const useActiveItem = () => {
         return () => cancelAnimationFrame(frame);
     }, [isItemReady]);
 
-    useEffect(() => {
-        if (!popupOpen) {
-            videoRef.current?.pause();
-        }
-    }, [popupOpen]);
-
     return {
         loadedItem,
         isItemRevealed,
         setLoadedImage,
-        videoRef,
     };
 };

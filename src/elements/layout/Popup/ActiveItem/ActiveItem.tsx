@@ -15,14 +15,23 @@ import { usePinchZoom } from "hooks/usePinchZoom";
 import { colors } from "styles/variables";
 import Text from "elements/components/Text/Text";
 import { useStore } from "hooks/useStore";
+import { useEffect, useRef } from "react";
 
 const ActiveItem = () => {
+    const popupOpen = useStore((state) => state.popupOpen);
     const activeIndex = useStore((state) => state.activeIndex);
     const setActiveIndex = useStore((state) => state.setActiveIndex);
 
+    const { loadedItem, isItemRevealed, setLoadedImage } = useActiveItem();
+
     const pinchZoomRef = usePinchZoom<HTMLDivElement>();
-    const { loadedItem, isItemRevealed, setLoadedImage, videoRef } =
-        useActiveItem();
+    const videoRef = useRef<HTMLVideoElement | null>(null);
+
+    useEffect(() => {
+        if (!popupOpen) {
+            videoRef.current?.pause();
+        }
+    }, [popupOpen]);
 
     if (!loadedItem) return null;
 
