@@ -63,12 +63,10 @@ const ActiveItem = () => {
                 </Artwork>
 
                 <ItemCaption>
-                    <Title fontSize="0.875rem">
+                    <Title>
                         {loadedItem.title}, {loadedItem.year}
                     </Title>
-                    <Text fontSize="0.875rem" color={colors.secondary}>
-                        {loadedItem.type}
-                    </Text>
+                    <Text color={colors.secondary}>{loadedItem.type}</Text>
                 </ItemCaption>
             </ItemFigure>
         </StyledActiveItem>

@@ -14,7 +14,7 @@ const List = ({ items, margin = "0" }: ListProps) => {
             {items.map((item, index) => {
                 return (
                     <ListItem key={index}>
-                        <Text fontSize="0.875rem">{item}</Text>
+                        <Text>{item}</Text>
                     </ListItem>
                 );
             })}

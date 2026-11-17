@@ -25,14 +25,12 @@ const Social = () => {
             </ImageLink>
 
             <Div>
-                <Text fontSize="0.875rem" bold>
+                <Text bold>
                     <Link href={socialData.link} target="_blank">
                         {socialData.profile}
                     </Link>
                 </Text>
-                <Text fontSize="0.875rem" color={colors.secondary}>
-                    {socialData.name}
-                </Text>
+                <Text color={colors.secondary}>{socialData.name}</Text>
             </Div>
         </StyledSocial>
     );

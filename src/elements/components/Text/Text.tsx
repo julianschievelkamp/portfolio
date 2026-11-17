@@ -20,7 +20,7 @@ const Text = ({
     color,
     textAlign,
     margin = "0",
-    fontSize = "1rem",
+    fontSize = "0.875rem",
     toUpperCase = false,
     className,
     id,

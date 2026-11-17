@@ -13,12 +13,8 @@ const References = () => {
             <Headline type="h2">{referencesData.headline}</Headline>
             <ReferencesWrapper>
                 <Div>
-                    <Text fontSize="0.875rem" bold>
-                        {referencesData.publications.title}
-                    </Text>
-                    <Text fontSize="0.875rem">
-                        {referencesData.publications.subTitle}
-                    </Text>
+                    <Text bold>{referencesData.publications.title}</Text>
+                    <Text>{referencesData.publications.subTitle}</Text>
                 </Div>
                 <ListWrapper>
                     <List
@@ -32,12 +28,8 @@ const References = () => {
                     <List items={referencesData.publications.listEntries3} />
                 </ListWrapper>
                 <Div>
-                    <Text fontSize="0.875rem" bold>
-                        {referencesData.awards.title}
-                    </Text>
-                    <Text fontSize="0.875rem">
-                        {referencesData.awards.subTitle}
-                    </Text>
+                    <Text bold>{referencesData.awards.title}</Text>
+                    <Text>{referencesData.awards.subTitle}</Text>
                 </Div>
                 <ListWrapper>
                     <List

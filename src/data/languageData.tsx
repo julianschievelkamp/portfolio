@@ -8,25 +8,27 @@ import Badge2 from "assets/img/misc/badge2.jpg";
 import Badge3 from "assets/img/misc/badge3.png";
 
 export const languageData = {
-    title: (
-        <>
-            Julian
-            <br />
-            Schievelkamp
-            <br />
-            CGN #1994
-        </>
-    ),
-    intro: "Visual artist and fine art photographer highlighting the synergies of classic photography and CGI.",
-    work: "Work",
-    links: "Links",
-    copyright: (
-        <>
-            © Julian Schievelkamp
-            <br />
-            All rights reserved.
-        </>
-    ),
+    sidebar: {
+        title: (
+            <>
+                Julian
+                <br />
+                Schievelkamp
+                <br />
+                CGN #1994
+            </>
+        ),
+        intro: "Visual artist and fine art photographer highlighting the synergies of classic photography and CGI.",
+        work: "Work",
+        links: "Links",
+        footer: (
+            <>
+                © Julian Schievelkamp
+                <br />
+                All rights reserved.
+            </>
+        ),
+    },
     portfolio: {
         headline: "Portfolio",
     },

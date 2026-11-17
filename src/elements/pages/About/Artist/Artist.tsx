@@ -32,9 +32,7 @@ const Artist = () => {
                     </PortraitCaption>
                 </PortraitFigure>
                 <Div>
-                    <Text fontSize="0.875rem" textAlign="justify">
-                        {artistData.text}
-                    </Text>
+                    <Text textAlign="justify">{artistData.text}</Text>
 
                     <Social />
                 </Div>

@@ -24,10 +24,9 @@ const Navigation = ({ page }: NavigationProps) => {
                 id="navigation-work"
                 color={colors.secondary}
                 margin="0 0 0.5rem 0"
-                fontSize="0.875rem"
                 toUpperCase
             >
-                {languageData.work}
+                {languageData.sidebar.work}
             </Text>
             <NavList role="list" aria-labelledby="navigation-work">
                 {Object.keys(pages).map((key) => {
@@ -45,6 +44,7 @@ const Navigation = ({ page }: NavigationProps) => {
                                 <Text
                                     bold={isActive}
                                     color={isActive ? "black" : undefined}
+                                    fontSize="1rem"
                                 >
                                     {name}
                                 </Text>
@@ -58,10 +58,9 @@ const Navigation = ({ page }: NavigationProps) => {
                 id="navigation-links"
                 color={colors.secondary}
                 margin="0.5rem 0"
-                fontSize="0.875rem"
                 toUpperCase
             >
-                {languageData.links}
+                {languageData.sidebar.links}
             </Text>
             <NavList role="list" aria-labelledby="navigation-links">
                 {Object.keys(links).map((key) => {
@@ -70,7 +69,7 @@ const Navigation = ({ page }: NavigationProps) => {
                     return (
                         <NavElement key={name}>
                             <NavLink href={path} target="_blank">
-                                <Text>{name}</Text>
+                                <Text fontSize="1rem">{name}</Text>
                             </NavLink>
                         </NavElement>
                     );

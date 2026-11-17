@@ -50,22 +50,22 @@ const Sidebar = ({ page }: SidebarProps) => {
                         onClick={() => setSidebarOpen(false)}
                         underline={false}
                     >
-                        {languageData.title}
+                        {languageData.sidebar.title}
                     </Link>
                 </MainTitle>
 
                 <ScrollContainer {...{ [SCROLL_ALLOWED_ATTRIBUTE]: "" }}>
                     <Div>
-                        <Text fontSize="0.875rem" color={colors.secondary}>
-                            {languageData.intro}
+                        <Text color={colors.secondary}>
+                            {languageData.sidebar.intro}
                         </Text>
 
                         <Navigation page={page} />
                     </Div>
 
                     <Footer>
-                        <Text fontSize="0.875rem" color={colors.secondary}>
-                            {languageData.copyright}
+                        <Text color={colors.secondary}>
+                            {languageData.sidebar.footer}
                         </Text>
                     </Footer>
                 </ScrollContainer>
