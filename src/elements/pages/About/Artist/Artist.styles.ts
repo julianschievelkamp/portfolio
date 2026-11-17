@@ -20,7 +20,7 @@ export const PortraitFigure = styled.figure`
 
     img {
         max-height: 30rem;
-        border: 0.5rem solid black;
+        border: 8px solid black;
     }
 
     @media ${queries.lg} {

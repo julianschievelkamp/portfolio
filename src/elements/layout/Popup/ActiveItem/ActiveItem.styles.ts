@@ -78,10 +78,16 @@ export const Next = styled.div`
 `;
 
 export const Artwork = styled.div`
+    --border-width: clamp(8px, 1.25svw, 12px);
+
+    @media ${queries.landscape} {
+        --border-width: clamp(8px, 1.25svh, 12px);
+    }
+
+    border: var(--border-width) solid transparent;
     position: relative;
     display: flex;
     overflow: clip;
-    border: 0.5rem solid transparent;
     margin: 0;
 
     /* Transformation aus usePinchZoom, ohne Geste gleitet das Werk zurück */
@@ -95,16 +101,16 @@ export const Artwork = styled.div`
 
     > img,
     > video {
+        --border-total: calc(var(--border-width) * 2);
+
         object-fit: cover;
         min-width: 10rem;
         min-height: 10rem;
-        max-height: calc(100vh - 14rem);
-        max-height: calc(100svh - 14rem);
+        max-height: calc(100svh - 13rem - var(--border-total));
 
         @media ${queries.landscapeLgMax} {
-            max-height: calc(100vh - 3rem);
-            max-height: calc(100dvh - 3rem);
-            max-width: calc(100vw - 11rem);
+            max-height: calc(100dvh - 2rem - var(--border-total));
+            max-width: calc(100vw - 10rem - var(--border-total));
         }
     }
 

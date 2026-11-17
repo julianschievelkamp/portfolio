@@ -38,7 +38,6 @@ export const StyledSidebar = styled.aside<{
 
     background-color: transparent;
     position: fixed;
-    height: 100vh;
     height: 100dvh;
 `;
 
