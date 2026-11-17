@@ -10,10 +10,12 @@ vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: () => false }));
 vi.mock("data/languageData", () => ({
     languageData: {
         title: "Site Title",
-        intro: "Intro text",
-        copyright: "Copyright text",
-        work: "WORK",
-        links: "LINKS",
+        sidebar: {
+            intro: "Intro text",
+            footer: "Copyright text",
+            work: "WORK",
+            links: "LINKS",
+        },
     },
 }));
 vi.mock("data/navigationData", () => ({

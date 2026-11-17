@@ -6,7 +6,7 @@ import { useStore } from "hooks/useStore";
 import Navigation from "./Navigation";
 
 vi.mock("data/languageData", () => ({
-    languageData: { work: "WORK", links: "LINKS" },
+    languageData: { sidebar: { work: "WORK", links: "LINKS" } },
 }));
 vi.mock("data/navigationData", () => ({
     pages: {

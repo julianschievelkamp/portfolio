@@ -50,7 +50,7 @@ const Sidebar = ({ page }: SidebarProps) => {
                         onClick={() => setSidebarOpen(false)}
                         underline={false}
                     >
-                        {languageData.sidebar.title}
+                        {languageData.title}
                     </Link>
                 </MainTitle>
 
