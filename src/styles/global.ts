@@ -30,6 +30,11 @@ export default createGlobalStyle`
         overscroll-behavior-y: none;
     }
 
+    html {
+        text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+
     body {
         overflow-y: scroll;
         transition: background-color ${transition.default};

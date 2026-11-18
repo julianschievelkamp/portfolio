@@ -1,25 +1,45 @@
-/// <reference types="vite/client" />
-import chevronLeft from "assets/icons/chevron-left.svg?raw";
-import chevronRight from "assets/icons/chevron-right.svg?raw";
-
-import Text from "elements/components/Text/Text";
-import { styled } from "styled-components";
-import { queries, transition, colors } from "styles/variables";
-import { createIconCursor } from "utils/createIconCursor";
+import { css, styled } from "styled-components";
+import { queries, transition } from "styles/variables";
 import { PINCHING_ATTRIBUTE } from "styles/global";
 
+const variables = css`
+    /* Close und Slider bekommen zusätzlichen Abstand */
+    --space-close: calc(4rem + 1rem);
+    --space-slider: calc(5rem + 1rem);
+    --space-caption: 3rem;
+    --space-total: calc(
+        var(--space-close) + var(--space-slider) + var(--space-caption)
+    );
+
+    --border-width: clamp(8px, 1.25vw, 12px);
+
+    @media ${queries.landscape} {
+        --border-width: clamp(8px, 1.25vh, 12px);
+    }
+
+    --border-total: calc(var(--border-width) * 2);
+`;
+
 export const StyledActiveItem = styled.div`
+    ${variables}
+
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 5rem;
     width: 100%;
     height: 100%;
+    padding: 1rem 1rem var(--space-slider) 1rem;
 
     @media ${queries.landscapeLgMax} {
-        padding-bottom: 0;
         width: auto;
+        padding: 1rem;
+    }
+
+    @media ${queries.md} {
+        @media ${queries.portrait} {
+            padding: 1rem 8rem var(--space-slider) 8rem;
+        }
     }
 `;
 
@@ -35,6 +55,7 @@ export const ItemFigure = styled.figure<{ $isItemRevealed: boolean }>`
         opacity ${transition.default},
         visibility ${transition.default};
 
+    /* Pseudo-Element, da Safari sonst beim Pinch Zoom die Adressleisten schwarz färbt */
     &::before {
         content: "";
         inset: 0;
@@ -43,47 +64,7 @@ export const ItemFigure = styled.figure<{ $isItemRevealed: boolean }>`
     }
 `;
 
-export const Previous = styled.div`
-    position: absolute;
-    width: 100vw;
-    height: 100%;
-    left: 0;
-    transform: translateX(-100%);
-
-    cursor: ${createIconCursor(chevronLeft, {
-        size: 48,
-        color: colors.secondary,
-    })};
-
-    @media ${queries.landscapeLgMax} {
-        display: none;
-    }
-`;
-
-export const Next = styled.div`
-    position: absolute;
-    width: 100vw;
-    height: 100%;
-    right: 0;
-    transform: translateX(100%);
-
-    cursor: ${createIconCursor(chevronRight, {
-        size: 48,
-        color: colors.secondary,
-    })};
-
-    @media ${queries.landscapeLgMax} {
-        display: none;
-    }
-`;
-
 export const Artwork = styled.div`
-    --border-width: clamp(8px, 1.25svw, 12px);
-
-    @media ${queries.landscape} {
-        --border-width: clamp(8px, 1.25svh, 12px);
-    }
-
     border: var(--border-width) solid transparent;
     position: relative;
     display: flex;
@@ -101,16 +82,14 @@ export const Artwork = styled.div`
 
     > img,
     > video {
-        --border-total: calc(var(--border-width) * 2);
-
         object-fit: cover;
         min-width: 10rem;
         min-height: 10rem;
-        max-height: calc(100svh - 13rem - var(--border-total));
+        max-height: calc(100dvh - var(--border-total) - var(--space-total));
 
         @media ${queries.landscapeLgMax} {
-            max-height: calc(100dvh - 2rem - var(--border-total));
-            max-width: calc(100vw - 10rem - var(--border-total));
+            max-height: calc(100dvh - var(--border-total) - 2rem);
+            max-width: calc(100vw - var(--border-total) - var(--space-total));
         }
     }
 
@@ -118,35 +97,4 @@ export const Artwork = styled.div`
         position: absolute;
         inset: 0;
     }
-`;
-
-export const ItemCaption = styled.figcaption`
-    position: absolute;
-    right: 0;
-    top: 100%;
-    padding-top: 0.25rem;
-    z-index: -1;
-
-    > p {
-        white-space: nowrap;
-        text-align: right;
-    }
-
-    @media ${queries.landscapeLgMax} {
-        top: 100%;
-        left: 100%;
-        right: auto;
-        width: max-content;
-        transform-origin: top left;
-        transform: rotate(-90deg);
-
-        > p {
-            text-align: left;
-        }
-    }
-`;
-
-export const Title = styled(Text)`
-    font-family: "PlayfairDisplay", sans-serif;
-    font-weight: 900;
 `;

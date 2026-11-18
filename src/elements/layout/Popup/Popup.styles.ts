@@ -1,4 +1,3 @@
-import { queries } from "styles/variables";
 import { styled } from "styled-components";
 import { transition } from "styles/variables";
 import { PINCHING_ATTRIBUTE } from "styles/global";
@@ -11,8 +10,7 @@ export const StyledPopup = styled.dialog`
     height: 100dvh;
     width: 100%;
     background-color: transparent;
-    padding: 1rem;
-
+    padding: 0;
     margin: 0;
     overflow: clip;
     border: none;
@@ -32,12 +30,6 @@ export const StyledPopup = styled.dialog`
 
     &::backdrop {
         display: none;
-    }
-
-    @media ${queries.md} {
-        @media ${queries.portrait} {
-            padding: 1rem 8rem;
-        }
     }
 `;
 

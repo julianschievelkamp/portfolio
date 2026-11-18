@@ -1,27 +1,16 @@
-import {
-    Title,
-    Artwork,
-    StyledActiveItem,
-    ItemFigure,
-    ItemCaption,
-    Previous,
-    Next,
-} from "./ActiveItem.styles";
+import { Artwork, StyledActiveItem, ItemFigure } from "./ActiveItem.styles";
 import Image from "elements/components/Image/Image";
 import { useActiveItem } from "hooks/useActiveItem";
 import { getAltText } from "data/portfolioData";
 import Video from "elements/components/Video/Video";
 import { usePinchZoom } from "hooks/usePinchZoom";
-import { colors } from "styles/variables";
-import Text from "elements/components/Text/Text";
 import { useStore } from "hooks/useStore";
 import { useEffect, useRef } from "react";
+import ClickAreas from "./ClickAreas/ClickAreas";
+import Caption from "./Caption/Caption";
 
 const ActiveItem = () => {
     const popupOpen = useStore((state) => state.popupOpen);
-    const activeIndex = useStore((state) => state.activeIndex);
-    const setActiveIndex = useStore((state) => state.setActiveIndex);
-
     const { loadedItem, isItemRevealed, setLoadedImage } = useActiveItem();
 
     const pinchZoomRef = usePinchZoom<HTMLDivElement>();
@@ -38,14 +27,7 @@ const ActiveItem = () => {
     return (
         <StyledActiveItem>
             <ItemFigure $isItemRevealed={isItemRevealed}>
-                <Previous
-                    onClick={() => setActiveIndex(activeIndex - 1)}
-                    aria-hidden="true"
-                />
-                <Next
-                    onClick={() => setActiveIndex(activeIndex + 1)}
-                    aria-hidden="true"
-                />
+                <ClickAreas />
 
                 <Artwork ref={pinchZoomRef}>
                     <Image
@@ -70,12 +52,7 @@ const ActiveItem = () => {
                     )}
                 </Artwork>
 
-                <ItemCaption>
-                    <Title>
-                        {loadedItem.title}, {loadedItem.year}
-                    </Title>
-                    <Text color={colors.secondary}>{loadedItem.type}</Text>
-                </ItemCaption>
+                <Caption loadedItem={loadedItem} />
             </ItemFigure>
         </StyledActiveItem>
     );
