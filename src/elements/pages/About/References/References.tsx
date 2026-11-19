@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Text from "elements/components/Text/Text";
 import { ListWrapper, ReferencesWrapper } from "./References.styles";
 import { languageData } from "data/languageData";
@@ -12,32 +13,27 @@ const References = () => {
         <Section>
             <Headline type="h2">{referencesData.headline}</Headline>
             <ReferencesWrapper>
-                <Div>
-                    <Text bold>{referencesData.publications.title}</Text>
-                    <Text>{referencesData.publications.subTitle}</Text>
-                </Div>
-                <ListWrapper>
-                    <List
-                        items={referencesData.publications.listEntries1}
-                        margin="0 0 1rem 0"
-                    />
-                    <List
-                        items={referencesData.publications.listEntries2}
-                        margin="0 0 1rem 0"
-                    />
-                    <List items={referencesData.publications.listEntries3} />
-                </ListWrapper>
-                <Div>
-                    <Text bold>{referencesData.awards.title}</Text>
-                    <Text>{referencesData.awards.subTitle}</Text>
-                </Div>
-                <ListWrapper>
-                    <List
-                        items={referencesData.awards.listEntries1}
-                        margin="0 0 1rem 0"
-                    />
-                    <List items={referencesData.awards.listEntries2} />
-                </ListWrapper>
+                {referencesData.sections.map(({ title, subTitle, lists }) => (
+                    <Fragment key={title}>
+                        <Div>
+                            <Text bold>{title}</Text>
+                            <Text>{subTitle}</Text>
+                        </Div>
+                        <ListWrapper>
+                            {lists.map((items, index) => (
+                                <List
+                                    key={index}
+                                    items={items}
+                                    margin={
+                                        index < lists.length - 1
+                                            ? "0 0 1rem 0"
+                                            : undefined
+                                    }
+                                />
+                            ))}
+                        </ListWrapper>
+                    </Fragment>
+                ))}
             </ReferencesWrapper>
         </Section>
     );
