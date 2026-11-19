@@ -17,11 +17,7 @@ const renderThumbnail = (index = 2) => {
     const onSelect = vi.fn();
 
     render(
-        <PortfolioThumbnail
-            item={item}
-            index={index}
-            onSelect={onSelect}
-        />,
+        <PortfolioThumbnail item={item} index={index} onSelect={onSelect} />,
     );
 
     return { onSelect };
@@ -49,21 +45,5 @@ describe("PortfolioThumbnail", () => {
         await userEvent.click(screen.getByRole("button"));
 
         expect(onSelect).toHaveBeenCalledWith(2);
-    });
-
-    it("loads the first thumbnail eagerly with high fetch priority", () => {
-        renderThumbnail(0);
-
-        const image = screen.getByRole("img");
-        expect(image).toHaveAttribute("loading", "eager");
-        expect(image).toHaveAttribute("fetchpriority", "high");
-    });
-
-    it("lazy loads every other thumbnail without fetch priority", () => {
-        renderThumbnail(1);
-
-        const image = screen.getByRole("img");
-        expect(image).toHaveAttribute("loading", "lazy");
-        expect(image).not.toHaveAttribute("fetchpriority");
     });
 });

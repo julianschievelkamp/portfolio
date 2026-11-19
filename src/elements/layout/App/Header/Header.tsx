@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { SidebarToggle, StyledHeader, StyledMainTitle } from "./Header.styles";
+import { SidebarToggle, StyledHeader, HeaderTitle } from "./Header.styles";
 import { useStore } from "hooks/useStore";
 import { scrollToTop } from "utils/scrollToTop";
 import Icon from "elements/components/Icon/Icon";
@@ -10,7 +10,7 @@ const Header = () => {
 
     return (
         <StyledHeader>
-            <StyledMainTitle
+            <HeaderTitle
                 $sidebarOpen={sidebarOpen}
                 onClick={() => setSidebarOpen(false)}
             />

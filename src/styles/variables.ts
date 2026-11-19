@@ -1,8 +1,4 @@
-import { css, styled } from "styled-components";
-
-export const Section = styled.section``;
-export const Footer = styled.footer``;
-export const Div = styled.div``;
+import { css } from "styled-components";
 
 export const TRANSITION_DEFAULT = 300;
 export const transition = {

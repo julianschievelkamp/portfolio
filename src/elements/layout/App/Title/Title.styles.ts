@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 import { queries } from "styles/variables";
 import Text from "elements/components/Text/Text";
 
-export const StyledMainTitle = styled(Text)`
+export const StyledTitle = styled(Text)`
     text-transform: uppercase;
     font-family: "PlayfairDisplay", sans-serif;
     font-weight: 900;

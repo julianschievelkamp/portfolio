@@ -2,15 +2,15 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
-import MainTitle from "./MainTitle";
+import Title from "./Title";
 
 vi.mock("data/languageData", () => ({
     languageData: { title: "Site Title" },
 }));
 
-describe("MainTitle", () => {
+describe("Title", () => {
     it("renders the site title as a link to the start page", () => {
-        render(<MainTitle />);
+        render(<Title />);
 
         expect(
             screen.getByRole("link", { name: "Site Title" }),
@@ -19,7 +19,7 @@ describe("MainTitle", () => {
 
     it("calls onClick when the link is clicked", async () => {
         const onClick = vi.fn();
-        render(<MainTitle onClick={onClick} />);
+        render(<Title onClick={onClick} />);
 
         await userEvent.click(screen.getByRole("link", { name: "Site Title" }));
 
@@ -27,7 +27,7 @@ describe("MainTitle", () => {
     });
 
     it("applies a passed class name to its wrapper", () => {
-        render(<MainTitle className="custom" />);
+        render(<Title className="custom" />);
 
         expect(
             screen.getByRole("link", { name: "Site Title" }).parentElement,

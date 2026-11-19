@@ -2,13 +2,12 @@ import { BadgesWrapper, StyledLink } from "./Badges.styles";
 import { languageData } from "data/languageData";
 import Image from "elements/components/Image/Image";
 import Headline from "elements/components/Headline/Headline";
-import { Section } from "styles/variables";
 
 const Badges = () => {
     const badgesData = languageData.about.badges;
 
     return (
-        <Section>
+        <section>
             <Headline type="h2">{badgesData.headline}</Headline>
             <BadgesWrapper>
                 {Object.keys(badgesData.items).map((key) => {
@@ -30,7 +29,7 @@ const Badges = () => {
                     );
                 })}
             </BadgesWrapper>
-        </Section>
+        </section>
     );
 };
 

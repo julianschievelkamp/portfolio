@@ -8,13 +8,12 @@ import { languageData } from "data/languageData";
 import Image from "elements/components/Image/Image";
 import Social from "./Social/Social";
 import Headline from "elements/components/Headline/Headline";
-import { Div, Section } from "styles/variables";
 
 const Artist = () => {
     const artistData = languageData.about.artist;
 
     return (
-        <Section>
+        <section>
             <Headline type="h2" visuallyHidden>
                 {artistData.headline}
             </Headline>
@@ -31,13 +30,13 @@ const Artist = () => {
                         {artistData.image.caption}
                     </PortraitCaption>
                 </PortraitFigure>
-                <Div>
+                <div>
                     <Text textAlign="justify">{artistData.text}</Text>
 
                     <Social />
-                </Div>
+                </div>
             </ArtistWrapper>
-        </Section>
+        </section>
     );
 };
 

@@ -2,7 +2,7 @@ import Text from "elements/components/Text/Text";
 import { StyledSocial, ImageLink, ImageWrapper } from "./Social.styles";
 import Image from "elements/components/Image/Image";
 import Link from "elements/components/Link/Link";
-import { colors, Div } from "styles/variables";
+import { colors } from "styles/variables";
 import { languageData } from "data/languageData";
 
 const Social = () => {
@@ -24,14 +24,14 @@ const Social = () => {
                 </ImageWrapper>
             </ImageLink>
 
-            <Div>
+            <div>
                 <Text bold>
                     <Link href={socialData.link} target="_blank">
                         {socialData.profile}
                     </Link>
                 </Text>
                 <Text color={colors.secondary}>{socialData.name}</Text>
-            </Div>
+            </div>
         </StyledSocial>
     );
 };

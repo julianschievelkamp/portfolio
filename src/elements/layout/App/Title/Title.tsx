@@ -1,20 +1,20 @@
 import Link from "elements/components/Link/Link";
 import { languageData } from "data/languageData";
-import { StyledMainTitle } from "./MainTitle.styles";
+import { StyledTitle } from "./Title.styles";
 
-export interface MainTitleProps {
+export interface TitleProps {
     onClick?: () => void;
     className?: string;
 }
 
-const MainTitle = ({ onClick, className }: MainTitleProps) => {
+const Title = ({ onClick, className }: TitleProps) => {
     return (
-        <StyledMainTitle className={className}>
+        <StyledTitle className={className}>
             <Link href="/" onClick={onClick} underline={false}>
                 {languageData.title}
             </Link>
-        </StyledMainTitle>
+        </StyledTitle>
     );
 };
 
-export default MainTitle;
+export default Title;

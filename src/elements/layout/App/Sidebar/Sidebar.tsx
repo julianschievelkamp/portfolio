@@ -5,10 +5,10 @@ import {
     ScrollContainer,
     StyledSidebar,
     Background,
-    StyledMainTitle,
+    SidebarTitle,
 } from "./Sidebar.styles";
 import { languageData } from "data/languageData";
-import { colors, Div, Footer } from "styles/variables";
+import { colors } from "styles/variables";
 import Navigation from "elements/layout/App/Sidebar/Navigation/Navigation";
 import { useStore } from "hooks/useStore";
 import { useSidebarOverlay } from "hooks/useSidebarOverlay";
@@ -43,22 +43,22 @@ const Sidebar = ({ page }: SidebarProps) => {
                 aria-label="Sidebar"
                 $sidebarOpen={sidebarOpen}
             >
-                <StyledMainTitle />
+                <SidebarTitle />
 
                 <ScrollContainer {...{ [SCROLL_ALLOWED_ATTRIBUTE]: "" }}>
-                    <Div>
+                    <div>
                         <Text color={colors.secondary}>
                             {languageData.sidebar.intro}
                         </Text>
 
                         <Navigation page={page} />
-                    </Div>
+                    </div>
 
-                    <Footer>
+                    <footer>
                         <Text color={colors.secondary}>
                             {languageData.sidebar.footer}
                         </Text>
-                    </Footer>
+                    </footer>
                 </ScrollContainer>
             </StyledSidebar>
         </>

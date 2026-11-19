@@ -4,7 +4,6 @@ import PortfolioThumbnail from "./PortfolioThumbnail/PortfolioThumbnail";
 import { useStore } from "hooks/useStore";
 import { portfolioData } from "data/portfolioData";
 import Popup from "elements/layout/Popup/Popup";
-import { Section } from "styles/variables";
 import Headline from "elements/components/Headline/Headline";
 import { languageData } from "data/languageData";
 
@@ -23,7 +22,7 @@ const Portfolio = () => {
 
     return (
         <>
-            <Section>
+            <section>
                 <Headline type="h2" visuallyHidden>
                     {languageData.portfolio.headline}
                 </Headline>
@@ -39,7 +38,7 @@ const Portfolio = () => {
                         );
                     })}
                 </PortfolioGrid>
-            </Section>
+            </section>
 
             <Popup />
         </>

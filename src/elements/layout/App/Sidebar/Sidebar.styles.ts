@@ -1,6 +1,6 @@
 import { css, styled } from "styled-components";
 import { queries, transition } from "styles/variables";
-import MainTitle from "elements/layout/App/MainTitle/MainTitle";
+import Title from "elements/layout/App/Title/Title";
 
 export const sidebarStyles = css<{
     $sidebarOpen: boolean;
@@ -79,7 +79,7 @@ export const ScrollContainer = styled.div`
     min-height: 0;
 `;
 
-export const StyledMainTitle = styled(MainTitle)`
+export const SidebarTitle = styled(Title)`
     visibility: hidden;
 
     @media ${queries.md} {

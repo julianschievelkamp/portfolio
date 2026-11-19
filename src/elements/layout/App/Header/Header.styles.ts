@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import { queries } from "styles/variables";
 import Button from "elements/components/Button/Button";
-import MainTitle from "elements/layout/App/MainTitle/MainTitle";
+import Title from "elements/layout/App/Title/Title";
 
 export const StyledHeader = styled.header`
     position: absolute;
@@ -27,6 +27,6 @@ export const SidebarToggle = styled(Button)`
     transform: translateY(-50%);
 `;
 
-export const StyledMainTitle = styled(MainTitle)<{ $sidebarOpen: boolean }>`
+export const HeaderTitle = styled(Title)<{ $sidebarOpen: boolean }>`
     position: ${({ $sidebarOpen }) => ($sidebarOpen ? "fixed" : "relative")};
 `;

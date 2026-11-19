@@ -4,21 +4,20 @@ import { ListWrapper, ReferencesWrapper } from "./References.styles";
 import { languageData } from "data/languageData";
 import List from "elements/components/List/List";
 import Headline from "elements/components/Headline/Headline";
-import { Div, Section } from "styles/variables";
 
 const References = () => {
     const referencesData = languageData.about.references;
 
     return (
-        <Section>
+        <section>
             <Headline type="h2">{referencesData.headline}</Headline>
             <ReferencesWrapper>
                 {referencesData.sections.map(({ title, subTitle, lists }) => (
                     <Fragment key={title}>
-                        <Div>
+                        <div>
                             <Text bold>{title}</Text>
                             <Text>{subTitle}</Text>
-                        </Div>
+                        </div>
                         <ListWrapper>
                             {lists.map((items, index) => (
                                 <List
@@ -35,7 +34,7 @@ const References = () => {
                     </Fragment>
                 ))}
             </ReferencesWrapper>
-        </Section>
+        </section>
     );
 };
 
