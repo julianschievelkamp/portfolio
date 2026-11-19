@@ -1,13 +1,11 @@
-import { useEffect, useRef } from "react";
+import { RefObject, useEffect } from "react";
 import { useStore } from "./useStore";
 import { TRANSITION_DEFAULT } from "styles/variables";
-import { usePopupControls } from "./usePopupControls";
 
-export const usePopupOverlay = () => {
+export const usePopupOverlay = (
+    popupRef: RefObject<HTMLDialogElement | null>,
+) => {
     const popupOpen = useStore((state) => state.popupOpen);
-    const popupRef = useRef<HTMLDialogElement>(null);
-
-    usePopupControls();
 
     useEffect(() => {
         const dialog = popupRef.current;
@@ -38,6 +36,4 @@ export const usePopupOverlay = () => {
 
         return () => clearTimeout(timeout);
     }, [popupOpen, popupRef]);
-
-    return popupRef;
 };

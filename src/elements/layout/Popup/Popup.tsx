@@ -6,13 +6,18 @@ import {
     StyledPopup,
 } from "./Popup.styles";
 import { usePopupOverlay } from "hooks/usePopupOverlay";
+import { usePopupControls } from "hooks/usePopupControls";
 import Slider from "./Slider/Slider";
 import ActiveItem from "./ActiveItem/ActiveItem";
 import Icon from "elements/components/Icon/Icon";
+import { useRef } from "react";
 
 const Popup = () => {
     const setPopupOpen = useStore((state) => state.setPopupOpen);
-    const popupRef = usePopupOverlay();
+    const popupRef = useRef<HTMLDialogElement>(null);
+
+    usePopupOverlay(popupRef);
+    usePopupControls(popupRef);
 
     return (
         <>

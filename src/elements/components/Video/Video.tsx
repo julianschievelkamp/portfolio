@@ -6,9 +6,9 @@ import { RefObject } from "react";
 export interface VideoProps {
     videoRef: RefObject<HTMLVideoElement | null>;
     src: string;
-    width: string;
-    height: string;
-    ariaLabel: string;
+    width?: string;
+    height?: string;
+    ariaLabel?: string;
     audio?: string;
 }
 

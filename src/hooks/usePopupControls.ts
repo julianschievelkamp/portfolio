@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, type RefObject } from "react";
 import { useStore } from "./useStore";
 import { useMediaQuery } from "./useMediaQuery";
 import { queries } from "styles/variables";
@@ -14,7 +14,9 @@ const showRelative = (offset: number) => {
     setActiveIndex(activeIndex + offset);
 };
 
-export const usePopupControls = () => {
+export const usePopupControls = (
+    popupRef: RefObject<HTMLDialogElement | null>,
+) => {
     const isLandscapeLgMax = useMediaQuery(queries.landscapeLgMax);
     const popupOpen = useStore((state) => state.popupOpen);
 
@@ -61,11 +63,12 @@ export const usePopupControls = () => {
         };
 
         const onKeyDown = (e: KeyboardEvent) => {
-            if (e.key === "ArrowLeft") {
-                showRelative(-1);
-            } else if (e.key === "ArrowRight") {
-                showRelative(1);
-            }
+            if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+
+            showRelative(e.key === "ArrowLeft" ? -1 : 1);
+
+            // Fokus immer auf den Dialog nach Bildwechsel über Tastatur
+            popupRef.current?.focus({ preventScroll: true });
         };
 
         document.addEventListener("keydown", onKeyDown);
@@ -85,5 +88,5 @@ export const usePopupControls = () => {
             document.removeEventListener("touchmove", onTouchMove);
             document.removeEventListener("touchend", onTouchEnd);
         };
-    }, [popupOpen, isLandscapeLgMax]);
+    }, [popupOpen, isLandscapeLgMax, popupRef]);
 };

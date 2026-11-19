@@ -12,10 +12,6 @@ export const useVideoPlayback = (
 
     const toggleVideo = () => {
         if (videoRef.current?.paused) {
-            if (!hasStarted) {
-                setHasStarted(true);
-            }
-
             // Entsperrt den AudioContext im Klick; gestartet wird das Audio erst beim "playing"-Event
             prepare();
 
@@ -25,13 +21,17 @@ export const useVideoPlayback = (
         }
     };
 
-    // Hält den Pausenzustand über die nativen Video-Events synchron
+    // Hält die Zustände über die nativen Video-Events synchron
     useEffect(() => {
         const video = videoRef.current;
 
         if (!video) return;
 
-        const handlePlay = () => setIsPaused(false);
+        const handlePlay = () => {
+            setHasStarted(true);
+            setIsPaused(false);
+        };
+
         const handlePause = () => setIsPaused(true);
 
         setIsPaused(video.paused);
@@ -52,7 +52,9 @@ export const useVideoPlayback = (
 
         // Der Video-Loop löst "playing" erneut aus, ein laufender Audio-Loop bleibt aber unberührt
         const startAudio = () => {
-            if (!isPlaying()) start(() => video.currentTime);
+            if (!isPlaying()) {
+                start(() => video.currentTime);
+            }
         };
 
         video.addEventListener("playing", startAudio);

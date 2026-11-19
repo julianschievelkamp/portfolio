@@ -20,8 +20,7 @@ const SliderThumbnail = memo(
                     ariaLabel={`Show ${item.title}`}
                     onClick={() => onSelect(index)}
                     ariaCurrent={isActive}
-                    // Roving Tabindex: Nur das aktive Item liegt in der Tab-Reihenfolge,
-                    // die übrigen erreicht man per Pfeiltaste (usePopupControls)
+                    // Roving Tabindex: Nur das aktive Item liegt in der Tab-Reihenfolge
                     tabIndex={isActive ? 0 : -1}
                     $isActive={isActive}
                 >
