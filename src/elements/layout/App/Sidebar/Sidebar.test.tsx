@@ -45,15 +45,6 @@ describe("Sidebar", () => {
         expect(screen.getByRole("navigation")).toBeInTheDocument();
     });
 
-    it("closes the sidebar when the title link is clicked", async () => {
-        render(<Sidebar page={page} />);
-
-        // Der Titel ist mobil per CSS versteckt und nur ab Desktop sichtbar
-        await userEvent.click(screen.getByText("Site Title"));
-
-        expect(useStore.getState().sidebarOpen).toBe(false);
-    });
-
     it("closes the sidebar when the close trigger is clicked", async () => {
         const { container } = render(<Sidebar page={page} />);
 

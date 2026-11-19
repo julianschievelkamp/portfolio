@@ -32,17 +32,6 @@ export const queries = {
 
 export const thumbnailSize = "(max-width: 1200px) 300px, 600px";
 
-export const mainTitleStyles = css`
-    text-transform: uppercase;
-    font-family: "PlayfairDisplay", sans-serif;
-    font-weight: 900;
-    font-size: 1.25rem;
-
-    @media ${queries.md} {
-        font-size: 1.5rem;
-    }
-`;
-
 // Blendet Inhalte visuell aus, lässt sie aber für Screenreader und Suchmaschinen bestehen
 export const visuallyHidden = css`
     position: absolute;

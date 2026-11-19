@@ -3,9 +3,9 @@ import Text from "elements/components/Text/Text";
 import {
     Backdrop,
     ScrollContainer,
-    MainTitle,
     StyledSidebar,
     Background,
+    StyledMainTitle,
 } from "./Sidebar.styles";
 import { languageData } from "data/languageData";
 import { colors, Div, Footer } from "styles/variables";
@@ -13,7 +13,6 @@ import Navigation from "elements/layout/App/Sidebar/Navigation/Navigation";
 import { useStore } from "hooks/useStore";
 import { useSidebarOverlay } from "hooks/useSidebarOverlay";
 import { Page } from "data/navigationData";
-import Link from "elements/components/Link/Link";
 import { scrollToTop } from "utils/scrollToTop";
 import { SCROLL_ALLOWED_ATTRIBUTE } from "styles/global";
 
@@ -44,15 +43,7 @@ const Sidebar = ({ page }: SidebarProps) => {
                 aria-label="Sidebar"
                 $sidebarOpen={sidebarOpen}
             >
-                <MainTitle>
-                    <Link
-                        href="/"
-                        onClick={() => setSidebarOpen(false)}
-                        underline={false}
-                    >
-                        {languageData.title}
-                    </Link>
-                </MainTitle>
+                <StyledMainTitle />
 
                 <ScrollContainer {...{ [SCROLL_ALLOWED_ATTRIBUTE]: "" }}>
                     <Div>
