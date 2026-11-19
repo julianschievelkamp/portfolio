@@ -8,9 +8,6 @@ import {
 import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-import { useRef } from "react";
-
-import { useStore } from "hooks/useStore";
 import Video from "./Video";
 
 // Das Icon wird durch seinen Namen ersetzt, damit der Wechsel prüfbar ist
@@ -67,23 +64,17 @@ class FakeAudioContext {
     }
 }
 
-// Das videoRef kommt vom Elternelement, daher stellt der Wrapper es bereit
-const VideoWithRef = ({ audio }: { audio?: string }) => {
-    const videoRef = useRef<HTMLVideoElement>(null);
-
-    return (
+const renderVideo = (audio?: string, isActive = true) =>
+    render(
         <Video
-            videoRef={videoRef}
             src="/clip.mp4"
             ariaLabel="Showreel"
             width="100%"
             height="100%"
             audio={audio}
-        />
+            isActive={isActive}
+        />,
     );
-};
-
-const renderVideo = (audio?: string) => render(<VideoWithRef audio={audio} />);
 
 const getVideo = () => screen.getByLabelText("Showreel") as HTMLVideoElement;
 const getPlayButton = () => screen.getByLabelText("Play Showreel");
@@ -95,7 +86,6 @@ describe("Video", () => {
     });
 
     beforeEach(() => {
-        useStore.setState({ popupOpen: true });
         sourceStart.mockClear();
         sourceStop.mockClear();
         gainSet.mockClear();
@@ -191,6 +181,24 @@ describe("Video", () => {
 
         await userEvent.click(getVideo());
         expect(HTMLMediaElement.prototype.pause).toHaveBeenCalledTimes(1);
+    });
+
+    it("pauses the playing video when it becomes inactive", async () => {
+        const { rerender } = renderVideo();
+        await userEvent.click(getVideo());
+        expect(HTMLMediaElement.prototype.pause).not.toHaveBeenCalled();
+
+        rerender(
+            <Video
+                src="/clip.mp4"
+                ariaLabel="Showreel"
+                audio={undefined}
+                isActive={false}
+            />,
+        );
+
+        expect(HTMLMediaElement.prototype.pause).toHaveBeenCalledTimes(1);
+        expect(getPlayButton()).toBeInTheDocument();
     });
 
     it("prevents the context menu on the video", () => {

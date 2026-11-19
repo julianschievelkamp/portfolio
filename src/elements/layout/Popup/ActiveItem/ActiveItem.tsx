@@ -5,7 +5,6 @@ import { getAltText } from "utils/portfolioText";
 import Video from "elements/components/Video/Video";
 import { usePinchZoom } from "hooks/usePinchZoom";
 import { useStore } from "hooks/useStore";
-import { useEffect, useRef } from "react";
 import ClickAreas from "./ClickAreas/ClickAreas";
 import Caption from "./Caption/Caption";
 
@@ -14,13 +13,6 @@ const ActiveItem = () => {
     const { loadedItem, isItemRevealed, setLoadedImage } = useActiveItem();
 
     const pinchZoomRef = usePinchZoom<HTMLDivElement>();
-    const videoRef = useRef<HTMLVideoElement | null>(null);
-
-    useEffect(() => {
-        if (!popupOpen) {
-            videoRef.current?.pause();
-        }
-    }, [popupOpen]);
 
     if (!loadedItem) return null;
 
@@ -41,10 +33,10 @@ const ActiveItem = () => {
 
                     {loadedItem.video && (
                         <Video
-                            videoRef={videoRef}
                             key={loadedItem.video}
                             src={loadedItem.video}
                             audio={loadedItem.audio}
+                            isActive={popupOpen}
                             ariaLabel={loadedItem.title}
                             width="100%"
                             height="100%"

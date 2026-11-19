@@ -4,6 +4,7 @@ import { useGaplessAudio } from "./useGaplessAudio";
 export const useVideoPlayback = (
     videoRef: RefObject<HTMLVideoElement | null>,
     audioSrc?: string,
+    isActive = true,
 ) => {
     const [hasStarted, setHasStarted] = useState(false);
     const [isPaused, setIsPaused] = useState(true);
@@ -21,6 +22,13 @@ export const useVideoPlayback = (
             videoRef.current?.pause();
         }
     };
+
+    // Ein inaktives Video (z. B. bei geschlossenem Popup) wird pausiert
+    useEffect(() => {
+        if (!isActive) {
+            videoRef.current?.pause();
+        }
+    }, [isActive, videoRef]);
 
     // Hält die Zustände über die nativen Video-Events synchron
     useEffect(() => {
@@ -68,5 +76,5 @@ export const useVideoPlayback = (
         };
     }, [videoRef, audioSrc, start, stop, isPlaying]);
 
-    return { videoRef, toggleVideo, hasStarted, isPaused };
+    return { toggleVideo, hasStarted, isPaused };
 };

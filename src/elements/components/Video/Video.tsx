@@ -1,28 +1,30 @@
 import { useVideoPlayback } from "hooks/useVideoPlayback";
 import Icon from "../Icon/Icon";
 import { PlayButton, StyledVideo } from "./Video.styles";
-import { RefObject } from "react";
+import { useRef } from "react";
 
 export interface VideoProps {
-    videoRef: RefObject<HTMLVideoElement | null>;
     src: string;
     width?: string;
     height?: string;
     ariaLabel: string;
     audio?: string;
+    isActive: boolean;
 }
 
 const Video = ({
-    videoRef,
     src,
     width,
     height,
     ariaLabel,
     audio,
+    isActive,
 }: VideoProps) => {
+    const videoRef = useRef<HTMLVideoElement>(null);
     const { toggleVideo, hasStarted, isPaused } = useVideoPlayback(
         videoRef,
         audio,
+        isActive,
     );
 
     return (
