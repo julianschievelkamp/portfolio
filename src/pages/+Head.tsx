@@ -1,10 +1,8 @@
 import { usePageContext } from "vike-react/usePageContext";
+import { ensureTrailingSlash } from "utils/ensureTrailingSlash";
 
-const getCanonicalUrl = (urlPathname: string) => {
-    const path = urlPathname.endsWith("/") ? urlPathname : `${urlPathname}/`;
-
-    return `https://www.julianschievelkamp.com${path}`;
-};
+const getCanonicalUrl = (urlPathname: string) =>
+    `https://www.julianschievelkamp.com${ensureTrailingSlash(urlPathname)}`;
 
 export const Head = () => {
     const { urlPathname } = usePageContext();
