@@ -1,12 +1,6 @@
-import {
-    act,
-    fireEvent,
-    render,
-    screen,
-    waitFor,
-} from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import Video from "./Video";
 
@@ -15,54 +9,16 @@ vi.mock("elements/components/Icon/Icon", () => ({
     default: ({ name }: { name: string }) => <span data-testid={name} />,
 }));
 
-// jsdom kennt die Web Audio API nicht, daher wird sie nachgebildet
-const sourceStart = vi.fn();
-const sourceStop = vi.fn();
-const gainSet = vi.fn();
-const gainRamp = vi.fn();
-let createdSources: { loop: boolean }[] = [];
-let fakeContexts: object[] = [];
-
-class FakeAudioContext {
-    state = "running";
-    currentTime = 0;
-    destination = {};
-    resume = vi.fn().mockResolvedValue(undefined);
-    close = vi.fn().mockResolvedValue(undefined);
-    decodeAudioData = vi.fn().mockResolvedValue({ duration: 60 });
-
-    constructor() {
-        fakeContexts.push(this);
-    }
-
-    createGain() {
-        const gain = {
-            gain: {
-                value: 1,
-                setValueAtTime: gainSet,
-                linearRampToValueAtTime: gainRamp,
-                cancelScheduledValues: vi.fn(),
-            },
-            connect: vi.fn(),
-            disconnect: vi.fn(),
-        };
-        return gain;
-    }
-
-    createBufferSource() {
-        const source = {
-            buffer: null,
-            loop: false,
-            connect: vi.fn(),
-            disconnect: vi.fn(),
-            start: sourceStart,
-            stop: sourceStop,
-            onended: null,
-        };
-        createdSources.push(source);
-        return source;
-    }
-}
+// Die Audio-Logik ist in useGaplessAudio getestet, hier zählt nur die Anbindung ans Video
+const audio = vi.hoisted(() => ({
+    prepare: vi.fn(),
+    start: vi.fn(),
+    stop: vi.fn(),
+    isPlaying: vi.fn(),
+}));
+vi.mock("hooks/useGaplessAudio/useGaplessAudio", () => ({
+    useGaplessAudio: () => audio,
+}));
 
 const renderVideo = (audio?: string, isActive = true) =>
     render(
@@ -81,24 +37,11 @@ const getPlayButton = () => screen.getByLabelText("Play Showreel");
 const getPauseButton = () => screen.getByLabelText("Pause Showreel");
 
 describe("Video", () => {
-    afterEach(() => {
-        vi.unstubAllGlobals();
-    });
-
     beforeEach(() => {
-        sourceStart.mockClear();
-        sourceStop.mockClear();
-        gainSet.mockClear();
-        gainRamp.mockClear();
-        createdSources = [];
-        fakeContexts = [];
-        vi.stubGlobal("AudioContext", FakeAudioContext);
-        vi.stubGlobal(
-            "fetch",
-            vi.fn().mockResolvedValue({
-                arrayBuffer: () => Promise.resolve(new ArrayBuffer(8)),
-            }),
-        );
+        audio.prepare.mockReset().mockResolvedValue(null);
+        audio.start.mockReset().mockResolvedValue(undefined);
+        audio.stop.mockReset();
+        audio.isPlaying.mockReset().mockReturnValue(false);
 
         // jsdom implementiert play/pause nicht, daher wird der Wiedergabezustand nachgebildet
         let isPaused = true;
@@ -209,102 +152,58 @@ describe("Video", () => {
         expect(notPrevented).toBe(false);
     });
 
-    it("does not touch the Web Audio API without an audio source", async () => {
+    it("does not start any audio without an audio source", async () => {
         renderVideo();
 
         await userEvent.click(getPlayButton());
+        fireEvent(getVideo(), new Event("playing"));
 
-        expect(fakeContexts).toHaveLength(0);
-        expect(fetch).not.toHaveBeenCalled();
+        expect(audio.prepare).toHaveBeenCalledTimes(1);
+        expect(audio.start).not.toHaveBeenCalled();
     });
 
-    it("loads the audio on play and loops it without gaps once the video plays", async () => {
+    it("prepares the audio on play and starts it at the video position once the video plays", async () => {
         renderVideo("/clip.ogg");
         const video = getVideo();
         video.currentTime = 5;
 
         await userEvent.click(getPlayButton());
-        expect(fetch).toHaveBeenCalledWith("/clip.ogg");
+        expect(audio.prepare).toHaveBeenCalledTimes(1);
+        expect(audio.start).not.toHaveBeenCalled();
 
         fireEvent(video, new Event("playing"));
 
-        await waitFor(() => expect(sourceStart).toHaveBeenCalledWith(0, 5));
+        expect(audio.start).toHaveBeenCalledTimes(1);
+        expect(audio.start.mock.calls[0][0]()).toBe(5);
     });
 
-    it("crossfades into the next loop pass before the file ends", async () => {
+    it("does not restart a running audio loop when the video loops", async () => {
         renderVideo("/clip.ogg");
-        const video = getVideo();
-        // Dauer der Datei ist 60 s, es bleiben also 10 s bis zum Ende
-        video.currentTime = 50;
+        audio.isPlaying.mockReturnValue(true);
 
         await userEvent.click(getPlayButton());
-        fireEvent(video, new Event("playing"));
+        fireEvent(getVideo(), new Event("playing"));
 
-        await waitFor(() => expect(sourceStart).toHaveBeenCalledTimes(2));
-
-        // Der zweite Durchlauf beginnt vor dem Ende des ersten (10 s - Überblendung)
-        const [secondStart, secondOffset] = sourceStart.mock.calls[1];
-        expect(secondStart).toBeLessThan(10);
-        expect(secondStart).toBeGreaterThan(9);
-        expect(secondOffset).toBe(0);
+        expect(audio.start).not.toHaveBeenCalled();
     });
 
     it("stops the audio when the video is paused", async () => {
         renderVideo("/clip.ogg");
-        await userEvent.click(getPlayButton());
-        fireEvent(getVideo(), new Event("playing"));
-        await waitFor(() => expect(sourceStart).toHaveBeenCalledTimes(1));
+        await userEvent.click(getVideo());
+        audio.stop.mockClear();
 
-        // Das Ende des Durchlaufs ist bereits eingeplant, das Ausblenden kommt danach
-        sourceStop.mockClear();
         await userEvent.click(getVideo());
 
-        expect(sourceStop).toHaveBeenCalledTimes(1);
+        expect(audio.stop).toHaveBeenCalledTimes(1);
     });
 
     it("stops the audio when the video is paused from outside", async () => {
         renderVideo("/clip.ogg");
-        await userEvent.click(getPlayButton());
-        fireEvent(getVideo(), new Event("playing"));
-        await waitFor(() => expect(sourceStart).toHaveBeenCalledTimes(1));
+        await userEvent.click(getVideo());
+        audio.stop.mockClear();
 
-        sourceStop.mockClear();
         act(() => getVideo().pause());
 
-        expect(sourceStop).toHaveBeenCalledTimes(1);
-    });
-
-    it("does not interrupt the audio loop when the video loops", async () => {
-        renderVideo("/clip.ogg");
-        const video = getVideo();
-        await userEvent.click(getPlayButton());
-        fireEvent(video, new Event("playing"));
-        await waitFor(() => expect(sourceStart).toHaveBeenCalledTimes(1));
-
-        sourceStop.mockClear();
-
-        // Der Video-Loop löst "playing" und "seeked" erneut aus
-        fireEvent(video, new Event("seeked"));
-        fireEvent(video, new Event("playing"));
-
-        expect(sourceStart).toHaveBeenCalledTimes(1);
-        expect(sourceStop).not.toHaveBeenCalled();
-    });
-
-    it("fades the audio in on start and out on stop to avoid clicks", async () => {
-        renderVideo("/clip.ogg");
-        await userEvent.click(getPlayButton());
-        fireEvent(getVideo(), new Event("playing"));
-        await waitFor(() => expect(sourceStart).toHaveBeenCalledTimes(1));
-
-        // Einblenden: von 0 auf 1
-        expect(gainSet).toHaveBeenCalledWith(0, expect.any(Number));
-        expect(gainRamp).toHaveBeenCalledWith(1, expect.any(Number));
-
-        await userEvent.click(getVideo());
-
-        // Ausblenden auf 0, die Quelle stoppt erst nach der Rampe
-        expect(gainRamp).toHaveBeenLastCalledWith(0, expect.any(Number));
-        expect(sourceStop).toHaveBeenCalledWith(expect.any(Number));
+        expect(audio.stop).toHaveBeenCalledTimes(1);
     });
 });

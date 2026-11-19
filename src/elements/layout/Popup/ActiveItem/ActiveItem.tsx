@@ -3,7 +3,7 @@ import Image from "elements/components/Image/Image";
 import { useActiveItem } from "hooks/useActiveItem";
 import { getAltText } from "utils/portfolioText";
 import Video from "elements/components/Video/Video";
-import { usePinchZoom } from "hooks/usePinchZoom";
+import { usePinchZoom } from "hooks/usePinchZoom/usePinchZoom";
 import { useStore } from "hooks/useStore";
 import ClickAreas from "./ClickAreas/ClickAreas";
 import Caption from "./Caption/Caption";

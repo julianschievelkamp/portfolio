@@ -1,5 +1,5 @@
 import { type RefObject, useEffect, useState } from "react";
-import { useGaplessAudio } from "./useGaplessAudio";
+import { useGaplessAudio } from "hooks/useGaplessAudio/useGaplessAudio";
 
 export const useVideoPlayback = (
     videoRef: RefObject<HTMLVideoElement | null>,
