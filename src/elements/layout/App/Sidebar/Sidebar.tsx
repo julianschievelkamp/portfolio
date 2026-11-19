@@ -12,7 +12,7 @@ import { colors, Div, Footer } from "styles/variables";
 import Navigation from "elements/layout/App/Sidebar/Navigation/Navigation";
 import { useStore } from "hooks/useStore";
 import { useSidebarOverlay } from "hooks/useSidebarOverlay";
-import { Page } from "data/navigationData";
+import type { Page } from "data/navigationData";
 import { scrollToTop } from "utils/scrollToTop";
 import { SCROLL_ALLOWED_ATTRIBUTE } from "styles/global";
 

@@ -2,7 +2,7 @@ import { useEffect, type RefObject } from "react";
 import { useStore } from "./useStore";
 import { useMediaQuery } from "./useMediaQuery";
 import { queries } from "styles/variables";
-import { isViewportZoomed } from "../utils/isViewportZoomed";
+import { isViewportZoomed } from "utils/isViewportZoomed";
 
 const MIN_SWIPE_DISTANCE = 50;
 

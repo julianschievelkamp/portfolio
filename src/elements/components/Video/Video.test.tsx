@@ -11,7 +11,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import Video from "./Video";
 
 // Das Icon wird durch seinen Namen ersetzt, damit der Wechsel prüfbar ist
-vi.mock("../Icon/Icon", () => ({
+vi.mock("elements/components/Icon/Icon", () => ({
     default: ({ name }: { name: string }) => <span data-testid={name} />,
 }));
 

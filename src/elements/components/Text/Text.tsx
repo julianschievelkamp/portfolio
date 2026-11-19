@@ -1,9 +1,9 @@
-import React from "react";
+import type { ReactNode } from "react";
 
 import { StyledText } from "./Text.styles";
 
 export interface TextProps {
-    children?: React.ReactNode;
+    children?: ReactNode;
     bold?: boolean;
     color?: string;
     textAlign?: "left" | "center" | "right" | "justify";

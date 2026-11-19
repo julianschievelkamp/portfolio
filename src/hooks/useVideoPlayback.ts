@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useState } from "react";
+import { type RefObject, useEffect, useState } from "react";
 import { useGaplessAudio } from "./useGaplessAudio";
 
 export const useVideoPlayback = (

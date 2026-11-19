@@ -1,7 +1,7 @@
 import { colors } from "styles/variables";
 import { StyledCaption, Title } from "./Caption.styles";
 import Text from "elements/components/Text/Text";
-import { PortfolioItem } from "data/portfolioData";
+import type { PortfolioItem } from "data/portfolioData";
 
 export interface CaptionProps {
     loadedItem: PortfolioItem;

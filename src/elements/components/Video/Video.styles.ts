@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import Button from "../Button/Button";
+import Button from "elements/components/Button/Button";
 import { colors } from "styles/variables";
 import { PINCHING_ATTRIBUTE } from "styles/global";
 

@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Page, pages, links } from "data/navigationData";
+import { type Page, pages, links } from "data/navigationData";
 import {
     NavElement,
     NavLink,

@@ -1,4 +1,4 @@
-import React from "react";
+import type { ReactNode } from "react";
 
 import { H1, H2 } from "./Headline.styles";
 
@@ -9,7 +9,7 @@ const headlines = {
 
 export interface HeadlineProps {
     type?: "h1" | "h2";
-    children?: React.ReactNode;
+    children?: ReactNode;
     visuallyHidden?: boolean;
 }
 

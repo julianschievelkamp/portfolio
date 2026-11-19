@@ -1,5 +1,5 @@
 import { useVideoPlayback } from "hooks/useVideoPlayback";
-import Icon from "../Icon/Icon";
+import Icon from "elements/components/Icon/Icon";
 import { PlayButton, StyledVideo } from "./Video.styles";
 import { useRef } from "react";
 

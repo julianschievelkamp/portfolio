@@ -1,6 +1,6 @@
 import { css, styled } from "styled-components";
 import { queries, transition } from "styles/variables";
-import MainTitle from "../MainTitle/MainTitle";
+import MainTitle from "elements/layout/App/MainTitle/MainTitle";
 
 export const sidebarStyles = css<{
     $sidebarOpen: boolean;
