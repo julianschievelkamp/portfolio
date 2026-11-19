@@ -31,6 +31,7 @@ const Link = ({
             onClick={onClick}
             $underline={underline}
             aria-current={ariaCurrent}
+            // Ohne explizites tabIndex fokussiert Safari Links nicht per Tab
             tabIndex={tabIndex ?? 0}
             className={className}
         >

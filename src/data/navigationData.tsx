@@ -5,7 +5,7 @@ export type Page = {
     path: string;
 };
 
-export const pages: { [key: string]: Page } = {
+export const pages = {
     portfolio: {
         name: "Portfolio",
         title: "Julian Schievelkamp – Fine Art Photographer & Visual Artist",
@@ -27,14 +27,14 @@ export const pages: { [key: string]: Page } = {
             "Legal notice and contact details of Julian Schievelkamp.",
         path: "/impressum/",
     },
-};
+} satisfies Record<string, Page>;
 
 type Link = {
     name: string;
     path: string;
 };
 
-export const links: { [key: string]: Link } = {
+export const links = {
     instagram: {
         name: "Instagram",
         path: "https://www.instagram.com/julianschievelkamp/",
@@ -43,4 +43,4 @@ export const links: { [key: string]: Link } = {
         name: "PhotoVogue",
         path: "https://www.vogue.com/photovogue/photographers/71498",
     },
-};
+} satisfies Record<string, Link>;

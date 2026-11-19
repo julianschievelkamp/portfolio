@@ -29,8 +29,7 @@ const Navigation = ({ page }: NavigationProps) => {
                 {languageData.sidebar.work}
             </Text>
             <NavList role="list" aria-labelledby="navigation-work">
-                {Object.keys(pages).map((key) => {
-                    const { path, name } = pages[key];
+                {Object.values(pages).map(({ path, name }) => {
                     const isActive = path === page.path;
 
                     return (
@@ -63,17 +62,13 @@ const Navigation = ({ page }: NavigationProps) => {
                 {languageData.sidebar.links}
             </Text>
             <NavList role="list" aria-labelledby="navigation-links">
-                {Object.keys(links).map((key) => {
-                    const { path, name } = links[key];
-
-                    return (
-                        <NavElement key={name}>
-                            <NavLink href={path} target="_blank">
-                                <Text fontSize="1rem">{name}</Text>
-                            </NavLink>
-                        </NavElement>
-                    );
-                })}
+                {Object.values(links).map(({ path, name }) => (
+                    <NavElement key={name}>
+                        <NavLink href={path} target="_blank">
+                            <Text fontSize="1rem">{name}</Text>
+                        </NavLink>
+                    </NavElement>
+                ))}
             </NavList>
         </StyledNavigation>
     );
