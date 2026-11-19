@@ -1,5 +1,6 @@
 import { portfolioData } from "data/portfolioData";
 import { create } from "zustand";
+import { wrapIndex } from "utils/wrapIndex";
 
 interface State {
     sidebarOpen: boolean;
@@ -19,27 +20,10 @@ export const useStore = create<State & Actions>((set) => ({
     activeIndex: -1,
     popupOpen: false,
 
-    setSidebarOpen: (open) =>
-        set(() => ({
-            sidebarOpen: open,
-        })),
+    setSidebarOpen: (open) => set({ sidebarOpen: open }),
 
     setActiveIndex: (index) =>
-        set(() => {
-            const maxIndex = portfolioData.length - 1;
+        set({ activeIndex: wrapIndex(index, portfolioData.length) }),
 
-            // Index am Anfang bzw. Ende der Liste umbrechen
-            if (index > maxIndex) {
-                return { activeIndex: 0 };
-            } else if (index < 0) {
-                return { activeIndex: maxIndex };
-            }
-
-            return { activeIndex: index };
-        }),
-
-    setPopupOpen: (open) =>
-        set(() => ({
-            popupOpen: open,
-        })),
+    setPopupOpen: (open) => set({ popupOpen: open }),
 }));
