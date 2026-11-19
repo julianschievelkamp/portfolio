@@ -1,42 +1,28 @@
-import React from "react";
+import type { ComponentProps, ReactNode } from "react";
 
 import { StyledLink } from "./Link.styles";
 
-export interface LinkProps {
-    children: React.ReactNode;
+export interface LinkProps extends ComponentProps<"a"> {
+    children: ReactNode;
     href: string;
-    target?: string;
-    onClick?: () => void;
     underline?: boolean;
-    ariaCurrent?: "page";
-    tabIndex?: number;
-    className?: string;
 }
 
 const Link = ({
-    children,
-    href,
-    target,
-    onClick,
     underline = true,
-    ariaCurrent,
+    target,
     tabIndex,
-    className,
+    ...props
 }: LinkProps) => {
     return (
         <StyledLink
-            href={href}
+            {...props}
             target={target}
             rel={target === "_blank" ? "noopener noreferrer" : undefined}
-            onClick={onClick}
             $underline={underline}
-            aria-current={ariaCurrent}
             // Ohne explizites tabIndex fokussiert Safari Links nicht per Tab
             tabIndex={tabIndex ?? 0}
-            className={className}
-        >
-            {children}
-        </StyledLink>
+        />
     );
 };
 

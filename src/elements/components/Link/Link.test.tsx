@@ -57,12 +57,12 @@ describe("Link", () => {
         expect(screen.getByRole("link")).toHaveStyle("text-decoration: none");
     });
 
-    it("sets aria-current only when ariaCurrent is given", () => {
+    it("sets aria-current only when aria-current is given", () => {
         const { rerender } = render(<Link href="/">Home</Link>);
         expect(screen.getByRole("link")).not.toHaveAttribute("aria-current");
 
         rerender(
-            <Link href="/" ariaCurrent="page">
+            <Link href="/" aria-current="page">
                 Home
             </Link>,
         );

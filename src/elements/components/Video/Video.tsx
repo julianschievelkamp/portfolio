@@ -48,7 +48,7 @@ const Video = ({
 
             <PlayButton
                 onClick={toggleVideo}
-                ariaLabel={`${isPaused ? "Play" : "Pause"} ${ariaLabel}`}
+                aria-label={`${isPaused ? "Play" : "Pause"} ${ariaLabel}`}
                 $isVisible={!hasStarted}
             >
                 <Icon

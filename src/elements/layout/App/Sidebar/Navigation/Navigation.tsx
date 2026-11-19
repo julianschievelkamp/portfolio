@@ -37,7 +37,7 @@ const Navigation = ({ page }: NavigationProps) => {
                             <NavLink
                                 $isActive={isActive}
                                 href={path}
-                                ariaCurrent={isActive ? "page" : undefined}
+                                aria-current={isActive ? "page" : undefined}
                                 onClick={() => setSidebarOpen(false)}
                             >
                                 <Text

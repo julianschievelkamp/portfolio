@@ -21,7 +21,7 @@ const PortfolioThumbnail = memo(
         return (
             <PortfolioFigure>
                 <PortfolioButton
-                    ariaLabel={`Show ${item.title}`}
+                    aria-label={`Show ${item.title}`}
                     onClick={() => onSelect(index)}
                 />
 

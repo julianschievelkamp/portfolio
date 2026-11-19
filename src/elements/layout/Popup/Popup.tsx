@@ -41,7 +41,7 @@ const Popup = () => {
                 />
                 <CloseButton
                     onClick={() => setPopupOpen(false)}
-                    ariaLabel="Close Popup"
+                    aria-label="Close Popup"
                 >
                     <Icon name="close" size="2rem" />
                 </CloseButton>

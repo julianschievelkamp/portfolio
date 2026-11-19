@@ -25,9 +25,9 @@ describe("Button", () => {
         expect(onClick).toHaveBeenCalledTimes(2);
     });
 
-    it("uses ariaLabel as accessible name", () => {
+    it("uses aria-label as accessible name", () => {
         render(
-            <Button onClick={vi.fn()} ariaLabel="Close popup">
+            <Button onClick={vi.fn()} aria-label="Close popup">
                 <span aria-hidden="true">x</span>
             </Button>,
         );

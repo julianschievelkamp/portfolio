@@ -20,9 +20,9 @@ const Header = () => {
                     scrollToTop();
                     setSidebarOpen(!sidebarOpen);
                 }}
-                ariaExpanded={sidebarOpen}
-                ariaLabel={sidebarOpen ? "Close sidebar" : "Open sidebar"}
-                ariaControls="sidebar"
+                aria-expanded={sidebarOpen}
+                aria-label={sidebarOpen ? "Close sidebar" : "Open sidebar"}
+                aria-controls="sidebar"
                 id="sidebar-toggle"
             >
                 <Icon name={sidebarOpen ? "close" : "hamburger"} size="2rem" />

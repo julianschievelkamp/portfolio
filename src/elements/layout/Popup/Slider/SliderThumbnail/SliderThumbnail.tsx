@@ -18,9 +18,9 @@ const SliderThumbnail = memo(
         return (
             <SliderListItem>
                 <SliderItem
-                    ariaLabel={`Show ${item.title}`}
+                    aria-label={`Show ${item.title}`}
                     onClick={() => onSelect(index)}
-                    ariaCurrent={isActive}
+                    aria-current={isActive}
                     // Roving Tabindex: Nur das aktive Item liegt in der Tab-Reihenfolge
                     tabIndex={isActive ? 0 : -1}
                     $isActive={isActive}
