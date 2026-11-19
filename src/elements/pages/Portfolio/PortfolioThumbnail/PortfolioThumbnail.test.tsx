@@ -2,7 +2,8 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
-import { portfolioData, getAltText, getCaption } from "data/portfolioFixtures";
+import { portfolioData } from "data/portfolioFixtures";
+import { getAltText, getCaption } from "utils/portfolioText";
 import PortfolioThumbnail from "./PortfolioThumbnail";
 
 vi.mock(

@@ -28,7 +28,7 @@ const Text = ({
     return (
         <StyledText
             id={id}
-            color={color}
+            $color={color}
             $bold={bold}
             $textAlign={textAlign}
             $margin={margin}

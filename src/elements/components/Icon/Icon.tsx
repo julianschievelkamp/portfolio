@@ -20,7 +20,7 @@ const Icon = ({
 
     return (
         <StyledIcon
-            color={color}
+            $color={color}
             $size={size}
             $padding={padding}
             className={className}

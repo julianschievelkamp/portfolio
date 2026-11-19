@@ -1,7 +1,7 @@
 import { Artwork, StyledActiveItem, ItemFigure } from "./ActiveItem.styles";
 import Image from "elements/components/Image/Image";
 import { useActiveItem } from "hooks/useActiveItem";
-import { getAltText } from "data/portfolioData";
+import { getAltText } from "utils/portfolioText";
 import Video from "elements/components/Video/Video";
 import { usePinchZoom } from "hooks/usePinchZoom";
 import { useStore } from "hooks/useStore";

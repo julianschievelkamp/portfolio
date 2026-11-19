@@ -262,11 +262,3 @@ export const portfolioData: PortfolioItem[] = [
         aspectRatio: "1/1",
     },
 ];
-
-export const getAltText = (item: PortfolioItem) => {
-    return `${item.title} by Julian Schievelkamp`;
-};
-
-export const getCaption = (item: PortfolioItem) => {
-    return `${item.title}, ${item.year} – ${item.type}`;
-};

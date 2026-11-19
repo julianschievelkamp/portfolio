@@ -5,7 +5,8 @@ import {
     PortfolioFigure,
 } from "./PortfolioThumbnail.styles";
 import Image from "elements/components/Image/Image";
-import { getAltText, getCaption, type PortfolioItem } from "data/portfolioData";
+import type { PortfolioItem } from "data/portfolioData";
+import { getAltText, getCaption } from "utils/portfolioText";
 import { thumbnailSize } from "styles/variables";
 
 export interface PortfolioThumbnailProps {

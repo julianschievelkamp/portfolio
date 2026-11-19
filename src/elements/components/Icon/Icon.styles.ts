@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import { transition, colors } from "styles/variables";
 
 export const StyledIcon = styled.span<{
+    $color?: string;
     $size?: string;
     $padding?: string;
 }>`
@@ -19,7 +20,7 @@ export const StyledIcon = styled.span<{
 
     svg {
         transition: fill ${transition.default};
-        fill: ${({ color }) => color ?? colors.secondary};
+        fill: ${({ $color }) => $color ?? colors.secondary};
         width: ${({ $size }) => $size};
         height: ${({ $size }) => $size};
     }

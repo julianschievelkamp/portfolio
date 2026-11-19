@@ -9,7 +9,8 @@ import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useStore } from "hooks/useStore";
-import { portfolioData, getAltText } from "data/portfolioFixtures";
+import { portfolioData } from "data/portfolioFixtures";
+import { getAltText } from "utils/portfolioText";
 import ActiveItem from "./ActiveItem";
 
 vi.mock(

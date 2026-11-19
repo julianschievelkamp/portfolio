@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 import { transition } from "styles/variables";
 
 export const StyledText = styled.p<{
-    color?: string;
+    $color?: string;
     $bold?: boolean;
     $textAlign?: "left" | "center" | "right" | "justify";
     $margin?: string;
@@ -14,7 +14,7 @@ export const StyledText = styled.p<{
     font-weight: ${({ $bold }) => ($bold ? "bold" : "normal")};
     font-size: ${({ $fontSize }) => $fontSize};
     margin: ${({ $margin }) => $margin};
-    color: ${({ color }) => color ?? "black"};
+    color: ${({ $color }) => $color ?? "black"};
     text-transform: ${({ $toUpperCase }) =>
         $toUpperCase ? "uppercase" : "none"};
     line-height: 1.5;

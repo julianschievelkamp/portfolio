@@ -8,7 +8,7 @@ export interface VideoProps {
     src: string;
     width?: string;
     height?: string;
-    ariaLabel?: string;
+    ariaLabel: string;
     audio?: string;
 }
 

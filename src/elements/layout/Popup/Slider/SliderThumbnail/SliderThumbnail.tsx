@@ -1,7 +1,8 @@
 import { memo } from "react";
 import { SliderItem, SliderListItem } from "./SliderThumbnail.styles";
 import Image from "elements/components/Image/Image";
-import { getAltText, type PortfolioItem } from "data/portfolioData";
+import type { PortfolioItem } from "data/portfolioData";
+import { getAltText } from "utils/portfolioText";
 import { thumbnailSize } from "styles/variables";
 
 export interface SliderThumbnailProps {

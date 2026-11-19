@@ -15,7 +15,8 @@ export const useVideoPlayback = (
             // Entsperrt den AudioContext im Klick; gestartet wird das Audio erst beim "playing"-Event
             prepare();
 
-            videoRef.current.play();
+            // Lehnt der Browser das Abspielen ab, bleibt das Video einfach pausiert
+            videoRef.current.play().catch(() => undefined);
         } else {
             videoRef.current?.pause();
         }
