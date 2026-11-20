@@ -1,10 +1,19 @@
 import { usePageContext } from "vike-react/usePageContext";
 import { ensureTrailingSlash } from "utils/ensureTrailingSlash";
 import { siteName, siteUrl } from "data/siteData";
+import { languageData } from "data/languageData";
+import {
+    getStructuredData,
+    serializeStructuredData,
+} from "utils/structuredData";
 
 export const Head = () => {
     const { urlPathname } = usePageContext();
     const canonicalUrl = `${siteUrl}${ensureTrailingSlash(urlPathname)}`;
+    const structuredData = getStructuredData(
+        urlPathname,
+        languageData.about.artist.image.src,
+    );
 
     return (
         <>
@@ -29,6 +38,14 @@ export const Head = () => {
                 property="og:image:alt"
                 content="Artwork by Julian Schievelkamp"
             />
+            {structuredData && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: serializeStructuredData(structuredData),
+                    }}
+                />
+            )}
         </>
     );
 };
