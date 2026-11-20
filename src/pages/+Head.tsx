@@ -1,12 +1,10 @@
 import { usePageContext } from "vike-react/usePageContext";
 import { ensureTrailingSlash } from "utils/ensureTrailingSlash";
-
-const getCanonicalUrl = (urlPathname: string) =>
-    `https://www.julianschievelkamp.com${ensureTrailingSlash(urlPathname)}`;
+import { siteName, siteUrl } from "data/siteData";
 
 export const Head = () => {
     const { urlPathname } = usePageContext();
-    const canonicalUrl = getCanonicalUrl(urlPathname);
+    const canonicalUrl = `${siteUrl}${ensureTrailingSlash(urlPathname)}`;
 
     return (
         <>
@@ -23,7 +21,7 @@ export const Head = () => {
             />
             <meta property="og:type" content="website" />
             <meta property="og:url" content={canonicalUrl} />
-            <meta property="og:site_name" content="Julian Schievelkamp" />
+            <meta property="og:site_name" content={siteName} />
             <meta property="og:locale" content="en_US" />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="628" />
