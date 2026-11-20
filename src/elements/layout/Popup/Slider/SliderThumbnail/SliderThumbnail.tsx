@@ -2,7 +2,6 @@ import { memo } from "react";
 import { SliderItem, SliderListItem } from "./SliderThumbnail.styles";
 import Image from "elements/components/Image/Image";
 import type { PortfolioItem } from "data/portfolioData";
-import { getAltText } from "utils/portfolioText";
 import { thumbnailSize } from "styles/variables";
 
 export interface SliderThumbnailProps {
@@ -30,7 +29,8 @@ const SliderThumbnail = memo(
                         src={item.image}
                         srcSet={item.imageSet}
                         sizes={thumbnailSize}
-                        alt={getAltText(item)}
+                        // Dekorativ: Der Button trägt bereits das aria-label, die Beschreibung steht im Portfolio-Grid
+                        alt=""
                         margin={item.thumbnailMargin}
                         aspectRatio={item.aspectRatio}
                         loading="lazy"

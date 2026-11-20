@@ -10,7 +10,6 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useStore } from "hooks/useStore";
 import { portfolioData } from "data/portfolioFixtures";
-import { getAltText } from "utils/portfolioText";
 import ActiveItem from "./ActiveItem";
 
 vi.mock(
@@ -58,7 +57,7 @@ describe("ActiveItem", () => {
     it("renders the image of the active item with its title as alt text", () => {
         render(<ActiveItem />);
 
-        expect(screen.getByAltText(getAltText(video))).toHaveAttribute(
+        expect(screen.getByAltText(video.alt)).toHaveAttribute(
             "src",
             video.image,
         );
@@ -78,7 +77,7 @@ describe("ActiveItem", () => {
         useStore.setState({ activeIndex: 0 });
         render(<ActiveItem />);
 
-        expect(screen.getByAltText(getAltText(photo))).toBeInTheDocument();
+        expect(screen.getByAltText(photo.alt)).toBeInTheDocument();
         expect(screen.queryByLabelText(video.title)).not.toBeInTheDocument();
     });
 
@@ -88,13 +87,13 @@ describe("ActiveItem", () => {
 
         act(() => useStore.setState({ activeIndex: 1 }));
 
-        expect(screen.getByAltText(getAltText(photo))).toHaveAttribute(
+        expect(screen.getByAltText(photo.alt)).toHaveAttribute(
             "src",
             photo.image,
         );
         expect(getVideo()).not.toBeInTheDocument();
 
-        const newImage = await screen.findByAltText(getAltText(video));
+        const newImage = await screen.findByAltText(video.alt);
 
         expect(newImage).toHaveAttribute("src", video.image);
         expect(getVideo()).toBeInTheDocument();
@@ -113,7 +112,7 @@ describe("ActiveItem", () => {
         expect(activeItem).toHaveStyle({ opacity: "0" });
         expect(activeItem).not.toBeVisible();
 
-        fireEvent.load(screen.getByAltText(getAltText(video)));
+        fireEvent.load(screen.getByAltText(video.alt));
 
         await waitFor(() => expect(activeItem).toHaveStyle({ opacity: "1" }));
         expect(activeItem).toBeVisible();
@@ -123,7 +122,7 @@ describe("ActiveItem", () => {
         const { container } = render(<ActiveItem />);
         const activeItem = getInnerWrapper(container);
 
-        fireEvent.error(screen.getByAltText(getAltText(video)));
+        fireEvent.error(screen.getByAltText(video.alt));
 
         await waitFor(() => expect(activeItem).toHaveStyle({ opacity: "1" }));
         expect(activeItem).toBeVisible();
@@ -132,7 +131,7 @@ describe("ActiveItem", () => {
     it("fades in again every time the popup is opened", async () => {
         const { container } = render(<ActiveItem />);
         const activeItem = getInnerWrapper(container);
-        fireEvent.load(screen.getByAltText(getAltText(video)));
+        fireEvent.load(screen.getByAltText(video.alt));
         await waitFor(() => expect(activeItem).toHaveStyle({ opacity: "1" }));
 
         act(() => useStore.setState({ popupOpen: false }));
@@ -150,13 +149,13 @@ describe("ActiveItem", () => {
     it("stays visible while navigating between items", async () => {
         const { container } = render(<ActiveItem />);
         const activeItem = getInnerWrapper(container);
-        fireEvent.load(screen.getByAltText(getAltText(video)));
+        fireEvent.load(screen.getByAltText(video.alt));
         await waitFor(() => expect(activeItem).toHaveStyle({ opacity: "1" }));
 
         act(() => useStore.setState({ activeIndex: 2 }));
 
         expect(activeItem).toHaveStyle({ opacity: "1" });
-        expect(screen.getByAltText(getAltText(video))).toBeInTheDocument();
+        expect(screen.getByAltText(video.alt)).toBeInTheDocument();
     });
 
     it("pauses the video when the popup is closed", async () => {

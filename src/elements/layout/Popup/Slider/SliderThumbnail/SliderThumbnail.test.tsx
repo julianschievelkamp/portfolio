@@ -3,7 +3,6 @@ import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
 import { portfolioData } from "data/portfolioFixtures";
-import { getAltText } from "utils/portfolioText";
 import SliderThumbnail from "./SliderThumbnail";
 
 vi.mock(
@@ -31,15 +30,15 @@ const renderThumbnail = (isActive = false) => {
 };
 
 describe("SliderThumbnail", () => {
-    it("renders a labelled button with a lazy loaded image", () => {
+    it("renders a labelled button with a lazy loaded decorative image", () => {
         renderThumbnail();
 
         const button = screen.getByRole("button", {
             name: `Show ${item.title}`,
         });
-        const image = screen.getByRole("img", { name: getAltText(item) });
+        const image = button.querySelector("img");
 
-        expect(button).toContainElement(image);
+        expect(image).toHaveAttribute("alt", "");
         expect(image).toHaveAttribute("loading", "lazy");
     });
 

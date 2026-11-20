@@ -37,7 +37,7 @@ export const languageData = {
             headline: "About the Artist",
             image: {
                 src: SelfPortrait,
-                alt: "Julian Schievelkamp",
+                alt: "Black and white portrait of Julian Schievelkamp in a denim jacket, sitting on a wooden chair floating among clouds and mist.",
                 caption: "Self-portrait of Julian Schievelkamp",
             },
             text: (
@@ -191,7 +191,9 @@ export const languageData = {
                                 <br />
                                 <span>2019: Honorable Mention "Fine Art"</span>
                                 <br />
-                                <span>2017: 1st Place (Gold) "Self-Portrait"</span>
+                                <span>
+                                    2017: 1st Place (Gold) "Self-Portrait"
+                                </span>
                             </>,
                             <>
                                 Sony World Photography Awards

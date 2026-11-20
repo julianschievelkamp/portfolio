@@ -1,7 +1,6 @@
 import { Artwork, StyledActiveItem, ItemFigure } from "./ActiveItem.styles";
 import Image from "elements/components/Image/Image";
 import { useActiveItem } from "hooks/useActiveItem";
-import { getAltText } from "utils/portfolioText";
 import Video from "elements/components/Video/Video";
 import { usePinchZoom } from "hooks/usePinchZoom/usePinchZoom";
 import { useStore } from "hooks/useStore";
@@ -24,7 +23,7 @@ const ActiveItem = () => {
                 <Artwork ref={pinchZoomRef}>
                     <Image
                         src={loadedItem.image}
-                        alt={getAltText(loadedItem)}
+                        alt={loadedItem.alt}
                         onLoad={() => setLoadedImage(loadedItem.image)}
                         onError={() => setLoadedImage(loadedItem.image)}
                         width="100%"

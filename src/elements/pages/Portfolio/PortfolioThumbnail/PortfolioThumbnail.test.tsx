@@ -3,7 +3,6 @@ import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
 import { portfolioData } from "data/portfolioFixtures";
-import { getAltText, getCaption } from "utils/portfolioText";
 import PortfolioThumbnail from "./PortfolioThumbnail";
 
 vi.mock(
@@ -30,8 +29,10 @@ describe("PortfolioThumbnail", () => {
         const button = screen.getByRole("button", {
             name: `Show ${item.title}`,
         });
-        const image = screen.getByRole("img", { name: getAltText(item) });
-        const caption = screen.getByText(getCaption(item));
+        const image = screen.getByRole("img", { name: item.alt });
+        const caption = screen.getByText(
+            `${item.title}, ${item.year} – ${item.type}`,
+        );
 
         expect(button).not.toContainElement(image);
         expect(caption.tagName).toBe("FIGCAPTION");

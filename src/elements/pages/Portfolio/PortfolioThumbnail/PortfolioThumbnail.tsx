@@ -6,7 +6,6 @@ import {
 } from "./PortfolioThumbnail.styles";
 import Image from "elements/components/Image/Image";
 import type { PortfolioItem } from "data/portfolioData";
-import { getAltText, getCaption } from "utils/portfolioText";
 import { thumbnailSize } from "styles/variables";
 
 export interface PortfolioThumbnailProps {
@@ -30,14 +29,14 @@ const PortfolioThumbnail = memo(
                     src={item.image}
                     srcSet={item.imageSet}
                     sizes={thumbnailSize}
-                    alt={getAltText(item)}
+                    alt={item.alt}
                     margin={item.thumbnailMargin}
                     aspectRatio={item.aspectRatio}
                     loading="lazy"
                     fadeInOnLoad
                 />
 
-                <PortfolioCaption>{getCaption(item)}</PortfolioCaption>
+                <PortfolioCaption>{`${item.title}, ${item.year} – ${item.type}`}</PortfolioCaption>
             </PortfolioFigure>
         );
     },
