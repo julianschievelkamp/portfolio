@@ -47,7 +47,9 @@ describe("Link", () => {
 
     it("is underlined by default and not when underline is false", () => {
         const { rerender } = render(<Link href="/">Home</Link>);
-        expect(screen.getByRole("link")).toHaveStyle("text-decoration: underline");
+        expect(screen.getByRole("link")).toHaveStyle(
+            "text-decoration: underline",
+        );
 
         rerender(
             <Link href="/" underline={false}>

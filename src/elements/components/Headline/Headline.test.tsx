@@ -29,7 +29,9 @@ describe("Headline", () => {
 
         rerender(<Headline visuallyHidden>Title</Headline>);
 
-        expect(container.firstElementChild).toHaveStyle({ position: "absolute" });
+        expect(container.firstElementChild).toHaveStyle({
+            position: "absolute",
+        });
         expect(
             screen.getByRole("heading", { level: 1, name: "Title" }),
         ).toBeInTheDocument();

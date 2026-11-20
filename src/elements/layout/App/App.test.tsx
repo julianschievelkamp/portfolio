@@ -28,9 +28,11 @@ describe("App", () => {
     });
 
     it("renders exactly one h1 with the page heading inside main", () => {
-        render(<App page={page}>
+        render(
+            <App page={page}>
                 <p>Content</p>
-            </App>);
+            </App>,
+        );
 
         const headings = screen.getAllByRole("heading", { level: 1 });
 
@@ -43,18 +45,44 @@ describe("App", () => {
     });
 
     it.each([
-        { name: "sidebar closed on mobile", sidebar: false, popup: false, desktop: false, inert: false },
-        { name: "sidebar open on desktop", sidebar: true, popup: false, desktop: true, inert: false },
-        { name: "sidebar open on mobile", sidebar: true, popup: false, desktop: false, inert: true },
-        { name: "popup open", sidebar: false, popup: true, desktop: true, inert: true },
+        {
+            name: "sidebar closed on mobile",
+            sidebar: false,
+            popup: false,
+            desktop: false,
+            inert: false,
+        },
+        {
+            name: "sidebar open on desktop",
+            sidebar: true,
+            popup: false,
+            desktop: true,
+            inert: false,
+        },
+        {
+            name: "sidebar open on mobile",
+            sidebar: true,
+            popup: false,
+            desktop: false,
+            inert: true,
+        },
+        {
+            name: "popup open",
+            sidebar: false,
+            popup: true,
+            desktop: true,
+            inert: true,
+        },
     ])(
         "sets inert on the page to $inert with $name",
         ({ sidebar, popup, desktop, inert }) => {
             useStore.setState({ sidebarOpen: sidebar, popupOpen: popup });
             vi.mocked(useMediaQuery).mockReturnValue(desktop);
-            render(<App page={page}>
+            render(
+                <App page={page}>
                     <p>Content</p>
-                </App>);
+                </App>,
+            );
 
             const main = screen.getByRole("main", { hidden: true });
 

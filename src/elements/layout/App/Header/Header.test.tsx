@@ -40,11 +40,17 @@ describe("Header", () => {
 
     it("shows the hamburger icon when closed and the close icon when open", async () => {
         render(<Header />);
-        expect(screen.getByTestId("icon")).toHaveAttribute("data-name", "hamburger");
+        expect(screen.getByTestId("icon")).toHaveAttribute(
+            "data-name",
+            "hamburger",
+        );
 
         await userEvent.click(screen.getByRole("button"));
 
-        expect(screen.getByTestId("icon")).toHaveAttribute("data-name", "close");
+        expect(screen.getByTestId("icon")).toHaveAttribute(
+            "data-name",
+            "close",
+        );
     });
 
     it("toggles the sidebar and exposes its state via label, aria-expanded and aria-controls", async () => {

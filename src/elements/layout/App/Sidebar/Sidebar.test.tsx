@@ -20,12 +20,24 @@ vi.mock("data/languageData", () => ({
 }));
 vi.mock("data/navigationData", () => ({
     pages: {
-        home: { name: "Home", title: "Home", description: "Home", path: "/", element: null },
+        home: {
+            name: "Home",
+            title: "Home",
+            description: "Home",
+            path: "/",
+            element: null,
+        },
     },
     links: { social: { name: "Social", path: "https://example.com" } },
 }));
 
-const page = { name: "Home", title: "Home", description: "Home", path: "/", element: null };
+const page = {
+    name: "Home",
+    title: "Home",
+    description: "Home",
+    path: "/",
+    element: null,
+};
 
 // CloseTrigger ist ein reines div ohne Rolle und wird über seinen Style gefunden
 const findCloseTrigger = (container: HTMLElement) =>

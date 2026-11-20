@@ -34,7 +34,9 @@ describe("Slider", () => {
         render(<Slider />);
 
         await userEvent.click(
-            screen.getByRole("button", { name: `Show ${portfolioData[2].title}` }),
+            screen.getByRole("button", {
+                name: `Show ${portfolioData[2].title}`,
+            }),
         );
 
         expect(useStore.getState().activeIndex).toBe(2);

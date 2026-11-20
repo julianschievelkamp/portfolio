@@ -4,7 +4,9 @@ import { describe, expect, it, vi } from "vitest";
 import About from "./About";
 
 vi.mock("./Artist/Artist", () => ({ default: () => <p>artist</p> }));
-vi.mock("./References/References", () => ({ default: () => <p>references</p> }));
+vi.mock("./References/References", () => ({
+    default: () => <p>references</p>,
+}));
 vi.mock("./Badges/Badges", () => ({ default: () => <p>badges</p> }));
 
 describe("About", () => {

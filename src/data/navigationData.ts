@@ -17,14 +17,13 @@ export const pages = {
         name: "About",
         title: "About – Julian Schievelkamp",
         description:
-            "Julian Schievelkamp (b. 1994) is a visual artist and fine art photographer from Cologne. Winner of the Prix de la Photographie Paris 2017 and Fine Art Photographer of the Year 2019.",
+            "Visual artist and fine art photographer from Cologne (b. 1994). Winner of Prix de la Photographie Paris 2017 and Fine Art Photographer of the Year 2019.",
         path: "/about/",
     },
     impressum: {
         name: "Impressum",
         title: "Impressum – Julian Schievelkamp",
-        description:
-            "Legal notice and contact details of Julian Schievelkamp.",
+        description: "Legal notice and contact details of Julian Schievelkamp.",
         path: "/impressum/",
     },
 } satisfies Record<string, Page>;

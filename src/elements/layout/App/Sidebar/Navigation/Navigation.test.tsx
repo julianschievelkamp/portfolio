@@ -10,8 +10,20 @@ vi.mock("data/languageData", () => ({
 }));
 vi.mock("data/navigationData", () => ({
     pages: {
-        home: { name: "Home", title: "Home", description: "Home", path: "/", element: null },
-        about: { name: "About", title: "About", description: "About", path: "/about", element: null },
+        home: {
+            name: "Home",
+            title: "Home",
+            description: "Home",
+            path: "/",
+            element: null,
+        },
+        about: {
+            name: "About",
+            title: "About",
+            description: "About",
+            path: "/about",
+            element: null,
+        },
     },
     links: {
         social: { name: "Social", path: "https://example.com/social" },
@@ -19,7 +31,13 @@ vi.mock("data/navigationData", () => ({
     },
 }));
 
-const home = { name: "Home", title: "Home", description: "Home", path: "/", element: null };
+const home = {
+    name: "Home",
+    title: "Home",
+    description: "Home",
+    path: "/",
+    element: null,
+};
 
 describe("Navigation", () => {
     beforeEach(() => {
@@ -47,7 +65,9 @@ describe("Navigation", () => {
 
         expect(active).toHaveAttribute("aria-current", "page");
         expect(inactive).not.toHaveAttribute("aria-current");
-        expect(within(active).getByText("Home")).toHaveStyle("font-weight: 700");
+        expect(within(active).getByText("Home")).toHaveStyle(
+            "font-weight: 700",
+        );
         expect(within(inactive).getByText("About")).not.toHaveStyle(
             "font-weight: 700",
         );

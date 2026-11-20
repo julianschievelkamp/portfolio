@@ -11,7 +11,13 @@ const SCHEDULER_INTERVAL_MS = 1000;
 
 // Die Audio Session API (Safari ab 16.4) ist noch nicht in den TypeScript-DOM-Typen enthalten
 interface AudioSession {
-    type: "auto" | "playback" | "transient" | "transient-solo" | "ambient" | "play-and-record";
+    type:
+        | "auto"
+        | "playback"
+        | "transient"
+        | "transient-solo"
+        | "ambient"
+        | "play-and-record";
 }
 
 type NavigatorWithAudioSession = Navigator & { audioSession?: AudioSession };
@@ -117,7 +123,10 @@ export const useGaplessAudio = (src?: string) => {
                 const crossfade = Math.min(CROSSFADE_SECONDS, remaining);
                 const startTime = nextStart;
                 const endTime = startTime + remaining;
-                const fadeOutStart = Math.max(endTime - crossfade, startTime + nextFadeIn);
+                const fadeOutStart = Math.max(
+                    endTime - crossfade,
+                    startTime + nextFadeIn,
+                );
 
                 const source = context.createBufferSource();
                 source.buffer = buffer;
@@ -149,7 +158,8 @@ export const useGaplessAudio = (src?: string) => {
 
             // Hält genug Durchläufe im Voraus eingeplant, ohne auf genaue Timer angewiesen zu sein
             const fillSchedule = () => {
-                while (nextStart < context.currentTime + LOOKAHEAD_SECONDS) scheduleVoice();
+                while (nextStart < context.currentTime + LOOKAHEAD_SECONDS)
+                    scheduleVoice();
             };
 
             fillSchedule();
