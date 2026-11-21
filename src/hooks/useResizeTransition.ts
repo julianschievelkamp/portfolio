@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-// Deaktiviert Transitions bei Breitenänderung oder Orientierungswechsel (Höhenänderungen durch die Adressleiste zählen nicht)
+// Disables transitions on width changes or orientation changes (height changes caused by the address bar do not count)
 export const useResizeTransition = () => {
     useEffect(() => {
         let resizeTimer: ReturnType<typeof setTimeout>;

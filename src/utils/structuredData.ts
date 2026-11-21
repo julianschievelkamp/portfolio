@@ -5,7 +5,7 @@ import { ensureTrailingSlash } from "utils/ensureTrailingSlash";
 const personId = `${siteUrl}/#person`;
 const websiteId = `${siteUrl}/#website`;
 
-// Relative Asset-Pfade werden absolut gemacht, Data-URIs und fremde URLs bleiben unberührt
+// Relative asset paths are made absolute, data URIs and external URLs remain untouched
 const toAbsoluteUrl = (url: string) =>
     url.startsWith("/") ? `${siteUrl}${url}` : url;
 
@@ -35,7 +35,7 @@ const getWebSite = () => ({
     publisher: { "@id": personId },
 });
 
-// Liefert die JSON-LD-Daten für den Pfad oder null, wenn die Seite keine benötigt (z. B. Impressum)
+// Returns the JSON-LD data for the path, or null if the page needs none (e.g. legal notice)
 export const getStructuredData = (pathname: string, portraitUrl?: string) => {
     const path = ensureTrailingSlash(pathname);
 
@@ -53,7 +53,7 @@ export const getStructuredData = (pathname: string, portraitUrl?: string) => {
     return null;
 };
 
-// "<" wird maskiert, damit der Inhalt das umgebende script-Element nicht vorzeitig schließen kann
+// "<" is escaped so the content cannot close the surrounding script element prematurely
 export const serializeStructuredData = (
     data: NonNullable<ReturnType<typeof getStructuredData>>,
 ) => JSON.stringify(data).replace(/</g, "\\u003c");

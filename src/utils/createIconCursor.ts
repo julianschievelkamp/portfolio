@@ -4,9 +4,9 @@ interface IconCursorOptions {
 }
 
 /**
- * Erzeugt aus einem rohen SVG-String einen CSS-Cursor-Wert.
- * Breite/Höhe werden auf `size` gesetzt (die viewBox bleibt erhalten, das Icon skaliert also mit),
- * alle Füll- und Konturfarben werden durch `color` ersetzt und der Hotspot liegt mittig.
+ * Creates a CSS cursor value from a raw SVG string.
+ * Width/height are set to `size` (the viewBox is kept, so the icon scales with it),
+ * all fill and stroke colors are replaced by `color` and the hotspot is centered.
  */
 export const createIconCursor = (
     rawSvg: string,
@@ -26,6 +26,6 @@ export const createIconCursor = (
     const hotspot = size / 2;
     const dataUri = `data:image/svg+xml,${encodeURIComponent(svg)}`;
 
-    // "pointer" als Fallback, falls der eigene Cursor nicht dargestellt werden kann
+    // "pointer" as a fallback in case the custom cursor cannot be displayed
     return `url("${dataUri}") ${hotspot} ${hotspot}, pointer`;
 };

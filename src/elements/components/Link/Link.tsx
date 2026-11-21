@@ -14,7 +14,7 @@ const Link = ({ tabIndex, target, underline = true, ...props }: LinkProps) => (
         target={target}
         rel={target === "_blank" ? "noopener noreferrer" : undefined}
         $underline={underline}
-        // Ohne explizites tabIndex fokussiert Safari Links nicht per Tab
+        // Without an explicit tabIndex, Safari does not focus links via Tab
         tabIndex={tabIndex ?? 0}
     />
 );

@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 
-// Merkt sich, ob das Bild zur aktuellen src geladen ist, damit es danach einblenden kann.
-// Der Callback-Ref erkennt auch Bilder, die schon vor der Hydration fertig geladen waren.
+// Remembers whether the image for the current src is loaded so it can fade in afterwards.
+// The callback ref also detects images that were already fully loaded before hydration.
 export const useImageFadeIn = (src: string) => {
     const [loadedSrc, setLoadedSrc] = useState<string | null>(null);
 

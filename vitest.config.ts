@@ -1,7 +1,7 @@
 import { defineConfig } from "vitest/config";
 import svgr from "vite-plugin-svgr";
 
-// Eigene Konfiguration ohne das Vike-Plugin, da dieses in Tests stört
+// Separate configuration without the Vike plugin, since it interferes in tests
 export default defineConfig({
     plugins: [svgr()],
     resolve: {

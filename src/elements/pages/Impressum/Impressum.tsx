@@ -4,7 +4,7 @@ import Text from "elements/components/Text/Text";
 import { StyledImpressum } from "./Impressum.styles";
 
 const Impressum = () => (
-    // Der Impressum-Text ist deutsch, daher wird die Sprache ausgewiesen
+    // The legal notice text is German, so the language is declared
     <StyledImpressum lang="de">
         <Text>{languageData.impressum}</Text>
     </StyledImpressum>

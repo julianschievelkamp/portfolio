@@ -16,7 +16,7 @@ interface Actions {
 }
 
 export const useStore = create<State & Actions>((set) => ({
-    // -1 bedeutet, dass noch kein Item für das Popup gewählt wurde
+    // -1 means that no item has been selected for the popup yet
     activeIndex: -1,
     popupOpen: false,
     sidebarOpen: false,

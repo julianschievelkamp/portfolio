@@ -81,7 +81,7 @@ describe("Image", () => {
     });
 
     it("shows a cached image immediately when it is already complete on mount", () => {
-        // jsdom lädt keine Bilder, daher wird "complete" für diesen Test simuliert
+        // jsdom does not load images, so "complete" is simulated for this test
         const completeSpy = vi
             .spyOn(HTMLImageElement.prototype, "complete", "get")
             .mockReturnValue(true);

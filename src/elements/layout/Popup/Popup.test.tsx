@@ -47,7 +47,7 @@ describe("Popup", () => {
         expect(dialog.open).toBe(true);
 
         act(() => useStore.setState({ popupOpen: false }));
-        // Schließt erst nach der Ausblend-Transition
+        // Only closes after the fade-out transition
         expect(dialog.open).toBe(true);
 
         act(() => {
@@ -79,7 +79,7 @@ describe("Popup", () => {
         expect(useStore.getState().popupOpen).toBe(false);
     });
 
-    // Der Backdrop hat weder Rolle noch Label, er ist das erste Kind des Dialogs
+    // The backdrop has neither role nor label, it is the first child of the dialog
     const getBackdrop = () =>
         document.querySelector("dialog")?.firstElementChild as HTMLElement;
 

@@ -8,7 +8,7 @@ export default defineConfig({
     plugins: [
         svgr(),
         vike(),
-        // Deterministische Klassennamen für Styled Components (SSR/Hydration)
+        // Deterministic class names for Styled Components (SSR/hydration)
         babel({
             include: /\.tsx?$/,
             exclude: /node_modules/,

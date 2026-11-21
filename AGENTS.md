@@ -49,7 +49,6 @@
 ### 3. Clean Code & Architektur
 
 - **Sprachregelungen (Code & Oberfläche):** Der gesamte Quellcode (Variablen, Funktionen, Komponenten- und Dateinamen) sowie alle für den Endnutzer sichtbaren Texte auf der Website müssen in **englischer Sprache** verfasst sein.
-- **Code-Kommentare:** Alle im Code hinterlassenen Kommentare, Erklärungen oder Dokumentationen müssen in **deutscher Sprache** verfasst werden.
 - **TypeScript:** Erzwinge eine strikte Typisierung. Vermeide den Typ `any` unter allen Umständen. Nutze klare Interfaces oder Typen für Komponenten-Props und transiente Props in Styled Components (z. B. `$isActive`).
 - **Styling (Styled Components):** Nutze Styled Components für das gesamte Komponenten-Styling. Halte Stile wartbar, indem du globale Themes oder Variablen für Farben und Abstände verwendest. Benenne Styled Components sprechend, um die Lesbarkeit des JSX-Baums zu wahren.
 - **Komponenten-Design:** Halte React-Komponenten klein, funktional, wiederverwendbar und fokussiert auf eine einzige Aufgabe (Single-Purpose). Bevorzuge Custom Hooks zur Trennung von Logik und UI.

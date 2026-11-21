@@ -2,7 +2,7 @@ import { css, keyframes, styled } from "styled-components";
 
 import { transition } from "styles/variables";
 
-// Animiert vom unsichtbaren Zustand zum regulären Opacity-Wert (z. B. 0.5 im Slider)
+// Animates from the invisible state to the regular opacity value (e.g. 0.5 in the slider)
 const fadeIn = keyframes`
     from {
         opacity: 0;
@@ -29,7 +29,7 @@ export const StyledImage = styled.img<{
     -webkit-user-select: none;
     -ms-user-select: none;
 
-    /* Animation statt Transition, damit transition-Regeln der Eltern (z. B. Hover-Zoom) sie nicht überschreiben */
+    /* Animation instead of transition, so transition rules of parents (e.g. hover zoom) do not override it */
     ${({ $fadeInOnLoad, $isLoaded }) => {
         if (!$fadeInOnLoad) return;
 
@@ -37,7 +37,7 @@ export const StyledImage = styled.img<{
             ? css`
                   animation: ${fadeIn} ${transition.default};
               `
-            : // && erhöht die Spezifität über Eltern-Regeln wie die Slider-Opacity
+            : // && raises the specificity above parent rules such as the slider opacity
               css`
                   && {
                       opacity: 0;

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import type { PortfolioItem } from "data/portfolioData";
 
-// Liefert das zuletzt vollständig geladene Item; neue Bilder werden vorab geladen.
+// Returns the most recently fully loaded item; new images are preloaded in advance.
 export const usePreloadedItem = (activeItem?: PortfolioItem) => {
     const [loadedItem, setLoadedItem] = useState(activeItem);
 
@@ -15,13 +15,13 @@ export const usePreloadedItem = (activeItem?: PortfolioItem) => {
 
         preloader
             .decode()
-            // Auch bei Ladefehlern umschalten, damit die UI nicht hängen bleibt
+            // Also switch on load errors so the UI does not get stuck
             .catch(() => undefined)
             .then(() => {
                 if (!cancelled) setLoadedItem(activeItem);
             });
 
-        // Bei schnellem Weiterschalten werden veraltete Ladevorgänge verworfen
+        // When switching quickly, outdated loading operations are discarded
         return () => {
             cancelled = true;
         };

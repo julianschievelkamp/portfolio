@@ -1,17 +1,17 @@
 import { useCallback, useEffect, useRef } from "react";
 
-// Kurze Ein- und Ausblendung in Sekunden, damit Start und Stopp mitten in der Welle nicht knacken
+// Short fade-in and fade-out in seconds so start and stop in the middle of the wave do not click
 const FADE_IN_SECONDS = 0.02;
 const FADE_OUT_SECONDS = 0.03;
-// Längere Einblendung beim allerersten Start durch den Nutzer in Sekunden
+// Longer fade-in on the very first start by the user in seconds
 const INITIAL_FADE_IN_SECONDS = 1;
-// Dauer der Überblendung zwischen Ende und Anfang des Loops in Sekunden (zu Testzwecken anpassbar)
+// Duration of the crossfade between the end and start of the loop in seconds (adjustable for testing)
 const CROSSFADE_SECONDS = 0.1;
-// Wie weit im Voraus Durchläufe eingeplant werden und wie oft nachgeplant wird
+// How far ahead runs are scheduled and how often rescheduling happens
 const LOOKAHEAD_SECONDS = 20;
 const SCHEDULER_INTERVAL_MS = 1000;
 
-// Die Audio Session API (Safari ab 16.4) ist noch nicht in den TypeScript-DOM-Typen enthalten
+// The Audio Session API (Safari 16.4+) is not yet part of the TypeScript DOM types
 interface AudioSession {
     type:
         | "auto"
@@ -29,23 +29,23 @@ interface PlayingSource {
     source: AudioBufferSourceNode;
 }
 
-// Ein laufender Loop besteht aus mehreren eingeplanten Durchläufen, die sich überblenden
+// A running loop consists of several scheduled runs that crossfade
 interface PlayingLoop {
     timer: ReturnType<typeof setInterval>;
     voices: Set<PlayingSource>;
 }
 
-// Spielt eine Audiodatei lückenlos im Loop ab (Web Audio API).
-// Ein <audio loop>-Element erzeugt je nach Browser eine hörbare Pause am Loop-Punkt.
-// Jeder Durchlauf wird einzeln eingeplant und mit dem nächsten überblendet,
-// damit auch Dateien mit stillem Ende sauber ineinander übergehen.
+// Plays an audio file in a gapless loop (Web Audio API).
+// Depending on the browser, an <audio loop> element produces an audible pause at the loop point.
+// Each run is scheduled individually and crossfaded with the next one,
+// so files with a silent ending also blend into each other cleanly.
 export const useGaplessAudio = (src?: string) => {
     const contextRef = useRef<AudioContext | null>(null);
     const bufferPromiseRef = useRef<Promise<AudioBuffer | null> | null>(null);
     const playingRef = useRef<PlayingLoop | null>(null);
-    // Wird bei jedem Start/Stopp erhöht, damit veraltete asynchrone Starts verworfen werden
+    // Incremented on every start/stop so outdated asynchronous starts are discarded
     const requestRef = useRef(0);
-    // Merkt sich, ob der Ton bereits einmal gestartet wurde (nur der erste Start blendet lang ein)
+    // Remembers whether the sound has already been started once (only the first start fades in slowly)
     const hasStartedRef = useRef(false);
 
     const stop = useCallback(() => {
@@ -60,7 +60,7 @@ export const useGaplessAudio = (src?: string) => {
         const now = context.currentTime;
         const stopTime = now + FADE_OUT_SECONDS;
 
-        // Alle Durchläufe blenden auf abgetrennten Referenzen aus, ein neuer Start ist sofort möglich
+        // All runs fade out on detached references, a new start is possible immediately
         playing.voices.forEach(({ gain, source }) => {
             gain.gain.cancelScheduledValues(now);
             gain.gain.setValueAtTime(gain.gain.value, now);
@@ -71,14 +71,14 @@ export const useGaplessAudio = (src?: string) => {
         playingRef.current = null;
     }, []);
 
-    // Muss innerhalb einer Nutzerinteraktion (Klick) aufgerufen werden,
-    // damit der AudioContext entsperrt wird. Lädt und dekodiert die Datei einmalig.
+    // Must be called within a user interaction (click)
+    // so the AudioContext is unlocked. Loads and decodes the file once.
     const prepare = useCallback((): Promise<AudioBuffer | null> => {
         if (!src) return Promise.resolve(null);
 
         if (!contextRef.current) {
-            // iOS dämpft Web Audio standardmäßig bei aktivem Stumm-Schalter ("ambient").
-            // "playback" verhält sich wie ein <video>-Element und bleibt hörbar.
+            // iOS dampens Web Audio by default when the silent switch is active ("ambient").
+            // "playback" behaves like a <video> element and stays audible.
             const { audioSession } = navigator as NavigatorWithAudioSession;
             if (audioSession) audioSession.type = "playback";
 
@@ -92,15 +92,15 @@ export const useGaplessAudio = (src?: string) => {
             bufferPromiseRef.current = fetch(src)
                 .then((response) => response.arrayBuffer())
                 .then((data) => context.decodeAudioData(data))
-                // Ohne ladbare Tonspur läuft das Video einfach stumm weiter
+                // Without a loadable audio track the video simply continues silently
                 .catch(() => null);
         }
 
         return bufferPromiseRef.current;
     }, [src]);
 
-    // Startet den Loop an der vom Aufrufer gelieferten Position (Sekunden).
-    // Die Position wird erst nach dem Laden gelesen, damit Audio und Video synchron bleiben.
+    // Starts the loop at the position supplied by the caller (seconds).
+    // The position is only read after loading so audio and video stay in sync.
     const start = useCallback(
         async (getOffset: () => number) => {
             stop();
@@ -124,7 +124,7 @@ export const useGaplessAudio = (src?: string) => {
                 : INITIAL_FADE_IN_SECONDS;
             hasStartedRef.current = true;
 
-            // Plant einen Durchlauf ab dem Offset. Sein Ende blendet aus, während der nächste einblendet.
+            // Schedules a run from the offset. Its end fades out while the next one fades in.
             const scheduleVoice = () => {
                 const remaining = buffer.duration - nextOffset;
                 const crossfade = Math.min(CROSSFADE_SECONDS, remaining);
@@ -157,13 +157,13 @@ export const useGaplessAudio = (src?: string) => {
                     voices.delete(voice);
                 };
 
-                // Der nächste Durchlauf beginnt schon während der Überblendung
+                // The next run already begins during the crossfade
                 nextStart = endTime - crossfade;
                 nextOffset = 0;
                 nextFadeIn = crossfade;
             };
 
-            // Hält genug Durchläufe im Voraus eingeplant, ohne auf genaue Timer angewiesen zu sein
+            // Keeps enough runs scheduled in advance without relying on precise timers
             const fillSchedule = () => {
                 while (nextStart < context.currentTime + LOOKAHEAD_SECONDS)
                     scheduleVoice();
@@ -186,7 +186,7 @@ export const useGaplessAudio = (src?: string) => {
             const context = contextRef.current;
             contextRef.current = null;
 
-            // Das Schließen wartet das Ausblenden ab, sonst würde der Ton hart abgeschnitten
+            // Closing waits for the fade-out, otherwise the sound would be cut off abruptly
             setTimeout(
                 () => context?.close().catch(() => undefined),
                 FADE_OUT_SECONDS * 1000 + 50,

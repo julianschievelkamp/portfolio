@@ -2,12 +2,12 @@ import "@testing-library/jest-dom/vitest";
 import { cleanup } from "@testing-library/react";
 import { afterEach } from "vitest";
 
-// Räumt das gerenderte DOM nach jedem Test auf
+// Cleans up the rendered DOM after each test
 afterEach(() => {
     cleanup();
 });
 
-// jsdom implementiert showModal() und close() von <dialog> nicht
+// jsdom does not implement showModal() and close() of <dialog>
 HTMLDialogElement.prototype.showModal = function showModal() {
     this.setAttribute("open", "");
 };
@@ -19,7 +19,7 @@ HTMLDialogElement.prototype.close = function close() {
     this.dispatchEvent(new Event("close"));
 };
 
-// jsdom implementiert decode() von <img> nicht
+// jsdom does not implement decode() of <img>
 HTMLImageElement.prototype.decode = function decode() {
     return Promise.resolve();
 };

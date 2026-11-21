@@ -3,7 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useGaplessAudio } from "./useGaplessAudio";
 
-// jsdom kennt die Web Audio API nicht, daher wird sie nachgebildet
+// jsdom does not know the Web Audio API, so it is simulated
 const BUFFER_DURATION = 60;
 const sourceStart = vi.fn();
 const sourceStop = vi.fn();
@@ -137,7 +137,7 @@ describe("useGaplessAudio", () => {
     it("crossfades into the next pass before the file ends", async () => {
         const { result } = renderHook(() => useGaplessAudio("/clip.ogg"));
 
-        // Von 60 s bleiben ab Sekunde 50 noch 10 s bis zum Ende
+        // Of 60 s, 10 s remain until the end from second 50
         await act(() => result.current.start(() => 50));
 
         const [secondStart, secondOffset] = sourceStart.mock.calls[1];
@@ -217,7 +217,7 @@ describe("useGaplessAudio", () => {
 
         await act(() => result.current.start(() => 10));
 
-        // Der erste Loop wurde ausgeblendet, ein neuer läuft
+        // The first loop was faded out, a new one is running
         expect(sourceStop).toHaveBeenCalled();
         expect(sourceStart).toHaveBeenLastCalledWith(
             expect.any(Number),
@@ -238,7 +238,7 @@ describe("useGaplessAudio", () => {
         expect(sourceStop).toHaveBeenCalled();
         expect(fakeContexts[0].close).not.toHaveBeenCalled();
 
-        // Das Schließen wartet das Ausblenden ab
+        // Closing waits for the fade-out
         await vi.advanceTimersByTimeAsync(200);
         expect(fakeContexts[0].close).toHaveBeenCalledTimes(1);
     });

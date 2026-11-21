@@ -14,24 +14,24 @@ export const useVideoPlayback = (
 
     const toggleVideo = () => {
         if (videoRef.current?.paused) {
-            // Entsperrt den AudioContext im Klick; gestartet wird das Audio erst beim "playing"-Event
+            // Unlocks the AudioContext in the click; audio only starts on the "playing" event
             prepare();
 
-            // Lehnt der Browser das Abspielen ab, bleibt das Video einfach pausiert
+            // If the browser rejects playback, the video simply stays paused
             videoRef.current.play().catch(() => undefined);
         } else {
             videoRef.current?.pause();
         }
     };
 
-    // Ein inaktives Video (z. B. bei geschlossenem Popup) wird pausiert
+    // An inactive video (e.g. when the popup is closed) is paused
     useEffect(() => {
         if (!isActive) {
             videoRef.current?.pause();
         }
     }, [isActive, videoRef]);
 
-    // Hält die Zustände über die nativen Video-Events synchron
+    // Keeps the states in sync via the native video events
     useEffect(() => {
         const video = videoRef.current;
 
@@ -54,13 +54,13 @@ export const useVideoPlayback = (
         };
     }, [videoRef]);
 
-    // Das Audio startet an der Videoposition und loopt danach unabhängig weiter.
+    // The audio starts at the video position and then loops independently.
     useEffect(() => {
         const video = videoRef.current;
 
         if (!video || !audioSrc) return;
 
-        // Der Video-Loop löst "playing" erneut aus, ein laufender Audio-Loop bleibt aber unberührt
+        // The video loop triggers "playing" again, but a running audio loop stays untouched
         const startAudio = () => {
             if (!isPlaying()) {
                 start(() => video.currentTime);

@@ -29,9 +29,9 @@ const Popup = () => {
                 ref={popupRef}
                 aria-label="Artwork Popup"
                 tabIndex={-1}
-                // Hält den Store synchron, falls der Dialog anderweitig schließt
+                // Keeps the store in sync in case the dialog closes otherwise
                 onClose={() => setPopupOpen(false)}
-                // ESC schließt nicht sofort, sondern über den Store (mit Transition)
+                // ESC does not close immediately but via the store (with transition)
                 onCancel={(event) => {
                     event.preventDefault();
                     setPopupOpen(false);

@@ -16,7 +16,7 @@ interface PortfolioThumbnailProps {
     onSelect: (index: number) => void;
 }
 
-// memo: Kein Neurendern, solange item, index und onSelect gleich bleiben.
+// memo: no re-render as long as item, index and onSelect stay the same.
 const PortfolioThumbnail = memo(
     ({ index, item, onSelect }: PortfolioThumbnailProps) => (
         <PortfolioFigure>

@@ -1,3 +1,3 @@
-// Hängt einen abschließenden Slash an, damit Pfade einheitlich verglichen und ausgegeben werden
+// Appends a trailing slash so paths can be compared and output consistently
 export const ensureTrailingSlash = (path: string) =>
     path.endsWith("/") ? path : `${path}/`;

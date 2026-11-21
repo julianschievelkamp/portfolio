@@ -5,13 +5,13 @@ import { pages } from "data/navigationData";
 import App from "elements/layout/App/App";
 import { ensureTrailingSlash } from "utils/ensureTrailingSlash";
 
-// Layout bleibt beim Routing bestehen, damit die Sidebar nicht neu mountet
+// Layout persists across routing so the sidebar does not remount
 export const Layout = ({ children }: { children: ReactNode }) => {
     const { urlPathname } = usePageContext();
     const current = ensureTrailingSlash(urlPathname);
     const page = Object.values(pages).find(({ path }) => path === current);
 
-    // Unbekannte Pfade (z. B. Fehlerseiten) erhalten kein App-Layout
+    // Unknown paths (e.g. error pages) get no app layout
     if (!page) {
         return <>{children}</>;
     }

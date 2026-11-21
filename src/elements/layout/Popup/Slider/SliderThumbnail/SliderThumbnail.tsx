@@ -13,7 +13,7 @@ interface SliderThumbnailProps {
     onSelect: (index: number) => void;
 }
 
-// memo: Nur alte und neue aktive Thumbnails rendern neu (Callbacks referenzstabil).
+// memo: only old and new active thumbnails re-render (callbacks are referentially stable).
 const SliderThumbnail = memo(
     ({ index, isActive, item, onSelect }: SliderThumbnailProps) => (
         <SliderListItem>
@@ -21,7 +21,7 @@ const SliderThumbnail = memo(
                 aria-label={`Show ${item.title}`}
                 onClick={() => onSelect(index)}
                 aria-current={isActive}
-                // Roving Tabindex: Nur das aktive Item liegt in der Tab-Reihenfolge
+                // Roving tabindex: only the active item is part of the tab order
                 tabIndex={isActive ? 0 : -1}
                 $isActive={isActive}
             >
@@ -30,7 +30,7 @@ const SliderThumbnail = memo(
                     src={item.image}
                     srcSet={item.imageSet}
                     sizes={thumbnailSize}
-                    // Dekorativ: Der Button trägt bereits das aria-label, die Beschreibung steht im Portfolio-Grid
+                    // Decorative: the button already carries the aria-label, the description is in the portfolio grid
                     alt=""
                     margin={item.thumbnailMargin}
                     aspectRatio={item.aspectRatio}

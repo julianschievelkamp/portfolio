@@ -12,7 +12,7 @@ vi.mock(
     async () => await import("data/portfolioFixtures"),
 );
 
-// Die Verschiebung des Sliders verrät den ausgewählten Index
+// The slider offset reveals the selected index
 const getTransform = (container: HTMLElement) =>
     getComputedStyle(container.firstElementChild?.firstElementChild as Element)
         .transform;

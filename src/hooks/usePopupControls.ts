@@ -8,8 +8,8 @@ import { useStore } from "./useStore";
 
 const MIN_SWIPE_DISTANCE = 50;
 
-// Wechselt relativ zum aktuellen Index; liest den Store direkt,
-// damit die Listener nicht bei jedem Indexwechsel neu registriert werden
+// Switches relative to the current index; reads the store directly,
+// so the listeners are not re-registered on every index change
 const showRelative = (offset: number) => {
     const { activeIndex, setActiveIndex } = useStore.getState();
 
@@ -23,10 +23,10 @@ export const usePopupControls = (
     const popupOpen = useStore((state) => state.popupOpen);
 
     useEffect(() => {
-        // Listener existieren nur, solange das Popup geöffnet ist
+        // Listeners only exist while the popup is open
         if (!popupOpen) return;
 
-        // Touch-Koordinaten werden nur in Event-Handlern gelesen und brauchen kein Rendering
+        // Touch coordinates are only read in event handlers and need no rendering
         let touchStart: number | null = null;
         let touchEnd: number | null = null;
 
@@ -69,7 +69,7 @@ export const usePopupControls = (
 
             showRelative(e.key === "ArrowLeft" ? -1 : 1);
 
-            // Fokus immer auf den Dialog nach Bildwechsel über Tastatur
+            // Always focus the dialog after an image change via keyboard
             popupRef.current?.focus({ preventScroll: true });
         };
 

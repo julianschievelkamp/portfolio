@@ -5,7 +5,7 @@ import { isViewportZoomed } from "utils/isViewportZoomed";
 
 export const PINCH_MAX_SCALE = 2;
 
-// Zeitfenster nach einer Geste, in dem Klicks verworfen werden
+// Time window after a gesture in which clicks are discarded
 const CLICK_SUPPRESS_DURATION = 300;
 
 interface Point {
@@ -16,7 +16,7 @@ interface Point {
 interface PinchBaseline {
     distance: number;
     scale: number;
-    // Punkt unter dem Fingermittelpunkt in untransformierten Element-Koordinaten
+    // Point under the finger midpoint in untransformed element coordinates
     anchor: Point;
 }
 
@@ -41,13 +41,13 @@ const getDistance = (a: Touch, b: Touch) =>
 const clamp = (value: number, min: number, max: number) =>
     Math.min(Math.max(value, min), max);
 
-// Direkt statt per React-State, damit die Transition synchron zur Transformation entfällt
+// Directly instead of via React state, so the transition is removed in sync with the transformation
 const setPinching = (active: boolean) =>
     document.documentElement.toggleAttribute(PINCHING_ATTRIBUTE, active);
 
-// Pinch-Zoom und Verschieben per Touch; danach gleitet das Element zurück.
-// Schreibt "--pinch-transform" aufs Element und das Pinch-Attribut an <html>, die Styles
-// wenden sie an (transform-origin: 0 0). Callback-Ref, da das Element erst nach dem Laden rendert.
+// Pinch zoom and panning via touch; afterwards the element glides back.
+// Writes "--pinch-transform" onto the element and the pinch attribute onto <html>, the styles
+// apply them (transform-origin: 0 0). Callback ref, since the element only renders after loading.
 export const usePinchZoom = <T extends HTMLElement>() =>
     useCallback((element: T | null) => {
         if (!element) return;
@@ -73,7 +73,7 @@ export const usePinchZoom = <T extends HTMLElement>() =>
             frame = requestAnimationFrame(writeTransform);
         };
 
-        // Übernimmt die sichtbare Transformation, damit das Element nicht springt
+        // Adopts the visible transformation so the element does not jump
         const startGesture = () => {
             const matrix = new DOMMatrixReadOnly(
                 getComputedStyle(element).transform,
@@ -85,7 +85,7 @@ export const usePinchZoom = <T extends HTMLElement>() =>
             translate = { x: matrix.e, y: matrix.f };
             origin = { x: rect.left - translate.x, y: rect.top - translate.y };
 
-            // Hält das Element an der aktuellen Position, bevor die Transition entfällt
+            // Holds the element at its current position before the transition is removed
             writeTransform();
             setPinching(true);
         };
@@ -132,7 +132,7 @@ export const usePinchZoom = <T extends HTMLElement>() =>
         const handleTouchStart = (event: TouchEvent) => {
             if (!isActive) {
                 if (event.touches.length < 2) return;
-                // Bei vergrößertem Viewport zoomt nur die Seite, nicht das Werk
+                // When the viewport is zoomed in, only the page zooms, not the artwork
                 if (isViewportZoomed()) return;
                 startGesture();
             }
@@ -143,7 +143,7 @@ export const usePinchZoom = <T extends HTMLElement>() =>
         const handleTouchMove = (event: TouchEvent) => {
             if (!isActive) return;
 
-            // Verhindert native Gesten (z. B. Safari)
+            // Prevents native gestures (e.g. Safari)
             if (event.cancelable) event.preventDefault();
 
             const [a, b] = [event.touches[0], event.touches[1]];
@@ -186,7 +186,7 @@ export const usePinchZoom = <T extends HTMLElement>() =>
             }
         };
 
-        // Verwirft Klicks während und kurz nach einer Geste
+        // Discards clicks during and shortly after a gesture
         const handleClick = (event: MouseEvent) => {
             if (
                 isActive ||

@@ -2,8 +2,8 @@ import { useEffect } from "react";
 
 import { portfolioData } from "data/portfolioData";
 
-// Lädt die Bilder des vorherigen und nächsten Items vor, damit das Weiterschalten sofort reagiert.
-// Startet erst, wenn das aktuelle Item fertig ist, um dessen Laden nicht auszubremsen.
+// Preloads the images of the previous and next item so switching reacts instantly.
+// Only starts once the current item is done, so its loading is not slowed down.
 export const useNeighborPreload = (activeIndex: number, enabled: boolean) => {
     useEffect(() => {
         if (!enabled || activeIndex < 0) return;

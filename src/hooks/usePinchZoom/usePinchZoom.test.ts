@@ -16,7 +16,7 @@ const point = (clientX: number, clientY: number): TouchPoint => ({
     clientY,
 });
 
-// Zwei Finger mit dem Abstand "distance" um den Mittelpunkt (200, 200)
+// Two fingers at distance "distance" around the midpoint (200, 200)
 const fingers = (distance: number): TouchPoint[] => [
     point(200 - distance / 2, 200),
     point(200 + distance / 2, 200),
@@ -28,7 +28,7 @@ const getTransform = (element: HTMLElement) =>
 const isPinching = () =>
     document.documentElement.hasAttribute(PINCHING_ATTRIBUTE);
 
-// jsdom kennt DOMMatrixReadOnly nicht; das Element startet untransformiert
+// jsdom does not know DOMMatrixReadOnly; the element starts untransformed
 class FakeDOMMatrix {
     a = 1;
     e = 0;
@@ -48,7 +48,7 @@ describe("usePinchZoom", () => {
         element = document.createElement("div");
         document.body.appendChild(element);
         vi.stubGlobal("DOMMatrixReadOnly", FakeDOMMatrix);
-        // Frames laufen synchron, damit die Transformation sofort geschrieben wird
+        // Frames run synchronously so the transformation is written immediately
         vi.stubGlobal("requestAnimationFrame", (callback: () => void) => {
             callback();
             return 1;
@@ -99,7 +99,7 @@ describe("usePinchZoom", () => {
 
         fireEvent.touchMove(element, { touches: fingers(150) });
 
-        // Mittelpunkt 200 bei Skalierung 1.5: 200 - 1.5 * 200 = -100
+        // Midpoint 200 at scale 1.5: 200 - 1.5 * 200 = -100
         expect(getTransform(element)).toBe(
             "translate(-100px, -100px) scale(1.5)",
         );
@@ -131,7 +131,7 @@ describe("usePinchZoom", () => {
         attach();
         fireEvent.touchStart(element, { touches: fingers(100) });
         fireEvent.touchMove(element, { touches: fingers(150) });
-        // Ein Finger wird abgehoben, der verbleibende verschiebt
+        // One finger is lifted, the remaining one pans
         fireEvent.touchEnd(element, { touches: [point(250, 200)] });
 
         fireEvent.touchMove(element, { touches: [point(260, 220)] });

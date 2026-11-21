@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 import { SCROLL_ALLOWED_ATTRIBUTE } from "styles/global";
 
-// Prüft, ob das Ziel in einem erlaubten Scroll-Bereich liegt, der tatsächlich scrollbar ist
+// Checks whether the target is inside an allowed scroll area that is actually scrollable
 const isInsideScrollableArea = (target: EventTarget | null): boolean => {
     if (!(target instanceof Element)) {
         return false;
@@ -13,7 +13,7 @@ const isInsideScrollableArea = (target: EventTarget | null): boolean => {
     return area !== null && area.scrollHeight > area.clientHeight;
 };
 
-// Sichert den Scroll-Lock per JavaScript ab (Wheel, Touch, Position)
+// Secures the scroll lock via JavaScript (wheel, touch, position)
 export const useScrollLock = (active: boolean) => {
     useEffect(() => {
         if (!active) {
@@ -28,7 +28,7 @@ export const useScrollLock = (active: boolean) => {
             }
         };
 
-        // Fallback: jede trotzdem entstandene Scroll-Bewegung wird zurückgesetzt
+        // Fallback: any scroll movement that still occurred is reset
         const restorePosition = () => {
             if (window.scrollX !== scrollX || window.scrollY !== scrollY) {
                 window.scrollTo(scrollX, scrollY);

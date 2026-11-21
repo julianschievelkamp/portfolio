@@ -2,8 +2,8 @@ import { useEffect } from "react";
 
 type DocumentTarget = "html" | "body";
 
-// Setzt ein leeres Attribut an <html> bzw. <body>, solange active gilt.
-// Ersetzt dynamische Props am globalen Style, damit dieser nicht neu eingefügt wird.
+// Sets an empty attribute on <html> or <body> while active holds.
+// Replaces dynamic props on the global style so it is not re-inserted.
 export const useDocumentAttribute = (
     target: DocumentTarget,
     attribute: string,

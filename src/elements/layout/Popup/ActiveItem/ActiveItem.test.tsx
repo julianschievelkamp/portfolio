@@ -38,7 +38,7 @@ describe("ActiveItem", () => {
         ).mockImplementation(() => isPaused);
         vi.spyOn(HTMLMediaElement.prototype, "play").mockImplementation(() => {
             isPaused = false;
-            // Wie im Browser feuert play() das "play"-Event
+            // Like in the browser, play() fires the "play" event
             act(() => {
                 getVideo()?.dispatchEvent(new Event("play"));
             });
@@ -47,7 +47,7 @@ describe("ActiveItem", () => {
         vi.spyOn(HTMLMediaElement.prototype, "pause").mockImplementation(
             function (this: HTMLMediaElement) {
                 isPaused = true;
-                // Wie im Browser feuert pause() das "pause"-Event
+                // Like in the browser, pause() fires the "pause" event
                 act(() => {
                     this.dispatchEvent(new Event("pause"));
                 });
@@ -139,7 +139,7 @@ describe("ActiveItem", () => {
         expect(activeItem).toHaveStyle({ opacity: "0" });
         expect(activeItem).not.toBeVisible();
 
-        // Das Bild ist bereits geladen, es gibt kein erneutes load-Event
+        // The image is already loaded, so there is no further load event
         act(() => useStore.setState({ popupOpen: true }));
         expect(activeItem).toHaveStyle({ opacity: "0" });
         expect(activeItem).not.toBeVisible();

@@ -9,7 +9,7 @@ import Header from "./Header";
 vi.mock("data/languageData", () => ({
     languageData: { title: "Site Title" },
 }));
-// Das Icon wird ersetzt, damit der gewählte Icon-Name prüfbar ist
+// The icon is replaced so the chosen icon name can be verified
 vi.mock("elements/components/Icon/Icon", () => ({
     default: ({ name }: { name: string }) => (
         <span data-name={name} data-testid="icon" />

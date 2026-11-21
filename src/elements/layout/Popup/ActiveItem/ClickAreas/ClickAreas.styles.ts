@@ -1,4 +1,3 @@
-/// <reference types="vite/client" />
 import { styled } from "styled-components";
 
 import chevronLeft from "assets/icons/chevron-left.svg?raw";

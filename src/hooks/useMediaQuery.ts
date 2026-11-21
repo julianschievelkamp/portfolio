@@ -1,7 +1,7 @@
 import { useCallback, useSyncExternalStore } from "react";
 
 export const useMediaQuery = (mediaQuery: string) => {
-    // Abonniert Änderungen der Media Query; window wird nur im Browser berührt
+    // Subscribes to media query changes; window is only touched in the browser
     const subscribe = useCallback(
         (onChange: () => void) => {
             const list = window.matchMedia(mediaQuery);
@@ -15,7 +15,7 @@ export const useMediaQuery = (mediaQuery: string) => {
 
     const getSnapshot = () => window.matchMedia(mediaQuery).matches;
 
-    // Beim Pre-rendering gibt es kein window, daher false als Startwert
+    // There is no window during pre-rendering, hence false as the initial value
     const getServerSnapshot = () => false;
 
     return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);

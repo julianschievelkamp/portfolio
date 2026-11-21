@@ -18,11 +18,11 @@ export const usePopupOverlay = (
             if (!dialog.open) {
                 dialog.showModal();
 
-                // Dialog statt CloseButton fokussieren, damit kein Fokusrahmen ablenkt
+                // Focus the dialog instead of the CloseButton so no focus ring distracts
                 dialog.focus({ preventScroll: true });
             }
 
-            // Ein Frame Verzögerung, damit die Startwerte gerendert werden
+            // One frame of delay so the initial values are rendered
             const frame = requestAnimationFrame(() => {
                 dialog.setAttribute("data-visible", "true");
             });

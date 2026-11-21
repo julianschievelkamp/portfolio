@@ -15,14 +15,14 @@ export const useActiveItem = () => {
     const [loadedImage, setLoadedImage] = useState<string | null>(null);
     const [isItemRevealed, setIsItemRevealed] = useState(false);
 
-    // Das Bild des angezeigten Items ist vollständig geladen
+    // The image of the displayed item is fully loaded
     const isImageLoaded = !!loadedItem && loadedImage === loadedItem.image;
-    // Das gewählte Item ist angezeigt und sein Bild vollständig geladen
+    // The selected item is displayed and its image is fully loaded
     const isItemReady = popupOpen && isImageLoaded && loadedItem === activeItem;
 
     useNeighborPreload(activeIndex, isItemReady);
 
-    // Beim Schließen wird zurückgesetzt, damit das ActiveItem beim nächsten Öffnen wieder einblendet
+    // Reset on closing so the ActiveItem fades in again the next time it opens
     if (!popupOpen && isItemRevealed) {
         setIsItemRevealed(false);
     }
@@ -30,7 +30,7 @@ export const useActiveItem = () => {
     useEffect(() => {
         if (!isItemReady) return;
 
-        // Ein Frame mit opacity 0 muss gerendert sein, damit die Transition greift
+        // A frame with opacity 0 must be rendered so the transition takes effect
         const frame = requestAnimationFrame(() => setIsItemRevealed(true));
 
         return () => cancelAnimationFrame(frame);

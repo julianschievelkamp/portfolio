@@ -58,8 +58,8 @@ export default createGlobalStyle`
         transition: none !important;
     }
 
-    /* Reduzierte Bewegung: Übergänge laufen nahezu sofort ab.
-       0.01ms statt none, damit transitionend- und animationend-Events weiterhin feuern */
+    /* Reduced motion: transitions finish almost immediately.
+       0.01ms instead of none so transitionend and animationend events still fire */
     @media (prefers-reduced-motion: reduce) {
         *,
         *::before,

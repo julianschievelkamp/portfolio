@@ -4,7 +4,7 @@ import { PINCHING_ATTRIBUTE } from "styles/global";
 import { queries, transition } from "styles/variables";
 
 const variables = css`
-    /* Close und Slider bekommen zusätzlichen Abstand */
+    /* Close and slider get additional spacing */
     --space-close: calc(4rem + 1rem);
     --space-slider: calc(5rem + 1rem);
     --space-caption: 3rem;
@@ -56,7 +56,7 @@ export const ItemFigure = styled.figure<{ $isItemRevealed: boolean }>`
         opacity ${transition.default},
         visibility ${transition.default};
 
-    /* Pseudo-Element, da Safari sonst beim Pinch Zoom die Adressleisten schwarz färbt */
+    /* Pseudo-element, since Safari otherwise turns the address bars black during pinch zoom */
     &::before {
         content: "";
         inset: 0;
@@ -72,11 +72,11 @@ export const Artwork = styled.div`
     overflow: clip;
     margin: 0;
 
-    /* Transformation aus usePinchZoom, ohne Geste gleitet das Werk zurück */
+    /* Transformation from usePinchZoom, without a gesture the artwork glides back */
     transform-origin: 0 0;
     transform: var(--pinch-transform, none);
     transition: transform ${transition.default};
-    /* Während der Geste folgt das Werk den Fingern ohne Verzögerung */
+    /* During the gesture the artwork follows the fingers without delay */
     html[${PINCHING_ATTRIBUTE}] & {
         transition: none;
     }

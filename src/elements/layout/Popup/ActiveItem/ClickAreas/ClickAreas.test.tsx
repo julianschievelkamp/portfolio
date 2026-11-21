@@ -12,7 +12,7 @@ vi.mock(
     async () => await import("data/portfolioFixtures"),
 );
 
-// Die Klickflächen sind aria-hidden und daher nur über den Container erreichbar
+// The click areas are aria-hidden and therefore only reachable via the container
 const renderAreas = () => {
     const { container } = render(<ClickAreas />);
     const [previous, next] = Array.from(container.children) as HTMLElement[];

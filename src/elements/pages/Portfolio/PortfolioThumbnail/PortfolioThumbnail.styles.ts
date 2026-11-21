@@ -10,11 +10,11 @@ export const PortfolioFigure = styled.figure`
     min-width: 5rem;
     min-height: 5rem;
     aspect-ratio: 1 / 1;
-    // Platzhalterfarbe bevor das Bild einblendet
+    // Placeholder color before the image fades in
     background-color: ${colors.fade};
 `;
 
-// Das Bild liegt bewusst nicht im Button, damit Reader-Modi es erhalten.
+// The image is deliberately not inside the button so reader modes keep it.
 export const PortfolioButton = styled(Button)`
     position: absolute;
     inset: 0;

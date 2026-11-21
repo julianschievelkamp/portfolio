@@ -1,7 +1,7 @@
-// Toleranz, ab der der Viewport als vergrößert gilt
+// Tolerance from which the viewport counts as zoomed in
 const ZOOM_TOLERANCE = 0.05;
 
-// Greift auf window zu, daher nur in Effects oder Event-Handlern aufrufen.
+// Accesses window, so only call it in effects or event handlers.
 export const isViewportZoomed = (): boolean => {
     const viewport = window.visualViewport;
 

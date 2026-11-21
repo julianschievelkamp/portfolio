@@ -13,7 +13,7 @@ const Portfolio = () => {
     const setActiveIndex = useStore((state) => state.setActiveIndex);
     const setPopupOpen = useStore((state) => state.setPopupOpen);
 
-    // Referenzstabil, damit die memoisierten Thumbnails nicht neu rendern
+    // Referentially stable so the memoized thumbnails do not re-render
     const handleSelect = useCallback(
         (index: number) => {
             setActiveIndex(index);

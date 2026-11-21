@@ -1,4 +1,3 @@
-/// <reference types="vite-plugin-svgr/client" />
 import ChevronLeft from "assets/icons/chevron-left.svg?react";
 import ChevronRight from "assets/icons/chevron-right.svg?react";
 import Close from "assets/icons/close.svg?react";

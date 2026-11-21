@@ -4,12 +4,12 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import Video from "./Video";
 
-// Das Icon wird durch seinen Namen ersetzt, damit der Wechsel prüfbar ist
+// The icon is replaced by its name so the switch can be verified
 vi.mock("elements/components/Icon/Icon", () => ({
     default: ({ name }: { name: string }) => <span data-testid={name} />,
 }));
 
-// Die Audio-Logik ist in useGaplessAudio getestet, hier zählt nur die Anbindung ans Video
+// The audio logic is tested in useGaplessAudio, here only the connection to the video matters
 const audio = vi.hoisted(() => ({
     prepare: vi.fn(),
     start: vi.fn(),
@@ -43,7 +43,7 @@ describe("Video", () => {
         audio.stop.mockReset();
         audio.isPlaying.mockReset().mockReturnValue(false);
 
-        // jsdom implementiert play/pause nicht, daher wird der Wiedergabezustand nachgebildet
+        // jsdom does not implement play/pause, so the playback state is simulated
         let isPaused = true;
         vi.spyOn(
             HTMLMediaElement.prototype,
@@ -52,7 +52,7 @@ describe("Video", () => {
         ).mockImplementation(() => isPaused);
         vi.spyOn(HTMLMediaElement.prototype, "play").mockImplementation(() => {
             isPaused = false;
-            // Wie im Browser feuert play() das "play"-Event
+            // Like in the browser, play() fires the "play" event
             act(() => {
                 document
                     .querySelector("video")
@@ -63,7 +63,7 @@ describe("Video", () => {
         vi.spyOn(HTMLMediaElement.prototype, "pause").mockImplementation(
             function (this: HTMLMediaElement) {
                 isPaused = true;
-                // Wie im Browser feuert pause() das "pause"-Event
+                // Like in the browser, pause() fires the "pause" event
                 this.dispatchEvent(new Event("pause"));
             },
         );

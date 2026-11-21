@@ -6,7 +6,7 @@ import { useStore } from "hooks/useStore";
 
 import Sidebar from "./Sidebar";
 
-// Mobile Layout, damit useAbsoluteOverlay aktiv ist und kein window.matchMedia nötig ist
+// Mobile layout so useAbsoluteOverlay is active and no window.matchMedia is needed
 vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: () => false }));
 vi.mock("data/languageData", () => ({
     languageData: {
@@ -40,13 +40,13 @@ const page = {
     element: null,
 };
 
-// CloseTrigger ist ein reines div ohne Rolle und wird über seinen Style gefunden
+// CloseTrigger is a plain div without a role and is found via its style
 const findCloseTrigger = (container: HTMLElement) =>
     container.firstElementChild as HTMLElement;
 
 describe("Sidebar", () => {
     beforeEach(() => {
-        // Geöffnet, da eine geschlossene Sidebar per visibility versteckt ist
+        // Opened, since a closed sidebar is hidden via visibility
         useStore.setState({ sidebarOpen: true });
     });
 

@@ -17,7 +17,7 @@ const sidebarStyles = css<{
     transform: ${({ $sidebarOpen }) =>
         `translateX(${$sidebarOpen ? 0 : "-100%"})`};
     visibility: ${({ $sidebarOpen }) => ($sidebarOpen ? "visible" : "hidden")};
-    /* Beim Öffnen ease-out, beim Schließen ease-in */
+    /* Ease-out when opening, ease-in when closing */
     transition: ${({ $sidebarOpen }) => {
         const timing = $sidebarOpen ? transition.default : transition.defaultIn;
 

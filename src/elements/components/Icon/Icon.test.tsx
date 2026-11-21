@@ -24,7 +24,7 @@ describe("Icon", () => {
         );
     });
 
-    // jsdom rechnet rem in px um (1rem = 16px)
+    // jsdom converts rem to px (1rem = 16px)
     it("uses 1rem as default size and applies custom size and padding", () => {
         const { container, rerender } = render(<Icon name="close" />);
 
