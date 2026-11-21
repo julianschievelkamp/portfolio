@@ -24,7 +24,9 @@
 - **Abhängigkeiten installieren:** `yarn install`
 - **Entwicklungsserver starten:** `yarn start`
 - **Projekt bauen (Pre-rendering):** `yarn build`
-- **Code-Prüfung & Formatierung:** `yarn lint`
+- **Code-Prüfung (ESLint):** `yarn lint`
+- **Code formatieren (Prettier):** `yarn format`
+- **Formatierung prüfen (Prettier):** `yarn format:check`
 - **Tests ausführen:** `yarn test`
 
 ## Kern-Anweisungen für den KI-Agenten
@@ -51,7 +53,7 @@
 - **TypeScript:** Erzwinge eine strikte Typisierung. Vermeide den Typ `any` unter allen Umständen. Nutze klare Interfaces oder Typen für Komponenten-Props und transiente Props in Styled Components (z. B. `$isActive`).
 - **Styling (Styled Components):** Nutze Styled Components für das gesamte Komponenten-Styling. Halte Stile wartbar, indem du globale Themes oder Variablen für Farben und Abstände verwendest. Benenne Styled Components sprechend, um die Lesbarkeit des JSX-Baums zu wahren.
 - **Komponenten-Design:** Halte React-Komponenten klein, funktional, wiederverwendbar und fokussiert auf eine einzige Aufgabe (Single-Purpose). Bevorzuge Custom Hooks zur Trennung von Logik und UI.
-- **Code-Stil:** Halte dich strikt an die bestehenden ESLint- und Prettier-Konfigurationen. Führe vor dem Abschluss einer Aufgabe immer `yarn lint` aus.
+- **Code-Stil:** Halte dich strikt an die bestehenden ESLint- und Prettier-Konfigurationen. Führe vor dem Abschluss einer Aufgabe immer `yarn lint` und `yarn format:check` aus (bei Abweichungen `yarn format`).
 - **Unit-Tests (Co-location):** Jede neue Kernkomponente muss durch einen Unit-Test abgesichert werden. Die Test-Datei muss zwingend im selben Ordner wie die Komponente selbst liegen (Co-location). Führe vor dem Abschluss einer Aufgabe immer `yarn test` aus.
 
 ### 4. Leitplanken & Einschränkungen (Guardrails)

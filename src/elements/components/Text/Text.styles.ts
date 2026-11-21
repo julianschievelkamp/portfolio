@@ -19,6 +19,7 @@ export const StyledText = styled.p<{
     color: ${({ $color }) => $color ?? "black"};
     text-transform: ${({ $toUpperCase }) =>
         $toUpperCase ? "uppercase" : "none"};
+    white-space: ${({ $whiteSpace }) => $whiteSpace};
     line-height: 1.5;
     transition: color ${transition.default};
     font-family: "Poppins", sans-serif;

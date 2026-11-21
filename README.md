@@ -12,7 +12,7 @@ The site is a pure frontend project: HTML is pre-rendered at build time, and the
 - [Zustand](https://zustand.docs.pmnd.rs/) for state management
 - [Vite](https://vite.dev/) as build tool
 - [Vitest](https://vitest.dev/) and [Testing Library](https://testing-library.com/) for unit tests
-- ESLint for linting and code style
+- ESLint for linting and [Prettier](https://prettier.io/) for code formatting
 
 ## Getting Started
 
@@ -44,6 +44,8 @@ Starts the Vike dev server with hot module replacement.
 | `yarn preview`       | Preview the production build locally            |
 | `yarn deploy`        | Build and publish `dist/client` to GitHub Pages |
 | `yarn lint`          | Run ESLint                                      |
+| `yarn format`        | Format all files with Prettier                  |
+| `yarn format:check`  | Check formatting with Prettier without writing  |
 | `yarn test`          | Run all unit tests once                         |
 | `yarn test:watch`    | Run tests in watch mode                         |
 | `yarn test:coverage` | Run tests with a coverage report                |
@@ -69,7 +71,7 @@ src/
 - **Code:** Strict TypeScript (no `any`), English identifiers and UI texts, small single-purpose components.
 - **Tests:** Core components have a unit test located in the same folder as the component.
 
-Run `yarn lint` and `yarn test` before committing.
+Run `yarn lint`, `yarn format:check` and `yarn test` before committing.
 
 ## Deployment
 

@@ -4,7 +4,7 @@ import { colors, transition } from "styles/variables";
 
 export const StyledLink = styled.a<{ $underline: boolean }>`
     position: relative;
-    color: black;
+    color: currentColor;
     text-decoration: ${({ $underline }) => ($underline ? "underline" : "none")};
     transition: color ${transition.default};
 

@@ -1,0 +1,5 @@
+dist
+.yarn
+yarn.lock
+src/assets
+public
