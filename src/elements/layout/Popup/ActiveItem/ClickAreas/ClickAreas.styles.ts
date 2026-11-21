@@ -14,8 +14,8 @@ export const Previous = styled.div`
     transform: translateX(-100%);
 
     cursor: ${createIconCursor(chevronLeft, {
-        size: 48,
         color: colors.secondary,
+        size: 48,
     })};
 
     @media ${queries.landscapeLgMax} {
@@ -31,8 +31,8 @@ export const Next = styled.div`
     transform: translateX(100%);
 
     cursor: ${createIconCursor(chevronRight, {
-        size: 48,
         color: colors.secondary,
+        size: 48,
     })};
 
     @media ${queries.landscapeLgMax} {

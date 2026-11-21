@@ -16,15 +16,15 @@ interface Actions {
 }
 
 export const useStore = create<State & Actions>((set) => ({
-    sidebarOpen: false,
     // -1 bedeutet, dass noch kein Item für das Popup gewählt wurde
     activeIndex: -1,
     popupOpen: false,
-
-    setSidebarOpen: (open) => set({ sidebarOpen: open }),
+    sidebarOpen: false,
 
     setActiveIndex: (index) =>
         set({ activeIndex: wrapIndex(index, portfolioData.length) }),
 
     setPopupOpen: (open) => set({ popupOpen: open }),
+
+    setSidebarOpen: (open) => set({ sidebarOpen: open }),
 }));

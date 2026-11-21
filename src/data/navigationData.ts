@@ -7,24 +7,24 @@ export type Page = {
 
 export const pages = {
     portfolio: {
-        name: "Portfolio",
-        title: "Julian Schievelkamp – Fine Art Photographer & Visual Artist",
         description:
             "Fine art photography and digital artworks by Julian Schievelkamp, a visual artist from Cologne combining classic photography and CGI.",
+        name: "Portfolio",
         path: "/",
+        title: "Julian Schievelkamp – Fine Art Photographer & Visual Artist",
     },
     about: {
-        name: "About",
-        title: "About – Julian Schievelkamp",
         description:
             "Visual artist and fine art photographer from Cologne (b. 1994). Winner of Prix de la Photographie Paris 2017 and Fine Art Photographer of the Year 2019.",
+        name: "About",
         path: "/about/",
+        title: "About – Julian Schievelkamp",
     },
     impressum: {
-        name: "Impressum",
-        title: "Impressum – Julian Schievelkamp",
         description: "Legal notice and contact details of Julian Schievelkamp.",
+        name: "Impressum",
         path: "/impressum/",
+        title: "Impressum – Julian Schievelkamp",
     },
 } satisfies Record<string, Page>;
 
