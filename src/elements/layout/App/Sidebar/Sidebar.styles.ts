@@ -2,7 +2,7 @@ import { css, styled } from "styled-components";
 import { queries, transition } from "styles/variables";
 import Title from "elements/layout/App/Title/Title";
 
-export const sidebarStyles = css<{
+const sidebarStyles = css<{
     $sidebarOpen: boolean;
 }>`
     top: 0;

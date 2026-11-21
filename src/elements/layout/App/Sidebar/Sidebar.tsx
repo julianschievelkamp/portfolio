@@ -16,7 +16,7 @@ import type { Page } from "data/navigationData";
 import { scrollToTop } from "utils/scrollToTop";
 import { SCROLL_ALLOWED_ATTRIBUTE } from "styles/global";
 
-export interface SidebarProps {
+interface SidebarProps {
     page: Page;
 }
 

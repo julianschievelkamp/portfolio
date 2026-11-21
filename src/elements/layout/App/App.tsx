@@ -16,7 +16,7 @@ import { queries } from "styles/variables";
 import { useScrollLock } from "hooks/useScrollLock";
 import { useVisualViewport } from "hooks/useVisualViewport";
 
-export interface AppProps {
+interface AppProps {
     page: Page;
     children: ReactNode;
 }

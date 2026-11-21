@@ -27,16 +27,14 @@ const Portfolio = () => {
                     {languageData.portfolio.headline}
                 </Headline>
                 <PortfolioGrid>
-                    {portfolioData.map((item, index) => {
-                        return (
-                            <PortfolioThumbnail
-                                key={item.title}
-                                item={item}
-                                index={index}
-                                onSelect={handleSelect}
-                            />
-                        );
-                    })}
+                    {portfolioData.map((item, index) => (
+                        <PortfolioThumbnail
+                            key={item.title}
+                            item={item}
+                            index={index}
+                            onSelect={handleSelect}
+                        />
+                    ))}
                 </PortfolioGrid>
             </section>
 

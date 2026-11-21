@@ -3,7 +3,7 @@ import Icon from "elements/components/Icon/Icon";
 import { PlayButton, StyledVideo } from "./Video.styles";
 import { useRef } from "react";
 
-export interface VideoProps {
+interface VideoProps {
     src: string;
     width?: string;
     height?: string;

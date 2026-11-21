@@ -7,7 +7,7 @@ const headlines = {
     h2: H2,
 };
 
-export interface HeadlineProps {
+interface HeadlineProps {
     type?: "h1" | "h2";
     children?: ReactNode;
     visuallyHidden?: boolean;

@@ -1,7 +1,7 @@
 import { useImageFadeIn } from "hooks/useImageFadeIn";
 import { StyledImage } from "./Image.styles";
 
-export interface ImageProps {
+interface ImageProps {
     src: string;
     srcSet?: string;
     sizes?: string;

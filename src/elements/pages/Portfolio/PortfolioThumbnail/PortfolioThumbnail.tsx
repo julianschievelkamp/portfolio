@@ -8,7 +8,7 @@ import Image from "elements/components/Image/Image";
 import type { PortfolioItem } from "data/portfolioData";
 import { thumbnailSize } from "styles/variables";
 
-export interface PortfolioThumbnailProps {
+interface PortfolioThumbnailProps {
     item: PortfolioItem;
     index: number;
     onSelect: (index: number) => void;
@@ -16,30 +16,28 @@ export interface PortfolioThumbnailProps {
 
 // memo: Kein Neurendern, solange item, index und onSelect gleich bleiben.
 const PortfolioThumbnail = memo(
-    ({ item, index, onSelect }: PortfolioThumbnailProps) => {
-        return (
-            <PortfolioFigure>
-                <PortfolioButton
-                    aria-label={`Show ${item.title}`}
-                    onClick={() => onSelect(index)}
-                />
+    ({ item, index, onSelect }: PortfolioThumbnailProps) => (
+        <PortfolioFigure>
+            <PortfolioButton
+                aria-label={`Show ${item.title}`}
+                onClick={() => onSelect(index)}
+            />
 
-                <Image
-                    width="100%"
-                    src={item.image}
-                    srcSet={item.imageSet}
-                    sizes={thumbnailSize}
-                    alt={item.alt}
-                    margin={item.thumbnailMargin}
-                    aspectRatio={item.aspectRatio}
-                    loading="lazy"
-                    fadeInOnLoad
-                />
+            <Image
+                width="100%"
+                src={item.image}
+                srcSet={item.imageSet}
+                sizes={thumbnailSize}
+                alt={item.alt}
+                margin={item.thumbnailMargin}
+                aspectRatio={item.aspectRatio}
+                loading="lazy"
+                fadeInOnLoad
+            />
 
-                <PortfolioCaption>{`${item.title}, ${item.year} – ${item.type}`}</PortfolioCaption>
-            </PortfolioFigure>
-        );
-    },
+            <PortfolioCaption>{`${item.title}, ${item.year} – ${item.type}`}</PortfolioCaption>
+        </PortfolioFigure>
+    ),
 );
 
 export default PortfolioThumbnail;

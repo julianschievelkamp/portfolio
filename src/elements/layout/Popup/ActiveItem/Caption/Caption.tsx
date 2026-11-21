@@ -4,7 +4,7 @@ import Text from "elements/components/Text/Text";
 import type { PortfolioItem } from "data/portfolioData";
 import { useMediaQuery } from "hooks/useMediaQuery";
 
-export interface CaptionProps {
+interface CaptionProps {
     loadedItem: PortfolioItem;
 }
 

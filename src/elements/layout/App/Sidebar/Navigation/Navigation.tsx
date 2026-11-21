@@ -11,7 +11,7 @@ import Text from "elements/components/Text/Text";
 import { useStore } from "hooks/useStore";
 import { colors } from "styles/variables";
 
-export interface NavigationProps {
+interface NavigationProps {
     page: Page;
 }
 

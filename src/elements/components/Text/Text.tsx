@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 import { StyledText } from "./Text.styles";
 
-export interface TextProps {
+interface TextProps {
     children?: ReactNode;
     bold?: boolean;
     color?: string;
@@ -26,22 +26,20 @@ const Text = ({
     whiteSpace,
     className,
     id,
-}: TextProps) => {
-    return (
-        <StyledText
-            id={id}
-            $color={color}
-            $bold={bold}
-            $textAlign={textAlign}
-            $margin={margin}
-            $fontSize={fontSize}
-            $toUpperCase={toUpperCase}
-            $whiteSpace={whiteSpace}
-            className={className}
-        >
-            {children}
-        </StyledText>
-    );
-};
+}: TextProps) => (
+    <StyledText
+        id={id}
+        $color={color}
+        $bold={bold}
+        $textAlign={textAlign}
+        $margin={margin}
+        $fontSize={fontSize}
+        $toUpperCase={toUpperCase}
+        $whiteSpace={whiteSpace}
+        className={className}
+    >
+        {children}
+    </StyledText>
+);
 
 export default Text;

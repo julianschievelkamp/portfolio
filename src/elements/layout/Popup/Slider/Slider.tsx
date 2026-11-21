@@ -10,17 +10,15 @@ const Slider = () => {
     return (
         <SliderContainer>
             <InnerSliderContainer role="list" $activeIndex={activeIndex}>
-                {portfolioData.map((item, index) => {
-                    return (
-                        <SliderThumbnail
-                            key={item.title}
-                            item={item}
-                            index={index}
-                            isActive={index === activeIndex}
-                            onSelect={setActiveIndex}
-                        />
-                    );
-                })}
+                {portfolioData.map((item, index) => (
+                    <SliderThumbnail
+                        key={item.title}
+                        item={item}
+                        index={index}
+                        isActive={index === activeIndex}
+                        onSelect={setActiveIndex}
+                    />
+                ))}
             </InnerSliderContainer>
         </SliderContainer>
     );

@@ -1,8 +1,10 @@
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import { portfolioData } from "data/portfolioFixtures";
 import Caption from "./Caption";
+
+vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: () => true }));
 
 const [photo] = portfolioData;
 
