@@ -5,7 +5,7 @@ import Image from "./Image";
 
 describe("Image", () => {
     it("renders an image with src and alt", () => {
-        render(<Image src="/art.jpg" alt="Abstract painting" />);
+        render(<Image alt="Abstract painting" src="/art.jpg" />);
 
         const image = screen.getByRole("img", { name: "Abstract painting" });
         expect(image).toHaveAttribute("src", "/art.jpg");
@@ -14,12 +14,12 @@ describe("Image", () => {
     it("passes srcSet and sizes through and applies width and height as styles", () => {
         render(
             <Image
-                src="/art.jpg"
                 alt="Abstract painting"
-                srcSet="/art-300.jpg 300w"
-                sizes="300px"
-                width="300px"
                 height="200px"
+                sizes="300px"
+                src="/art.jpg"
+                srcSet="/art-300.jpg 300w"
+                width="300px"
             />,
         );
 
@@ -30,15 +30,15 @@ describe("Image", () => {
     });
 
     it("loads eagerly by default and supports lazy loading", () => {
-        const { rerender } = render(<Image src="/a.jpg" alt="Art" />);
+        const { rerender } = render(<Image alt="Art" src="/a.jpg" />);
         expect(screen.getByRole("img")).toHaveAttribute("loading", "eager");
 
-        rerender(<Image src="/a.jpg" alt="Art" loading="lazy" />);
+        rerender(<Image alt="Art" loading="lazy" src="/a.jpg" />);
         expect(screen.getByRole("img")).toHaveAttribute("loading", "lazy");
     });
 
     it("passes fetchPriority through", () => {
-        render(<Image src="/a.jpg" alt="Art" fetchPriority="high" />);
+        render(<Image alt="Art" fetchPriority="high" src="/a.jpg" />);
 
         expect(screen.getByRole("img")).toHaveAttribute(
             "fetchpriority",
@@ -48,7 +48,7 @@ describe("Image", () => {
 
     it("calls onLoad after the load event", () => {
         const onLoad = vi.fn();
-        render(<Image src="/a.jpg" alt="Art" onLoad={onLoad} />);
+        render(<Image alt="Art" src="/a.jpg" onLoad={onLoad} />);
 
         fireEvent.load(screen.getByRole("img"));
 
@@ -57,7 +57,7 @@ describe("Image", () => {
 
     it("calls onError after the error event", () => {
         const onError = vi.fn();
-        render(<Image src="/a.jpg" alt="Art" onError={onError} />);
+        render(<Image alt="Art" src="/a.jpg" onError={onError} />);
 
         fireEvent.error(screen.getByRole("img"));
 
@@ -65,7 +65,7 @@ describe("Image", () => {
     });
 
     it("hides the image until it is loaded when fadeInOnLoad is set", () => {
-        render(<Image src="/a.jpg" alt="Art" fadeInOnLoad />);
+        render(<Image alt="Art" fadeInOnLoad src="/a.jpg" />);
         const image = screen.getByRole("img");
         expect(image).toHaveStyle("opacity: 0");
 
@@ -75,7 +75,7 @@ describe("Image", () => {
     });
 
     it("keeps the image visible while loading without fadeInOnLoad", () => {
-        render(<Image src="/a.jpg" alt="Art" />);
+        render(<Image alt="Art" src="/a.jpg" />);
 
         expect(screen.getByRole("img")).not.toHaveStyle("opacity: 0");
     });
@@ -86,7 +86,7 @@ describe("Image", () => {
             .spyOn(HTMLImageElement.prototype, "complete", "get")
             .mockReturnValue(true);
 
-        render(<Image src="/a.jpg" alt="Art" fadeInOnLoad />);
+        render(<Image alt="Art" fadeInOnLoad src="/a.jpg" />);
 
         expect(screen.getByRole("img")).not.toHaveStyle("opacity: 0");
 

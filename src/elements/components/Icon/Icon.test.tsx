@@ -33,7 +33,7 @@ describe("Icon", () => {
             height: "16px",
         });
 
-        rerender(<Icon name="close" size="2rem" padding="0.5rem" />);
+        rerender(<Icon name="close" padding="0.5rem" size="2rem" />);
 
         expect(container.firstChild).toHaveStyle({
             width: "32px",

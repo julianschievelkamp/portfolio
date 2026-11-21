@@ -1,8 +1,9 @@
-import { colors, queries } from "styles/variables";
-import { StyledCaption, Title } from "./Caption.styles";
-import Text from "elements/components/Text/Text";
 import type { PortfolioItem } from "data/portfolioData";
+import Text from "elements/components/Text/Text";
 import { useMediaQuery } from "hooks/useMediaQuery";
+import { colors, queries } from "styles/variables";
+
+import { StyledCaption, Title } from "./Caption.styles";
 
 interface CaptionProps {
     loadedItem: PortfolioItem;
@@ -14,15 +15,15 @@ const Caption = ({ loadedItem }: CaptionProps) => {
     return (
         <StyledCaption>
             <Title
-                whiteSpace="nowrap"
                 textAlign={isLandscapeLgMax ? "left" : "right"}
+                whiteSpace="nowrap"
             >
                 {loadedItem.title}, {loadedItem.year}
             </Title>
             <Text
-                whiteSpace="nowrap"
-                textAlign={isLandscapeLgMax ? "left" : "right"}
                 color={colors.secondary}
+                textAlign={isLandscapeLgMax ? "left" : "right"}
+                whiteSpace="nowrap"
             >
                 {loadedItem.type}
             </Text>

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+
 import { portfolioData } from "data/portfolioData";
 
 // Lädt die Bilder des vorherigen und nächsten Items vor, damit das Weiterschalten sofort reagiert.

@@ -1,11 +1,13 @@
 import { useCallback } from "react";
+
+import { languageData } from "data/languageData";
+import { portfolioData } from "data/portfolioData";
+import Headline from "elements/components/Headline/Headline";
+import Popup from "elements/layout/Popup/Popup";
+import { useStore } from "hooks/useStore";
+
 import { PortfolioGrid } from "./Portfolio.styles";
 import PortfolioThumbnail from "./PortfolioThumbnail/PortfolioThumbnail";
-import { useStore } from "hooks/useStore";
-import { portfolioData } from "data/portfolioData";
-import Popup from "elements/layout/Popup/Popup";
-import Headline from "elements/components/Headline/Headline";
-import { languageData } from "data/languageData";
 
 const Portfolio = () => {
     const setActiveIndex = useStore((state) => state.setActiveIndex);
@@ -30,8 +32,8 @@ const Portfolio = () => {
                     {portfolioData.map((item, index) => (
                         <PortfolioThumbnail
                             key={item.title}
-                            item={item}
                             index={index}
+                            item={item}
                             onSelect={handleSelect}
                         />
                     ))}

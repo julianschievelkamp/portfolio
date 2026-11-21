@@ -1,12 +1,13 @@
 import { styled } from "styled-components";
+
 import Button from "elements/components/Button/Button";
-import { colors } from "styles/variables";
 import { PINCHING_ATTRIBUTE } from "styles/global";
+import { colors } from "styles/variables";
 
 export const StyledVideo = styled.video<{
-    $width?: string;
     $height?: string;
     $isVisible: boolean;
+    $width?: string;
 }>`
     width: ${({ $width }) => $width};
     height: ${({ $height }) => $height};

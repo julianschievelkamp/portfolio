@@ -1,5 +1,6 @@
-import Link from "elements/components/Link/Link";
 import { styled } from "styled-components";
+
+import Link from "elements/components/Link/Link";
 import { transition } from "styles/variables";
 
 export const StyledSocial = styled.div`

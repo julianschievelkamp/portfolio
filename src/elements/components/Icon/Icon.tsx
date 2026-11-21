@@ -1,18 +1,18 @@
-import { icons } from "./icons";
 import { StyledIcon } from "./Icon.styles";
+import { icons } from "./icons";
 
 interface IconProps {
-    name: keyof typeof icons;
     color?: string;
-    size?: string;
+    name: keyof typeof icons;
     padding?: string;
+    size?: string;
 }
 
-const Icon = ({ name, color, size = "1rem", padding }: IconProps) => {
+const Icon = ({ color, name, padding, size = "1rem" }: IconProps) => {
     const Icon = icons[name];
 
     return (
-        <StyledIcon $color={color} $size={size} $padding={padding}>
+        <StyledIcon $color={color} $padding={padding} $size={size}>
             <Icon aria-hidden="true" />
         </StyledIcon>
     );

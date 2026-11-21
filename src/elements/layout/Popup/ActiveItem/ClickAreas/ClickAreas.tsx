@@ -1,5 +1,6 @@
-import { Previous, Next } from "./ClickAreas.styles";
 import { useStore } from "hooks/useStore";
+
+import { Next, Previous } from "./ClickAreas.styles";
 
 const ClickAreas = () => {
     const activeIndex = useStore((state) => state.activeIndex);
@@ -8,12 +9,12 @@ const ClickAreas = () => {
     return (
         <>
             <Previous
-                onClick={() => setActiveIndex(activeIndex - 1)}
                 aria-hidden="true"
+                onClick={() => setActiveIndex(activeIndex - 1)}
             />
             <Next
-                onClick={() => setActiveIndex(activeIndex + 1)}
                 aria-hidden="true"
+                onClick={() => setActiveIndex(activeIndex + 1)}
             />
         </>
     );

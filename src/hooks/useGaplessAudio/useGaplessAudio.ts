@@ -23,14 +23,14 @@ interface AudioSession {
 type NavigatorWithAudioSession = Navigator & { audioSession?: AudioSession };
 
 interface PlayingSource {
-    source: AudioBufferSourceNode;
     gain: GainNode;
+    source: AudioBufferSourceNode;
 }
 
 // Ein laufender Loop besteht aus mehreren eingeplanten Durchläufen, die sich überblenden
 interface PlayingLoop {
-    voices: Set<PlayingSource>;
     timer: ReturnType<typeof setInterval>;
+    voices: Set<PlayingSource>;
 }
 
 // Spielt eine Audiodatei lückenlos im Loop ab (Web Audio API).
@@ -57,7 +57,7 @@ export const useGaplessAudio = (src?: string) => {
         const stopTime = now + FADE_OUT_SECONDS;
 
         // Alle Durchläufe blenden auf abgetrennten Referenzen aus, ein neuer Start ist sofort möglich
-        playing.voices.forEach(({ source, gain }) => {
+        playing.voices.forEach(({ gain, source }) => {
             gain.gain.cancelScheduledValues(now);
             gain.gain.setValueAtTime(gain.gain.value, now);
             gain.gain.linearRampToValueAtTime(0, stopTime);

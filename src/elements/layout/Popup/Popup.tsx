@@ -1,16 +1,18 @@
+import { useRef } from "react";
+
+import Icon from "elements/components/Icon/Icon";
+import { usePopupControls } from "hooks/usePopupControls";
+import { usePopupOverlay } from "hooks/usePopupOverlay";
 import { useStore } from "hooks/useStore";
+
+import ActiveItem from "./ActiveItem/ActiveItem";
 import {
     Background,
     CloseArea,
     CloseButton,
     StyledPopup,
 } from "./Popup.styles";
-import { usePopupOverlay } from "hooks/usePopupOverlay";
-import { usePopupControls } from "hooks/usePopupControls";
 import Slider from "./Slider/Slider";
-import ActiveItem from "./ActiveItem/ActiveItem";
-import Icon from "elements/components/Icon/Icon";
-import { useRef } from "react";
 
 const Popup = () => {
     const setPopupOpen = useStore((state) => state.setPopupOpen);
@@ -36,12 +38,12 @@ const Popup = () => {
                 }}
             >
                 <CloseArea
-                    onClick={() => setPopupOpen(false)}
                     aria-hidden="true"
+                    onClick={() => setPopupOpen(false)}
                 />
                 <CloseButton
-                    onClick={() => setPopupOpen(false)}
                     aria-label="Close Popup"
+                    onClick={() => setPopupOpen(false)}
                 >
                     <Icon name="close" size="2rem" />
                 </CloseButton>

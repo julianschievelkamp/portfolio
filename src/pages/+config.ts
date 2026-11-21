@@ -1,5 +1,6 @@
-import vikeReact from "vike-react/config";
 import vikeReactStyledComponents from "vike-react-styled-components/config";
+import vikeReact from "vike-react/config";
+
 import { ogImageUrl } from "../data/siteData";
 
 export default {

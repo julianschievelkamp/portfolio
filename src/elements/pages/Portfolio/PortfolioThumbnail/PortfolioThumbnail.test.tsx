@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
 import { portfolioData } from "data/portfolioFixtures";
+
 import PortfolioThumbnail from "./PortfolioThumbnail";
 
 vi.mock(
@@ -16,7 +17,7 @@ const renderThumbnail = (index = 2) => {
     const onSelect = vi.fn();
 
     render(
-        <PortfolioThumbnail item={item} index={index} onSelect={onSelect} />,
+        <PortfolioThumbnail index={index} item={item} onSelect={onSelect} />,
     );
 
     return { onSelect };

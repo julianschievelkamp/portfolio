@@ -1,27 +1,29 @@
+import type { ReactNode } from "react";
+
+import type { Page } from "data/navigationData";
+import Headline from "elements/components/Headline/Headline";
+import Header from "elements/layout/App/Header/Header";
+import Sidebar from "elements/layout/App/Sidebar/Sidebar";
+import { useDocumentAttribute } from "hooks/useDocumentAttribute";
+import { useMediaQuery } from "hooks/useMediaQuery";
+import { useResizeTransition } from "hooks/useResizeTransition";
+import { useScrollLock } from "hooks/useScrollLock";
+import { useStore } from "hooks/useStore";
+import { useVisualViewport } from "hooks/useVisualViewport";
 import GlobalStyle, {
     PAGE_LOCKED_ATTRIBUTE,
     ZOOMED_ATTRIBUTE,
 } from "styles/global";
-import { useDocumentAttribute } from "hooks/useDocumentAttribute";
-import { Main } from "./App.styles";
-import Sidebar from "elements/layout/App/Sidebar/Sidebar";
-import Header from "elements/layout/App/Header/Header";
-import type { Page } from "data/navigationData";
-import type { ReactNode } from "react";
-import Headline from "elements/components/Headline/Headline";
-import { useResizeTransition } from "hooks/useResizeTransition";
-import { useStore } from "hooks/useStore";
-import { useMediaQuery } from "hooks/useMediaQuery";
 import { queries } from "styles/variables";
-import { useScrollLock } from "hooks/useScrollLock";
-import { useVisualViewport } from "hooks/useVisualViewport";
+
+import { Main } from "./App.styles";
 
 interface AppProps {
-    page: Page;
     children: ReactNode;
+    page: Page;
 }
 
-const App = ({ page, children }: AppProps) => {
+const App = ({ children, page }: AppProps) => {
     const isMd = useMediaQuery(queries.md);
     const sidebarOpen = useStore((state) => state.sidebarOpen);
     const popupOpen = useStore((state) => state.popupOpen);

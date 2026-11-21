@@ -1,4 +1,5 @@
-import { styled, css } from "styled-components";
+import { css, styled } from "styled-components";
+
 import { queries, visuallyHidden } from "styles/variables";
 
 const headlineStyles = css<{ $visuallyHidden?: boolean }>`

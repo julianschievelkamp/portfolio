@@ -1,8 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { useStore } from "hooks/useStore";
 import { useMediaQuery } from "hooks/useMediaQuery";
+import { useStore } from "hooks/useStore";
+
 import App from "./App";
 
 vi.mock("hooks/useMediaQuery", () => ({ useMediaQuery: vi.fn() }));
@@ -75,7 +76,7 @@ describe("App", () => {
         },
     ])(
         "sets inert on the page to $inert with $name",
-        ({ sidebar, popup, desktop, inert }) => {
+        ({ desktop, inert, popup, sidebar }) => {
             useStore.setState({ sidebarOpen: sidebar, popupOpen: popup });
             vi.mocked(useMediaQuery).mockReturnValue(desktop);
             render(

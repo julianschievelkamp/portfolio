@@ -1,7 +1,8 @@
 import { usePageContext } from "vike-react/usePageContext";
-import { ensureTrailingSlash } from "utils/ensureTrailingSlash";
-import { siteName, siteUrl } from "data/siteData";
+
 import { languageData } from "data/languageData";
+import { siteName, siteUrl } from "data/siteData";
+import { ensureTrailingSlash } from "utils/ensureTrailingSlash";
 import {
     getStructuredData,
     serializeStructuredData,
@@ -17,33 +18,33 @@ export const Head = () => {
 
     return (
         <>
-            <link rel="icon" type="image/png" href="/favicon.png" />
+            <link href="/favicon.png" rel="icon" type="image/png" />
             <link
+                href="/apple-touch-icon.png"
                 rel="apple-touch-icon"
                 sizes="180x180"
-                href="/apple-touch-icon.png"
             ></link>
-            <link rel="canonical" href={canonicalUrl} />
+            <link href={canonicalUrl} rel="canonical" />
             <meta
-                name="viewport"
                 content="width=device-width,initial-scale=1"
+                name="viewport"
             />
-            <meta property="og:type" content="website" />
-            <meta property="og:url" content={canonicalUrl} />
-            <meta property="og:site_name" content={siteName} />
-            <meta property="og:locale" content="en_US" />
-            <meta property="og:image:width" content="1200" />
-            <meta property="og:image:height" content="628" />
+            <meta content="website" property="og:type" />
+            <meta content={canonicalUrl} property="og:url" />
+            <meta content={siteName} property="og:site_name" />
+            <meta content="en_US" property="og:locale" />
+            <meta content="1200" property="og:image:width" />
+            <meta content="628" property="og:image:height" />
             <meta
-                property="og:image:alt"
                 content="Artwork by Julian Schievelkamp"
+                property="og:image:alt"
             />
             {structuredData && (
                 <script
-                    type="application/ld+json"
                     dangerouslySetInnerHTML={{
                         __html: serializeStructuredData(structuredData),
                     }}
+                    type="application/ld+json"
                 />
             )}
         </>

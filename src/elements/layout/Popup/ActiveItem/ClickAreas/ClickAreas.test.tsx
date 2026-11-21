@@ -2,8 +2,9 @@ import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { useStore } from "hooks/useStore";
 import { portfolioData } from "data/portfolioFixtures";
+import { useStore } from "hooks/useStore";
+
 import ClickAreas from "./ClickAreas";
 
 vi.mock(
@@ -24,7 +25,7 @@ describe("ClickAreas", () => {
     });
 
     it("renders a previous and a next area hidden from assistive technology", () => {
-        const { previous, next } = renderAreas();
+        const { next, previous } = renderAreas();
 
         expect(previous).toHaveAttribute("aria-hidden", "true");
         expect(next).toHaveAttribute("aria-hidden", "true");
@@ -47,7 +48,7 @@ describe("ClickAreas", () => {
     });
 
     it("wraps around at the start and end of the list", async () => {
-        const { previous, next } = renderAreas();
+        const { next, previous } = renderAreas();
 
         useStore.setState({ activeIndex: 0 });
         await userEvent.click(previous);

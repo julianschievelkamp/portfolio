@@ -1,4 +1,5 @@
 import { css, keyframes, styled } from "styled-components";
+
 import { transition } from "styles/variables";
 
 // Animiert vom unsichtbaren Zustand zum regulären Opacity-Wert (z. B. 0.5 im Slider)
@@ -9,12 +10,12 @@ const fadeIn = keyframes`
 `;
 
 export const StyledImage = styled.img<{
-    $width?: string;
-    $height?: string;
-    $margin?: string;
     $aspectRatio?: string;
     $fadeInOnLoad?: boolean;
+    $height?: string;
     $isLoaded: boolean;
+    $margin?: string;
+    $width?: string;
 }>`
     width: ${({ $width }) => $width};
     height: ${({ $height }) => $height};

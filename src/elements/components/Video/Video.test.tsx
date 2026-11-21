@@ -23,12 +23,12 @@ vi.mock("hooks/useGaplessAudio/useGaplessAudio", () => ({
 const renderVideo = (audio?: string, isActive = true) =>
     render(
         <Video
-            src="/clip.mp4"
             ariaLabel="Showreel"
-            width="100%"
-            height="100%"
             audio={audio}
+            height="100%"
             isActive={isActive}
+            src="/clip.mp4"
+            width="100%"
         />,
     );
 
@@ -133,10 +133,10 @@ describe("Video", () => {
 
         rerender(
             <Video
-                src="/clip.mp4"
                 ariaLabel="Showreel"
                 audio={undefined}
                 isActive={false}
+                src="/clip.mp4"
             />,
         );
 

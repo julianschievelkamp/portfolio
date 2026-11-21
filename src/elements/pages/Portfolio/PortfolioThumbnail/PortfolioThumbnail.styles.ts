@@ -1,5 +1,6 @@
-import Button from "elements/components/Button/Button";
 import { styled } from "styled-components";
+
+import Button from "elements/components/Button/Button";
 import { colors, transition, visuallyHidden } from "styles/variables";
 
 export const PortfolioFigure = styled.figure`

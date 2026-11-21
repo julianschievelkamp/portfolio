@@ -3,40 +3,40 @@ import type { ReactNode } from "react";
 import { StyledText } from "./Text.styles";
 
 interface TextProps {
-    children?: ReactNode;
     bold?: boolean;
+    children?: ReactNode;
+    className?: string;
     color?: string;
-    textAlign?: "left" | "center" | "right" | "justify";
-    margin?: string;
     fontSize?: string;
+    id?: string;
+    margin?: string;
+    textAlign?: "left" | "center" | "right" | "justify";
     toUpperCase?: boolean;
     whiteSpace?: "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
-    className?: string;
-    id?: string;
 }
 
 const Text = ({
-    children,
     bold,
+    children,
+    className,
     color,
-    textAlign,
-    margin = "0",
     fontSize = "0.875rem",
+    id,
+    margin = "0",
+    textAlign,
     toUpperCase = false,
     whiteSpace,
-    className,
-    id,
 }: TextProps) => (
     <StyledText
-        id={id}
-        $color={color}
         $bold={bold}
-        $textAlign={textAlign}
-        $margin={margin}
+        className={className}
+        $color={color}
         $fontSize={fontSize}
+        id={id}
+        $margin={margin}
+        $textAlign={textAlign}
         $toUpperCase={toUpperCase}
         $whiteSpace={whiteSpace}
-        className={className}
     >
         {children}
     </StyledText>

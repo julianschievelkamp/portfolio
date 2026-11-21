@@ -2,8 +2,9 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { useStore } from "hooks/useStore";
 import { portfolioData } from "data/portfolioFixtures";
+import { useStore } from "hooks/useStore";
+
 import Portfolio from "./Portfolio";
 
 vi.mock(

@@ -1,19 +1,21 @@
 import { memo } from "react";
-import { SliderItem, SliderListItem } from "./SliderThumbnail.styles";
-import Image from "elements/components/Image/Image";
+
 import type { PortfolioItem } from "data/portfolioData";
+import Image from "elements/components/Image/Image";
 import { thumbnailSize } from "styles/variables";
 
+import { SliderItem, SliderListItem } from "./SliderThumbnail.styles";
+
 interface SliderThumbnailProps {
-    item: PortfolioItem;
     index: number;
     isActive: boolean;
+    item: PortfolioItem;
     onSelect: (index: number) => void;
 }
 
 // memo: Nur alte und neue aktive Thumbnails rendern neu (Callbacks referenzstabil).
 const SliderThumbnail = memo(
-    ({ item, index, isActive, onSelect }: SliderThumbnailProps) => (
+    ({ index, isActive, item, onSelect }: SliderThumbnailProps) => (
         <SliderListItem>
             <SliderItem
                 aria-label={`Show ${item.title}`}

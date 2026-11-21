@@ -1,17 +1,18 @@
-import { portfolioData } from "data/portfolioData";
 import { create } from "zustand";
+
+import { portfolioData } from "data/portfolioData";
 import { wrapIndex } from "utils/wrapIndex";
 
 interface State {
-    sidebarOpen: boolean;
     activeIndex: number;
     popupOpen: boolean;
+    sidebarOpen: boolean;
 }
 
 interface Actions {
-    setSidebarOpen: (open: boolean) => void;
     setActiveIndex: (index: number) => void;
     setPopupOpen: (open: boolean) => void;
+    setSidebarOpen: (open: boolean) => void;
 }
 
 export const useStore = create<State & Actions>((set) => ({

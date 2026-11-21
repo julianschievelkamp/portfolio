@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
-import { queries, transition } from "styles/variables";
+
 import { PINCHING_ATTRIBUTE } from "styles/global";
+import { queries, transition } from "styles/variables";
 
 export const SliderContainer = styled.div`
     position: absolute;

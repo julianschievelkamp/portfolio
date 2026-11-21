@@ -8,7 +8,7 @@ interface LinkProps extends ComponentProps<"a"> {
     underline?: boolean;
 }
 
-const Link = ({ underline = true, target, tabIndex, ...props }: LinkProps) => (
+const Link = ({ tabIndex, target, underline = true, ...props }: LinkProps) => (
     <StyledLink
         {...props}
         target={target}

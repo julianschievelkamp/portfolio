@@ -1,15 +1,16 @@
-import { Artwork, StyledActiveItem, ItemFigure } from "./ActiveItem.styles";
 import Image from "elements/components/Image/Image";
-import { useActiveItem } from "hooks/useActiveItem";
 import Video from "elements/components/Video/Video";
+import { useActiveItem } from "hooks/useActiveItem";
 import { usePinchZoom } from "hooks/usePinchZoom/usePinchZoom";
 import { useStore } from "hooks/useStore";
-import ClickAreas from "./ClickAreas/ClickAreas";
+
+import { Artwork, ItemFigure, StyledActiveItem } from "./ActiveItem.styles";
 import Caption from "./Caption/Caption";
+import ClickAreas from "./ClickAreas/ClickAreas";
 
 const ActiveItem = () => {
     const popupOpen = useStore((state) => state.popupOpen);
-    const { loadedItem, isItemRevealed, setLoadedImage } = useActiveItem();
+    const { isItemRevealed, loadedItem, setLoadedImage } = useActiveItem();
 
     const pinchZoomRef = usePinchZoom<HTMLDivElement>();
 
@@ -22,23 +23,23 @@ const ActiveItem = () => {
 
                 <Artwork ref={pinchZoomRef}>
                     <Image
-                        src={loadedItem.image}
                         alt={loadedItem.alt}
-                        onLoad={() => setLoadedImage(loadedItem.image)}
-                        onError={() => setLoadedImage(loadedItem.image)}
-                        width="100%"
                         height="100%"
+                        src={loadedItem.image}
+                        width="100%"
+                        onError={() => setLoadedImage(loadedItem.image)}
+                        onLoad={() => setLoadedImage(loadedItem.image)}
                     />
 
                     {loadedItem.video && (
                         <Video
                             key={loadedItem.video}
-                            src={loadedItem.video}
-                            audio={loadedItem.audio}
-                            isActive={popupOpen}
                             ariaLabel={loadedItem.title}
-                            width="100%"
+                            audio={loadedItem.audio}
                             height="100%"
+                            isActive={popupOpen}
+                            src={loadedItem.video}
+                            width="100%"
                         />
                     )}
                 </Artwork>

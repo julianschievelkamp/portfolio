@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+
 import { SCROLL_ALLOWED_ATTRIBUTE } from "styles/global";
 
 // Prüft, ob das Ziel in einem erlaubten Scroll-Bereich liegt, der tatsächlich scrollbar ist

@@ -1,8 +1,9 @@
-import { renderHook } from "@testing-library/react";
 import { fireEvent } from "@testing-library/dom";
+import { renderHook } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { PINCHING_ATTRIBUTE } from "styles/global";
+
 import { PINCH_MAX_SCALE, usePinchZoom } from "./usePinchZoom";
 
 interface TouchPoint {

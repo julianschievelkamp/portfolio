@@ -1,6 +1,6 @@
 interface IconCursorOptions {
-    size: number;
     color: string;
+    size: number;
 }
 
 /**
@@ -10,7 +10,7 @@ interface IconCursorOptions {
  */
 export const createIconCursor = (
     rawSvg: string,
-    { size, color }: IconCursorOptions,
+    { color, size }: IconCursorOptions,
 ): string => {
     const svg = rawSvg
         .replace(/<svg\b[^>]*>/, (svgTag) =>

@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useStore } from "hooks/useStore";
+
 import Header from "./Header";
 
 vi.mock("data/languageData", () => ({
@@ -11,7 +12,7 @@ vi.mock("data/languageData", () => ({
 // Das Icon wird ersetzt, damit der gewählte Icon-Name prüfbar ist
 vi.mock("elements/components/Icon/Icon", () => ({
     default: ({ name }: { name: string }) => (
-        <span data-testid="icon" data-name={name} />
+        <span data-name={name} data-testid="icon" />
     ),
 }));
 

@@ -1,6 +1,7 @@
 import { useCallback } from "react";
-import { isViewportZoomed } from "utils/isViewportZoomed";
+
 import { PINCHING_ATTRIBUTE } from "styles/global";
+import { isViewportZoomed } from "utils/isViewportZoomed";
 
 export const PINCH_MAX_SCALE = 2;
 

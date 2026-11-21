@@ -1,8 +1,9 @@
 /// <reference types="vite/client" />
+import { styled } from "styled-components";
+
 import chevronLeft from "assets/icons/chevron-left.svg?raw";
 import chevronRight from "assets/icons/chevron-right.svg?raw";
-import { styled } from "styled-components";
-import { queries, colors } from "styles/variables";
+import { colors, queries } from "styles/variables";
 import { createIconCursor } from "utils/createIconCursor";
 
 export const Previous = styled.div`

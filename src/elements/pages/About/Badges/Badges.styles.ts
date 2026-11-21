@@ -1,5 +1,6 @@
-import Link from "elements/components/Link/Link";
 import { styled } from "styled-components";
+
+import Link from "elements/components/Link/Link";
 import { queries, transition } from "styles/variables";
 
 export const BadgesWrapper = styled.div`

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import type { PortfolioItem } from "data/portfolioData";
 
 // Liefert das zuletzt vollständig geladene Item; neue Bilder werden vorab geladen.

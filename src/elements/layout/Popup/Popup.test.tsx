@@ -2,6 +2,7 @@ import { act, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useStore } from "hooks/useStore";
+
 import Popup from "./Popup";
 
 vi.mock("hooks/usePopupControls", () => ({ usePopupControls: vi.fn() }));

@@ -1,7 +1,8 @@
 import { styled } from "styled-components";
-import { queries } from "styles/variables";
+
 import Button from "elements/components/Button/Button";
 import Title from "elements/layout/App/Title/Title";
+import { queries } from "styles/variables";
 
 export const StyledHeader = styled.header`
     position: absolute;

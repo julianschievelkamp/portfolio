@@ -1,7 +1,8 @@
 import { styled } from "styled-components";
-import { transition } from "styles/variables";
-import { PINCHING_ATTRIBUTE } from "styles/global";
+
 import Button from "elements/components/Button/Button";
+import { PINCHING_ATTRIBUTE } from "styles/global";
+import { transition } from "styles/variables";
 
 export const StyledPopup = styled.dialog`
     position: fixed;

@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
-import { queries } from "styles/variables";
+
 import Button from "elements/components/Button/Button";
+import { queries } from "styles/variables";
 
 export const SliderListItem = styled.li`
     margin: 0 0.25rem 0 0;

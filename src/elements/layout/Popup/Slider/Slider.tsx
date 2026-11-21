@@ -1,7 +1,8 @@
-import { SliderContainer, InnerSliderContainer } from "./Slider.styles";
-import SliderThumbnail from "./SliderThumbnail/SliderThumbnail";
-import { useStore } from "hooks/useStore";
 import { portfolioData } from "data/portfolioData";
+import { useStore } from "hooks/useStore";
+
+import { InnerSliderContainer, SliderContainer } from "./Slider.styles";
+import SliderThumbnail from "./SliderThumbnail/SliderThumbnail";
 
 const Slider = () => {
     const activeIndex = useStore((state) => state.activeIndex);
@@ -9,13 +10,13 @@ const Slider = () => {
 
     return (
         <SliderContainer>
-            <InnerSliderContainer role="list" $activeIndex={activeIndex}>
+            <InnerSliderContainer $activeIndex={activeIndex} role="list">
                 {portfolioData.map((item, index) => (
                     <SliderThumbnail
                         key={item.title}
-                        item={item}
                         index={index}
                         isActive={index === activeIndex}
+                        item={item}
                         onSelect={setActiveIndex}
                     />
                 ))}

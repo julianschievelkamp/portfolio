@@ -1,25 +1,26 @@
-import Text from "elements/components/Text/Text";
-import { StyledSocial, ImageLink, ImageWrapper } from "./Social.styles";
+import { languageData } from "data/languageData";
 import Image from "elements/components/Image/Image";
 import Link from "elements/components/Link/Link";
+import Text from "elements/components/Text/Text";
 import { colors } from "styles/variables";
-import { languageData } from "data/languageData";
+
+import { ImageLink, ImageWrapper, StyledSocial } from "./Social.styles";
 
 const Social = () => {
     const socialData = languageData.about.artist.social;
 
     return (
         <StyledSocial>
-            <ImageLink href={socialData.link} target="_blank" tabIndex={-1}>
+            <ImageLink href={socialData.link} tabIndex={-1} target="_blank">
                 <ImageWrapper>
                     <Image
-                        src={socialData.image}
                         alt="Instagram Profile"
-                        width="100%"
-                        height="100%"
-                        loading="lazy"
                         aspectRatio="1/1"
                         fadeInOnLoad
+                        height="100%"
+                        loading="lazy"
+                        src={socialData.image}
+                        width="100%"
                     />
                 </ImageWrapper>
             </ImageLink>

@@ -64,7 +64,7 @@ describe("Link", () => {
         expect(screen.getByRole("link")).not.toHaveAttribute("aria-current");
 
         rerender(
-            <Link href="/" aria-current="page">
+            <Link aria-current="page" href="/">
                 Home
             </Link>,
         );

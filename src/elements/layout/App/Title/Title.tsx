@@ -1,15 +1,16 @@
-import Link from "elements/components/Link/Link";
 import { languageData } from "data/languageData";
+import Link from "elements/components/Link/Link";
+
 import { StyledTitle } from "./Title.styles";
 
 interface TitleProps {
-    onClick?: () => void;
     className?: string;
+    onClick?: () => void;
 }
 
-const Title = ({ onClick, className }: TitleProps) => (
+const Title = ({ className, onClick }: TitleProps) => (
     <StyledTitle className={className}>
-        <Link href="/" onClick={onClick} underline={false}>
+        <Link href="/" underline={false} onClick={onClick}>
             {languageData.title}
         </Link>
     </StyledTitle>

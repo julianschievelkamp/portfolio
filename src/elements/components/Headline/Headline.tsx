@@ -8,12 +8,12 @@ const headlines = {
 };
 
 interface HeadlineProps {
-    type?: "h1" | "h2";
     children?: ReactNode;
+    type?: "h1" | "h2";
     visuallyHidden?: boolean;
 }
 
-const Headline = ({ type = "h1", children, visuallyHidden }: HeadlineProps) => {
+const Headline = ({ children, type = "h1", visuallyHidden }: HeadlineProps) => {
     const HeadlineComponent = headlines[type];
 
     return (

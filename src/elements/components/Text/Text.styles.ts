@@ -1,12 +1,13 @@
 import { styled } from "styled-components";
+
 import { transition } from "styles/variables";
 
 export const StyledText = styled.p<{
-    $color?: string;
     $bold?: boolean;
-    $textAlign?: "left" | "center" | "right" | "justify";
-    $margin?: string;
+    $color?: string;
     $fontSize?: string;
+    $margin?: string;
+    $textAlign?: "left" | "center" | "right" | "justify";
     $toUpperCase?: boolean;
     $whiteSpace?: "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
 }>`

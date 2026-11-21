@@ -1,59 +1,60 @@
 import { useImageFadeIn } from "hooks/useImageFadeIn";
+
 import { StyledImage } from "./Image.styles";
 
 interface ImageProps {
+    alt: string;
+    aspectRatio?: string;
+    fadeInOnLoad?: boolean;
+    fetchPriority?: "high" | "low" | "auto";
+    height?: string;
+    loading?: "lazy" | "eager";
+    margin?: string;
+    sizes?: string;
     src: string;
     srcSet?: string;
-    sizes?: string;
-    alt: string;
     width?: string;
-    height?: string;
-    margin?: string;
-    fadeInOnLoad?: boolean;
-    onLoad?: () => void;
     onError?: () => void;
-    loading?: "lazy" | "eager";
-    fetchPriority?: "high" | "low" | "auto";
-    aspectRatio?: string;
+    onLoad?: () => void;
 }
 
 const Image = ({
+    alt,
+    aspectRatio,
+    fadeInOnLoad,
+    fetchPriority,
+    height,
+    loading = "eager",
+    margin,
+    sizes,
     src,
     srcSet,
-    sizes,
-    alt,
     width,
-    height,
-    margin,
-    fadeInOnLoad,
-    onLoad,
     onError,
-    loading = "eager",
-    fetchPriority,
-    aspectRatio,
+    onLoad,
 }: ImageProps) => {
     const { imageRef, isLoaded, markLoaded } = useImageFadeIn(src);
 
     return (
         <StyledImage
+            ref={imageRef}
+            alt={alt}
+            $aspectRatio={aspectRatio}
+            $fadeInOnLoad={fadeInOnLoad}
+            fetchPriority={fetchPriority}
+            $height={height}
+            $isLoaded={isLoaded}
+            loading={loading}
+            $margin={margin}
+            sizes={sizes}
             src={src}
             srcSet={srcSet}
-            sizes={sizes}
-            alt={alt}
             $width={width}
-            $height={height}
-            $margin={margin}
-            $fadeInOnLoad={fadeInOnLoad}
-            $isLoaded={isLoaded}
+            onError={onError}
             onLoad={() => {
                 markLoaded();
                 onLoad?.();
             }}
-            onError={onError}
-            loading={loading}
-            fetchPriority={fetchPriority}
-            $aspectRatio={aspectRatio}
-            ref={imageRef}
         />
     );
 };

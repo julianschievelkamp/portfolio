@@ -1,6 +1,7 @@
 import { css, styled } from "styled-components";
-import { queries, transition } from "styles/variables";
+
 import { PINCHING_ATTRIBUTE } from "styles/global";
+import { queries, transition } from "styles/variables";
 
 const variables = css`
     /* Close und Slider bekommen zusätzlichen Abstand */

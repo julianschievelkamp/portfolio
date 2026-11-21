@@ -1,22 +1,24 @@
 import { memo } from "react";
+
+import type { PortfolioItem } from "data/portfolioData";
+import Image from "elements/components/Image/Image";
+import { thumbnailSize } from "styles/variables";
+
 import {
     PortfolioButton,
     PortfolioCaption,
     PortfolioFigure,
 } from "./PortfolioThumbnail.styles";
-import Image from "elements/components/Image/Image";
-import type { PortfolioItem } from "data/portfolioData";
-import { thumbnailSize } from "styles/variables";
 
 interface PortfolioThumbnailProps {
-    item: PortfolioItem;
     index: number;
+    item: PortfolioItem;
     onSelect: (index: number) => void;
 }
 
 // memo: Kein Neurendern, solange item, index und onSelect gleich bleiben.
 const PortfolioThumbnail = memo(
-    ({ item, index, onSelect }: PortfolioThumbnailProps) => (
+    ({ index, item, onSelect }: PortfolioThumbnailProps) => (
         <PortfolioFigure>
             <PortfolioButton
                 aria-label={`Show ${item.title}`}
@@ -24,15 +26,15 @@ const PortfolioThumbnail = memo(
             />
 
             <Image
-                width="100%"
+                alt={item.alt}
+                aspectRatio={item.aspectRatio}
+                fadeInOnLoad
+                loading="lazy"
+                margin={item.thumbnailMargin}
+                sizes={thumbnailSize}
                 src={item.image}
                 srcSet={item.imageSet}
-                sizes={thumbnailSize}
-                alt={item.alt}
-                margin={item.thumbnailMargin}
-                aspectRatio={item.aspectRatio}
-                loading="lazy"
-                fadeInOnLoad
+                width="100%"
             />
 
             <PortfolioCaption>{`${item.title}, ${item.year} – ${item.type}`}</PortfolioCaption>

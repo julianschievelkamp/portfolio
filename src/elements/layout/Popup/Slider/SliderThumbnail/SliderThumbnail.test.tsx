@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 
 import { portfolioData } from "data/portfolioFixtures";
+
 import SliderThumbnail from "./SliderThumbnail";
 
 vi.mock(
@@ -18,9 +19,9 @@ const renderThumbnail = (isActive = false) => {
     render(
         <ul>
             <SliderThumbnail
-                item={item}
                 index={3}
                 isActive={isActive}
+                item={item}
                 onSelect={onSelect}
             />
         </ul>,

@@ -1,8 +1,8 @@
 export type Page = {
-    name: string;
-    title: string;
     description: string;
+    name: string;
     path: string;
+    title: string;
 };
 
 export const pages = {

@@ -1,10 +1,11 @@
 import { styled } from "styled-components";
-import { transition, colors } from "styles/variables";
+
+import { colors, transition } from "styles/variables";
 
 export const StyledIcon = styled.span<{
     $color?: string;
-    $size?: string;
     $padding?: string;
+    $size?: string;
 }>`
     display: flex;
     align-items: center;

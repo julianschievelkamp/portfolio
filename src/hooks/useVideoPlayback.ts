@@ -1,4 +1,5 @@
 import { type RefObject, useEffect, useState } from "react";
+
 import { useGaplessAudio } from "hooks/useGaplessAudio/useGaplessAudio";
 
 export const useVideoPlayback = (
@@ -9,7 +10,7 @@ export const useVideoPlayback = (
     const [hasStarted, setHasStarted] = useState(false);
     const [isPaused, setIsPaused] = useState(true);
 
-    const { prepare, start, stop, isPlaying } = useGaplessAudio(audioSrc);
+    const { isPlaying, prepare, start, stop } = useGaplessAudio(audioSrc);
 
     const toggleVideo = () => {
         if (videoRef.current?.paused) {

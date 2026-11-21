@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+
 import { queries, visuallyHidden } from "styles/variables";
 
 export const ArtistWrapper = styled.div`

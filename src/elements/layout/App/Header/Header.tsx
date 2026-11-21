@@ -1,8 +1,10 @@
 import { memo } from "react";
-import { SidebarToggle, StyledHeader, HeaderTitle } from "./Header.styles";
+
+import Icon from "elements/components/Icon/Icon";
 import { useStore } from "hooks/useStore";
 import { scrollToTop } from "utils/scrollToTop";
-import Icon from "elements/components/Icon/Icon";
+
+import { HeaderTitle, SidebarToggle, StyledHeader } from "./Header.styles";
 
 const Header = () => {
     const sidebarOpen = useStore((state) => state.sidebarOpen);
@@ -16,14 +18,14 @@ const Header = () => {
             />
 
             <SidebarToggle
+                aria-controls="sidebar"
+                aria-expanded={sidebarOpen}
+                aria-label={sidebarOpen ? "Close sidebar" : "Open sidebar"}
+                id="sidebar-toggle"
                 onClick={() => {
                     scrollToTop();
                     setSidebarOpen(!sidebarOpen);
                 }}
-                aria-expanded={sidebarOpen}
-                aria-label={sidebarOpen ? "Close sidebar" : "Open sidebar"}
-                aria-controls="sidebar"
-                id="sidebar-toggle"
             >
                 <Icon name={sidebarOpen ? "close" : "hamburger"} size="2rem" />
             </SidebarToggle>

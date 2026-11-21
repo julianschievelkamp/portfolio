@@ -1,6 +1,8 @@
 import { type RefObject, useEffect } from "react";
-import { useStore } from "./useStore";
+
 import { TRANSITION_DEFAULT } from "styles/variables";
+
+import { useStore } from "./useStore";
 
 export const usePopupOverlay = (
     popupRef: RefObject<HTMLDialogElement | null>,

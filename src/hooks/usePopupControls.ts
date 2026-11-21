@@ -1,8 +1,10 @@
-import { useEffect, type RefObject } from "react";
-import { useStore } from "./useStore";
-import { useMediaQuery } from "./useMediaQuery";
+import { type RefObject, useEffect } from "react";
+
 import { queries } from "styles/variables";
 import { isViewportZoomed } from "utils/isViewportZoomed";
+
+import { useMediaQuery } from "./useMediaQuery";
+import { useStore } from "./useStore";
 
 const MIN_SWIPE_DISTANCE = 50;
 

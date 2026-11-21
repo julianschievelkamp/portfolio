@@ -1,13 +1,14 @@
+import { languageData } from "data/languageData";
+import Headline from "elements/components/Headline/Headline";
+import Image from "elements/components/Image/Image";
 import Text from "elements/components/Text/Text";
+
 import {
     ArtistWrapper,
     PortraitCaption,
     PortraitFigure,
 } from "./Artist.styles";
-import { languageData } from "data/languageData";
-import Image from "elements/components/Image/Image";
 import Social from "./Social/Social";
-import Headline from "elements/components/Headline/Headline";
 
 const Artist = () => {
     const artistData = languageData.about.artist;
@@ -20,11 +21,11 @@ const Artist = () => {
             <ArtistWrapper>
                 <PortraitFigure>
                     <Image
-                        src={artistData.image.src}
                         alt={artistData.image.alt}
-                        height="100%"
-                        fetchPriority="high"
                         fadeInOnLoad
+                        fetchPriority="high"
+                        height="100%"
+                        src={artistData.image.src}
                     />
                     <PortraitCaption>
                         {artistData.image.caption}

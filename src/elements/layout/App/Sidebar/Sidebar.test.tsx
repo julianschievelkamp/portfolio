@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { useStore } from "hooks/useStore";
+
 import Sidebar from "./Sidebar";
 
 // Mobile Layout, damit useAbsoluteOverlay aktiv ist und kein window.matchMedia nötig ist

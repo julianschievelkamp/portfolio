@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
 import { usePageContext } from "vike-react/usePageContext";
-import App from "elements/layout/App/App";
+
 import { pages } from "data/navigationData";
+import App from "elements/layout/App/App";
 import { ensureTrailingSlash } from "utils/ensureTrailingSlash";
 
 // Layout bleibt beim Routing bestehen, damit die Sidebar nicht neu mountet

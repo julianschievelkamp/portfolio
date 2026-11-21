@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import { isViewportZoomed } from "utils/isViewportZoomed";
 
 export const useVisualViewport = (): boolean => {

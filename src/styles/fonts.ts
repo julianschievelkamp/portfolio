@@ -1,8 +1,8 @@
 import { css } from "styled-components";
 
 import PlayfairDisplay from "assets/fonts/PlayfairDisplay.woff2";
-import PoppinsLight from "assets/fonts/Poppins-Light.woff2";
 import PoppinsBold from "assets/fonts/Poppins-Bold.woff2";
+import PoppinsLight from "assets/fonts/Poppins-Light.woff2";
 
 export default css`
     @font-face {

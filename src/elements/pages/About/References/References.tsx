@@ -1,9 +1,11 @@
 import { Fragment } from "react";
-import Text from "elements/components/Text/Text";
-import { ListWrapper, ReferencesWrapper } from "./References.styles";
+
 import { languageData } from "data/languageData";
-import List from "elements/components/List/List";
 import Headline from "elements/components/Headline/Headline";
+import List from "elements/components/List/List";
+import Text from "elements/components/Text/Text";
+
+import { ListWrapper, ReferencesWrapper } from "./References.styles";
 
 const References = () => {
     const referencesData = languageData.about.references;
@@ -12,7 +14,7 @@ const References = () => {
         <section>
             <Headline type="h2">{referencesData.headline}</Headline>
             <ReferencesWrapper>
-                {referencesData.sections.map(({ title, subTitle, lists }) => (
+                {referencesData.sections.map(({ lists, subTitle, title }) => (
                     <Fragment key={title}>
                         <div>
                             <Text bold>{title}</Text>

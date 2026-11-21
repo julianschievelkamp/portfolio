@@ -1,27 +1,29 @@
-import { useVideoPlayback } from "hooks/useVideoPlayback";
-import Icon from "elements/components/Icon/Icon";
-import { PlayButton, StyledVideo } from "./Video.styles";
 import { useRef } from "react";
 
+import Icon from "elements/components/Icon/Icon";
+import { useVideoPlayback } from "hooks/useVideoPlayback";
+
+import { PlayButton, StyledVideo } from "./Video.styles";
+
 interface VideoProps {
-    src: string;
-    width?: string;
-    height?: string;
     ariaLabel: string;
     audio?: string;
+    height?: string;
     isActive: boolean;
+    src: string;
+    width?: string;
 }
 
 const Video = ({
-    src,
-    width,
-    height,
     ariaLabel,
     audio,
+    height,
     isActive,
+    src,
+    width,
 }: VideoProps) => {
     const videoRef = useRef<HTMLVideoElement>(null);
-    const { toggleVideo, hasStarted, isPaused } = useVideoPlayback(
+    const { hasStarted, isPaused, toggleVideo } = useVideoPlayback(
         videoRef,
         audio,
         isActive,
@@ -31,31 +33,31 @@ const Video = ({
         <>
             <StyledVideo
                 ref={videoRef}
-                $width={width}
+                aria-label={ariaLabel}
                 $height={height}
                 $isVisible={hasStarted}
-                onContextMenu={(e) => e.preventDefault()}
-                onClick={toggleVideo}
-                aria-label={ariaLabel}
-                preload="metadata"
-                playsInline
-                muted
                 loop
+                muted
+                playsInline
+                preload="metadata"
+                $width={width}
+                onClick={toggleVideo}
+                onContextMenu={(e) => e.preventDefault()}
             >
                 <source src={src} type="video/mp4" />
                 Your browser does not support the video tag.
             </StyledVideo>
 
             <PlayButton
-                onClick={toggleVideo}
                 aria-label={`${isPaused ? "Play" : "Pause"} ${ariaLabel}`}
                 $isVisible={!hasStarted}
+                onClick={toggleVideo}
             >
                 <Icon
-                    name={isPaused ? "play" : "pause"}
                     color="white"
-                    size="3rem"
+                    name={isPaused ? "play" : "pause"}
                     padding="0.5rem"
+                    size="3rem"
                 />
             </PlayButton>
         </>

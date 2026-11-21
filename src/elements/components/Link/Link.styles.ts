@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+
 import { colors, transition } from "styles/variables";
 
 export const StyledLink = styled.a<{ $underline: boolean }>`

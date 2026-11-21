@@ -1,20 +1,22 @@
 import { memo } from "react";
+
+import { languageData } from "data/languageData";
+import type { Page } from "data/navigationData";
 import Text from "elements/components/Text/Text";
+import Navigation from "elements/layout/App/Sidebar/Navigation/Navigation";
+import { useSidebarOverlay } from "hooks/useSidebarOverlay";
+import { useStore } from "hooks/useStore";
+import { SCROLL_ALLOWED_ATTRIBUTE } from "styles/global";
+import { colors } from "styles/variables";
+import { scrollToTop } from "utils/scrollToTop";
+
 import {
     Backdrop,
-    ScrollContainer,
-    StyledSidebar,
     Background,
+    ScrollContainer,
     SidebarTitle,
+    StyledSidebar,
 } from "./Sidebar.styles";
-import { languageData } from "data/languageData";
-import { colors } from "styles/variables";
-import Navigation from "elements/layout/App/Sidebar/Navigation/Navigation";
-import { useStore } from "hooks/useStore";
-import { useSidebarOverlay } from "hooks/useSidebarOverlay";
-import type { Page } from "data/navigationData";
-import { scrollToTop } from "utils/scrollToTop";
-import { SCROLL_ALLOWED_ATTRIBUTE } from "styles/global";
 
 interface SidebarProps {
     page: Page;
@@ -29,18 +31,18 @@ const Sidebar = ({ page }: SidebarProps) => {
     return (
         <>
             <Backdrop
+                $sidebarOpen={sidebarOpen}
                 onClick={() => {
                     scrollToTop();
                     setSidebarOpen(false);
                 }}
-                $sidebarOpen={sidebarOpen}
             />
 
             <Background $sidebarOpen={sidebarOpen} />
 
             <StyledSidebar
-                id="sidebar"
                 aria-label="Sidebar"
+                id="sidebar"
                 $sidebarOpen={sidebarOpen}
             >
                 <SidebarTitle />

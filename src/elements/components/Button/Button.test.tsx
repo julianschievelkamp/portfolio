@@ -27,7 +27,7 @@ describe("Button", () => {
 
     it("uses aria-label as accessible name", () => {
         render(
-            <Button onClick={vi.fn()} aria-label="Close popup">
+            <Button aria-label="Close popup" onClick={vi.fn()}>
                 <span aria-hidden="true">x</span>
             </Button>,
         );
