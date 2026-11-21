@@ -3,6 +3,8 @@ import { useCallback, useEffect, useRef } from "react";
 // Kurze Ein- und Ausblendung in Sekunden, damit Start und Stopp mitten in der Welle nicht knacken
 const FADE_IN_SECONDS = 0.02;
 const FADE_OUT_SECONDS = 0.03;
+// Längere Einblendung beim allerersten Start durch den Nutzer in Sekunden
+const INITIAL_FADE_IN_SECONDS = 1;
 // Dauer der Überblendung zwischen Ende und Anfang des Loops in Sekunden (zu Testzwecken anpassbar)
 const CROSSFADE_SECONDS = 0.1;
 // Wie weit im Voraus Durchläufe eingeplant werden und wie oft nachgeplant wird
@@ -43,6 +45,8 @@ export const useGaplessAudio = (src?: string) => {
     const playingRef = useRef<PlayingLoop | null>(null);
     // Wird bei jedem Start/Stopp erhöht, damit veraltete asynchrone Starts verworfen werden
     const requestRef = useRef(0);
+    // Merkt sich, ob der Ton bereits einmal gestartet wurde (nur der erste Start blendet lang ein)
+    const hasStartedRef = useRef(false);
 
     const stop = useCallback(() => {
         requestRef.current += 1;
@@ -115,7 +119,10 @@ export const useGaplessAudio = (src?: string) => {
             const voices = new Set<PlayingSource>();
             let nextStart = context.currentTime;
             let nextOffset = getOffset() % buffer.duration;
-            let nextFadeIn = FADE_IN_SECONDS;
+            let nextFadeIn = hasStartedRef.current
+                ? FADE_IN_SECONDS
+                : INITIAL_FADE_IN_SECONDS;
+            hasStartedRef.current = true;
 
             // Plant einen Durchlauf ab dem Offset. Sein Ende blendet aus, während der nächste einblendet.
             const scheduleVoice = () => {
