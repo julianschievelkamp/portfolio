@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 import { StyledText } from "./Text.styles";
 
@@ -10,9 +10,9 @@ interface TextProps {
     fontSize?: string;
     id?: string;
     margin?: string;
-    textAlign?: "left" | "center" | "right" | "justify";
+    textAlign?: CSSProperties["textAlign"];
     toUpperCase?: boolean;
-    whiteSpace?: "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
+    whiteSpace?: CSSProperties["whiteSpace"];
 }
 
 const Text = ({

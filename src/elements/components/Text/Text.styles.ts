@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { styled } from "styled-components";
 
 import { transition } from "styles/variables";
@@ -7,9 +8,9 @@ export const StyledText = styled.p<{
     $color?: string;
     $fontSize?: string;
     $margin?: string;
-    $textAlign?: "left" | "center" | "right" | "justify";
+    $textAlign?: CSSProperties["textAlign"];
     $toUpperCase?: boolean;
-    $whiteSpace?: "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
+    $whiteSpace?: CSSProperties["whiteSpace"];
 }>`
     text-align: ${({ $textAlign }) => $textAlign};
     font-weight: ${({ $bold }) => ($bold ? "bold" : "normal")};
