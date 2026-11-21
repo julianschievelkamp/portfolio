@@ -10,35 +10,31 @@ import {
 } from "./Artist.styles";
 import Social from "./Social/Social";
 
-const Artist = () => {
-    const artistData = languageData.about.artist;
+const { headline, image, text } = languageData.about.artist;
 
-    return (
-        <section>
-            <Headline type="h2" visuallyHidden>
-                {artistData.headline}
-            </Headline>
-            <ArtistWrapper>
-                <PortraitFigure>
-                    <Image
-                        alt={artistData.image.alt}
-                        fadeInOnLoad
-                        fetchPriority="high"
-                        height="100%"
-                        src={artistData.image.src}
-                    />
-                    <PortraitCaption>
-                        {artistData.image.caption}
-                    </PortraitCaption>
-                </PortraitFigure>
-                <div>
-                    <Text textAlign="justify">{artistData.text}</Text>
+const Artist = () => (
+    <section>
+        <Headline type="h2" visuallyHidden>
+            {headline}
+        </Headline>
+        <ArtistWrapper>
+            <PortraitFigure>
+                <Image
+                    alt={image.alt}
+                    fadeInOnLoad
+                    fetchPriority="high"
+                    height="100%"
+                    src={image.src}
+                />
+                <PortraitCaption>{image.caption}</PortraitCaption>
+            </PortraitFigure>
+            <div>
+                <Text textAlign="justify">{text}</Text>
 
-                    <Social />
-                </div>
-            </ArtistWrapper>
-        </section>
-    );
-};
+                <Social />
+            </div>
+        </ArtistWrapper>
+    </section>
+);
 
 export default Artist;
