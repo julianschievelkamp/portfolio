@@ -7,8 +7,8 @@ export const StyledText = styled.p<{
     $textAlign?: "left" | "center" | "right" | "justify";
     $margin?: string;
     $fontSize?: string;
-    $whiteSpace?: "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
     $toUpperCase?: boolean;
+    $whiteSpace?: "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
 }>`
     text-align: ${({ $textAlign }) => $textAlign};
     font-weight: ${({ $bold }) => ($bold ? "bold" : "normal")};

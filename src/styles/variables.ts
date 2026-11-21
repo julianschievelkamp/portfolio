@@ -28,7 +28,6 @@ export const queries = {
 
 export const thumbnailSize = "(max-width: 1200px) 300px, 600px";
 
-// Blendet Inhalte visuell aus, lässt sie aber für Screenreader und Suchmaschinen bestehen
 export const visuallyHidden = css`
     position: absolute;
     width: 1px;

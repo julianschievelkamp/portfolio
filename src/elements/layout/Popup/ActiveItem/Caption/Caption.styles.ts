@@ -9,11 +9,6 @@ export const StyledCaption = styled.figcaption`
     padding-top: 0.25rem;
     z-index: -1;
 
-    > p {
-        white-space: nowrap;
-        text-align: right;
-    }
-
     @media ${queries.landscapeLgMax} {
         top: 100%;
         left: 100%;
@@ -21,10 +16,6 @@ export const StyledCaption = styled.figcaption`
         width: max-content;
         transform-origin: top left;
         transform: rotate(-90deg);
-
-        > p {
-            text-align: left;
-        }
     }
 `;
 

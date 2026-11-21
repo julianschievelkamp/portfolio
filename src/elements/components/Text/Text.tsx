@@ -10,6 +10,7 @@ export interface TextProps {
     margin?: string;
     fontSize?: string;
     toUpperCase?: boolean;
+    whiteSpace?: "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap";
     className?: string;
     id?: string;
 }
@@ -22,6 +23,7 @@ const Text = ({
     margin = "0",
     fontSize = "0.875rem",
     toUpperCase = false,
+    whiteSpace,
     className,
     id,
 }: TextProps) => {
@@ -34,6 +36,7 @@ const Text = ({
             $margin={margin}
             $fontSize={fontSize}
             $toUpperCase={toUpperCase}
+            $whiteSpace={whiteSpace}
             className={className}
         >
             {children}
