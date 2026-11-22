@@ -29,7 +29,11 @@ const Artist = () => (
                 <PortraitCaption>{image.caption}</PortraitCaption>
             </PortraitFigure>
             <div>
-                <Text textAlign="justify">{text}</Text>
+                {text.map((paragraph, index) => (
+                    <Text key={index} margin="0 0 1rem 0" textAlign="justify">
+                        {paragraph}
+                    </Text>
+                ))}
 
                 <Social />
             </div>

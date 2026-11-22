@@ -38,7 +38,7 @@ export const languageData = {
                 alt: "Black and white portrait of Julian Schievelkamp in a denim jacket, sitting on a wooden chair floating among clouds and mist.",
                 caption: "Self-portrait of Julian Schievelkamp",
             },
-            text: (
+            text: [
                 <>
                     Julian Schievelkamp (b. 1994) is a contemporary visual
                     artist and fine art photographer based in Cologne, Germany.
@@ -47,8 +47,8 @@ export const languageData = {
                     computer-generated imagery. Synaesthetic and psychedelic
                     experiences, where sensory impressions merge into a single
                     picture, have had a great influence on his way of working.
-                    <br />
-                    <br />
+                </>,
+                <>
                     Schievelkamp has won several prizes and awards, including
                     the 2017 Prix de la Photographie Paris. In 2019 the artist
                     was awarded the title{" "}
@@ -56,8 +56,8 @@ export const languageData = {
                     5th Fine Art Photography Awards. He has exhibited his work
                     in London, Berlin and Cologne and over 100 YellowKorner
                     galleries worldwide.
-                    <br />
-                    <br />
+                </>,
+                <>
                     High-quality fine art prints in various formats and sizes
                     are available upon request. For collaborations, commissions,
                     or inquiries, feel free to reach out via{" "}
@@ -68,8 +68,8 @@ export const languageData = {
                         email
                     </Link>{" "}
                     or social media.
-                </>
-            ),
+                </>,
+            ],
             social: {
                 image: Profile,
                 link: "https://www.instagram.com/julianschievelkamp/",
@@ -78,17 +78,16 @@ export const languageData = {
             },
         },
         references: {
-            headline: (
-                <>
-                    Selected
-                    <br />
-                    References
-                </>
-            ),
+            headline: "Selected References",
             sections: [
                 {
-                    title: "Publications",
-                    subTitle: "2015—present",
+                    title: (
+                        <>
+                            <b>Publications</b>
+                            <br />
+                            2015—present
+                        </>
+                    ),
                     lists: [
                         [
                             <>
@@ -159,8 +158,13 @@ export const languageData = {
                     ],
                 },
                 {
-                    title: "Awards",
-                    subTitle: "2015—present",
+                    title: (
+                        <>
+                            <b>Awards</b>
+                            <br />
+                            2015—present
+                        </>
+                    ),
                     lists: [
                         [
                             <>
@@ -218,13 +222,7 @@ export const languageData = {
             ],
         },
         badges: {
-            headline: (
-                <>
-                    First Prize
-                    <br />
-                    Winner
-                </>
-            ),
+            headline: "First Prize Winner",
             items: {
                 fapa: {
                     image: Badge1,
@@ -244,23 +242,23 @@ export const languageData = {
             },
         },
     },
-    impressum: (
+    impressum: [
         <>
             <b>Angaben gemäß § 5 TMG:</b>
-            <br />
-            <br />
+        </>,
+        <>
             Julian Schievelkamp
             <br />
             Zollstocksweg 1
             <br />
             50969 Köln
-            <br />
-            <br />
+        </>,
+        <>
             <Link href="tel:+4915679602835">+49 156 796 028 35</Link>
             <br />
             <Link href="mailto:mail@julianschievelkamp.com" target="_blank">
                 mail@julianschievelkamp.com
             </Link>
-        </>
-    ),
+        </>,
+    ],
 };

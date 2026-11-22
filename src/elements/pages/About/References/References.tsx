@@ -13,12 +13,10 @@ const References = () => (
     <section>
         <Headline type="h2">{headline}</Headline>
         <ReferencesWrapper>
-            {sections.map(({ lists, subTitle, title }) => (
-                <Fragment key={title}>
-                    <div>
-                        <Text bold>{title}</Text>
-                        <Text>{subTitle}</Text>
-                    </div>
+            {sections.map(({ lists, title }, index) => (
+                <Fragment key={index}>
+                    <Text>{title}</Text>
+
                     <ListWrapper>
                         {lists.map((items, index) => (
                             <List

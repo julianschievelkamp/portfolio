@@ -27,7 +27,7 @@ const Popup = () => {
 
             <StyledPopup
                 ref={popupRef}
-                aria-label="Artwork Popup"
+                aria-label="Popup"
                 tabIndex={-1}
                 // Keeps the store in sync in case the dialog closes otherwise
                 onClose={() => setPopupOpen(false)}
@@ -42,7 +42,7 @@ const Popup = () => {
                     onClick={() => setPopupOpen(false)}
                 />
                 <CloseButton
-                    aria-label="Close Popup"
+                    aria-label="Close popup"
                     onClick={() => setPopupOpen(false)}
                 >
                     <Icon name="close" size="2rem" />

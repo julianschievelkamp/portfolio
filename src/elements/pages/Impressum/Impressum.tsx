@@ -6,7 +6,11 @@ import { StyledImpressum } from "./Impressum.styles";
 const Impressum = () => (
     // The legal notice text is German, so the language is declared
     <StyledImpressum lang="de">
-        <Text>{languageData.impressum}</Text>
+        {languageData.impressum.map((paragraph, index) => (
+            <Text key={index} margin="0 0 1rem 0">
+                {paragraph}
+            </Text>
+        ))}
     </StyledImpressum>
 );
 

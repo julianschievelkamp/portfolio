@@ -4,7 +4,7 @@ import { describe, expect, it, vi } from "vitest";
 import Impressum from "./Impressum";
 
 vi.mock("data/languageData", () => ({
-    languageData: { impressum: "Legal notice text" },
+    languageData: { impressum: ["Legal notice text", "Second paragraph"] },
 }));
 
 describe("Impressum", () => {

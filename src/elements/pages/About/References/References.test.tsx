@@ -3,31 +3,46 @@ import { describe, expect, it, vi } from "vitest";
 
 import References from "./References";
 
-vi.mock("data/languageData", () => ({
-    languageData: {
-        about: {
-            references: {
-                headline: "REFERENCES",
-                sections: [
-                    {
-                        title: "Publications",
-                        subTitle: "2015—present",
-                        lists: [
-                            ["Pub A", "Pub B"],
-                            ["Pub C"],
-                            ["Pub D", "Pub E", "Pub F"],
-                        ],
-                    },
-                    {
-                        title: "Awards",
-                        subTitle: "2016—2019",
-                        lists: [["Award A"], ["Award B", "Award C"]],
-                    },
-                ],
+vi.mock("data/languageData", async () => {
+    // JSX inside a hoisted mock needs the runtime imported inside the factory
+    const { Fragment, createElement } = await import("react");
+
+    return {
+        languageData: {
+            about: {
+                references: {
+                    headline: "REFERENCES",
+                    sections: [
+                        {
+                            title: createElement(
+                                Fragment,
+                                null,
+                                createElement("b", null, "Publications"),
+                                createElement("br"),
+                                "2015—present",
+                            ),
+                            lists: [
+                                ["Pub A", "Pub B"],
+                                ["Pub C"],
+                                ["Pub D", "Pub E", "Pub F"],
+                            ],
+                        },
+                        {
+                            title: createElement(
+                                Fragment,
+                                null,
+                                createElement("b", null, "Awards"),
+                                createElement("br"),
+                                "2016—2019",
+                            ),
+                            lists: [["Award A"], ["Award B", "Award C"]],
+                        },
+                    ],
+                },
             },
         },
-    },
-}));
+    };
+});
 
 describe("References", () => {
     it("shows the headline", () => {
@@ -38,14 +53,17 @@ describe("References", () => {
         ).toBeInTheDocument();
     });
 
-    it("shows title and subtitle of publications and awards", () => {
+    it("shows title and date range of publications and awards", () => {
         render(<References />);
 
-        ["Publications", "2015—present", "Awards", "2016—2019"].forEach(
-            (text) => {
-                expect(screen.getByText(text)).toBeInTheDocument();
-            },
-        );
+        ["Publications", "Awards"].forEach((text) => {
+            expect(screen.getByText(text)).toBeInTheDocument();
+        });
+        ["2015—present", "2016—2019"].forEach((text) => {
+            expect(
+                screen.getByText(text, { exact: false }),
+            ).toBeInTheDocument();
+        });
     });
 
     it("renders all list groups with their entries", () => {

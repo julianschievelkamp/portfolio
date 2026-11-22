@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import { queries } from "styles/variables";
 
 export const StyledImpressum = styled.div`
-    max-width: 1140px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 1rem;
 

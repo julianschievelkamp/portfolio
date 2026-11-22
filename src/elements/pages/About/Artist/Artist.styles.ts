@@ -3,13 +3,11 @@ import { styled } from "styled-components";
 import { queries, visuallyHidden } from "styles/variables";
 
 export const ArtistWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
 
     @media ${queries.lg} {
-        flex-direction: row;
-        align-items: flex-start;
+        grid-template-columns: 1fr 2fr;
     }
 `;
 
@@ -26,7 +24,6 @@ export const PortraitFigure = styled.figure`
 
     @media ${queries.lg} {
         margin: 0 2rem 0 0;
-        min-width: 30%;
     }
 `;
 

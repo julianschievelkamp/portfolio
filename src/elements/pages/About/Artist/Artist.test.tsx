@@ -13,7 +13,7 @@ vi.mock("data/languageData", () => ({
                     alt: "Portrait alt",
                     caption: "Portrait caption",
                 },
-                text: "Artist biography",
+                text: ["Artist biography", "Second paragraph"],
             },
         },
     },

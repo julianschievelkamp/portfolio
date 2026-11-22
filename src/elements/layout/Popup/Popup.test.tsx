@@ -32,7 +32,7 @@ describe("Popup", () => {
         render(<Popup />);
 
         expect(
-            screen.getByRole("dialog", { name: "Artwork Popup" }),
+            screen.getByRole("dialog", { name: "Popup" }),
         ).toBeInTheDocument();
     });
 
