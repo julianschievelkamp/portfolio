@@ -12,9 +12,6 @@ export const PortfolioFigure = styled.figure`
     overflow: clip;
     position: relative;
     margin: 0;
-    min-width: 5rem;
-    min-height: 5rem;
-    aspect-ratio: 1 / 1;
 
     span {
         background-color: ${colors.placeholder};
