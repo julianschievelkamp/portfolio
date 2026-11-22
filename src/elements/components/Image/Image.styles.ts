@@ -1,6 +1,6 @@
 import { css, keyframes, styled } from "styled-components";
 
-import { colors, transition } from "styles/variables";
+import { transition } from "styles/variables";
 
 const fadeIn = keyframes`
     from { opacity: 1; }
@@ -27,8 +27,9 @@ export const StyledImage = styled.img<{
     -ms-user-select: none;
 `;
 
+/* Needs a relative positioned parent */
 export const Fader = styled.span<{ $isLoaded: boolean }>`
-    background-color: ${colors.fade};
+    background-color: white;
     pointer-events: none;
     position: absolute;
     inset: 0;

@@ -17,6 +17,7 @@ export const StyledVideo = styled.video<{
     transition: opacity 1s;
 `;
 
+/* Needs a relative positioned parent */
 export const PlayButton = styled(Button)<{ $isVisible: boolean }>`
     position: absolute;
     left: 50%;

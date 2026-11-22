@@ -8,8 +8,8 @@ export const transition = {
 };
 
 export const colors = {
-    fade: "whitesmoke",
     highlight: "rgba(255, 200, 0, 1)",
+    placeholder: "whitesmoke",
     playButton: "rgba(0, 0, 0, 0.4)",
     secondary: "rgba(0, 0, 0, 0.6)",
 };
