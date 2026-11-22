@@ -40,27 +40,32 @@ export const languageData = {
             },
             text: [
                 <>
-                    Julian Schievelkamp (b. 1994) is a contemporary visual
-                    artist and fine art photographer based in Cologne, Germany.
-                    Using both analog film and digital techniques, his recent
-                    work emphasizes the synergies of classic photography and
-                    computer-generated imagery. Synaesthetic and psychedelic
-                    experiences, where sensory impressions merge into a single
-                    picture, have had a great influence on his way of working.
+                    Julian Schievelkamp (b. 1994) makes images of things that
+                    don't quite exist. Based in Cologne, he moves freely between
+                    analog film and the computer, and his favourite part is
+                    where the two run into each other.
                 </>,
                 <>
-                    Schievelkamp has won several prizes and awards, including
-                    the 2017 Prix de la Photographie Paris. In 2019 the artist
-                    was awarded the title{" "}
-                    <i>Fine Art Photographer of the Year</i> by the jury of the
-                    5th Fine Art Photography Awards. He has exhibited his work
-                    in London, Berlin and Cologne and over 100 YellowKorner
-                    galleries worldwide.
+                    His work keeps returning to something that's hard to
+                    photograph: what it feels like when the senses blur. A sound
+                    has a colour, a memory has a texture, and everything you
+                    perceive folds into one single picture. Synaesthetic and
+                    psychedelic experiences have shaped the way he sees, and his
+                    images try to hold on to those moments just long enough to
+                    look at them.
                 </>,
                 <>
-                    High-quality fine art prints in various formats and sizes
-                    are available upon request. For collaborations, commissions,
-                    or inquiries, feel free to reach out via{" "}
+                    Along the way the work has found an audience. It won the
+                    Prix de la Photographie Paris in 2017 and earned him the
+                    title <i>Fine Art Photographer of the Year</i> at the 5th
+                    Fine Art Photography Awards in 2019. It has been shown in
+                    London, Berlin and Cologne, and in more than 100
+                    YellowKorner galleries around the world.
+                </>,
+                <i>
+                    If one of his images stays with you: fine art prints are
+                    available in various formats and sizes. For collaborations,
+                    commissions or just to say hello, reach out via{" "}
                     <Link
                         href="mailto:mail@julianschievelkamp.com"
                         target="_blank"
@@ -68,7 +73,7 @@ export const languageData = {
                         email
                     </Link>{" "}
                     or social media.
-                </>,
+                </i>,
             ],
             social: {
                 image: Profile,
@@ -243,9 +248,7 @@ export const languageData = {
         },
     },
     impressum: [
-        <>
-            <b>Angaben gemäß § 5 TMG:</b>
-        </>,
+        <b>Angaben gemäß § 5 TMG:</b>,
         <>
             Julian Schievelkamp
             <br />
