@@ -21,8 +21,7 @@ export const StyledLink = styled(Link)`
         transition: transform ${transition.default};
     }
 
-    &:hover,
-    &:focus-visible {
+    &:hover {
         img {
             transform: scale(1.05);
         }

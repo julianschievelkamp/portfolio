@@ -36,8 +36,7 @@ export const PortfolioButton = styled(Button)`
         transition: transform ${transition.default};
     }
 
-    &:hover + img,
-    &:focus-visible + img {
+    &:hover + img {
         transform: scale(1.05);
     }
 `;

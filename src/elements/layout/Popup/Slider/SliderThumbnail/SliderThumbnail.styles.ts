@@ -22,10 +22,6 @@ export const SliderItem = styled(Button)<{ $isActive: boolean }>`
         opacity: ${({ $isActive }) => ($isActive ? 1 : 0.5)};
     }
 
-    &:focus-visible img {
-        opacity: 1;
-    }
-
     @media ${queries.hover} {
         &:hover img {
             opacity: 1;
