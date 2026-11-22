@@ -30,7 +30,7 @@ const Artist = () => (
             </PortraitFigure>
             <div>
                 {text.map((paragraph, index) => (
-                    <Text key={index} margin="0 0 1rem 0" textAlign="justify">
+                    <Text key={index} margin="0 0 1rem 0">
                         {paragraph}
                     </Text>
                 ))}
