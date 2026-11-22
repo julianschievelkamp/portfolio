@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 import fonts from "./fonts";
-import { colors, transition } from "./variables";
+import { focusStyles, transition } from "./variables";
 
 export const PAGE_LOCKED_ATTRIBUTE = "data-page-locked";
 export const SCROLL_ALLOWED_ATTRIBUTE = "data-scroll-allowed";
@@ -51,7 +51,7 @@ export default createGlobalStyle`
     }
 
     :focus-visible {
-        outline: 2px solid ${colors.highlight};
+        ${focusStyles}
     }
 
     .no-transition * {

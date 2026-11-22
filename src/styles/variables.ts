@@ -28,6 +28,11 @@ export const queries = {
 
 export const thumbnailSize = "(max-width: 1200px) 300px, 600px";
 
+export const focusStyles = css`
+    outline: 2px solid ${colors.highlight};
+    outline-offset: 0;
+`;
+
 export const visuallyHidden = css`
     position: absolute;
     width: 1px;
