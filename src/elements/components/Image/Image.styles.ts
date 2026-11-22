@@ -1,22 +1,19 @@
 import { css, keyframes, styled } from "styled-components";
 
-import { transition } from "styles/variables";
+import { colors, transition } from "styles/variables";
 
-// Animates from the invisible state to the regular opacity value (e.g. 0.5 in the slider)
 const fadeIn = keyframes`
-    from {
-        opacity: 0;
-    }
+    from { opacity: 1; }
+    to { opacity: 0; }
 `;
 
 export const StyledImage = styled.img<{
     $aspectRatio?: string;
-    $fadeInOnLoad?: boolean;
     $height?: string;
-    $isLoaded: boolean;
     $margin?: string;
     $width?: string;
 }>`
+    display: block;
     width: ${({ $width }) => $width};
     height: ${({ $height }) => $height};
     margin: ${({ $margin }) => $margin};
@@ -28,20 +25,17 @@ export const StyledImage = styled.img<{
     -webkit-user-drag: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+`;
 
-    /* Animation instead of transition, so transition rules of parents (e.g. hover zoom) do not override it */
-    ${({ $fadeInOnLoad, $isLoaded }) => {
-        if (!$fadeInOnLoad) return;
+export const Fader = styled.span<{ $isLoaded: boolean }>`
+    background-color: ${colors.fade};
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
 
-        return $isLoaded
-            ? css`
-                  animation: ${fadeIn} ${transition.default};
-              `
-            : // && raises the specificity above parent rules such as the slider opacity
-              css`
-                  && {
-                      opacity: 0;
-                  }
-              `;
-    }}
+    ${({ $isLoaded }) =>
+        $isLoaded &&
+        css`
+            animation: ${fadeIn} ${transition.default} forwards;
+        `}
 `;

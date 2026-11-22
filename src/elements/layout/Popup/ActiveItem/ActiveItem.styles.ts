@@ -68,7 +68,6 @@ export const ItemFigure = styled.figure<{ $isItemRevealed: boolean }>`
 export const Artwork = styled.div`
     border: var(--border-width) solid transparent;
     position: relative;
-    display: flex;
     overflow: clip;
     margin: 0;
 

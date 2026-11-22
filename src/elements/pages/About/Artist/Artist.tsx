@@ -7,6 +7,7 @@ import {
     ArtistWrapper,
     PortraitCaption,
     PortraitFigure,
+    TextWrapper,
 } from "./Artist.styles";
 import Social from "./Social/Social";
 
@@ -28,7 +29,7 @@ const Artist = () => (
                 />
                 <PortraitCaption>{image.caption}</PortraitCaption>
             </PortraitFigure>
-            <div>
+            <TextWrapper>
                 {text.map((paragraph, index) => (
                     <Text key={index} margin="0 0 1rem 0">
                         {paragraph}
@@ -36,7 +37,7 @@ const Artist = () => (
                 ))}
 
                 <Social />
-            </div>
+            </TextWrapper>
         </ArtistWrapper>
     </section>
 );

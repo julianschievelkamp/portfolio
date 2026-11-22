@@ -38,6 +38,7 @@ export const ImageLink = styled(Link)`
 `;
 
 export const ImageWrapper = styled.span`
+    position: relative;
     display: block;
     overflow: clip;
     border-radius: 100px;

@@ -3,6 +3,10 @@ import { describe, expect, it, vi } from "vitest";
 
 import Image from "./Image";
 
+// jsdom only exposes the animation shorthand, not its longhand properties
+const isFadingOut = (element: Element | null) =>
+    element !== null && getComputedStyle(element).animation !== "";
+
 describe("Image", () => {
     it("renders an image with src and alt", () => {
         render(<Image alt="Abstract painting" src="/art.jpg" />);
@@ -64,31 +68,40 @@ describe("Image", () => {
         expect(onError).toHaveBeenCalledTimes(1);
     });
 
-    it("hides the image until it is loaded when fadeInOnLoad is set", () => {
-        render(<Image alt="Art" fadeInOnLoad src="/a.jpg" />);
-        const image = screen.getByRole("img");
-        expect(image).toHaveStyle("opacity: 0");
+    it("covers the image with a fader until it is loaded when fadeInOnLoad is set", () => {
+        const { container } = render(
+            <Image alt="Art" fadeInOnLoad src="/a.jpg" />,
+        );
+        const fader = container.querySelector('[aria-hidden="true"]');
+        expect(fader).toBeInTheDocument();
+        expect(isFadingOut(fader)).toBe(false);
 
-        fireEvent.load(image);
+        fireEvent.load(screen.getByRole("img"));
 
-        expect(image).not.toHaveStyle("opacity: 0");
+        expect(isFadingOut(fader)).toBe(true);
     });
 
-    it("keeps the image visible while loading without fadeInOnLoad", () => {
-        render(<Image alt="Art" src="/a.jpg" />);
+    it("renders no fader without fadeInOnLoad", () => {
+        const { container } = render(<Image alt="Art" src="/a.jpg" />);
 
-        expect(screen.getByRole("img")).not.toHaveStyle("opacity: 0");
+        expect(
+            container.querySelector('[aria-hidden="true"]'),
+        ).not.toBeInTheDocument();
     });
 
-    it("shows a cached image immediately when it is already complete on mount", () => {
+    it("fades out the fader immediately when the image is already complete on mount", () => {
         // jsdom does not load images, so "complete" is simulated for this test
         const completeSpy = vi
             .spyOn(HTMLImageElement.prototype, "complete", "get")
             .mockReturnValue(true);
 
-        render(<Image alt="Art" fadeInOnLoad src="/a.jpg" />);
+        const { container } = render(
+            <Image alt="Art" fadeInOnLoad src="/a.jpg" />,
+        );
 
-        expect(screen.getByRole("img")).not.toHaveStyle("opacity: 0");
+        expect(
+            isFadingOut(container.querySelector('[aria-hidden="true"]')),
+        ).toBe(true);
 
         completeSpy.mockRestore();
     });

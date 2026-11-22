@@ -1,6 +1,6 @@
 import { useImageFadeIn } from "hooks/useImageFadeIn";
 
-import { StyledImage } from "./Image.styles";
+import { Fader, StyledImage } from "./Image.styles";
 
 interface ImageProps {
     alt: string;
@@ -36,26 +36,27 @@ const Image = ({
     const { imageRef, isLoaded, markLoaded } = useImageFadeIn(src);
 
     return (
-        <StyledImage
-            ref={imageRef}
-            alt={alt}
-            $aspectRatio={aspectRatio}
-            $fadeInOnLoad={fadeInOnLoad}
-            fetchPriority={fetchPriority}
-            $height={height}
-            $isLoaded={isLoaded}
-            loading={loading}
-            $margin={margin}
-            sizes={sizes}
-            src={src}
-            srcSet={srcSet}
-            $width={width}
-            onError={onError}
-            onLoad={() => {
-                markLoaded();
-                onLoad?.();
-            }}
-        />
+        <>
+            <StyledImage
+                ref={imageRef}
+                alt={alt}
+                $aspectRatio={aspectRatio}
+                fetchPriority={fetchPriority}
+                $height={height}
+                loading={loading}
+                $margin={margin}
+                sizes={sizes}
+                src={src}
+                srcSet={srcSet}
+                $width={width}
+                onError={onError}
+                onLoad={() => {
+                    markLoaded();
+                    onLoad?.();
+                }}
+            />
+            {fadeInOnLoad && <Fader aria-hidden $isLoaded={isLoaded} />}
+        </>
     );
 };
 

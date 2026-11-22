@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 import Button from "elements/components/Button/Button";
-import { colors, transition, visuallyHidden } from "styles/variables";
+import { transition, visuallyHidden } from "styles/variables";
 
 export const PortfolioFigure = styled.figure`
     overflow: clip;
@@ -10,8 +10,6 @@ export const PortfolioFigure = styled.figure`
     min-width: 5rem;
     min-height: 5rem;
     aspect-ratio: 1 / 1;
-    // Placeholder color before the image fades in
-    background-color: ${colors.fade};
 `;
 
 // The image is deliberately not inside the button so reader modes keep it.
