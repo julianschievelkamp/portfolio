@@ -19,7 +19,7 @@ export const SliderItem = styled(Button)<{ $isActive: boolean }>`
     overflow: clip;
 
     img {
-        opacity: ${({ $isActive }) => ($isActive ? 1 : 0.5)};
+        opacity: ${({ $isActive }) => ($isActive ? 1 : 0.25)};
     }
 
     @media ${queries.hover} {
