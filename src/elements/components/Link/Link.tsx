@@ -8,14 +8,18 @@ interface LinkProps extends ComponentProps<"a"> {
     underline?: boolean;
 }
 
-const Link = ({ tabIndex, target, underline = true, ...props }: LinkProps) => (
+const Link = ({
+    tabIndex = 0,
+    target,
+    underline = true,
+    ...props
+}: LinkProps) => (
     <StyledLink
         {...props}
         target={target}
         rel={target === "_blank" ? "noopener noreferrer" : undefined}
         $underline={underline}
-        // Without an explicit tabIndex, Safari does not focus links via Tab
-        tabIndex={tabIndex ?? 0}
+        tabIndex={tabIndex}
     />
 );
 
