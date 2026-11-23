@@ -21,8 +21,8 @@ const SliderThumbnail = memo(
                 aria-label={`Show ${item.title}`}
                 onClick={() => onSelect(index)}
                 aria-current={isActive}
-                // Roving tabindex: only the active item is part of the tab order
-                tabIndex={isActive ? 0 : -1}
+                // The user navigates with arrow keys instead of tab
+                tabIndex={-1}
                 $isActive={isActive}
             >
                 <Image

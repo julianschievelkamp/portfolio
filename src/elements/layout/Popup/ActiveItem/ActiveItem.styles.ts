@@ -12,10 +12,10 @@ const variables = css`
         var(--space-close) + var(--space-slider) + var(--space-caption)
     );
 
-    --border-width: clamp(8px, 1.25vw, 12px);
+    --border-width: clamp(8px, 1.25vw, 10px);
 
     @media ${queries.landscape} {
-        --border-width: clamp(8px, 1.25vh, 12px);
+        --border-width: clamp(8px, 1.25vh, 10px);
     }
 
     --border-total: calc(var(--border-width) * 2);

@@ -43,14 +43,11 @@ describe("Slider", () => {
         expect(useStore.getState().activeIndex).toBe(2);
     });
 
-    it("keeps only the current item in the tab order", () => {
+    it("keeps all items out of the tab order", () => {
         render(<Slider />);
 
-        const buttons = screen.getAllByRole("button");
-
-        expect(buttons[0]).toHaveAttribute("tabindex", "0");
-        buttons
-            .slice(1)
+        screen
+            .getAllByRole("button")
             .forEach((button) =>
                 expect(button).toHaveAttribute("tabindex", "-1"),
             );
@@ -65,7 +62,7 @@ describe("Slider", () => {
         expect(getTransform(container)).not.toBe(before);
     });
 
-    it("moves aria-current and the tab stop to the new item when the index changes", () => {
+    it("moves aria-current to the new item when the index changes", () => {
         render(<Slider />);
         const buttons = screen.getAllByRole("button");
 
@@ -74,6 +71,6 @@ describe("Slider", () => {
         expect(buttons[0]).toHaveAttribute("aria-current", "false");
         expect(buttons[0]).toHaveAttribute("tabindex", "-1");
         expect(buttons[1]).toHaveAttribute("aria-current", "true");
-        expect(buttons[1]).toHaveAttribute("tabindex", "0");
+        expect(buttons[1]).toHaveAttribute("tabindex", "-1");
     });
 });

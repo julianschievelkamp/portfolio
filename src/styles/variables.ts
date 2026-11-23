@@ -8,7 +8,7 @@ export const transition = {
 };
 
 export const colors = {
-    highlight: "rgba(255, 200, 0, 1)",
+    highlight: "rgba(255, 192, 0, 1)",
     placeholder: "whitesmoke",
     playButton: "rgba(0, 0, 0, 0.4)",
     secondary: "rgba(0, 0, 0, 0.6)",
@@ -27,11 +27,6 @@ export const queries = {
 };
 
 export const thumbnailSize = "(max-width: 1200px) 300px, 600px";
-
-export const focusStyles = css`
-    outline: 2px solid ${colors.highlight};
-    outline-offset: 0;
-`;
 
 export const visuallyHidden = css`
     position: absolute;

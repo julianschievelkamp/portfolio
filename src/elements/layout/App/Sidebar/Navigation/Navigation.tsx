@@ -40,6 +40,7 @@ const Navigation = ({ page }: NavigationProps) => {
                                 aria-current={isActive ? "page" : undefined}
                                 href={path}
                                 $isActive={isActive}
+                                tabIndex={isActive ? -1 : 0}
                                 onClick={() => setSidebarOpen(false)}
                             >
                                 <Text

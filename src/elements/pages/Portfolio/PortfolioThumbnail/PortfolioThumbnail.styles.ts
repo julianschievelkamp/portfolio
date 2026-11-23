@@ -1,12 +1,7 @@
 import { styled } from "styled-components";
 
 import Button from "elements/components/Button/Button";
-import {
-    colors,
-    focusStyles,
-    transition,
-    visuallyHidden,
-} from "styles/variables";
+import { colors, transition, visuallyHidden } from "styles/variables";
 
 export const PortfolioFigure = styled.figure`
     overflow: clip;
@@ -15,10 +10,6 @@ export const PortfolioFigure = styled.figure`
 
     span {
         background-color: ${colors.placeholder};
-    }
-
-    &:has(:focus-visible) {
-        ${focusStyles}
     }
 `;
 
@@ -33,7 +24,8 @@ export const PortfolioButton = styled(Button)`
         transition: transform ${transition.default};
     }
 
-    &:hover + img {
+    &:hover + img,
+    &:focus-visible + img {
         transform: scale(1.05);
     }
 `;

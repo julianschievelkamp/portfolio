@@ -60,12 +60,12 @@ describe("SliderThumbnail", () => {
         );
     });
 
-    it("is only reachable via tab while active", () => {
+    it("is never part of the tab order", () => {
         renderThumbnail(true);
-        expect(screen.getByRole("button")).toHaveAttribute("tabindex", "0");
+        expect(screen.getByRole("button")).toHaveAttribute("tabindex", "-1");
     });
 
-    it("is removed from the tab order while inactive", () => {
+    it("stays out of the tab order while inactive", () => {
         renderThumbnail(false);
         expect(screen.getByRole("button")).toHaveAttribute("tabindex", "-1");
     });
