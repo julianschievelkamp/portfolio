@@ -33,6 +33,7 @@ const SliderThumbnail = memo(
                     sizes={thumbnailSize}
                     margin={item.thumbnailMargin}
                     width="100%"
+                    fadeInOnLoad
                 />
             </SliderItem>
         </SliderListItem>
