@@ -1,4 +1,4 @@
-import { type RefObject, useEffect } from "react";
+import { type RefObject, useEffect, useRef } from "react";
 
 import { TRANSITION_DEFAULT } from "styles/variables";
 
@@ -8,6 +8,22 @@ export const usePopupOverlay = (
     popupRef: RefObject<HTMLDialogElement | null>,
 ) => {
     const popupOpen = useStore((state) => state.popupOpen);
+
+    const closedViaEscape = useRef(false);
+
+    useEffect(() => {
+        if (!popupOpen) return;
+
+        closedViaEscape.current = false;
+
+        const onKeyDown = (e: KeyboardEvent) => {
+            closedViaEscape.current = e.key === "Escape";
+        };
+
+        document.addEventListener("keydown", onKeyDown);
+
+        return () => document.removeEventListener("keydown", onKeyDown);
+    }, [popupOpen]);
 
     useEffect(() => {
         const dialog = popupRef.current;
@@ -33,7 +49,17 @@ export const usePopupOverlay = (
         dialog.removeAttribute("data-visible");
 
         const timeout = setTimeout(() => {
-            if (dialog.open) dialog.close();
+            if (!dialog.open) return;
+
+            dialog.close();
+
+            // close() restores focus to a trigger button (Safari picks the last one);
+            // keep that only for keyboard users who closed via ESC
+            if (!closedViaEscape.current) {
+                const active = document.activeElement;
+
+                if (active instanceof HTMLElement) active.blur();
+            }
         }, TRANSITION_DEFAULT);
 
         return () => clearTimeout(timeout);

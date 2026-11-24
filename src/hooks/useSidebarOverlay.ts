@@ -7,9 +7,7 @@ export const useSidebarOverlay = () => {
     const setSidebarOpen = useStore((state) => state.setSidebarOpen);
 
     useEffect(() => {
-        if (!sidebarOpen) {
-            return;
-        }
+        if (!sidebarOpen) return;
 
         const handleKeyDown = (e: KeyboardEvent) => {
             if (e.key === "Escape") {
