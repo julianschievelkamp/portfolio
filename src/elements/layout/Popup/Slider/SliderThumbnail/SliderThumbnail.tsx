@@ -26,15 +26,13 @@ const SliderThumbnail = memo(
                 $isActive={isActive}
             >
                 <Image
-                    width="100%"
+                    // Decorative: the button already carries the aria-label, the description is in the portfolio grid
+                    alt=""
                     src={item.image}
                     srcSet={item.imageSet}
                     sizes={thumbnailSize}
-                    // Decorative: the button already carries the aria-label, the description is in the portfolio grid
-                    alt=""
                     margin={item.thumbnailMargin}
-                    aspectRatio={item.aspectRatio}
-                    fadeInOnLoad
+                    width="100%"
                 />
             </SliderItem>
         </SliderListItem>
