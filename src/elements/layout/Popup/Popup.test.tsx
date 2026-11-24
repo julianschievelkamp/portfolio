@@ -36,6 +36,19 @@ describe("Popup", () => {
         ).toBeInTheDocument();
     });
 
+    it("renders the slider only after the popup was opened once", () => {
+        useStore.setState({ popupOpen: false });
+        render(<Popup />);
+
+        expect(screen.queryByTestId("slider")).not.toBeInTheDocument();
+
+        act(() => useStore.setState({ popupOpen: true }));
+        expect(screen.getByTestId("slider")).toBeInTheDocument();
+
+        act(() => useStore.setState({ popupOpen: false }));
+        expect(screen.getByTestId("slider")).toBeInTheDocument();
+    });
+
     it("opens and closes the native dialog with the store state", () => {
         useStore.setState({ popupOpen: false });
         render(<Popup />);

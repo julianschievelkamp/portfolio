@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import Icon from "elements/components/Icon/Icon";
 import { usePopupControls } from "hooks/usePopupControls";
@@ -16,6 +16,15 @@ import Slider from "./Slider/Slider";
 
 const Popup = () => {
     const setPopupOpen = useStore((state) => state.setPopupOpen);
+    const popupOpen = useStore((state) => state.popupOpen);
+
+    const [hasBeenOpened, setHasBeenOpened] = useState(popupOpen);
+
+    // Render the slider only once the popup has been opened for the first time
+    if (popupOpen && !hasBeenOpened) {
+        setHasBeenOpened(true);
+    }
+
     const popupRef = useRef<HTMLDialogElement>(null);
 
     usePopupOverlay(popupRef);
@@ -49,7 +58,8 @@ const Popup = () => {
                 </CloseButton>
 
                 <ActiveItem />
-                <Slider />
+
+                {hasBeenOpened && <Slider />}
             </StyledPopup>
         </>
     );

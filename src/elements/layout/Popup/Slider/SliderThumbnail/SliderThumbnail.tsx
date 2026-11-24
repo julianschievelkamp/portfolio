@@ -34,7 +34,6 @@ const SliderThumbnail = memo(
                     alt=""
                     margin={item.thumbnailMargin}
                     aspectRatio={item.aspectRatio}
-                    loading="lazy"
                     fadeInOnLoad
                 />
             </SliderItem>

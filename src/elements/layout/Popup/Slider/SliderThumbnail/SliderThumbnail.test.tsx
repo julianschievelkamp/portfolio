@@ -31,7 +31,7 @@ const renderThumbnail = (isActive = false) => {
 };
 
 describe("SliderThumbnail", () => {
-    it("renders a labelled button with a lazy loaded decorative image", () => {
+    it("renders a labelled button with a decorative image", () => {
         renderThumbnail();
 
         const button = screen.getByRole("button", {
@@ -40,7 +40,6 @@ describe("SliderThumbnail", () => {
         const image = button.querySelector("img");
 
         expect(image).toHaveAttribute("alt", "");
-        expect(image).toHaveAttribute("loading", "lazy");
     });
 
     it("reports its index on click", async () => {
