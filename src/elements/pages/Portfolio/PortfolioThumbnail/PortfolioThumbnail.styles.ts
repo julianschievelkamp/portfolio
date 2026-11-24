@@ -8,9 +8,7 @@ export const PortfolioFigure = styled.figure`
     position: relative;
     margin: 0;
 
-    span {
-        background-color: ${colors.placeholder};
-    }
+    --fader-color: ${colors.placeholder};
 `;
 
 // The image is deliberately not inside the button so reader modes keep it.

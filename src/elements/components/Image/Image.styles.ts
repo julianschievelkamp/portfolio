@@ -1,11 +1,6 @@
-import { css, keyframes, styled } from "styled-components";
+import { styled } from "styled-components";
 
 import { transition } from "styles/variables";
-
-const fadeIn = keyframes`
-    from { opacity: 1; }
-    to { opacity: 0; }
-`;
 
 export const StyledImage = styled.img<{
     $aspectRatio?: string;
@@ -27,16 +22,16 @@ export const StyledImage = styled.img<{
     -ms-user-select: none;
 `;
 
-/* Needs a relative positioned parent */
+/*
+ * Needs a relative positioned parent.
+ * Fades via background-color instead of opacity to avoid a compositing layer per image.
+ * The initial color can be overridden via --fader-color.
+ */
 export const Fader = styled.span<{ $isLoaded: boolean }>`
-    background-color: white;
+    background-color: ${({ $isLoaded }) =>
+        $isLoaded ? "transparent" : "var(--fader-color, white)"};
+    transition: background-color ${transition.default};
     pointer-events: none;
     position: absolute;
     inset: 0;
-
-    ${({ $isLoaded }) =>
-        $isLoaded &&
-        css`
-            animation: ${fadeIn} ${transition.default} forwards;
-        `}
 `;

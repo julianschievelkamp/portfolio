@@ -3,9 +3,10 @@ import { describe, expect, it, vi } from "vitest";
 
 import Image from "./Image";
 
-// jsdom only exposes the animation shorthand, not its longhand properties
+// The fader fades out via background-color; jsdom reports "transparent" as rgba(0, 0, 0, 0)
 const isFadingOut = (element: Element | null) =>
-    element !== null && getComputedStyle(element).animation !== "";
+    element !== null &&
+    getComputedStyle(element).backgroundColor === "rgba(0, 0, 0, 0)";
 
 describe("Image", () => {
     it("renders an image with src and alt", () => {
