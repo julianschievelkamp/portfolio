@@ -1,6 +1,13 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 
-import { colors, transition } from "styles/variables";
+import { colors, queries, transition } from "styles/variables";
+
+const hoverFocusStyles = css`
+    svg {
+        fill: ${colors.highlight};
+        transition: fill ${transition.fast};
+    }
+`;
 
 export const StyledButton = styled.button`
     position: relative;
@@ -9,11 +16,13 @@ export const StyledButton = styled.button`
     cursor: pointer;
     padding: 0;
 
-    &:hover,
-    &:focus-visible {
-        svg {
-            fill: ${colors.highlight};
-            transition: fill ${transition.fast};
+    @media ${queries.hover} {
+        &:hover {
+            ${hoverFocusStyles}
         }
+    }
+
+    &:focus-visible {
+        ${hoverFocusStyles}
     }
 `;
