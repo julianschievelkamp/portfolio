@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 import Button from "elements/components/Button/Button";
-import { queries } from "styles/variables";
+import { colors, queries } from "styles/variables";
 
 export const SliderListItem = styled.li`
     margin: 0 0.25rem 0 0;
@@ -18,13 +18,18 @@ export const SliderItem = styled(Button)<{ $isActive: boolean }>`
     height: 100%;
     overflow: clip;
 
-    img {
-        opacity: ${({ $isActive }) => ($isActive ? 1 : 0.25)};
+    &::after {
+        content: "";
+        background-color: ${({ $isActive }) =>
+            $isActive ? "transparent" : colors.opacity25};
+        pointer-events: none;
+        position: absolute;
+        inset: 0;
     }
 
     @media ${queries.hover} {
-        &:hover img {
-            opacity: 1;
+        &:hover::after {
+            background-color: transparent;
         }
     }
 `;

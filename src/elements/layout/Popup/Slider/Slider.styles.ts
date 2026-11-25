@@ -11,7 +11,12 @@ export const SliderContainer = styled.div`
     height: 3rem;
     z-index: 9;
     overflow-x: clip;
-    transition: opacity ${transition.default};
+    transition: opacity ${transition.fast};
+    opacity: 0;
+
+    html:has([data-visible="true"]) & {
+        opacity: 1;
+    }
 
     html[${PINCHING_ATTRIBUTE}] & {
         opacity: 0;

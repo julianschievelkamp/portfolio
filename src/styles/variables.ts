@@ -9,6 +9,7 @@ export const transition = {
 
 export const colors = {
     highlight: "rgba(255, 192, 0, 1)",
+    opacity25: "rgba(255, 255, 255, 0.75)",
     placeholder: "whitesmoke",
     playButton: "rgba(0, 0, 0, 0.4)",
     secondary: "rgba(0, 0, 0, 0.6)",
