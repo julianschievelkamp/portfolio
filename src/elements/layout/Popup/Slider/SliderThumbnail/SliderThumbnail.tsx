@@ -28,6 +28,7 @@ const SliderThumbnail = memo(
                 <Image
                     // Decorative: the button already carries the aria-label, the description is in the portfolio grid
                     alt=""
+                    aspectRatio={item.aspectRatio}
                     loading="lazy"
                     src={item.image}
                     srcSet={item.imageSet}
