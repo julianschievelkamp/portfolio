@@ -25,25 +25,25 @@ export default createGlobalStyle`
         overflow-x: clip;
     }
 
-    html[${ZOOMED_ATTRIBUTE}],
-    html[${ZOOMED_ATTRIBUTE}] body {
-        overscroll-behavior-x: none;
-        overscroll-behavior-y: none;
-    }
-
     html {
         text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
-    }
-
-    body {
-        overflow-y: scroll;
-        transition: background-color ${transition.default};
-        background-color: white;
+        scrollbar-gutter: stable;
+        overflow-y: auto;
 
         &[${PAGE_LOCKED_ATTRIBUTE}] {
             overflow-y: hidden;
         }
+
+        &[${ZOOMED_ATTRIBUTE}] {
+            overscroll-behavior-x: none;
+            overscroll-behavior-y: none;
+        }
+    }
+
+    body {
+        transition: background-color ${transition.default};
+        background-color: white;
 
         html[${PINCHING_ATTRIBUTE}] & {
             background-color: black;

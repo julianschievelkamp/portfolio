@@ -70,7 +70,7 @@ export const Backdrop = styled.div<{ $sidebarOpen: boolean }>`
 `;
 
 export const ScrollContainer = styled.div`
-    overflow-y: scroll;
+    overflow-y: auto;
     overscroll-behavior-y: contain;
     display: flex;
     flex-direction: column;

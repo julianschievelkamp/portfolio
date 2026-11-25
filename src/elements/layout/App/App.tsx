@@ -34,7 +34,7 @@ const App = ({ children, page }: AppProps) => {
     useScrollLock(isPageLocked && !isZoomed);
 
     useDocumentAttribute("html", ZOOMED_ATTRIBUTE, isZoomed);
-    useDocumentAttribute("body", PAGE_LOCKED_ATTRIBUTE, isPageLocked);
+    useDocumentAttribute("html", PAGE_LOCKED_ATTRIBUTE, isPageLocked);
 
     useResizeTransition();
 
