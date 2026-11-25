@@ -29,7 +29,8 @@ const PortfolioThumbnail = memo(
                 alt={item.alt}
                 aspectRatio={item.aspectRatio}
                 fadeInOnLoad
-                loading="lazy"
+                fetchPriority={index === 0 ? "high" : undefined}
+                loading={index < 12 ? "eager" : "lazy"}
                 margin={item.thumbnailMargin}
                 sizes={thumbnailSize}
                 src={item.image}

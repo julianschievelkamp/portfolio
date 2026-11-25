@@ -41,6 +41,33 @@ describe("PortfolioThumbnail", () => {
         expect(button.closest("figure")).toContainElement(caption);
     });
 
+    it("loads only the first image with high fetch priority", () => {
+        renderThumbnail(0);
+
+        const image = screen.getByRole("img", { name: item.alt });
+
+        expect(image).toHaveAttribute("fetchpriority", "high");
+        expect(image).toHaveAttribute("loading", "eager");
+    });
+
+    it("loads images up to index 11 eagerly without high priority", () => {
+        renderThumbnail(11);
+
+        const image = screen.getByRole("img", { name: item.alt });
+
+        expect(image).not.toHaveAttribute("fetchpriority");
+        expect(image).toHaveAttribute("loading", "eager");
+    });
+
+    it("loads images from index 12 on lazily", () => {
+        renderThumbnail(12);
+
+        expect(screen.getByRole("img", { name: item.alt })).toHaveAttribute(
+            "loading",
+            "lazy",
+        );
+    });
+
     it("reports its index on click", async () => {
         const { onSelect } = renderThumbnail();
 
