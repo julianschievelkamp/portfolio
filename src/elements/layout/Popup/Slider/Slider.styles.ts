@@ -15,10 +15,12 @@ export const SliderContainer = styled.div`
     opacity: 0;
 
     html:has([data-visible="true"]) & {
+        transition: opacity ${transition.default};
         opacity: 1;
     }
 
     html[${PINCHING_ATTRIBUTE}] & {
+        transition: opacity ${transition.fast};
         opacity: 0;
     }
 

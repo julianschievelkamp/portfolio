@@ -41,6 +41,7 @@ const Image = ({
                 ref={imageRef}
                 alt={alt}
                 $aspectRatio={aspectRatio}
+                decoding="sync"
                 fetchPriority={fetchPriority}
                 $height={height}
                 loading={loading}

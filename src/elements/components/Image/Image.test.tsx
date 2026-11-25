@@ -42,6 +42,12 @@ describe("Image", () => {
         expect(screen.getByRole("img")).toHaveAttribute("loading", "lazy");
     });
 
+    it("decodes images synchronously", () => {
+        render(<Image alt="Art" src="/a.jpg" />);
+
+        expect(screen.getByRole("img")).toHaveAttribute("decoding", "sync");
+    });
+
     it("passes fetchPriority through", () => {
         render(<Image alt="Art" fetchPriority="high" src="/a.jpg" />);
 
