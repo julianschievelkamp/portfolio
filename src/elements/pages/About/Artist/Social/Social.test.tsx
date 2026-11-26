@@ -8,7 +8,11 @@ vi.mock("data/languageData", () => ({
         about: {
             artist: {
                 social: {
-                    image: "profile.jpg",
+                    image: {
+                        alt: "Instagram Profile",
+                        aspectRatio: "1/1",
+                        src: "profile.jpg",
+                    },
                     link: "https://example.com/profile",
                     name: "Full Name",
                     profile: "@handle",

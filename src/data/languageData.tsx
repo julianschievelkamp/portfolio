@@ -34,10 +34,10 @@ export const languageData = {
         artist: {
             headline: "About the Artist",
             image: {
-                src: SelfPortrait,
-                aspectRatio: "3/4",
                 alt: "Black and white portrait of Julian Schievelkamp in a denim jacket, sitting on a wooden chair floating among clouds and mist.",
+                aspectRatio: "3/4",
                 caption: "Self-portrait of Julian Schievelkamp",
+                src: SelfPortrait,
             },
             text: [
                 <>
@@ -77,7 +77,11 @@ export const languageData = {
                 </i>,
             ],
             social: {
-                image: Profile,
+                image: {
+                    alt: "Instagram Profile",
+                    aspectRatio: "1/1",
+                    src: Profile,
+                },
                 link: "https://www.instagram.com/julianschievelkamp/",
                 name: "Julian Schievelkamp",
                 profile: "@julianschievelkamp",
