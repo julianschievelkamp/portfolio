@@ -1,9 +1,10 @@
 import { css } from "styled-components";
 
 export const TRANSITION_DEFAULT = 300;
+
 export const transition = {
     default: `${TRANSITION_DEFAULT}ms ease-out`,
-    defaultIn: `${TRANSITION_DEFAULT}ms ease-in`,
+    defaultExit: `${TRANSITION_DEFAULT}ms ease-in`,
     fast: `${TRANSITION_DEFAULT / 3}ms ease-out`,
 };
 

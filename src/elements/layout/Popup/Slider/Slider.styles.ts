@@ -11,11 +11,10 @@ export const SliderContainer = styled.div`
     height: 3rem;
     z-index: 9;
     overflow-x: clip;
-    transition: opacity ${transition.fast};
+    transition: opacity ${transition.default};
     opacity: 0;
 
     html:has([data-visible="true"]) & {
-        transition: opacity ${transition.default};
         opacity: 1;
     }
 

@@ -17,9 +17,10 @@ const sidebarStyles = css<{
     transform: ${({ $sidebarOpen }) =>
         `translateX(${$sidebarOpen ? 0 : "-100%"})`};
     visibility: ${({ $sidebarOpen }) => ($sidebarOpen ? "visible" : "hidden")};
-    /* Ease-out when opening, ease-in when closing */
     transition: ${({ $sidebarOpen }) => {
-        const timing = $sidebarOpen ? transition.default : transition.defaultIn;
+        const timing = $sidebarOpen
+            ? transition.default
+            : transition.defaultExit;
 
         return `transform ${timing}, visibility ${timing}`;
     }};
@@ -59,7 +60,9 @@ export const Backdrop = styled.div<{ $sidebarOpen: boolean }>`
     opacity: ${({ $sidebarOpen }) => ($sidebarOpen ? 1 : 0)};
     visibility: ${({ $sidebarOpen }) => ($sidebarOpen ? "visible" : "hidden")};
     transition: ${({ $sidebarOpen }) => {
-        const timing = $sidebarOpen ? transition.default : transition.defaultIn;
+        const timing = $sidebarOpen
+            ? transition.default
+            : transition.defaultExit;
 
         return `opacity ${timing}, visibility ${timing}`;
     }};

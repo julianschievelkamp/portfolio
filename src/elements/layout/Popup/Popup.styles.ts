@@ -22,7 +22,7 @@ export const StyledPopup = styled.dialog`
     user-select: none;
 
     opacity: 0;
-    transition: opacity ${transition.defaultIn};
+    transition: opacity ${transition.defaultExit};
 
     &[data-visible="true"] {
         opacity: 1;
@@ -43,7 +43,7 @@ export const Background = styled.div`
     background-color: white;
     opacity: 0;
     transition:
-        opacity ${transition.defaultIn},
+        opacity ${transition.defaultExit},
         background-color ${transition.default};
 
     html:has([data-visible="true"]) & {
