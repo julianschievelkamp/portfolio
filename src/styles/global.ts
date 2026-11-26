@@ -7,6 +7,8 @@ export const PAGE_LOCKED_ATTRIBUTE = "data-page-locked";
 export const SCROLL_ALLOWED_ATTRIBUTE = "data-scroll-allowed";
 export const ZOOMED_ATTRIBUTE = "data-zoomed";
 export const PINCHING_ATTRIBUTE = "data-pinching";
+// Set while the artwork glides back after a pinch gesture
+export const PINCH_SETTLING_ATTRIBUTE = "data-pinch-settling";
 
 export default createGlobalStyle`
     ${fonts};

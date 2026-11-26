@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 
 import Button from "elements/components/Button/Button";
-import { PINCHING_ATTRIBUTE } from "styles/global";
-import { colors } from "styles/variables";
+import { PINCH_SETTLING_ATTRIBUTE, PINCHING_ATTRIBUTE } from "styles/global";
+import { colors, transition } from "styles/variables";
 
 export const StyledVideo = styled.video<{
     $height?: string;
@@ -23,16 +23,27 @@ export const PlayButton = styled(Button)<{ $isVisible: boolean }>`
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
     border-radius: 100px;
     backdrop-filter: blur(8px);
     background-color: ${colors.playButton};
+    transition:
+        opacity ${transition.default},
+        visibility ${transition.default};
+    opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
 
     &:focus-visible {
         opacity: 1;
     }
 
-    html[${PINCHING_ATTRIBUTE}] & {
+    /* Hidden while the artwork glides back after pinching. Otherwise the button
+       reappears at the top edge on the black background, and Safari keeps that color
+       for the status bar until the dialog closes */
+    html[${PINCHING_ATTRIBUTE}] &,
+    html[${PINCH_SETTLING_ATTRIBUTE}] & {
+        transition:
+            opacity ${transition.fast},
+            visibility ${transition.fast};
         opacity: 0;
+        visibility: hidden;
     }
 `;

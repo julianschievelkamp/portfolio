@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 
-import { PINCHING_ATTRIBUTE } from "styles/global";
+import { PINCH_SETTLING_ATTRIBUTE, PINCHING_ATTRIBUTE } from "styles/global";
+import { TRANSITION_DEFAULT } from "styles/variables";
 import { isViewportZoomed } from "utils/isViewportZoomed";
 
 export const PINCH_MAX_SCALE = 2;
@@ -45,6 +46,9 @@ const clamp = (value: number, min: number, max: number) =>
 const setPinching = (active: boolean) =>
     document.documentElement.toggleAttribute(PINCHING_ATTRIBUTE, active);
 
+const setSettling = (active: boolean) =>
+    document.documentElement.toggleAttribute(PINCH_SETTLING_ATTRIBUTE, active);
+
 // Pinch zoom and panning via touch; afterwards the element glides back.
 // Writes "--pinch-transform" onto the element and the pinch attribute onto <html>, the styles
 // apply them (transform-origin: 0 0). Callback ref, since the element only renders after loading.
@@ -59,7 +63,13 @@ export const usePinchZoom = <T extends HTMLElement>() =>
         let pinchBaseline: PinchBaseline | null = null;
         let panBaseline: PanBaseline | null = null;
         let frame = 0;
+        let settleTimeout = 0;
         let gestureEndTime = -Infinity;
+
+        const stopSettling = () => {
+            clearTimeout(settleTimeout);
+            setSettling(false);
+        };
 
         const writeTransform = () => {
             element.style.setProperty(
@@ -87,6 +97,7 @@ export const usePinchZoom = <T extends HTMLElement>() =>
 
             // Holds the element at its current position before the transition is removed
             writeTransform();
+            stopSettling();
             setPinching(true);
         };
 
@@ -127,6 +138,10 @@ export const usePinchZoom = <T extends HTMLElement>() =>
 
             setPinching(false);
             element.style.removeProperty("--pinch-transform");
+
+            // Marks the glide back, which runs for the default transition duration
+            setSettling(true);
+            settleTimeout = window.setTimeout(stopSettling, TRANSITION_DEFAULT);
         };
 
         const handleTouchStart = (event: TouchEvent) => {
@@ -218,6 +233,7 @@ export const usePinchZoom = <T extends HTMLElement>() =>
                 capture: true,
             });
             cancelAnimationFrame(frame);
+            stopSettling();
             setPinching(false);
             element.style.removeProperty("--pinch-transform");
         };

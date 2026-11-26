@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-import { PINCHING_ATTRIBUTE } from "styles/global";
+import { PINCH_SETTLING_ATTRIBUTE, PINCHING_ATTRIBUTE } from "styles/global";
 import { queries, transition } from "styles/variables";
 
 export const SliderContainer = styled.div`
@@ -11,16 +11,22 @@ export const SliderContainer = styled.div`
     height: 3rem;
     z-index: 9;
     overflow-x: clip;
-    transition: opacity ${transition.default};
+    transition:
+        opacity ${transition.default},
+        visibility ${transition.default};
     opacity: 0;
 
     html:has([data-visible="true"]) & {
         opacity: 1;
     }
 
-    html[${PINCHING_ATTRIBUTE}] & {
-        transition: opacity ${transition.fast};
+    html[${PINCHING_ATTRIBUTE}] &,
+    html[${PINCH_SETTLING_ATTRIBUTE}] & {
+        transition:
+            opacity ${transition.fast},
+            visibility ${transition.fast};
         opacity: 0;
+        visibility: hidden;
     }
 
     @media ${queries.landscapeLgMax} {
