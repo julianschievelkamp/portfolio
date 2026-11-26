@@ -22,10 +22,12 @@ const Artist = () => (
             <PortraitFigure>
                 <Image
                     alt={image.alt}
+                    aspectRatio={image.aspectRatio}
                     fadeInOnLoad
                     fetchPriority="high"
-                    height="100%"
+                    height="auto"
                     src={image.src}
+                    width="100%"
                 />
                 <PortraitCaption>{image.caption}</PortraitCaption>
             </PortraitFigure>

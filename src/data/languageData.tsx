@@ -35,6 +35,7 @@ export const languageData = {
             headline: "About the Artist",
             image: {
                 src: SelfPortrait,
+                aspectRatio: "3/4",
                 alt: "Black and white portrait of Julian Schievelkamp in a denim jacket, sitting on a wooden chair floating among clouds and mist.",
                 caption: "Self-portrait of Julian Schievelkamp",
             },

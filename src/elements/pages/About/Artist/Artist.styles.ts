@@ -18,9 +18,9 @@ export const PortraitFigure = styled.figure`
     position: relative;
     margin: 0;
     flex-shrink: 0;
+    width: min(100%, 22.5rem);
 
     img {
-        max-height: 30rem;
         border: 8px solid black;
     }
 `;
